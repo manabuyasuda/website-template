@@ -1,0 +1,7 @@
+{
+  "name": "Site Name",
+  "description": "Site Description",
+  "keywords": "Site Keyword1, Site Keyword2",
+  "rootUrl": "http://example.com",
+  "ogpImage": "http://example.com/ogp.jpg"
+}

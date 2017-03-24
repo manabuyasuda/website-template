@@ -1,0 +1,36 @@
+{
+  "name": "website-template",
+  "version": "1.0.0",
+  "description": "Webサイト制作のためのテンプレート",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "release": "gulp release"
+  },
+  "keywords": [
+    "gulp",
+    "pug"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://manabuyasuda@github.com/manabuyasuda/website-template.git"
+  },
+  "author": "Manabu Yasuda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manabuyasuda/website-template/issues"
+  },
+  "homepage": "https://github.com/manabuyasuda/website-template#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-cached": "^1.1.1",
+    "gulp-data": "^1.2.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "rimraf": "^2.6.1",
+    "run-sequence": "^1.2.2"
+  }
+}

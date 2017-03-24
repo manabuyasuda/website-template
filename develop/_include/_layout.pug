@@ -1,0 +1,14 @@
+block variables
+doctype html
+html(lang=pageLang)
+  head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
+    include /_include/_meta
+
+  body
+
+    include /_include/_header
+
+    block content
+
+    include /_include/_script
+    include /_include/_footer
