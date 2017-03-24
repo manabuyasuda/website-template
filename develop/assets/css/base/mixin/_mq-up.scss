@@ -1,0 +1,29 @@
+// @desc - メディアクエリを`min-width`で挿入します。
+// @param {String} $breakpoint [$default-breakpoint] - 引数に変数のキーワードを渡します。
+// @see - $breakpoint-up
+// @example scss - Usage
+// .foo {
+//   color: red;
+//   @include mq-up {
+//     color: blue;
+//   }
+// }
+// @example css - CSS output
+// .foo {
+//   color: red;
+// }
+// @media (min-width: 768px) {
+//   .foo {
+//     color: blue;
+//   }
+// }
+@mixin mq-up($breakpoint: $default-breakpoint) {
+  @if map-has-key($breakpoint-up, $breakpoint) {
+    @media #{inspect(map-get($breakpoint-up, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    + "Please make sure it is defined in `$breakpoint-up` map.";
+  }
+}

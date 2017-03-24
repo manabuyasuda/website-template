@@ -1,0 +1,36 @@
+ /* #Label
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: Label
+category: SiteWide
+tag: [Link, Form]
+---
+
+インラインで表示するラベルコンポーネントです。
+
+```ejs
+<p>
+  <span class="sw-Label">spanタグのラベルです。</span>
+  <label class="sw-Label">labelタグのラベルです。</label>
+  <a class="sw-Label" href="#">aタグのラベルです。</a>
+</p>
+```
+*/
+.sw-Label {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: rem(10);
+  line-height: 1;
+  color: $color-text;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: inherit;
+  border: 1px solid currentColor;
+
+  &:hover {
+    color: currentColor;
+    text-decoration: none;
+  }
+}

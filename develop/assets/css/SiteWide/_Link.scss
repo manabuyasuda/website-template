@@ -1,0 +1,24 @@
+ /* #Link
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: Link
+category: SiteWide
+tag: Link
+---
+
+テキストリンクのデフォルトスタイルです。
+
+```ejs
+<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
+```
+*/
+.sw-Link {
+  color: $color-link;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}

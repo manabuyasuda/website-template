@@ -1,0 +1,55 @@
+ /* #Button
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: Button
+category: SiteWide
+tag: [Link, Form]
+---
+
+ボタンのデフォルトスタイルです。
+
+```ejs
+<p>
+  <a class="sw-Button" href="#">aタグボタン</a>
+  <a class="sw-Button sw-Button-disabled" href="#">aタグボタン</a>
+  <button class="sw-Button" type="button">butotnタグボタン</button>
+  <button class="sw-Button" disabled type="button">butotnタグボタン</button>
+</p>
+```
+*/
+.sw-Button {
+  display: inline-block;
+  margin: 0;
+  padding: 1em 2em;
+  border: none;
+  border: 1px solid #d0d0d0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  background-color: #fff;
+  cursor: pointer;
+  appearance: none;
+
+  @include on-event() {
+    text-decoration: none;
+  }
+
+  &:focus {
+
+  }
+
+  &:disabled,
+  &-disabled {
+    cursor: $form-disabled-cursor;
+    opacity: $form-disabled-opacity;
+    background-color: $form-disabled-background-color;
+  }
+  &-disabled {
+    pointer-events: none;
+  }
+}

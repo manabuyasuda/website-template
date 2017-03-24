@@ -1,0 +1,35 @@
+ /* #LinkNote
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: LinkNote
+category: SiteWide
+tag: Link
+---
+
+注釈へのリンクです。`<sup>`タグの子要素として指定します。
+
+```ejs
+<p>○○<sup><a class="sw-LinkNote" href="#">1</a></sup>を使っています。</p>
+<p lang="en">○○<sup><a class="sw-LinkNote" href="#">1</a></sup>を使っています。</p>
+```
+*/
+.sw-LinkNote {
+  color: $color-link;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+
+  &:before {
+    content: "※";
+    margin-left: 0.25em;
+  }
+
+  [lang^="en"] &:before,
+  [lang^="zh-cn"] &:before {
+    content: "*";
+  }
+}

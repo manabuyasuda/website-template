@@ -1,0 +1,66 @@
+ /* #FormTextarea
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: FormTextarea
+category: SiteWide
+tag: Form
+---
+
+`<textarea>`のデフォルトスタイルです。
+
+```ejs
+<textarea class="sw-FormTextarea" placeholder="テキストエリアです"></textarea>
+
+<label class="sw-FormTextarea_TextTop" for="textarea1">テキストエリアの説明</label>
+<textarea class="sw-FormTextarea" id="textarea1" placeholder="テキストエリアです"></textarea>
+
+<textarea class="sw-FormTextarea" id="textarea2" placeholder="テキストエリアです"></textarea>
+<label class="sw-FormTextarea_TextTop" for="textarea2">テキストエリアの説明</label>
+
+<textarea class="sw-FormTextarea sw-FormTextarea-large" id="textarea3" placeholder="テキストエリアです"></textarea>
+
+<textarea disabled class="sw-FormTextarea" id="textarea4" placeholder="テキストエリアです"></textarea>
+```
+*/
+.sw-FormTextarea {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 7em;
+  margin: 0;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border: 1px solid #d0d0d0;
+  background-color: #fff;
+  box-shadow:1px 1px 6px -3px #9e9e9e inset;
+  border-radius: $form-border-radius;
+  appearance: none;
+
+  &::placeholder {
+    color: $form-placeholder-color;
+  }
+
+  &:focus {
+  }
+
+  &:disabled {
+    cursor: $form-disabled-cursor;
+    opacity: $form-disabled-opacity;
+    background-color: $form-disabled-background-color;
+  }
+}
+
+.sw-FormTextarea-large {
+  height: 14em;
+}
+
+.sw-FormTextarea_TextTop {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.sw-FormTextarea_TextBottom {
+  display: inline-block;
+  margin-top: 0.25rem;
+}

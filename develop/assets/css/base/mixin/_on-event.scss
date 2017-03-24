@@ -1,0 +1,30 @@
+// @desc - マウスオーバーなどのイベントをまとめて指定します。
+// @author - Harry Roberts
+// @param {Bool} $self [false] - Whether or not to include current selector
+// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+// @example scss - Usage
+// .foo {
+//   @include on-event{
+//     background-color: red;
+//   }
+// }
+// @example css - CSS output
+// .foo:hover, .foo:active, .foo:focus {
+//   background-color: red;
+// }
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}

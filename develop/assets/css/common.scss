@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import "base/variable/**/*.scss";
+@import "base/function/**/*.scss";
+@import "base/mixin/**/*.scss";
+@import "base/_normalize.scss";
+@import "base/_base.scss";
+
+/**
+ * st-(Structure)...サイト共通のレイアウト
+ * sw-(SiteWide)...サイト共通の小さなパーツ
+ * tp-(TopPage)...サイトトップページ
+ */
+@import "Structure/**/*.scss";
+@import "SiteWide/**/*.scss";
+@import "module/**/*.scss";

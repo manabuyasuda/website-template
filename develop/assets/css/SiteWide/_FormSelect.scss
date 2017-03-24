@@ -1,0 +1,102 @@
+ /* #FormSelect
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: FormSelect
+category: SiteWide
+tag: Form
+---
+
+`<select>`タグのデフォルトスタイルです。
+
+```ejs
+<div class="sw-FormSelect">
+  <select>
+    <option value="default">選択してください</option>
+    <option value="hokkaido">北海道</option>
+    <option value="akita">秋田</option>
+  </select>
+</div>
+
+<div class="sw-FormSelect">
+  <select disabled>
+    <option value="default">選択してください</option>
+    <option value="hokkaido">北海道</option>
+    <option value="akita">秋田</option>
+  </select>
+</div>
+```
+*/
+.sw-FormSelect {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 99%;
+    width: calc(100% - 6px);
+    margin: auto;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  &:after {
+    content: "";
+    background-image: url("/assets/img/common/icon/FormSelect.svg");
+    background-repeat: no-repeat;
+    background-size: 1em;
+    position: absolute;
+    top: 0;
+    right: 1em;
+    bottom: 0;
+    margin: auto;
+    width: 1em;
+    height: 1em;
+    pointer-events: none;
+  }
+
+  & > select {
+    width: 100%;
+    height: 2.5em;
+    padding: 0 2em 0 1em;
+    font-size: 1em;
+    line-height: 1;
+    vertical-align: middle;
+    border: 1px solid #d0d0d0;
+    background-color: #fff;
+    box-shadow:1px 1px 6px -3px #9e9e9e inset;
+    border-radius: $form-border-radius;
+    appearance: none;
+  }
+
+  & > select:focus {
+  }
+
+  & > select:disabled {
+    cursor: $form-disabled-cursor;
+    opacity: $form-disabled-opacity;
+    background-color: $form-disabled-background-color;
+  }
+
+  /* Firefox Hack */
+  & > select {
+    text-indent: 0.01px;
+    text-overflow: "";
+  }
+
+  /* IE10以上 */
+  & > select::-ms-expand {
+    display: none;
+  }
+
+  /* IE9ではデフォルトの矢印アイコンを表示する。 */
+  &:not(:target):after {
+    background-image: none\9;
+  }
+  & > select:not(:target) {
+    padding-right: 0\9;
+  }
+}

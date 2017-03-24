@@ -1,0 +1,96 @@
+ /* #base
+   -------------------------------------------------------------------------- */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: ((map-get($font-size, sm) / 16) * 100%);
+  line-height: 1.5;
+
+  @include mq-up(md) {
+    font-size: ((map-get($font-size, md) / 16) * 100%);
+  }
+}
+
+body {
+  color: $color-text;
+  font-family: $font-famiry-sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  font-kerning: normal;
+  background-color: #fff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/**
+ * `dt`と`dd`の左端を揃えます。
+ */
+dd {
+  margin-left: 0;
+}
+
+/**
+ * 日本語では斜体を使用しないためリセットします。
+ */
+[lang="ja"] i,
+[lang="ja"] cite,
+[lang="ja"] em,
+[lang="ja"] address,
+[lang="ja"] dfn {
+  font-style: normal;
+}
+
+/**
+ * フルードイメージにします。
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* imgとonject要素でSVGをフルードイメージにします。 */
+[src$=".svg"],
+[data$=".svg"] {
+  width: 100%; /* IE対応 */
+}
+
+code {
+  font-family: Consolas, Menlo, Courier, monospace;
+  font-size: 0.85em;
+}
+
+/* IE10以降`input[type="text"]`の入力内容の消去を非表示にします。 */
+input::-ms-clear {
+  visibility: hidden;
+}
+
+/* IE10以降の`input[type="password"]`のマスクの一時的解除を非表示にします。 */
+input::-ms-reveal {
+  visibility: hidden;
+}
+
+/* Normalize.cssをリセットします。 */
+figure {
+  margin: 0;
+}
+
+/* ブロック要素の上下のマージンをリセットします。 */
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+blockquote, p, address,
+hr,
+table,
+fieldset, figure,
+pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}

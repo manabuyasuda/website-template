@@ -1,0 +1,68 @@
+ /* #FormCheckbox
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: FormCheckbox
+category: SiteWide
+tag: Form
+---
+
+`type="checkbox"`のデフォルトスタイルです。
+
+```ejs
+<input class="sw-FormCheckbox" type="checkbox" id="checkbox1">
+<label for="checkbox1">チェックボックス</label>
+
+<input disabled class="sw-FormCheckbox" type="checkbox" id="checkbox2">
+<label disabled for="checkbox2">チェックボックス</label>
+```
+*/
+.sw-FormCheckbox {
+  display: none;
+
+  & + label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  & + label:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: -0.1em;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    margin: auto;
+    margin-right: 0.25em;
+    border: 1px solid #d0d0d0;
+    border-radius: $form-border-radius;
+    background-color: #fff;
+  }
+
+  &:checked + label:after {
+    content: "";
+    background-image: url("/assets/img/common/icon/FormCheckbox.svg");
+    background-repeat: no-repeat;
+    background-size: 1em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 1em;
+    height: 1em;
+  }
+
+  &:disabled,
+  & + label[disabled] {
+    cursor: $form-disabled-cursor;
+    opacity: $form-disabled-opacity;
+  }
+
+  &:disabled + label:after {
+    display: none;
+  }
+}

@@ -1,0 +1,30 @@
+// @desc - クリアーフィックスのスタイルを挿入します。
+// @param {Bool, String} - 引数$importantに"important"を渡すと`!important`の指定ができます。
+// @example scss - Usage
+//
+// .foo { @include clearfix; }
+// .bar { @include clearfix(important); }
+//
+// @example css - CSS output
+// .foo:after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
+// .bar:after {
+//   content: "" !important;
+//   display: block !important;
+//   clear: both !important;
+// }
+@mixin clearfix($important: false) {
+  @if ($important == "important") {
+    $important: unquote("!important");
+  } @else {
+    $important: null;
+  }
+  &:after {
+    content: "" $important;
+    display: block $important;
+    clear: both $important;
+  }
+}

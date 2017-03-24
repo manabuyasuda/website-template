@@ -1,0 +1,33 @@
+ /* #LinkPdf
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: LinkPdf
+category: SiteWide
+tag: Link
+---
+
+リンク先がPDFであることを示す場合に使います。
+
+```ejs
+<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
+<p><a class="sw-LinkPdf" href="#">PDFをダウンロードする<span class="sw-LinkPdf_Icon" aria-hidden="true"></span></a></p>
+```
+*/
+.sw-LinkPdf {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+.sw-LinkPdf_Icon:after {
+  @include icon;
+  content: "#{$icon-linkPdf}";
+  top: -0.2em;
+  left: 0.25em;
+  font-size: 1.25em;
+}

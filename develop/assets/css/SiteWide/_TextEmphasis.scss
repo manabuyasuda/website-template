@@ -1,0 +1,18 @@
+ /* #TextEmphasis
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: TextEmphasis
+category: SiteWide
+tag: Text
+---
+
+`<p>`や`<strong>`で使われるようなスタイルです。強調や重要性を示すときに使います。
+
+```ejs
+<p>通常の文章です、<strong class="sw-TextEmphasis">強調したい文章</strong>です。</p>
+```
+*/
+.sw-TextEmphasis {
+  font-weight: 700;
+}

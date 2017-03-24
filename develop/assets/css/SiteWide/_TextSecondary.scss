@@ -1,0 +1,19 @@
+ /* #TextSecondary
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: TextSecondary
+category: SiteWide
+tag: Text
+---
+
+`<p>`や`<small>`で使われるようなテキストスタイルです。副次的な意味合いを持たせる場合に使います。
+
+```ejs
+<p>通常の文章です</p>
+<p class="sw-TextSecondary">補足的な文章です</p>
+```
+*/
+.sw-TextSecondary {
+  font-size: $font-size-secondary;
+}

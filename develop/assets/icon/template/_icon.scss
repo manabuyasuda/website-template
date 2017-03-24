@@ -1,0 +1,58 @@
+ /* #Icon
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: Icon
+category: SiteWide
+tag: Icon
+---
+
+アイコンフォントを使ったアイコンを表示します。デフォルトでは`:before`擬似要素で表示されます。
+
+```ejs
+<p>More <span class="sw-Icon sw-Icon-linkMore" aria-hidden="true"></span></p>
+```
+*/
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.eot');
+  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+    url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+    url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+    url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// アイコンフォントのベーススタイルです。
+@mixin icon {
+  font-family: "<%= fontName %>";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  top: -0.1em;
+  display: inline-block;
+  vertical-align: middle;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: none;
+  speak: none;
+}
+
+// アイコンフォントを`content: "";`で表示できるように変数化しています。
+// インターポレーション（`#{}`）の中に入れる必要があります。
+// example: content: "#{$icon-LinkMore}";
+<% _.each(glyphs, function(glyph) { %>$icon-<%= glyph.name %>: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>" !default;
+<% }); %>
+
+/* 汎用的なアイコンフォントです。 */
+.<%= className %> { display: inline-block; }
+.<%= className %>:before { @include icon; }
+
+<% _.each(glyphs, function(glyph) { %>.<%= className %>-<%= glyph.name %>:before { content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>"; }
+<% }); %>
+
+

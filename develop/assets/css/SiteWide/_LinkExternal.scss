@@ -1,0 +1,33 @@
+ /* #LinkExternal
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: LinkExternal
+category: SiteWide
+tag: Link
+---
+
+外部リンクであることを示す場合に使います。
+
+```ejs
+<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
+<p><a class="sw-LinkExternal" href="#">外部リンクを開く<span class="sw-LinkExternal_Icon" aria-hidden="true"></span></a></p>
+```
+*/
+.sw-LinkExternal {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+.sw-LinkExternal_Icon:after {
+  @include icon;
+  content: "#{$icon-linkExternal}";
+  top: -0.15em;
+  left: 0.25em;
+  font-size: 1.25em;
+}

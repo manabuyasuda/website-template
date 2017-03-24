@@ -1,0 +1,31 @@
+ /* #ListBracketOrder
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: ListBracketOrder
+category: SiteWide
+tag: List
+---
+
+括弧で囲んだ順序リストです。
+
+```ejs
+<ul class="sw-ListBracketOrder">
+  <li>リストです</li>
+  <li>リストです</li>
+</ul>
+```
+*/
+.sw-ListBracketOrder {
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    counter-increment: bracketOrder;
+  }
+
+  li:before {
+    content: "(" counter(bracketOrder) ")";
+    margin-right: 0.25em;
+  }
+}

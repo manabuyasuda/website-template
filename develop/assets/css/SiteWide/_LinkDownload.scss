@@ -1,0 +1,33 @@
+ /* #LinkDownload
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: LinkDownload
+category: SiteWide
+tag: Link
+---
+
+ファイルをダウンロードするためのリンクであることを示す場合に使います。
+
+```ejs
+<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
+<p><a class="sw-LinkDownload" href="#">ファイルをダウンロードする<span class="sw-LinkDownload_Icon" aria-hidden="true"></span></a></p>
+```
+*/
+.sw-LinkDownload {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+.sw-LinkDownload_Icon:after {
+  @include icon;
+  content: "#{$icon-linkDownload}";
+  top: -0.2em;
+  left: 0.25em;
+  font-size: 1.25em;
+}

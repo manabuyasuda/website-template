@@ -1,0 +1,73 @@
+ /* #FormRadio
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: FormRadio
+category: SiteWide
+tag: Form
+---
+
+`type="radio"`のデフォルトスタイルです。
+
+```ejs
+<input class="sw-FormRadio" type="radio" id="radio1" name="radio1">
+<label for="radio1">ラジオボタン</label>
+
+<input class="sw-FormRadio" type="radio" id="radio2" name="radio1">
+<label for="radio2">ラジオボタン</label>
+
+<input disabled class="sw-FormRadio" type="checkbox" id="radio3" name="radio2">
+<label disabled for="radio3">ラジオボタン</label>
+```
+*/
+.sw-FormRadio {
+  display: none;
+
+  & + label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  & + label:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: -0.1em;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    margin: auto;
+    margin-right: 0.25em;
+    border: 1px solid #d0d0d0;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &:checked + label:after {
+    content: "";
+    background-image: url("/assets/img/common/icon/FormRadio.svg");
+    background-repeat: no-repeat;
+    background-size: 0.5em;
+    position: absolute;
+    top: -0.1em;
+    bottom: 0;
+    left: 0.25em;
+    margin: auto;
+    width: 1em;
+    height: 1em;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+  }
+
+  &:disabled,
+  & + label[disabled] {
+    cursor: $form-disabled-cursor;
+    opacity: $form-disabled-opacity;
+  }
+
+  &:disabled + label:after {
+    display: none;
+  }
+}

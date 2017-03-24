@@ -1,0 +1,26 @@
+ /* #Divider
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: Divider
+category: SiteWide
+tag: Text
+---
+
+`<hr>`のような区切り記号を使って、分割・グルーピングします。
+
+```ejs
+<p>テキストです。</p>
+<hr class="sw-Divider">
+<p>テキストです。</p>
+```
+*/
+.sw-Divider {
+  box-sizing: inherit;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.2em auto;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+}

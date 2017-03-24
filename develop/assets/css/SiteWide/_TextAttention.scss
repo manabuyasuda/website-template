@@ -1,0 +1,18 @@
+ /* #TextAttention
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: TextAttention
+category: SiteWide
+tag: Text
+---
+
+`<p>`や`<strong>`で使われるようなスタイルです。注意や注目を引きたい場合に使います。
+
+```ejs
+<p>通常の文章です、<strong class="sw-TextAttention">注意や注目を引きたい文章</strong>です。</p>
+```
+*/
+.sw-TextAttention {
+  color: #a94442;
+}

@@ -1,0 +1,88 @@
+// font-familyを定義しています。WindowsとMacで指定する名前が微妙に変わるので、
+// 半角スペースなどを変更しないようにしてください。
+
+// ## ゴシックとsans-serif
+// 欧文書体は"Helvetica Neue"か"Verdana"、
+// "Helvetica Neue"を指定する場合はWindowsのフォールバックに"Arial"か"Verdana"、
+// HelveticaはWindowsではArialとして表示される。
+// 和文書体は游ゴシックかヒラギノ角ゴ、游書体はWindowsのChromeで薄く表示される。
+// MS書体はアンチエイリアスが効かないために指定せず、メイリオを指定する。
+
+// 和欧混植、Helvetica優先、游ゴシックなし
+$font-family-sans-serif-1: "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和欧混植、Helvetica優先、游ゴシック優先
+$font-family-sans-serif-2: "Helvetica Neue", Helvetica, "游ゴシック", YuGothic, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和欧混植、Verdana優先、游ゴシックなし
+$font-family-sans-serif-3: Verdana, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和欧混植、Verdana優先、游ゴシック優先
+$font-family-sans-serif-4: Verdana, "游ゴシック", YuGothic, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和文のみ、游ゴシックなし
+$font-family-sans-serif-5: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+// 和文のみ、游ゴシック優先
+$font-family-sans-serif-6: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+
+
+// ## 明朝とserif
+// 欧文書体は"Times New Roman"か"Georgia"。
+// 和文書体は游明朝かヒラギノ明朝、游書体はWindowsのChromeで薄く表示される。
+// 古いWindows用に"HG明朝E"（Officeをインストールしていれば使える）、フォールバックとしてメイリオ。
+// "ＭＳ Ｐ明朝"はアンチエイリアスが効かないので指定しない。
+// Androidは明朝体に非対応。
+
+// 和欧混植、Times New Roman優先、游明朝なし
+$font-family-serif-1: "Times New Roman", "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和欧混植、Times New Roman優先、游明朝優先
+$font-family-serif-2: "Times New Roman", "游明朝", "YuMincho", "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和欧混植、Georgia優先、游明朝なし
+$font-family-serif-3: Georgia, "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和欧混植、Georgia優先、游明朝優先
+$font-family-serif-4: Georgia, "游明朝", "YuMincho", "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和文のみ、游明朝なし
+$font-family-serif-5: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+// 和文のみ、游明朝優先
+$font-family-serif-6: "游明朝", "YuMincho", "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+
+// ## Macで追加できるフォント
+// ヒラギノ丸ゴ→ "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN"
+// EL Captainで追加されたフォント。
+// 筑紫丸Aゴシック→ "TsukuARdGothic-Regular"（ふところを絞ったデザインの丸ゴシック体で和風、落ち着いた印象）
+// 筑紫丸Bゴシック→ "TsukuBRdGothic-Regular"（筑紫丸Aゴシックよりも特徴がある）
+// クレー→ "Klee"（鉛筆やペンのような手書き風で本文組みに適した書体）
+// ヒラギノ角ゴシック→ "Hiragino Sans"（ヒラギノ角ゴに10種類のウェイトを追加）
+// 游明朝体+36ポかな→ "YuMin_36pKn-Medium"（毛筆表現のある游明朝体で漢字と英数字は含んでいない）
+// San Francisco→ -apple-system
+
+// 主要なフォント。
+// 游ゴシック Windows8.1以降、MacOS10.9以降
+// 游明朝 Windows8.1以降、MacOS10.9以降
+// メイリオ Windows Vista以降
+// ヒラギノ角ゴ ProN Mac OS 10.5以降、iOS
+// ヒラギノ明朝 ProN Mac OS 10.5以降、iOS6以降
+// Droid Sans Android
+// Roboto Android4以降
+
+// WindowsとMacでの共通フォント。
+// Arial
+// Arial Black
+// Comic Sans MS
+// Courier
+// Courier New
+// Georgia
+// Impact
+// Times New Roman
+// Trebuchet MS
+// Verdana
+
+// ブラウザのデフォルトフォント
+// Safari 7 / Mac 10.9 Helvetica / ヒラギノ角ゴシック ProN
+// Firefox 25 / Mac 10.9 ヒラギノ角ゴシック ProN
+// Chrome 30 / Mac 10.9 ヒラギノ角ゴシック ProN
+// IE 11 / Win 8.1 メイリオ
+// IE 8 / Win 7 Arial / ＭＳ Ｐゴシック
+// Firefox 25 / Win 8.1 ＭＳ Ｐゴシック
+// Chrome 30 / Win 8.1 ＭＳ Ｐゴシック
+
+// Androidについて
+// * 明朝体には対応していない
+// * 4.0以降ではRobotoとモトヤフォントがデフォルト、それ以前はDroid Sans（Droid Sans Japaneseも含む）
+// * HelveticaかArialを指定するとブラウザ側でDroid Sansがエイリアスとして表示される
