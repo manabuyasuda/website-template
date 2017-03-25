@@ -13,12 +13,16 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var csswring = require('csswring');
 
+// Image
+var imagemin = require('gulp-imagemin');
+
 // Iconfont
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 
 // Utility
 var cache = require('gulp-cached');
+var changed  = require('gulp-changed');
 var sourcemaps = require('gulp-sourcemaps');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
@@ -33,6 +37,7 @@ var develop = {
   'html': ['develop/**/*.pug', '!develop/**/_*.pug'],
   'data': 'develop/_data/',
   'css': 'develop/**/*.scss',
+  'image': 'develop/assets/img/**/*.{png,jpg,gif,svg}',
   'iconfont': 'develop/assets/icon/**/*.svg'
 };
 
@@ -41,6 +46,7 @@ var develop = {
  */
 var test = {
   'root': 'test/',
+  'image': 'test/assets/img/',
   'iconfont': 'test/assets/font/'
 };
 
@@ -123,6 +129,26 @@ gulp.task('css', function(){
 });
 
 /**
+ * 画像を圧縮します。
+ */
+gulp.task('image', function() {
+  return gulp.src(develop.image)
+  .pipe(changed(test.image))
+  // TODO: svgoがエラーになってしまう。
+  // https://github.com/imagemin/imagemin/issues/237
+  // .pipe(imagemin({
+  //   // jpgをロスレス圧縮（画質を落とさず、メタデータを削除）。
+  //   progressive: true,
+  //   // gifをインターレースgifにします。
+  //   interlaced: true,
+  //   // PNGファイルの圧縮率（7が最高）を指定します。
+  //   optimizationLevel: 7
+  // }))
+  .pipe(gulp.dest(test.image))
+  .pipe(browserSync.reload({stream: true}));
+});
+
+/**
  * アイコンフォントを作成します。
  * `develop/assets/icon`にSVGファイルを保存すると、
  * `test/assets/font`ディレクトリにフォントファイルが、
@@ -180,7 +206,7 @@ gulp.task('clean:release', function (cb) {
 gulp.task('build', function() {
   runSequence(
     ['iconfont'],
-    ['html', 'css']
+    ['html', 'css', 'image']
     )
 });
 
@@ -202,6 +228,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', ['build'], function() {
   gulp.watch(develop.html, ['html']);
   gulp.watch(develop.css, ['css']);
+  gulp.watch(develop.image, ['image']);
   gulp.watch(develop.iconfont, ['iconfont']);
 });
 
