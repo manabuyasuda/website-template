@@ -49,7 +49,8 @@ var develop = {
   'moduleJs': 'develop/assets/js/module/**/*.js',
   'jsWatch': 'develop/**/*.js',
   'image': 'develop/assets/img/**/*.{png,jpg,gif,svg}',
-  'iconfont': 'develop/assets/icon/**/*.svg'
+  'iconfont': 'develop/assets/icon/**/*.svg',
+  'public': 'public/**/*'
 };
 
 /**
@@ -248,6 +249,15 @@ gulp.task('styleguide', function() {
 });
 
 /**
+ * Gulpの処理を通さないディレクトリです。
+ * テスト用のディレクトリにコピーします。
+ */
+gulp.task('public', function() {
+  return gulp.src(develop.public)
+  .pipe(gulp.dest(test.root));
+});
+
+/**
  * testディレクトリを削除します。
  */
 gulp.task('clean:test', function (cb) {
@@ -267,7 +277,7 @@ gulp.task('clean:release', function (cb) {
 gulp.task('build', function() {
   runSequence(
     ['iconfont'],
-    ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image']
+    ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image', 'public']
   )
 });
 
@@ -295,6 +305,7 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(develop.jsWatch, ['moduleJs']);
   gulp.watch(develop.image, ['image']);
   gulp.watch(develop.iconfont, ['iconfont']);
+  gulp.watch(develop.public, ['public']);
 });
 
 
@@ -326,7 +337,7 @@ gulp.task('release', function() {
     ['clean:test'],
     ['clean:release'],
     ['iconfont'],
-    ['html', 'css', 'js', 'commonJs', 'moduleJs', 'image'],
+    ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image', 'public'],
     'copy'
   )
 });
