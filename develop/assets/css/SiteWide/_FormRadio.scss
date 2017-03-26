@@ -46,7 +46,7 @@ label(disabled for="radio2") ラジオボタン
 
   &:checked + label:after {
     content: "";
-    background-image: url("/assets/img/common/icon/FormRadio.svg");
+    background-image: url("/assets/img/SiteWide/Icon/FormRadio.svg");
     background-repeat: no-repeat;
     background-size: 0.5em;
     position: absolute;

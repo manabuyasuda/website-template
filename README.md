@@ -1,1 +1,78 @@
-# website-template
+# Website Template
+静的なWebサイトを作るためのテンプレートです。  
+なるべく多くの人が使えて、少しモダンな制作環境になることを目指しています。
+
+- [document/](https://github.com/manabuyasuda/website-template/tree/master/document/)
+  - [css.md](https://github.com/manabuyasuda/website-template/tree/master/document/css.md)
+  - [html.md](https://github.com/manabuyasuda/website-template/tree/master/document/html.md)
+  - [image.md](https://github.com/manabuyasuda/website-template/tree/master/document/image.md)
+  - [js.md](https://github.com/manabuyasuda/website-template/tree/master/document/js.md)
+
+## 始め方
+開発に必要なパッケージなどは以下のコマンドですべてインストールされます。クローン、またはダウンロードをしたあとに実行してください。
+
+```bash
+npm install
+```
+
+## 確認環境
+
+以下の環境で動作の確認をしています。
+
+- OS X 10.11.5(El Capitan)
+- Node.js 4.2.4
+
+## ファイル構成
+開発は`develop`ディレクトリでおこない、テスト用の一時ファイルは`test`ディレクトリに出力、公開用のファイルは`htdocs`ディレクトリに出力されます。  
+`public`ディレクトリは処理は必要ないけれど、ファビコンのようなサイト制作に必要なファイルを置きます。
+
+```
+root/
+├── README.md
+├── aigis/
+├── develop/
+│   ├── _data/
+│   ├── _include/
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── icon/
+│   │   │   └── template/
+│   │   │       ├── Icon.html
+│   │   │       └── _icon.scss
+│   │   ├── img/
+│   │   └── js/
+│   │       ├── common/
+│   │       ├── jquery-2.2.0.min.js
+│   │       └── module/
+│   └── index.pug
+├── document/
+│   ├── css.md
+│   ├── html.md
+│   ├── image.md
+│   └── js.md
+├── gulpfile.js
+├── package.json
+└── public/
+```
+
+## 開発用タスク
+以下のコマンドを実行すると、開発に必要なGulpのタスクがすべて実行されます。
+
+```bash
+npm start
+```
+
+以下のような処理がおこなわれます。
+
+- PugをHTMLにコンパイル
+- SassをCSSにコンパイル
+- JSを連結・圧縮
+- アイコンフォントの生成
+- ローカルサーバーを立ち上げて動作の確認
+- スタイルガイドの生成
+
+以下のコマンドを実行すると、本番公開用のファイルが出力されます。
+
+```bash
+npm run release
+```
