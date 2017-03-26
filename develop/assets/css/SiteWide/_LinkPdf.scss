@@ -9,9 +9,13 @@ tag: Link
 
 リンク先がPDFであることを示す場合に使います。
 
-```ejs
-<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
-<p><a class="sw-LinkPdf" href="#">PDFをダウンロードする<span class="sw-LinkPdf_Icon" aria-hidden="true"></span></a></p>
+```jade
+p
+  a.sw-Link(href="#") テキストリンクです。
+
+p
+  a.sw-LinkPdf(href="#") PDFをダウンロードする
+    span.sw-LinkPdf_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkPdf {

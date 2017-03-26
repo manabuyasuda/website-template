@@ -8,42 +8,36 @@ tag: Grid
 ---
 
 グリッドシステムです。カラムごとに任意の値を指定したい場合に使います。
-カラムの指定はutility/_col.cssのスタイルを使います。
+カラム間の余白は幅を`$st-grid-gutter`で統一しています。
 
 以下のような指定ができます。
 
-- `.u-col-8of12` カラム数の指定。
+- `.st-Grid_Item-8of12` カラム数の指定。
 - `.st-Grid-medium` ガターの指定。
 - `.st-Grid-reverse` カラムの反転。
 - `.st-Grid-center` カラムのセンタリング。
 - `.st-Grid-right` カラムの右寄せ。
 
-```ejs
-<div class="st-Grid st-Grid-medium">
-  <div class="st-Grid_Item st-Grid_Item-8of12Md">
-    <img src="https://placehold.jp/1200x800.png" alt="">
-  </div>
-  <div class="st-Grid_Item st-Grid_Item-4of12Md">
-    <img src="https://placehold.jp/600x400.png" alt="">
-  </div>
-</div>
+```jade
+.st-Grid.st-Grid-medium
+  .st-Grid_Item.st-Grid_Item-8of12Md
+    img(src="https://placehold.jp/1200x800.png" alt="")
+  .st-Grid_Item.st-Grid_Item-4of12Md
+    img(src="https://placehold.jp/600x400.png" alt="")
 
-<div class="st-Grid st-Grid-medium st-Grid-reversMd">
-  <div class="st-Grid_Item st-Grid_Item-8of12Md">
-    <img src="https://placehold.jp/1200x800.png" alt="">
-  </div>
-  <div class="st-Grid_Item st-Grid_Item-4of12Md">
-    <img src="https://placehold.jp/600x400.png" alt="">
-  </div>
-</div>
+.st-Grid.st-Grid-medium.st-Grid-reversMd
+  .st-Grid_Item.st-Grid_Item-8of12Md
+    img(src="https://placehold.jp/1200x800.png" alt="")
+  .st-Grid_Item.st-Grid_Item-4of12Md
+    img(src="https://placehold.jp/600x400.png" alt="")
 
-<div class="st-Grid st-Grid-medium st-Grid-centerMd">
-  <div class="st-Grid_Item st-Grid_Item-8of12Md">
-    <img src="https://placehold.jp/1200x800.png" alt="">
-  </div>
-</div>
+.st-Grid.st-Grid-medium.st-Grid-centerMd
+  .st-Grid_Item.st-Grid_Item-8of12Md
+    img(src="https://placehold.jp/1200x800.png" alt="")
 ```
 */
+$st-grid-gutter: 2rem;
+
 .st-Grid {
   padding-left: 0;
   list-style-type: none;
@@ -112,10 +106,10 @@ tag: Grid
  * ガターの指定。
  */
 .st-Grid-medium {
-  margin-left: -2rem;
+  margin-left: -$st-grid-gutter;
 
   & > .st-Grid_Item {
-    padding-left: 2rem;
+    padding-left: $st-grid-gutter;
   }
 }
 

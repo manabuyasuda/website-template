@@ -9,15 +9,14 @@ tag: Form
 
 `type="radio"`のデフォルトスタイルです。
 
-```ejs
-<input class="sw-FormRadio" type="radio" id="radio1" name="radio1">
-<label for="radio1">ラジオボタン</label>
+```jade
+input.sw-FormRadio(type="radio" id="radio1" name="radio1")
+label(for="radio1") ラジオボタン
+input.sw-FormRadio(type="radio" id="radio2" name="radio1")
+label(for="radio2") ラジオボタン
 
-<input class="sw-FormRadio" type="radio" id="radio2" name="radio1">
-<label for="radio2">ラジオボタン</label>
-
-<input disabled class="sw-FormRadio" type="checkbox" id="radio3" name="radio2">
-<label disabled for="radio3">ラジオボタン</label>
+input.sw-FormRadio(disabled type="radio" id="radio3" name="radio2")
+label(disabled for="radio2") ラジオボタン
 ```
 */
 .sw-FormRadio {

@@ -9,12 +9,10 @@ tag: [Link, Form]
 
 インラインで表示するラベルコンポーネントです。
 
-```ejs
-<p>
-  <span class="sw-Label">spanタグのラベルです。</span>
-  <label class="sw-Label">labelタグのラベルです。</label>
-  <a class="sw-Label" href="#">aタグのラベルです。</a>
-</p>
+```jade
+span.sw-Label spanタグのラベルです。
+label.sw-Label labelタグのラベルです。
+a.sw-Label(href="#") aタグのラベルです。
 ```
 */
 .sw-Label {

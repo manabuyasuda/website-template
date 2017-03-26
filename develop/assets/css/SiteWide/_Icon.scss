@@ -9,8 +9,9 @@ tag: Icon
 
 アイコンフォントを使ったアイコンを表示します。デフォルトでは`:before`擬似要素で表示されます。
 
-```ejs
-<p>More <span class="sw-Icon sw-Icon-linkMore" aria-hidden="true"></span></p>
+```jade
+p More
+  span.sw-Icon.sw-Icon-linkMore(aria-hidden="true")
 ```
 */
 @font-face {

@@ -9,9 +9,13 @@ tag: Link
 
 ファイルをダウンロードするためのリンクであることを示す場合に使います。
 
-```ejs
-<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
-<p><a class="sw-LinkDownload" href="#">ファイルをダウンロードする<span class="sw-LinkDownload_Icon" aria-hidden="true"></span></a></p>
+```jade
+p
+  a.sw-Link(href="#") テキストリンクです。
+
+p
+  a.sw-LinkDownload(href="#") ファイルをダウンロードする
+    span.sw-LinkDownload_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkDownload {

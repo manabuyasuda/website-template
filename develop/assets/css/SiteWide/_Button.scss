@@ -9,13 +9,11 @@ tag: [Link, Form]
 
 ボタンのデフォルトスタイルです。
 
-```ejs
-<p>
-  <a class="sw-Button" href="#">aタグボタン</a>
-  <a class="sw-Button sw-Button-disabled" href="#">aタグボタン</a>
-  <button class="sw-Button" type="button">butotnタグボタン</button>
-  <button class="sw-Button" disabled type="button">butotnタグボタン</button>
-</p>
+```jade
+a.sw-Button(href="#") aタグボタン
+a.sw-Button.sw-Button-disabled(href="#") aタグボタン
+button.sw-Button(type="button") butotnタグボタン
+button.sw-Button(disabled type="button") butotnタグボタン
 ```
 */
 .sw-Button {

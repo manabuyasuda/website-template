@@ -9,24 +9,16 @@ tag: Form
 
 `<input>`タグのデフォルトスタイルです。
 
-```ejs
-<div>
-  <input class="sw-FormInput" type="input" placeholder="デフォルト" />
-</div>
+```jade
+input.sw-FormInput(type="input" placeholder="デフォルト")
 
-<div>
-  <label class="sw-FormInput_TextTop" for="input1">inputタグの説明です
-  <input class="sw-FormInput" type="input" name="email" autocomplete="email" id="input1" placeholder="example@gmail.com" />
-</div>
+label.sw-FormInput_TextTop(for="input1") inputタグの説明です
+input.sw-FormInput(type="input" name="email" autocomplete="email" id="input1" placeholder="example@gmail.com")
 
-<div>
-  <input class="sw-FormInput" type="input" name="name" autocomplate="name" id="input2" placeholder="山田 太郎" />
-  <label class="sw-FormInput_TextBottom" for="input2">inputタグの説明です
-</div>
+input.sw-FormInput(type="input" name="name" autocomplate="name" id="input2" placeholder="山田 太郎")
+label.sw-FormInput_TextTop(for="input2") inputタグの説明です
 
-<div>
-  <input disabled class="sw-FormInput" type="input" placeholder="disabled"/ >
-</div>
+input.sw-FormInput(disabled type="input" placeholder="disabled")
 ```
 */
 .sw-FormInput {

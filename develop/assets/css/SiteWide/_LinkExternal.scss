@@ -9,9 +9,13 @@ tag: Link
 
 外部リンクであることを示す場合に使います。
 
-```ejs
-<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
-<p><a class="sw-LinkExternal" href="#">外部リンクを開く<span class="sw-LinkExternal_Icon" aria-hidden="true"></span></a></p>
+```jade
+p
+  a.sw-Link(href="#") テキストリンクです。
+
+p
+  a.sw-LinkExternal(href="#") 外部リンクを開く
+    span.sw-LinkExternal_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkExternal {

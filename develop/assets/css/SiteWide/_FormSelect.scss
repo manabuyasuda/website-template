@@ -9,22 +9,18 @@ tag: Form
 
 `<select>`タグのデフォルトスタイルです。
 
-```ejs
-<div class="sw-FormSelect">
-  <select>
-    <option value="default">選択してください</option>
-    <option value="hokkaido">北海道</option>
-    <option value="akita">秋田</option>
-  </select>
-</div>
+```jade
+.sw-FormSelect
+  select
+    option(value="default") 選択してください
+    option(value="hokkaido") 北海道
+    option(value="akita") 秋田
 
-<div class="sw-FormSelect">
-  <select disabled>
-    <option value="default">選択してください</option>
-    <option value="hokkaido">北海道</option>
-    <option value="akita">秋田</option>
-  </select>
-</div>
+.sw-FormSelect
+  select(disabled)
+    option(value="default") 選択してください
+    option(value="hokkaido") 北海道
+    option(value="akita") 秋田
 ```
 */
 .sw-FormSelect {

@@ -9,8 +9,9 @@ tag: Link
 
 テキストリンクのデフォルトスタイルです。
 
-```ejs
-<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
+```jade
+p
+  a.sw-Link(href="#") テキストリンクです。
 ```
 */
 .sw-Link {

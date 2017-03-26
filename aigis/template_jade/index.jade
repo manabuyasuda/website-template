@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title #{config.name}
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="robots" content="noindex, nofollow")
+    link(href=root + "aigis_assets/css/highlight/prism.css", rel="stylesheet")
+    link(href=root + "aigis_assets/css/theme.css", rel="stylesheet")
+    link(href="/assets/css/common.css", rel="stylesheet")
+  body
+    .aigis-container
+      include ./sidemenu
+      .aigis-contents
+        .aigis-contents__body
+          include ./components
+          footer.aigis-footer Last update at #{timestamp}
+
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+    script window.jQuery || document.write('<script src="/assets/js/jquery-2.2.0.min.js"><\/script>')
+    script(src="/assets/js/common.js")

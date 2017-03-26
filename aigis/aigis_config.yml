@@ -1,0 +1,111 @@
+# Aigisは、この設定ファイルが存在するディレクトリと同じディレクトリから実行されます。
+# すべてのパスはこのファイルを基準にする必要があります。
+
+# スタイルガイドのタイトル
+name: Styleguide
+
+# スタイルガイドを生成するソースとなるファイル（またはディレクトリ）への相対的なパスを指定します。
+source:
+  - ../develop/assets/css
+  # - ./demo.md
+# You may alternately specify multiple directories
+# 単一の指定と配列による複数指定のどちらも行えます。
+# source:
+#  - ./sass
+#  - ./sass/style.scss
+
+# The types that aigis will scan to document comment
+# aigisが解析をする対象となる拡張子を指定します。
+# sourceにディレクトリが指定された場合、aigisはsource_typeに記述されている拡張子のファイルをソースの対象にします。
+# デフォルトで.css .sass .scss .stylの4種類を対象とします。
+source_type:
+  - .scss
+  - .md
+  # - .sass
+  # - .scss
+  # - .styl
+# If you want to generate documents from markdown
+# マークダウンで生成したい場合は.mdとします。
+# source_type: .md
+
+# The directory that aigis will build to
+# スタイルガイドを出力するフォルダを指定します。
+# 指定がない場合、aigis_config.ymlのあるフォルダにstyleguideフォルダを作成して出力されます。
+dest: ../test/styleguide
+
+# The assets needed to build the docs
+# You may put doc related assets here too: images, css, etc.
+# スタイルガイドに必要なファイルやディレクトリを指定します。
+# 指定されたファイルやディレクトリはスタイルガイドの出力先にコピーされます。
+dependencies:
+  - ./aigis_assets
+  # - ../dest/assets
+
+# Index page created from markdown file
+# index: ./index.md
+
+# You can choose template engine : ejs, jade, handlebars
+# スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。
+template_engine: jade
+
+# The directory containing the tempalte files to generate pages
+# It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
+# スタイルガイドの生成に必要なテンプレートファイルが格納されているディレクトリを指定します。
+# このディレクトリにはindex.ejsとlayout.ejsの2つが含まれている必要があります。
+# template_engineにjadeを指定している場合にはindex.jade layout.jadeを、
+# hbsを指定している場合にはindex.hbs layout.hbsが必要になります。
+template_dir: ./template_jade
+
+# Aigis displays logs
+# logがtrueの場合、スタイルガイド生成の際に出力されるファイルの一覧などをコンソールに出力します。
+log: false
+
+# When you don't want color palette page (color.html) you may set false
+# aigisは、スタイルガイドのソースとなるファイルから全ての色を収集し、
+# 一覧できるようにcolor.htmlという特別なページを出力します。
+color_palette: true
+
+# コードブロックに特定のタイプが指定されている場合、
+# aigisはそのコードブロックを実際のHTMLとしてドキュメントに追加します。
+# これによってマークアップの例を示すとともにプレビューの表示も手軽に行なえます。
+# デフォルトではhtml jade ejs hbsのプレビューが有効になっています。
+transform:
+  - jade
+# - html
+#  - jade
+#  - ejs
+#  - hbs
+#  - coffee
+
+# Aigis
+# スタイルガイドを生成する際、aigisはtimestampという特別な変数をテンプレートに渡します。
+# ドキュメントの更新日を記述したい際などに役にたつかもしれません。
+# timestamp_format: 'YYYY/MM/DD HH:mm'
+
+# aigisがコードブロック(```htmlなので始まるブロック)からHTMLのプレビューを生成する際に、
+# プレビューの外側の要素につくCSSのクラス名を指定できます。
+# コンポーネントがスタイルガイドの影響を受けないようにスタイルを付けたり、
+# JavaScriptから操作したい場合などに役に立ちます。
+preview_class: aigis-preview
+
+# 外部ファイルからHTMLをドキュメントコメント内に挿入したいときに使える。
+# !![](./path/to/file.html)という構文で、インポートするファイルのパスを解決するときに使われます。
+# component_dir: ./html
+
+# 出力するページのグループを指定します。
+# categoryやtag以外にグルーピングして出力したい項目がある場合はoutput_collectionに追加します。
+output_collection:
+  - category
+  - tag
+
+# コードブロックのシンタックスハイライトを有効にするかを指定します。
+# 別のハイライトライブラリを使う場合ときなどはhighlight: falseとすることでaigisのハイライトをオフにできます。
+highlight: true
+# highlight_theme: monokai
+# lang_prefix: 'language-'
+
+# plugin directory
+# plugin: ./plugin
+
+# helper_options:
+#   disable_link_index: true

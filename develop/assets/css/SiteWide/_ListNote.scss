@@ -9,17 +9,15 @@ tag: List
 
 注釈用のリストです。米印やアスタリスクが表示されます。
 
-```ejs
-<ul class="sw-ListNote">
-  <li>1つ目の注釈です</li>
-  <li>2つ目の注釈です</li>
-</ul>
-<div lang="en">
-  <ul class="sw-ListNote">
-    <li>1つ目の注釈です</li>
-    <li>2つ目の注釈です</li>
-  </ul>
-</div>
+```jade
+ul.sw-ListNote
+  li 1つ目の注釈です
+  li 2つ目の注釈です
+
+div(lang="en")
+  ul.sw-ListNote(lang="en")
+    li 1つ目の注釈です
+    li 2つ目の注釈です
 ```
 */
 .sw-ListNote {

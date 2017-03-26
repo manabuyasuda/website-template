@@ -9,10 +9,10 @@ tag: Text
 
 `<hr>`のような区切り記号を使って、分割・グルーピングします。
 
-```ejs
-<p>テキストです。</p>
-<hr class="sw-Divider">
-<p>テキストです。</p>
+```jade
+p テキストです。
+hr.sw-Divider
+p テキストです。
 ```
 */
 .sw-Divider {

@@ -9,9 +9,13 @@ tag: Link
 
 クリックを促すようなテキストリンクに使います。
 
-```ejs
-<p><a class="sw-Link" href="#">テキストリンクです。</a></p>
-<p><a class="sw-LinkMore" href="#">詳しく見る<span class="sw-LinkMore_Icon" aria-hidden="true"></span></a></p>
+```jade
+p
+  a.sw-Link(href="#") テキストリンクです。
+
+p
+  a.sw-LinkMore(href="#") 詳しく見る
+    span.sw-LinkMore_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkMore {

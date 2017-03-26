@@ -9,12 +9,12 @@ tag: Form
 
 `type="checkbox"`のデフォルトスタイルです。
 
-```ejs
-<input class="sw-FormCheckbox" type="checkbox" id="checkbox1">
-<label for="checkbox1">チェックボックス</label>
+```jade
+input.sw-FormCheckbox(type="checkbox" id="checkbox1")
+label(for="checkbox1") チェックボックス
 
-<input disabled class="sw-FormCheckbox" type="checkbox" id="checkbox2">
-<label disabled for="checkbox2">チェックボックス</label>
+input.sw-FormCheckbox(disabled type="checkbox" id="checkbox2")
+label(disabled for="checkbox2") チェックボックス
 ```
 */
 .sw-FormCheckbox {

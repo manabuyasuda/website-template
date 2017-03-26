@@ -9,18 +9,18 @@ tag: Form
 
 `<textarea>`のデフォルトスタイルです。
 
-```ejs
-<textarea class="sw-FormTextarea" placeholder="テキストエリアです"></textarea>
+```jade
+textarea.sw-FormTextarea(placeholder="テキストエリアです")
 
-<label class="sw-FormTextarea_TextTop" for="textarea1">テキストエリアの説明</label>
-<textarea class="sw-FormTextarea" id="textarea1" placeholder="テキストエリアです"></textarea>
+label.sw-FormTextarea_TextTop(for="textarea1") テキストエリアの説明
+textarea.sw-FormTextarea(id="textarea1" placeholder="テキストエリアです")
 
-<textarea class="sw-FormTextarea" id="textarea2" placeholder="テキストエリアです"></textarea>
-<label class="sw-FormTextarea_TextTop" for="textarea2">テキストエリアの説明</label>
+textarea.sw-FormTextarea(id="textarea2" placeholder="テキストエリアです")
+label.sw-FormTextarea_TextTop(for="textarea2") テキストエリアの説明
 
-<textarea class="sw-FormTextarea sw-FormTextarea-large" id="textarea3" placeholder="テキストエリアです"></textarea>
+textarea.sw-FormTextarea.sw-FormTextarea-large(id="textarea3" placeholder="テキストエリアです")
 
-<textarea disabled class="sw-FormTextarea" id="textarea4" placeholder="テキストエリアです"></textarea>
+textarea.sw-FormTextarea(disabled id="textarea4" placeholder="テキストエリアです")
 ```
 */
 .sw-FormTextarea {

@@ -9,16 +9,13 @@ tag: List
 
 入れ子に対応した順序リストです。
 
-```ejs
-<ol class="sw-ListOrder">
-  <li>リストです。</li>
-  <li>リストです。
-    <ol>
-      <li>リストです。</li>
-      <li>リストです。</li>
-    </ol>
-  </li>
-</ol>
+```jade
+ol.sw-ListOrder
+  li リストです。
+  li リストです。
+    ol
+      li リストです。
+      li リストです。
 ```
 */
 .sw-ListOrder {
