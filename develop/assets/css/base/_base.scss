@@ -1,5 +1,25 @@
  /* #base
    -------------------------------------------------------------------------- */
+/**
+ * JavaScriptでブレイクポイントを取得するために指定しています。
+ * /assets/js/lib/breakpoint.js を参照してください。
+ */
+body:before {
+  content: "";
+  display: none;
+
+  @include mq-up(md) {
+    content: "md";
+  }
+
+  @include mq-up(lg) {
+    content: "lg";
+  }
+
+  @include mq-up(xl) {
+    content: "xl";
+  }
+}
 html {
   box-sizing: border-box;
 }
