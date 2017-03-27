@@ -128,7 +128,6 @@ gulp.task('css', function(){
     })
   ];
   return gulp.src(develop.css)
-  .pipe(cache('css'))
   // globパターンでのインポート機能を追加
   .pipe(sassGlob())
   .pipe(sourcemaps.init())
