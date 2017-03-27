@@ -2,11 +2,11 @@
 静的なWebサイトを作るためのテンプレートです。  
 なるべく多くの人が使えて、少しモダンな制作環境になることを目指しています。
 
-- [document/](https://github.com/manabuyasuda/website-template/tree/master/document/)
-  - [css.md](https://github.com/manabuyasuda/website-template/tree/master/document/css.md)
-  - [html.md](https://github.com/manabuyasuda/website-template/tree/master/document/html.md)
-  - [image.md](https://github.com/manabuyasuda/website-template/tree/master/document/image.md)
-  - [js.md](https://github.com/manabuyasuda/website-template/tree/master/document/js.md)
+- [document/](document/)
+  - [css.md](document/css.md)
+  - [html.md](document/html.md)
+  - [image.md](document/image.md)
+  - [js.md](document/js.md)
 
 ## 始め方
 開発に必要なパッケージなどは以下のコマンドですべてインストールされます。クローン、またはダウンロードをしたあとに実行してください。

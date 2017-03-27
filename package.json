@@ -11,7 +11,8 @@
     "gulp",
     "pug",
     "Sass",
-    "Aigis"
+    "Aigis",
+    "Styleguide"
   ],
   "repository": {
     "type": "git",

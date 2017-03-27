@@ -1,30 +1,30 @@
 # HTML
 HTMLは[Pug](https://pugjs.org/api/getting-started.html)を使って生成しています。  
-通常のHTMLとは構文が違いますが、共通部分などの全体の管理がしやすいところや、コーディング速度が上がったり修正がしやすいメリットがあるので採用しています。
+通常のHTMLとは構文が違いますが、共通部分などの全体の管理がしやすいところや、コーディング速度や修正がしやすいメリットがあるので採用しています。
 
 インデントにスペースやタブが混ざるとエラーになってしまうので、.editorconfigを設定することで解決しています。お使いのエディターで.editorconfigの設定が反映されるように設定してください。
 
 ## ディレクトリ構造
 Pugは`develop/`以下にある`index.pug`などがコンパイルされ、`index.html`などになります。  
-`_include/`は共通部分など、`_data/`はサイトやページ単位で使うデータを保存します。
+`_include/`は共通部分など、`_data/`はサイトやページ単位で使うデータを保存します。`_index.pug`のようにアンダースコアから始まるファイルは直接出力されません。
 
 ```
 develop
-├── _data // Pugで参照できるデータ
+├── _data/ // Pugで参照できるデータ
 │   └── site.json // サイト共通のデータ
-├── _include // 共通部分などを管理するディレクトリ
+├── _include/ // 共通部分などを管理するディレクトリ
 │   ├── _footer.pug
 │   ├── _header.pug
 │   ├── _layout.pug
 │   ├── _meta.pug
 │   └── _script.pug
-├── about // アバウトディレクトリ
+├── about/ // アバウトディレクトリ
 │   └── index.pug
 └── index.pug トップページ
 ```
 
 ### index.pug
-ページの作成をする場合は、通常のHTMLと同じく、`index.pug`や`about/index.pug`のように作成します。
+ページの作成をする場合は、通常のHTMLと同じで`index.pug`や`about/index.pug`のように作成します。
 
 `index.pug`は以下のような構成になっています。
 
@@ -45,17 +45,16 @@ append variables
 
 block content
   p #{pageRootPath}
-
 ```
 
-`append variables`以下では`var`に続く変数を変更することができます。
+`append variables`以下では`var`に続く変数を変更することで出力される内容を変えることができます。
 
 - `pageTitle`：そのページのタイトルを記述します。空にするとサイトのタイトルが、文字列を記述するとページタイトルとサイトタイトルの両方が出力されます。
 - `pageDescription`：そのページの概要を記述します。初期値として`site.description`<sup>*1</sup>がセットしてあるので、サイト共通の概要が出力されます。
-- `pageKeywords`：そのページのキーワードを記述します。初期値として`site.keywords`<sup>*1</sup>がセットしてあるので、サイト共通の概要が出力されます。
+- `pageKeywords`：そのページのキーワードを記述します。初期値として`site.keywords`<sup>*1</sup>がセットしてあるので、サイト共通のキーワードが出力されます。
 - `pageOgpTitle`：OGPで使用するタイトルを記述します。ページのタイトルと同じ場合は変数`pageTitle`を記述、違う場合は文字列で入力してください。
-- `pageOgpImage`：OGPで使用する画像へのパスをhttpを含んだ絶対パスで記述します。サイト共通の画像を指定する場合は`site.ogpImage`のままにしておきます。
-- `pageLang`：そのページ全体の言語を記述します。
+- `pageOgpImage`：OGPで使用する画像へのパスを、http(s)を含んだ絶対パスで記述します。サイト共通の画像を指定する場合は`site.ogpImage`のままにしておきます。
+- `pageLang`：そのページ全体の言語を記述します。`<html>`タグに反映されます。
 - `pageOgpType`：そのページの種類を記述します。サイトトップページは`website`、それ以外は`article`を指定します。
 
 *1 `develop/_data/site.json`を参照してください
@@ -80,8 +79,8 @@ block content
 `develop/_include/`にはサイトの共通部分が保存されています。
 
 ```
-develop
-├── _include // 共通部分などを管理するディレクトリ
+develop/
+├── _include/ // 共通部分などを管理するディレクトリ
 │   ├── _footer.pug
 │   ├── _header.pug
 │   ├── _layout.pug
@@ -110,11 +109,13 @@ html(lang=pageLang)
     include /_include/_footer
 ```
 
-`include /_include/_header`の部分がインクルードしている箇所です。必要に応じて、追加や削除をしてください。
+`include /_include/_header`などの部分がインクルードしている箇所です。必要に応じて、追加や削除をしてください。パスはルート相対パスで指定していきます。
 
 #### _meta.pug
 `_meta.pug`は`<head>`タグ内にあるメタタグをまとめて管理するためのファイルです。  
 変更する可能性のある箇所が4つあります。
+
+初期値ではページタイトルとサイトタイトルは` | `で区切られています。` - `のようにしたい場合などは変更してください。
 
 ```js
 if pageTitle
@@ -128,14 +129,14 @@ else
   meta(property="og:title" content=site.name)
 ```
 
-初期値ではページタイトルとサイトタイトルは` | `で区切られています。` - `のようにしたい場合などは変更してください。
+CSSを読み込んでいます。`common.css`のファイル名を変えたい場合は変更してください。
 
 ```js
 block css
   link(rel="stylesheet" href="/assets/css/common.css")
 ```
 
-CSSを読み込んでいます。`common.css`のファイル名を変えたい場合は変更してください。
+OGPタグを記述しています。アカウントのIDを記述したり、必要がない場合は削除してください。
 
 ```js
 //- OGP Facebook insights
@@ -149,7 +150,6 @@ meta(name="twitter:site" content="@")
 //- /OGP Twitter Cards
 ```
 
-OGPタグを記述しています。アカウントのIDを記述したり、必要がない場合は削除してください。
 
 #### _script.pug
 `_script.pug`ではJavaScriptを読み込むための記述があります。ファイル名を変えたり、読み込みファイルを増やしたい場合は変更してください。
@@ -163,7 +163,7 @@ block js
 ```
 
 #### _header.pugや_footer.pugなど
-グローバルヘッダーやグローバルフッターなどを保存するファイルがあります。適宜、変更や追加をしてください。例えば、Google Analyticsのためのファイルを追加してもいいでしょう。
+グローバルヘッダーやグローバルフッターなどを保存するファイルがあります。変更や追加をしてください。例えば、Google Analyticsのためのファイルとして`_ga.pug`を追加してもいいでしょう。
 
 ### _data
 `develop/_data/`はPugから参照できるデータを保存しています。

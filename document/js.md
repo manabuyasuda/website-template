@@ -1,5 +1,5 @@
 # JavaScript
-JavaScriptはGulpで連結と圧縮だけをしています。
+JavaScriptはGulpで連結と圧縮の処理だけをしています。
 
 ## ディレクトリ構成
 JavaScriptは3つ大きくわけられます。
@@ -8,19 +8,19 @@ JavaScriptは3つ大きくわけられます。
 2. common
 3. module
 
-JQueryは`js/`にそのまま出力されます。  
+JQueryは`test/assets/js/`にそのまま出力されます。  
 commonはサイト全体で使われるものを保存します。  
 moduleはECSSの考えをベースに使われる場所や状況ごとにディレクトリをわけて、さらにModuleごとにファイルをわけます。
 
 ```
-js
-├── common
+js/
+├── common/
 │   ├── breakpoint.js
 │   ├── debounce.js
 │   ├── jquery.matchHeight-min.js
 │   └── throttle.js
 ├── jquery-2.2.0.min.js
-└── module
+└── module/
 ```
 
 ファイルはすべて、`test/assets/js/`に出力されます。
