@@ -84,8 +84,8 @@ gulp.task('html', function() {
   // エラーでタスクを止めない
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(data(function(file) {
-    // 各ページごとの`/`を除いたルート相対パスを取得します。
-    locals.relativePath = path.relative(file.base, file.path.replace(/.pug$/, '.html'));
+    // 各ページのルート相対パスを取得します。
+    locals.pageRootPath = '/' + path.relative(file.base, file.path.replace(/.pug$/, '.html')).replace(/index\.html$/, '');
       return locals;
   }))
   .pipe(cache('html'))

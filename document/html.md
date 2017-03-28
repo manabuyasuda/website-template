@@ -40,8 +40,6 @@ append variables
   - var pageOgpImage= site.ogpImage;
   - var pageLang= "ja";
   - var pageOgpType= "website";
-  //- 変更不可
-  - var pageRootPath= '/' + relativePath;
 
 block content
   p #{pageRootPath}
@@ -59,14 +57,16 @@ block content
 
 *1 `develop/_data/site.json`を参照してください
 
-`pageRootPath`には、そのページのルート相対パスが格納されています。
+`pageRootPath`には、そのページのルート相対パスが格納されています。`index.html`は`/`に置換されています。
 
-- `develop/index.pug`：`/index.html`
-- `develop/about/index.pug`：`/about/index.html`
+- `/index.pug` => `/`
+- `/about.pug` => `/about.html`
+- `/page/index.pug` => `/page/`
+- `/page/page.pug` => `/page/page.html`
 
 `site.rootUrl`にはサイトのドメインが格納されているので以下のように記述すると、ページごとの絶対パスを出力することができます。
 
-`#{site.rootUrl}#{pageRootPath}`：`http://example.com/index.html`
+`#{site.rootUrl}#{pageRootPath}`：`http://example.com/`
 
 コンテンツは`block content`の下に記述していきます。後述する`_layout.pug`でヘッダーやフッターなどの共通部分は自動で出力されます。
 
@@ -105,8 +105,8 @@ html(lang=pageLang)
 
     block content
 
-    include /_include/_script
     include /_include/_footer
+    include /_include/_script
 ```
 
 `include /_include/_header`などの部分がインクルードしている箇所です。必要に応じて、追加や削除をしてください。パスはルート相対パスで指定していきます。
