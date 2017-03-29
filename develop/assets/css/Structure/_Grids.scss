@@ -12,21 +12,17 @@ tag: Grid
 
 以下のような指定ができます。
 
-- 1/2から1/4までの均等なカラム指定。
-- ブレイクポイントなしから、`-md`、`-lg`での指定。
+- 1/2から1/5までの均等なカラム指定。
+- ブレイクポイント（`.st-Grids-col*Md`、`.st-Grids-col*Lg`）の指定。
 
 ```jade
-.st-Grids.st-Grids-col3.st-Grids-medium(style="margin-bottom: 3rem;")
+.st-Grids.st-Grids-col2Md.st-Grids-col3Lg
   .st-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
   .st-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
   .st-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
-  .st-Grids_Item
-    img(src="https://placehold.jp/600x400.png" alt="")
-
-.st-Grids.st-Grids-col2Md.st-Grids-col3Lg.st-Grids-medium
   .st-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
   .st-Grids_Item
@@ -41,6 +37,7 @@ $st-grids-gutter: 2rem;
 $st-grids-margin: 2rem;
 
 .st-Grids {
+  margin-left: -$st-grids-gutter;
   padding-left: 0;
   list-style-type: none;
   display: block;
@@ -50,161 +47,164 @@ $st-grids-margin: 2rem;
 .st-Grids_Item {
   display: inline-block;
   width: 100%;
+  padding-left: $st-grids-gutter;
   font-size: medium;
   font-size: 1rem;
   vertical-align: top;
 }
 
-/**
- * ガターの指定。
- */
-.st-Grids-medium {
-  margin-left: -$st-grids-gutter;
-
-  & > .st-Grids_Item {
-    padding-left: $st-grids-gutter;
+/* 1 Column */
+.st-Grids_Item {
+  &:nth-of-type(n+2) {
+    margin-top: $st-grids-margin;
   }
 }
 
-[class*="st-Grids-col"] > .st-Grids_Item >:last-child {
-  margin-bottom: 0;
-}
-
-/**
- * 2カラムレイアウト。
- */
+/* 2 Columns */
 .st-Grids-col2 > .st-Grids_Item {
-  width: percentage(6 / 12);
+  width: percentage(1 / 2);
 
+  /**
+   * いったんすべての`margin-top`をリセットします。
+   * `:nth-of-type(n+1)`は1つ目以降のすべての要素に適応されます。
+   * リセット後に対象となる要素に`margin-top`を指定します。
+   */
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
   &:nth-of-type(n+3) {
     margin-top: $st-grids-margin;
   }
 }
-.st-Grids-col2Md > .st-Grids_Item,
-.st-Grids-col2Lg > .st-Grids_Item {
-  margin-top: $st-grids-margin;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
-}
 @include mq-up(md) {
   .st-Grids-col2Md > .st-Grids_Item {
-    width: percentage(6 / 12);
+    width: percentage(1 / 2);
 
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
     &:nth-of-type(n+3) {
       margin-top: $st-grids-margin;
-    }
-
-    &:nth-of-type(2) {
-      margin-top: 0;
     }
   }
 }
 @include mq-up(lg) {
   .st-Grids-col2Lg > .st-Grids_Item {
-    width: percentage(6 / 12);
+    width: percentage(1 / 2);
 
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
     &:nth-of-type(n+3) {
       margin-top: $st-grids-margin;
-    }
-
-    &:nth-of-type(2) {
-      margin-top: 0;
     }
   }
 }
 
-/**
- * 3カラムレイアウト。
- */
+/* 3 Columns */
 .st-Grids-col3 > .st-Grids_Item {
-  width: percentage(4 / 12);
+  width: percentage(1 / 3);
 
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
   &:nth-of-type(n+4) {
     margin-top: $st-grids-margin;
   }
 }
-.st-Grids-col3Md > .st-Grids_Item,
-.st-Grids-col3Lg > .st-Grids_Item {
-  margin-top: $st-grids-margin;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
-}
 @include mq-up(md) {
   .st-Grids-col3Md > .st-Grids_Item {
-    width: percentage(4 / 12);
+    width: percentage(1 / 3);
 
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
     &:nth-of-type(n+4) {
       margin-top: $st-grids-margin;
-    }
-
-    &:nth-of-type(2),
-    &:nth-of-type(3) {
-      margin-top: 0;
     }
   }
 }
 @include mq-up(lg) {
   .st-Grids-col3Lg > .st-Grids_Item {
-    width: percentage(4 / 12);
+    width: percentage(1 / 3);
 
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
     &:nth-of-type(n+4) {
       margin-top: $st-grids-margin;
-    }
-
-    &:nth-of-type(2),
-    &:nth-of-type(3) {
-      margin-top: 0;
     }
   }
 }
 
-/**
- * 4カラムレイアウト。
- */
+/* 4 Columns */
 .st-Grids-col4 > .st-Grids_Item {
-  width: percentage(3 / 12);
+  width: percentage(1 / 4);
 
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
   &:nth-of-type(n+5) {
     margin-top: $st-grids-margin;
   }
 }
-.st-Grids-col3.st-Grids-col4Md > .st-Grids_Item,
-.st-Grids-col3.st-Grids-col4Lg > .st-Grids_Item {
-  &:nth-of-type(3) {
-    margin-top: 0;
-  }
-}
 @include mq-up(md) {
   .st-Grids-col4Md > .st-Grids_Item {
-    width: percentage(3 / 12);
+    width: percentage(1 / 4);
 
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
     &:nth-of-type(n+5) {
       margin-top: $st-grids-margin;
-    }
-
-    &:nth-of-type(2),
-    &:nth-of-type(3),
-    &:nth-of-type(4) {
-      margin-top: 0;
     }
   }
 }
 @include mq-up(lg) {
   .st-Grids-col4Lg > .st-Grids_Item {
-    width: percentage(3 / 12);
+    width: percentage(1 / 4);
 
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
     &:nth-of-type(n+5) {
       margin-top: $st-grids-margin;
     }
+  }
+}
 
-    &:nth-of-type(2),
-    &:nth-of-type(3),
-    &:nth-of-type(4) {
+/* 5 Columns */
+.st-Grids-col5 > .st-Grids_Item {
+  width: percentage(1 / 5);
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+6) {
+    margin-top: $st-grids-margin;
+  }
+}
+@include mq-up(md) {
+  .st-Grids-col5Md > .st-Grids_Item {
+    width: percentage(1 / 5);
+
+    &:nth-of-type(n+1) {
       margin-top: 0;
+    }
+    &:nth-of-type(n+6) {
+      margin-top: $st-grids-margin;
+    }
+  }
+}
+@include mq-up(lg) {
+  .st-Grids-col5Lg > .st-Grids_Item {
+    width: percentage(1 / 5);
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+6) {
+      margin-top: $st-grids-margin;
     }
   }
 }
