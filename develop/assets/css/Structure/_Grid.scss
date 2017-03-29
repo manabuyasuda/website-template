@@ -13,25 +13,24 @@ tag: Grid
 以下のような指定ができます。
 
 - `.st-Grid_Item-8of12` カラム数の指定。
-- `.st-Grid-medium` ガターの指定。
 - `.st-Grid-reverse` カラムの反転。
 - `.st-Grid-center` カラムのセンタリング。
-- `.st-Grid-right` カラムの右寄せ。
+- `.st-Grid-middle` カラムの垂直配置。
 
 ```jade
-.st-Grid.st-Grid-medium
+.st-Grid
   .st-Grid_Item.st-Grid_Item-8of12Md
     img(src="https://placehold.jp/1200x800.png" alt="")
   .st-Grid_Item.st-Grid_Item-4of12Md
     img(src="https://placehold.jp/600x400.png" alt="")
 
-.st-Grid.st-Grid-medium.st-Grid-reversMd
+.st-Grid.st-Grid-reversMd
   .st-Grid_Item.st-Grid_Item-8of12Md
     img(src="https://placehold.jp/1200x800.png" alt="")
   .st-Grid_Item.st-Grid_Item-4of12Md
     img(src="https://placehold.jp/600x400.png" alt="")
 
-.st-Grid.st-Grid-medium.st-Grid-centerMd
+.st-Grid.st-Grid-centerMd
   .st-Grid_Item.st-Grid_Item-8of12Md
     img(src="https://placehold.jp/1200x800.png" alt="")
 ```
@@ -39,6 +38,7 @@ tag: Grid
 $st-grid-gutter: 2rem;
 
 .st-Grid {
+  margin-left: -$st-grid-gutter;
   padding-left: 0;
   list-style-type: none;
   display: block;
@@ -48,6 +48,7 @@ $st-grid-gutter: 2rem;
 .st-Grid_Item {
   display: inline-block;
   width: 100%;
+  padding-left: $st-grid-gutter;
   font-size: medium;
   font-size: 1rem;
   vertical-align: top;
@@ -103,21 +104,20 @@ $st-grid-gutter: 2rem;
 }
 
 /**
- * ガターの指定。
- */
-.st-Grid-medium {
-  margin-left: -$st-grid-gutter;
-
-  & > .st-Grid_Item {
-    padding-left: $st-grid-gutter;
-  }
-}
-
-/**
  * 要素の垂直位置を真ん中寄せ。
  */
-.st-Grid--middle > .st-Grid_Item {
+.st-Grid-middle > .st-Grid_Item {
   vertical-align: middle;
+}
+@include mq-up(md) {
+  .st-Grid-middleMd > .st-Grid_Item {
+    vertical-align: middle;
+  }
+}
+@include mq-up(lg) {
+  .st-Grid-middleLg > .st-Grid_Item {
+    vertical-align: middle;
+  }
 }
 
 /**
@@ -125,6 +125,16 @@ $st-grid-gutter: 2rem;
  */
 .st-Grid--bottom > .st-Grid_Item {
   vertical-align: bottom;
+}
+@include mq-up(md) {
+  .st-Grid-bottomMd > .st-Grid_Item {
+    vertical-align: bottom;
+  }
+}
+@include mq-up(lg) {
+  .st-Grid-bottomLg > .st-Grid_Item {
+    vertical-align: bottom;
+  }
 }
 
 /**
