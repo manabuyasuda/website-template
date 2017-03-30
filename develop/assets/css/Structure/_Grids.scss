@@ -7,7 +7,8 @@ category: Structure
 tag: Grid
 ---
 
-グリッドシステムです。1/2や1/3のような均等なカラムを指定できます。
+グリッドシステムです。1/2や1/3のような均等なカラムや、8/12と4/12のようなよく使うカラムの指定ができます。
+いずれも親要素である`.st-Grids`に追加で指定していきます。
 
 カラム間の余白は幅を`$st-grids-gutter`、高さを`$st-grids-margin`で統一しています。
 
@@ -16,9 +17,22 @@ tag: Grid
 以下のような指定ができます。
 
 - 1/2から1/5までの均等なカラム指定。
+- 8/12と4/12のようなカラム指定。
 - ブレイクポイント（`.st-Grids-col*Md`、`.st-Grids-col*Lg`）の指定。
 
 ```jade
+.st-Grids.st-Grids-col8to4Md
+  .st-Grids_Item
+    img(src="https://placehold.jp/1200x800.png" alt="")
+  .st-Grids_Item
+    img(src="https://placehold.jp/600x400.png" alt="")
+
+.st-Grids.st-Grids-col8to4Md.st-Grids-reversMd
+  .st-Grids_Item
+    img(src="https://placehold.jp/1200x800.png" alt="")
+  .st-Grids_Item
+    img(src="https://placehold.jp/600x400.png" alt="")
+
 .st-Grids.st-Grids-col2Md
   .st-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
@@ -214,6 +228,204 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
+      margin-top: $st-grids-margin;
+    }
+  }
+}
+
+/**
+ * `.st-Grids_Item`の表示順を逆にします。
+ * A,B → B,A
+ */
+.st-Grids-reverse {
+  text-align: left;
+  direction: rtl;
+
+  & > .st-Grids_Item {
+    text-align: left;
+    direction: ltr;
+  }
+}
+@include mq-up(md) {
+  .st-Grids-reversMd {
+    text-align: left;
+    direction: rtl;
+
+    & > .st-Grids_Item {
+      text-align: left;
+      direction: ltr;
+    }
+  }
+}
+@include mq-up(lg) {
+  .st-Grids-reverseLg {
+    text-align: left;
+    direction: rtl;
+
+    & > .st-Grids_Item {
+      text-align: left;
+      direction: ltr;
+    }
+  }
+}
+
+/* 8/12, 4/12 */
+.st-Grids-col8to4 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(8 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(4 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-margin;
+  }
+}
+@include mq-up(md) {
+  .st-Grids-col8to4Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(8 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(4 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-margin;
+    }
+  }
+}
+@include mq-up(lg) {
+  .st-Grids-col8to4Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(8 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(4 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-margin;
+    }
+  }
+}
+
+/* 7/12, 5/12 */
+.st-Grids-col7to5 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(7 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(5 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-margin;
+  }
+}
+@include mq-up(md) {
+  .st-Grids-col7to5Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(7 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(5 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-margin;
+    }
+  }
+}
+@include mq-up(lg) {
+  .st-Grids-col7to5Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(7 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(5 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-margin;
+    }
+  }
+}
+
+/* 9/12, 3/12 */
+.st-Grids-col9to3 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(9 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(3 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-margin;
+  }
+}
+@include mq-up(md) {
+  .st-Grids-col9to3Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(9 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(3 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-margin;
+    }
+  }
+}
+@include mq-up(lg) {
+  .st-Grids-col9to3Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(9 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(3 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
       margin-top: $st-grids-margin;
     }
   }
