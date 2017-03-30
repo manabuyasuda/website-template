@@ -8,7 +8,10 @@ tag: Grid
 ---
 
 グリッドシステムです。1/2や1/3のような均等なカラムを指定できます。
+
 カラム間の余白は幅を`$st-grids-gutter`、高さを`$st-grids-margin`で統一しています。
+
+`.st-Grids`同士が同じ階層にある場合は間に余白がつきます。
 
 以下のような指定ができます。
 
@@ -16,11 +19,13 @@ tag: Grid
 - ブレイクポイント（`.st-Grids-col*Md`、`.st-Grids-col*Lg`）の指定。
 
 ```jade
-.st-Grids.st-Grids-col2Md.st-Grids-col3Lg
+.st-Grids.st-Grids-col2Md
   .st-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
   .st-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
+
+.st-Grids.st-Grids-col2.st-Grids-col3Md
   .st-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
   .st-Grids_Item
@@ -42,6 +47,11 @@ $st-grids-margin: 2rem;
   list-style-type: none;
   display: block;
   font-size: 0;
+
+  /* 同じ階層にある`.st-Grids`同士の間に余白を入れます。 */
+  &:not(:first-of-type) {
+    margin-top: $st-grids-margin;
+  }
 }
 
 .st-Grids_Item {
