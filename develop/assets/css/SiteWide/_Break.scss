@@ -1,0 +1,35 @@
+ /* #Break
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: Break
+category: SiteWide
+tag: Text
+---
+
+`<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
+
+```jade
+p 常に改行
+  br
+  | されます
+p ブレイクポイント以降は改行
+  br.sw-BreakMd
+  | されません
+```
+*/
+.sw-Break {
+  display: none;
+}
+
+.sw-BreakMd {
+  @include mq-up(md) {
+    display: none;
+  }
+}
+
+.sw-BreakLg {
+  @include mq-up(lg) {
+    display: none;
+  }
+}
