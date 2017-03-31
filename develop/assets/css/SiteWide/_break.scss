@@ -14,7 +14,7 @@ p 常に改行
   br
   | されます
 p ブレイクポイント以降は改行
-  br.sw-Break-md
+  br.sw-BreakMd
   | されません
 ```
 */
@@ -22,13 +22,13 @@ p ブレイクポイント以降は改行
   display: none;
 }
 
-.sw-Break-md {
+.sw-BreakMd {
   @include mq-up(md) {
     display: none;
   }
 }
 
-.sw-Break-lg {
+.sw-BreakLg {
   @include mq-up(lg) {
     display: none;
   }
