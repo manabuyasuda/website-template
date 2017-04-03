@@ -120,6 +120,9 @@
     font-weight: normal;
     line-height: 1em;
 }
+.aigis-sidemenu__heading + .aigis-sidemenu__heading {
+  margin-top: 22px;
+}
 .aigis-sidemenu__heading a {
     color: inherit;
     text-decoration: none;
@@ -331,6 +334,37 @@
     font-size: 24px;
 }
 
+.aigis-iconfont__items {
+  margin: 0;
+  margin-left: -0.5em;
+  padding: 0;
+  font-size: 0;
+}
+.aigis-iconfont__item {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 0.5em;
+  padding-left: 0.5em;
+  font-size: 1rem;
+  background: #fff;
+}
+.aigis-iconfont__inner {
+  padding: 1em;
+  text-align: center;
+}
+.aigis-iconfont__icon {
+  font-size: 2em;
+}
+.aigis-iconfont__name {
+  display: block;
+  background-color: #fff;
+}
+@media screen and (min-width: 1000px) {
+  .aigis-iconfont__item {
+    width: 20%;
+  }
+}
+
 
 @media screen and (min-width: 768px) {
   .aigis-contents__body {
@@ -346,3 +380,5 @@
     width: 220px;
   }
 }
+
+

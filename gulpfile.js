@@ -229,11 +229,11 @@ gulp.task('iconfont', function() {
     .pipe(consolidate('lodash', options))
     // Sassファイルの生成するパスを指定します。
     .pipe(gulp.dest('develop/assets/css/SiteWide/'));
-    // アイコンフォントのサンプルHTMLを生成します。
-    gulp.src('develop/assets/icon/template/Icon.html')
+
+    // スタイルガイドとして作成するSassファイルを指定します。
+    gulp.src('develop/assets/icon/template/_IconList.scss')
     .pipe(consolidate('lodash', options))
-    // アイコンフォントのサンプルHTMLを生成するパスを指定します。
-    .pipe(gulp.dest('test/styleguide/'))
+    .pipe(gulp.dest('develop/assets/css/styleguide/'));
   })
   // fontファイルを出力するパスを指定します。
   .pipe(gulp.dest(test.iconfont));
