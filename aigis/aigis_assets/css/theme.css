@@ -198,10 +198,13 @@
     background-color: #00c655;
 }
 .aigis-tags.aigis-tagList {
+  padding-top: 0;
     padding-left: 10px;
 }
 
 .aigis-moduleList {
+  margin-bottom: 2rem;
+  padding-left: 1.5em;
     font-size: 16px;
     line-height: 1.6;
 }
@@ -215,6 +218,7 @@
 
 .aigis-module__heading {
     position: relative;
+    margin-bottom: 2rem;
     padding-bottom: 0.3em;
     border-bottom: 1px solid #eee;
     font-size: 1.75em;
@@ -237,10 +241,10 @@
 
 .aigis-module__filepath {
     display: block;
-    margin-top: -15px;
-    color: #adadad;
+    margin-top: -2em;
+    color: #888;
     font-size: 12px;
-    text-align: right;
+    /*text-align: right;*/
 }
 
 .aigis-colorPalette {
@@ -265,6 +269,12 @@
     font-family: "Helvetica Neue",Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
     font-size: 1rem;
 }*/
+
+.aigis-module > p:not(:last-child),
+.aigis-module > ul:not(:last-child),
+.aigis-module > ol:not(:last-child) {
+  margin-bottom: 1em;
+}
 
 .aigis-module > ul code,
 .aigis-module > p code,
