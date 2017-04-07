@@ -11,7 +11,7 @@ var sass = require('gulp-sass')
 var sassGlob = require('gulp-sass-glob');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
-var csswring = require('csswring');
+var cleanCSS = require('gulp-clean-css');
 
 // JS
 var concat = require('gulp-concat');
@@ -120,11 +120,6 @@ gulp.task('css', function(){
         // Android4.4以上
         'Android >= 4.4'
       ]
-    }),
-    // ホワイトスペースや省略可能なコードの削除（最適化）
-    csswring({
-      // CSSハックを削除しないようにする
-      preserveHacks: true
     })
   ];
   return gulp.src(develop.css)
@@ -136,6 +131,7 @@ gulp.task('css', function(){
   }).on('error', sass.logError))
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(postcss(plugins))
+  .pipe(cleanCSS())
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(test.root))
   .pipe(browserSync.reload({stream: true}));

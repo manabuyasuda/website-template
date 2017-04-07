@@ -4,7 +4,7 @@ CSSは[Sass](http://sass-lang.com/)を使って生成しています。
 
 - gulp-sass-glob：（`**/*`のような）Globパターンを使った@import
 - autoprefixer：ベンダープレフィックスの付与
-- csswring：スペースの削除や省略可能なコードの削除
+- clean-css：スペースの削除や省略可能なコードの削除（最適化）
 
 ## CSS設計手法
 CSSは[ECSS](http://ecss.io/)をベースにしています。特徴としては、グローバルなModuleを最小限にすること、使う場所や状況によって名前空間をつくることで影響範囲を意図的に狭くすることです。  
