@@ -27,33 +27,22 @@ label(disabled for="checkbox2") チェックボックス
   }
 
   & + label:before {
+    $size: 1em;
     content: "";
-    position: relative;
+    width: $size;
+    height: $size;
     display: inline-block;
-    vertical-align: middle;
-    top: -0.1em;
-    left: 0;
-    width: 1em;
-    height: 1em;
-    margin: auto;
     margin-right: 0.25em;
-    border: 1px solid #d0d0d0;
-    border-radius: $form-border-radius;
-    background-color: #fff;
+    vertical-align: text-bottom;
+    background-image: url("/assets/img/SiteWide/Icon/FormCheckbox_off.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
-  &:checked + label:after {
+  &:checked + label:before {
     content: "";
-    background-image: url("/assets/img/SiteWide/Icon/FormCheckbox.svg");
+    background-image: url("/assets/img/SiteWide/Icon/FormCheckbox_on.svg");
     background-repeat: no-repeat;
-    background-size: 1em;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 1em;
-    height: 1em;
   }
 
   &:disabled,

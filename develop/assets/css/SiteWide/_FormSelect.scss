@@ -16,7 +16,7 @@ tag: Form
     option(value="hokkaido") 北海道
     option(value="akita") 秋田
 
-.sw-FormSelect
+.sw-FormSelect.is-disabled
   select(disabled)
     option(value="default") 選択してください
     option(value="hokkaido") 北海道
@@ -40,30 +40,36 @@ tag: Form
   }
 
   &:after {
+    $size: 1em;
     content: "";
     background-image: url("/assets/img/SiteWide/Icon/FormSelect.svg");
     background-repeat: no-repeat;
-    background-size: 1em;
+    background-size: contain;
+    background-position: center;
     position: absolute;
     top: 0;
     right: 1em;
     bottom: 0;
     margin: auto;
-    width: 1em;
-    height: 1em;
+    width: $size;
+    height: $size;
     pointer-events: none;
+  }
+
+  &.is-disabled:after {
+    opacity: $form-disabled-opacity;
   }
 
   & > select {
     width: 100%;
     height: 2.5em;
-    padding: 0 2em 0 1em;
+    padding: 0 3em 0 1em;
     font-size: 1em;
     line-height: 1;
     vertical-align: middle;
     border: 1px solid #d0d0d0;
     background-color: #fff;
-    box-shadow:1px 1px 6px -3px #9e9e9e inset;
+    box-shadow: 1px 1px 6px -3px #9e9e9e inset;
     border-radius: $form-border-radius;
     appearance: none;
   }
