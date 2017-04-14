@@ -49,6 +49,7 @@ var develop = {
   'moduleJs': 'develop/assets/js/module/**/*.js',
   'jsWatch': 'develop/**/*.js',
   'image': 'develop/assets/img/**/*.{png,jpg,gif,svg}',
+  'imageWatch': 'develop/assets/img/**/*',
   'iconfont': 'develop/assets/icon/**/*.svg',
   'public': 'public/**/*'
 };
@@ -183,16 +184,22 @@ gulp.task('moduleJs', function() {
 gulp.task('image', function() {
   return gulp.src(develop.image)
   .pipe(changed(test.image))
-  // TODO: svgoがエラーになってしまう。
+  // TODO: gulp-imageminのv3.2.0だとエラーが起きてしまうので、v2.4.0で固定しています。
   // https://github.com/imagemin/imagemin/issues/237
-  // .pipe(imagemin({
-  //   // jpgをロスレス圧縮（画質を落とさず、メタデータを削除）。
-  //   progressive: true,
-  //   // gifをインターレースgifにします。
-  //   interlaced: true,
-  //   // PNGファイルの圧縮率（7が最高）を指定します。
-  //   optimizationLevel: 7
-  // }))
+  .pipe(plumber({
+    errorHandler: function(err) {
+      console.log(err.messageFormatted);
+      this.emit('end');
+    }
+  }))
+  .pipe(imagemin({
+    // jpgをロスレス圧縮（画質を落とさず、メタデータを削除）。
+    progressive: true,
+    // gifをインターレースgifにします。
+    interlaced: true,
+    // PNGファイルの圧縮率（7が最高）を指定します。
+    optimizationLevel: 7
+  }))
   .pipe(gulp.dest(test.image))
   .pipe(browserSync.reload({stream: true}));
 });
@@ -298,7 +305,7 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(develop.jsWatch, ['js']);
   gulp.watch(develop.jsWatch, ['commonJs']);
   gulp.watch(develop.jsWatch, ['moduleJs']);
-  gulp.watch(develop.image, ['image']);
+  gulp.watch(develop.imageWatch, ['image']);
   gulp.watch(develop.iconfont, ['iconfont']);
   gulp.watch(develop.public, ['public']);
 });
