@@ -10,15 +10,19 @@ tag: Form
 `type="checkbox"`のデフォルトスタイルです。
 
 ```jade
-input.sw-FormCheckbox(type="checkbox" id="checkbox1")
+input.sw-FormCheckbox(type="checkbox" id="checkbox1" checked)
 label(for="checkbox1") チェックボックス
 
-input.sw-FormCheckbox(disabled type="checkbox" id="checkbox2")
-label(disabled for="checkbox2") チェックボックス
+input.sw-FormCheckbox(type="checkbox" id="checkbox2")
+label(for="checkbox2") チェックボックス
+
+input.sw-FormCheckbox(disabled type="checkbox" id="checkbox3")
+label(disabled for="checkbox3") チェックボックス
 ```
 */
 .sw-FormCheckbox {
-  display: none;
+  /* デフォルトのチェックボックスを非表示にする。 */
+  @include sr-only();
 
   & + label {
     position: relative;
@@ -27,16 +31,21 @@ label(disabled for="checkbox2") チェックボックス
   }
 
   & + label:before {
-    $size: 1em;
     content: "";
+    display: inline-block;
+    $size: 1em;
     width: $size;
     height: $size;
-    display: inline-block;
     margin-right: 0.25em;
     vertical-align: text-bottom;
     background-image: url("/assets/img/SiteWide/Icon/FormCheckbox_off.svg");
     background-repeat: no-repeat;
     background-size: contain;
+  }
+
+  &:focus + label:before {
+    border-color: $form-focus-border-color;
+    box-shadow: $form-focus-box-shadow;
   }
 
   &:checked + label:before {
@@ -49,9 +58,5 @@ label(disabled for="checkbox2") チェックボックス
   & + label[disabled] {
     cursor: $form-disabled-cursor;
     opacity: $form-disabled-opacity;
-  }
-
-  &:disabled + label:after {
-    display: none;
   }
 }

@@ -25,10 +25,12 @@ $font-famiry-sans-serif: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !defaul
 
 $opacity: 0.7 !default;
 
-$form-border-radius: 3px;
-$form-transition-duration: 0.3s;
-$form-transition-property: border-color, box-shadow, background-color;
-$form-placeholder-color: #767676;
-$form-disabled-cursor: not-allowed;
-$form-disabled-opacity: 0.5;
-$form-disabled-background-color: #ddd;
+$form-border-radius: 3px !default;
+$form-transition-duration: 0.3s !default;
+$form-transition-property: border-color, box-shadow, background-color !default;
+$form-focus-border-color: #1589ee !default;
+$form-focus-box-shadow: 0 0 5px #1589ee !default;
+$form-placeholder-color: #767676 !default;
+$form-disabled-cursor: not-allowed !default;
+$form-disabled-opacity: 0.5 !default;
+$form-disabled-background-color: #ddd !default;
