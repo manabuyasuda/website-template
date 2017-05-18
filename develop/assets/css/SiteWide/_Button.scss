@@ -14,6 +14,8 @@ a.sw-Button(href="#") aタグボタン
 a.sw-Button.sw-Button-disabled(href="#") aタグボタン
 button.sw-Button(type="button") butotnタグボタン
 button.sw-Button(disabled type="button") butotnタグボタン
+input.sw-Button(type="button" value="inputボタン")
+input.sw-Button(type="button" value="inputボタン" disabled)
 ```
 */
 .sw-Button {
