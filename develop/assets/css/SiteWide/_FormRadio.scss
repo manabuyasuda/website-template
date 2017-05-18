@@ -10,7 +10,7 @@ tag: Form
 `type="radio"`のデフォルトスタイルです。
 
 ```jade
-input.sw-FormRadio(type="radio" id="radio1" name="radio1")
+input.sw-FormRadio(type="radio" id="radio1" name="radio1" checked)
 label(for="radio1") ラジオボタン
 input.sw-FormRadio(type="radio" id="radio2" name="radio1")
 label(for="radio2") ラジオボタン
@@ -20,7 +20,8 @@ label(disabled for="radio2") ラジオボタン
 ```
 */
 .sw-FormRadio {
-  display: none;
+  /* デフォルトのラジオボタンを非表示にする。 */
+  @include sr-only();
 
   & + label {
     position: relative;
@@ -41,19 +42,19 @@ label(disabled for="radio2") ラジオボタン
     background-size: contain;
   }
 
+  &:focus + label:before {
+    border-color: $form-focus-border-color;
+    border-radius: 50%;
+    box-shadow: $form-focus-box-shadow;
+  }
+
   &:checked + label:before {
-    content: "";
     background-image: url("/assets/img/SiteWide/Icon/FormRadio_on.svg");
-    background-repeat: no-repeat;
   }
 
   &:disabled,
   & + label[disabled] {
     cursor: $form-disabled-cursor;
     opacity: $form-disabled-opacity;
-  }
-
-  &:disabled + label:after {
-    display: none;
   }
 }
