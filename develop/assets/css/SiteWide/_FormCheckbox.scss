@@ -19,8 +19,16 @@ label(for="checkbox2") チェックボックス
 input.sw-FormCheckbox(disabled type="checkbox" id="checkbox3")
 label(disabled for="checkbox3") チェックボックス
 ```
+
+`sw-FormCheckbox()`mixinで他のボタンにもスタイルを継承することができます。
+
+```scss
+.AnotherFormCheckbox {
+  @include sw-FormCheckbox();
+}
+```
 */
-.sw-FormCheckbox {
+@mixin sw-FormCheckbox() {
   /* デフォルトのチェックボックスを非表示にする。 */
   @include sr-only();
 
@@ -49,9 +57,7 @@ label(disabled for="checkbox3") チェックボックス
   }
 
   &:checked + label:before {
-    content: "";
     background-image: url("/assets/img/SiteWide/Icon/FormCheckbox_on.svg");
-    background-repeat: no-repeat;
   }
 
   &:disabled,
@@ -59,4 +65,7 @@ label(disabled for="checkbox3") チェックボックス
     cursor: $form-disabled-cursor;
     opacity: $form-disabled-opacity;
   }
+}
+.sw-FormCheckbox {
+  @include sw-FormCheckbox();
 }

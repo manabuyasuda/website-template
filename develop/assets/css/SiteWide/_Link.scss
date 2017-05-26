@@ -13,8 +13,16 @@ tag: Link
 p
   a.sw-Link(href="#") テキストリンクです。
 ```
+
+`sw-Link()`mixinで他のボタンにもスタイルを継承することができます。
+
+```scss
+.AnotherLink {
+  @include sw-Link();
+}
+```
 */
-.sw-Link {
+@mixin sw-Link() {
   color: $color-link;
   text-decoration: underline;
 
@@ -22,4 +30,7 @@ p
     color: $color-link-hover;
     text-decoration: underline;
   }
+}
+.sw-Link {
+  @include sw-Link();
 }

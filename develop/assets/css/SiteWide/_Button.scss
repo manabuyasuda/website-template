@@ -17,11 +17,19 @@ button.sw-Button(disabled type="button") butotnタグボタン
 input.sw-Button(type="button" value="inputボタン")
 input.sw-Button(type="button" value="inputボタン" disabled)
 ```
+
+`sw-Button()`mixinで他のボタンにもスタイルを継承することができます。
+
+```scss
+.AnotherButton {
+  @include sw-Button();
+}
+```
 */
-.sw-Button {
+@mixin sw-Button() {
   display: inline-block;
   margin: 0;
-  padding: 1em 2em;
+  padding: 0.75em 2em;
   border: none;
   border: 1px solid #d0d0d0;
   color: inherit;
@@ -32,24 +40,29 @@ input.sw-Button(type="button" value="inputボタン" disabled)
   text-decoration: none;
   background: transparent;
   background-color: #fff;
-  cursor: pointer;
   appearance: none;
+  cursor: pointer;
 
   @include on-event() {
     text-decoration: none;
   }
 
   &:focus {
-
+    outline: 0;
+    box-shadow: $form-focus-box-shadow;
   }
 
   &:disabled,
   &-disabled {
-    cursor: $form-disabled-cursor;
     opacity: $form-disabled-opacity;
+    border-color: $form-disabled-background-color;
     background-color: $form-disabled-background-color;
+    cursor: $form-disabled-cursor;
   }
   &-disabled {
     pointer-events: none;
   }
+}
+.sw-Button {
+  @include sw-Button;
 }

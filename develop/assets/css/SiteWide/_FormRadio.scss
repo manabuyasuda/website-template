@@ -18,14 +18,22 @@ label(for="radio2") ラジオボタン
 input.sw-FormRadio(disabled type="radio" id="radio3" name="radio2")
 label(disabled for="radio2") ラジオボタン
 ```
+
+`sw-FormRadio()`mixinで他のボタンにもスタイルを継承することができます。
+
+```scss
+.AnotherFormRadio {
+  @include sw-FormRadio();
+}
+```
 */
-.sw-FormRadio {
+@mixin sw-FormRadio() {
   /* デフォルトのラジオボタンを非表示にする。 */
   @include sr-only();
 
   & + label {
-    position: relative;
     display: inline-block;
+    position: relative;
     cursor: pointer;
   }
 
@@ -57,4 +65,7 @@ label(disabled for="radio2") ラジオボタン
     cursor: $form-disabled-cursor;
     opacity: $form-disabled-opacity;
   }
+}
+.sw-FormRadio {
+  @include sw-FormRadio()
 }
