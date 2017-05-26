@@ -42,7 +42,7 @@ dependencies:
   # - ../dest/assets
 
 # Index page created from markdown file
-# index: ./index.md
+index: ../develop/assets/css/styleguide/index.md
 
 # You can choose template engine : ejs, jade, handlebars
 # スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。
