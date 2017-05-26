@@ -44,6 +44,7 @@ var develop = {
   'html': ['develop/**/*.pug', '!develop/**/_*.pug'],
   'data': 'develop/_data/',
   'css': 'develop/**/*.scss',
+  'styleguideWatch': ['develop/**/*.scss', 'develop/**/*.md'],
   'js': ['develop/**/*.js', '!develop/assets/js/common/**/*.js', '!develop/assets/js/module/**/*.js'],
   'commonJs': 'develop/assets/js/common/**/*.js',
   'moduleJs': 'develop/assets/js/module/**/*.js',
@@ -301,7 +302,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', ['build'], function() {
   gulp.watch(develop.html, ['html']);
   gulp.watch(develop.css, ['css']);
-  gulp.watch(develop.css, ['styleguide']);
+  gulp.watch(develop.styleguideWatch, ['styleguide']);
   gulp.watch(develop.jsWatch, ['js']);
   gulp.watch(develop.jsWatch, ['commonJs']);
   gulp.watch(develop.jsWatch, ['moduleJs']);
