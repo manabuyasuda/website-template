@@ -2,6 +2,10 @@
   "name": "Site Name",
   "description": "Site Description",
   "keywords": "Site Keyword1, Site Keyword2",
-  "rootUrl": "http://example.com",
-  "ogpImage": "http://example.com/ogp.jpg"
+  "rootUrl": "https://example.com",
+  "ogpImage": "https://example.com/ogp.jpg",
+  "fbAppId": "",
+  "fbAdmins": "",
+  "twitterCard": "summary_large_image",
+  "twitterSite": "@SiteAccount"
 }

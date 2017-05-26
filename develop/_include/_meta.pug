@@ -7,7 +7,8 @@ if pageTitle
 else
   title #{site.name}
 meta(name="description" content=pageDescription)
-meta(name="keywords" content=pageKeywords)
+if pageKeywords
+  meta(name="keywords" content=pageKeywords)
 
 block css
   link(rel="stylesheet" href="/assets/css/common.css")
@@ -26,14 +27,12 @@ meta(property="og:locale" content=pageLang)
 
 link(rel="canonical" href=site.rootUrl + pageRootPath)
 
-//- OGP Facebook insights
-meta(property="fb:admins" content="")
-meta(property="fb:app_id" content="")
-//- /OGP Facebook insights
+if site.fbAppId
+  meta(property="fb:app_id" content=site.fbAppId)
+else if site.fbAdmins
+  meta(property="fb:admins" content=site.fbAdmins)
 
-//- OGP Twitter Cards
-meta(name="twitter:card" content="summary")
-meta(name="twitter:site" content="@")
-//- /OGP Twitter Cards
-
-//- /OGP
+if site.twitterCard
+  meta(name="twitter:card" content=site.twitterCard)
+if site.twitterSite
+  meta(name="twitter:site" content=site.twitterSite)

@@ -5,10 +5,17 @@ append variables
   - var pageDescription= site.description;
   - var pageKeywords= site.keywords;
   //- 任意
-  - var pageOgpTitle= "";
+  - var pageOgpTitle= pageTitle;
   - var pageOgpImage= site.ogpImage;
   - var pageLang= "ja";
   - var pageOgpType= "website";
+
+//- 個別CSSファイルの読み込み（相対パス）
+block append css
+  //- link(rel="stylesheet" href="css/index.css")
+//- 個別JSファイルの読み込み（相対パス）
+block append js
+  //- script(src="js/index.js")
 
 block content
   p #{pageRootPath}
