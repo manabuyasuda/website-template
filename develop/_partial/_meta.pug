@@ -1,7 +1,6 @@
 meta(charset="UTF-8")
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width, initial-scale=1.0")
-meta(name="format-detection" content="telephone=no")
 if pageTitle
   title #{pageTitle} | #{site.name}
 else
@@ -13,7 +12,10 @@ if pageKeywords
 block css
   link(rel="stylesheet" href="/assets/css/common.css")
 
-//- OGP
+link(rel="canonical" href=site.rootUrl + pageRootPath)
+
+meta(name="format-detection" content="telephone=no")
+
 if pageOgpTitle
   meta(property="og:title" content=pageOgpTitle + ' | ' + site.name)
 else
@@ -24,8 +26,6 @@ meta(property="og:url" content=site.rootUrl + pageRootPath)
 meta(property="og:description" content=pageDescription)
 meta(property="og:site_name" content=site.name)
 meta(property="og:locale" content=pageLang)
-
-link(rel="canonical" href=site.rootUrl + pageRootPath)
 
 if site.fbAppId
   meta(property="fb:app_id" content=site.fbAppId)

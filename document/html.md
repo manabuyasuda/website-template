@@ -6,18 +6,19 @@ HTMLは[Pug](https://pugjs.org/api/getting-started.html)を使って生成して
 
 ## ディレクトリ構造
 Pugは`develop/`以下にある`index.pug`などがコンパイルされ、`index.html`などになります。  
-`_include/`は共通部分など、`_data/`はサイトやページ単位で使うデータを保存します。`_index.pug`のようにアンダースコアから始まるファイルは直接出力されません。
+`_partial/`は共通部分など、`_template/`は共通部分をまとめたテンプレート、`_data/`はサイトやページ単位で使うデータを保存します。`_index.pug`のようにアンダースコアから始まるファイルは直接出力されません。
 
 ```
 develop
 ├── _data/ // Pugで参照できるデータ
 │   └── site.json // サイト共通のデータ
-├── _include/ // 共通部分などを管理するディレクトリ
+├── _partial/ // 共通部分などを管理するディレクトリ
 │   ├── _footer.pug
 │   ├── _header.pug
-│   ├── _layout.pug
 │   ├── _meta.pug
 │   └── _script.pug
+├── _template/ // テンプレートを管理するディレクトリ
+│   └── _default.pug
 ├── about/ // アバウトディレクトリ
 │   └── index.pug
 └── index.pug トップページ
@@ -29,17 +30,24 @@ develop
 `index.pug`は以下のような構成になっています。
 
 ```pug
-extend /_include/_layout
+extend /_template/_default
 append variables
   //- 変更可能
   - var pageTitle= "";
   - var pageDescription= site.description;
   - var pageKeywords= site.keywords;
   //- 任意
-  - var pageOgpTitle= "";
+  - var pageOgpTitle= pageTitle;
   - var pageOgpImage= site.ogpImage;
   - var pageLang= "ja";
   - var pageOgpType= "website";
+
+//- 個別CSSファイルの読み込み（相対パス）
+block append css
+  //- link(rel="stylesheet" href="css/index.css")
+//- 個別JSファイルの読み込み（相対パス）
+block append js
+  //- script(src="js/index.js")
 
 block content
   p #{pageRootPath}
@@ -56,6 +64,17 @@ block content
 - `pageOgpType`：そのページの種類を記述します。サイトトップページは`website`、それ以外は`article`を指定します。
 
 *1 `develop/_data/site.json`を参照してください
+
+`block append css`と`block append js`直下のファイルの読み込みのコメントアウトを外すことで個別のCSSやJSファイルの読み込みをすることができます。
+
+```pug
+//- 個別CSSファイルの読み込み（相対パス）
+block append css
+  //- link(rel="stylesheet" href="css/index.css")
+//- 個別JSファイルの読み込み（相対パス）
+block append js
+  //- script(src="js/index.js")
+```
 
 `pageRootPath`には、そのページのルート相対パスが格納されています。`index.html`は`/`に置換されています。
 
@@ -75,49 +94,58 @@ block content
   p ここから記述していきます。
 ```
 
-### _include
-`develop/_include/`にはサイトの共通部分が保存されています。
+### _partial
+`develop/_partial/`にはサイトの共通部分が保存されています。
 
 ```
 develop/
-├── _include/ // 共通部分などを管理するディレクトリ
+├── _partial/ // 共通部分などを管理するディレクトリ
 │   ├── _footer.pug
 │   ├── _header.pug
-│   ├── _layout.pug
 │   ├── _meta.pug
 │   └── _script.pug
 └── index.pug トップページ
 ```
 
-#### _layout.pug
-`_layout.pug`は各共通ファイルをインクルードするためのファイルです。
+### _template
+`develop/_template/`には共通部分をまとめたテンプレートが保存されています。
+
+```
+develop/
+├── _template/ // テンプレートを管理するディレクトリ
+│   └── _default.pug
+└── index.pug トップページ
+```
+
+#### _default.pug
+`_default.pug`は各共通ファイルをインクルードするためのファイルです。
 
 ```pug
 block variables
 doctype html
 html(lang=pageLang)
   head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
-    include /_include/_meta
+    include /_partial/_meta
 
   body
 
-    include /_include/_header
+    include /_partial/_header
 
     block content
 
-    include /_include/_footer
-    include /_include/_script
+    include /_partial/_footer
+    include /_partial/_script
 ```
 
-`include /_include/_header`などの部分がインクルードしている箇所です。必要に応じて、追加や削除をしてください。パスはルート相対パスで指定していきます。
+`include /_partial/_header`などの部分がインクルードしている箇所です。必要に応じて、追加や削除をしてください。パスはルート相対パスで指定していきます。
 
 #### _meta.pug
 `_meta.pug`は`<head>`タグ内にあるメタタグをまとめて管理するためのファイルです。  
-変更する可能性のある箇所が4つあります。
+変更する可能性のある箇所が3つあります。
 
 初期値ではページタイトルとサイトタイトルは` | `で区切られています。` - `のようにしたい場合などは変更してください。
 
-```js
+```pug
 if pageTitle
   title #{pageTitle} | #{site.name}
 else
@@ -131,30 +159,16 @@ else
 
 CSSを読み込んでいます。`common.css`のファイル名を変えたい場合は変更してください。
 
-```js
+```pug
 block css
   link(rel="stylesheet" href="/assets/css/common.css")
-```
-
-OGPタグを記述しています。アカウントのIDを記述したり、必要がない場合は削除してください。
-
-```js
-//- OGP Facebook insights
-meta(property="fb:admins" content="")
-meta(property="fb:app_id" content="")
-//- /OGP Facebook insights
-
-//- OGP Twitter Cards
-meta(name="twitter:card" content="summary")
-meta(name="twitter:site" content="@")
-//- /OGP Twitter Cards
 ```
 
 
 #### _script.pug
 `_script.pug`ではJavaScriptを読み込むための記述があります。ファイル名を変えたり、読み込みファイルを増やしたい場合は変更してください。
 
-```js
+```pug
 block js
   script(src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
   script window.jQuery || document.write('<script src="/assets/js/jquery-2.2.0.min.js"><\/script>')

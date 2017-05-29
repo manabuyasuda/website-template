@@ -2,13 +2,13 @@ block variables
 doctype html
 html(lang=pageLang)
   head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
-    include /_include/_meta
+    include /_partial/_meta
 
   body
 
-    include /_include/_header
+    include /_partial/_header
 
     block content
 
-    include /_include/_footer
-    include /_include/_script
+    include /_partial/_footer
+    include /_partial/_script

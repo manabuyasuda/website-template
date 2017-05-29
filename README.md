@@ -42,7 +42,11 @@ root/
 ├── aigis/
 ├── develop/
 │   ├── _data/
-│   ├── _include/
+│   ├── _partial/
+│   │   ├── _meta.pug
+│   │   └── _header.pug
+│   ├── _template/
+│   │   └── _default.pug
 │   ├── assets/
 │   │   ├── css/
 │   │   ├── icon/
