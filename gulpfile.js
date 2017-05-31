@@ -261,17 +261,40 @@ gulp.task('public', function() {
 });
 
 /**
- * testディレクトリを削除します。
+ * テスト用のディレクトリを削除します。
  */
 gulp.task('clean:test', function (cb) {
   return rimraf(test.root, cb);
 });
 
 /**
- * 本番用ディレクトリを削除します。
+ * 本番公開用のディレクトリを削除します。
  */
 gulp.task('clean:release', function (cb) {
   return rimraf(release.root, cb);
+});
+
+/**
+ * GitHub Pages用のディレクトリを削除します。
+ */
+gulp.task('clean:docs', function (cb) {
+  return rimraf('docs/', cb);
+});
+
+/**
+ * テスト用のディレクトリをコピーします。
+ */
+gulp.task('copy:test', function() {
+  return gulp.src(test.root + '**/*')
+  .pipe(gulp.dest(release.root));
+});
+
+/**
+ * 本番公開用のディレクトリをコピーします。
+ */
+gulp.task('copy:release', function() {
+  return gulp.src(test.root + '**/*')
+  .pipe(gulp.dest('docs/'));
 });
 
 /**
@@ -325,15 +348,7 @@ gulp.task('default', ['clean:test'], function() {
 });
 
 /**
- * テスト用ディレクトリをコピーします。
- */
-gulp.task('copy', function() {
-  return gulp.src(test.root + '**/*')
-  .pipe(gulp.dest(release.root));
-});
-
-/**
- * 本番用ファイルを出力します。
+ * 本番公開用のファイルを出力します。
  */
 gulp.task('release', function() {
   runSequence(
@@ -341,6 +356,19 @@ gulp.task('release', function() {
     ['clean:release'],
     ['iconfont'],
     ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image', 'public'],
-    'copy'
+    'copy:test'
+  )
+});
+
+/**
+ * GitHub Pages用のファイルを出力します。
+ */
+gulp.task('release:gitHubPages', function() {
+  runSequence(
+    ['clean:test'],
+    ['clean:docs'],
+    ['iconfont'],
+    ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image', 'public'],
+    'copy:release'
   )
 });
