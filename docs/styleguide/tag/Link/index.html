@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Styleguide</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../../aigis_assets/css/highlight/prism.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/common.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="aigis-container">
+      <div class="aigis-sidemenu">
+        <header class="aigis-header"><a href="../../index.html">Styleguide</a></header>
+        <h2 class="aigis-sidemenu__heading">Category</h2>
+        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/IconList/index.html">IconList</a></li><li data-path-depth="0"><a href="../../category/SiteWide/index.html">SiteWide</a></li><li data-path-depth="0"><a href="../../category/Structure/index.html">Structure</a></li></ul>
+        </nav>
+        <h2 class="aigis-sidemenu__heading">Tag</h2>
+        <nav class="aigis-tags aigis-tagList"><a href="../../tag/Button/index.html" class="aigis-tags__item aigis-tags__item--Button">Button</a><a href="../../tag/Form/index.html" class="aigis-tags__item aigis-tags__item--Form">Form</a><a href="../../tag/Global/index.html" class="aigis-tags__item aigis-tags__item--Global">Global</a><a href="../../tag/Icon/index.html" class="aigis-tags__item aigis-tags__item--Icon">Icon</a><a href="../../tag/Link/index.html" class="aigis-tags__item aigis-tags__item--Link">Link</a><a href="../../tag/List/index.html" class="aigis-tags__item aigis-tags__item--List">List</a><a href="../../tag/Navigation/index.html" class="aigis-tags__item aigis-tags__item--Navigation">Navigation</a><a href="../../tag/Text/index.html" class="aigis-tags__item aigis-tags__item--Text">Text</a><a href="../../tag/ThirdPartyComponent/index.html" class="aigis-tags__item aigis-tags__item--ThirdPartyComponent">ThirdPartyComponent</a>
+        </nav>
+        <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+      </div>
+      <div class="aigis-contents">
+        <div class="aigis-contents__body">
+          <nav>
+            <h2 class="aigis-module__heading">TOC</h2>
+            <ul class="aigis-moduleList">
+              <li class="aigis-moduleList__item"><a href="#Button">Button</a></li>
+              <li class="aigis-moduleList__item"><a href="#Label">Label</a></li>
+              <li class="aigis-moduleList__item"><a href="#Link">Link</a></li>
+              <li class="aigis-moduleList__item"><a href="#LinkDownload">LinkDownload</a></li>
+              <li class="aigis-moduleList__item"><a href="#LinkExternal">LinkExternal</a></li>
+              <li class="aigis-moduleList__item"><a href="#LinkMore">LinkMore</a></li>
+              <li class="aigis-moduleList__item"><a href="#LinkNote">LinkNote</a></li>
+              <li class="aigis-moduleList__item"><a href="#LinkPdf">LinkPdf</a></li>
+            </ul>
+          </nav>
+          <div class="aigis-module">
+            <h2 id="Button" class="aigis-module__heading">Button</h2>
+            <div class="aigis-module__filepath">/develop/assets/css/SiteWide/_Button.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Button">Button</li>
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p>ボタンのデフォルトスタイルです。</p>
+<div class="aigis-preview">
+  <a href="#" class="sw-Button">aタグボタン</a><a href="#" class="sw-Button sw-Button-disabled">aタグボタン</a>
+<button type="button" class="sw-Button">butotnタグボタン</button>
+<button disabled="disabled" type="button" class="sw-Button">butotnタグボタン</button>
+<input type="button" value="inputボタン" class="sw-Button"/>
+<input type="button" value="inputボタン" disabled="disabled" class="sw-Button"/></div>
+
+<pre><code class="language-jade"><span class="token tag">a.sw-Button<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">aタグボタン</span>
+<span class="token tag">a.sw-Button.sw-Button-disabled<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">aタグボタン</span>
+<span class="token tag">button.sw-Button<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"button"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">butotnタグボタン</span>
+<span class="token tag">button.sw-Button<span class="token attributes"><span class="token punctuation">(</span>disabled <span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"button"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">butotnタグボタン</span>
+<span class="token tag">input.sw-Button<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"button"</span> value<span class="token operator">=</span><span class="token string">"inputボタン"</span></span><span class="token punctuation">)</span></span></span>
+<span class="token tag">input.sw-Button<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"button"</span> value<span class="token operator">=</span><span class="token string">"inputボタン"</span> disabled</span><span class="token punctuation">)</span></span></span>
+</code></pre>
+<p><code>sw-Button()</code>mixinで他のボタンにもスタイルを継承することができます。</p>
+<pre><code class="language-scss"><span class="token selector">.AnotherButton </span><span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> <span class="token function">sw-Button</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Label" class="aigis-module__heading">Label</h2>
+            <div class="aigis-module__filepath">/develop/assets/css/SiteWide/_Label.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p>インラインで表示するラベルコンポーネントです。</p>
+<div class="aigis-preview">
+  <span class="sw-Label">spanタグのラベルです。</span>
+<label class="sw-Label">labelタグのラベルです。</label><a href="#" class="sw-Label">aタグのラベルです。</a></div>
+
+<pre><code class="language-jade"><span class="token tag">span.sw-Label</span> <span class="token plain-text">spanタグのラベルです。</span>
+<span class="token tag">label.sw-Label</span> <span class="token plain-text">labelタグのラベルです。</span>
+<span class="token tag">a.sw-Label<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">aタグのラベルです。</span>
+</code></pre>
+<p><code>sw-Label()</code>mixinで他のボタンにもスタイルを継承することができます。</p>
+<pre><code class="language-scss"><span class="token selector">.AnotherLabel </span><span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> <span class="token function">sw-Label</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Link" class="aigis-module__heading">Link</h2>
+            <div class="aigis-module__filepath">/develop/assets/css/SiteWide/_Link.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+            </ul><p>テキストリンクのデフォルトスタイルです。</p>
+<div class="aigis-preview">
+
+<p><a href="#" class="sw-Link">テキストリンクです。</a></p></div>
+
+<pre><code class="language-jade"><span class="token tag">p</span>
+  <span class="token tag">a.sw-Link<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">テキストリンクです。</span>
+</code></pre>
+<p><code>sw-Link()</code>mixinで他のボタンにもスタイルを継承することができます。</p>
+<pre><code class="language-scss"><span class="token selector">.AnotherLink </span><span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> <span class="token function">sw-Link</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="LinkDownload" class="aigis-module__heading">LinkDownload</h2>
+            <div class="aigis-module__filepath">/develop/assets/css/SiteWide/_LinkDownload.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Icon">Icon</li>
+            </ul><p>ファイルをダウンロードするためのリンクであることを示す場合に使います。</p>
+<div class="aigis-preview">
+
+<p><a href="#" class="sw-Link">テキストリンクです。</a></p>
+<p><a href="#" class="sw-LinkDownload">ファイルをダウンロードする<span aria-hidden="true" class="sw-LinkDownload_Icon"></span></a></p></div>
+
+<pre><code class="language-jade"><span class="token tag">p</span>
+  <span class="token tag">a.sw-Link<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">テキストリンクです。</span>
+
+<span class="token tag">p</span>
+  <span class="token tag">a.sw-LinkDownload<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">ファイルをダウンロードする</span>
+    <span class="token tag">span.sw-LinkDownload_Icon<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">aria-hidden</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"true"</span></span><span class="token punctuation">)</span></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="LinkExternal" class="aigis-module__heading">LinkExternal</h2>
+            <div class="aigis-module__filepath">/develop/assets/css/SiteWide/_LinkExternal.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Icon">Icon</li>
+            </ul><p>外部リンクであることを示す場合に使います。</p>
+<div class="aigis-preview">
+
+<p><a href="#" class="sw-Link">テキストリンクです。</a></p>
+<p><a href="#" class="sw-LinkExternal">外部リンクを開く<span aria-hidden="true" class="sw-LinkExternal_Icon"></span></a></p></div>
+
+<pre><code class="language-jade"><span class="token tag">p</span>
+  <span class="token tag">a.sw-Link<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">テキストリンクです。</span>
+
+<span class="token tag">p</span>
+  <span class="token tag">a.sw-LinkExternal<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">外部リンクを開く</span>
+    <span class="token tag">span.sw-LinkExternal_Icon<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">aria-hidden</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"true"</span></span><span class="token punctuation">)</span></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="LinkMore" class="aigis-module__heading">LinkMore</h2>
+            <div class="aigis-module__filepath">/develop/assets/css/SiteWide/_LinkMore.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Icon">Icon</li>
+            </ul><p>クリックを促すようなテキストリンクに使います。</p>
+<div class="aigis-preview">
+
+<p><a href="#" class="sw-Link">テキストリンクです。</a></p>
+<p><a href="#" class="sw-LinkMore">詳しく見る<span aria-hidden="true" class="sw-LinkMore_Icon"></span></a></p></div>
+
+<pre><code class="language-jade"><span class="token tag">p</span>
+  <span class="token tag">a.sw-Link<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">テキストリンクです。</span>
+
+<span class="token tag">p</span>
+  <span class="token tag">a.sw-LinkMore<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">詳しく見る</span>
+    <span class="token tag">span.sw-LinkMore_Icon<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">aria-hidden</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"true"</span></span><span class="token punctuation">)</span></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="LinkNote" class="aigis-module__heading">LinkNote</h2>
+            <div class="aigis-module__filepath">/develop/assets/css/SiteWide/_LinkNote.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+            </ul><p>注釈へのリンクです。<code>&lt;sup&gt;</code>タグの子要素として指定します。</p>
+<div class="aigis-preview">
+
+<p>○○<sup><a href="#" class="sw-LinkNote">1</a></sup>を使っています。</p>
+<p lang="en">○○<sup><a href="#" class="sw-LinkNote">1</a></sup>を使っています。</p></div>
+
+<pre><code class="language-jade"><span class="token tag">p</span> <span class="token plain-text">○○</span>
+  <span class="token tag">sup</span>
+    <span class="token tag">a.sw-LinkNote<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">1</span>
+  <span class="token punctuation">|</span> を使っています。
+
+<span class="token tag">p<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">lang</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"en"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">○○</span>
+  <span class="token tag">sup</span>
+    <span class="token tag">a.sw-LinkNote<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">1</span>
+  <span class="token punctuation">|</span> を使っています。
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="LinkPdf" class="aigis-module__heading">LinkPdf</h2>
+            <div class="aigis-module__filepath">/develop/assets/css/SiteWide/_LinkPdf.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Icon">Icon</li>
+            </ul><p>リンク先がPDFであることを示す場合に使います。</p>
+<div class="aigis-preview">
+
+<p><a href="#" class="sw-Link">テキストリンクです。</a></p>
+<p><a href="#" class="sw-LinkPdf">PDFをダウンロードする<span aria-hidden="true" class="sw-LinkPdf_Icon"></span></a></p></div>
+
+<pre><code class="language-jade"><span class="token tag">p</span>
+  <span class="token tag">a.sw-Link<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">テキストリンクです。</span>
+
+<span class="token tag">p</span>
+  <span class="token tag">a.sw-LinkPdf<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">href</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"#"</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">PDFをダウンロードする</span>
+    <span class="token tag">span.sw-LinkPdf_Icon<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">aria-hidden</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">"true"</span></span><span class="token punctuation">)</span></span></span>
+</code></pre>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery-2.2.0.min.js"><\/script>')</script>
+    <script src="/assets/js/common.js"></script>
+  </body>
+</html>
