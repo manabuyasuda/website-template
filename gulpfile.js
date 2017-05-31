@@ -275,13 +275,6 @@ gulp.task('clean:release', function (cb) {
 });
 
 /**
- * GitHub Pages用のディレクトリを削除します。
- */
-gulp.task('clean:docs', function (cb) {
-  return rimraf('docs/', cb);
-});
-
-/**
  * テスト用のディレクトリをコピーします。
  */
 gulp.task('copy:test', function() {
@@ -357,18 +350,5 @@ gulp.task('release', function() {
     ['iconfont'],
     ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image', 'public'],
     'copy:test'
-  )
-});
-
-/**
- * GitHub Pages用のファイルを出力します。
- */
-gulp.task('release:gitHubPages', function() {
-  runSequence(
-    ['clean:test'],
-    ['clean:docs'],
-    ['iconfont'],
-    ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image', 'public'],
-    'copy:release'
   )
 });
