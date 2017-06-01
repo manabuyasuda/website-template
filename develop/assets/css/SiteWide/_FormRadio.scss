@@ -44,8 +44,9 @@ label(disabled for="radio2") ラジオボタン
     height: $size;
     display: inline-block;
     margin-right: 0.25em;
+    border: $form-border;
+    border-radius: 50%;
     vertical-align: text-bottom;;
-    background-image: url("/assets/img/SiteWide/Icon/FormRadio_off.svg");
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -57,6 +58,7 @@ label(disabled for="radio2") ラジオボタン
   }
 
   &:checked + label:before {
+    border: 0;
     background-image: url("/assets/img/SiteWide/Icon/FormRadio_on.svg");
   }
 

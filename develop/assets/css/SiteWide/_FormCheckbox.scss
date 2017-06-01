@@ -45,8 +45,9 @@ label(disabled for="checkbox3") チェックボックス
     width: $size;
     height: $size;
     margin-right: 0.25em;
+    border: $form-border;
+    border-radius: 3px;
     vertical-align: text-bottom;
-    background-image: url("/assets/img/SiteWide/Icon/FormCheckbox_off.svg");
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -57,6 +58,7 @@ label(disabled for="checkbox3") チェックボックス
   }
 
   &:checked + label:before {
+    border: 0;
     background-image: url("/assets/img/SiteWide/Icon/FormCheckbox_on.svg");
   }
 
