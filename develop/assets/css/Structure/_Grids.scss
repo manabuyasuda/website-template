@@ -10,15 +10,15 @@ tag: Global
 グリッドシステムです。1/2や1/3のような均等なカラムや、8/12と4/12のようなよく使うカラムの指定ができます。
 いずれも親要素である`.st-Grids`に追加で指定していきます。
 
-カラム間の余白は幅を`$st-grids-gutter`、高さを`$st-grids-margin`で統一しています。
+カラム間の余白は幅を`$st-grids-column-gap`、高さを`$st-grids-row-gap`で統一しています。
 
-`.st-Grids`同士が同じ階層にある場合は間に余白がつきます。
+`.st-Grids`同士が同じ階層にある場合（`.st-Grids + .st-Grids`）には`.st-Grids`の間に余白がつきます。
 
 以下のような指定ができます。
 
 - 1/2から1/5までの均等なカラム指定。
 - 8/12と4/12のようなカラム指定。
-- ブレイクポイント（`.st-Grids-col*Md`、`.st-Grids-col*Lg`）の指定。
+- ブレイクポイント（`.st-Grids-col*Md`、`.st-Grids-col*Lg`、`.st-Grids-col*Xl`）の指定。
 
 ```jade
 .st-Grids.st-Grids-col8to4Md
@@ -52,11 +52,12 @@ tag: Global
     img(src="https://placehold.jp/600x400.png" alt="")
 ```
 */
-$st-grids-gutter: 2rem;
-$st-grids-margin: 2rem;
+// `em`と`%`は指定不可
+$st-grids-column-gap: 2rem;
+$st-grids-row-gap: 2rem;
 
 .st-Grids {
-  margin-left: -$st-grids-gutter;
+  margin-left: -$st-grids-column-gap;
   padding-left: 0;
   list-style-type: none;
   display: block;
@@ -64,14 +65,14 @@ $st-grids-margin: 2rem;
 
   /* 同じ階層にある`.st-Grids`同士の間に余白を入れます。 */
   &:not(:first-of-type) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 
 .st-Grids_Item {
   display: inline-block;
   width: 100%;
-  padding-left: $st-grids-gutter;
+  padding-left: $st-grids-column-gap;
   font-size: medium;
   font-size: 1rem;
   vertical-align: top;
@@ -80,7 +81,7 @@ $st-grids-margin: 2rem;
 /* 1 Column */
 .st-Grids_Item {
   &:nth-of-type(n+2) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 
@@ -97,7 +98,7 @@ $st-grids-margin: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+3) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 @include mq-up(md) {
@@ -108,7 +109,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -120,7 +121,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -132,7 +133,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -145,7 +146,7 @@ $st-grids-margin: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+4) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 @include mq-up(md) {
@@ -156,7 +157,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -168,7 +169,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -180,7 +181,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -193,7 +194,7 @@ $st-grids-margin: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+5) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 @include mq-up(md) {
@@ -204,7 +205,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -216,7 +217,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -228,7 +229,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -241,7 +242,7 @@ $st-grids-margin: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+6) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 @include mq-up(md) {
@@ -252,7 +253,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -264,7 +265,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -276,7 +277,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -342,7 +343,7 @@ $st-grids-margin: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+3) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 @include mq-up(md) {
@@ -359,7 +360,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -377,7 +378,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -395,7 +396,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -414,7 +415,7 @@ $st-grids-margin: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+3) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 @include mq-up(md) {
@@ -431,7 +432,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -449,7 +450,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -467,7 +468,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -486,7 +487,7 @@ $st-grids-margin: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+3) {
-    margin-top: $st-grids-margin;
+    margin-top: $st-grids-row-gap;
   }
 }
 @include mq-up(md) {
@@ -503,7 +504,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -521,7 +522,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
@@ -539,7 +540,7 @@ $st-grids-margin: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-margin;
+      margin-top: $st-grids-row-gap;
     }
   }
 }
