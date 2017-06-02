@@ -1,8 +1,8 @@
- /* #Break
+ /* #Show
    -------------------------------------------------------------------------- */
 /*doc
 ---
-name: Break
+name: Show
 category: SiteWide
 tag: Text
 ---
@@ -14,22 +14,28 @@ p 常に改行
   br
   | されます
 p ブレイクポイント以降は改行
-  br.sw-BreakMd
-  | されません
+  br.sw-Hide.sw-ShowMd
+  | されます
 ```
 */
-.sw-Break {
-  display: none;
+.sw-Show {
+  display: block;
 }
 
-.sw-BreakMd {
+.sw-ShowMd {
   @include mq-up(md) {
-    display: none;
+    display: block;
   }
 }
 
-.sw-BreakLg {
+.sw-ShowLg {
   @include mq-up(lg) {
+    display: block;
+  }
+}
+
+.sw-ShowXl {
+  @include mq-up(xl) {
     display: none;
   }
 }

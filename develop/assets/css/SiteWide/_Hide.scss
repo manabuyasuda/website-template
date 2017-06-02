@@ -1,0 +1,41 @@
+ /* #Hide
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: Hide
+category: SiteWide
+tag: Text
+---
+
+`<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
+
+```jade
+p 常に改行
+  br
+  | されます
+p ブレイクポイント以降は改行
+  br.sw-HideMd
+  | されません
+```
+*/
+.sw-Hide {
+  display: none;
+}
+
+.sw-HideMd {
+  @include mq-up(md) {
+    display: none;
+  }
+}
+
+.sw-HideLg {
+  @include mq-up(lg) {
+    display: none;
+  }
+}
+
+.sw-HideXl {
+  @include mq-up(xl) {
+    display: none;
+  }
+}
