@@ -30,7 +30,13 @@ Yarnをインストールしていない場合はグローバルにインスト�
 npm install -g yarn
 ```
 
-詳しくは[公式ドキュメント](https://yarnpkg.com/en/docs/install)を参照してください。
+詳しくは[Yarnの公式ドキュメント](https://yarnpkg.com/en/docs/install)を参照してください。
+
+Yarnを使用しない場合は、yarn.lockファイルを削除して、以下のコマンドを実行してください。
+
+```bash
+npm install
+```
 
 ## ファイル構成
 開発は`develop`ディレクトリでおこない、テスト用の一時ファイルは`test`ディレクトリに出力、公開用のファイルは`htdocs`ディレクトリに出力されます。  
@@ -73,6 +79,12 @@ root/
 以下のコマンドを実行すると、開発に必要なGulpのタスクがすべて実行されます。
 
 ```bash
+yarn start
+```
+
+Yarnを使用しない場合は、以下のコマンドを実行してください。
+
+```bash
 npm start
 ```
 
@@ -86,6 +98,12 @@ npm start
 - スタイルガイドの生成
 
 以下のコマンドを実行すると、本番公開用のファイルが出力されます。
+
+```bash
+yarn run release
+```
+
+Yarnを使用しない場合は、以下のコマンドを実行してください。
 
 ```bash
 npm run release
