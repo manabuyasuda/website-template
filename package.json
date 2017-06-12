@@ -49,5 +49,8 @@
     "lodash": "^4.17.4",
     "rimraf": "^2.6.1",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "smooth-scroll": "^11.1.0"
   }
 }
