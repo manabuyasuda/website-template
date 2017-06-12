@@ -51,6 +51,7 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
+    "jquery-match-height": "^0.7.2",
     "smooth-scroll": "^11.1.0"
   }
 }
