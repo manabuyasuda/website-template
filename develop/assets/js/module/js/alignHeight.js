@@ -12,6 +12,3 @@ $(function() {
   $('.js-alignHeight').matchHeight();
 
 }());
-
-
-
