@@ -7,53 +7,55 @@ category: SiteWide
 tag: List
 ---
 
-ベーシックなテーブルです。
+ベーシックなテーブルです。テキストは自動的に改行せず、横幅に収まりきらなくなると横スクロールで表示します。
 
 - ヘッダー・ボディ・フッターといった、行の役割が分かっている場合は`<thead>`、`<tbody>`、`<tfoot>`タグを使って意味を明確にします。
 - `<th>`タグは見出しセルになりますが、その見出しセルがどの行や列に対応しているかを明確にするために`scope`属性を指定します。`scope="row"`で同じ行の見出しであることを示し、`scope="col"`で同じ列の見出しであることを示します。
 - `colspan`属性と`rowspan`属性で複数のセルを結合することができますが、極力控えるようにします。
 セルの結合はUAが解釈することが難しい機能で、特にスクリーンリーダーなどでうまく情報が伝えられない恐れがあります。1つの複雑なテーブルではなく、複数のシンプルなテーブルにできないか検討してください。
-- テーブルのタイトルが付けられる場合は`<caption>`タグを使います。
 
 ```jade
 .sw-TableScroll
   table
-    caption
-      p 事業部ごとの売上額と構成比
     thead
       tr
-        th(scope="col" style="width:33.333%;") 事業部名
-        th(scope="col" style="width:33.333%;") 売上額
-        th(scope="col" style="width:33.333%;") 構成比
+        th(scope="col") thead Table Header
+        th(scope="col") thead Table Header
+        th(scope="col") thead Table Header
+        th(scope="col") thead Table Header
     tbody
       tr
-        th(scope="row") ○○事業部
-        td.sw-TableScroll_number ○○○○○○○○○○○○億円
-        td.sw-TableScroll_number ○○%
+        th(scope="row") tbody Table Header
+        td tbody Table Data
+        td tbody Table Data
+        td tbody Table Data
       tr
-        th(scope="row") △△事業部
-        td.sw-TableScroll_number △△億円
-        td.sw-TableScroll_number △△%
+        th(scope="row") tbody Table Header
+        td tbody Table Data
+        td tbody Table Data
+        td tbody Table Data
       tr
-        th(scope="row") □□事業部
-        td.sw-TableScroll_number □億円
-        td.sw-TableScroll_number □%
+        th(scope="row") tbody Table Header
+        td tbody Table Data
+        td tbody Table Data
+        td tbody Table Data
 ```
 */
 .sw-TableScroll {
   overflow: auto;
   width: 100%;
-  background: linear-gradient(to left, rgba(#fff, 0), rgba(#000, 0.25)) 0 0 / 0.5em 100%,
-  linear-gradient(to right, rgba(#fff, 0), rgba(#000, 0.25)) right / 0.5em 100%;
+  background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
+  radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  background-size: 0.75em 100%, 0.75em 100%;
 }
 
 .sw-TableScroll table {
   width: 100%;
   border-collapse: collapse;
-  background: linear-gradient(to left, hsla(0, 0%, 100%, 0), #fff 0.5em) 0 0 / 1em 100%,
-  linear-gradient(to right, hsla(0, 0%, 100%, 0), #fff 0.5em) right / 1em 100%;
+  background: linear-gradient(to left, hsla(0, 0%, 100%, 0), #fff 0.75em) 0 0 / 2em 100%,
+  linear-gradient(to right, hsla(0, 0%, 100%, 0), #fff 0.75em) right / 2em 100%;
   background-repeat: no-repeat;
   background-attachment: local;
 }
@@ -68,16 +70,4 @@ tag: List
   padding: 1em;
   border: 1px solid #ccc;
   white-space: nowrap;
-}
-
-.sw-TableScroll caption {
-  padding-bottom: 0.25em;
-  font-size: $font-size-secondary;
-  text-align: left;
-  // シャドウを上書きします。
-  background-color: #fff;
-
-  @include mq-up(lg) {
-    text-align: right;
-  }
 }
