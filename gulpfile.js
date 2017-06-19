@@ -112,9 +112,13 @@ gulp.task('css', function(){
     autoprefixer({
       // ベンダープレフィックスの付与
       // https://github.com/ai/browserslist#browsers
+      // 条件によって対応できるブラウザを確認できる（カンマ区切りで指定を記述する）
+      //  http://browserl.ist/
       browsers: [
-        // Major Browsersの最新2バージョン
-        'last 2 version',
+        // すべてのブラウザの最新1バージョン
+        'last 1 version',
+        // 日本で3%以上のシェアがあるバージョン
+        '> 3% in JP',
         // IE9以上
         'ie >= 9',
         // iOS8以上
