@@ -17,7 +17,10 @@ $(function() {
     $('.js-changeTelLink').each(function(){
       var $this = $(this);
       var str = $this.text();
-      $this.html($('<a>').attr('href', 'tel:' + str.replace(/[\-\s]/g, '')).append(str + '</a>'));
+      $this.html($('<a>').attr({
+        href: 'tel:' + str.replace(/[\-\s]/g, ''),
+        class: null // リンクに付与するクラス（例：'sw-LinkTel'）
+      }).append(str + '</a>'));
     });
   }
 
