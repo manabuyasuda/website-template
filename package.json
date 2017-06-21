@@ -49,5 +49,9 @@
     "lodash": "^4.17.4",
     "rimraf": "^2.6.1",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "jquery-match-height": "^0.7.2",
+    "smooth-scroll": "^11.1.0"
   }
 }
