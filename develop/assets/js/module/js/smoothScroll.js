@@ -12,13 +12,15 @@ $(function() {
    * <a class="js-smoothScroll" href="#section1">○○へ移動</a>
    * <div id="section1">○○</div>
    */
-  smoothScroll.init({
-    selector: '.js-smoothScroll', // スムーススクロールが有効なリンクに付ける属性
-    ignore: '.js-smoothScroll-ignore', // スムーススクロールを無効にするリンクに付ける属性
-    selectorHeader: null, // 固定ヘッダーに指定しているJQueryのセレクタ（例：`.sw-Header`）、複数ある場合はHTML上で最後に記述した要素を指定する
-    speed: 500, // 到達するまでの総時間(ミリ秒)
-    easing: 'easeInOutCubic', // イージングの種類
-    offset: 0 // 到達場所からズラすピクセル数
-  });
+  if($('.js-smoothScroll').length) {
+    smoothScroll.init({
+      selector: '.js-smoothScroll', // スムーススクロールが有効なリンクに付ける属性
+      ignore: '.js-smoothScroll-ignore', // スムーススクロールを無効にするリンクに付ける属性
+      selectorHeader: null, // 固定ヘッダーに指定しているJQueryのセレクタ（例：`.sw-Header`）、複数ある場合はHTML上で最後に記述した要素を指定する
+      speed: 500, // 到達するまでの総時間(ミリ秒)
+      easing: 'easeInOutCubic', // イージングの種類
+      offset: 0 // 到達場所からズラすピクセル数
+    });
+  }
 
 }());

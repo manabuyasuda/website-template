@@ -9,6 +9,8 @@ $(function() {
    *   <div class="child js-alignHeight"></div>
    * </div>
    */
-  $('.js-alignHeight').matchHeight();
+  if($('.js-alignHeight').length) {
+    $('.js-alignHeight').matchHeight();
+  }
 
 }());
