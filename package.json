@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "jquery-match-height": "^0.7.2",
+    "picturefill": "^3.0.2",
     "smooth-scroll": "^11.1.0"
   }
 }
