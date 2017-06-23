@@ -1,0 +1,36 @@
+//- CSSのブレイクポイントに合わせて変数を設定してください。
+- var xl = "(min-width: 1440px)"
+- var lg = "(min-width: 1080px)"
+- var md = "(min-width: 768px)"
+
+//- <source>タグを記述するためのmixinです。
+    +picture内にネストをして記述します。
+    media - [variable] ブレイクポイントを管理している変数を指定します。
+    source - [string]  画像へのパスを指定します。
+    Pug： +source(md, 'https://placehold.jp/600x600.png')
+    HTML： <source media="(min-width: 768px)" srcset="https://placehold.jp/600x600.png">
+mixin source(media, source)
+  source(media=media srcset=source)
+
+//- <picture>でアートディレクションを使うためのmixinで、picturefill.jsに依存しています。
+    IE9に対応しない場合はIE9用のコンディショナルコメントを削除してください。
+    引数は<img>に対する指定になります。
+    ブレイクポイントにmin-widthを指定しているので、+sourceは大きなサイズから記述する必要があります。
+    fallback - [string] 画像へのパスを指定します。
+    alt - [string]  alt属性値を指定します。
+    Pug： +picture("https://placehold.jp/300x300.png", "alt属性値を指定します。").responsiveImage
+           +source(lg, "https://placehold.jp/1000x1000.png")
+           +source(md, "https://placehold.jp/600x600.png")
+    HTML： <picture class="responsiveImage">
+             <!--[if IE 9]><video style="display: none;"><![endif]-->
+             <source media="(min-width: 1080px)" srcset="https://placehold.jp/1000x1000.png">
+             <source media="(min-width: 768px)" srcset="https://placehold.jp/600x600.png">
+             <!--[if IE 9]></video><![endif]-->
+             <img srcset="https://placehold.jp/300x300.png" alt="alt属性値を指定します。">
+mixin picture(fallback, alt)
+  picture&attributes(attributes)
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    if block
+      block
+    <!--[if IE 9]></video><![endif]-->
+    img(srcset=fallback alt=alt)
