@@ -131,7 +131,6 @@
        * オプションのハッシュの付与が有効かつ、該当する要素がある場合は、ハッシュと一致するタブを表示する。
        */
       if(addHash) {
-        var hasId = false;
         var hash = window.location.hash.replace('#' , '');
         $link.each(function() {
           if(hash === $(this).attr('aria-controls')) {
