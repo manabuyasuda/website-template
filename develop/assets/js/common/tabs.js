@@ -78,9 +78,7 @@
           'aria-expanded': 'false'
         });
         $item.removeClass(addClass);
-        $content.attr({
-          'aria-hidden': 'true'
-        });
+        $content.attr('aria-hidden', 'true');
        }
        hideTab();
 
@@ -121,25 +119,12 @@
        * 初期設定：
        * 最初のタブを表示させる。
        */
-      $link.each(function(i) {
-        var index = i + 1;
-        if(index === 1) {
-          $(this).attr({
-            'tabindex': '0',
-            'aria-selected': 'true',
-            'aria-expanded': 'true'
-          });
-          $(this).parent(settings['item']).addClass(addClass);
-        }
-      });
-      $content.each(function(i) {
-        var index = i + 1;
-        if(index === 1) {
-          $(this).attr({
-            'aria-hidden': 'false'
-          });
-        }
-      });
+      $link.eq(0).attr({
+        'tabindex': '0',
+        'aria-selected': 'true',
+        'aria-expanded': 'true'
+      }).parent(settings['item']).addClass(addClass);
+      $content.eq(0).attr('aria-hidden', 'false');
 
       /**
        * 初期設定：
@@ -150,46 +135,36 @@
         var hash = window.location.hash.replace('#' , '');
         $link.each(function() {
           if(hash === $(this).attr('aria-controls')) {
-            hasId = true;
+            hideTab();
+            $(this).attr({
+              'tabindex': '0',
+              'aria-selected': 'true',
+              'aria-expanded': 'true'
+            }).parent(settings['item']).addClass(addClass);
+            $content.each(function() {
+              if(hash === $(this).attr('id')) {
+                $(this).attr({
+                  'aria-hidden': 'false'
+                });
+              }
+            });
           }
         });
-        if(hasId) {
-          hideTab();
-          $link.each(function() {
-            var $this = $(this);
-            if(hash === $this.attr('aria-controls')) {
-              $this.attr({
-                'tabindex': '0',
-                'aria-selected': 'true',
-                'aria-expanded': 'true'
-              });
-              $this.parent(settings['item']).addClass(addClass);
-            }
-          });
-          $content.each(function() {
-            if(hash === $(this).attr('id')) {
-              $(this).attr({
-                'aria-hidden': 'false'
-              });
-            }
-          });
-        }
       }
 
       /**
        * タブがクリック・タップされたら、該当のタブを表示する。
        */
       $link.on('click', function(e) {
-        var $this = $(this);
-        var controls = $this.attr('aria-controls');
+        var $thisLink = $(this);
+        var controls = $thisLink.attr('aria-controls');
         hideTab();
         // クリックされたタブと紐づけられたコンテンツを表示する。
-        $this.attr({
+        $thisLink.attr({
           'tabindex': '0',
           'aria-selected': 'true',
           'aria-expanded': 'true'
-        });
-        $this.parent(settings['item']).addClass(addClass);
+        }).parent(settings['item']).addClass(addClass);
         $content.each(function() {
           if($(this).attr('id') === controls) {
             $(this).attr({
@@ -202,7 +177,7 @@
          * オプションでハッシュの付与がtrueの場合は、URLにハッシュを付与する。
          */
         if(addHash) {
-          var hash = $this.attr('aria-controls');
+          var hash = $thisLink.attr('aria-controls');
           location.hash = hash;
         }
 
