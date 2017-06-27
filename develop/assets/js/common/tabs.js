@@ -104,14 +104,14 @@
         var index = i + 1;
         $(this).attr({
           'id': 'tab' + tabId + '-' + index,
-          'aria-controls': 'tabpanel' + tabId + '-' + index
+          'aria-controls': 'tab-panel' + tabId + '-' + index
         });
       });
       $content.each(function(i) {
         var index = i + 1;
         $(this).attr({
           'aria-labelledby': 'tab' + tabId + '-' + index,
-          'id': 'tabpanel' + tabId + '-' + index
+          'id': 'tab-panel' + tabId + '-' + index
         });
       });
 

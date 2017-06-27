@@ -98,15 +98,15 @@
       $tab.each(function(i) {
         var index = i + 1;
         $(this).attr({
-          'id': 'tab' + tabId + '-' + index,
-          'aria-controls': 'tabpanel' + tabId + '-' + index
+          'id': 'accordion' + tabId + '-' + index,
+          'aria-controls': 'accordion-panel' + tabId + '-' + index
         });
       });
       $tabpanel.each(function(i) {
         var index = i + 1;
         $(this).attr({
-          'aria-labelledby': 'tab' + tabId + '-' + index,
-          'id': 'tabpanel' + tabId + '-' + index
+          'aria-labelledby': 'accordion' + tabId + '-' + index,
+          'id': 'accordion-panel' + tabId + '-' + index
         });
       });
 
