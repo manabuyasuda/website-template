@@ -104,14 +104,14 @@
         var index = i + 1;
         $(this).attr({
           'id': 'tab' + tabId + '-' + index,
-          'aria-controls': 'tabpanel' + tabId + '-' + index
+          'aria-controls': 'tab-panel' + tabId + '-' + index
         });
       });
       $content.each(function(i) {
         var index = i + 1;
         $(this).attr({
           'aria-labelledby': 'tab' + tabId + '-' + index,
-          'id': 'tabpanel' + tabId + '-' + index
+          'id': 'tab-panel' + tabId + '-' + index
         });
       });
 
@@ -190,16 +190,16 @@
        */
       $link.on('keydown', function(e) {
         var index = $link.index(this);
-        if(e.keyCode == 37 || e.keyCode == 38){
+        if(e.which == 38 || e.which == 37){
           index--;
-        } else if(e.keyCode == 40 || e.keyCode == 39){
+        } else if(e.which == 40 || e.which == 39){
           index++;
           // 最後のタブまで来たら最初のタブに戻る。
           if(index === $link.length) {
             index = 0;
           }
         }
-        if(e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 40 || e.keyCode == 39) {
+        if(e.which == 37 || e.which == 38 || e.which == 40 || e.which == 39) {
           $link.get(index).click();
           $link.get(index).focus();
         }

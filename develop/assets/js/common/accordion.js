@@ -98,15 +98,15 @@
       $tab.each(function(i) {
         var index = i + 1;
         $(this).attr({
-          'id': 'tab' + tabId + '-' + index,
-          'aria-controls': 'tabpanel' + tabId + '-' + index
+          'id': 'accordion' + tabId + '-' + index,
+          'aria-controls': 'accordion-panel' + tabId + '-' + index
         });
       });
       $tabpanel.each(function(i) {
         var index = i + 1;
         $(this).attr({
-          'aria-labelledby': 'tab' + tabId + '-' + index,
-          'id': 'tabpanel' + tabId + '-' + index
+          'aria-labelledby': 'accordion' + tabId + '-' + index,
+          'id': 'accordion-panel' + tabId + '-' + index
         });
       });
 
@@ -167,7 +167,7 @@
        * enterかスペースを押したときの処理。
        */
       $tab.on('keydown', function(e) {
-        if(e.keyCode === 13 || e.keyCode === 32) {
+        if(e.which === 13 || e.which === 32) {
           $(this).click();
           $(this).focus();
           e.preventDefault();
