@@ -185,21 +185,21 @@
 
       /**
        * 矢印キーで操作されたときの処理。
-       * 上と左で戻り、右と下で進む。
+       * 左で戻り、右で進む。
        * フォーカスは行き止まりにならず、ループする。
        */
       $link.on('keydown', function(e) {
         var index = $link.index(this);
-        if(e.which == 38 || e.which == 37){
+        if(e.which == 37){
           index--;
-        } else if(e.which == 40 || e.which == 39){
+        } else if(e.which == 39){
           index++;
           // 最後のタブまで来たら最初のタブに戻る。
           if(index === $link.length) {
             index = 0;
           }
         }
-        if(e.which == 37 || e.which == 38 || e.which == 40 || e.which == 39) {
+        if(e.which == 37 || e.which == 39) {
           $link.get(index).click();
           $link.get(index).focus();
         }
