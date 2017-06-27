@@ -167,7 +167,7 @@
        * enterかスペースを押したときの処理。
        */
       $tab.on('keydown', function(e) {
-        if(e.keyCode === 13 || e.keyCode === 32) {
+        if(e.which === 13 || e.which === 32) {
           $(this).click();
           $(this).focus();
           e.preventDefault();
