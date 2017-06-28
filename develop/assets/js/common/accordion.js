@@ -1,14 +1,23 @@
-(function($) {
+;(function($) {
+
+  'use strict';
 
   /**
-   * キーボード操作にも対応したアコーディオンです。
-   * 定義リストのように、role属性で上書きすることが適切でない場合は、`useRole`を`false`にしてください。
-   * `openFirstChild`を`true`にすると、ロード時に最初の要素が開いた状態になります。
-   * `multiselectable`をtrueにすると、複数の要素を同時に開くことができます。
+   * @fileOverview キーボード操作やWAI-ARIAに対応したアコーディオンです。
+   * role属性とaria-*属性、tabindex属性はJS側で自動的に付与されます。
+   * @author Manabu Yasuda
+   * @param {jQuery object} tabs ['.js-accordion-tab'] - アンカーに指定するクラス属性値。
+   * @param {jQuery object} tabpanels ['.js-accordion-panel'] - tabpanelに指定するクラス属性値。
+   * @param {boolean} useRole [false] - role属性を付与する場合は`true`
+   * @param {boolean} openFirstChild [true] - デフォルトで最初の要素を開く場合は`true`
+   * @param {boolean} multiselectable [true] - 同時に複数の要素を開く場合は`true`
+   * @param {String || null} tabClass ['is-active'] - アクティブなアンカーに指定するクラス属性値。
+   * @param {String || null} panelClass ['is-active'] - アクティブなtabpanelに指定するクラス属性値。
+   * @example
    * JS:
    * $('.js-accordion').accordion({
-   *   'tab': '.js-accordion-tab',
-   *   'tabpanel': '.js-accordion-panel',
+   *   'tabs': '.js-accordion-tab',
+   *   'tabpanels': '.js-accordion-panel',
    *   'useRole': false,
    *   'openFirstChild': true,
    *   'multiselectable': true,
@@ -34,15 +43,14 @@
    */
   $.fn.accordion = function(options) {
 
-    // オプション（初期値）
     var defaults = {
-      'tab': '.js-accordion-tab',
-      'tabpanel': '.js-accordion-panel',
-      'useRole': false, // role属性を使用する。
-      'openFirstChild': true, // ロード時に最初の要素を表示する。
-      'multiselectable': true, // 複数のtabpanelを開く。
-      'tabClass': 'is-active', // アクティブなタブにクラス属性を付与する。
-      'panelClass': 'is-active' // アクティブなタブパネルにクラス属性を付与する。
+      'tabs': '.js-accordion-tab',
+      'tabpanels': '.js-accordion-panel',
+      'useRole': false,
+      'openFirstChild': true,
+      'multiselectable': true,
+      'tabClass': 'is-active',
+      'panelClass': 'is-active'
     };
     var settings = $.extend(defaults, options);
 
@@ -52,11 +60,12 @@
       var tabId = i + 1;
 
       /**
-       * オプション（初期値）。
+       * 初期設定：
+       * オプションを変数化する。
        */
       var $tablist = $this;
-      var $tab = $tablist.find(settings['tab']);
-      var $tabpanel = $tablist.find(settings['tabpanel']);
+      var $tabs = $tablist.find(settings['tab']);
+      var $tabpanels = $tablist.find(settings['tabpanel']);
       var useRole = settings['useRole'];
       var openFirstChild = settings['openFirstChild'];
       var multiselectable = settings['multiselectable'];
@@ -69,8 +78,8 @@
        */
       if(useRole) {
         $tablist.attr('role', 'tablist');
-        $tab.attr('role', 'tab');
-        $tabpanel.attr('role', 'tabpanel');
+        $tabs.attr('role', 'tab');
+        $tabpanels.attr('role', 'tabpanel');
       }
 
       /**
@@ -83,11 +92,11 @@
 
       /**
        * 初期設定：
-       * `$tab`をフォーカス可能にする。
-       * `$tabpanel`内の最初の要素をフォーカス可能にする。
+       * `$tabs`をフォーカス可能にする。
+       * `$tabpanels`内の最初の要素をフォーカス可能にする。
        */
-      $tab.attr('tabindex', '0');
-      $tabpanel.each(function() {
+      $tabs.attr('tabindex', '0');
+      $tabpanels.each(function() {
         $(this).children().eq(0).attr('tabindex', '0').css('outline', 'none');
       });
 
@@ -95,14 +104,14 @@
        * 初期設定：
        * 各要素を紐付けるためのIDを付与する。
        */
-      $tab.each(function(i) {
+      $tabs.each(function(i) {
         var index = i + 1;
         $(this).attr({
           'id': 'accordion' + tabId + '-' + index,
           'aria-controls': 'accordion-panel' + tabId + '-' + index
         });
       });
-      $tabpanel.each(function(i) {
+      $tabpanels.each(function(i) {
         var index = i + 1;
         $(this).attr({
           'aria-labelledby': 'accordion' + tabId + '-' + index,
@@ -115,8 +124,8 @@
        * タブをすべて非表示にする。
        */
        function hideTab() {
-        $tab.attr('aria-expanded', 'false').removeClass(tabClass);
-        $tabpanel.attr('aria-hidden', 'true').removeClass(panelClass);
+        $tabs.attr('aria-expanded', 'false').removeClass(tabClass);
+        $tabpanels.attr('aria-hidden', 'true').removeClass(panelClass);
        }
        hideTab();
 
@@ -125,14 +134,14 @@
        * 最初のタブを表示させる。
        */
       if(openFirstChild) {
-        $tab.eq(0).attr('aria-expanded', 'true').addClass(tabClass);
-        $tabpanel.eq(0).attr('aria-hidden', 'false').addClass(panelClass);
+        $tabs.eq(0).attr('aria-expanded', 'true').addClass(tabClass);
+        $tabpanels.eq(0).attr('aria-hidden', 'false').addClass(panelClass);
       }
 
       /**
        * タブがクリック・タップされたら、該当するタブを表示する。
        */
-      $tab.on('click', function(e) {
+      $tabs.on('click', function(e) {
         var $thisTab = $(this);
         var controls = $thisTab.attr('aria-controls');
 
@@ -142,7 +151,7 @@
             hideTab();
           }
           $thisTab.attr('aria-expanded', 'true').addClass(tabClass);
-          $tabpanel.each(function() {
+          $tabpanels.each(function() {
             if($(this).attr('id') === controls) {
               $(this).attr('aria-hidden', 'false').addClass(panelClass);
             }
@@ -153,7 +162,7 @@
             hideTab();
           }
           $thisTab.attr('aria-expanded', 'false').removeClass(tabClass);
-          $tabpanel.each(function() {
+          $tabpanels.each(function() {
             if($(this).attr('id') === controls) {
               $(this).attr('aria-hidden', 'true').removeClass(panelClass);
             }
@@ -164,9 +173,9 @@
       });
 
       /**
-       * enterかスペースを押したときの処理。
+       * enterかスペースを押したときも、クリックイベントと同様の処理をする。
        */
-      $tab.on('keydown', function(e) {
+      $tabs.on('keydown', function(e) {
         if(e.which === 13 || e.which === 32) {
           $(this).click();
           $(this).focus();
