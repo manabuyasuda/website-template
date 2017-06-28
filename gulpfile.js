@@ -148,7 +148,6 @@ gulp.task('css', function(){
  */
 gulp.task('js', function() {
   return gulp.src(develop.js, {base: develop.root})
-  .pipe(cache('js'))
   .pipe(gulp.dest(test.root))
   .pipe(browserSync.reload({stream: true}));
 });
@@ -158,7 +157,6 @@ gulp.task('js', function() {
  */
 gulp.task('commonJs', function() {
   return gulp.src(develop.commonJs)
-  .pipe(cache('js'))
   .pipe(sourcemaps.init())
   // ファイルを連結します。
   .pipe(concat('common.js'))
@@ -174,7 +172,6 @@ gulp.task('commonJs', function() {
  */
 gulp.task('moduleJs', function() {
   return gulp.src(develop.moduleJs)
-  .pipe(cache('js'))
   .pipe(sourcemaps.init())
   .pipe(concat('module.js'))
   .pipe(uglify({preserveComments: 'license'}))
