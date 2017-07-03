@@ -5,14 +5,15 @@
   /**
    * @fileOverview キーボード操作やWAI-ARIAに対応したアコーディオンです。
    * role属性とaria-*属性、tabindex属性はJS側で自動的に付与されます。
+   * @see https://www.w3.org/TR/wai-aria-practices-1.1/examples/accordion/accordion.html
    * @author Manabu Yasuda
-   * @param {jQuery object} tabs ['.js-accordion-tab'] - アンカーに指定するクラス属性値。
-   * @param {jQuery object} tabpanels ['.js-accordion-panel'] - tabpanelに指定するクラス属性値。
-   * @param {boolean} useRole [false] - role属性を付与する場合は`true`
-   * @param {boolean} openFirstChild [true] - デフォルトで最初の要素を開く場合は`true`
-   * @param {boolean} multiselectable [true] - 同時に複数の要素を開く場合は`true`
-   * @param {String || null} tabClass ['is-active'] - アクティブなアンカーに指定するクラス属性値。
-   * @param {String || null} panelClass ['is-active'] - アクティブなtabpanelに指定するクラス属性値。
+   * @param {jQuery object} tabs ['.js-accordion-tab'] - タブに指定するクラス属性値。
+   * @param {jQuery object} tabpanels ['.js-accordion-panel'] - タブパネルに指定するクラス属性値。
+   * @param {boolean} useRole [false] - role属性を付与する場合は`true`。
+   * @param {boolean} openFirstChild [true] - デフォルトで最初の要素を開く場合は`true`。
+   * @param {boolean} multiselectable [true] - 同時に複数の要素を開く場合は`true`。
+   * @param {String || null} tabClass ['is-active'] - アクティブなタブに指定するクラス属性値。
+   * @param {String || null} panelClass ['is-active'] - アクティブなタブパネルに指定するクラス属性値。
    * @example
    * JS:
    * $('.js-accordion').accordion({
@@ -97,7 +98,7 @@
        */
       $tabs.attr('tabindex', '0');
       $tabpanels.each(function() {
-        $(this).children().eq(0).attr('tabindex', '0').css('outline', 'none');
+        $(this).children().eq(0).attr('tabindex', '0');
       });
 
       /**
@@ -173,9 +174,27 @@
       });
 
       /**
+       * キーボード操作。
+       * 左右の矢印キーでフォーカスを動かす。上で戻り、下で進む。
+       * フォーカスは行き止まりにならず、ループする。
        * enterかスペースを押したときも、クリックイベントと同様の処理をする。
        */
       $tabs.on('keydown', function(e) {
+        var index = $tabs.index(this);
+        if(e.which == 38){
+          index--;
+        } else if(e.which == 40){
+          index++;
+          // 最後のタブまで来たら最初のタブに戻る。
+          if(index === $tabs.length) {
+            index = 0;
+          }
+        }
+        // 上下の矢印キー。
+        if(e.which == 38 || e.which == 40) {
+          $tabs.get(index).focus();
+        }
+        // enterかスペースキー。
         if(e.which === 13 || e.which === 32) {
           $(this).click();
           $(this).focus();
