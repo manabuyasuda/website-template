@@ -57,16 +57,23 @@
 
     return this.each(function(i) {
       var $this = $(this);
-      // 複数のタブがページ内にあることを想定して、一意なIDを付与する。
-      var tabId = i + 1;
+
+      /**
+       * 初期設定：
+       * 複数のタブがページ内にあることを想定して、一意なIDを付与する。
+       */
+      var accordionId = i + 1;
+      while($('#accordion' + accordionId + '-1').length) {
+        accordionId++;
+      }
 
       /**
        * 初期設定：
        * オプションを変数化する。
        */
       var $tablist = $this;
-      var $tabs = $tablist.find(settings['tab']);
-      var $tabpanels = $tablist.find(settings['tabpanel']);
+      var $tabs = $tablist.find(settings['tabs']);
+      var $tabpanels = $tablist.find(settings['tabpanels']);
       var useRole = settings['useRole'];
       var openFirstChild = settings['openFirstChild'];
       var multiselectable = settings['multiselectable'];
@@ -94,12 +101,8 @@
       /**
        * 初期設定：
        * `$tabs`をフォーカス可能にする。
-       * `$tabpanels`内の最初の要素をフォーカス可能にする。
        */
       $tabs.attr('tabindex', '0');
-      $tabpanels.each(function() {
-        $(this).children().eq(0).attr('tabindex', '0');
-      });
 
       /**
        * 初期設定：
@@ -108,15 +111,15 @@
       $tabs.each(function(i) {
         var index = i + 1;
         $(this).attr({
-          'id': 'accordion' + tabId + '-' + index,
-          'aria-controls': 'accordion-panel' + tabId + '-' + index
+          'id': 'accordion' + accordionId + '-' + index,
+          'aria-controls': 'accordion-panel' + accordionId + '-' + index
         });
       });
       $tabpanels.each(function(i) {
         var index = i + 1;
         $(this).attr({
-          'aria-labelledby': 'accordion' + tabId + '-' + index,
-          'id': 'accordion-panel' + tabId + '-' + index
+          'aria-labelledby': 'accordion' + accordionId + '-' + index,
+          'id': 'accordion-panel' + accordionId + '-' + index
         });
       });
 
