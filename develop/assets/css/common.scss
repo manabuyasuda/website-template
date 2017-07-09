@@ -7,10 +7,12 @@
 @import "base/_base.scss";
 
 /**
+ * sw-(base/_Icon.scss)...サイト共通のアイコン
  * sw-(SiteWide)...サイト共通の小さなパーツ
  * st-(Structure)...サイト共通のレイアウト
  * tp-(TopPage)...サイトトップページ
  */
+@import "base/_Icon.scss";
 @import "SiteWide/**/*.scss";
 @import "Structure/**/*.scss";
 @import "module/**/*.scss";

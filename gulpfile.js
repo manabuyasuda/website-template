@@ -233,7 +233,7 @@ gulp.task('iconfont', function() {
     gulp.src('develop/assets/icon/template/_Icon.scss')
     .pipe(consolidate('lodash', options))
     // Sassファイルの生成するパスを指定します。
-    .pipe(gulp.dest('develop/assets/css/SiteWide/'));
+    .pipe(gulp.dest('develop/assets/css/base/'));
 
     // スタイルガイドとして作成するSassファイルを指定します。
     gulp.src('develop/assets/icon/template/_IconList.scss')
