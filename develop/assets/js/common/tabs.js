@@ -56,8 +56,15 @@
 
     return this.each(function(i) {
       var $this = $(this);
-      // 複数のタブがページ内にあることを想定して、一意なIDを付与する。
+
+      /**
+       * 初期設定：
+       * 複数のタブがページ内にあることを想定して、一意なIDを付与する。
+       */
       var tabId = i + 1;
+      while($('#tabs' + tabId + '-1').length) {
+        tabId++;
+      }
 
       /**
        * 初期設定：
@@ -97,14 +104,6 @@
 
       /**
        * 初期設定：
-       * タブのコンテンツ内にアクセスできるようにする。
-       */
-       $contents.each(function() {
-        $(this).children().eq(0).attr('tabindex', '0');
-       });
-
-      /**
-       * 初期設定：
        * `href`属性があるとSafariでフォーカスが正常に動作しないため削除する。
        */
        $links.removeAttr('href');
@@ -116,15 +115,15 @@
       $links.each(function(i) {
         var index = i + 1;
         $(this).attr({
-          'id': 'tab' + tabId + '-' + index,
-          'aria-controls': 'tab-panel' + tabId + '-' + index
+          'id': 'tabs' + tabId + '-' + index,
+          'aria-controls': 'tabs-panel' + tabId + '-' + index
         });
       });
       $contents.each(function(i) {
         var index = i + 1;
         $(this).attr({
-          'aria-labelledby': 'tab' + tabId + '-' + index,
-          'id': 'tab-panel' + tabId + '-' + index
+          'aria-labelledby': 'tabs' + tabId + '-' + index,
+          'id': 'tabs-panel' + tabId + '-' + index
         });
       });
 
