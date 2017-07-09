@@ -30,8 +30,6 @@ p More
   font-family: "iconfont";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  top: -0.1em;
   display: inline-block;
   vertical-align: middle;
   font-style: normal;
@@ -41,6 +39,11 @@ p More
   text-decoration: none;
   text-transform: none;
   speak: none;
+  [lang="ja"] &,
+  [lang^="zh"] & {
+    position: relative;
+    top: -0.1em;
+  }
 }
 
 // アイコンフォントを`content: "";`で表示できるように変数化しています。
