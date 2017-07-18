@@ -1,0 +1,43 @@
+// @desc - ダウンロードしたWebフォントをインポートします。
+// @see https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#file-_mixins-scss
+// @param {String} $name - font-family名（クオーテーション推奨）
+// @param {String} $path - フォントファイルへの相対パス（クオーテーション推奨）
+// @param {String} $weight [null] - font-weight
+// @param {String} $style [null] - font-style
+// @param {String} $exts [eot woff2 woff ttf svg] - 対応するフォントファイルの拡張子
+// @example scss - Usage
+// @include font-face("Open Sans", "font/OpenSans-Regular", 400, normal, woff ttf);
+//
+// @example css - CSS output
+// @font-face {
+//   font-family: "Open Sans";
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url("font/OpenSans-Regular.woff") format("woff"), url("font/OpenSans-Regular.ttf") format("truetype");
+// }
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
