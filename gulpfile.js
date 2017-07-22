@@ -45,9 +45,9 @@ var develop = {
   'data': 'develop/_data/',
   'css': 'develop/**/*.scss',
   'styleguideWatch': ['develop/**/*.scss', 'develop/**/*.md'],
-  'js': ['develop/**/*.js', '!develop/assets/js/common/**/*.js', '!develop/assets/js/namespace/**/*.js'],
-  'commonJs': 'develop/assets/js/common/**/*.js',
-  'moduleJs': 'develop/assets/js/namespace/**/*.js',
+  'js': ['develop/**/*.js', '!develop/assets/js/lib/**/*.js', '!develop/assets/js/namespace/**/*.js'],
+  'libJs': 'develop/assets/js/lib/**/*.js',
+  'siteJs': 'develop/assets/js/namespace/**/*.js',
   'jsWatch': 'develop/**/*.js',
   'image': 'develop/assets/img/**/*.{png,jpg,gif,svg}',
   'imageWatch': 'develop/assets/img/**/*',
@@ -155,11 +155,11 @@ gulp.task('js', function() {
 /**
  * サイト共通のJSファイルを連結・圧縮します。
  */
-gulp.task('commonJs', function() {
-  return gulp.src(develop.commonJs)
+gulp.task('libJs', function() {
+  return gulp.src(develop.libJs)
   .pipe(sourcemaps.init())
   // ファイルを連結します。
-  .pipe(concat('common.js'))
+  .pipe(concat('lib.js'))
   // ファイルを圧縮します。
   .pipe(uglify({preserveComments: 'license'}))
   .pipe(sourcemaps.write('.'))
@@ -170,10 +170,10 @@ gulp.task('commonJs', function() {
 /**
  * ModuleごとのJSファイルを連結・圧縮します。
  */
-gulp.task('moduleJs', function() {
-  return gulp.src(develop.moduleJs)
+gulp.task('siteJs', function() {
+  return gulp.src(develop.siteJs)
   .pipe(sourcemaps.init())
-  .pipe(concat('module.js'))
+  .pipe(concat('site.js'))
   .pipe(uglify({preserveComments: 'license'}))
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(test.js))
@@ -297,7 +297,7 @@ gulp.task('copy:release', function() {
 gulp.task('build', function() {
   runSequence(
     ['iconfont'],
-    ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image', 'public']
+    ['html', 'css', 'styleguide', 'js', 'libJs', 'siteJs', 'image', 'public']
   )
 });
 
@@ -321,8 +321,8 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(develop.css, ['css']);
   gulp.watch(develop.styleguideWatch, ['styleguide']);
   gulp.watch(develop.jsWatch, ['js']);
-  gulp.watch(develop.jsWatch, ['commonJs']);
-  gulp.watch(develop.jsWatch, ['moduleJs']);
+  gulp.watch(develop.jsWatch, ['libJs']);
+  gulp.watch(develop.jsWatch, ['siteJs']);
   gulp.watch(develop.imageWatch, ['image']);
   gulp.watch(develop.iconfont, ['iconfont']);
   gulp.watch(develop.public, ['public']);
@@ -349,7 +349,7 @@ gulp.task('release', function() {
     ['clean:test'],
     ['clean:release'],
     ['iconfont'],
-    ['html', 'css', 'styleguide', 'js', 'commonJs', 'moduleJs', 'image', 'public'],
+    ['html', 'css', 'styleguide', 'js', 'libJs', 'siteJs', 'image', 'public'],
     'copy:test'
   )
 });
