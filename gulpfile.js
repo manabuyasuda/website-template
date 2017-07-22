@@ -41,11 +41,12 @@ var rimraf = require('rimraf');
  * 開発用ディレクトリ
  */
 var develop = {
+  'root': 'develop/',
   'html': ['develop/**/*.pug', '!develop/**/_*.pug'],
   'data': 'develop/_data/',
   'css': 'develop/**/*.scss',
   'styleguideWatch': ['develop/**/*.scss', 'develop/**/*.md'],
-  'js': ['develop/**/*.js', '!develop/assets/js/lib/**/*.js', '!develop/assets/js/namespace/**/*.js'],
+  'jquery': 'develop/assets/js/*.js',
   'libJs': 'develop/assets/js/lib/**/*.js',
   'siteJs': 'develop/assets/js/namespace/**/*.js',
   'jsWatch': 'develop/**/*.js',
@@ -146,8 +147,8 @@ gulp.task('css', function(){
 /**
  * jQueryをreleaseディレクトリに出力します。
  */
-gulp.task('js', function() {
-  return gulp.src(develop.js, {base: develop.root})
+gulp.task('jquery', function() {
+  return gulp.src(develop.jquery, {base: develop.root})
   .pipe(gulp.dest(test.root))
   .pipe(browserSync.reload({stream: true}));
 });
@@ -297,7 +298,7 @@ gulp.task('copy:release', function() {
 gulp.task('build', function() {
   runSequence(
     ['iconfont'],
-    ['html', 'css', 'styleguide', 'js', 'libJs', 'siteJs', 'image', 'public']
+    ['html', 'css', 'styleguide', 'jquery', 'libJs', 'siteJs', 'image', 'public']
   )
 });
 
@@ -320,7 +321,7 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(develop.html, ['html']);
   gulp.watch(develop.css, ['css']);
   gulp.watch(develop.styleguideWatch, ['styleguide']);
-  gulp.watch(develop.jsWatch, ['js']);
+  gulp.watch(develop.jsWatch, ['jquery']);
   gulp.watch(develop.jsWatch, ['libJs']);
   gulp.watch(develop.jsWatch, ['siteJs']);
   gulp.watch(develop.imageWatch, ['image']);
@@ -349,7 +350,7 @@ gulp.task('release', function() {
     ['clean:test'],
     ['clean:release'],
     ['iconfont'],
-    ['html', 'css', 'styleguide', 'js', 'libJs', 'siteJs', 'image', 'public'],
+    ['html', 'css', 'styleguide', 'jquery', 'libJs', 'siteJs', 'image', 'public'],
     'copy:test'
   )
 });
