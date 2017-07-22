@@ -51,7 +51,9 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "jquery-match-height": "^0.7.2",
+    "jquery-migrate": "^3.0.0",
     "picturefill": "^3.0.2",
     "smooth-scroll": "^11.1.0"
   }
