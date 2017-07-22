@@ -54,16 +54,24 @@ root/
 │   ├── _template/
 │   │   └── _default.pug
 │   ├── assets/
-│   │   ├── css/
+│   │   └── css/
+│   │       ├── base/
+│   │       ├── SiteWide/
+│   │       ├── Structure/
+│   │       ├── namespace/
+│   │       └── site.scss
 │   │   ├── icon/
 │   │   │   └── template/
 │   │   │       ├── Icon.html
 │   │   │       └── _icon.scss
 │   │   ├── img/
 │   │   └── js/
-│   │       ├── common/
-│   │       ├── jquery-2.2.0.min.js
-│   │       └── module/
+│   │       ├── jquery.min.js
+│   │       ├── jquery-migrate.min.js
+│   │       ├── lib/
+│   │       └── namespace/
+│   │           ├── js/
+│   │           └── data/
 │   └── index.pug
 ├── document/
 │   ├── css.md
