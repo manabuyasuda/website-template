@@ -11,20 +11,20 @@ CSSは[ECSS](http://ecss.io/)をベースにしています。特徴としては
 詳しくは[ECSSの特徴をまとめたドキュメント](https://github.com/manabuyasuda/styleguide/blob/master/how-to-ecss.md)を確認してください。
 
 ## ディレクトリ構造
-`develop/assets/css`以下にあるアンダースコア付きの`.scss`ファイルが`common.scss`によってインポートされます。
+`develop/assets/css`以下にあるアンダースコア付きの`.scss`ファイルが`site.scss`によってインポートされます。
 
 ECSSの考え方をベースに、以下の5つのレイヤーに大きくわかれています。
 
-1. common.scss
+1. site.scss
 2. base
 3. SiteWide
 4. Structure
-5. module
+5. namespace
 
 SiteWideはよく使うスタイルを用意しています。  
 グリッドはStructureに用意しています。ヘッダーやグローバルナビなどは用意していないので追加してください。
 
-moduleには名前空間ごとにディレクトリを作り、さらにModuleごとにファイルを作ります。
+namespaceには名前空間ごとにディレクトリを作り、さらにModuleごとにファイルを作ります。
 
 ```
 css/
@@ -62,14 +62,14 @@ css/
 │   ├── function/
 │   ├── mixin/
 │   └── variable/
-├── common.scss
-└── module/ // コンテキスト（Moduleや名前空間）ごとのファイル
+├── site.scss
+└── namespace/ // コンテキスト（Moduleや名前空間）ごとのファイル
     └── TopPage/
         └── _Module1.scss
 ```
 
-## Module
-`module/`にはECSSの考えをベースに名前空間でディレクトリをわけます。  
+## namespace
+`namespace/`にはECSSの考えをベースに名前空間でディレクトリをわけます。  
 例えば以下のように名前をつけます。
 
 - トップページ：`.tp-`(TopPage)
@@ -128,7 +128,7 @@ $breakpoint-up: (
 ## アイコンフォント
 アイコンは基本的にSVGを背景画像で表示しますが、背景画像でカバーできないスタイルの場合はアイコンフォントを使います。
 
-`develop/assets/icon/`にSVGを保存すると自動でアイコンフォントとCSSが生成されます。生成されたアイコンフォントは`css/SiteWide/_Icon.scss`に出力されます。
+`develop/assets/icon/`にSVGを保存すると自動でアイコンフォントとCSSが生成されます。生成されたアイコンフォントは`css/base/_Icon.scss`に出力されます。
 
 基本的にはこのように専用のクラスを指定します。
 

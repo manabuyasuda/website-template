@@ -5,22 +5,22 @@ JavaScriptはGulpで連結と圧縮の処理だけをしています。
 JavaScriptは3つ大きくわけられます。
 
 1. jquery
-2. common
-3. module
+2. lib
+3. namespace
 
 JQueryは`test/assets/js/`にそのまま出力されます。  
-commonはサイト全体で使われるものを保存します。  
-moduleはECSSの考えをベースに使われる場所や状況ごとにディレクトリをわけて、さらにModuleごとにファイルをわけます。
+linはサイト全体で使われるライブラリやプラグインを保存します。  
+namespaceはECSSの考えをベースに使われる場所や状況ごとにディレクトリをわけて、さらにModuleごとにファイルをわけます。
 
 ```
 js/
-├── common/
+├── lib/
 │   ├── breakpoint.js
 │   ├── debounce.js
 │   ├── jquery.matchHeight-min.js
 │   └── throttle.js
-├── jquery-2.2.0.min.js
-└── module/
+├── jquery.min.js
+└── namespace/
 ```
 
 ファイルはすべて、`test/assets/js/`に出力されます。

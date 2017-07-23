@@ -14,7 +14,7 @@ img/
 │       ├── FormRadio.svg
 │       └── FormSelect.svg
 ├── Structure/
-└── module/
+└── namespace/
 ```
 
 コンテンツ内で使う画像は、HTMLのディレクトリに基づいて保存します。これは、CSSとJSは1つのファイルに結合されるけれど、画像は結合することができないのでパスが変わってしまうからです。
