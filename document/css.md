@@ -63,28 +63,24 @@ css/
 │   ├── mixin/
 │   └── variable/
 ├── site.scss
-└── namespace/ // コンテキスト（Moduleや名前空間）ごとのファイル
-    └── TopPage/
-        └── _Module1.scss
+└── namespace/ // コンテキスト（Moduleや名前空間）ごとのファイルとディレクトリ
 ```
 
 ## namespace
 `namespace/`にはECSSの考えをベースに名前空間でディレクトリをわけます。  
 例えば以下のように名前をつけます。
 
-- トップページ：`.tp-`(TopPage)
-- よくある質問ページ：`.faq-`(Frequently Asked Questions)
-- 製品情報トップページ：`.pdt-`(ProDuct Top)
-- 製品情報詳細ページ：`.pdd-`(ProDuct Detail)
+ - `.layout-` (Layout) カテゴリー共通、またはページごとのレイアウト
+ - `.home-` (HomePage) ホームページ（サイトトップページ）
+ - `.top-` (CategoryTop) カテゴリートップページ
+ - `.products-` (Products) 製品情報
 
 名前空間に続いてModuleごとにファイルをわけていきます。Moduleは名前空間内にある、機能面のある程度大きな区分のことをいいます。JavaScriptで動的にクラスを追加するときの、いちばん外側の要素と考えてもいいと思います。  
 例えば以下のように名前をつけます。
 
-- `.tp-Header`
-- `.tp-Hero`
-- `.tp-Content`
-- `.tp-Footer`
-- `.tp-Heading`
+- `.layout-Home` ホームページのレイアウト
+- `.layout-Top` カテゴリートップのレイアウト
+- `.layout-Detail` 詳細（下層）ページのレイアウト
 
 ## Sass
 Sassには変数や、便利なmixinをいくつか用意しています。
