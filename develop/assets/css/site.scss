@@ -7,12 +7,33 @@
 @import "base/_base.scss";
 
 /**
- * sw-(base/_Icon.scss)...サイト共通のアイコン
- * sw-(SiteWide)...サイト共通の小さなパーツ
- * st-(Structure)...サイト共通のレイアウト
- * tp-(TopPage)...サイトトップページ
+ * .sw- (base/_Icon.scss)...サイト共通のアイコン
  */
 @import "base/_Icon.scss";
+
+/**
+ * .sw- (SiteWide)...サイト共通の汎用的なModule（リストやボタンなど）
+ */
 @import "SiteWide/**/*.scss";
+
+/**
+ * .st- (Structure)...サイト共通の構造的なModule（ヘッダーやフッターなど）
+ */
 @import "Structure/**/*.scss";
+
+/**
+ * .layout- (Layout)...カテゴリー共通、またはページごとのレイアウト
+ * .home- (HomePage)...ホームページ（サイトトップページ）
+ * .top- (CategoryTop)...カテゴリートップページ
+ * .products- (Products)...製品情報
+ * .news- (News)...ニュース
+ * .company- (Company)...会社案内・企業情報
+ * .recruit- (Recruit)...採用情報ページ
+ * .csr- (CorporateSocialResponsibility)...企業の社会的責任
+ * .faq- (FrequentlyAskedQuestions)...よくある質問
+ * .inquiry- (Inquiry)...お問い合わせ
+ * .ir- (InvestorRelations)...投資家向け情報
+ * .results- (Results)...検索結果ページ
+ * .sitemap- (Sitemap)...サイトマップページ
+ */
 @import "namespace/**/*.scss";
