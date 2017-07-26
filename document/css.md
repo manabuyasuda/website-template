@@ -17,60 +17,106 @@ ECSSの考え方をベースに、以下の5つのレイヤーに大きくわか
 
 1. site.scss
 2. base
-3. SiteWide
-4. Structure
+3. namespace/SiteWide
+4. namespace/Structure
 5. namespace
 
-SiteWideはよく使うスタイルを用意しています。  
-グリッドはStructureに用意しています。ヘッダーやグローバルナビなどは用意していないので追加してください。
+SiteWideはリストやボタンのような場所を選ばない汎用的なModuleです。  
+Structureはヘッダーやフッター、パンくずリストやサイドメニューのように使う場所が固定されているModuleです。  
+共通のレイアウトやグリッドシステムはnamespace/layoutに定義していきます。
 
 namespaceには名前空間ごとにディレクトリを作り、さらにModuleごとにファイルを作ります。
 
 ```
-css/
-├── SiteWide/ // サイト共通の小さなパーツ
-│   ├── _Button.scss
-│   ├── _Divider.scss
-│   ├── _Embed.scss
-│   ├── _FormCheckbox.scss
-│   ├── _FormInput.scss
-│   ├── _FormRadio.scss
-│   ├── _FormSelect.scss
-│   ├── _FormTextarea.scss
-│   ├── _Icon.scss
-│   ├── _Label.scss
-│   ├── _Link.scss
-│   ├── _LinkDownload.scss
-│   ├── _LinkExternal.scss
-│   ├── _LinkMore.scss
-│   ├── _LinkNote.scss
-│   ├── _LinkPdf.scss
-│   ├── _ListBracketOrder.scss
-│   ├── _ListNote.scss
-│   ├── _ListNoteOrder.scss
-│   ├── _ListOrder.scss
-│   ├── _TextAttention.scss
-│   ├── _TextEmphasis.scss
-│   ├── _TextSecondary.scss
-│   └── _Break.scss
-├── Structure/ // サイト共通の構造
-│   ├── _Grid.scss
-│   ├── _Grids.scss
-├── base/ // サイトのベーススタイル
-│   ├── _base.scss
+.
+├── base/
 │   ├── _normalize.scss
-│   ├── function/
-│   ├── mixin/
-│   └── variable/
+│   ├── _base.scss
+│   ├── _Icon.scss
+│   ├── variable
+│   │   ├── _breakpoint.scss
+│   │   ├── _font-family.scss
+│   │   └── _global.scss
+│   ├── function
+│   │   ├── _rem.scss
+│   │   └── _str-replace.scss
+│   ├── mixin
+│   │   ├── _Button.scss
+│   │   ├── _FormCheckbox.scss
+│   │   ├── _FormInput.scss
+│   │   ├── _FormRadio.scss
+│   │   ├── _FormSelect.scss
+│   │   ├── _FormTextarea.scss
+│   │   ├── _Label.scss
+│   │   ├── _Link.scss
+│   │   ├── _clearfix.scss
+│   │   ├── _font-face.scss
+│   │   ├── _mq-up.scss
+│   │   ├── _on-event.scss
+│   │   └── _sr-only.scss
+├── namespace
+│   ├── SiteWide
+│   │   ├── _Button.scss
+│   │   ├── _Delimiter.scss
+│   │   ├── _Divider.scss
+│   │   ├── _Embed.scss
+│   │   ├── _FormCheckbox.scss
+│   │   ├── _FormInput.scss
+│   │   ├── _FormRadio.scss
+│   │   ├── _FormSelect.scss
+│   │   ├── _FormTextarea.scss
+│   │   ├── _Hide.scss
+│   │   ├── _Label.scss
+│   │   ├── _Link.scss
+│   │   ├── _LinkDownload.scss
+│   │   ├── _LinkExternal.scss
+│   │   ├── _LinkMore.scss
+│   │   ├── _LinkNote.scss
+│   │   ├── _LinkPdf.scss
+│   │   ├── _ListBracketOrder.scss
+│   │   ├── _ListNote.scss
+│   │   ├── _ListNoteOrder.scss
+│   │   ├── _ListOrder.scss
+│   │   ├── _ListUnorder.scss
+│   │   ├── _Show.scss
+│   │   ├── _TableScroll.scss
+│   │   ├── _TextAttention.scss
+│   │   ├── _TextEmphasis.scss
+│   │   └── _TextSecondary.scss
+│   ├── Structure
+│   │   ├── _Wrapper.scss
+│   │   ├── _Header.scss
+│   │   ├── _Footer.scss
+│   │   └── _Breadcrumb.scss
+│   ├── layout
+│   │   ├── _Home.scss
+│   │   ├── _Top.scss
+│   │   ├── _Detail.scss
+│   │   ├── _Grid.scss
+│   │   └── _Grids.scss
+│   ├── home
+│   ├── top
+│   ├── products
+│   ├── company
+│   ├── csr
+│   ├── faq
+│   ├── inquiry
+│   ├── ir
+│   ├── news
+│   ├── recruit
+│   ├── results
+│   └── sitemap
 ├── site.scss
-└── namespace/ // コンテキスト（Moduleや名前空間）ごとのファイルとディレクトリ
+└── styleguide
+    ├── _IconList.scss
+    └── index.md
 ```
 
 ## namespace
 `namespace/`にはECSSの考えをベースに名前空間でディレクトリをわけます。  
 例えば以下のように名前をつけます。
 
- - `.layout-` (Layout) カテゴリー共通、またはページごとのレイアウト
+ - `.layout-` (Layout) カテゴリー共通やページごとのレイアウト、グリッドシステム
  - `.home-` (HomePage) ホームページ（サイトトップページ）
  - `.top-` (CategoryTop) カテゴリートップページ
  - `.products-` (Products) 製品情報

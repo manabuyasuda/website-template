@@ -1,0 +1,9 @@
+@mixin sw-Link() {
+  color: $color-link;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}

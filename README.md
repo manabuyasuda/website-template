@@ -56,8 +56,6 @@ root/
 │   ├── assets/
 │   │   └── css/
 │   │       ├── base/
-│   │       ├── SiteWide/
-│   │       ├── Structure/
 │   │       ├── namespace/
 │   │       └── site.scss
 │   │   ├── icon/

@@ -12,17 +12,9 @@
 @import "base/_Icon.scss";
 
 /**
- * .sw- (SiteWide)...サイト共通の汎用的なModule（リストやボタンなど）
- */
-@import "SiteWide/**/*.scss";
-
-/**
- * .st- (Structure)...サイト共通の構造的なModule（ヘッダーやフッターなど）
- */
-@import "Structure/**/*.scss";
-
-/**
- * .layout- (Layout)...カテゴリー共通、またはページごとのレイアウト
+ * .sw- (SiteWide)...サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）
+ * .st- (Structure)...サイト共通の構造的なModule（ヘッダーやフッターなどの場所が固定されるもの）
+ * .layout- (Layout)...カテゴリー共通やページごとのレイアウト、グリッドシステム
  * .home- (HomePage)...ホームページ（サイトトップページ）
  * .top- (CategoryTop)...カテゴリートップページ
  * .products- (Products)...製品情報

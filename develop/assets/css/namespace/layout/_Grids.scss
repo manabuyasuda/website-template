@@ -3,90 +3,89 @@
 /*
 ---
 name: Grids
-category: Structure
+category: Namespace
 tag: Global
 ---
 
-グリッドシステムです。1/2や1/3のような均等なカラムや、8/12と4/12のようなよく使うカラムの指定ができます。
-いずれも親要素である`.st-Grids`に追加で指定していきます。
+バリエーションの豊富なグリッドシステムです。親要素（`.layout-Grids`）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のような使用頻度の高いカラムの指定ができます。
 
-カラム間の余白は幅を`$st-grids-column-gap`、高さを`$st-grids-row-gap`で統一しています。
+カラム間の余白は幅を`$layout-grids-column-gap`、高さを`$layout-grids-row-gap`で統一しています。
 
-`.st-Grids`同士が同じ階層にある場合（`.st-Grids + .st-Grids`）には`.st-Grids`の間に余白がつきます。
+`.layout-Grids`同士が同じ階層にある場合（`.layout-Grids + .layout-Grids`）には`.layout-Grids`の間に余白がつきます。
 
 以下のような指定ができます。
 
 - 1/2から1/5までの均等なカラム指定。
 - 8/12と4/12のようなカラム指定。
-- ブレイクポイント（`.st-Grids-col*Md`、`.st-Grids-col*Lg`、`.st-Grids-col*Xl`）の指定。
+- ブレイクポイント（`.layout-Grids-col*Md`、`.layout-Grids-col*Lg`、`.layout-Grids-col*Xl`）の指定。
 
 ```jade
-.st-Grids.st-Grids-col8to4Md
-  .st-Grids_Item
+.layout-Grids.layout-Grids-col8to4Md
+  .layout-Grids_Item
     img(src="https://placehold.jp/1200x800.png" alt="")
-  .st-Grids_Item
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
 
-.st-Grids.st-Grids-col8to4Md.st-Grids-reversMd
-  .st-Grids_Item
+.layout-Grids.layout-Grids-col8to4Md.layout-Grids-reversMd
+  .layout-Grids_Item
     img(src="https://placehold.jp/1200x800.png" alt="")
-  .st-Grids_Item
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
 
-.st-Grids.st-Grids-col2Md
-  .st-Grids_Item
+.layout-Grids.layout-Grids-col2Md
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
-  .st-Grids_Item
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
 
-.st-Grids.st-Grids-col2.st-Grids-col3Md
-  .st-Grids_Item
+.layout-Grids.layout-Grids-col2.layout-Grids-col3Md
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
-  .st-Grids_Item
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
-  .st-Grids_Item
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
-  .st-Grids_Item
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
-  .st-Grids_Item
+  .layout-Grids_Item
     img(src="https://placehold.jp/600x400.png" alt="")
 ```
 */
 // `em`と`%`は指定不可
-$st-grids-column-gap: 2rem;
-$st-grids-row-gap: 2rem;
+$layout-grids-column-gap: 2rem;
+$layout-grids-row-gap: 2rem;
 
-.st-Grids {
-  margin-left: -$st-grids-column-gap;
+.layout-Grids {
+  margin-left: -$layout-grids-column-gap;
   padding-left: 0;
   list-style-type: none;
   display: block;
   font-size: 0;
 
-  /* 同じ階層にある`.st-Grids`同士の間に余白を入れます。 */
+  /* 同じ階層にある`.layout-Grids`同士の間に余白を入れます。 */
   &:not(:first-of-type) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 
-.st-Grids_Item {
+.layout-Grids_Item {
   display: inline-block;
   width: 100%;
-  padding-left: $st-grids-column-gap;
+  padding-left: $layout-grids-column-gap;
   font-size: medium;
   font-size: 1rem;
   vertical-align: top;
 }
 
 /* 1 Column */
-.st-Grids_Item {
+.layout-Grids_Item {
   &:nth-of-type(n+2) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 
 /* 2 Columns */
-.st-Grids-col2 > .st-Grids_Item {
+.layout-Grids-col2 > .layout-Grids_Item {
   width: percentage(1 / 2);
 
   /**
@@ -98,231 +97,231 @@ $st-grids-row-gap: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+3) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col2Md > .st-Grids_Item {
+  .layout-Grids-col2Md > .layout-Grids_Item {
     width: percentage(1 / 2);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col2Lg > .st-Grids_Item {
+  .layout-Grids-col2Lg > .layout-Grids_Item {
     width: percentage(1 / 2);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col2Xl > .st-Grids_Item {
+  .layout-Grids-col2Xl > .layout-Grids_Item {
     width: percentage(1 / 2);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 
 /* 3 Columns */
-.st-Grids-col3 > .st-Grids_Item {
+.layout-Grids-col3 > .layout-Grids_Item {
   width: percentage(1 / 3);
 
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
   &:nth-of-type(n+4) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col3Md > .st-Grids_Item {
+  .layout-Grids-col3Md > .layout-Grids_Item {
     width: percentage(1 / 3);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col3Lg > .st-Grids_Item {
+  .layout-Grids-col3Lg > .layout-Grids_Item {
     width: percentage(1 / 3);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col3Xl > .st-Grids_Item {
+  .layout-Grids-col3Xl > .layout-Grids_Item {
     width: percentage(1 / 3);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 
 /* 4 Columns */
-.st-Grids-col4 > .st-Grids_Item {
+.layout-Grids-col4 > .layout-Grids_Item {
   width: percentage(1 / 4);
 
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
   &:nth-of-type(n+5) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col4Md > .st-Grids_Item {
+  .layout-Grids-col4Md > .layout-Grids_Item {
     width: percentage(1 / 4);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col4Lg > .st-Grids_Item {
+  .layout-Grids-col4Lg > .layout-Grids_Item {
     width: percentage(1 / 4);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col4Xl > .st-Grids_Item {
+  .layout-Grids-col4Xl > .layout-Grids_Item {
     width: percentage(1 / 4);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 
 /* 5 Columns */
-.st-Grids-col5 > .st-Grids_Item {
+.layout-Grids-col5 > .layout-Grids_Item {
   width: percentage(1 / 5);
 
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
   &:nth-of-type(n+6) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col5Md > .st-Grids_Item {
+  .layout-Grids-col5Md > .layout-Grids_Item {
     width: percentage(1 / 5);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col5Lg > .st-Grids_Item {
+  .layout-Grids-col5Lg > .layout-Grids_Item {
     width: percentage(1 / 5);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col5Xl > .st-Grids_Item {
+  .layout-Grids-col5Xl > .layout-Grids_Item {
     width: percentage(1 / 5);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 
 /**
- * `.st-Grids_Item`の表示順を逆にします。
+ * `.layout-Grids_Item`の表示順を逆にします。
  * A,B → B,A
  */
-.st-Grids-reverse {
+.layout-Grids-reverse {
   text-align: left;
   direction: rtl;
 
-  & > .st-Grids_Item {
+  & > .layout-Grids_Item {
     text-align: left;
     direction: ltr;
   }
 }
 @include mq-up(md) {
-  .st-Grids-reversMd {
+  .layout-Grids-reversMd {
     text-align: left;
     direction: rtl;
 
-    & > .st-Grids_Item {
+    & > .layout-Grids_Item {
       text-align: left;
       direction: ltr;
     }
   }
 }
 @include mq-up(lg) {
-  .st-Grids-reverseLg {
+  .layout-Grids-reverseLg {
     text-align: left;
     direction: rtl;
 
-    & > .st-Grids_Item {
+    & > .layout-Grids_Item {
       text-align: left;
       direction: ltr;
     }
   }
 }
 @include mq-up(xl) {
-  .st-Grids-reverseXl {
+  .layout-Grids-reverseXl {
     text-align: left;
     direction: rtl;
 
-    & > .st-Grids_Item {
+    & > .layout-Grids_Item {
       text-align: left;
       direction: ltr;
     }
@@ -330,7 +329,7 @@ $st-grids-row-gap: 2rem;
 }
 
 /* 8/12, 4/12 */
-.st-Grids-col8to4 > .st-Grids_Item {
+.layout-Grids-col8to4 > .layout-Grids_Item {
   &:nth-of-type(odd) {
     width: percentage(8 / 12);
   }
@@ -343,11 +342,11 @@ $st-grids-row-gap: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+3) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col8to4Md > .st-Grids_Item {
+  .layout-Grids-col8to4Md > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(8 / 12);
     }
@@ -360,12 +359,12 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col8to4Lg > .st-Grids_Item {
+  .layout-Grids-col8to4Lg > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(8 / 12);
     }
@@ -378,12 +377,12 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col8to4Xl > .st-Grids_Item {
+  .layout-Grids-col8to4Xl > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(8 / 12);
     }
@@ -396,13 +395,13 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 
 /* 7/12, 5/12 */
-.st-Grids-col7to5 > .st-Grids_Item {
+.layout-Grids-col7to5 > .layout-Grids_Item {
   &:nth-of-type(odd) {
     width: percentage(7 / 12);
   }
@@ -415,11 +414,11 @@ $st-grids-row-gap: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+3) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col7to5Md > .st-Grids_Item {
+  .layout-Grids-col7to5Md > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(7 / 12);
     }
@@ -432,12 +431,12 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col7to5Lg > .st-Grids_Item {
+  .layout-Grids-col7to5Lg > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(7 / 12);
     }
@@ -450,12 +449,12 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col7to5Xl > .st-Grids_Item {
+  .layout-Grids-col7to5Xl > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(7 / 12);
     }
@@ -468,13 +467,13 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 
 /* 9/12, 3/12 */
-.st-Grids-col9to3 > .st-Grids_Item {
+.layout-Grids-col9to3 > .layout-Grids_Item {
   &:nth-of-type(odd) {
     width: percentage(9 / 12);
   }
@@ -487,11 +486,11 @@ $st-grids-row-gap: 2rem;
     margin-top: 0;
   }
   &:nth-of-type(n+3) {
-    margin-top: $st-grids-row-gap;
+    margin-top: $layout-grids-row-gap;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col9to3Md > .st-Grids_Item {
+  .layout-Grids-col9to3Md > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(9 / 12);
     }
@@ -504,12 +503,12 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col9to3Lg > .st-Grids_Item {
+  .layout-Grids-col9to3Lg > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(9 / 12);
     }
@@ -522,12 +521,12 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col9to3Xl > .st-Grids_Item {
+  .layout-Grids-col9to3Xl > .layout-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(9 / 12);
     }
@@ -540,7 +539,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $layout-grids-row-gap;
     }
   }
 }
