@@ -7,11 +7,6 @@
 @import "base/_base.scss";
 
 /**
- * .sw- (base/_Icon.scss)...サイト共通のアイコン
- */
-@import "base/_Icon.scss";
-
-/**
  * .sw- (SiteWide)...サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）
  * .st- (Structure)...サイト共通の構造的なModule（ヘッダーやフッターなどの場所が固定されるもの）
  * .layout- (Layout)...カテゴリー共通やページごとのレイアウト、グリッドシステム

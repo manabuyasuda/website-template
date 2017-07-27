@@ -53,6 +53,7 @@ var develop = {
   'image': 'develop/assets/img/**/*.{png,jpg,gif,svg}',
   'imageWatch': 'develop/assets/img/**/*',
   'iconfont': 'develop/assets/icon/**/*.svg',
+  'iconfontWath': ['develop/assets/icon/**/*.svg', 'develop/assets/icon/template/_Icon.scss'],
   'public': 'public/**/*'
 };
 
@@ -227,19 +228,12 @@ gulp.task('iconfont', function() {
       fontName: fontName,
       // Sassファイルからfontファイルまでの相対パスを指定します。
       fontPath: '../font/',
-      // CSSのクラス名を指定します。
-      className: 'sw-Icon'
     };
     // CSSのテンプレートからSassファイルを生成します。
     gulp.src('develop/assets/icon/template/_Icon.scss')
     .pipe(consolidate('lodash', options))
     // Sassファイルの生成するパスを指定します。
-    .pipe(gulp.dest('develop/assets/css/base/'));
-
-    // スタイルガイドとして作成するSassファイルを指定します。
-    gulp.src('develop/assets/icon/template/_IconList.scss')
-    .pipe(consolidate('lodash', options))
-    .pipe(gulp.dest('develop/assets/css/styleguide/'));
+    .pipe(gulp.dest('develop/assets/css/base/mixin/'));
   })
   // fontファイルを出力するパスを指定します。
   .pipe(gulp.dest(test.iconfont));
@@ -325,7 +319,7 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(develop.jsWatch, ['libJs']);
   gulp.watch(develop.jsWatch, ['siteJs']);
   gulp.watch(develop.imageWatch, ['image']);
-  gulp.watch(develop.iconfont, ['iconfont']);
+  gulp.watch(develop.iconfontWath, ['iconfont']);
   gulp.watch(develop.public, ['public']);
 });
 

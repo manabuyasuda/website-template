@@ -29,9 +29,13 @@ p
 }
 
 .sw-LinkDownload_Icon:after {
-  @include icon;
-  content: "#{$icon-linkDownload}";
-  top: -0.2em;
-  left: 0.25em;
+  @include Icon(linkDownload);
   font-size: 1.25em;
+
+  [lang="ja"] &,
+  [lang^="zh"] & {
+    position: relative;
+    top: -0.2em;
+    left: 0.25em;
+  }
 }

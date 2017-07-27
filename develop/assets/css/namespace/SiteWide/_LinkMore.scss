@@ -29,9 +29,13 @@ p
 }
 
 .sw-LinkMore_Icon:after {
-  @include icon;
-  content: "#{$icon-linkMore}";
-  top: -0.1em;
-  left: 0.25em;
+  @include Icon(linkMore);
   font-size: 0.8em;
+
+  [lang="ja"] &,
+  [lang^="zh"] & {
+    position: relative;
+    top: -0.05em;
+    left: 0.25em;
+  }
 }

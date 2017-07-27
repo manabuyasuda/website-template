@@ -29,9 +29,13 @@ p
 }
 
 .sw-LinkPdf_Icon:after {
-  @include icon;
-  content: "#{$icon-linkPdf}";
-  top: -0.2em;
-  left: 0.25em;
+  @include Icon(linkPdf);
   font-size: 1.25em;
+
+  [lang="ja"] &,
+  [lang^="zh"] & {
+    position: relative;
+    top: -0.2em;
+    left: 0.25em;
+  }
 }
