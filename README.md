@@ -60,8 +60,7 @@ root/
 │   │       └── site.scss
 │   │   ├── icon/
 │   │   │   └── template/
-│   │   │       ├── Icon.html
-│   │   │       └── _icon.scss
+│   │   │       └── _Icon.scss
 │   │   ├── img/
 │   │   └── js/
 │   │       ├── jquery.min.js

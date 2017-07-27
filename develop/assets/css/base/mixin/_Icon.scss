@@ -17,7 +17,7 @@ $icon: (
   linkPdf: "\\EA04",
 ) !default;
 
-// @desc アイコンフォントを追加します。
+// @desc アイコンフォントを呼び出します。
 // @param {String} $name [null] - 呼び出したいアイコンフォントのファイル名（拡張子なし）。
 // @see $icon
 // @example scss - Usage

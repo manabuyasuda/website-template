@@ -14,7 +14,7 @@ $icon: (
 <% _.each(glyphs, function(glyph) { %>  <%= glyph.name %>: "\\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>",
 <% }); %>) !default;
 
-// @desc アイコンフォントを追加します。
+// @desc アイコンフォントを呼び出します。
 // @param {String} $name [null] - 呼び出したいアイコンフォントのファイル名（拡張子なし）。
 // @see $icon
 // @example scss - Usage

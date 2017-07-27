@@ -170,25 +170,13 @@ $breakpoint-up: (
 ## アイコンフォント
 アイコンは基本的にSVGを背景画像で表示しますが、背景画像でカバーできないスタイルの場合はアイコンフォントを使います。
 
-`develop/assets/icon/`にSVGを保存すると自動でアイコンフォントとCSSが生成されます。生成されたアイコンフォントは`css/base/_Icon.scss`に出力されます。
+`develop/assets/icon/`にSVGファイルを保存すると自動でアイコンフォントとCSSが生成されます。生成されたアイコンフォントは`css/base/mixin/_Icon.scss`に出力されます。
 
-基本的にはこのように専用のクラスを指定します。
-
-```jade
-p More
-  span.sw-Icon.sw-Icon-linkMore(aria-hidden="true")
-```
-
-mixinと変数でアイコンフォントのスタイルを呼び出すこともできるので活用してください。
+変数とmixinでアイコンフォントのスタイルを呼び出すことができます。  
+mixinの`icon()`の引数にはアイコンフォント用のSVGファイル名を渡します。
 
 ```scss
 .sw-LinkMore_Icon:after {
-  @include icon; // アイコンフォントのベーススタイル
-  content: "#{$icon-linkMore}"; // アイコンフォントの種類を指定
-  top: -0.1em;
-  left: 0.25em;
-  font-size: 0.8em;
+  @include icon(linkMore); 
 }
 ```
-
-生成したアイコンフォントは`/styleguide/Icon.html`で確認できます。
