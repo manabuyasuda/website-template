@@ -22,46 +22,7 @@ textarea.sw-FormTextarea.sw-FormTextarea-large(id="textarea3" placeholder="テ�
 
 textarea.sw-FormTextarea(disabled id="textarea4" placeholder="テキストエリアです")
 ```
-
-`sw-FormTextarea()`mixinで他のボタンにもスタイルを継承することができます。
-
-```scss
-.AnotherFormTextarea {
-  @include sw-FormTextarea();
-}
-```
 */
-@mixin sw-FormTextarea() {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: 7em;
-  margin: 0;
-  padding: 0.5em 1em;
-  border: 1px solid #d0d0d0;
-  border-radius: $form-border-radius;
-  font-size: 16px;
-  background-color: #fff;
-  appearance: none;
-  box-shadow: 1px 1px 6px -3px #9e9e9e inset;
-
-  &::placeholder {
-    color: $form-placeholder-color;
-    font-size: $font-size-secondary;
-  }
-
-  &:focus {
-    outline: 0;
-    border-color: $form-focus-border-color;
-    box-shadow: $form-focus-box-shadow;
-  }
-
-  &:disabled {
-    opacity: $form-disabled-opacity;
-    background-color: $form-disabled-background-color;
-    cursor: $form-disabled-cursor;
-  }
-}
 .sw-FormTextarea {
   @include sw-FormTextarea();
 }

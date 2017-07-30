@@ -14,32 +14,7 @@ span.sw-Label spanタグのラベルです。
 label.sw-Label labelタグのラベルです。
 a.sw-Label(href="#") aタグのラベルです。
 ```
-
-`sw-Label()`mixinで他のボタンにもスタイルを継承することができます。
-
-```scss
-.AnotherLabel {
-  @include sw-Label();
-}
-```
 */
-@mixin sw-Label() {
-  display: inline-block;
-  padding: 0.5em 1em;
-  border: 1px solid currentColor;
-  color: $color-text;
-  font-size: rem(10);
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  text-decoration: none;
-  background-color: inherit;
-
-  &:hover {
-    color: currentColor;
-    text-decoration: none;
-  }
-}
 .sw-Label {
   @include sw-Label();
 }
