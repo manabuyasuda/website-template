@@ -22,43 +22,43 @@ ul.sw-ListUnorder
   margin-left: 1.5em;
   padding-left: 0;
   list-style-type: none;
-}
 
-.sw-ListUnorder > li {
-  position: relative;
-}
+  & > li {
+    position: relative;
+  }
 
-.sw-ListUnorder > li:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0.4em;
-  left: -1em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #000;
+  & > li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.5em;
+    left: -1em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #000;
+  }
 }
 
 .sw-ListUnorder_Child {
   padding-left: 0;
   list-style-type: none;
-}
 
-.sw-ListUnorder_Child > li {
-  position: relative;
-  margin-left: 1.5em;
-}
+  & > li {
+    position: relative;
+    margin-left: 1.5em;
+  }
 
-.sw-ListUnorder_Child > li:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0.4em;
-  left: -1em;
-  width: 6px;
-  height: 6px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  background-color: #fff;
+  & > li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.5em;
+    left: -1em;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+  }
 }
