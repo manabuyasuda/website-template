@@ -11,22 +11,29 @@ tag: List
 
 ```jade
 ol.sw-ListNoteOrder
-  li 注釈です
-  li 注釈です
+  li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
+  li 注釈です。
 
 div(lang="en")
-  ul.sw-ListNoteOrder(lang="en")
-    li 注釈です
-    li 注釈です
+  ul.sw-ListNoteOrder
+    li This is an annotation. This is an annotation. This is an annotation.
+    li This is an annotation.
 ```
 */
 .sw-ListNoteOrder {
+  margin-left: 2em;
   padding-left: 0;
+  font-size: $font-size-secondary;
   list-style-type: none;
 
-  li {
+  [lang="en"] &,
+  [lang="zh-cn"] {
+    margin-left: 1.5em;
+  }
+
+  & > li {
+    position: relative;
     counter-increment: noteOrder;
-    font-size: $font-size-secondary;
   }
 
   & > li:target {
@@ -35,11 +42,14 @@ div(lang="en")
 
   & > li:before {
     content: "※" counter(noteOrder);
-    margin-right: 0.25em;
+    position: absolute;
+    top: 0;
+    left: -2em;
   }
 
   [lang="en"] & > li:before,
   [lang="zh-cn"] & > li:before {
     content: "*" counter(noteOrder);
+    left: -1.5em;
   }
 }

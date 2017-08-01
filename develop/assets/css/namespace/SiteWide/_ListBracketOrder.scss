@@ -11,20 +11,24 @@ tag: List
 
 ```jade
 ul.sw-ListBracketOrder
-  li リストです
+  li リストです。リストです。リストです。リストです。
   li リストです
 ```
 */
 .sw-ListBracketOrder {
+  margin-left: 2em;
   padding-left: 0;
   list-style-type: none;
 
-  li {
+  & > li {
+    position: relative;
     counter-increment: bracketOrder;
   }
 
-  li:before {
+  & > li:before {
     content: "(" counter(bracketOrder) ")";
-    margin-right: 0.25em;
+    position: absolute;
+    top: 0;
+    left: -2em;
   }
 }

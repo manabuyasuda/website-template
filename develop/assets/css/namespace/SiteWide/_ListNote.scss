@@ -11,30 +11,40 @@ tag: List
 
 ```jade
 ul.sw-ListNote
-  li 1つ目の注釈です
+  li 1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です
   li 2つ目の注釈です
 
 div(lang="en")
-  ul.sw-ListNote(lang="en")
-    li 1つ目の注釈です
-    li 2つ目の注釈です
+  ul.sw-ListNote
+    li This is the first comment. This is the first comment. This is the first comment.
+    li This is the second comment.
 ```
 */
 .sw-ListNote {
+  margin-left: 1.5em;
   padding-left: 0;
+  font-size: $font-size-secondary;
   list-style-type: none;
 
-  li {
-    font-size: $font-size-secondary;
+  [lang="en"] &,
+  [lang="zh-cn"] {
+    margin-left: 1em;
+  }
+
+  & > li {
+    position: relative;
   }
 
   & > li:before {
     content: "※";
-    margin-right: 0.5em;
+    position: absolute;
+    top: 0;
+    left: -1.5em;
   }
 
   [lang="en"] & > li:before,
   [lang="zh-cn"] & > li:before {
     content: "*";
+    left: -1em;
   }
 }
