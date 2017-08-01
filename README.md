@@ -2,6 +2,9 @@
 静的なWebサイトを作るためのテンプレートです。  
 なるべく多くの人が使えて、少しモダンな制作環境になることを目指しています。
 
+以下のページで詳しく確認できます。
+
+- [Styleguide](https://manabuyasuda-website-template.netlify.com/styleguide/)
 - [document/](document/)
   - [css.md](document/css.md)
   - [html.md](document/html.md)
