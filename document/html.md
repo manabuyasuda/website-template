@@ -202,3 +202,34 @@ gulpfile.jsで以下のように記述しているので、`site.name`のよう�
     'site': JSON.parse(fs.readFileSync(develop.data + 'site.json'))
   };
 ```
+
+## SSI
+初期設定では共通部分はPugで管理していますが、SSIを使うこともできます。
+
+gulpfile.jsの`browser-sync`タスクを確認してください。
+
+```js
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      // SSIを利用する場合はmiddlewareのコメントアウトを解除します。
+      // middleware: [
+      //   ssi({
+      //     baseDir: test.root,
+      //     ext: ".html"
+      //   })
+      // ],
+      baseDir: test.root,
+      index: "index.html"
+    }
+  });
+});
+```
+
+5行目にあるオプションの`middleware`のコメントアウトを解除、`ext`はSSIとして機能させるファイルの拡張子です。  
+Pugファイルに以下のような指定をすると、Pugから出力したHTMLファイルを表示するときにSSIを利用することができます。
+
+```js
+block content
+  <!--#include virtual="/ssi/ssi.html" -->
+```

@@ -33,6 +33,7 @@ var changed  = require('gulp-changed');
 var sourcemaps = require('gulp-sourcemaps');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
+var ssi = require("browsersync-ssi");
 var plumber = require('gulp-plumber');
 var notify = require("gulp-notify");
 var rimraf = require('rimraf');
@@ -302,6 +303,13 @@ gulp.task('build', function() {
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
+      // SSIを利用する場合はmiddlewareのコメントアウトを解除します。
+      // middleware: [
+      //   ssi({
+      //     baseDir: test.root,
+      //     ext: ".html"
+      //   })
+      // ],
       baseDir: test.root,
       index: "index.html"
     }
