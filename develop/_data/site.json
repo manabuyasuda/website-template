@@ -2,7 +2,7 @@
   "name": "Site Name",
   "description": "Site Description",
   "keywords": "Site Keyword1, Site Keyword2",
-  "rootUrl": "https://example.com",
+  "url": "https://example.com",
   "ogpImage": "https://example.com/ogp.jpg",
   "fbAppId": "",
   "fbAdmins": "",

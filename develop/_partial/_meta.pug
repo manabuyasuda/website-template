@@ -12,7 +12,7 @@ if pageKeywords
 block css
   link(rel="stylesheet" href="/assets/css/site.css")
 
-link(rel="canonical" href=site.rootUrl + pageRootPath)
+link(rel="canonical" href=site.url + pageAbsolutePath)
 
 meta(name="format-detection" content="telephone=no")
 
@@ -22,7 +22,7 @@ else
   meta(property="og:title" content=site.name)
 meta(property="og:type" content=pageOgpType)
 meta(property="og:image" content=pageOgpImage)
-meta(property="og:url" content=site.rootUrl + pageRootPath)
+meta(property="og:url" content=site.url + pageAbsolutePath)
 meta(property="og:description" content=pageDescription)
 meta(property="og:site_name" content=site.name)
 meta(property="og:locale" content=pageLang)

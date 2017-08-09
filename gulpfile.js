@@ -82,15 +82,15 @@ var release = {
 gulp.task('html', function() {
   // JSONファイルの読み込み。
   var locals = {
-    // `site.hoge`でデータを取得できます。
+    // サイト共通のデータです。
     'site': JSON.parse(fs.readFileSync(develop.data + 'site.json'))
   };
   return gulp.src(develop.html)
   // エラーでタスクを止めない
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(data(function(file) {
-    // 各ページのルート相対パスを取得します。
-    locals.pageRootPath = '/' + path.relative(file.base, file.path.replace(/.pug$/, '.html')).replace(/index\.html$/, '');
+    // 各ページのルート相対パスを格納します。
+    locals.pageAbsolutePath = '/' + path.relative(file.base, file.path.replace(/.pug$/, '.html')).replace(/index\.html$/, '');
       return locals;
   }))
   .pipe(cache('html'))
