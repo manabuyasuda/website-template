@@ -56,6 +56,10 @@ root/
 │   │   └── _header.pug
 │   ├── _template/
 │   │   └── _default.pug
+│   ├── _mixin/
+│   │   ├── _breadcrumb.pug
+│   │   ├── _picture.pug
+│   │   └── _all.pug
 │   ├── assets/
 │   │   └── css/
 │   │       ├── base/

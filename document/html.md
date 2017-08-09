@@ -6,7 +6,7 @@ HTMLは[Pug](https://pugjs.org/api/getting-started.html)を使って生成して
 
 ## ディレクトリ構造
 Pugのコンパイルは、例えば`develop/index.pug`が`test/index.html`のようになります。  
-`_partial/`は共通部分など、`_template/`は共通部分をまとめたテンプレート、`_data/`はサイトやページ単位で使うデータを保存します。`_index.pug`のようにアンダースコアから始まるファイルは直接出力されません。
+`_partial/`は共通部分など、`_template/`は共通部分をまとめたテンプレート、`_data/`はサイトやページ単位で使うデータ、`_mixin`はPugのmixinを保存します。`_index.pug`のようにアンダースコアから始まるファイルは直接出力されません。
 
 ```
 develop
@@ -19,6 +19,10 @@ develop
 │   └── _script.pug
 ├── _template/ // テンプレートを管理するディレクトリ
 │   └── _default.pug
+├── _mixin/ // Pugのmixinを管理するディレクトリ
+│   ├── _breadcrumb.pug
+│   ├── _picture.pug
+│   └── _all.pug
 ├── about/ // アバウトディレクトリ
 │   └── index.pug
 └── index.pug トップページ
@@ -102,8 +106,12 @@ block js
   script(src="/assets/js/site.js")
 ```
 
+### _mixin
+`_partial/_mixin/`ではPugで使用するmixinが保存されています。mixinは`_partial/_mixin/_all.pug`でまとめてインクルードされ、`_all.pug`は`_template/_default.pug`でインクードされます。  
+mixinを追加した場合は`_partial/_mixin/_all.pug`でインクルードするようにしてください。
+
 ### index.pug
-ページの作成をする場合は、通常のHTMLと同じように`index.pug`や`about/index.pug`のように名前をつけます。。
+ページの作成をする場合は、通常のHTMLと同じように`index.pug`や`about/index.pug`のように名前をつけます。
 
 `index.pug`は以下のような構成になっています。
 
@@ -186,7 +194,7 @@ develop/
 
 ```pug
 block variables
-include /_mixin/_picture
+include /_mixin/_all
 doctype html
 html(lang=pageLang)
   head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
