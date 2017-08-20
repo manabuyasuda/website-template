@@ -1,6 +1,8 @@
 // JavaScriptでブレイクポイントを取得するために指定しています。
-// /assets/js/common/breakpoint.js を参照してください。
+// `none`はJavaScriptからの参照にのみ使用します。
+// /assets/js/lib/breakpoint.js を参照してください。
 $breakpoint-up: (
+  'none': '(min-width: 1px)',
   'md': '(min-width: 768px)',
   'lg': '(min-width: 1080px)',
   'xl': '(min-width: 1440px)',

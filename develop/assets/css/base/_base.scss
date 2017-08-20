@@ -5,7 +5,7 @@
  * /assets/js/lib/breakpoint.js を参照してください。
  */
 body:before {
-  content: "";
+  content: "none";
   display: none;
 
   @include mq-up(md) {
