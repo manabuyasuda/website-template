@@ -7,10 +7,10 @@ $max-width: 1080px !default;
 // default grid columns
 $column: 12 !default;
 
+// font-size for each breakpoints
 $font-size: (
-  'sm': 14,
+  'none': 14,
   'md': 16,
-  'default': 16,
 ) !default;
 
 $color-brand: #a48030 !default;
@@ -18,7 +18,7 @@ $color-text: #000;
 $color-link: #2b70ba !default;
 $color-link-hover: #2b70ba !default;
 
-$font-size-secondary: 0.85em;
+$font-size-secondary: 0.85em !default;
 
 $font-famiry-serif: "Hiragino Mincho ProN", "游明朝", "YuMincho", "HG明朝E", Meiryo, serif !default;
 $font-famiry-sans-serif: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;

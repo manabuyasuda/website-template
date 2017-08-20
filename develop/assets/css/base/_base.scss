@@ -31,11 +31,25 @@ html {
 }
 
 html {
-  font-size: ((map-get($font-size, sm) / 16) * 100%);
+  font-size: ((map-get($font-size, 'none') / 16) * 100%);
   line-height: 1.5;
 
   @include mq-up(md) {
-    font-size: ((map-get($font-size, md) / 16) * 100%);
+    @if map-has-key($font-size, 'md') {
+      font-size: ((map-get($font-size, md) / 16) * 100%);
+    }
+  }
+
+  @include mq-up(lg) {
+    @if map-has-key($font-size, 'lg') {
+      font-size: ((map-get($font-size, lg) / 16) * 100%);
+    }
+  }
+
+  @include mq-up(xl) {
+    @if map-has-key($font-size, 'xl') {
+      font-size: ((map-get($font-size, xl) / 16) * 100%);
+    }
   }
 }
 
