@@ -5,22 +5,27 @@
   & + label {
     position: relative;
     display: inline-block;
+    padding-left: 1.25em;
     cursor: pointer;
   }
 
   & + label:before {
-    content: "";
-    display: inline-block;
-    $size: 1em;
-    width: $size;
-    height: $size;
-    margin-right: 0.25em;
-    border: $form-border;
-    border-radius: 3px;
-    vertical-align: text-bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+  $size: 1em;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: $size;
+  height: $size;
+  margin: auto;
+  border: $form-border;
+  border-radius: 3px;
+  vertical-align: text-bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
   &:focus + label:before {
     border-color: $form-focus-border-color;

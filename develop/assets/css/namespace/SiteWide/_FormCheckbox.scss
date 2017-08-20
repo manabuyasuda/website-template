@@ -12,10 +12,10 @@ tag: Form
 ```jade
 input.sw-FormCheckbox(type="checkbox" id="checkbox1" checked)
 label(for="checkbox1") チェックボックス
-
+br
 input.sw-FormCheckbox(type="checkbox" id="checkbox2")
 label(for="checkbox2") チェックボックス
-
+br
 input.sw-FormCheckbox(disabled type="checkbox" id="checkbox3")
 label(disabled for="checkbox3") チェックボックス
 ```
