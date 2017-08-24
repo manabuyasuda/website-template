@@ -50,7 +50,10 @@
   }
 
   & > select:focus {
-    outline: 0;
+    outline-width: 0;
+  }
+
+  & > select.focus-ring:focus {
     border-color: $form-focus-border-color;
     box-shadow: $form-focus-box-shadow;
   }

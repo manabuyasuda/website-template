@@ -18,7 +18,7 @@
   }
 
   &:focus {
-    outline: 0;
+    outline-width: 0;
     border-color: $form-focus-border-color;
     box-shadow: $form-focus-box-shadow;
   }

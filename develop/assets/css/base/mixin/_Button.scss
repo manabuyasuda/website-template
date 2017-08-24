@@ -27,8 +27,13 @@
   }
 
   &:focus {
-    outline: 0;
-    box-shadow: $form-focus-box-shadow;
+   outline-width: 0;
+   box-shadow: $form-focus-box-shadow;
+  }
+
+  &:focus:not(.focus-ring) {
+    outline-width: 0;
+    box-shadow: none;
   }
 
   &:disabled,
