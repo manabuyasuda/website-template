@@ -46,7 +46,7 @@ npm install
 `public`ディレクトリは処理は必要ないけれど、ファビコンのようなサイト制作に必要なファイルを置きます。
 
 ```
-root
+root/
 ├── develop/
 │   ├── _data/
 │   │   └── ja/
