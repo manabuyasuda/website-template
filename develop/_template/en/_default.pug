@@ -1,16 +1,16 @@
 block variables
 include /_mixin/_all
 doctype html
-html(lang="ja")
+html(lang="en")
   head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
-    include /_partial/ja/_meta
+    include /_partial/en/_meta
     include /_partial/_hreflang
 
   body
 
-    include /_partial/ja/_header
+    include /_partial/en/_header
 
     block content
 
-    include /_partial/ja/_footer
+    include /_partial/en/_footer
     include /_partial/_script

@@ -88,6 +88,10 @@ gulp.task('html', function() {
     // 日本語サイト共通のデータです。
     'site': JSON.parse(fs.readFileSync(develop.data + 'ja/site.json'))
   };
+  locals.en = {
+    // 英語サイト共通のデータです。
+    'site': JSON.parse(fs.readFileSync(develop.data + 'en/site.json'))
+  };
   return gulp.src(develop.html)
   // エラーでタスクを止めない
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))

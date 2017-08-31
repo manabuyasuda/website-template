@@ -1,0 +1,10 @@
+{
+  "name": "Site Name",
+  "description": "Site Description",
+  "keywords": "Site Keyword1, Site Keyword2",
+  "ogpImage": "https://example.com/ogp.jpg",
+  "fbAppId": "",
+  "fbAdmins": "",
+  "twitterCard": "summary_large_image",
+  "twitterSite": "@SiteAccount"
+}
