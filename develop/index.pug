@@ -1,20 +1,12 @@
-extend /_template/_default
+extend /_template/ja/_default
 append variables
   //- 変更可能
   - var pageTitle= "";
-  - var pageDescription= site.description;
-  - var pageKeywords= site.keywords;
+  - var pageDescription= ja.site.description;
+  - var pageKeywords= ja.site.keywords;
   //- 任意
   - var pageOgpTitle= pageTitle;
-  - var pageOgpImage= site.ogpImage;
-  - var pageLang= "ja";
+  - var pageOgpImage= ja.site.ogpImage;
   - var pageOgpType= "website";
-
-//- 個別CSSファイルの読み込み（相対パス）
-block append css
-  //- link(rel="stylesheet" href="css/index.css")
-//- 個別JSファイルの読み込み（相対パス）
-block append js
-  //- script(src="js/index.js")
 
 block content

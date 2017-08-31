@@ -1,15 +1,15 @@
 block variables
 include /_mixin/_all
 doctype html
-html(lang=pageLang)
+html(lang="ja")
   head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
-    include /_partial/_meta
+    include /_partial/ja/_meta
 
   body
 
-    include /_partial/_header
+    include /_partial/ja/_header
 
     block content
 
-    include /_partial/_footer
+    include /_partial/ja/_footer
     include /_partial/_script

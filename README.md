@@ -46,45 +46,72 @@ npm install
 `public`ディレクトリは処理は必要ないけれど、ファビコンのようなサイト制作に必要なファイルを置きます。
 
 ```
-root/
-├── README.md
-├── aigis/
+root
 ├── develop/
 │   ├── _data/
-│   ├── _partial/
-│   │   ├── _meta.pug
-│   │   └── _header.pug
-│   ├── _template/
-│   │   └── _default.pug
+│   │   └── ja/
+│   │       └── site.json
 │   ├── _mixin/
+│   │   ├── _all.pug
 │   │   ├── _breadcrumb.pug
-│   │   ├── _picture.pug
-│   │   └── _all.pug
+│   │   └── _picture.pug
+│   ├── _partial/
+│   │   ├── _script.pug
+│   │   └── ja/
+│   │       ├── _footer.pug
+│   │       ├── _header.pug
+│   │       └── _meta.pug
+│   ├── _template/
+│   │   └── ja/
+│   │       └── _default.pug
+│   ├── about/
+│   │   └── index.pug
 │   ├── assets/
-│   │   └── css/
-│   │       ├── base/
-│   │       ├── namespace/
-│   │       └── site.scss
+│   │   ├── css/
+│   │   │   ├── base/
+│   │   │   │   ├── variable/
+│   │   │   │   ├── function/
+│   │   │   │   ├── mixin/
+│   │   │   │   ├── _normalize.scss
+│   │   │   │   └── _base.scss
+│   │   │   ├── namespace/
+│   │   │   │   ├── SiteWide/
+│   │   │   │   ├── Structure/
+│   │   │   │   ├── layout/
+│   │   │   │   ├── home/
+│   │   │   │   └── top/
+│   │   │   ├── site.scss
+│   │   │   └── styleguide/
 │   │   ├── icon/
 │   │   │   └── template/
 │   │   │       └── _Icon.scss
 │   │   ├── img/
+│   │   │   ├── SiteWide/
+│   │   │   ├── Structure/
+│   │   │   └── namespace/
 │   │   └── js/
-│   │       ├── jquery.min.js
 │   │       ├── jquery-migrate.min.js
+│   │       ├── jquery.min.js
 │   │       ├── lib/
+│   │       │   ├── jquery.matchHeight-min.js
+│   │       │   ├── lodash.custom.min.js
+│   │       │   └── picturefill.min.js
 │   │       └── namespace/
-│   │           ├── js/
-│   │           └── data/
+│   │           ├── data/
+│   │           └── js/
 │   └── index.pug
+├── public/
+├── test/
+├── htdocs/
 ├── document/
 │   ├── css.md
 │   ├── html.md
 │   ├── image.md
 │   └── js.md
-├── gulpfile.js
+├── aigis/
+├── README.md
 ├── package.json
-└── public/
+└── gulpfile.js
 ```
 
 ## 開発用タスク

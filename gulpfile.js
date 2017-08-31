@@ -82,8 +82,11 @@ var release = {
 gulp.task('html', function() {
   // JSONファイルの読み込み。
   var locals = {
-    // サイト共通のデータです。
     'site': JSON.parse(fs.readFileSync(develop.data + 'site.json'))
+  };
+  locals.ja = {
+    // 日本語サイト共通のデータです。
+    'site': JSON.parse(fs.readFileSync(develop.data + 'ja/site.json'))
   };
   return gulp.src(develop.html)
   // エラーでタスクを止めない

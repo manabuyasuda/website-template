@@ -1,4 +1,4 @@
-extend /_template/_default
+extend /_template/ja/_default
 append variables
   //- 変更可能
   - var pageTitle= "About Page";
@@ -6,20 +6,7 @@ append variables
   - var pageKeywords= 'About Page Keyword1, About Page Keyword2';
   //- 任意
   - var pageOgpTitle= pageTitle;
-  - var pageOgpImage= site.ogpImage;
-  - var pageLang= "ja";
+  - var pageOgpImage= ja.site.ogpImage;
   - var pageOgpType= "article";
 
-//- 個別CSSファイルの読み込み（相対パス）
-//- 読み込まれるファイル名、もしくはフォルダ名をCSSのファイル名にします。
-//- 例：/about/index.htmlの場合は、index.cssやabout.cssなど。
-block append css
-  //- link(rel="stylesheet" href="css/index.css")
-//- 個別JSファイルの読み込み（相対パス）
-//- 読み込まれるファイル名、もしくはフォルダ名をJSのファイル名にします。
-//- 例：/about/index.htmlの場合は、index.jsやabout.jsなど。
-block append js
-  //- script(src="js/index.js")
-
 block content
-  p #{pageAbsolutePath}
