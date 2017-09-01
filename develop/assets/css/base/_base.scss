@@ -14,6 +14,12 @@ html {
   font-size: ((map-get($font-size, 'none') / 16) * 100%);
   line-height: 1.5;
 
+  @include mq-up(sm) {
+    @if map-has-key($font-size, 'sm') {
+      font-size: ((map-get($font-size, sm) / 16) * 100%);
+    }
+  }
+
   @include mq-up(md) {
     @if map-has-key($font-size, 'md') {
       font-size: ((map-get($font-size, md) / 16) * 100%);
@@ -78,7 +84,7 @@ img {
 }
 
 code {
-  font-family: $font-family-monospace
+  font-family: $font-family-monospace;
   font-size: 0.85em;
 }
 
