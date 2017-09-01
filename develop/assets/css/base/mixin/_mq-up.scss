@@ -1,5 +1,5 @@
 // @desc - メディアクエリを`min-width`で挿入します。
-// @param {String} $breakpoint [$default-breakpoint] - 引数に変数のキーワードを渡します。
+// @param {String} $breakpoint - 引数に変数のキーワードを渡します。
 // @see - $breakpoint-up
 // @example scss - Usage
 // .foo {
@@ -12,7 +12,7 @@
 // .foo {
 //   color: red;
 // }
-// @media (min-width: 768px) {
+// @media print, screen and (min-width: 768px) {
 //   .foo {
 //     color: blue;
 //   }

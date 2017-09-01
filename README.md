@@ -80,6 +80,7 @@ root/
 │   │   │   │   ├── layout/
 │   │   │   │   ├── home/
 │   │   │   │   └── top/
+│   │   │   ├── _print.scss
 │   │   │   ├── site.scss
 │   │   │   └── styleguide/
 │   │   ├── icon/

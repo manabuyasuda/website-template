@@ -105,6 +105,7 @@ namespaceには名前空間ごとにディレクトリを作り、さらにModul
 │   ├── recruit
 │   ├── results
 │   └── sitemap
+├── _print.scss
 ├── site.scss
 └── styleguide
     ├── _IconList.scss
@@ -146,7 +147,7 @@ Sassには変数や、便利なmixinをいくつか用意しています。
 メディアクエリが出力されます。
 
 ```scss
-@media (min-width: 768px) {
+@media print, screen and (min-width: 768px) {
   .foo {
     display: block;
   }
@@ -157,10 +158,10 @@ Sassには変数や、便利なmixinをいくつか用意しています。
 
 ```scss
 $breakpoint-up: (
-  'sm': '(min-width: 375px)',
-  'md': '(min-width: 768px)',
-  'lg': '(min-width: 1024px)',
-  'xl': '(min-width: 1440px)',
+  'sm': 'print, screen and (min-width: 375px)',
+  'md': 'print, screen and (min-width: 768px)',
+  'lg': 'print, screen and (min-width: 1024px)',
+  'xl': 'print, screen and (min-width: 1440px)',
 ) !default;
 ```
 
