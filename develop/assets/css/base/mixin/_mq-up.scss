@@ -4,7 +4,7 @@
 // @example scss - Usage
 // .foo {
 //   color: red;
-//   @include mq-up {
+//   @include mq-up(md) {
 //     color: blue;
 //   }
 // }
@@ -17,7 +17,7 @@
 //     color: blue;
 //   }
 // }
-@mixin mq-up($breakpoint: $default-breakpoint) {
+@mixin mq-up($breakpoint) {
   @if map-has-key($breakpoint-up, $breakpoint) {
     @media #{inspect(map-get($breakpoint-up, $breakpoint))} {
       @content;

@@ -35,7 +35,7 @@ html {
 
 body {
   color: $color-text;
-  font-family: $font-famiry-sans-serif;
+  font-family: $font-family-sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
   font-kerning: normal;
@@ -78,7 +78,7 @@ img {
 }
 
 code {
-  font-family: Consolas, Menlo, Courier, monospace;
+  font-family: $font-family-monospace
   font-size: 0.85em;
 }
 

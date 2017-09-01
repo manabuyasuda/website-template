@@ -1,27 +1,57 @@
-// default breakpoint
-$default-breakpoint: 'lg' !default;
+// カラーパレット
+$color-brand: #a48030 !default;
+$color-text: #000 !default;
+$color-link: #2b70ba !default;
+$color-link-hover: #2b70ba !default;
 
-// default wrapper width
+// システムフォント
+$font-family-sans-serif: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$font-family-serif: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+$font-family-monospace: Consolas, Menlo, Courier, monospace !default;
+$font-family-en: "Helvetica Neue", Helvetica, sans-serif !default;
+$font-family-zh-cn: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$font-family-zh-tw: "Microsoft JhengHei", "微軟正黑體", 'PMingLiU' sans-serif !default;
+
+// Noto Sans
+// GoogleやMicrosoftのCDNは中国ではブロックされてしまうので、
+// フォントファイルをサーバに置いて読み込む必要があります。
+$font-family-noto-sans-ja: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$font-family-noto-sans-en: "Noto Sans", "Helvetica Neue", Helvetica, sans-serif !default;
+$font-family-noto-sans-zh-cn: "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$font-family-noto-sans-zh-tw: "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
+
+// ブレイクポイント
+// sm: iPhone6幅（ポートレート・縦）
+// md: iPad幅（ポートレート・縦）
+// lg: iPad幅（ランドスケープ・横）
+// xl: デスクトップ想定
+$breakpoint-up: (
+  'sm': '(min-width: 375px)',
+  'md': '(min-width: 768px)',
+  'lg': '(min-width: 1024px)',
+  'xl': '(min-width: 1440px)',
+) !default;
+
+// コンテンツの最大幅
 $max-width: 1080px !default;
 
-// default grid columns
-$column: 12 !default;
-
-// font-size for each breakpoints
+// ブレイクポイントごとのフォントサイズ（pxの指定は不要）
+// noneは1px以上のことで、指定必須です。
+// キーに指定したブレイクポイント以外は出力されません。
 $font-size: (
   'none': 14,
   'md': 16,
 ) !default;
 
-$color-brand: #a48030 !default;
-$color-text: #000;
-$color-link: #2b70ba !default;
-$color-link-hover: #2b70ba !default;
-
+// フォントサイズのバリエーション
 $font-size-secondary: 0.85em !default;
 
+// アニメーション関連
 $opacity: 0.7 !default;
+$transition-duration: 0.3s !default;
+$transition-timing-function: ease !default;
 
+// フォーム関連
 $form-border: 1px solid #767676 !default;
 $form-boder-color: #767676 !default;
 $form-border-radius: 3px !default;
