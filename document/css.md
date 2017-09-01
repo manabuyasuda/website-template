@@ -34,8 +34,7 @@ namespaceには名前空間ごとにディレクトリを作り、さらにModul
 │   ├── _base.scss
 │   ├── _Icon.scss
 │   ├── variable
-│   │   ├── _breakpoint.scss
-│   │   ├── _font-family.scss
+│   │   ├── _easing.scss
 │   │   └── _global.scss
 │   ├── function
 │   │   ├── _rem.scss
@@ -154,18 +153,16 @@ Sassには変数や、便利なmixinをいくつか用意しています。
 }
 ```
 
-ブレイクポイントは`base/variable/_breakpoint.scss`で定義しています。`md`と`lg`はデフォルトで使用しているので、名前は変更しないでください。
+ブレイクポイントは`base/variable/_global.scss`で定義しています。
 
 ```scss
 $breakpoint-up: (
+  'sm': '(min-width: 375px)',
   'md': '(min-width: 768px)',
-  'lg': '(min-width: 1080px)',
+  'lg': '(min-width: 1024px)',
   'xl': '(min-width: 1440px)',
 ) !default;
 ```
-
-また、`mq-up()`のように引数を渡さない場合の初期値は`base/variable/_global.scss`の`$default-breakpoint`で定義されています。  
-引数なしの`mq-up()`を使うと、`$default-breakpoint`で一括管理できるようになるので管理がしやすくなります。
 
 ## アイコンフォント
 アイコンは基本的にSVGを背景画像で表示しますが、背景画像でカバーできないスタイルの場合はアイコンフォントを使います。
