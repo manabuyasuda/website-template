@@ -71,3 +71,52 @@
     page-break-after: avoid;
   }
 }
+
+/**
+ * 印刷時のスタイル。
+ */
+@media print {
+  .sw-TableScroll td,
+  .sw-TableScroll th {
+    white-space: inherit;
+  }
+}
+
+/**
+ * 印刷時とハイコントラストモード（IEとEdge）が有効なときのスタイル。
+ */
+@media (-ms-high-contrast: active), print {
+  .sw-FormCheckbox {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: auto;
+
+    & + label {
+      padding-left: 0;
+    }
+
+    & + label:before {
+      display: none;
+    }
+  }
+
+  .sw-FormRadio {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: auto;
+
+    & + label {
+      padding-left: 0;
+    }
+
+    & + label:before {
+      display: none;
+    }
+  }
+
+  .sw-FormSelect > select {
+    appearance: menulist;
+  }
+}
