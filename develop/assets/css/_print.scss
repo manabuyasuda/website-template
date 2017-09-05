@@ -85,7 +85,7 @@
 /**
  * 印刷時とハイコントラストモード（IEとEdge）が有効なときのスタイル。
  */
-@media (-ms-high-contrast: active), print {
+@media screen and (-ms-high-contrast: active), print {
   .sw-FormCheckbox {
     position: static;
     width: auto;
