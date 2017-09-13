@@ -1,0 +1,22 @@
+ /* #Text
+   -------------------------------------------------------------------------- */
+/*
+---
+name: Text
+category: Namespace
+tag: Global
+---
+
+通常のテキストの余白を指定します。
+
+```jade
+p.layout-Text .layout-Text
+.layout-Text .layout-Text
+p.layout-Text .layout-Text
+```
+*/
+.layout-Text {
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+}

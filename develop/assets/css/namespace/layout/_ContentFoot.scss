@@ -1,0 +1,25 @@
+ /* #ContentFoot
+   -------------------------------------------------------------------------- */
+/*
+---
+name: ContentFoot
+category: Namespace
+tag: Global
+---
+
+メインコンテンツエリア内のメイン部分の余白を管理します。
+
+```jade
+footer.layout-ContentFoot
+  h2.layout-Heading2 .layout-Heading2
+  p.layout-Text .layout-Text
+  p.layout-Text .layout-Text
+```
+*/
+.layout-ContentFoot {
+  margin-bottom: 40px;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

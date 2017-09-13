@@ -1,0 +1,20 @@
+ /* #Heading2
+   -------------------------------------------------------------------------- */
+/*
+---
+name: Heading2
+category: Namespace
+tag: Global
+---
+
+h2相当の見出し自身の余白を指定します。
+
+```jade
+h2.layout-Heading2 .layout-Heading2
+p.layout-Text .layout-Text
+p.layout-Text .layout-Text
+```
+*/
+.layout-Heading2 {
+  margin-bottom: 25px;
+}

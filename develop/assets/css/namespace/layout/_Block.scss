@@ -1,0 +1,25 @@
+ /* #Block
+   -------------------------------------------------------------------------- */
+/*
+---
+name: Block
+category: Namespace
+tag: Global
+---
+
+見出しや画像などを含んだブロック同士の余白を指定します。
+
+```jade
+.layout-Block
+  p .layout-Block
+.layout-Block
+  p .layout-Block
+.layout-Text
+  p .layout-Text
+```
+*/
+.layout-Block {
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}

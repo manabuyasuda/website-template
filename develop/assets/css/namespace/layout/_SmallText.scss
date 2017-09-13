@@ -1,0 +1,22 @@
+ /* #SmallText
+   -------------------------------------------------------------------------- */
+/*
+---
+name: SmallText
+category: Namespace
+tag: Global
+---
+
+補足情報などのテキストの余白を指定します。
+
+```jade
+p.layout-Text .layout-Text
+.layout-SmallText
+  small .layout-SmallText
+```
+*/
+.layout-SmallText {
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}

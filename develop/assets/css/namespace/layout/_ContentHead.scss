@@ -1,0 +1,25 @@
+ /* #ContentHead
+   -------------------------------------------------------------------------- */
+/*
+---
+name: ContentHead
+category: Namespace
+tag: Global
+---
+
+メインコンテンツエリア内のヘッダー部分の余白を管理します。
+
+```jade
+header.layout-ContentHead
+  h2.layout-Heading2 .layout-Heading2
+  p.layout-Text .layout-Text
+  p.layout-Text .layout-Text
+```
+*/
+.layout-ContentHead {
+  margin-bottom: 40px;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,30 @@
+ /* #Section3
+   -------------------------------------------------------------------------- */
+/*
+---
+name: Section3
+category: Namespace
+tag: Global
+---
+
+h3相当の見出しをラップするセクションの余白を指定します。
+
+```jade
+section.layout-Section3
+  h3.layout-Heading3 .layout-Heading3
+  p.layout-Text .layout-Text
+  p.layout-Text .layout-Text
+section.layout-Section3
+  h3.layout-Heading3 .layout-Heading3
+  p.layout-Text .layout-Text
+```
+*/
+.layout-Section3 {
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
