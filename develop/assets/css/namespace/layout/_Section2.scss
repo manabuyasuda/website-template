@@ -10,6 +10,7 @@ tag: Global
 h2相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
+p.layout-Text .layout-Text
 section.layout-Section2
   h2.layout-Heading2 .layout-Heading2
   p.layout-Text .layout-Text
@@ -20,7 +21,8 @@ section.layout-Section2
 ```
 */
 .layout-Section2 {
-  &:not(:first-child) {
+  & + &,
+  :not(#{&}) + & {
     margin-top: 50px;
   }
 

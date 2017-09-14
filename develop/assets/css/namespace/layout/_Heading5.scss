@@ -1,20 +1,20 @@
- /* #Heading3
+ /* #Heading5
    -------------------------------------------------------------------------- */
 /*
 ---
-name: Heading3
+name: Heading5
 category: Namespace
 tag: Global
 ---
 
-h3相当の見出し自身の余白を指定します。
+h5相当の見出し自身の余白を指定します。
 
 ```jade
-h3.layout-Heading3 .layout-Heading3
+h5.layout-Heading5 .layout-Heading5
 p.layout-Text .layout-Text
 p.layout-Text .layout-Text
 ```
 */
-.layout-Heading3 {
+.layout-Heading5 {
   margin-bottom: 20px;
 }

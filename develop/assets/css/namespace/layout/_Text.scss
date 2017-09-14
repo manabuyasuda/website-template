@@ -16,7 +16,8 @@ p.layout-Text .layout-Text
 ```
 */
 .layout-Text {
-  &:not(:first-child) {
+  & + &,
+  :not(#{&}) + & {
     margin-top: 16px;
   }
 }

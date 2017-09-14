@@ -19,7 +19,8 @@ tag: Global
 ```
 */
 .layout-Block {
-  &:not(:first-child) {
-    margin-top: 20px;
+  & + &,
+  :not(#{&}) + & {
+    margin-top: 30px;
   }
 }

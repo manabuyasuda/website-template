@@ -13,10 +13,13 @@ tag: Global
 p.layout-Text .layout-Text
 .layout-SmallText
   small .layout-SmallText
+.layout-SmallText
+  small .layout-SmallText
 ```
 */
 .layout-SmallText {
-  &:not(:first-child) {
+  & + &,
+  :not(#{&}) + & {
     margin-top: 10px;
   }
 }
