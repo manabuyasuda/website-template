@@ -1,20 +1,20 @@
- /* #Embed
+ /* #Video
    -------------------------------------------------------------------------- */
 /*doc
 ---
-name: Embed
+name: Video
 category: SiteWide
 tag: ThirdPartyComponent
 ---
 
-Youtubeなどをレスポンシブ対応させます。
+Youtubeなどの動画をレスポンシブ対応させます。デフォルトで16:9で表示されます。
 
 ```jade
-.sw-Embed.
+.sw-Video.
   <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
 ```
 */
-.sw-Embed {
+.sw-Video {
   display: block;
   overflow: hidden;
   position: relative;

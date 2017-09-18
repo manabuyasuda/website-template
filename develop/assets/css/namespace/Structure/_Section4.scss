@@ -3,24 +3,24 @@
 /*
 ---
 name: Section4
-category: Namespace
+category: Structure
 tag: Layout
 ---
 
 h4相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
-p.layout-Text .layout-Text
-section.layout-Section4
-  h4.layout-Heading4 .layout-Heading4
-  p.layout-Text .layout-Text
-  p.layout-Text .layout-Text
-section.layout-Section4
-  h4.layout-Heading4 .layout-Heading4
-  p.layout-Text .layout-Text
+p.st-Text .st-Text
+section.st-Section4
+  h4.st-Heading4 .st-Heading4
+  p.st-Text .st-Text
+  p.st-Text .st-Text
+section.st-Section4
+  h4.st-Heading4 .st-Heading4
+  p.st-Text .st-Text
 ```
 */
-.layout-Section4 {
+.st-Section4 {
   & + &,
   :not(#{&}) + & {
     margin-top: 30px;

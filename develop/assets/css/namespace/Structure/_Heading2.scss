@@ -3,18 +3,18 @@
 /*
 ---
 name: Heading2
-category: Namespace
+category: Structure
 tag: Layout
 ---
 
 h2相当の見出し自身の余白を指定します。
 
 ```jade
-h2.layout-Heading2 .layout-Heading2
-p.layout-Text .layout-Text
-p.layout-Text .layout-Text
+h2.st-Heading2 .st-Heading2
+p.st-Text .st-Text
+p.st-Text .st-Text
 ```
 */
-.layout-Heading2 {
+.st-Heading2 {
   margin-bottom: 25px;
 }

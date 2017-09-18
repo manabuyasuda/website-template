@@ -3,21 +3,21 @@
 /*
 ---
 name: SmallText
-category: Namespace
+category: Structure
 tag: Layout
 ---
 
 補足情報などのテキストの余白を指定します。
 
 ```jade
-p.layout-Text .layout-Text
-.layout-SmallText
-  small .layout-SmallText
-.layout-SmallText
-  small .layout-SmallText
+p.st-Text .st-Text
+.st-SmallText
+  small .st-SmallText
+.st-SmallText
+  small .st-SmallText
 ```
 */
-.layout-SmallText {
+.st-SmallText {
   & + &,
   :not(#{&}) + & {
     margin-top: 10px;

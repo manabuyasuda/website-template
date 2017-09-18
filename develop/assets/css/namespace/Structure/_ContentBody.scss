@@ -3,20 +3,20 @@
 /*
 ---
 name: ContentBody
-category: Namespace
+category: Structure
 tag: Layout
 ---
 
 メインコンテンツエリア内のメイン部分の余白を管理します。
 
 ```jade
-.layout-ContentBody
-  h2.layout-Heading2 .layout-Heading2
-  p.layout-Text .layout-Text
-  p.layout-Text .layout-Text
+.st-ContentBody
+  h2.st-Heading2 .st-Heading2
+  p.st-Text .st-Text
+  p.st-Text .st-Text
 ```
 */
-.layout-ContentBody {
+.st-ContentBody {
   margin-bottom: 40px;
 
   & > :last-child {

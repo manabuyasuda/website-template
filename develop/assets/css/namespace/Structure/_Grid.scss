@@ -3,59 +3,59 @@
 /*
 ---
 name: Grid
-category: Namespace
+category: Structure
 tag: Layout
 ---
 
 標準的なグリッドシステムです。カラムごとに任意の値を指定したい場合に使います。
-カラム間の余白は幅を`$layout-grid-column-gap`で統一しています。
+カラム間の余白は幅を`$st-grid-column-gap`で統一しています。
 
 以下のような指定ができます。
 
-- `.layout-Grid_Item-8of12` カラム数の指定。
-- `.layout-Grid-reverse` カラムの反転。
-- `.layout-Grid-center` カラムのセンタリング。
-- `.layout-Grid-middle` カラムの垂直配置。
+- `.st-Grid_Item-8of12` カラム数の指定。
+- `.st-Grid-reverse` カラムの反転。
+- `.st-Grid-center` カラムのセンタリング。
+- `.st-Grid-middle` カラムの垂直配置。
 
 ```jade
-.layout-Grid
-  .layout-Grid_Item.layout-Grid_Item-8of12Md
+.st-Grid
+  .st-Grid_Item.st-Grid_Item-8of12Md
     img(src="https://placehold.jp/1200x800.png" alt="")
-  .layout-Grid_Item.layout-Grid_Item-4of12Md
+  .st-Grid_Item.st-Grid_Item-4of12Md
     img(src="https://placehold.jp/600x400.png" alt="")
 
-.layout-Grid.layout-Grid-reversMd
-  .layout-Grid_Item.layout-Grid_Item-8of12Md
+.st-Grid.st-Grid-reversMd
+  .st-Grid_Item.st-Grid_Item-8of12Md
     img(src="https://placehold.jp/1200x800.png" alt="")
-  .layout-Grid_Item.layout-Grid_Item-4of12Md
+  .st-Grid_Item.st-Grid_Item-4of12Md
     img(src="https://placehold.jp/600x400.png" alt="")
 
-.layout-Grid.layout-Grid-centerMd
-  .layout-Grid_Item.layout-Grid_Item-8of12Md
+.st-Grid.st-Grid-centerMd
+  .st-Grid_Item.st-Grid_Item-8of12Md
     img(src="https://placehold.jp/1200x800.png" alt="")
 ```
 */
 // `em`と`%`は指定不可
-$layout-grid-column-gap: 2rem;
+$st-grid-column-gap: 2rem;
 
-.layout-Grid {
-  margin-left: -$layout-grid-column-gap;
+.st-Grid {
+  margin-left: -$st-grid-column-gap;
   padding-left: 0;
   list-style-type: none;
   display: block;
   font-size: 0;
 }
 
-.layout-Grid_Item {
+.st-Grid_Item {
   display: inline-block;
   width: 100%;
-  padding-left: $layout-grid-column-gap;
+  padding-left: $st-grid-column-gap;
   font-size: medium;
   font-size: 1rem;
   vertical-align: top;
 }
 
-.layout-Grid_Item {
+.st-Grid_Item {
   &-1of12 { width: percentage(1 / 12)};
   &-2of12 { width: percentage(2 / 12)};
   &-3of12 { width: percentage(3 / 12)};
@@ -71,7 +71,7 @@ $layout-grid-column-gap: 2rem;
 }
 
 @include mq-up(md) {
-  .layout-Grid_Item {
+  .st-Grid_Item {
     &-1of12Md { width: percentage(1 / 12)};
     &-2of12Md { width: percentage(2 / 12)};
     &-3of12Md { width: percentage(3 / 12)};
@@ -88,7 +88,7 @@ $layout-grid-column-gap: 2rem;
 }
 
 @include mq-up(lg) {
-  .layout-Grid_Item {
+  .st-Grid_Item {
     &-1of12Lg { width: percentage(1 / 12)};
     &-2of12Lg { width: percentage(2 / 12)};
     &-3of12Lg { width: percentage(3 / 12)};
@@ -105,7 +105,7 @@ $layout-grid-column-gap: 2rem;
 }
 
 @include mq-up(xl) {
-  .layout-Grid_Item {
+  .st-Grid_Item {
     &-1of12Xl { width: percentage(1 / 12)};
     &-2of12Xl { width: percentage(2 / 12)};
     &-3of12Xl { width: percentage(3 / 12)};
@@ -124,21 +124,21 @@ $layout-grid-column-gap: 2rem;
 /**
  * 要素の垂直位置を真ん中寄せ。
  */
-.layout-Grid-middle > .layout-Grid_Item {
+.st-Grid-middle > .st-Grid_Item {
   vertical-align: middle;
 }
 @include mq-up(md) {
-  .layout-Grid-middleMd > .layout-Grid_Item {
+  .st-Grid-middleMd > .st-Grid_Item {
     vertical-align: middle;
   }
 }
 @include mq-up(lg) {
-  .layout-Grid-middleLg > .layout-Grid_Item {
+  .st-Grid-middleLg > .st-Grid_Item {
     vertical-align: middle;
   }
 }
 @include mq-up(xl) {
-  .layout-Grid-middleXl > .layout-Grid_Item {
+  .st-Grid-middleXl > .st-Grid_Item {
     vertical-align: middle;
   }
 }
@@ -146,21 +146,21 @@ $layout-grid-column-gap: 2rem;
 /**
  * 要素の垂直位置を下寄せ。
  */
-.layout-Grid--bottom > .layout-Grid_Item {
+.st-Grid--bottom > .st-Grid_Item {
   vertical-align: bottom;
 }
 @include mq-up(md) {
-  .layout-Grid-bottomMd > .layout-Grid_Item {
+  .st-Grid-bottomMd > .st-Grid_Item {
     vertical-align: bottom;
   }
 }
 @include mq-up(lg) {
-  .layout-Grid-bottomLg > .layout-Grid_Item {
+  .st-Grid-bottomLg > .st-Grid_Item {
     vertical-align: bottom;
   }
 }
 @include mq-up(xl) {
-  .layout-Grid-bottomXl > .layout-Grid_Item {
+  .st-Grid-bottomXl > .st-Grid_Item {
     vertical-align: bottom;
   }
 }
@@ -168,36 +168,36 @@ $layout-grid-column-gap: 2rem;
 /**
  * 要素を中央寄せ、要素内は左寄せ。
  */
-.layout-Grid-center {
+.st-Grid-center {
   text-align: center;
 
-  & > .layout-Grid_Item {
+  & > .st-Grid_Item {
     text-align: left;
   }
 }
 @include mq-up(md) {
-  .layout-Grid-centerMd {
+  .st-Grid-centerMd {
     text-align: center;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
     }
   }
 }
 @include mq-up(lg) {
-  .layout-Grid-centerLg {
+  .st-Grid-centerLg {
     text-align: center;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
     }
   }
 }
 @include mq-up(xl) {
-  .layout-Grid-centerXl {
+  .st-Grid-centerXl {
     text-align: center;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
     }
   }
@@ -206,36 +206,36 @@ $layout-grid-column-gap: 2rem;
 /**
  * 要素を右寄せ、要素内は左寄せ。
  */
-.layout-Grid-right {
+.st-Grid-right {
   text-align: right;
 
-  & > .layout-Grid_Item {
+  & > .st-Grid_Item {
     text-align: left;
   }
 }
 @include mq-up(md) {
-  .layout-Grid-rightMd {
+  .st-Grid-rightMd {
     text-align: right;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
     }
   }
 }
 @include mq-up(lg) {
-  .layout-Grid-rightLg {
+  .st-Grid-rightLg {
     text-align: right;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
     }
   }
 }
 @include mq-up(xl) {
-  .layout-Grid-rightXl {
+  .st-Grid-rightXl {
     text-align: right;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
     }
   }
@@ -244,43 +244,43 @@ $layout-grid-column-gap: 2rem;
 /**
  * 要素の反転。
  */
-.layout-Grid-reverse {
+.st-Grid-reverse {
   text-align: left;
   direction: rtl;
 
-  & > .layout-Grid_Item {
+  & > .st-Grid_Item {
     text-align: left;
     direction: ltr;
   }
 }
 @include mq-up(md) {
-  .layout-Grid-reversMd {
+  .st-Grid-reversMd {
     text-align: left;
     direction: rtl;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
       direction: ltr;
     }
   }
 }
 @include mq-up(lg) {
-  .layout-Grid-reverseLg {
+  .st-Grid-reverseLg {
     text-align: left;
     direction: rtl;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
       direction: ltr;
     }
   }
 }
 @include mq-up(xl) {
-  .layout-Grid-reverseXl {
+  .st-Grid-reverseXl {
     text-align: left;
     direction: rtl;
 
-    & > .layout-Grid_Item {
+    & > .st-Grid_Item {
       text-align: left;
       direction: ltr;
     }

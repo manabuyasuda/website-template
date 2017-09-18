@@ -3,19 +3,19 @@
 /*
 ---
 name: Text
-category: Namespace
+category: Structure
 tag: Layout
 ---
 
 通常のテキストの余白を指定します。
 
 ```jade
-p.layout-Text .layout-Text
-.layout-Text .layout-Text
-p.layout-Text .layout-Text
+p.st-Text .st-Text
+.st-Text .st-Text
+p.st-Text .st-Text
 ```
 */
-.layout-Text {
+.st-Text {
   & + &,
   :not(#{&}) + & {
     margin-top: 16px;

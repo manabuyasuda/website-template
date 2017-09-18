@@ -1,0 +1,33 @@
+ /* #Area
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: Area
+category: WISYWIG
+tag: Block
+---
+
+WISYWIG（ウィジウィグ）で入力した要素に対するスタイル。
+
+```jade
+.wisywig-Area
+```
+*/
+.wisywig-Area {
+  & > h2 {}
+  & > h3 {}
+  & > h4 {}
+  & > h5 {}
+  & > p {}
+  & > ul {}
+  & > ol {}
+  & > img {}
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

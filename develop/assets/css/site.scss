@@ -8,8 +8,9 @@
 
 /**
  * .sw- (SiteWide)...サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）
- * .st- (Structure)...サイト共通の構造的なModule（ヘッダーやフッターなどの場所が固定されるもの）
- * .layout- (Layout)...カテゴリー共通やページごとのレイアウト、グリッドシステム
+ * .st- (Structure)...サイト共通の構造的なModule（ヘッダーやフッターなどの場所が固定されるもの、グリッドシステムや余白）
+ * .layout- (Layout)...カテゴリー共通やページごとのレイアウト
+ * .wisywig- (WISYWIG)...WISYWIG（ウィジウィグ）で入力した要素に対するスタイル
  * .home- (HomePage)...ホームページ（サイトトップページ）
  * .top- (CategoryTop)...カテゴリートップページ
  * .products- (Products)...製品情報

@@ -3,22 +3,22 @@
 /*
 ---
 name: Block
-category: Namespace
+category: Structure
 tag: Layout
 ---
 
 見出しや画像などを含んだブロック同士の余白を指定します。
 
 ```jade
-.layout-Block
-  p .layout-Block
-.layout-Block
-  p .layout-Block
-.layout-Text
-  p .layout-Text
+.st-Block
+  p .st-Block
+.st-Block
+  p .st-Block
+.st-Text
+  p .st-Text
 ```
 */
-.layout-Block {
+.st-Block {
   & + &,
   :not(#{&}) + & {
     margin-top: 30px;

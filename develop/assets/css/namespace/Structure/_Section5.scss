@@ -3,24 +3,24 @@
 /*
 ---
 name: Section5
-category: Namespace
+category: Structure
 tag: Layout
 ---
 
 h5相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
-p.layout-Text .layout-Text
-section.layout-Section5
-  h5.layout-Heading5 .layout-Heading5
-  p.layout-Text .layout-Text
-  p.layout-Text .layout-Text
-section.layout-Section5
-  h5.layout-Heading5 .layout-Heading5
-  p.layout-Text .layout-Text
+p.st-Text .st-Text
+section.st-Section5
+  h5.st-Heading5 .st-Heading5
+  p.st-Text .st-Text
+  p.st-Text .st-Text
+section.st-Section5
+  h5.st-Heading5 .st-Heading5
+  p.st-Text .st-Text
 ```
 */
-.layout-Section5 {
+.st-Section5 {
   & + &,
   :not(#{&}) + & {
     margin-top: 30px;
