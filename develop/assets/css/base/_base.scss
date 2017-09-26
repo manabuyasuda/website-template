@@ -1,9 +1,7 @@
  /* #base
    -------------------------------------------------------------------------- */
-/* Document
-   ========================================================================== */
 /**
- 1. `width`と`height`に`margin`と`border`を含めます。
+ * 1. `width`と`height`に`margin`と`border`を含めます。
  */
 html {
   box-sizing: border-box; /* 1 */
@@ -16,7 +14,7 @@ html {
 }
 
 /**
- * 1. ドキュメントのルートフォントサイズを指定します。
+ * 1. ドキュメントのルートフォントサイズを指定します（`rem`で参照）。
  * 2. ブレイクポイントごとにルートフォントサイズを変更します。
  */
 html {
@@ -48,12 +46,10 @@ html {
   }
 }
 
-/* Sections
-   ========================================================================== */
 /**
- * 1. できる限り禁則処理されるようにします。
+ * 1. できる限り禁則処理が実行されるようにします。
  * 2. Chrome、Safari、FireFoxのフォントレンダリングを合わせます。
- * 3. フォントの持っているカーニング情報を利用します。
+ * 3. フォントの持っているカーニング情報を使用します。
  */
 body {
   color: $color-text;
@@ -65,10 +61,8 @@ body {
   font-kerning: normal; /* 3 */
 }
 
-/* Grouping content
-   ========================================================================== */
 /**
- * マージンを持たない要素にします。
+ * マージンをリセットします。
  */
 figure {
   margin: 0;
@@ -82,17 +76,24 @@ ul, ol, dl,
 blockquote, p, address,
 hr,
 table,
-fieldset, figure,
+fieldset,
 pre {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* Text-level semantics
-   ========================================================================== */
-code {
+/**
+ * `dt`と`dd`の左端を揃えます。
+ */
+dd {
+  margin-left: 0;
+}
+
+code,
+kbd,
+samp {
   font-family: $font-family-monospace;
-  font-size: 0.85em;
+  font-size: 1em;
 }
 
 /**
@@ -108,8 +109,6 @@ dfn {
   }
 }
 
-/* Embedded content
-   ========================================================================== */
 /**
  * フルードイメージにします。
  */
@@ -120,25 +119,16 @@ img {
 }
 
 /**
- * imgとobject要素でSVGをフルードイメージにします。
- * https://hail2u.net/blog/webdesign/max-width-and-svg-on-ie11-and-below.html
+ * IEのimgとobject要素でもSVGをフルードイメージにします。
+ * See: https://hail2u.net/blog/webdesign/max-width-and-svg-on-ie11-and-below.html
  */
 [src$=".svg"],
 [data$=".svg"] {
-  width: 100%; /* IE対応 */
+  width: 100%;
 }
 
 /**
- * `dt`と`dd`の左端を揃えます。
- */
-dd {
-  margin-left: 0;
-}
-
-/* Forms
-   ========================================================================== */
-/**
- * キーボードでアクセスできない要素の予期しないフォーカス表示を抑制します。
+ * キーボードでアクセスできない要素のフォーカス表示を消します。
  * Credit: https://github.com/suitcss/base
  */
 [tabindex="-1"]:focus {
@@ -148,14 +138,14 @@ dd {
 /**
  * IE10以降の`input[type="text"]`で入力内容の消去機能を非表示にします。
  */
-input::-ms-clear {
+[type="text"]::-ms-clear {
   visibility: hidden;
 }
 
 /**
  * IE10以降の`input[type="password"]`でマスクの一時的解除機能を非表示にします。
  */
-input::-ms-reveal {
+[type="password"]::-ms-reveal {
   visibility: hidden;
 }
 
