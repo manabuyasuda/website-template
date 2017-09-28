@@ -1,0 +1,26 @@
+ /* #TextSup
+   -------------------------------------------------------------------------- */
+/*doc
+---
+name: TextSup
+category: SiteWide
+tag: Text
+---
+
+登録商標（アールマーク）や著作権（マルシーマーク）、注釈リンク（※1）などに使う上付き文字です。
+
+
+```jade
+p 登録商標
+  sup.sw-TextSup ®
+  | です。
+p 注釈
+  sup.sw-TextSup: a(href="#") ※1
+  | です。
+```
+*/
+.sw-TextSup {
+  font-size: 0.85em;
+  position: static;
+  vertical-align: super;
+}
