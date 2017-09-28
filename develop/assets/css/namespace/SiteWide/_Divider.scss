@@ -20,7 +20,7 @@ p テキストです。
   display: block;
   width: 100%;
   height: auto;
-  margin: 1.2em auto;
+  margin: $margin-text auto;
   border: 0;
   border-top: 1px solid #e5e5e5;
 }

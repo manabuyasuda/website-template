@@ -21,6 +21,6 @@ tag: Layout
 .st-Block {
   & + &,
   :not(#{&}) + & {
-    margin-top: 30px;
+    margin-top: $margin-block;
   }
 }

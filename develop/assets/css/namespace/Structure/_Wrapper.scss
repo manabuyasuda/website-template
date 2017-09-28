@@ -7,5 +7,8 @@ category: Structure
 tag: Global
 ---
 */
-
-.st-Wrapper {}
+.st-Wrapper {
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
+}

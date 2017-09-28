@@ -23,7 +23,7 @@ section.st-Section4
 .st-Section4 {
   & + &,
   :not(#{&}) + & {
-    margin-top: 30px;
+    margin-top: $margin-section4;
   }
 
   & > :last-child {

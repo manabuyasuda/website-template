@@ -20,6 +20,6 @@ p.st-Text .st-Text
 .st-SmallText {
   & + &,
   :not(#{&}) + & {
-    margin-top: 10px;
+    margin-top: $margin-small-text;
   }
 }

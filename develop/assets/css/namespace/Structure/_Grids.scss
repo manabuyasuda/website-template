@@ -52,8 +52,10 @@ tag: Layout
 ```
 */
 // `em`と`%`は指定不可
-$st-grids-column-gap: 2rem;
-$st-grids-row-gap: 2rem;
+$st-grids-column-gap: $grid-column-gap;
+$st-grids-row-gap: $grid-row-gap;
+$st-grids-column-gap-md: $grid-column-gap-md;
+$st-grids-row-gap-md: $grid-row-gap-md;
 
 .st-Grids {
   margin-left: -$st-grids-column-gap;
@@ -65,6 +67,10 @@ $st-grids-row-gap: 2rem;
   /* 同じ階層にある`.st-Grids`同士の間に余白を入れます。 */
   &:not(:first-of-type) {
     margin-top: $st-grids-row-gap;
+
+    @include mq-up(md) {
+      margin-top: $st-grids-row-gap-md;
+    }
   }
 }
 
@@ -75,6 +81,10 @@ $st-grids-row-gap: 2rem;
   font-size: medium;
   font-size: 1rem;
   vertical-align: top;
+
+  @include mq-up(md) {
+    padding-left: $st-grids-column-gap-md;
+  }
 }
 
 /* 1 Column */
@@ -108,7 +118,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -120,7 +130,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -132,7 +142,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -156,7 +166,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -168,7 +178,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -180,7 +190,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+4) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -204,7 +214,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -216,7 +226,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -228,7 +238,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+5) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -252,7 +262,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -264,7 +274,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -276,7 +286,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+6) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -359,7 +369,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -377,7 +387,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -395,7 +405,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -431,7 +441,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -449,7 +459,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -467,7 +477,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -503,7 +513,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -521,7 +531,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }
@@ -539,7 +549,7 @@ $st-grids-row-gap: 2rem;
       margin-top: 0;
     }
     &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap;
+      margin-top: $st-grids-row-gap-md;
     }
   }
 }

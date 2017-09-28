@@ -18,6 +18,6 @@ p.st-Text .st-Text
 .st-Text {
   & + &,
   :not(#{&}) + & {
-    margin-top: 16px;
+    margin-top: $margin-text;
   }
 }

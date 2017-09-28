@@ -36,7 +36,8 @@ tag: Layout
 ```
 */
 // `em`と`%`は指定不可
-$st-grid-column-gap: 2rem;
+$st-grid-column-gap: $grid-column-gap;
+$st-grid-column-gap-md: $grid-column-gap-md;
 
 .st-Grid {
   margin-left: -$st-grid-column-gap;
@@ -44,6 +45,10 @@ $st-grid-column-gap: 2rem;
   list-style-type: none;
   display: block;
   font-size: 0;
+
+  @include mq-up(md) {
+    margin-left: -$st-grid-column-gap-md;
+  }
 }
 
 .st-Grid_Item {
@@ -53,6 +58,10 @@ $st-grid-column-gap: 2rem;
   font-size: medium;
   font-size: 1rem;
   vertical-align: top;
+
+  @include mq-up(md) {
+    padding-left: $st-grid-column-gap-md;
+  }
 }
 
 .st-Grid_Item {
