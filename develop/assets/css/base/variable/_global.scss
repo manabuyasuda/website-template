@@ -5,7 +5,8 @@
 // カラーパレット
 $color-brand: #a48030 !default;
 $color-text: #000 !default;
-$color-text-attention: #a94442 !default;
+$color-text-important: #a94442 !default;
+$color-lead: #0a41a6 !default;
 $color-link: #2b70ba !default;
 $color-link-hover: #2b70ba !default;
 $background-color: #fff !default;
@@ -87,6 +88,7 @@ $margin-heading5: 20px !default;
 
 // ブロックとテキストのマージン
 $margin-block: 30px !default;
+$margin-lead: 24px !default;
 $margin-text: 16px !default;
 $margin-small-text: 10px !default;
 

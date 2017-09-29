@@ -1,0 +1,21 @@
+ /* #Lead
+   -------------------------------------------------------------------------- */
+/*
+---
+name: Lead
+category: Structure
+tag: Layout
+---
+
+リード文自身の余白を指定します。
+
+```jade
+p.st-Lead
+  b.sw-Lead .st-Lead
+p.st-Text .st-Text
+p.st-Text .st-Text
+```
+*/
+.st-Lead {
+  margin-bottom: $margin-lead;
+}

@@ -7,14 +7,19 @@ category: SiteWide
 tag: Text
 ---
 
-`<p>`や`<strong>`で使われるようなスタイルです。強調や重要性を示すときに使います。
+`<em>`で使われるようなスタイルです。アクセントをつけたい単語や短い文章で使用し、強調や重要性を示しません。
 
 ```jade
-p 通常の文章です、
-  strong.sw-TextEmphasis 強調したい文章
-  | です。
+p.st-Text
+  em.sw-TextEmphasis 30%OFFのため、
+  | お買い得です！
+  small （30%OFFであることを特に伝えたい）
+p.st-Text 30%OFFのため、
+  em.sw-TextEmphasis お買い得です！
+  small （お買い得であることを特に伝えたい）
 ```
 */
 .sw-TextEmphasis {
   font-weight: 700;
+  font-style: normal;
 }

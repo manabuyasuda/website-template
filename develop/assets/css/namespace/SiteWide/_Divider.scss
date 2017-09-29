@@ -10,9 +10,9 @@ tag: Text
 `<hr>`のような区切り記号を使って、分割・グルーピングします。
 
 ```jade
-p テキストです。
+p.st-Text テキストです。
 hr.sw-Divider
-p テキストです。
+p.st-Text テキストです。
 ```
 */
 .sw-Divider {

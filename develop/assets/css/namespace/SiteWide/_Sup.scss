@@ -1,8 +1,8 @@
- /* #TextSup
+ /* #Sup
    -------------------------------------------------------------------------- */
 /*doc
 ---
-name: TextSup
+name: Sup
 category: SiteWide
 tag: Text
 ---
@@ -11,15 +11,15 @@ tag: Text
 
 
 ```jade
-p 登録商標
-  sup.sw-TextSup ®
+p.st-Text 登録商標
+  sup.sw-Sup ®
   | です。
-p 注釈
-  sup.sw-TextSup: a(href="#") ※1
+p.st-Text 注釈
+  sup.sw-Sup: a(href="#") ※1
   | です。
 ```
 */
-.sw-TextSup {
+.sw-Sup {
   font-size: 0.85em;
   position: static;
   vertical-align: super;
