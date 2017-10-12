@@ -1,20 +1,17 @@
 /*
 ---
-name: TableScroll
+name: TableWide
 category: SiteWide
 tag: List
 ---
 
-ベーシックなテーブルです。テキストは自動的に改行せず、横幅に収まりきらなくなると横スクロールで表示します。
-
-- ヘッダー・ボディ・フッターといった、行の役割が分かっている場合は`<thead>`、`<tbody>`、`<tfoot>`タグを使って意味を明確にします。
-- `<th>`タグは見出しセルになりますが、その見出しセルがどの行や列に対応しているかを明確にするために`scope`属性を指定します。`scope="row"`で同じ行の見出しであることを示し、`scope="col"`で同じ列の見出しであることを示します。
-- `colspan`属性と`rowspan`属性で複数のセルを結合することができますが、極力控えるようにします。
-セルの結合はUAが解釈することが難しい機能で、特にスクリーンリーダーなどでうまく情報が伝えられない恐れがあります。1つの複雑なテーブルではなく、複数のシンプルなテーブルにできないか検討してください。
+- 横幅の広いテーブルで使用します。
+- テキストは自動的に改行されず、画面幅に収まりきらなくなると横スクロールで表示するようになります。
+- 改行は`<br>`で指定してください。
 
 ```jade
-.sw-TableScroll
-  table
+.sw-TableWide
+  table.sw-Table
     thead
       tr
         th(scope="col") thead Table Header
@@ -39,7 +36,7 @@ tag: List
         td tbody Table Data
 ```
 */
-.sw-TableScroll {
+.sw-TableWide {
   overflow: auto;
   width: 100%;
   background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
@@ -49,23 +46,20 @@ tag: List
   background-size: 0.75em 100%, 0.75em 100%;
 }
 
-.sw-TableScroll table {
+.sw-TableWide table {
   width: 100%;
-  border-collapse: collapse;
   background: linear-gradient(to left, hsla(0, 0%, 100%, 0), #fff 0.75em) 0 0 / 2em 100%,
   linear-gradient(to right, hsla(0, 0%, 100%, 0), #fff 0.75em) right / 2em 100%;
   background-repeat: no-repeat;
   background-attachment: local;
 }
 
-.sw-TableScroll th {
+.sw-TableWide th {
   // 背景色は`rgba`で指定する必要があります。
   background: rgba(#000, 0.1);
 }
 
-.sw-TableScroll th,
-.sw-TableScroll td {
-  padding: 1em;
-  border: 1px solid #ccc;
+.sw-TableWide th,
+.sw-TableWide td {
   white-space: nowrap;
 }
