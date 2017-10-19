@@ -138,7 +138,7 @@ gulp.task('css', function(){
   }).on('error', sass.logError))
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(postcss(plugins))
-  .pipe(cleanCSS())
+  // .pipe(cleanCSS())
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(dest.root))
   .pipe(browserSync.reload({stream: true}));
@@ -153,7 +153,7 @@ gulp.task('libJs', function() {
   // ファイルを連結します。
   .pipe(concat('lib.js'))
   // ファイルを圧縮します。
-  .pipe(uglify({preserveComments: 'license'}))
+  // .pipe(uglify({preserveComments: 'license'}))
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(dest.js))
   .pipe(browserSync.reload({stream: true}));
@@ -166,7 +166,7 @@ gulp.task('siteJs', function() {
   return gulp.src(src.siteJs)
   .pipe(sourcemaps.init())
   .pipe(concat('site.js'))
-  .pipe(uglify({preserveComments: 'license'}))
+  // .pipe(uglify({preserveComments: 'license'}))
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(dest.js))
   .pipe(browserSync.reload({stream: true}));
