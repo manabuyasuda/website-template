@@ -243,9 +243,16 @@ gulp.task('browser-sync', function() {
       //     ext: ".html"
       //   })
       // ],
-      baseDir: test.root,
-      index: "index.html"
-    }
+      baseDir: test.root
+    },
+    // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
+    ghostMode: true,
+    // ローカルIPアドレスでサーバーを立ち上げます。
+    open: 'external',
+    // サーバー起動時に表示するページを指定します。
+    // startPath: '/styleguide/',
+    // falseに指定すると、サーバー起動時にポップアップを表示させません。
+    notify: false
   });
 });
 ```

@@ -26,7 +26,7 @@
   "homepage": "https://github.com/manabuyasuda/website-template#readme",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
-    "browser-sync": "^2.18.8",
+    "browser-sync": "^2.18.13",
     "browsersync-ssi": "^0.2.4",
     "gulp": "^3.9.1",
     "gulp-aigis": "^1.3.0",
