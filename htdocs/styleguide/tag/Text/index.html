@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Styleguide</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../../aigis_assets/css/highlight/prism.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/site.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="aigis-container">
+      <div class="aigis-sidemenu">
+        <header class="aigis-header"><a href="../../index.html">Styleguide</a></header>
+        <h2 class="aigis-sidemenu__heading">Category</h2>
+        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/SiteWide/index.html">SiteWide</a></li><li data-path-depth="0"><a href="../../category/Structure/index.html">Structure</a></li><li data-path-depth="0"><a href="../../category/WISYWIG/index.html">WISYWIG</a></li></ul>
+        </nav>
+        <h2 class="aigis-sidemenu__heading">Tag</h2>
+        <nav class="aigis-tags aigis-tagList"><a href="../../tag/Block/index.html" class="aigis-tags__item aigis-tags__item--Block">Block</a><a href="../../tag/Button/index.html" class="aigis-tags__item aigis-tags__item--Button">Button</a><a href="../../tag/Form/index.html" class="aigis-tags__item aigis-tags__item--Form">Form</a><a href="../../tag/Global/index.html" class="aigis-tags__item aigis-tags__item--Global">Global</a><a href="../../tag/Icon/index.html" class="aigis-tags__item aigis-tags__item--Icon">Icon</a><a href="../../tag/Image/index.html" class="aigis-tags__item aigis-tags__item--Image">Image</a><a href="../../tag/Layout/index.html" class="aigis-tags__item aigis-tags__item--Layout">Layout</a><a href="../../tag/Link/index.html" class="aigis-tags__item aigis-tags__item--Link">Link</a><a href="../../tag/List/index.html" class="aigis-tags__item aigis-tags__item--List">List</a><a href="../../tag/Navigation/index.html" class="aigis-tags__item aigis-tags__item--Navigation">Navigation</a><a href="../../tag/Text/index.html" class="aigis-tags__item aigis-tags__item--Text">Text</a><a href="../../tag/ThirdPartyComponent/index.html" class="aigis-tags__item aigis-tags__item--ThirdPartyComponent">ThirdPartyComponent</a>
+        </nav>
+        <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+      </div>
+      <div class="aigis-contents">
+        <div class="aigis-contents__body">
+          <nav>
+            <h2 class="aigis-module__heading">TOC</h2>
+            <ul class="aigis-moduleList">
+              <li class="aigis-moduleList__item"><a href="#Delimiter">Delimiter</a></li>
+              <li class="aigis-moduleList__item"><a href="#Divider">Divider</a></li>
+              <li class="aigis-moduleList__item"><a href="#Hide">Hide</a></li>
+              <li class="aigis-moduleList__item"><a href="#Label">Label</a></li>
+              <li class="aigis-moduleList__item"><a href="#Lead">Lead</a></li>
+              <li class="aigis-moduleList__item"><a href="#Show">Show</a></li>
+              <li class="aigis-moduleList__item"><a href="#Sup">Sup</a></li>
+              <li class="aigis-moduleList__item"><a href="#TextEmphasis">TextEmphasis</a></li>
+              <li class="aigis-moduleList__item"><a href="#TextImportant">TextImportant</a></li>
+              <li class="aigis-moduleList__item"><a href="#TextSecondary">TextSecondary</a></li>
+            </ul>
+          </nav>
+          <div class="aigis-module">
+            <h2 id="Delimiter" class="aigis-module__heading">Delimiter</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Delimiter.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p>途中で改行をさせたくないフレーズやキーワードに指定します。囲まれた範囲（Delimiter）がまとまって改行されます。</p>
+<div class="aigis-preview">
+
+<p>テキストは基本的にスペースや役物を基準に改行されますが、<span class="sw-Delimiter">この部分はまとめて改行されます。</span>ここは通常のテキストです。</p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p</span> <span class="token plain-text" >テキストは基本的にスペースや役物を基準に改行されますが、</span>
+  <span class="token tag" >span.sw-Delimiter</span> <span class="token plain-text" >この部分はまとめて改行されます。</span>
+  <span class="token punctuation" >|</span> ここは通常のテキストです。
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Divider" class="aigis-module__heading">Divider</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Divider.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p><code>&lt;hr&gt;</code>のような区切り記号を使って、分割・グルーピングします。</p>
+<div class="aigis-preview">
+
+<p class="st-Text">テキストです。</p>
+<hr class="sw-Divider"/>
+<p class="st-Text">テキストです。</p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p.st-Text</span> <span class="token plain-text" >テキストです。</span>
+<span class="token tag" >hr.sw-Divider</span>
+<span class="token tag" >p.st-Text</span> <span class="token plain-text" >テキストです。</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Hide" class="aigis-module__heading">Hide</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Hide.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
+<div class="aigis-preview">
+
+<p>常に改行<br/>されます</p>
+<p>ブレイクポイント以降は改行<br class="sw-HideMd"/>されません</p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p</span> <span class="token plain-text" >常に改行</span>
+  <span class="token tag" >br</span>
+  <span class="token punctuation" >|</span> されます
+<span class="token tag" >p</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
+  <span class="token tag" >br.sw-HideMd</span>
+  <span class="token punctuation" >|</span> されません
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Label" class="aigis-module__heading">Label</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Label.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p>インラインで表示するラベルコンポーネントです。</p>
+<div class="aigis-preview">
+  <span class="sw-Label">spanタグのラベルです。</span>
+<label class="sw-Label">labelタグのラベルです。</label><a href="#" class="sw-Label">aタグのラベルです。</a></div>
+
+<pre><code class="language-jade"><span class="token tag" >span.sw-Label</span> <span class="token plain-text" >spanタグのラベルです。</span>
+<span class="token tag" >label.sw-Label</span> <span class="token plain-text" >labelタグのラベルです。</span>
+<span class="token tag" >a.sw-Label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグのラベルです。</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Lead" class="aigis-module__heading">Lead</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Lead.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p>リード文（コンテンツの冒頭に登場するコンテンツを簡潔に表した文章）のスタイルです。
+他の文章と区別するためだけに利用し、<code>&lt;strong&gt;</code>の重要性や深刻性、<code>&lt;em&gt;</code>の強調（アクセント）、<code>&lt;h2&gt;</code>のような見出しとしての意味はありません。</p>
+<div class="aigis-preview">
+
+<p class="st-Lead"><b class="sw-Lead">◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</b></p>
+<p class="st-Text">△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p.st-Lead</span>
+  <span class="token tag" >b.sw-Lead</span> <span class="token plain-text" >◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</span>
+<span class="token tag" >p.st-Text</span> <span class="token plain-text" >△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Show" class="aigis-module__heading">Show</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Show.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
+<div class="aigis-preview">
+
+<p>常に改行<br/>されます</p>
+<p>ブレイクポイント以降は改行<br class="sw-Hide sw-ShowMd"/>されます</p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p</span> <span class="token plain-text" >常に改行</span>
+  <span class="token tag" >br</span>
+  <span class="token punctuation" >|</span> されます
+<span class="token tag" >p</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
+  <span class="token tag" >br.sw-Hide.sw-ShowMd</span>
+  <span class="token punctuation" >|</span> されます
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Sup" class="aigis-module__heading">Sup</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Sup.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p>登録商標（アールマーク）や著作権（マルシーマーク）、注釈リンク（※1）などに使う上付き文字です。</p>
+<div class="aigis-preview">
+
+<p class="st-Text">登録商標<sup class="sw-Sup">®</sup>です。</p>
+<p class="st-Text">注釈<sup class="sw-Sup"><a href="#">※1</a></sup>です。</p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p.st-Text</span> <span class="token plain-text" >登録商標</span>
+  <span class="token tag" >sup.sw-Sup</span> <span class="token plain-text" >®</span>
+  <span class="token punctuation" >|</span> です。
+<span class="token tag" >p.st-Text</span> <span class="token plain-text" >注釈</span>
+  <span class="token tag" >sup.sw-Sup<span class="token punctuation" >:</span></span> <span class="token tag" >a<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> ※1
+  <span class="token punctuation" >|</span> です。
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="TextEmphasis" class="aigis-module__heading">TextEmphasis</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_TextEmphasis.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p><code>&lt;em&gt;</code>で使われるようなスタイルです。アクセントをつけたい単語や短い文章で使用し、強調や重要性を示しません。</p>
+<div class="aigis-preview">
+
+<p class="st-Text"><em class="sw-TextEmphasis">30%OFFのため、</em>お買い得です！<small>（30%OFFであることを特に伝えたい）</small></p>
+<p class="st-Text">30%OFFのため、<em class="sw-TextEmphasis">お買い得です！</em><small>（お買い得であることを特に伝えたい）</small></p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p.st-Text</span>
+  <span class="token tag" >em.sw-TextEmphasis</span> <span class="token plain-text" >30%OFFのため、</span>
+  <span class="token punctuation" >|</span> お買い得です！
+  <span class="token tag" >small</span> <span class="token plain-text" >（30%OFFであることを特に伝えたい）</span>
+<span class="token tag" >p.st-Text</span> <span class="token plain-text" >30%OFFのため、</span>
+  <span class="token tag" >em.sw-TextEmphasis</span> <span class="token plain-text" >お買い得です！</span>
+  <span class="token tag" >small</span> <span class="token plain-text" >（お買い得であることを特に伝えたい）</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="TextImportant" class="aigis-module__heading">TextImportant</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_TextImportant.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p><code>&lt;strong&gt;</code>で使われるようなスタイルです。重要性や緊急性・深刻性があることを示します。</p>
+<div class="aigis-preview">
+
+<p class="st-Text"><strong class="sw-TextImportant">30%OFFのため、お買い得です！</strong></p>
+<p class="st-Text"><strong class="sw-TextImportant">使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。</strong></p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p.st-Text</span>
+  <span class="token tag" >strong.sw-TextImportant</span> <span class="token plain-text" >30%OFFのため、お買い得です！</span>
+<span class="token tag" >p.st-Text</span>
+  <span class="token tag" >strong.sw-TextImportant</span> <span class="token plain-text" >使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="TextSecondary" class="aigis-module__heading">TextSecondary</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_TextSecondary.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+            </ul><p><code>&lt;p&gt;</code>や<code>&lt;small&gt;</code>で使われるようなテキストスタイルです。補足的・副次的な意味合いを持たせる場合に使います。</p>
+<div class="aigis-preview">
+
+<p class="st-Text">通常の文章です</p>
+<p class="st-SmallText sw-TextSecondary">補足的な文章です</p></div>
+
+<pre><code class="language-jade"><span class="token tag" >p.st-Text</span> <span class="token plain-text" >通常の文章です</span>
+<span class="token tag" >p.st-SmallText.sw-TextSecondary</span> <span class="token plain-text" >補足的な文章です</span>
+</code></pre>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
+    <script src="//code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery-migrate.min.js"><\/script>')</script>
+    <script src="/assets/js/lib.js"></script>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

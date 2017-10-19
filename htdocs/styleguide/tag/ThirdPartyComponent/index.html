@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Styleguide</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../../aigis_assets/css/highlight/prism.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/site.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="aigis-container">
+      <div class="aigis-sidemenu">
+        <header class="aigis-header"><a href="../../index.html">Styleguide</a></header>
+        <h2 class="aigis-sidemenu__heading">Category</h2>
+        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/SiteWide/index.html">SiteWide</a></li><li data-path-depth="0"><a href="../../category/Structure/index.html">Structure</a></li><li data-path-depth="0"><a href="../../category/WISYWIG/index.html">WISYWIG</a></li></ul>
+        </nav>
+        <h2 class="aigis-sidemenu__heading">Tag</h2>
+        <nav class="aigis-tags aigis-tagList"><a href="../../tag/Block/index.html" class="aigis-tags__item aigis-tags__item--Block">Block</a><a href="../../tag/Button/index.html" class="aigis-tags__item aigis-tags__item--Button">Button</a><a href="../../tag/Form/index.html" class="aigis-tags__item aigis-tags__item--Form">Form</a><a href="../../tag/Global/index.html" class="aigis-tags__item aigis-tags__item--Global">Global</a><a href="../../tag/Icon/index.html" class="aigis-tags__item aigis-tags__item--Icon">Icon</a><a href="../../tag/Image/index.html" class="aigis-tags__item aigis-tags__item--Image">Image</a><a href="../../tag/Layout/index.html" class="aigis-tags__item aigis-tags__item--Layout">Layout</a><a href="../../tag/Link/index.html" class="aigis-tags__item aigis-tags__item--Link">Link</a><a href="../../tag/List/index.html" class="aigis-tags__item aigis-tags__item--List">List</a><a href="../../tag/Navigation/index.html" class="aigis-tags__item aigis-tags__item--Navigation">Navigation</a><a href="../../tag/Text/index.html" class="aigis-tags__item aigis-tags__item--Text">Text</a><a href="../../tag/ThirdPartyComponent/index.html" class="aigis-tags__item aigis-tags__item--ThirdPartyComponent">ThirdPartyComponent</a>
+        </nav>
+        <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+      </div>
+      <div class="aigis-contents">
+        <div class="aigis-contents__body">
+          <nav>
+            <h2 class="aigis-module__heading">TOC</h2>
+            <ul class="aigis-moduleList">
+              <li class="aigis-moduleList__item"><a href="#Map">Map</a></li>
+              <li class="aigis-moduleList__item"><a href="#Video">Video</a></li>
+            </ul>
+          </nav>
+          <div class="aigis-module">
+            <h2 id="Map" class="aigis-module__heading">Map</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Map.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--ThirdPartyComponent">ThirdPartyComponent</li>
+            </ul><p>Google Mapsをレスポンシブ対応させます。デフォルトで16:9で表示されます。</p>
+<div class="aigis-preview">
+
+<div class="sw-Map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25933.98363493959!2d139.745433!3d35.658581000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1505663238967" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.sw-Map</span><span class="token punctuation" >.</span><span class="token multiline-plain-text" >
+  &lt;iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25933.98363493959!2d139.745433!3d35.658581000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1505663238967" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>&lt;/iframe></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Video" class="aigis-module__heading">Video</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Video.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--ThirdPartyComponent">ThirdPartyComponent</li>
+            </ul><p>Youtubeなどの動画をレスポンシブ対応させます。デフォルトで16:9で表示されます。</p>
+<div class="aigis-preview">
+
+<div class="sw-Video"><iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe></div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.sw-Video</span><span class="token punctuation" >.</span><span class="token multiline-plain-text" >
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4">&lt;/iframe></span>
+</code></pre>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
+    <script src="//code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery-migrate.min.js"><\/script>')</script>
+    <script src="/assets/js/lib.js"></script>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

@@ -41,38 +41,31 @@ var rimraf = require('rimraf');
 /**
  * 開発用ディレクトリ
  */
-var develop = {
-  'root': 'develop/',
-  'html': ['develop/**/*.pug', '!develop/**/_*.pug'],
-  'data': 'develop/_data/',
-  'css': 'develop/**/*.scss',
-  'styleguideWatch': ['develop/**/*.scss', 'develop/**/*.md'],
-  'jquery': 'develop/assets/js/*.js',
-  'libJs': 'develop/assets/js/lib/**/*.js',
-  'siteJs': 'develop/assets/js/namespace/**/*.js',
-  'jsWatch': 'develop/**/*.js',
-  'image': 'develop/assets/img/**/*.{png,jpg,gif,svg}',
-  'imageWatch': 'develop/assets/img/**/*',
-  'iconfont': 'develop/assets/icon/**/*.svg',
-  'iconfontWath': ['develop/assets/icon/**/*.svg', 'develop/assets/icon/template/_Icon.scss'],
+var src = {
+  'root': 'src/',
+  'html': ['src/**/*.pug', '!src/**/_*.pug'],
+  'data': 'src/_data/',
+  'css': 'src/**/*.scss',
+  'styleguideWatch': ['src/**/*.scss', 'src/**/*.md'],
+  'jquery': 'src/assets/js/*.js',
+  'libJs': 'src/assets/js/lib/**/*.js',
+  'siteJs': 'src/assets/js/namespace/**/*.js',
+  'jsWatch': 'src/**/*.js',
+  'image': 'src/assets/img/**/*.{png,jpg,gif,svg}',
+  'imageWatch': 'src/assets/img/**/*',
+  'iconfont': 'src/assets/icon/**/*.svg',
+  'iconfontWath': ['src/assets/icon/**/*.svg', 'src/assets/icon/template/_Icon.scss'],
   'public': 'public/**/*'
 };
 
 /**
  * テスト用ディレクトリ
  */
-var test = {
-  'root': 'test/',
-  'image': 'test/assets/img/',
-  'js': 'test/assets/js/',
-  'iconfont': 'test/assets/font/'
-};
-
-/**
- * 公開用ディレクトリ
- */
-var release = {
-  'root': 'htdocs/'
+var dest = {
+  'root': 'htdocs/',
+  'image': 'htdocs/assets/img/',
+  'js': 'htdocs/assets/js/',
+  'iconfont': 'htdocs/assets/font/'
 };
 
 /**
@@ -82,17 +75,17 @@ var release = {
 gulp.task('html', function() {
   // JSONファイルの読み込み。
   var locals = {
-    'site': JSON.parse(fs.readFileSync(develop.data + 'site.json'))
+    'site': JSON.parse(fs.readFileSync(src.data + 'site.json'))
   };
   locals.ja = {
     // 日本語サイト共通のデータです。
-    'site': JSON.parse(fs.readFileSync(develop.data + 'ja/site.json'))
+    'site': JSON.parse(fs.readFileSync(src.data + 'ja/site.json'))
   };
   locals.en = {
     // 英語サイト共通のデータです。
-    'site': JSON.parse(fs.readFileSync(develop.data + 'en/site.json'))
+    'site': JSON.parse(fs.readFileSync(src.data + 'en/site.json'))
   };
-  return gulp.src(develop.html)
+  return gulp.src(src.html)
   // エラーでタスクを止めない
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(data(function(file) {
@@ -104,13 +97,12 @@ gulp.task('html', function() {
   .pipe(pug({
     // `locals`に渡したデータを各Pugファイルで取得できます。
     locals: locals,
-    // ルート相対パスでincludeが使えるようになります。
-    // example: /assets/pug/_layout
-    basedir: 'develop',
+    // ルート相対パスでincludeが使えるようにします。
+    basedir: 'src',
     // Pugファイルの整形。
     pretty: true
   }))
-  .pipe(gulp.dest(test.root))
+  .pipe(gulp.dest(dest.root))
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -138,7 +130,7 @@ gulp.task('css', function(){
       ]
     })
   ];
-  return gulp.src(develop.css)
+  return gulp.src(src.css)
   // globパターンでのインポート機能を追加
   .pipe(sassGlob())
   .pipe(sourcemaps.init())
@@ -149,7 +141,7 @@ gulp.task('css', function(){
   .pipe(postcss(plugins))
   .pipe(cleanCSS())
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(test.root))
+  .pipe(gulp.dest(dest.root))
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -157,8 +149,8 @@ gulp.task('css', function(){
  * jQueryをreleaseディレクトリに出力します。
  */
 gulp.task('jquery', function() {
-  return gulp.src(develop.jquery, {base: develop.root})
-  .pipe(gulp.dest(test.root))
+  return gulp.src(src.jquery, {base: src.root})
+  .pipe(gulp.dest(dest.root))
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -166,14 +158,14 @@ gulp.task('jquery', function() {
  * サイト共通のJSファイルを連結・圧縮します。
  */
 gulp.task('libJs', function() {
-  return gulp.src(develop.libJs)
+  return gulp.src(src.libJs)
   .pipe(sourcemaps.init())
   // ファイルを連結します。
   .pipe(concat('lib.js'))
   // ファイルを圧縮します。
   .pipe(uglify({preserveComments: 'license'}))
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(test.js))
+  .pipe(gulp.dest(dest.js))
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -181,12 +173,12 @@ gulp.task('libJs', function() {
  * ModuleごとのJSファイルを連結・圧縮します。
  */
 gulp.task('siteJs', function() {
-  return gulp.src(develop.siteJs)
+  return gulp.src(src.siteJs)
   .pipe(sourcemaps.init())
   .pipe(concat('site.js'))
   .pipe(uglify({preserveComments: 'license'}))
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(test.js))
+  .pipe(gulp.dest(dest.js))
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -194,8 +186,8 @@ gulp.task('siteJs', function() {
  * 画像を圧縮します。
  */
 gulp.task('image', function() {
-  return gulp.src(develop.image)
-  .pipe(changed(test.image))
+  return gulp.src(src.image)
+  .pipe(changed(dest.image))
   // TODO: gulp-imageminのv3.2.0だとエラーが起きてしまうので、v2.4.0で固定しています。
   // https://github.com/imagemin/imagemin/issues/237
   .pipe(plumber({
@@ -212,20 +204,20 @@ gulp.task('image', function() {
     // PNGファイルの圧縮率（7が最高）を指定します。
     optimizationLevel: 7
   }))
-  .pipe(gulp.dest(test.image))
+  .pipe(gulp.dest(dest.image))
   .pipe(browserSync.reload({stream: true}));
 });
 
 /**
  * アイコンフォントを作成します。
- * `develop/assets/icon`にSVGファイルを保存すると、
- * `test/assets/font`ディレクトリにフォントファイルが、
- * `develop/assets/css/SiteWide`ディレクトリに専用のscssファイルが生成されます。
+ * `src/assets/icon`にSVGファイルを保存すると、
+ * `dest/assets/font`ディレクトリにフォントファイルが、
+ * `src/assets/css/SiteWide`ディレクトリに専用のscssファイルが生成されます。
  */
 gulp.task('iconfont', function() {
   // シンボルフォント名を指定します。
   var fontName = 'iconfont';
-  return gulp.src(develop.iconfont)
+  return gulp.src(src.iconfont)
   .pipe(iconfont({
     fontName: fontName,
     formats: ['ttf', 'eot', 'woff', 'svg'],
@@ -238,13 +230,13 @@ gulp.task('iconfont', function() {
       fontPath: '../font/',
     };
     // CSSのテンプレートからSassファイルを生成します。
-    gulp.src('develop/assets/icon/template/_Icon.scss')
+    gulp.src('src/assets/icon/template/_Icon.scss')
     .pipe(consolidate('lodash', options))
     // Sassファイルの生成するパスを指定します。
-    .pipe(gulp.dest('develop/assets/css/base/mixin/'));
+    .pipe(gulp.dest('src/assets/css/base/mixin/'));
   })
   // fontファイルを出力するパスを指定します。
-  .pipe(gulp.dest(test.iconfont));
+  .pipe(gulp.dest(dest.iconfont));
 });
 
 /**
@@ -260,38 +252,23 @@ gulp.task('styleguide', function() {
  * テスト用のディレクトリにコピーします。
  */
 gulp.task('public', function() {
-  return gulp.src(develop.public)
-  .pipe(gulp.dest(test.root));
+  return gulp.src(src.public)
+  .pipe(gulp.dest(dest.root));
 });
 
 /**
- * テスト用のディレクトリを削除します。
+ * 出力用のディレクトリを削除します。
  */
-gulp.task('clean:test', function (cb) {
-  return rimraf(test.root, cb);
-});
-
-/**
- * 本番公開用のディレクトリを削除します。
- */
-gulp.task('clean:release', function (cb) {
-  return rimraf(release.root, cb);
+gulp.task('clean:dest', function (cb) {
+  return rimraf(dest.root, cb);
 });
 
 /**
  * テスト用のディレクトリをコピーします。
  */
-gulp.task('copy:test', function() {
-  return gulp.src(test.root + '**/*')
-  .pipe(gulp.dest(release.root));
-});
-
-/**
- * 本番公開用のディレクトリをコピーします。
- */
-gulp.task('copy:release', function() {
-  return gulp.src(test.root + '**/*')
-  .pipe(gulp.dest('docs/'));
+gulp.task('copy:dest', function() {
+  return gulp.src(dest.root + '**/*')
+  .pipe(gulp.dest(dest.root));
 });
 
 /**
@@ -313,18 +290,18 @@ gulp.task('browser-sync', function() {
       // SSIを利用する場合はmiddlewareのコメントアウトを解除します。
       // middleware: [
       //   ssi({
-      //     baseDir: test.root,
+      //     baseDir: dest.root,
       //     ext: ".html"
       //   })
       // ],
-      baseDir: test.root
+      baseDir: dest.root
     },
     // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
     ghostMode: true,
     // ローカルIPアドレスでサーバーを立ち上げます。
     open: 'external',
     // サーバー起動時に表示するページを指定します。
-    // startPath: '/styleguide/',
+    startPath: '/styleguide/',
     // falseに指定すると、サーバー起動時にポップアップを表示させません。
     notify: false
   });
@@ -334,15 +311,15 @@ gulp.task('browser-sync', function() {
  * ファイルを監視します。
  */
 gulp.task('watch', ['build'], function() {
-  gulp.watch(develop.html, ['html']);
-  gulp.watch(develop.css, ['css']);
-  gulp.watch(develop.styleguideWatch, ['styleguide']);
-  gulp.watch(develop.jsWatch, ['jquery']);
-  gulp.watch(develop.jsWatch, ['libJs']);
-  gulp.watch(develop.jsWatch, ['siteJs']);
-  gulp.watch(develop.imageWatch, ['image']);
-  gulp.watch(develop.iconfontWath, ['iconfont']);
-  gulp.watch(develop.public, ['public']);
+  gulp.watch(src.html, ['html']);
+  gulp.watch(src.css, ['css']);
+  gulp.watch(src.styleguideWatch, ['styleguide']);
+  gulp.watch(src.jsWatch, ['jquery']);
+  gulp.watch(src.jsWatch, ['libJs']);
+  gulp.watch(src.jsWatch, ['siteJs']);
+  gulp.watch(src.imageWatch, ['image']);
+  gulp.watch(src.iconfontWath, ['iconfont']);
+  gulp.watch(src.public, ['public']);
 });
 
 
@@ -351,22 +328,9 @@ gulp.task('watch', ['build'], function() {
  * `gulp`タスクにbrowser-syncを追加します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-gulp.task('default', ['clean:test'], function() {
+gulp.task('default', ['clean:dest'], function() {
   runSequence(
     'watch',
     'browser-sync'
-  )
-});
-
-/**
- * 本番公開用のファイルを出力します。
- */
-gulp.task('release', function() {
-  runSequence(
-    ['clean:test'],
-    ['clean:release'],
-    ['iconfont'],
-    ['html', 'css', 'styleguide', 'jquery', 'libJs', 'siteJs', 'image', 'public'],
-    'copy:test'
   )
 });

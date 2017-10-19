@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Styleguide</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../../aigis_assets/css/highlight/prism.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/site.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="aigis-container">
+      <div class="aigis-sidemenu">
+        <header class="aigis-header"><a href="../../index.html">Styleguide</a></header>
+        <h2 class="aigis-sidemenu__heading">Category</h2>
+        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/SiteWide/index.html">SiteWide</a></li><li data-path-depth="0"><a href="../../category/Structure/index.html">Structure</a></li><li data-path-depth="0"><a href="../../category/WISYWIG/index.html">WISYWIG</a></li></ul>
+        </nav>
+        <h2 class="aigis-sidemenu__heading">Tag</h2>
+        <nav class="aigis-tags aigis-tagList"><a href="../../tag/Block/index.html" class="aigis-tags__item aigis-tags__item--Block">Block</a><a href="../../tag/Button/index.html" class="aigis-tags__item aigis-tags__item--Button">Button</a><a href="../../tag/Form/index.html" class="aigis-tags__item aigis-tags__item--Form">Form</a><a href="../../tag/Global/index.html" class="aigis-tags__item aigis-tags__item--Global">Global</a><a href="../../tag/Icon/index.html" class="aigis-tags__item aigis-tags__item--Icon">Icon</a><a href="../../tag/Image/index.html" class="aigis-tags__item aigis-tags__item--Image">Image</a><a href="../../tag/Layout/index.html" class="aigis-tags__item aigis-tags__item--Layout">Layout</a><a href="../../tag/Link/index.html" class="aigis-tags__item aigis-tags__item--Link">Link</a><a href="../../tag/List/index.html" class="aigis-tags__item aigis-tags__item--List">List</a><a href="../../tag/Navigation/index.html" class="aigis-tags__item aigis-tags__item--Navigation">Navigation</a><a href="../../tag/Text/index.html" class="aigis-tags__item aigis-tags__item--Text">Text</a><a href="../../tag/ThirdPartyComponent/index.html" class="aigis-tags__item aigis-tags__item--ThirdPartyComponent">ThirdPartyComponent</a>
+        </nav>
+        <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+      </div>
+      <div class="aigis-contents">
+        <div class="aigis-contents__body">
+          <nav>
+            <h2 class="aigis-module__heading">TOC</h2>
+            <ul class="aigis-moduleList">
+              <li class="aigis-moduleList__item"><a href="#Button">Button</a></li>
+              <li class="aigis-moduleList__item"><a href="#FormCheckbox">FormCheckbox</a></li>
+              <li class="aigis-moduleList__item"><a href="#FormInput">FormInput</a></li>
+              <li class="aigis-moduleList__item"><a href="#FormRadio">FormRadio</a></li>
+              <li class="aigis-moduleList__item"><a href="#FormSelect">FormSelect</a></li>
+              <li class="aigis-moduleList__item"><a href="#FormTextarea">FormTextarea</a></li>
+              <li class="aigis-moduleList__item"><a href="#Label">Label</a></li>
+            </ul>
+          </nav>
+          <div class="aigis-module">
+            <h2 id="Button" class="aigis-module__heading">Button</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Button.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Button">Button</li>
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p>ボタンのデフォルトスタイルです。</p>
+<div class="aigis-preview">
+  <a href="#" class="sw-Button">aタグボタン</a><a href="#" class="sw-Button sw-Button-disabled">aタグボタン</a>
+<button type="button" class="sw-Button">butotnタグボタン</button>
+<button disabled="disabled" type="button" class="sw-Button">butotnタグボタン</button>
+<input type="button" value="inputボタン" class="sw-Button"/>
+<input type="button" value="inputボタン" disabled="disabled" class="sw-Button"/></div>
+
+<pre><code class="language-jade"><span class="token tag" >a.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグボタン</span>
+<span class="token tag" >a.sw-Button.sw-Button-disabled<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグボタン</span>
+<span class="token tag" >button.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >butotnタグボタン</span>
+<span class="token tag" >button.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >butotnタグボタン</span>
+<span class="token tag" >input.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span> value<span class="token operator" >=</span><span class="token string" >"inputボタン"</span></span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >input.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span> value<span class="token operator" >=</span><span class="token string" >"inputボタン"</span> disabled</span><span class="token punctuation" >)</span></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="FormCheckbox" class="aigis-module__heading">FormCheckbox</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_FormCheckbox.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p><code>type=&quot;checkbox&quot;</code>のデフォルトスタイルです。</p>
+<div class="aigis-preview">
+
+<input type="checkbox" id="checkbox1" checked="checked" class="sw-FormCheckbox"/>
+<label for="checkbox1">チェックボックス</label><br/>
+<input type="checkbox" id="checkbox2" class="sw-FormCheckbox"/>
+<label for="checkbox2">チェックボックス</label><br/>
+<input disabled="disabled" type="checkbox" id="checkbox3" class="sw-FormCheckbox"/>
+<label disabled="disabled" for="checkbox3">チェックボックス</label></div>
+
+<pre><code class="language-jade"><span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"checkbox1"</span> checked</span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox1"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >チェックボックス</span>
+<span class="token tag" >br</span>
+<span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"checkbox2"</span></span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox2"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >チェックボックス</span>
+<span class="token tag" >br</span>
+<span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"checkbox3"</span></span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox3"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >チェックボックス</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="FormInput" class="aigis-module__heading">FormInput</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_FormInput.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p><code>&lt;input&gt;</code>タグのデフォルトスタイルです。</p>
+<div class="aigis-preview">
+
+<input type="input" placeholder="デフォルト" class="sw-FormInput"/>
+<label for="input1" class="sw-FormInput_TextTop">inputタグの説明です</label>
+<input type="input" name="email" autocomplete="email" id="input1" placeholder="example@gmail.com" class="sw-FormInput"/>
+<input type="input" name="name" autocomplate="name" id="input2" placeholder="山田 太郎" class="sw-FormInput"/>
+<label for="input2" class="sw-FormInput_TextTop">inputタグの説明です</label>
+<input disabled="disabled" type="input" placeholder="disabled" class="sw-FormInput"/></div>
+
+<pre><code class="language-jade"><span class="token tag" >input.sw-FormInput<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"input"</span> placeholder<span class="token operator" >=</span><span class="token string" >"デフォルト"</span></span><span class="token punctuation" >)</span></span></span>
+
+<span class="token tag" >label.sw-FormInput_TextTop<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"input1"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >inputタグの説明です</span>
+<span class="token tag" >input.sw-FormInput<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"input"</span> name<span class="token operator" >=</span><span class="token string" >"email"</span> autocomplete<span class="token operator" >=</span><span class="token string" >"email"</span> id<span class="token operator" >=</span><span class="token string" >"input1"</span> placeholder<span class="token operator" >=</span><span class="token string" >"example@gmail.com"</span></span><span class="token punctuation" >)</span></span></span>
+
+<span class="token tag" >input.sw-FormInput<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"input"</span> name<span class="token operator" >=</span><span class="token string" >"name"</span> autocomplate<span class="token operator" >=</span><span class="token string" >"name"</span> id<span class="token operator" >=</span><span class="token string" >"input2"</span> placeholder<span class="token operator" >=</span><span class="token string" >"山田 太郎"</span></span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >label.sw-FormInput_TextTop<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"input2"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >inputタグの説明です</span>
+
+<span class="token tag" >input.sw-FormInput<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"input"</span> placeholder<span class="token operator" >=</span><span class="token string" >"disabled"</span></span><span class="token punctuation" >)</span></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="FormRadio" class="aigis-module__heading">FormRadio</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_FormRadio.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p><code>type=&quot;radio&quot;</code>のデフォルトスタイルです。</p>
+<div class="aigis-preview">
+
+<input type="radio" id="radio1" name="radio1" checked="checked" class="sw-FormRadio"/>
+<label for="radio1">ラジオボタン</label><br/>
+<input type="radio" id="radio2" name="radio1" class="sw-FormRadio"/>
+<label for="radio2">ラジオボタン</label><br/>
+<input disabled="disabled" type="radio" id="radio3" name="radio3" class="sw-FormRadio"/>
+<label disabled="disabled" for="radio3">ラジオボタン</label></div>
+
+<pre><code class="language-jade"><span class="token tag" >input.sw-FormRadio<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio"</span> id<span class="token operator" >=</span><span class="token string" >"radio1"</span> name<span class="token operator" >=</span><span class="token string" >"radio1"</span> checked</span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio1"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ラジオボタン</span>
+<span class="token tag" >br</span>
+<span class="token tag" >input.sw-FormRadio<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio"</span> id<span class="token operator" >=</span><span class="token string" >"radio2"</span> name<span class="token operator" >=</span><span class="token string" >"radio1"</span></span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio2"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ラジオボタン</span>
+<span class="token tag" >br</span>
+<span class="token tag" >input.sw-FormRadio<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio"</span> id<span class="token operator" >=</span><span class="token string" >"radio3"</span> name<span class="token operator" >=</span><span class="token string" >"radio3"</span></span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio3"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ラジオボタン</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="FormSelect" class="aigis-module__heading">FormSelect</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_FormSelect.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p><code>&lt;select&gt;</code>タグのデフォルトスタイルです。</p>
+<div class="aigis-preview">
+
+<div class="sw-FormSelect">
+  <select>
+    <option value="default">選択してください</option>
+    <option value="hokkaido">北海道</option>
+    <option value="akita">秋田</option>
+  </select>
+</div>
+<div class="sw-FormSelect is-disabled">
+  <select disabled="disabled">
+    <option value="default">選択してください</option>
+    <option value="hokkaido">北海道</option>
+    <option value="akita">秋田</option>
+  </select>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.sw-FormSelect</span>
+  <span class="token tag" >select</span>
+    <span class="token tag" >option<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >value</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"default"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >選択してください</span>
+    <span class="token tag" >option<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >value</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"hokkaido"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >北海道</span>
+    <span class="token tag" >option<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >value</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"akita"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >秋田</span>
+
+<span class="token tag" >.sw-FormSelect.is-disabled</span>
+  <span class="token tag" >select<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >disabled</span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >option<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >value</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"default"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >選択してください</span>
+    <span class="token tag" >option<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >value</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"hokkaido"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >北海道</span>
+    <span class="token tag" >option<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >value</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"akita"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >秋田</span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="FormTextarea" class="aigis-module__heading">FormTextarea</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_FormTextarea.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p><code>&lt;textarea&gt;</code>のデフォルトスタイルです。</p>
+<div class="aigis-preview">
+
+<textarea placeholder="テキストエリアです" class="sw-FormTextarea"></textarea>
+<label for="textarea1" class="sw-FormTextarea_TextTop">テキストエリアの説明</label>
+<textarea id="textarea1" placeholder="テキストエリアです" class="sw-FormTextarea"></textarea>
+<textarea id="textarea2" placeholder="テキストエリアです" class="sw-FormTextarea"></textarea>
+<label for="textarea2" class="sw-FormTextarea_TextTop">テキストエリアの説明</label>
+<textarea id="textarea3" placeholder="テキストエリアです" class="sw-FormTextarea sw-FormTextarea-large"></textarea>
+<textarea disabled="disabled" id="textarea4" placeholder="テキストエリアです" class="sw-FormTextarea"></textarea></div>
+
+<pre><code class="language-jade"><span class="token tag" >textarea.sw-FormTextarea<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >placeholder</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"テキストエリアです"</span></span><span class="token punctuation" >)</span></span></span>
+
+<span class="token tag" >label.sw-FormTextarea_TextTop<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"textarea1"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストエリアの説明</span>
+<span class="token tag" >textarea.sw-FormTextarea<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >id</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"textarea1"</span> placeholder<span class="token operator" >=</span><span class="token string" >"テキストエリアです"</span></span><span class="token punctuation" >)</span></span></span>
+
+<span class="token tag" >textarea.sw-FormTextarea<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >id</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"textarea2"</span> placeholder<span class="token operator" >=</span><span class="token string" >"テキストエリアです"</span></span><span class="token punctuation" >)</span></span></span>
+<span class="token tag" >label.sw-FormTextarea_TextTop<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"textarea2"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストエリアの説明</span>
+
+<span class="token tag" >textarea.sw-FormTextarea.sw-FormTextarea-large<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >id</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"textarea3"</span> placeholder<span class="token operator" >=</span><span class="token string" >"テキストエリアです"</span></span><span class="token punctuation" >)</span></span></span>
+
+<span class="token tag" >textarea.sw-FormTextarea<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >id</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"textarea4"</span> placeholder<span class="token operator" >=</span><span class="token string" >"テキストエリアです"</span></span><span class="token punctuation" >)</span></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="Label" class="aigis-module__heading">Label</h2>
+            <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Label.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--Text">Text</li>
+              <li class="aigis-tags__item aigis-tags__item--Link">Link</li>
+              <li class="aigis-tags__item aigis-tags__item--Form">Form</li>
+            </ul><p>インラインで表示するラベルコンポーネントです。</p>
+<div class="aigis-preview">
+  <span class="sw-Label">spanタグのラベルです。</span>
+<label class="sw-Label">labelタグのラベルです。</label><a href="#" class="sw-Label">aタグのラベルです。</a></div>
+
+<pre><code class="language-jade"><span class="token tag" >span.sw-Label</span> <span class="token plain-text" >spanタグのラベルです。</span>
+<span class="token tag" >label.sw-Label</span> <span class="token plain-text" >labelタグのラベルです。</span>
+<span class="token tag" >a.sw-Label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグのラベルです。</span>
+</code></pre>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
+    <script src="//code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery-migrate.min.js"><\/script>')</script>
+    <script src="/assets/js/lib.js"></script>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

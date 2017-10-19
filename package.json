@@ -4,8 +4,7 @@
   "description": "Webサイト制作のためのテンプレート",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
-    "release": "gulp release"
+    "start": "gulp"
   },
   "keywords": [
     "gulp",

@@ -6,7 +6,7 @@ name: Styleguide
 
 # スタイルガイドを生成するソースとなるファイル（またはディレクトリ）への相対的なパスを指定します。
 source:
-  - ../develop/assets/css
+  - ../src/assets/css
   # - ./demo.md
 # You may alternately specify multiple directories
 # 単一の指定と配列による複数指定のどちらも行えます。
@@ -31,7 +31,7 @@ source_type:
 # The directory that aigis will build to
 # スタイルガイドを出力するフォルダを指定します。
 # 指定がない場合、aigis_config.ymlのあるフォルダにstyleguideフォルダを作成して出力されます。
-dest: ../test/styleguide
+dest: ../htdocs/styleguide
 
 # The assets needed to build the docs
 # You may put doc related assets here too: images, css, etc.
@@ -42,7 +42,7 @@ dependencies:
   # - ../dest/assets
 
 # Index page created from markdown file
-index: ../develop/assets/css/styleguide/index.md
+index: ../src/assets/css/styleguide/index.md
 
 # You can choose template engine : ejs, jade, handlebars
 # スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。
