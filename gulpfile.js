@@ -47,7 +47,6 @@ var src = {
   'data': 'src/_data/',
   'css': 'src/**/*.scss',
   'styleguideWatch': ['src/**/*.scss', 'src/**/*.md'],
-  'jquery': 'src/assets/js/*.js',
   'libJs': 'src/assets/js/lib/**/*.js',
   'siteJs': 'src/assets/js/namespace/**/*.js',
   'jsWatch': 'src/**/*.js',
@@ -141,15 +140,6 @@ gulp.task('css', function(){
   .pipe(postcss(plugins))
   .pipe(cleanCSS())
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(dest.root))
-  .pipe(browserSync.reload({stream: true}));
-});
-
-/**
- * jQueryをreleaseディレクトリに出力します。
- */
-gulp.task('jquery', function() {
-  return gulp.src(src.jquery, {base: src.root})
   .pipe(gulp.dest(dest.root))
   .pipe(browserSync.reload({stream: true}));
 });
@@ -277,7 +267,7 @@ gulp.task('copy:dest', function() {
 gulp.task('build', function() {
   runSequence(
     ['iconfont'],
-    ['html', 'css', 'styleguide', 'jquery', 'libJs', 'siteJs', 'image', 'public']
+    ['html', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
   )
 });
 
@@ -314,7 +304,6 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(src.html, ['html']);
   gulp.watch(src.css, ['css']);
   gulp.watch(src.styleguideWatch, ['styleguide']);
-  gulp.watch(src.jsWatch, ['jquery']);
   gulp.watch(src.jsWatch, ['libJs']);
   gulp.watch(src.jsWatch, ['siteJs']);
   gulp.watch(src.imageWatch, ['image']);
