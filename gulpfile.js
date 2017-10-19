@@ -254,14 +254,6 @@ gulp.task('clean:dest', function (cb) {
 });
 
 /**
- * テスト用のディレクトリをコピーします。
- */
-gulp.task('copy:dest', function() {
-  return gulp.src(dest.root + '**/*')
-  .pipe(gulp.dest(dest.root));
-});
-
-/**
  * 一連のタスクを処理します。
  */
 gulp.task('build', function() {
