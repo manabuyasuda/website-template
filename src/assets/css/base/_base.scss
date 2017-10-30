@@ -83,6 +83,15 @@ pre {
 }
 
 /**
+ * iOSのSafariとChromeで、`text-decoration: underline;`の罫線が
+ * グリフやディセンダで途切れないようにします。
+ * https://css-tricks.com/almanac/properties/t/text-decoration-skip/
+ */
+a {
+  -webkit-text-decoration-skip: none;
+}
+
+/**
  * `dt`と`dd`の左端を揃えます。
  */
 dd {
