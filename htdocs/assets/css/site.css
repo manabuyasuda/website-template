@@ -2161,9 +2161,18 @@ tag: Layout
 
 ```jade
 .st-Block
-  p .st-Block
+  p.test-Box .st-Block
 .st-Block
-  p .st-Block
+  p.test-Box .st-Block
+```
+
+```jade
+.st-Text
+  p .st-Text
+.st-Block
+  p.test-Box .st-Block
+.st-Block
+  p.test-Box .st-Block
 .st-Text
   p .st-Text
 ```
