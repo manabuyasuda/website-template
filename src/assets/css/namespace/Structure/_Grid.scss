@@ -18,19 +18,23 @@ tag: Layout
 ```jade
 .st-Grid
   .st-Grid_Item.st-Grid_Item-8of12Md
-    img(src="https://placehold.jp/1200x800.png" alt="")
+    .test-Box One<br>1/1 → 8/12
   .st-Grid_Item.st-Grid_Item-4of12Md
-    img(src="https://placehold.jp/600x400.png" alt="")
+    .test-Box Two<br>1/1 → 4/12
+```
 
+```jade
 .st-Grid.st-Grid-reversMd
   .st-Grid_Item.st-Grid_Item-8of12Md
-    img(src="https://placehold.jp/1200x800.png" alt="")
+    .test-Box One<br>1/1 → 8/12
   .st-Grid_Item.st-Grid_Item-4of12Md
-    img(src="https://placehold.jp/600x400.png" alt="")
+    .test-Box Two<br>1/1 → 4/12
+```
 
+```jade
 .st-Grid.st-Grid-centerMd
   .st-Grid_Item.st-Grid_Item-8of12Md
-    img(src="https://placehold.jp/1200x800.png" alt="")
+    .test-Box One<br>1/1 → 8/12
 ```
 */
 // `em`と`%`は指定不可
