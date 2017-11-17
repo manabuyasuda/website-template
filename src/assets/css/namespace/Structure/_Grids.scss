@@ -5,7 +5,7 @@ category: Structure
 tag: Layout
 ---
 
-バリエーションの豊富なグリッドシステムです。親要素（`.st-Grids`）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のような使用頻度の高いカラムの指定ができます。
+バリエーションの豊富なグリッドシステムです。親要素（`.st-Grids`）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のようなカラムの指定ができます。
 
 カラム間の余白は幅を`$st-grids-column-gap`、高さを`$st-grids-row-gap`で統一しています。
 
@@ -13,31 +13,13 @@ tag: Layout
 
 以下のような指定ができます。
 
-- 1/2から1/5までの均等なカラム指定。
-- 8/12と4/12、7/12と5/12、9/12と3/12、またはその逆の4/12と8/12、5/12と7/12、3/12と9/12のカラム指定。
+- `.st-Grids-col2`のように1/2から1/5までの均等なカラム指定。
+- `.st-Grids-col8to4`のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。
 - `.st-Grids-col2Md`のように`Md`、`Lg`、`Xl`を追加してブレイクポイントの指定。
+- `.st-Grids-noGap`でカラム間のガターを0にする。
+- `.st-Grids-narrow`でカラム間のガターを最小にする。
 
-```jade
-.st-Grids.st-Grids-col8to4Md
-  .st-Grids_Item
-    .test-Box One<br>1/1 → 8/12
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 4/12
-
-.st-Grids.st-Grids-col4to8Md
-  .st-Grids_Item
-    .test-Box One <br>1/1 → 8/12
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 4/12
-```
-
-```jade
-.st-Grids.st-Grids-col8to4Md.st-Grids-reversMd
-  .st-Grids_Item
-    .test-Box One<br>1/1 → 8/12
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 4/12
-```
+### 均等なカラム指定。
 
 ```jade
 .st-Grids.st-Grids-col2Md
@@ -56,6 +38,56 @@ tag: Layout
   .st-Grids_Item
     .test-Box Four<br>1/2 → 1/3
 ```
+
+### 8/12と4/12と4/12と8/12のカラム指定。
+
+```jade
+.st-Grids.st-Grids-col8to4Md
+  .st-Grids_Item
+    .test-Box One<br>1/1 → 8/12
+  .st-Grids_Item
+    .test-Box Two<br>1/1 → 4/12
+
+.st-Grids.st-Grids-col4to8Md
+  .st-Grids_Item
+    .test-Box One <br>1/1 → 4/12
+  .st-Grids_Item
+    .test-Box Two<br>1/1 → 8/12
+```
+
+### 8/12と4/12のカラム指定かつ、`md`以上で要素を反転。
+
+```jade
+.st-Grids.st-Grids-col8to4Md.st-Grids-reversMd
+  .st-Grids_Item
+    .test-Box One<br>1/1 → 8/12
+  .st-Grids_Item
+    .test-Box Two<br>1/1 → 4/12
+```
+
+### カラム間のガターを0にします。
+
+```jade
+.st-Grids.st-Grids-col3Md.st-Grids-noGap
+  .st-Grids_Item
+    .test-Box One<br>1/1 → 1/3
+  .st-Grids_Item
+    .test-Box Two<br>1/1 → 1/3
+  .st-Grids_Item
+    .test-Box Three<br>1/1 → 1/3
+```
+
+### カラム間のガターを最小にします。
+
+```jade
+.st-Grids.st-Grids-col3Md.st-Grids-narrow
+  .st-Grids_Item
+    .test-Box One<br>1/1 → 1/3
+  .st-Grids_Item
+    .test-Box Two<br>1/1 → 1/3
+  .st-Grids_Item
+    .test-Box Three<br>1/1 → 1/3
+```
 */
 // `em`と`%`は指定不可
 $st-grids-column-gap: $grid-column-gap;
@@ -69,6 +101,10 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   list-style-type: none;
   display: block;
   font-size: 0;
+
+  @include mq-up(md) {
+    margin-left: -$st-grids-column-gap-md;
+  }
 
   /* 同じ階層にある`.st-Grids`同士の間に余白を入れます。 */
   &:not(:first-of-type) {
@@ -298,6 +334,44 @@ $st-grids-row-gap-md: $grid-row-gap-md;
 }
 
 /**
+ * カラム間のガターを0にします。
+ */
+.st-Grids-noGap {
+  margin-left: 0;
+
+  @include mq-up(md) {
+    margin-left: 0;
+  }
+
+  & > .st-Grids_Item {
+    padding-left: 0;
+
+    @include mq-up(md) {
+      padding-left: 0;
+    }
+  }
+}
+
+/**
+ * カラム間のガターを最小にします。
+ */
+.st-Grids-narrow {
+  margin-left: -1px;
+
+  @include mq-up(md) {
+    margin-left: -1px;
+  }
+
+  & > .st-Grids_Item {
+    padding-left: 1px;
+
+    @include mq-up(md) {
+      padding-left: 1px;
+    }
+  }
+}
+
+/**
  * `.st-Grids_Item`の表示順を逆にします。
  * A,B → B,A
  */
@@ -344,14 +418,30 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 
-/* 8/12, 4/12 */
-.st-Grids-col8to4 > .st-Grids_Item {
+/* 1/12 11/12, 11/12 1/12 */
+.st-Grids-col1to11 > .st-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(8 / 12);
+    width: percentage(1 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(4 / 12);
+    width: percentage(11 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-row-gap;
+  }
+}
+.st-Grids-col11to1 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(11 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(1 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -362,13 +452,29 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col8to4Md > .st-Grids_Item {
+  .st-Grids-col1to11Md > .st-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(8 / 12);
+      width: percentage(1 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(4 / 12);
+      width: percentage(11 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col11to1Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(11 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(1 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -380,13 +486,29 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col8to4Lg > .st-Grids_Item {
+  .st-Grids-col1to11Lg > .st-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(8 / 12);
+      width: percentage(1 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(4 / 12);
+      width: percentage(11 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col11to1Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(11 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(1 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -398,13 +520,29 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col8to4Xl > .st-Grids_Item {
+  .st-Grids-col1to11Xl > .st-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(8 / 12);
+      width: percentage(1 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(4 / 12);
+      width: percentage(11 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col11to1Xl > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(11 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(1 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -415,14 +553,31 @@ $st-grids-row-gap-md: $grid-row-gap-md;
     }
   }
 }
-/* 4/12, 8/12 */
-.st-Grids-col4to8 > .st-Grids_Item {
+
+/* 2/12 10/12, 10/12 2/12 */
+.st-Grids-col2to10 > .st-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(4 / 12);
+    width: percentage(2 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(8 / 12);
+    width: percentage(10 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-row-gap;
+  }
+}
+.st-Grids-col10to2 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(10 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(2 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -433,13 +588,29 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col4to8Md > .st-Grids_Item {
+  .st-Grids-col2to10Md > .st-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(4 / 12);
+      width: percentage(2 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(8 / 12);
+      width: percentage(10 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col10to2Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(10 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(2 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -451,13 +622,29 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 @include mq-up(lg) {
-  .st-Grids-col4to8Lg > .st-Grids_Item {
+  .st-Grids-col2to10Lg > .st-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(4 / 12);
+      width: percentage(2 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(8 / 12);
+      width: percentage(10 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col10to2Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(10 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(2 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -469,13 +656,29 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 @include mq-up(xl) {
-  .st-Grids-col4to8Xl > .st-Grids_Item {
+  .st-Grids-col2to10Xl > .st-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(4 / 12);
+      width: percentage(2 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(8 / 12);
+      width: percentage(10 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col10to2Xl > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(10 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(2 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -487,14 +690,14 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 
-/* 7/12, 5/12 */
-.st-Grids-col7to5 > .st-Grids_Item {
+/* 3/12 9/12, 9/12 3/12 */
+.st-Grids-col3to9 > .st-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(7 / 12);
+    width: percentage(3 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(5 / 12);
+    width: percentage(9 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -504,133 +707,6 @@ $st-grids-row-gap-md: $grid-row-gap-md;
     margin-top: $st-grids-row-gap;
   }
 }
-@include mq-up(md) {
-  .st-Grids-col7to5Md > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-@include mq-up(lg) {
-  .st-Grids-col7to5Lg > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-@include mq-up(xl) {
-  .st-Grids-col7to5Xl > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-/* 5/12, 7/12 */
-.st-Grids-col5to7 > .st-Grids_Item {
-  &:nth-of-type(odd) {
-    width: percentage(5 / 12);
-  }
-
-  &:nth-of-type(even) {
-    width: percentage(7 / 12);
-  }
-
-  &:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  &:nth-of-type(n+3) {
-    margin-top: $st-grids-row-gap;
-  }
-}
-@include mq-up(md) {
-  .st-Grids-col5to7Md > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-@include mq-up(lg) {
-  .st-Grids-col5to7Lg > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-@include mq-up(xl) {
-  .st-Grids-col5to7Xl > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-
-/* 9/12, 3/12 */
 .st-Grids-col9to3 > .st-Grids_Item {
   &:nth-of-type(odd) {
     width: percentage(9 / 12);
@@ -648,77 +724,6 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   }
 }
 @include mq-up(md) {
-  .st-Grids-col9to3Md > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-@include mq-up(lg) {
-  .st-Grids-col9to3Lg > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-@include mq-up(xl) {
-  .st-Grids-col9to3Xl > .st-Grids_Item {
-    &:nth-of-type(odd) {
-      width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(even) {
-      width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(n+1) {
-      margin-top: 0;
-    }
-    &:nth-of-type(n+3) {
-      margin-top: $st-grids-row-gap-md;
-    }
-  }
-}
-/* 3/12, 9/12 */
-.st-Grids-col3to9 > .st-Grids_Item {
-  &:nth-of-type(odd) {
-    width: percentage(3 / 12);
-  }
-
-  &:nth-of-type(even) {
-    width: percentage(9 / 12);
-  }
-
-  &:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  &:nth-of-type(n+3) {
-    margin-top: $st-grids-row-gap;
-  }
-}
-@include mq-up(md) {
   .st-Grids-col3to9Md > .st-Grids_Item {
     &:nth-of-type(odd) {
       width: percentage(3 / 12);
@@ -726,6 +731,22 @@ $st-grids-row-gap-md: $grid-row-gap-md;
 
     &:nth-of-type(even) {
       width: percentage(9 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col9to3Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(9 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(3 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -753,6 +774,22 @@ $st-grids-row-gap-md: $grid-row-gap-md;
       margin-top: $st-grids-row-gap-md;
     }
   }
+  .st-Grids-col9to3Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(9 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(3 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
 }
 @include mq-up(xl) {
   .st-Grids-col3to9Xl > .st-Grids_Item {
@@ -762,6 +799,294 @@ $st-grids-row-gap-md: $grid-row-gap-md;
 
     &:nth-of-type(even) {
       width: percentage(9 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col9to3Xl > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(9 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(3 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+}
+
+/* 4/12 8/12, 8/12 4/12 */
+.st-Grids-col4to8 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(4 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(8 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-row-gap;
+  }
+}
+.st-Grids-col8to4 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(8 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(4 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-row-gap;
+  }
+}
+@include mq-up(md) {
+  .st-Grids-col4to8Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(4 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(8 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col8to4Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(8 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(4 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+}
+@include mq-up(lg) {
+  .st-Grids-col4to8Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(4 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(8 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col8to4Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(8 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(4 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+}
+@include mq-up(xl) {
+  .st-Grids-col4to8Xl > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(4 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(8 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col8to4Xl > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(8 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(4 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+}
+
+/* 5/12 7/12, 7/12 5/12 */
+.st-Grids-col5to7 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(5 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(7 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-row-gap;
+  }
+}
+.st-Grids-col7to5 > .st-Grids_Item {
+  &:nth-of-type(odd) {
+    width: percentage(7 / 12);
+  }
+
+  &:nth-of-type(even) {
+    width: percentage(5 / 12);
+  }
+
+  &:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  &:nth-of-type(n+3) {
+    margin-top: $st-grids-row-gap;
+  }
+}
+@include mq-up(md) {
+  .st-Grids-col5to7Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(5 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(7 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col7to5Md > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(7 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(5 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+}
+@include mq-up(lg) {
+  .st-Grids-col5to7Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(5 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(7 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col7to5Lg > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(7 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(5 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+}
+@include mq-up(xl) {
+  .st-Grids-col5to7Xl > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(5 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(7 / 12);
+    }
+
+    &:nth-of-type(n+1) {
+      margin-top: 0;
+    }
+    &:nth-of-type(n+3) {
+      margin-top: $st-grids-row-gap-md;
+    }
+  }
+  .st-Grids-col7to5Xl > .st-Grids_Item {
+    &:nth-of-type(odd) {
+      width: percentage(7 / 12);
+    }
+
+    &:nth-of-type(even) {
+      width: percentage(5 / 12);
     }
 
     &:nth-of-type(n+1) {

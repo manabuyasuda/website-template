@@ -226,63 +226,18 @@
             <div class="aigis-module__filepath">/src/assets/css/namespace/Structure/_Grids.scss</div>
             <ul class="aigis-tags">
               <li class="aigis-tags__item aigis-tags__item--Layout">Layout</li>
-            </ul><p>バリエーションの豊富なグリッドシステムです。親要素（<code>.st-Grids</code>）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のような使用頻度の高いカラムの指定ができます。</p>
+            </ul><p>バリエーションの豊富なグリッドシステムです。親要素（<code>.st-Grids</code>）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のようなカラムの指定ができます。</p>
 <p>カラム間の余白は幅を<code>$st-grids-column-gap</code>、高さを<code>$st-grids-row-gap</code>で統一しています。</p>
 <p><code>.st-Grids</code>同士が同じ階層にある場合（<code>.st-Grids + .st-Grids</code>）には<code>.st-Grids</code>の間に余白がつきます。</p>
 <p>以下のような指定ができます。</p>
 <ul>
-<li>1/2から1/5までの均等なカラム指定。</li>
-<li>8/12と4/12、7/12と5/12、9/12と3/12、またはその逆の4/12と8/12、5/12と7/12、3/12と9/12のカラム指定。</li>
+<li><code>.st-Grids-col2</code>のように1/2から1/5までの均等なカラム指定。</li>
+<li><code>.st-Grids-col8to4</code>のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。</li>
 <li><code>.st-Grids-col2Md</code>のように<code>Md</code>、<code>Lg</code>、<code>Xl</code>を追加してブレイクポイントの指定。</li>
+<li><code>.st-Grids-noGap</code>でカラム間のガターを0にする。</li>
+<li><code>.st-Grids-narrow</code>でカラム間のガターを最小にする。</li>
 </ul>
-<div class="aigis-preview">
-
-<div class="st-Grids st-Grids-col8to4Md">
-  <div class="st-Grids_Item">
-    <div class="test-Box">One<br>1/1 → 8/12</div>
-  </div>
-  <div class="st-Grids_Item">
-    <div class="test-Box">Two<br>1/1 → 4/12</div>
-  </div>
-</div>
-<div class="st-Grids st-Grids-col4to8Md">
-  <div class="st-Grids_Item">
-    <div class="test-Box">One <br>1/1 → 8/12</div>
-  </div>
-  <div class="st-Grids_Item">
-    <div class="test-Box">Two<br>1/1 → 4/12</div>
-  </div>
-</div></div>
-
-<pre><code class="language-jade"><span class="token tag" >.st-Grids.st-Grids-col8to4Md</span>
-  <span class="token tag" >.st-Grids_Item</span>
-    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 8/12</span>
-  <span class="token tag" >.st-Grids_Item</span>
-    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 4/12</span>
-
-<span class="token tag" >.st-Grids.st-Grids-col4to8Md</span>
-  <span class="token tag" >.st-Grids_Item</span>
-    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One &lt;br>1/1 → 8/12</span>
-  <span class="token tag" >.st-Grids_Item</span>
-    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 4/12</span>
-</code></pre>
-<div class="aigis-preview">
-
-<div class="st-Grids st-Grids-col8to4Md st-Grids-reversMd">
-  <div class="st-Grids_Item">
-    <div class="test-Box">One<br>1/1 → 8/12</div>
-  </div>
-  <div class="st-Grids_Item">
-    <div class="test-Box">Two<br>1/1 → 4/12</div>
-  </div>
-</div></div>
-
-<pre><code class="language-jade"><span class="token tag" >.st-Grids.st-Grids-col8to4Md.st-Grids-reversMd</span>
-  <span class="token tag" >.st-Grids_Item</span>
-    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 8/12</span>
-  <span class="token tag" >.st-Grids_Item</span>
-    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 4/12</span>
-</code></pre>
+<h3 id="-">均等なカラム指定。</h3>
 <div class="aigis-preview">
 
 <div class="st-Grids st-Grids-col2Md">
@@ -323,6 +278,102 @@
     <span class="token tag" >.test-Box</span> <span class="token plain-text" >Three&lt;br>1/2 → 1/3</span>
   <span class="token tag" >.st-Grids_Item</span>
     <span class="token tag" >.test-Box</span> <span class="token plain-text" >Four&lt;br>1/2 → 1/3</span>
+</code></pre>
+<h3 id="8-12-4-12-4-12-8-12-">8/12と4/12と4/12と8/12のカラム指定。</h3>
+<div class="aigis-preview">
+
+<div class="st-Grids st-Grids-col8to4Md">
+  <div class="st-Grids_Item">
+    <div class="test-Box">One<br>1/1 → 8/12</div>
+  </div>
+  <div class="st-Grids_Item">
+    <div class="test-Box">Two<br>1/1 → 4/12</div>
+  </div>
+</div>
+<div class="st-Grids st-Grids-col4to8Md">
+  <div class="st-Grids_Item">
+    <div class="test-Box">One <br>1/1 → 4/12</div>
+  </div>
+  <div class="st-Grids_Item">
+    <div class="test-Box">Two<br>1/1 → 8/12</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Grids.st-Grids-col8to4Md</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 8/12</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 4/12</span>
+
+<span class="token tag" >.st-Grids.st-Grids-col4to8Md</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One &lt;br>1/1 → 4/12</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 8/12</span>
+</code></pre>
+<h3 id="8-12-4-12-md-">8/12と4/12のカラム指定かつ、<code>md</code>以上で要素を反転。</h3>
+<div class="aigis-preview">
+
+<div class="st-Grids st-Grids-col8to4Md st-Grids-reversMd">
+  <div class="st-Grids_Item">
+    <div class="test-Box">One<br>1/1 → 8/12</div>
+  </div>
+  <div class="st-Grids_Item">
+    <div class="test-Box">Two<br>1/1 → 4/12</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Grids.st-Grids-col8to4Md.st-Grids-reversMd</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 8/12</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 4/12</span>
+</code></pre>
+<h3 id="-0-">カラム間のガターを0にします。</h3>
+<div class="aigis-preview">
+
+<div class="st-Grids st-Grids-col3Md st-Grids-noGap">
+  <div class="st-Grids_Item">
+    <div class="test-Box">One<br>1/1 → 1/3</div>
+  </div>
+  <div class="st-Grids_Item">
+    <div class="test-Box">Two<br>1/1 → 1/3</div>
+  </div>
+  <div class="st-Grids_Item">
+    <div class="test-Box">Three<br>1/1 → 1/3</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Grids.st-Grids-col3Md.st-Grids-noGap</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 1/3</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 1/3</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Three&lt;br>1/1 → 1/3</span>
+</code></pre>
+<h3 id="-">カラム間のガターを最小にします。</h3>
+<div class="aigis-preview">
+
+<div class="st-Grids st-Grids-col3Md st-Grids-narrow">
+  <div class="st-Grids_Item">
+    <div class="test-Box">One<br>1/1 → 1/3</div>
+  </div>
+  <div class="st-Grids_Item">
+    <div class="test-Box">Two<br>1/1 → 1/3</div>
+  </div>
+  <div class="st-Grids_Item">
+    <div class="test-Box">Three<br>1/1 → 1/3</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Grids.st-Grids-col3Md.st-Grids-narrow</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 1/3</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 1/3</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Three&lt;br>1/1 → 1/3</span>
 </code></pre>
 
           </div>
