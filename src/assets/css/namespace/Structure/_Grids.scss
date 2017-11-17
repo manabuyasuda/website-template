@@ -16,6 +16,7 @@ tag: Layout
 - `.st-Grids-col2`のように1/2から1/5までの均等なカラム指定。
 - `.st-Grids-col8to4`のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。
 - `.st-Grids-col2Md`のように`Md`、`Lg`、`Xl`を追加してブレイクポイントの指定。
+- `.st-Grids-middle`のようにカラムの垂直位置を中央揃え。
 - `.st-Grids-noGap`でカラム間のガターを0にする。
 - `.st-Grids-narrow`でカラム間のガターを最小にする。
 
@@ -63,6 +64,16 @@ tag: Layout
     .test-Box One<br>1/1 → 8/12
   .st-Grids_Item
     .test-Box Two<br>1/1 → 4/12
+```
+
+### カラムの垂直位置を中央揃え。
+
+```jade
+.st-Grids.st-Grids-middleMd.st-Grids-col2Md
+  .st-Grids_Item
+    .test-Box One<br>1/1 → 6/12<br>.st-Grids-middle<br>.st-Grids-middle
+  .st-Grids_Item
+    .test-Box Two<br>1/1 → 6/12
 ```
 
 ### カラム間のガターを0にします。
@@ -368,6 +379,28 @@ $st-grids-row-gap-md: $grid-row-gap-md;
     @include mq-up(md) {
       padding-left: 1px;
     }
+  }
+}
+
+/**
+ * 要素の垂直位置を真ん中寄せ。
+ */
+.st-Grids-middle > .st-Grids_Item {
+  vertical-align: middle;
+}
+@include mq-up(md) {
+  .st-Grids-middleMd > .st-Grids_Item {
+    vertical-align: middle;
+  }
+}
+@include mq-up(lg) {
+  .st-Grids-middleLg > .st-Grids_Item {
+    vertical-align: middle;
+  }
+}
+@include mq-up(xl) {
+  .st-Grids-middleXl > .st-Grids_Item {
+    vertical-align: middle;
   }
 }
 

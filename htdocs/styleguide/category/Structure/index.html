@@ -268,6 +268,7 @@
 <li><code>.st-Grids-col2</code>のように1/2から1/5までの均等なカラム指定。</li>
 <li><code>.st-Grids-col8to4</code>のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。</li>
 <li><code>.st-Grids-col2Md</code>のように<code>Md</code>、<code>Lg</code>、<code>Xl</code>を追加してブレイクポイントの指定。</li>
+<li><code>.st-Grids-middle</code>のようにカラムの垂直位置を中央揃え。</li>
 <li><code>.st-Grids-noGap</code>でカラム間のガターを0にする。</li>
 <li><code>.st-Grids-narrow</code>でカラム間のガターを最小にする。</li>
 </ul>
@@ -362,6 +363,24 @@
     <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 8/12</span>
   <span class="token tag" >.st-Grids_Item</span>
     <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 4/12</span>
+</code></pre>
+<h3 id="-">カラムの垂直位置を中央揃え。</h3>
+<div class="aigis-preview">
+
+<div class="st-Grids st-Grids-middleMd st-Grids-col2Md">
+  <div class="st-Grids_Item">
+    <div class="test-Box">One<br>1/1 → 6/12<br>.st-Grids-middle<br>.st-Grids-middle</div>
+  </div>
+  <div class="st-Grids_Item">
+    <div class="test-Box">Two<br>1/1 → 6/12</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Grids.st-Grids-middleMd.st-Grids-col2Md</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 6/12&lt;br>.st-Grids-middle&lt;br>.st-Grids-middle</span>
+  <span class="token tag" >.st-Grids_Item</span>
+    <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 6/12</span>
 </code></pre>
 <h3 id="-0-">カラム間のガターを0にします。</h3>
 <div class="aigis-preview">
