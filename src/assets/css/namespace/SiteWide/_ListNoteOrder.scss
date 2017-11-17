@@ -17,12 +17,26 @@ div(lang="en")
     li This is an annotation. This is an annotation. This is an annotation.
     li This is an annotation.
 ```
+
+リストを2から始める場合は`.sw-ListNoteOrder-from2`のように指定します。2~10まで対応しています。
+
+```jade
+ol.sw-ListNoteOrder.sw-ListNoteOrder-from2
+  li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
+  li 注釈です。
+
+div(lang="en")
+  ul.sw-ListNoteOrder.sw-ListNoteOrder-from2
+    li This is an annotation. This is an annotation. This is an annotation.
+    li This is an annotation.
+```
 */
 .sw-ListNoteOrder {
   margin-left: 2em;
   padding-left: 0;
   font-size: $font-size-secondary;
   list-style-type: none;
+  counter-reset: noteOrder 0;
 
   [lang="en"] &,
   [lang="zh-cn"] {
@@ -51,3 +65,13 @@ div(lang="en")
     left: -1.5em;
   }
 }
+
+.sw-ListNoteOrder-from2 { counter-reset: noteOrder 1; }
+.sw-ListNoteOrder-from3 { counter-reset: noteOrder 2; }
+.sw-ListNoteOrder-from4 { counter-reset: noteOrder 3; }
+.sw-ListNoteOrder-from5 { counter-reset: noteOrder 4; }
+.sw-ListNoteOrder-from6 { counter-reset: noteOrder 5; }
+.sw-ListNoteOrder-from7 { counter-reset: noteOrder 6; }
+.sw-ListNoteOrder-from8 { counter-reset: noteOrder 7; }
+.sw-ListNoteOrder-from9 { counter-reset: noteOrder 8; }
+.sw-ListNoteOrder-from10 { counter-reset: noteOrder 9; }

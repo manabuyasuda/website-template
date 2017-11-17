@@ -527,6 +527,18 @@
   <span class="token tag" >li</span> <span class="token plain-text" >リストです。リストです。リストです。リストです。</span>
   <span class="token tag" >li</span> <span class="token plain-text" >リストです</span>
 </code></pre>
+<p>リストを2から始める場合は<code>.sw-ListBracketOrder-from2</code>のように指定します。2~10まで対応しています。</p>
+<div class="aigis-preview">
+
+<ul class="sw-ListBracketOrder sw-ListBracketOrder-from2">
+  <li>リストです。リストです。リストです。リストです。</li>
+  <li>リストです</li>
+</ul></div>
+
+<pre><code class="language-jade"><span class="token tag" >ul.sw-ListBracketOrder.sw-ListBracketOrder-from2</span>
+  <span class="token tag" >li</span> <span class="token plain-text" >リストです。リストです。リストです。リストです。</span>
+  <span class="token tag" >li</span> <span class="token plain-text" >リストです</span>
+</code></pre>
 
           </div>
           <div class="aigis-module">
@@ -587,6 +599,29 @@
     <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation. This is an annotation. This is an annotation.</span>
     <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation.</span>
 </code></pre>
+<p>リストを2から始める場合は<code>.sw-ListNoteOrder-from2</code>のように指定します。2~10まで対応しています。</p>
+<div class="aigis-preview">
+
+<ol class="sw-ListNoteOrder sw-ListNoteOrder-from2">
+  <li>注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</li>
+  <li>注釈です。</li>
+</ol>
+<div lang="en">
+  <ul class="sw-ListNoteOrder sw-ListNoteOrder-from2">
+    <li>This is an annotation. This is an annotation. This is an annotation.</li>
+    <li>This is an annotation.</li>
+  </ul>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >ol.sw-ListNoteOrder.sw-ListNoteOrder-from2</span>
+  <span class="token tag" >li</span> <span class="token plain-text" >注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</span>
+  <span class="token tag" >li</span> <span class="token plain-text" >注釈です。</span>
+
+<span class="token tag" >div<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >ul.sw-ListNoteOrder.sw-ListNoteOrder-from2</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation. This is an annotation. This is an annotation.</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation.</span>
+</code></pre>
 
           </div>
           <div class="aigis-module">
@@ -608,6 +643,26 @@
 </ol></div>
 
 <pre><code class="language-jade"><span class="token tag" >ol.sw-ListOrder</span>
+  <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
+  <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
+    <span class="token tag" >ol</span>
+      <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
+      <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
+</code></pre>
+<p>リストを2から始める場合は<code>.sw-ListOrder-from2</code>のように指定します。2~10まで対応しています。</p>
+<div class="aigis-preview">
+
+<ol class="sw-ListOrder sw-ListOrder-from2">
+  <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
+  <li>入れ子に対応した順序リストです。
+    <ol>
+      <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
+      <li>入れ子に対応した順序リストです。</li>
+    </ol>
+  </li>
+</ol></div>
+
+<pre><code class="language-jade"><span class="token tag" >ol.sw-ListOrder.sw-ListOrder-from2</span>
   <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
   <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
     <span class="token tag" >ol</span>

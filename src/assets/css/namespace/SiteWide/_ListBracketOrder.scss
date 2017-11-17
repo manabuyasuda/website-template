@@ -12,11 +12,20 @@ ul.sw-ListBracketOrder
   li リストです。リストです。リストです。リストです。
   li リストです
 ```
+
+リストを2から始める場合は`.sw-ListBracketOrder-from2`のように指定します。2~10まで対応しています。
+
+```jade
+ul.sw-ListBracketOrder.sw-ListBracketOrder-from2
+  li リストです。リストです。リストです。リストです。
+  li リストです
+```
 */
 .sw-ListBracketOrder {
   margin-left: 2em;
   padding-left: 0;
   list-style-type: none;
+  counter-reset: bracketOrder 0;
 
   & > li {
     position: relative;
@@ -30,3 +39,13 @@ ul.sw-ListBracketOrder
     left: -2em;
   }
 }
+
+.sw-ListBracketOrder-from2 { counter-reset: bracketOrder 1; }
+.sw-ListBracketOrder-from3 { counter-reset: bracketOrder 2; }
+.sw-ListBracketOrder-from4 { counter-reset: bracketOrder 3; }
+.sw-ListBracketOrder-from5 { counter-reset: bracketOrder 4; }
+.sw-ListBracketOrder-from6 { counter-reset: bracketOrder 5; }
+.sw-ListBracketOrder-from7 { counter-reset: bracketOrder 6; }
+.sw-ListBracketOrder-from8 { counter-reset: bracketOrder 7; }
+.sw-ListBracketOrder-from9 { counter-reset: bracketOrder 8; }
+.sw-ListBracketOrder-from10 { counter-reset: bracketOrder 9; }

@@ -15,11 +15,23 @@ ol.sw-ListOrder
       li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
       li 入れ子に対応した順序リストです。
 ```
+
+リストを2から始める場合は`.sw-ListOrder-from2`のように指定します。2~10まで対応しています。
+
+```jade
+ol.sw-ListOrder.sw-ListOrder-from2
+  li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
+  li 入れ子に対応した順序リストです。
+    ol
+      li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
+      li 入れ子に対応した順序リストです。
+```
 */
 .sw-ListOrder {
   display: table;
   padding-left: 0;
   list-style-type: none;
+  counter-reset: order;
 
   & li {
     display: table-row;
@@ -40,3 +52,13 @@ ol.sw-ListOrder
     counter-reset: order;
   }
 }
+
+.sw-ListOrder-from2 { counter-reset: order 1; }
+.sw-ListOrder-from3 { counter-reset: order 2; }
+.sw-ListOrder-from4 { counter-reset: order 3; }
+.sw-ListOrder-from5 { counter-reset: order 4; }
+.sw-ListOrder-from6 { counter-reset: order 5; }
+.sw-ListOrder-from7 { counter-reset: order 6; }
+.sw-ListOrder-from8 { counter-reset: order 7; }
+.sw-ListOrder-from9 { counter-reset: order 8; }
+.sw-ListOrder-from10 { counter-reset: order 9; }
