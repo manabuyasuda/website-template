@@ -18,15 +18,15 @@ div(lang="en")
     li This is an annotation.
 ```
 
-リストを2から始める場合は`.sw-ListNoteOrder-from2`のように指定します。2~10まで対応しています。
+リストを2から始める場合は`.sw-ListNoteOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-ol.sw-ListNoteOrder.sw-ListNoteOrder-from2
+ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
   li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
   li 注釈です。
 
 div(lang="en")
-  ul.sw-ListNoteOrder.sw-ListNoteOrder-from2
+  ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
     li This is an annotation. This is an annotation. This is an annotation.
     li This is an annotation.
 ```
