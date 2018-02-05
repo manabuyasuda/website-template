@@ -33,12 +33,12 @@ ol.sw-ListOrder.sw-ListOrder-from2(start="2")
   list-style-type: none;
   counter-reset: order;
 
-  & li {
+  & > li {
     display: table-row;
     counter-increment: order;
   }
 
-  & li:before {
+  & > li:before {
     content: counters(order, "-") ".";
     display: table-cell;
     padding-right: 0.5em;

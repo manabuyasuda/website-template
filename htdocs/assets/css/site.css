@@ -1873,12 +1873,12 @@ ol.sw-ListOrder.sw-ListOrder-from2(start="2")
   counter-reset: order;
 }
 
-.sw-ListOrder li {
+.sw-ListOrder > li {
   display: table-row;
   counter-increment: order;
 }
 
-.sw-ListOrder li:before {
+.sw-ListOrder > li:before {
   content: counters(order, "-") ".";
   display: table-cell;
   padding-right: 0.5em;
