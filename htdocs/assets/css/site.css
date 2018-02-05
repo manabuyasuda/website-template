@@ -773,7 +773,7 @@ p.st-Text テキストです。
   display: block;
   width: 100%;
   height: auto;
-  margin: 16px auto;
+  margin: 15px auto;
   border: 0;
   border-top: 1px solid #e5e5e5;
 }
@@ -2322,7 +2322,7 @@ tag: Layout
 */
 .st-Block + .st-Block,
 :not(.st-Block) + .st-Block {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 /*
@@ -3920,7 +3920,7 @@ p.st-Text .st-Text
 ```
 */
 .st-Heading2 {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 /*
@@ -3939,7 +3939,7 @@ p.st-Text .st-Text
 ```
 */
 .st-Heading3 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 /*
@@ -3958,7 +3958,7 @@ p.st-Text .st-Text
 ```
 */
 .st-Heading4 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /*
@@ -3977,7 +3977,7 @@ p.st-Text .st-Text
 ```
 */
 .st-Heading5 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /*
@@ -4009,7 +4009,7 @@ p.st-Text .st-Text
 ```
 */
 .st-Lead {
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 }
 
 /*
@@ -4022,19 +4022,25 @@ tag: Layout
 h2相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
-p.st-Text .st-Text
+p.st-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
 section.st-Section2
-  h2.st-Heading2 .st-Heading2
-  p.st-Text .st-Text
-  p.st-Text .st-Text
+  h2.st-Heading2 吾輩はここで始めて人間というものを見た。
+  p.st-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+  p.st-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+
 section.st-Section2
-  h2.st-Heading2 .st-Heading2
-  p.st-Text .st-Text
+  h2.st-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+  .st-Block
+    p.test-Box .st-Block
+  .st-Block
+    p.test-Box .st-Block
+  p.st-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
 */
 .st-Section2 + .st-Section2,
 :not(.st-Section2) + .st-Section2 {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .st-Section2 > :last-child {
@@ -4051,19 +4057,33 @@ tag: Layout
 h3相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
-p.st-Text .st-Text
-section.st-Section3
-  h3.st-Heading3 .st-Heading3
-  p.st-Text .st-Text
-  p.st-Text .st-Text
-section.st-Section3
-  h3.st-Heading3 .st-Heading3
-  p.st-Text .st-Text
+p.st-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+section.st-Section2
+  h2.st-Heading2 吾輩はここで始めて人間というものを見た。
+  p.st-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+  p.st-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+
+section.st-Section2
+  h2.st-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+
+  section.st-Section3
+    h3.st-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+    p.st-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+  section.st-Section3
+    h3.st-Heading3 吾輩は猫である。名前はまだ無い。
+    .st-Block
+      p.test-Box .st-Block
+    p.st-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
 .st-Section3 + .st-Section3,
 :not(.st-Section3) + .st-Section3 {
-  margin-top: 30px;
+  margin-top: 60px;
+}
+
+.st-Heading2 + .st-Section3 {
+  margin-top: 0;
 }
 
 .st-Section3 > :last-child {
@@ -4080,19 +4100,38 @@ tag: Layout
 h4相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
-p.st-Text .st-Text
-section.st-Section4
-  h4.st-Heading4 .st-Heading4
-  p.st-Text .st-Text
-  p.st-Text .st-Text
-section.st-Section4
-  h4.st-Heading4 .st-Heading4
-  p.st-Text .st-Text
+p.st-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+section.st-Section2
+  h2.st-Heading2 吾輩はここで始めて人間というものを見た。
+  p.st-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+  p.st-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+
+section.st-Section2
+  h2.st-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+
+  section.st-Section3
+    h3.st-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+    p.st-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+  section.st-Section3
+    h3.st-Heading3 吾輩は猫である。名前はまだ無い。
+
+    section.st-Section4
+      h4.st-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+      p.st-Text この書生というのは時々我々を捕えて煮て食うという話である。
+      p.st-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    section.st-Section4
+      h4.st-Heading4 p.st-Text どこで生れたかとんと見当がつかぬ。
+      p.st-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
 .st-Section4 + .st-Section4,
 :not(.st-Section4) + .st-Section4 {
   margin-top: 30px;
+}
+
+.st-Heading3 + .st-Section4 {
+  margin-top: 0;
 }
 
 .st-Section4 > :last-child {
@@ -4109,19 +4148,28 @@ tag: Layout
 h5相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
-p.st-Text .st-Text
-section.st-Section5
-  h5.st-Heading5 .st-Heading5
-  p.st-Text .st-Text
-  p.st-Text .st-Text
-section.st-Section5
-  h5.st-Heading5 .st-Heading5
-  p.st-Text .st-Text
+section.st-Section4
+  h4.st-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+  p.st-Text この書生というのは時々我々を捕えて煮て食うという話である。
+  p.st-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+section.st-Section4
+  h4.st-Heading4 p.st-Text どこで生れたかとんと見当がつかぬ。
+
+  section.st-Section5
+    h5.st-Heading5 吾輩は猫である。名前はまだ無い。
+    p.st-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+  section.st-Section5
+    h5.st-Heading5 どこで生れたかとんと見当がつかぬ。
+    p.st-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
 .st-Section5 + .st-Section5,
 :not(.st-Section5) + .st-Section5 {
   margin-top: 30px;
+}
+
+.st-Heading4 + .st-Section5 {
+  margin-top: 0;
 }
 
 .st-Section5 > :last-child {
@@ -4179,7 +4227,7 @@ p.st-Text .st-Text
 */
 .st-Text + .st-Text,
 :not(.st-Text) + .st-Text {
-  margin-top: 16px;
+  margin-top: 15px;
 }
 
 /*
