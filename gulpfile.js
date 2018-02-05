@@ -27,6 +27,7 @@ var consolidate = require('gulp-consolidate');
 // Styleguide
 var aigis = require('gulp-aigis');
 
+
 // Utility
 var cache = require('gulp-cached');
 var changed  = require('gulp-changed');
@@ -178,8 +179,6 @@ gulp.task('siteJs', function() {
 gulp.task('image', function() {
   return gulp.src(src.image)
   .pipe(changed(dest.image))
-  // TODO: gulp-imageminのv3.2.0だとエラーが起きてしまうので、v2.4.0で固定しています。
-  // https://github.com/imagemin/imagemin/issues/237
   .pipe(plumber({
     errorHandler: function(err) {
       console.log(err.messageFormatted);

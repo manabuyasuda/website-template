@@ -912,6 +912,11 @@ input.sw-FormInput(disabled type="input" placeholder="disabled")
   font-size: 0.85em;
 }
 
+.sw-FormInput::-ms-input-placeholder {
+  color: #767676;
+  font-size: 0.85em;
+}
+
 .sw-FormInput::placeholder {
   color: #767676;
   font-size: 0.85em;
@@ -1174,6 +1179,11 @@ textarea.sw-FormTextarea(disabled id="textarea4" placeholder="テキストエリ
 }
 
 .sw-FormTextarea:-ms-input-placeholder {
+  color: #767676;
+  font-size: 0.85em;
+}
+
+.sw-FormTextarea::-ms-input-placeholder {
   color: #767676;
   font-size: 0.85em;
 }
