@@ -15,27 +15,14 @@
 ## 確認環境
 以下の環境で動作の確認をしています。
 
-- OS X 10.11.5(El Capitan)
-- Node.js 4.2.4
-- Yarn 0.21.3
+- OS X 10.11.6(El Capitan)
+- Node.js 9.4.0
+
+Node.jsのバージョンはnodenvで固定しています。
 
 
 ## 始め方
 開発に必要なパッケージなどは以下のコマンドですべてインストールされます。クローン、またはダウンロードをしたあとに実行してください。
-
-```bash
-yarn install
-```
-
-Yarnをインストールしていない場合はグローバルにインストールしてください。
-
-```bash
-npm install -g yarn
-```
-
-詳しくは[Yarnの公式ドキュメント](https://yarnpkg.com/en/docs/install)を参照してください。
-
-Yarnを使用しない場合は、yarn.lockファイルを削除して、以下のコマンドを実行してください。
 
 ```bash
 npm install
@@ -116,12 +103,6 @@ root/
 
 ## 開発用タスク
 以下のコマンドを実行すると、開発に必要なGulpのタスクがすべて実行されます。
-
-```bash
-yarn start
-```
-
-Yarnを使用しない場合は、以下のコマンドを実行してください。
 
 ```bash
 npm start
