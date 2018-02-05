@@ -581,7 +581,7 @@ img {
  */
 /*
 ---
-name: Button
+name: sw-Button
 namespace: SiteWide
 category: [Button, Link, Form]
 ---
@@ -736,7 +736,7 @@ figure.sw-Caption.sw-Caption-center
 
 /*
 ---
-name: Delimiter
+name: sw-Delimiter
 namespace: SiteWide
 category: Text
 ---
@@ -755,7 +755,7 @@ p テキストは基本的にスペースや役物を基準に改行されます
 
 /*
 ---
-name: Divider
+name: sw-Divider
 namespace: SiteWide
 category: Text
 ---
@@ -780,7 +780,7 @@ p.st-Text テキストです。
 
 /*
 ---
-name: FormCheckbox
+name: sw-FormCheckbox
 namespace: SiteWide
 category: Form
 ---
@@ -857,7 +857,7 @@ label(disabled for="checkbox3") チェックボックス
 
 /*
 ---
-name: FormInput
+name: sw-FormInput
 namespace: SiteWide
 category: Form
 ---
@@ -946,7 +946,7 @@ input.sw-FormInput(disabled type="input" placeholder="disabled")
 
 /*
 ---
-name: FormRadio
+name: sw-FormRadio
 namespace: SiteWide
 category: Form
 ---
@@ -1024,7 +1024,7 @@ label(disabled for="radio3") ラジオボタン
 
 /*
 ---
-name: FormSelect
+name: sw-FormSelect
 namespace: SiteWide
 category: Form
 ---
@@ -1135,7 +1135,7 @@ category: Form
 
 /*
 ---
-name: FormTextarea
+name: sw-FormTextarea
 namespace: SiteWide
 category: Form
 ---
@@ -1221,7 +1221,7 @@ textarea.sw-FormTextarea(disabled id="textarea4" placeholder="テキストエリ
 
 /*
 ---
-name: Hide
+name: sw-Hide
 namespace: SiteWide
 category: Text
 ---
@@ -1280,7 +1280,7 @@ img.sw-ImageCenter(src="https://placehold.jp/300x200.png" alt="")
 
 /*
 ---
-name: Label
+name: sw-Label
 namespace: SiteWide
 category: [Text, Link, Form]
 ---
@@ -1313,7 +1313,7 @@ a.sw-Label(href="#") aタグのラベルです。
 
 /*
 ---
-name: Lead
+name: sw-Lead
 namespace: SiteWide
 category: Text
 ---
@@ -1335,7 +1335,7 @@ p.st-Text △△の強みを生かした□□を使用しており、発売以�
 
 /*
 ---
-name: Link
+name: sw-Link
 namespace: SiteWide
 category: Link
 ---
@@ -1359,7 +1359,7 @@ p
 
 /*
 ---
-name: LinkDownload
+name: sw-LinkDownload
 namespace: SiteWide
 category: [Link, Icon]
 ---
@@ -1411,7 +1411,7 @@ p
 
 /*
 ---
-name: LinkExternal
+name: sw-LinkExternal
 namespace: SiteWide
 category: [Link, Icon]
 ---
@@ -1463,7 +1463,7 @@ p
 
 /*
 ---
-name: LinkMore
+name: sw-LinkMore
 namespace: SiteWide
 category: [Link, Icon]
 ---
@@ -1515,7 +1515,7 @@ p
 
 /*
 ---
-name: LinkNote
+name: sw-LinkNote
 namespace: SiteWide
 category: Link
 ---
@@ -1556,7 +1556,7 @@ p(lang="en") ○○
 
 /*
 ---
-name: LinkPdf
+name: sw-LinkPdf
 namespace: SiteWide
 category: [Link, Icon]
 ---
@@ -1608,7 +1608,7 @@ p
 
 /*
 ---
-name: ListBracketOrder
+name: sw-ListBracketOrder
 namespace: SiteWide
 category: List
 ---
@@ -1686,7 +1686,7 @@ ol.sw-ListBracketOrder.sw-ListBracketOrder-from2(start="2")
 
 /*
 ---
-name: ListNote
+name: sw-ListNote
 namespace: SiteWide
 category: List
 ---
@@ -1735,7 +1735,7 @@ div(lang="en")
 
 /*
 ---
-name: ListNoteOrder
+name: sw-ListNoteOrder
 namespace: SiteWide
 category: List
 ---
@@ -1839,7 +1839,7 @@ div(lang="en")
 
 /*
 ---
-name: ListOrder
+name: sw-ListOrder
 namespace: SiteWide
 category: List
 ---
@@ -1930,7 +1930,7 @@ ol.sw-ListOrder.sw-ListOrder-from2(start="2")
 
 /*
 ---
-name: ListUnorder
+name: sw-ListUnorder
 namespace: SiteWide
 category: List
 ---
@@ -1993,7 +1993,7 @@ ul.sw-ListUnorder
 
 /*
 ---
-name: Map
+name: sw-Map
 namespace: SiteWide
 category: ThirdPartyComponent
 ---
@@ -2029,7 +2029,7 @@ Google Mapsをレスポンシブ対応させます。デフォルトで16:9で�
 
 /*
 ---
-name: Show
+name: sw-Show
 namespace: SiteWide
 category: Text
 ---
@@ -2069,7 +2069,7 @@ p ブレイクポイント以降は改行
 
 /*
 ---
-name: Sup
+name: sw-Sup
 namespace: SiteWide
 category: Text
 ---
@@ -2094,7 +2094,7 @@ p.st-Text 注釈
 
 /*
 ---
-name: Table
+name: sw-Table
 namespace: SiteWide
 category: List
 ---
@@ -2144,7 +2144,7 @@ table.sw-Table
 
 /*
 ---
-name: TableWide
+name: sw-TableWide
 namespace: SiteWide
 category: List
 ---
@@ -2207,7 +2207,7 @@ category: List
 
 /*
 ---
-name: TextEmphasis
+name: sw-TextEmphasis
 namespace: SiteWide
 category: Text
 ---
@@ -2231,7 +2231,7 @@ p.st-Text 30%OFFのため、
 
 /*
 ---
-name: TextImportant
+name: sw-TextImportant
 namespace: SiteWide
 category: Text
 ---
@@ -2251,7 +2251,7 @@ p.st-Text
 
 /*
 ---
-name: TextSecondary
+name: sw-TextSecondary
 namespace: SiteWide
 category: Text
 ---
@@ -2269,7 +2269,7 @@ p.st-SmallText.sw-TextSecondary 補足的な文章です
 
 /*
 ---
-name: Video
+name: sw-Video
 namespace: SiteWide
 category: ThirdPartyComponent
 ---
@@ -2305,7 +2305,7 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
 
 /*
 ---
-name: Block
+name: st-Block
 namespace: Structure
 category: Layout
 ---
@@ -2337,7 +2337,7 @@ category: Layout
 
 /*
 ---
-name: Breadcrumb
+name: st-Breadcrumb
 namespace: Structure
 category: Navigation
 ---
@@ -2389,7 +2389,7 @@ ol.st-Breadcrumb
 
 /*
 ---
-name: ContentBody
+name: st-ContentBody
 namespace: Structure
 category: Layout
 ---
@@ -2413,7 +2413,7 @@ category: Layout
 
 /*
 ---
-name: ContentFoot
+name: st-ContentFoot
 namespace: Structure
 category: Layout
 ---
@@ -2437,7 +2437,7 @@ footer.st-ContentFoot
 
 /*
 ---
-name: ContentHead
+name: st-ContentHead
 namespace: Structure
 category: Layout
 ---
@@ -2461,14 +2461,14 @@ header.st-ContentHead
 
 /*
 ---
-name: Footer
+name: st-Footer
 namespace: Structure
 category: Global
 ---
 */
 /*
 ---
-name: Grid
+name: st-Grid
 namespace: Structure
 category: Layout
 ---
@@ -2873,7 +2873,7 @@ category: Layout
 
 /*
 ---
-name: Grids
+name: st-Grids
 namespace: Structure
 category: Layout
 ---
@@ -3909,14 +3909,14 @@ category: Layout
 
 /*
 ---
-name: Header
+name: st-Header
 namespace: Structure
 category: Global
 ---
 */
 /*
 ---
-name: Heading2
+name: st-Heading2
 namespace: Structure
 category: Layout
 ---
@@ -3935,7 +3935,7 @@ p.st-Text .st-Text
 
 /*
 ---
-name: Heading3
+name: st-Heading3
 namespace: Structure
 category: Layout
 ---
@@ -3954,7 +3954,7 @@ p.st-Text .st-Text
 
 /*
 ---
-name: Heading4
+name: st-Heading4
 namespace: Structure
 category: Layout
 ---
@@ -3973,7 +3973,7 @@ p.st-Text .st-Text
 
 /*
 ---
-name: Heading5
+name: st-Heading5
 namespace: Structure
 category: Layout
 ---
@@ -3992,7 +3992,7 @@ p.st-Text .st-Text
 
 /*
 ---
-name: Home
+name: st-Home
 namespace: Structure
 category: Layout
 ---
@@ -4004,7 +4004,7 @@ category: Layout
 */
 /*
 ---
-name: Lead
+name: st-Lead
 namespace: Structure
 category: Layout
 ---
@@ -4024,7 +4024,7 @@ p.st-Text .st-Text
 
 /*
 ---
-name: Section2
+name: st-Section2
 namespace: Structure
 category: Layout
 ---
@@ -4059,7 +4059,7 @@ section.st-Section2
 
 /*
 ---
-name: Section3
+name: st-Section3
 namespace: Structure
 category: Layout
 ---
@@ -4102,7 +4102,7 @@ section.st-Section2
 
 /*
 ---
-name: Section4
+name: st-Section4
 namespace: Structure
 category: Layout
 ---
@@ -4150,7 +4150,7 @@ section.st-Section2
 
 /*
 ---
-name: Section5
+name: st-Section5
 namespace: Structure
 category: Layout
 ---
@@ -4188,7 +4188,7 @@ section.st-Section4
 
 /*
 ---
-name: SmallText
+name: st-SmallText
 namespace: Structure
 category: Layout
 ---
@@ -4210,7 +4210,7 @@ p.st-Text .st-Text
 
 /*
 ---
-name: Sub
+name: st-Sub
 namespace: Structure
 category: Layout
 ---
@@ -4222,7 +4222,7 @@ category: Layout
 */
 /*
 ---
-name: Text
+name: st-Text
 namespace: Structure
 category: Layout
 ---
@@ -4242,7 +4242,7 @@ p.st-Text .st-Text
 
 /*
 ---
-name: Top
+name: st-Top
 namespace: Structure
 category: Layout
 ---
@@ -4254,7 +4254,7 @@ category: Layout
 */
 /*
 ---
-name: Wrapper
+name: st-Wrapper
 namespace: Structure
 category: Global
 ---
@@ -4276,7 +4276,7 @@ category: Global
 
 /*
 ---
-name: Area
+name: wisywig-Area
 namespace: WISYWIG
 category: Block
 ---
