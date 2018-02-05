@@ -94,9 +94,13 @@ preview_class: aigis-preview
 
 # 出力するページのグループを指定します。
 # categoryやtag以外にグルーピングして出力したい項目がある場合はoutput_collectionに追加します。
+# namaspace: クラス名の接頭辞で、どの範囲で使われるかという影響度を示す。
+# namespace: GlobalやHeadingのようにコンポーネントの分類を示す。
+# ID: 主にワイヤーフレームの指示で使われるコンポーネントを識別子を示す。
 output_collection:
+  - namespace
   - category
-  - tag
+  - id
 
 # コードブロックのシンタックスハイライトを有効にするかを指定します。
 # 別のハイライトライブラリを使う場合ときなどはhighlight: falseとすることでaigisのハイライトをオフにできます。

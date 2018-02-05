@@ -582,8 +582,8 @@ img {
 /*
 ---
 name: Button
-category: SiteWide
-tag: [Button, Link, Form]
+namespace: SiteWide
+category: [Button, Link, Form]
 ---
 
 ボタンのデフォルトスタイルです。
@@ -652,8 +652,8 @@ input.sw-Button(type="button" value="inputボタン" disabled)
 /*
 ---
 name: sw-Caption
-category: SiteWide
-tag: Image
+namespace: SiteWide
+category: Image
 ---
 
 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
@@ -737,8 +737,8 @@ figure.sw-Caption.sw-Caption-center
 /*
 ---
 name: Delimiter
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 途中で改行をさせたくないフレーズやキーワードに指定します。囲まれた範囲（Delimiter）がまとまって改行されます。
@@ -756,8 +756,8 @@ p テキストは基本的にスペースや役物を基準に改行されます
 /*
 ---
 name: Divider
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 `<hr>`のような区切り記号を使って、分割・グルーピングします。
@@ -781,8 +781,8 @@ p.st-Text テキストです。
 /*
 ---
 name: FormCheckbox
-category: SiteWide
-tag: Form
+namespace: SiteWide
+category: Form
 ---
 
 `type="checkbox"`のデフォルトスタイルです。
@@ -858,8 +858,8 @@ label(disabled for="checkbox3") チェックボックス
 /*
 ---
 name: FormInput
-category: SiteWide
-tag: Form
+namespace: SiteWide
+category: Form
 ---
 
 `<input>`タグのデフォルトスタイルです。
@@ -947,8 +947,8 @@ input.sw-FormInput(disabled type="input" placeholder="disabled")
 /*
 ---
 name: FormRadio
-category: SiteWide
-tag: Form
+namespace: SiteWide
+category: Form
 ---
 
 `type="radio"`のデフォルトスタイルです。
@@ -1025,8 +1025,8 @@ label(disabled for="radio3") ラジオボタン
 /*
 ---
 name: FormSelect
-category: SiteWide
-tag: Form
+namespace: SiteWide
+category: Form
 ---
 
 `<select>`タグのデフォルトスタイルです。
@@ -1136,8 +1136,8 @@ tag: Form
 /*
 ---
 name: FormTextarea
-category: SiteWide
-tag: Form
+namespace: SiteWide
+category: Form
 ---
 
 `<textarea>`のデフォルトスタイルです。
@@ -1222,8 +1222,8 @@ textarea.sw-FormTextarea(disabled id="textarea4" placeholder="テキストエリ
 /*
 ---
 name: Hide
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 `<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
@@ -1262,8 +1262,8 @@ p ブレイクポイント以降は改行
 /*
 ---
 name: sw-ImageCenter
-category: SiteWide
-tag: Image
+namespace: SiteWide
+category: Image
 ---
 
 画像をセンタリングします。
@@ -1281,8 +1281,8 @@ img.sw-ImageCenter(src="https://placehold.jp/300x200.png" alt="")
 /*
 ---
 name: Label
-category: SiteWide
-tag: [Text, Link, Form]
+namespace: SiteWide
+category: [Text, Link, Form]
 ---
 
 インラインで表示するラベルコンポーネントです。
@@ -1314,8 +1314,8 @@ a.sw-Label(href="#") aタグのラベルです。
 /*
 ---
 name: Lead
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 リード文（コンテンツの冒頭に登場するコンテンツを簡潔に表した文章）のスタイルです。
@@ -1336,8 +1336,8 @@ p.st-Text △△の強みを生かした□□を使用しており、発売以�
 /*
 ---
 name: Link
-category: SiteWide
-tag: Link
+namespace: SiteWide
+category: Link
 ---
 
 テキストリンクのデフォルトスタイルです。
@@ -1360,8 +1360,8 @@ p
 /*
 ---
 name: LinkDownload
-category: SiteWide
-tag: [Link, Icon]
+namespace: SiteWide
+category: [Link, Icon]
 ---
 
 ファイルをダウンロードするためのリンクであることを示す場合に使います。
@@ -1412,8 +1412,8 @@ p
 /*
 ---
 name: LinkExternal
-category: SiteWide
-tag: [Link, Icon]
+namespace: SiteWide
+category: [Link, Icon]
 ---
 
 外部リンクであることを示す場合に使います。
@@ -1464,8 +1464,8 @@ p
 /*
 ---
 name: LinkMore
-category: SiteWide
-tag: [Link, Icon]
+namespace: SiteWide
+category: [Link, Icon]
 ---
 
 クリックを促すようなテキストリンクに使います。
@@ -1516,8 +1516,8 @@ p
 /*
 ---
 name: LinkNote
-category: SiteWide
-tag: Link
+namespace: SiteWide
+category: Link
 ---
 
 注釈へのリンクです。`<sup>`タグの子要素として指定します。
@@ -1557,8 +1557,8 @@ p(lang="en") ○○
 /*
 ---
 name: LinkPdf
-category: SiteWide
-tag: [Link, Icon]
+namespace: SiteWide
+category: [Link, Icon]
 ---
 
 リンク先がPDFであることを示す場合に使います。
@@ -1609,8 +1609,8 @@ p
 /*
 ---
 name: ListBracketOrder
-category: SiteWide
-tag: List
+namespace: SiteWide
+category: List
 ---
 
 括弧で囲んだ順序リストです。
@@ -1687,8 +1687,8 @@ ol.sw-ListBracketOrder.sw-ListBracketOrder-from2(start="2")
 /*
 ---
 name: ListNote
-category: SiteWide
-tag: List
+namespace: SiteWide
+category: List
 ---
 
 注釈用のリストです。米印やアスタリスクが表示されます。
@@ -1736,8 +1736,8 @@ div(lang="en")
 /*
 ---
 name: ListNoteOrder
-category: SiteWide
-tag: List
+namespace: SiteWide
+category: List
 ---
 
 注釈用のリストです。米印やアスタリスクが表示されます。
@@ -1840,8 +1840,8 @@ div(lang="en")
 /*
 ---
 name: ListOrder
-category: SiteWide
-tag: List
+namespace: SiteWide
+category: List
 ---
 
 入れ子に対応した順序リストです。
@@ -1931,8 +1931,8 @@ ol.sw-ListOrder.sw-ListOrder-from2(start="2")
 /*
 ---
 name: ListUnorder
-category: SiteWide
-tag: List
+namespace: SiteWide
+category: List
 ---
 
 順序をもたない並列なリストです。
@@ -1994,8 +1994,8 @@ ul.sw-ListUnorder
 /*
 ---
 name: Map
-category: SiteWide
-tag: ThirdPartyComponent
+namespace: SiteWide
+category: ThirdPartyComponent
 ---
 
 Google Mapsをレスポンシブ対応させます。デフォルトで16:9で表示されます。
@@ -2030,8 +2030,8 @@ Google Mapsをレスポンシブ対応させます。デフォルトで16:9で�
 /*
 ---
 name: Show
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 `<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
@@ -2070,8 +2070,8 @@ p ブレイクポイント以降は改行
 /*
 ---
 name: Sup
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 登録商標（アールマーク）や著作権（マルシーマーク）、注釈リンク（※1）などに使う上付き文字です。
@@ -2095,8 +2095,8 @@ p.st-Text 注釈
 /*
 ---
 name: Table
-category: SiteWide
-tag: List
+namespace: SiteWide
+category: List
 ---
 
 ベーシックなテーブルです。
@@ -2145,8 +2145,8 @@ table.sw-Table
 /*
 ---
 name: TableWide
-category: SiteWide
-tag: List
+namespace: SiteWide
+category: List
 ---
 
 - 横幅の広いテーブルで使用します。
@@ -2208,8 +2208,8 @@ tag: List
 /*
 ---
 name: TextEmphasis
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 `<em>`で使われるようなスタイルです。アクセントをつけたい単語や短い文章で使用し、強調や重要性を示しません。
@@ -2232,8 +2232,8 @@ p.st-Text 30%OFFのため、
 /*
 ---
 name: TextImportant
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 `<strong>`で使われるようなスタイルです。重要性や緊急性・深刻性があることを示します。
@@ -2252,8 +2252,8 @@ p.st-Text
 /*
 ---
 name: TextSecondary
-category: SiteWide
-tag: Text
+namespace: SiteWide
+category: Text
 ---
 
 `<p>`や`<small>`で使われるようなテキストスタイルです。補足的・副次的な意味合いを持たせる場合に使います。
@@ -2270,8 +2270,8 @@ p.st-SmallText.sw-TextSecondary 補足的な文章です
 /*
 ---
 name: Video
-category: SiteWide
-tag: ThirdPartyComponent
+namespace: SiteWide
+category: ThirdPartyComponent
 ---
 
 Youtubeなどの動画をレスポンシブ対応させます。デフォルトで16:9で表示されます。
@@ -2306,8 +2306,8 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
 /*
 ---
 name: Block
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 見出しや画像などを含んだブロック同士の余白を指定します。
@@ -2338,8 +2338,8 @@ tag: Layout
 /*
 ---
 name: Breadcrumb
-category: Structure
-tag: Navigation
+namespace: Structure
+category: Navigation
 ---
 
 ベーシックなパンくずリストです。`<ol>`タグで指定します。
@@ -2390,8 +2390,8 @@ ol.st-Breadcrumb
 /*
 ---
 name: ContentBody
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 メインコンテンツエリア内のメイン部分の余白を管理します。
@@ -2414,8 +2414,8 @@ tag: Layout
 /*
 ---
 name: ContentFoot
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 メインコンテンツエリア内のフッター部分の余白を管理します。
@@ -2438,8 +2438,8 @@ footer.st-ContentFoot
 /*
 ---
 name: ContentHead
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 メインコンテンツエリア内のヘッダー部分の余白を管理します。
@@ -2462,15 +2462,15 @@ header.st-ContentHead
 /*
 ---
 name: Footer
-category: Structure
-tag: Global
+namespace: Structure
+category: Global
 ---
 */
 /*
 ---
 name: Grid
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 標準的なグリッドシステムです。カラムごとに任意の値を指定したい場合に使います。
@@ -2874,8 +2874,8 @@ tag: Layout
 /*
 ---
 name: Grids
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 バリエーションの豊富なグリッドシステムです。親要素（`.st-Grids`）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のようなカラムの指定ができます。
@@ -3910,15 +3910,15 @@ tag: Layout
 /*
 ---
 name: Header
-category: Structure
-tag: Global
+namespace: Structure
+category: Global
 ---
 */
 /*
 ---
 name: Heading2
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 h2相当の見出し自身の余白を指定します。
@@ -3936,8 +3936,8 @@ p.st-Text .st-Text
 /*
 ---
 name: Heading3
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 h3相当の見出し自身の余白を指定します。
@@ -3955,8 +3955,8 @@ p.st-Text .st-Text
 /*
 ---
 name: Heading4
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 h4相当の見出し自身の余白を指定します。
@@ -3974,8 +3974,8 @@ p.st-Text .st-Text
 /*
 ---
 name: Heading5
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 h5相当の見出し自身の余白を指定します。
@@ -3993,8 +3993,8 @@ p.st-Text .st-Text
 /*
 ---
 name: Home
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 サイトトップページ（ホームページ）のワイヤーフレームのような大枠のレイアウトです。
@@ -4005,8 +4005,8 @@ tag: Layout
 /*
 ---
 name: Lead
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 リード文自身の余白を指定します。
@@ -4025,8 +4025,8 @@ p.st-Text .st-Text
 /*
 ---
 name: Section2
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 h2相当の見出しをラップするセクションの余白を指定します。
@@ -4060,8 +4060,8 @@ section.st-Section2
 /*
 ---
 name: Section3
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 h3相当の見出しをラップするセクションの余白を指定します。
@@ -4103,8 +4103,8 @@ section.st-Section2
 /*
 ---
 name: Section4
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 h4相当の見出しをラップするセクションの余白を指定します。
@@ -4151,8 +4151,8 @@ section.st-Section2
 /*
 ---
 name: Section5
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 h5相当の見出しをラップするセクションの余白を指定します。
@@ -4189,8 +4189,8 @@ section.st-Section4
 /*
 ---
 name: SmallText
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 補足情報などのテキストの余白を指定します。
@@ -4211,8 +4211,8 @@ p.st-Text .st-Text
 /*
 ---
 name: Sub
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 カテゴリーサブページ（下層ページ）のワイヤーフレームのような大枠のレイアウトです。
@@ -4223,8 +4223,8 @@ tag: Layout
 /*
 ---
 name: Text
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 通常のテキストの余白を指定します。
@@ -4243,8 +4243,8 @@ p.st-Text .st-Text
 /*
 ---
 name: Top
-category: Structure
-tag: Layout
+namespace: Structure
+category: Layout
 ---
 
 カテゴリートップページのワイヤーフレームのような大枠のレイアウトです。
@@ -4255,8 +4255,8 @@ tag: Layout
 /*
 ---
 name: Wrapper
-category: Structure
-tag: Global
+namespace: Structure
+category: Global
 ---
 */
 .st-Wrapper {
@@ -4277,8 +4277,8 @@ tag: Global
 /*
 ---
 name: Area
-category: WISYWIG
-tag: Block
+namespace: WISYWIG
+category: Block
 ---
 
 WISYWIG（ウィジウィグ）で入力した要素に対するスタイル。
