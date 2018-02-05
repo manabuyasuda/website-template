@@ -1,21 +1,18 @@
-// @desc - tableに`border-collapse: collapse;`を指定したような見せ方ができます。`border-radius`を併用するときは表示が崩れるので使用できません。
+
+// @desc - tableで`border-collapse: collapse;`を指定したような見せ方ができます。`border-radius`を併用するときは表示が崩れるので使用できません。
 // @param {String} $color [currentColor] - ボーダーの色を指定します。
 // @param {String} $size [1px] - ボーダーのサイズを指定します。
 // @example scss - Usage
-// .foo { @include border-callapse(#888, 2px); }
+// .foo { @include box-shadow-callapse(#888, 2px); }
 //
 // @example css - CSS output
 // .foo {
 //   box-shadow:
-//     2px 0 0 0 #888,
-//     0 2px 0 0 #888,
 //     2px 2px 0 0 #888,
-//     2px 2px 0 0 #888 inset;
+//     inset 2px 2px 0 0 #888;
 // }
-@mixin border-callapse($color: currentColor, $size: 1px) {
+@mixin box-shadow-callapse($color: currentColor, $size: 1px) {
   box-shadow:
-    $size 0 0 0 $color,
-    0 $size 0 0 $color,
     $size $size 0 0 $color,
-    $size $size 0 0 $color inset;
+    inset $size $size 0 0 $color;
 }
