@@ -640,7 +640,7 @@ input.sw-Button(type="button" value="inputボタン" disabled)
   box-shadow: 0 0 5px #1589ee;
 }
 
-.sw-Button:focus:not(.focus-ring) {
+.sw-Button:focus:not(.focus-visible) {
   outline-width: 0;
   box-shadow: none;
 }
@@ -846,7 +846,7 @@ label(disabled for="checkbox3") チェックボックス
   box-shadow: 0 0 5px #1589ee;
 }
 
-.sw-FormCheckbox:focus:not(.focus-ring) + label:before {
+.sw-FormCheckbox:focus:not(.focus-visible) + label:before {
   border-color: #767676;
   box-shadow: none;
 }
@@ -1013,7 +1013,7 @@ label(disabled for="radio3") ラジオボタン
   box-shadow: 0 0 5px #1589ee;
 }
 
-.sw-FormRadio:focus:not(.focus-ring) + label:before {
+.sw-FormRadio:focus:not(.focus-visible) + label:before {
   border-color: #767676;
   box-shadow: none;
 }
@@ -1112,7 +1112,7 @@ category: Form
   outline-width: 0;
 }
 
-.sw-FormSelect > select.focus-ring:focus {
+.sw-FormSelect > select.focus-visible:focus {
   border-color: #1589ee;
   box-shadow: 0 0 5px #1589ee;
 }

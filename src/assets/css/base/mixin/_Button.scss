@@ -31,7 +31,7 @@
    box-shadow: $form-focus-box-shadow;
   }
 
-  &:focus:not(.focus-ring) {
+  &:focus:not(.focus-visible) {
     outline-width: 0;
     box-shadow: none;
   }

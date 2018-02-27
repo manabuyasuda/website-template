@@ -33,7 +33,7 @@
     box-shadow: $form-focus-box-shadow;
   }
 
-  &:focus:not(.focus-ring) + label:before {
+  &:focus:not(.focus-visible) + label:before {
     border-color: $form-boder-color;
     box-shadow: none;
   }
