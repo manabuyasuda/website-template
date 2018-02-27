@@ -1,0 +1,17 @@
+/*
+---
+name: sw-Heading2
+namespace: SiteWide
+category: Heading
+---
+
+`<h2>`で使用する見出しです。余白には`.st-Heading2`を使用します。
+
+```jade
+.st-Wrapper
+  h2.sw-Heading2.st-Heading2 見出し2
+```
+*/
+.sw-Heading2 {
+  @include sw-Heading2();
+}

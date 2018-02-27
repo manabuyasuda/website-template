@@ -1,0 +1,17 @@
+/*
+---
+name: sw-Heading4
+namespace: SiteWide
+category: Heading
+---
+
+`<h4>`で使用する見出しです。余白には`.st-Heading4`を使用します。
+
+```jade
+.st-Wrapper
+  h4.sw-Heading4.st-Heading4 見出し4
+```
+*/
+.sw-Heading4 {
+  @include sw-Heading4();
+}

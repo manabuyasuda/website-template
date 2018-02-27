@@ -1,0 +1,27 @@
+@mixin sw-Heading2() {
+  font-size: rem(19);
+  font-weight: bold;
+  line-height: 1.4;
+  color: #be3134;
+
+  &:after {
+    content: "";
+    display: block;
+    margin-top: 8px;
+    border-top: 2px solid #be3134;
+  }
+
+  @include mq-up(md) {
+    margin-right: 0;
+    margin-left: 0;
+    font-size: rem(26, md);
+    text-align: center;
+
+    &:after {
+      margin-top: 12px;
+      margin-right: 0;
+      margin-left: 0;
+      border-top: 3px solid #be3134;
+    }
+  }
+}

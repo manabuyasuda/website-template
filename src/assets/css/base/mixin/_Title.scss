@@ -1,0 +1,13 @@
+@mixin sw-Title() {
+  position: relative;
+  font-size: rem(24);
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  color: $color-brand;
+
+  @include mq-up(md) {
+    font-size: rem(30, md);
+    line-height: 1.4;
+  }
+}

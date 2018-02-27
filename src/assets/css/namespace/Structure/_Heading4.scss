@@ -9,9 +9,9 @@ h4相当の見出し自身の余白を指定します。
 
 ```jade
 .st-Wrapper
-  h4.st-Heading4 .st-Heading4
-  p.st-Text .st-Text
-  p.st-Text .st-Text
+  h4.st-Heading4.sw-Heading4 .st-Heading4
+  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
 .st-Heading4 {

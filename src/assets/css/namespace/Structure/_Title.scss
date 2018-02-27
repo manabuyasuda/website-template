@@ -1,0 +1,21 @@
+/*
+---
+name: st-Title
+namespace: Structure
+category: Layout
+---
+
+ページタイトルの余白を指定します。
+
+```html
+.st-Wrapper
+  h1.sw-Title.st-Title ページタイトル
+```
+*/
+.st-Title {
+  margin-bottom: $margin-title;
+
+  @include mq-up(md) {
+    margin-bottom: $margin-title-md;
+  }
+}

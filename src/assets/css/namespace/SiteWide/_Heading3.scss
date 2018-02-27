@@ -1,0 +1,17 @@
+/*
+---
+name: sw-Heading3
+namespace: SiteWide
+category: Heading
+---
+
+`<h3>`で使用する見出しです。余白には`.st-Heading3`を使用します。
+
+```jade
+.st-Wrapper
+  h3.sw-Heading3.st-Heading3 見出し3
+```
+*/
+.sw-Heading3 {
+  @include sw-Heading3();
+}

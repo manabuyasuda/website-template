@@ -9,11 +9,11 @@ category: Layout
 
 ```jade
 .st-Wrapper
-  p.st-Text .st-Text
+  p.st-Text.sw-TextSecondary どこで生れたかとんと見当がつかぬ。
   .st-SmallText
-    small .st-SmallText
+    small.sw-TextSecondary しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
   .st-SmallText
-    small .st-SmallText
+    small.sw-TextSecondary どこで生れたかとんと見当がつかぬ。
 ```
 */
 .st-SmallText {

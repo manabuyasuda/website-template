@@ -1,0 +1,17 @@
+/*
+---
+name: sw-Title
+namespace: SiteWide
+category: Heading
+---
+
+ページタイトルです。
+
+```jade
+.st-Wrapper
+  h1.sw-Title.st-Title ページタイトル
+```
+*/
+.sw-Title {
+  @include sw-Title();
+}
