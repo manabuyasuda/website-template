@@ -16,25 +16,28 @@ category: Layout
 - `.st-Grid-middle` カラムの垂直配置。
 
 ```jade
-.st-Grid
-  .st-Grid_Item.st-Grid_Item-8of12Md
-    .test-Box One<br>1/1 → 8/12
-  .st-Grid_Item.st-Grid_Item-4of12Md
-    .test-Box Two<br>1/1 → 4/12
+.st-Wrapper
+  .st-Grid
+    .st-Grid_Item.st-Grid_Item-8of12Md
+      .test-Box One<br>1/1 → 8/12
+    .st-Grid_Item.st-Grid_Item-4of12Md
+      .test-Box Two<br>1/1 → 4/12
 ```
 
 ```jade
-.st-Grid.st-Grid-reversMd
-  .st-Grid_Item.st-Grid_Item-8of12Md
-    .test-Box One<br>1/1 → 8/12
-  .st-Grid_Item.st-Grid_Item-4of12Md
-    .test-Box Two<br>1/1 → 4/12
+.st-Wrapper
+  .st-Grid.st-Grid-reversMd
+    .st-Grid_Item.st-Grid_Item-8of12Md
+      .test-Box One<br>1/1 → 8/12
+    .st-Grid_Item.st-Grid_Item-4of12Md
+      .test-Box Two<br>1/1 → 4/12
 ```
 
 ```jade
-.st-Grid.st-Grid-centerMd
-  .st-Grid_Item.st-Grid_Item-8of12Md
-    .test-Box One<br>1/1 → 8/12
+.st-Wrapper
+  .st-Grid.st-Grid-centerMd
+    .st-Grid_Item.st-Grid_Item-8of12Md
+      .test-Box One<br>1/1 → 8/12
 ```
 */
 // `em`と`%`は指定不可

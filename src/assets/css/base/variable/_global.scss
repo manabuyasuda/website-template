@@ -26,7 +26,7 @@ $font-size: (
 $font-size-secondary: 0.85em !default;
 
 // ベースになるline-height
-$line-height: 1.6 !default;
+$line-height: 1.8 !default;
 
 // システムフォント
 $font-family-sans-serif: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
@@ -66,31 +66,61 @@ $breakpoint-up: (
 // ==========================================================================
 
 // コンテンツの最大幅
-$max-width: 1080px !default;
+$max-width: 1170px !default;
 
 // グリッドシステムのガター幅
 $grid-column-gap: 15px !default;
-$grid-row-gap: 15px !default;
+$grid-row-gap: 35px !default;
 $grid-column-gap-md: 30px !default;
-$grid-row-gap-md: 30px !default;
+$grid-row-gap-md: 50px !default;
+
+// コンテナのパディング
+$padding-conitaner: 45px 0 60px !default;
+$padding-conitaner-md: 70px 0 100px !default;
+$padding-conitaner-bg: 45px 0 50px !default;
+$padding-conitaner-bg-md: 70px 0 80px !default;
 
 // セクションのマージン
-$margin-section2: 70px !default;
-$margin-section3: 60px !default;
-$margin-section4: 30px !default;
+$margin-section2: 60px !default;
+$margin-section2-md: 100px !default;
+$margin-section2-divider: 30px !default;
+$margin-section2-divider-md: 50px !default;
+$margin-section3: 50px !default;
+$margin-section3-md: 80px !default;
+$margin-section3-divider: 25px !default;
+$margin-section3-divider-md: 50px !default;
+$margin-section4: 35px !default;
+$margin-section4-md: 50px !default;
 $margin-section5: 30px !default;
+$margin-section5-md: 30px !default;
 
 // 見出しのマージン
-$margin-heading2: 20px !default;
-$margin-heading3: 15px !default;
-$margin-heading4: 10px !default;
+$margin-title: 25px !default;
+$margin-title-md: 40px !default;
+$margin-heading2: 25px !default;
+$margin-heading2-md: 40px !default;
+$margin-heading3: 25px !default;
+$margin-heading3-md: 40px !default;
+$margin-heading4: 15px !default;
+$margin-heading4-md: 25px !default;
 $margin-heading5: 10px !default;
+$margin-heading5-md: 20px !default;
 
 // ブロックとテキストのマージン
-$margin-block: 15px !default;
-$margin-lead: 25px !default;
-$margin-text: 15px !default;
+$margin-block: 40px !default;
+$margin-block-md: 50px !default;
+$margin-block-divider: 20px !default;
+$margin-block-divider-md: 50px !default;
+$margin-lead: 35px !default;
+$margin-lead-md: 50px !default;
+$margin-text: 35px !default;
+$margin-text-md: 50px !default;
+$margin-text-small: 15px !default;
+$margin-text-small-md: 20px !default;
 $margin-small-text: 10px !default;
+$margin-small-text-md: 15px !default;
+$margin-image: 25px !default;
+$margin-image-md: 40px !default;
 
 
 // ==========================================================================

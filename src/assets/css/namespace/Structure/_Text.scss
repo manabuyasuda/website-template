@@ -8,14 +8,27 @@ category: Layout
 通常のテキストの余白を指定します。
 
 ```jade
-p.st-Text .st-Text
-.st-Text .st-Text
-p.st-Text .st-Text
+.st-Wrapper
+  p.st-Text .st-Text
+  .st-Text .st-Text
+  p.st-Text .st-Text
 ```
 */
 .st-Text {
   & + &,
   :not(#{&}) + & {
     margin-top: $margin-text;
+
+    @include mq-up(md) {
+      margin-top: $margin-text-md;
+    }
+  }
+
+  .st-Heading2 + &,
+  .st-Heading3 + &,
+  .st-Heading4 + &,
+  .st-Heading5 + &,
+  .st-Lead + & {
+    margin-top: 0;
   }
 }

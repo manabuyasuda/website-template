@@ -8,11 +8,16 @@ category: Layout
 h5相当の見出し自身の余白を指定します。
 
 ```jade
-h5.st-Heading5 .st-Heading5
-p.st-Text .st-Text
-p.st-Text .st-Text
+.st-Wrapper
+  h5.st-Heading5 .st-Heading5
+  p.st-Text .st-Text
+  p.st-Text .st-Text
 ```
 */
 .st-Heading5 {
   margin-bottom: $margin-heading5;
+
+  @include mq-up(md) {
+    margin-bottom: $margin-heading5-md;
+  }
 }

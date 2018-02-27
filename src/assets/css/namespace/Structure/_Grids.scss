@@ -23,81 +23,87 @@ category: Layout
 ### 均等なカラム指定。
 
 ```jade
-.st-Grids.st-Grids-col2Md
-  .st-Grids_Item
-    .test-Box One<br>1/1 → 1/2
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 1/2
+.st-Wrapper
+  .st-Grids.st-Grids-col2Md
+    .st-Grids_Item
+      .test-Box One<br>1/1 → 1/2
+    .st-Grids_Item
+      .test-Box Two<br>1/1 → 1/2
 
-.st-Grids.st-Grids-col2.st-Grids-col3Md
-  .st-Grids_Item
-    .test-Box One<br>1/2 → 1/3
-  .st-Grids_Item
-    .test-Box Two<br>1/2 → 1/3
-  .st-Grids_Item
-    .test-Box Three<br>1/2 → 1/3
-  .st-Grids_Item
-    .test-Box Four<br>1/2 → 1/3
+  .st-Grids.st-Grids-col2.st-Grids-col3Md
+    .st-Grids_Item
+      .test-Box One<br>1/2 → 1/3
+    .st-Grids_Item
+      .test-Box Two<br>1/2 → 1/3
+    .st-Grids_Item
+      .test-Box Three<br>1/2 → 1/3
+    .st-Grids_Item
+      .test-Box Four<br>1/2 → 1/3
 ```
 
 ### 8/12と4/12と4/12と8/12のカラム指定。
 
 ```jade
-.st-Grids.st-Grids-col8to4Md
-  .st-Grids_Item
-    .test-Box One<br>1/1 → 8/12
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 4/12
+.st-Wrapper
+  .st-Grids.st-Grids-col8to4Md
+    .st-Grids_Item
+      .test-Box One<br>1/1 → 8/12
+    .st-Grids_Item
+      .test-Box Two<br>1/1 → 4/12
 
-.st-Grids.st-Grids-col4to8Md
-  .st-Grids_Item
-    .test-Box One <br>1/1 → 4/12
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 8/12
+  .st-Grids.st-Grids-col4to8Md
+    .st-Grids_Item
+      .test-Box One <br>1/1 → 4/12
+    .st-Grids_Item
+      .test-Box Two<br>1/1 → 8/12
 ```
 
 ### 8/12と4/12のカラム指定かつ、`md`以上で要素を反転。
 
 ```jade
-.st-Grids.st-Grids-col8to4Md.st-Grids-reversMd
-  .st-Grids_Item
-    .test-Box One<br>1/1 → 8/12
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 4/12
+.st-Wrapper
+  .st-Grids.st-Grids-col8to4Md.st-Grids-reversMd
+    .st-Grids_Item
+      .test-Box One<br>1/1 → 8/12
+    .st-Grids_Item
+      .test-Box Two<br>1/1 → 4/12
 ```
 
 ### カラムの垂直位置を中央揃え。
 
 ```jade
-.st-Grids.st-Grids-middleMd.st-Grids-col2Md
-  .st-Grids_Item
-    .test-Box One<br>1/1 → 6/12<br>.st-Grids-middle<br>.st-Grids-middle
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 6/12
+.st-Wrapper
+  .st-Grids.st-Grids-middleMd.st-Grids-col2Md
+    .st-Grids_Item
+      .test-Box One<br>1/1 → 6/12<br>.st-Grids-middle<br>.st-Grids-middle
+    .st-Grids_Item
+      .test-Box Two<br>1/1 → 6/12
 ```
 
 ### カラム間のガターを0にします。
 
 ```jade
-.st-Grids.st-Grids-col3Md.st-Grids-noGap
-  .st-Grids_Item
-    .test-Box One<br>1/1 → 1/3
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 1/3
-  .st-Grids_Item
-    .test-Box Three<br>1/1 → 1/3
+.st-Wrapper
+  .st-Grids.st-Grids-col3Md.st-Grids-noGap
+    .st-Grids_Item
+      .test-Box One<br>1/1 → 1/3
+    .st-Grids_Item
+      .test-Box Two<br>1/1 → 1/3
+    .st-Grids_Item
+      .test-Box Three<br>1/1 → 1/3
 ```
 
 ### カラム間のガターを最小にします。
 
 ```jade
-.st-Grids.st-Grids-col3Md.st-Grids-narrow
-  .st-Grids_Item
-    .test-Box One<br>1/1 → 1/3
-  .st-Grids_Item
-    .test-Box Two<br>1/1 → 1/3
-  .st-Grids_Item
-    .test-Box Three<br>1/1 → 1/3
+.st-Wrapper
+  .st-Grids.st-Grids-col3Md.st-Grids-narrow
+    .st-Grids_Item
+      .test-Box One<br>1/1 → 1/3
+    .st-Grids_Item
+      .test-Box Two<br>1/1 → 1/3
+    .st-Grids_Item
+      .test-Box Three<br>1/1 → 1/3
 ```
 */
 // `em`と`%`は指定不可

@@ -8,11 +8,16 @@ category: Layout
 h3相当の見出し自身の余白を指定します。
 
 ```jade
-h3.st-Heading3 .st-Heading3
-p.st-Text .st-Text
-p.st-Text .st-Text
+.st-Wrapper
+  h3.st-Heading3 .st-Heading3
+  p.st-Text .st-Text
+  p.st-Text .st-Text
 ```
 */
 .st-Heading3 {
   margin-bottom: $margin-heading3;
+
+  @include mq-up(md) {
+    margin-bottom: $margin-heading3-md;
+  }
 }

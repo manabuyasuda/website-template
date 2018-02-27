@@ -11,11 +11,12 @@ html(lang="ja")
     link(href=root + "aigis_assets/css/theme.css", rel="stylesheet")
     link(href="/assets/css/site.css", rel="stylesheet")
   body
-    .aigis-container
-      include ./sidemenu
-      .aigis-contents
-        .aigis-contents__body
-          include ./components
+    main
+      .aigis-container
+        include ./sidemenu
+        .aigis-contents
+          .aigis-contents__body
+            include ./components
 
     script(src='//code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
     script window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')

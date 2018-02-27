@@ -7,12 +7,13 @@ category: Navigation
 
 ベーシックなパンくずリストです。`<ol>`タグで指定します。
 ```jade
-ol.st-Breadcrumb
-  li.st-Breadcrumb_Item
-    a.st-Breadcrumb_Link(href="/") ホーム
-  li.st-Breadcrumb_Item
-    a.st-Breadcrumb_Link(href="#") カテゴリ名
-  li.st-Breadcrumb_Item ページ名
+.st-Wrapper
+  ol.st-Breadcrumb
+    li.st-Breadcrumb_Item
+      a.st-Breadcrumb_Link(href="/") ホーム
+    li.st-Breadcrumb_Item
+      a.st-Breadcrumb_Link(href="#") カテゴリ名
+    li.st-Breadcrumb_Item ページ名
 ```
 */
 

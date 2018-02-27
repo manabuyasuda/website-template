@@ -2,11 +2,49 @@
 ---
 name: st-Wrapper
 namespace: Structure
-category: Global
+category: Layout
 ---
+
+```jade
+.st-Wrapper
+  section.st-Section2
+    h2.st-Heading2 吾輩はここで始めて人間というものを見た。
+    p.st-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+
+```jade
+.st-Wrapper.st-Wrapper_Full
+  section.st-Section2
+    h2.st-Heading2 吾輩はここで始めて人間というものを見た。
+    p.st-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+
+```jade
+.st-Wrapper.st-Wrapper_FullWrapst-Wrapper_FullWrap
+  section.st-Section2
+    h2.st-Heading2 吾輩はここで始めて人間というものを見た。
+    p.st-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
 */
 .st-Wrapper {
   max-width: $max-width;
   margin-right: auto;
   margin-left: auto;
+  padding: 0 20px;
+
+  @media print, screen and (min-width: $max-width) {
+    padding: 0;
+  }
+}
+
+.st-Wrapper_Full {
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+}
+
+.st-Wrapper_FullWrap {
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  padding-right: calc(50vw - 50%) !important;
+  padding-left: calc(50vw - 50%) !important;
 }

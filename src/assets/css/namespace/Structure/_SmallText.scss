@@ -8,16 +8,21 @@ category: Layout
 補足情報などのテキストの余白を指定します。
 
 ```jade
-p.st-Text .st-Text
-.st-SmallText
-  small .st-SmallText
-.st-SmallText
-  small .st-SmallText
+.st-Wrapper
+  p.st-Text .st-Text
+  .st-SmallText
+    small .st-SmallText
+  .st-SmallText
+    small .st-SmallText
 ```
 */
 .st-SmallText {
   & + &,
   :not(#{&}) + & {
     margin-top: $margin-small-text;
+
+    @include mq-up(md) {
+      margin-top: $margin-small-text-md;
+    }
   }
 }

@@ -8,11 +8,16 @@ category: Layout
 h4相当の見出し自身の余白を指定します。
 
 ```jade
-h4.st-Heading4 .st-Heading4
-p.st-Text .st-Text
-p.st-Text .st-Text
+.st-Wrapper
+  h4.st-Heading4 .st-Heading4
+  p.st-Text .st-Text
+  p.st-Text .st-Text
 ```
 */
 .st-Heading4 {
   margin-bottom: $margin-heading4;
+
+  @include mq-up(md) {
+    margin-bottom: $margin-heading4-md;
+  }
 }
