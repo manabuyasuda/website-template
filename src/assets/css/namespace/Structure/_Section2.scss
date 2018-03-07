@@ -143,8 +143,7 @@ h2相当の見出しをラップするセクションの余白を指定します
       content: "";
       display: block;
       height: 1px;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
+      @include full-width();
       padding-top: $margin-section2-divider;
       border-top: 1px solid #e3e3e3;
     }

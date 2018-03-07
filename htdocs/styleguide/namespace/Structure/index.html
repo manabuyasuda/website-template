@@ -1049,7 +1049,8 @@
               <h2 id="st-Wrapper" class="aigis-module__heading">st-Wrapper</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/Structure/_Wrapper.scss</div>
               <ul class="aigis-tags">
-              </ul><div class="aigis-preview">
+              </ul><p>コンテンツの横幅を制限します。</p>
+<div class="aigis-preview">
 
 <div class="st-Wrapper">
   <section class="st-Section2">
@@ -1063,33 +1064,41 @@
     <span class="token tag" >h2.st-Heading2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
     <span class="token tag" >p.st-Text.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
 </code></pre>
+<p><code>.st-Wrapper_Full</code>を入れ子にすると、<code>.st-Wrapper</code>の中でも画面いっぱいに表示されます。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper st-Wrapper_Full">
-  <section class="st-Section2">
-    <h2 class="st-Heading2 sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
-    <p class="st-Text sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
-  </section>
+<div class="st-Wrapper">
+  <div class="st-Wrapper_Full">
+    <section class="st-Section2">
+      <h2 class="st-Heading2 sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="st-Text sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+  </div>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper.st-Wrapper_Full</span>
-  <span class="token tag" >section.st-Section2</span>
-    <span class="token tag" >h2.st-Heading2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
-    <span class="token tag" >p.st-Text.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >.st-Wrapper_Full</span>
+    <span class="token tag" >section.st-Section2</span>
+      <span class="token tag" >h2.st-Heading2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.st-Text.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
 </code></pre>
+<p><code>.st-Wrapper_FullBg</code>を入れ子にすると、<code>.st-Wrapper</code>の中でも背景色が画面いっぱいに表示されます。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper st-Wrapper_FullWrapst-Wrapper_FullWrap">
-  <section class="st-Section2">
-    <h2 class="st-Heading2 sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
-    <p class="st-Text sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
-  </section>
+<div class="st-Wrapper">
+  <div style="background-color: #eee;" class="st-Wrapper_FullBg">
+    <section class="st-Section2">
+      <h2 class="st-Heading2 sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="st-Text sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+  </div>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper.st-Wrapper_FullWrapst-Wrapper_FullWrap</span>
-  <span class="token tag" >section.st-Section2</span>
-    <span class="token tag" >h2.st-Heading2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
-    <span class="token tag" >p.st-Text.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >.st-Wrapper_FullBg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >style</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"background-color: #eee;"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >section.st-Section2</span>
+      <span class="token tag" >h2.st-Heading2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.st-Text.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
 </code></pre>
 
             </div>

@@ -1,0 +1,14 @@
+// @desc  ブラウザの横幅いっぱいに表示します。
+// @example scss - Usage
+// .full-width {
+//   @include full-width();
+// }
+// @example css - CSS output
+// .full-width {
+//   margin-right: calc(-50vw + 50%);
+//   margin-left: calc(-50vw + 50%);
+// }
+@mixin full-width() {
+  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%);
+}

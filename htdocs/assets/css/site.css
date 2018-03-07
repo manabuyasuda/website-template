@@ -4434,8 +4434,8 @@ h2相当の見出しをラップするセクションの余白を指定します
   content: "";
   display: block;
   height: 1px;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%);
   padding-top: 30px;
   border-top: 1px solid #e3e3e3;
 }
@@ -4765,6 +4765,8 @@ namespace: Structure
 category: Layout
 ---
 
+コンテンツの横幅を制限します。
+
 ```jade
 .st-Wrapper
   section.st-Section2
@@ -4772,18 +4774,24 @@ category: Layout
     p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 
-```jade
-.st-Wrapper.st-Wrapper_Full
-  section.st-Section2
-    h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
+`.st-Wrapper_Full`を入れ子にすると、`.st-Wrapper`の中でも画面いっぱいに表示されます。
 
 ```jade
-.st-Wrapper.st-Wrapper_FullWrapst-Wrapper_FullWrap
-  section.st-Section2
-    h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+.st-Wrapper
+  .st-Wrapper_Full
+    section.st-Section2
+      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+
+`.st-Wrapper_FullBg`を入れ子にすると、`.st-Wrapper`の中でも背景色が画面いっぱいに表示されます。
+
+```jade
+.st-Wrapper
+  .st-Wrapper_FullBg(style="background-color: #eee;")
+    section.st-Section2
+      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
 .st-Wrapper {
@@ -4800,15 +4808,15 @@ category: Layout
 }
 
 .st-Wrapper_Full {
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%);
 }
 
-.st-Wrapper_FullWrap {
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
-  padding-right: calc(50vw - 50%) !important;
-  padding-left: calc(50vw - 50%) !important;
+.st-Wrapper_FullBg {
+  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%);
+  padding-right: calc(50vw - 50%);
+  padding-left: calc(50vw - 50%);
 }
 
 /*
