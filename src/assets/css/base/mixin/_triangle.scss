@@ -1,0 +1,73 @@
+// @desc  ボーダーで三角形を作ります。
+// @param {String} $width
+// @param {String} $height
+// @param {String} $direction [right]
+// @param {String} $color [currentColor]
+// @example scss - Usage
+// .triangle {
+//   &:before {
+//     content: "";
+//     display: block;
+//     @include triangle(10px, 15px, top);
+//   }
+// }
+// @example css - CSS output
+// .triangle:before {
+//   content: "";
+//   display: block;
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+//   border-width: 0 5px 15px 5px;
+//   border-color: transparent transparent currentColor transparent;
+// }
+@mixin triangle($width, $height, $direction: right, $color: currentColor) {
+
+  @if not index(top right bottom left top-right bottom-right bottom-left top-left, $direction) {
+    @warn "$direction must be one of `top`, `right`, `bottom`, `left`, `top-right`, `bottom-right`, `bottom-left`, `top-left`; currently `#{$direction}`.";
+  }
+
+  width: 0;
+  height: 0;
+
+  @if $direction == top {
+    border-width: 0 ($width / 2) $height ($width / 2);
+    border-style: solid;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == right {
+    border-width: ($height / 2) 0 ($height / 2) $width;
+    border-style: solid;
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == bottom {
+    border-width: $height ($width / 2) 0 ($width / 2);
+    border-style: solid;
+    border-color: $color transparent transparent transparent;
+  }
+  @if $direction == left {
+    border-width: ($height / 2) $width ($height / 2) 0;
+    border-style: solid;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == top-right {
+    border-width: 0 $height $height 0;
+    border-style: solid;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == bottom-right {
+    border-width: 0 0 $height $height;
+    border-style: solid;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == bottom-left {
+    border-width: $height 0 0 $height;
+    border-style: solid;
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == top-left {
+    border-width: $height $height 0 0;
+    border-style: solid;
+    border-color: $color transparent transparent transparent;
+  }
+}
