@@ -18,13 +18,12 @@ js/
 │   ├── lodash.custom.min.js
 │   ├── picturefill.min.js
 │   ├── jquery.matchHeight-min.js
-│   ├── focus-ring.js
+│   ├── focus-visible.js
 │   └── smooth-scroll.min.js
 ├── namespace/
 │   ├── js/
 │   └── data/
 ├── jquery.min.js
-├── jquery-migrate.min.js
 └── namespace/
 ```
 

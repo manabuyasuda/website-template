@@ -7,11 +7,11 @@ CSSは[Sass](http://sass-lang.com/)を使って生成しています。
 - clean-css：スペースの削除や省略可能なコードの削除（最適化）
 
 ## CSS設計手法
-CSSは[ECSS](http://ecss.io/)をベースにしています。特徴としては、グローバルなModuleを最小限にすること、使う場所や状況によって名前空間をつくることで影響範囲を意図的に狭くすることです。  
+CSSは[ECSS](http://ecss.io/)をベースにしています。特徴としては、名前空間をつけることでモジュールの使用範囲や影響範囲を明確にしていることがあります。  
 詳しくは[ECSSの特徴をまとめたドキュメント](https://github.com/manabuyasuda/styleguide/blob/master/how-to-ecss.md)を確認してください。
 
 ## ディレクトリ構造
-`develop/assets/css`以下にあるアンダースコア付きの`.scss`ファイルが`site.scss`によってインポートされます。
+`src/assets/css`以下にあるアンダースコア付きの`.scss`ファイルが`site.scss`によってインポートされます。
 
 ECSSの考え方をベースに、以下の5つのレイヤーに大きくわかれています。
 
@@ -21,94 +21,44 @@ ECSSの考え方をベースに、以下の5つのレイヤーに大きくわか
 4. namespace/Structure
 5. namespace
 
-SiteWideはリストやボタンのような場所を選ばない汎用的なModuleです。  
-Structureはヘッダーやフッター、パンくずリストやサイドメニューのように使う場所が固定されているModuleです。  
-共通のレイアウトやグリッドシステムはnamespace/layoutに定義していきます。
+baseには変数や関数、タイプセレクタのベーススタイルなどがあります。
 
-namespaceには名前空間ごとにディレクトリを作り、さらにModuleごとにファイルを作ります。
+SiteWideはリストやボタンのような場所を選ばない汎用的なモジュールです。
+
+Structureはヘッダーやフッター、パンくずリストやサイドメニューのように使う場所が固定されている構造的なモジュールです。共通のレイアウトやグリッドシステムもStructureに定義していきます。
+
+namespaceには名前空間ごとにディレクトリを作り、さらにModule（Component）ごとにファイルを作ります。  
+namespace以下によくあるディレクトリを作っていますが、案件によって追加・削除してください。
 
 ```
-.
-├── base/
-│   ├── _normalize.scss
-│   ├── _base.scss
-│   ├── _Icon.scss
-│   ├── variable
-│   │   ├── _easing.scss
-│   │   └── _global.scss
-│   ├── function
-│   │   ├── _rem.scss
-│   │   └── _str-replace.scss
-│   ├── mixin
-│   │   ├── _Button.scss
-│   │   ├── _FormCheckbox.scss
-│   │   ├── _FormInput.scss
-│   │   ├── _FormRadio.scss
-│   │   ├── _FormSelect.scss
-│   │   ├── _FormTextarea.scss
-│   │   ├── _Label.scss
-│   │   ├── _Link.scss
-│   │   ├── _clearfix.scss
-│   │   ├── _font-face.scss
-│   │   ├── _mq-up.scss
-│   │   ├── _on-event.scss
-│   │   └── _sr-only.scss
-├── namespace
-│   ├── SiteWide
-│   │   ├── _Button.scss
-│   │   ├── _Delimiter.scss
-│   │   ├── _Divider.scss
-│   │   ├── _Embed.scss
-│   │   ├── _FormCheckbox.scss
-│   │   ├── _FormInput.scss
-│   │   ├── _FormRadio.scss
-│   │   ├── _FormSelect.scss
-│   │   ├── _FormTextarea.scss
-│   │   ├── _Hide.scss
-│   │   ├── _Label.scss
-│   │   ├── _Link.scss
-│   │   ├── _LinkDownload.scss
-│   │   ├── _LinkExternal.scss
-│   │   ├── _LinkMore.scss
-│   │   ├── _LinkNote.scss
-│   │   ├── _LinkPdf.scss
-│   │   ├── _ListBracketOrder.scss
-│   │   ├── _ListNote.scss
-│   │   ├── _ListNoteOrder.scss
-│   │   ├── _ListOrder.scss
-│   │   ├── _ListUnorder.scss
-│   │   ├── _Show.scss
-│   │   ├── _TableScroll.scss
-│   │   ├── _TextAttention.scss
-│   │   ├── _TextEmphasis.scss
-│   │   └── _TextSecondary.scss
-│   ├── Structure
-│   │   ├── _Wrapper.scss
-│   │   ├── _Header.scss
-│   │   ├── _Footer.scss
-│   │   └── _Breadcrumb.scss
-│   ├── layout
-│   │   ├── _Home.scss
-│   │   ├── _Top.scss
-│   │   ├── _Detail.scss
-│   │   ├── _Grid.scss
-│   │   └── _Grids.scss
-│   ├── home
-│   ├── top
-│   ├── products
-│   ├── company
-│   ├── csr
-│   ├── faq
-│   ├── inquiry
-│   ├── ir
-│   ├── news
-│   ├── recruit
-│   ├── results
-│   └── sitemap
+css/
 ├── _print.scss
+├── base/
+│   ├── _base.scss
+│   ├── _normalize.scss
+│   ├── function/
+│   ├── mixin/
+│   └── variable/
+├── namespace/
+│   ├── SiteWide/
+│   ├── Structure/
+│   ├── company/
+│   ├── csr/
+│   ├── faq/
+│   ├── home/
+│   ├── inquiry/
+│   ├── ir/
+│   ├── news/
+│   ├── products/
+│   ├── recruit/
+│   ├── results/
+│   ├── sitemap/
+│   ├── sub/
+│   ├── test/
+│   ├── top/
+│   └── wisywig/
 ├── site.scss
-└── styleguide
-    ├── _IconList.scss
+└── styleguide/
     └── index.md
 ```
 
@@ -116,17 +66,18 @@ namespaceには名前空間ごとにディレクトリを作り、さらにModul
 `namespace/`にはECSSの考えをベースに名前空間でディレクトリをわけます。  
 例えば以下のように名前をつけます。
 
- - `.layout-` (Layout) カテゴリー共通やページごとのレイアウト、グリッドシステム
+ - `.sw-` (SiteWide) サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）
+ - `.st-` (Structure)サイト共通の構造的なModule（ヘッダーやフッター、カテゴリーごとの大枠のレイアウト、グリッドシステムやコンポーネンの余白など）
  - `.home-` (HomePage) ホームページ（サイトトップページ）
  - `.top-` (CategoryTop) カテゴリートップページ
  - `.products-` (Products) 製品情報
 
-名前空間に続いてModuleごとにファイルをわけていきます。Moduleは名前空間内にある、機能面のある程度大きな区分のことをいいます。JavaScriptで動的にクラスを追加するときの、いちばん外側の要素と考えてもいいと思います。  
+名前空間に続いてModule（Component）ごとにファイルをわけていきます。Module（Component）は名前空間内にある、機能面のある程度大きな区分のことをいいます。JavaScriptで動的にクラスを追加するときの、いちばん外側の要素と考えてもいいと思います。  
 例えば以下のように名前をつけます。
 
-- `.layout-Home` ホームページのレイアウト
-- `.layout-Top` カテゴリートップのレイアウト
-- `.layout-Detail` 詳細（下層）ページのレイアウト
+- `.home-Title` ホームページのタイトル
+- `.home-Hero` ホームページのメインビジュアル
+- `.home-News` ホームページのニュースエリア
 
 ## Sass
 Sassには変数や、便利なmixinをいくつか用意しています。
@@ -166,15 +117,14 @@ $breakpoint-up: (
 ```
 
 ## アイコンフォント
-アイコンは基本的にSVGを背景画像で表示しますが、背景画像でカバーできないスタイルの場合はアイコンフォントを使います。
+`src/assets/icon/`にSVGファイルを保存すると自動でアイコンフォントとmixinが生成されます。  
+アイコンフォントのファイルは`/htdocs/assets/font/`に出力されます。  
+mixinは、`/src/assets/css/base/mixin/_Icon.scss`に出力されます。
 
-`develop/assets/icon/`にSVGファイルを保存すると自動でアイコンフォントとCSSが生成されます。生成されたアイコンフォントは`css/base/mixin/_Icon.scss`に出力されます。
-
-変数とmixinでアイコンフォントのスタイルを呼び出すことができます。  
-mixinの`icon()`の引数にはアイコンフォント用のSVGファイル名を渡します。
+mixin（`Icon()`）でアイコンフォントのスタイルを呼び出すことができます。引数にはアイコンフォント用のSVGファイル名（拡張子なし）を渡します。
 
 ```scss
-.sw-LinkMore_Icon:after {
-  @include icon(linkMore); 
+.sw-LinkMore_Icon:before {
+  @include Icon(linkMore); // linkMore.svg
 }
 ```

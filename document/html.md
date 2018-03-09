@@ -1,18 +1,18 @@
 # HTML
 HTMLは[Pug](https://pugjs.org/api/getting-started.html)を使って生成しています。  
-通常のHTMLとは構文が違いますが、共通部分などの全体の管理がしやすいところや、コーディング速度や修正がしやすいメリットがあるので採用しています。
+通常のHTMLとは構文が違いますが、共通部分などの全体の管理がしやすいところや、コーディング速度や修正がしやすいというメリットがあるので採用しています。
 
 インデントにスペースやタブが混ざるとエラーになってしまうので、.editorconfigを設定することで解決しています。お使いのエディターで.editorconfigの設定が反映されるように設定してください。
 
 ## ディレクトリ構造
-Pugのコンパイルは、例えば`develop/index.pug`が`test/index.html`のように生成されます。  
+Pugのコンパイルは、例えば`src/index.pug`が`htdocs/index.html`のように生成されます。  
 `_partial/`は共通部分など、`_template/`は共通部分をまとめたテンプレート、`_data/`はサイトやページ単位で使うデータ（JSON）、`_mixin/`はPugのmixinを保存します。`_index.pug`のようにアンダースコアから始まるファイルは直接出力されません。  
-多言語対応のため、一部のPugファイルは`ja/`や`en/`のように言語ごとにディレクトリを分けています。
+多言語対応のため、一部のPugファイルは`ja/`や`en/`のように言語ごとにディレクトリをわけています。
 
 これ以降は日本語サイト用の説明をします。英語版のディレクトリもありますが、適宜読み替えてください。
 
 ```
-develop/
+src/
 ├── _data/
 │   └── ja/
 │       └── site.json
@@ -35,7 +35,7 @@ develop/
 ```
 
 ### _data
-`develop/_data/`はすべてのPugファイルから参照できるサイト共通のデータを設定しています。
+`src/_data/`はすべてのPugファイルから参照できるサイト共通のデータを設定しています。
 
 ```js
 {
@@ -54,19 +54,19 @@ gulpfile.jsで以下のように記述しているので、`ja.site.name`のよ�
 
 ```js
   var locals = {
-    'site': JSON.parse(fs.readFileSync(develop.data + 'site.json'))
+    'site': JSON.parse(fs.readFileSync(src.data + 'site.json'))
   };
   locals.ja = {
     // 日本語サイト共通のデータです。
-    'site': JSON.parse(fs.readFileSync(develop.data + 'ja/site.json'))
+    'site': JSON.parse(fs.readFileSync(src.data + 'ja/site.json'))
   };
 ```
 
 ### _partial
-`develop/_partial/`にはサイトの共通部分が保存されています。ディレクトリごとの共通部分も含めて、自由に追加してください。
+`src/_partial/`にはサイトの共通部分が保存されています。ディレクトリごとの共通部分も含めて、自由に追加してください。
 
 ```
-develop/
+src/
 ├── _partial/
 │   ├── _script.pug
 │   ├── _hreflang.pug
@@ -110,14 +110,12 @@ block css
 block js
   script(src='//code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
   script window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')
-  script(src='//code.jquery.com/jquery-migrate-3.0.0.min.js', integrity='sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=', crossorigin='anonymous')
-  script window.jQuery || document.write('<script src="/assets/js/jquery-migrate.min.js"><\/script>')
   script(src="/assets/js/lib.js")
   script(src="/assets/js/site.js")
 ```
 
 #### _hreflang.pug
-ドメイン内で国や言語でディレクトリを分けている場合に使います。
+ドメイン内で国や言語でディレクトリをわけている場合に使います。
 
 [言語や地域の URL に hreflang を使用する - Search Console ヘルプ](https://support.google.com/webmasters/answer/189077?hl=ja)
 
@@ -192,10 +190,10 @@ block content
 ```
 
 ### _template
-`develop/_template/`には共通部分（`develop/_partial/`）をまとめたテンプレートが保存されています。
+`src/_template/`には共通部分（`src/_partial/`）をまとめたテンプレートが保存されています。
 
 ```
-develop/
+src/
 ├── _template/
 │   └── ja/
 │       └── _default.pug
@@ -264,3 +262,11 @@ Pugファイルに以下のような指定をすると、Pugから出力したHT
 block content
   <!--#include virtual="/ssi/ssi.html" -->
 ```
+
+## HTMLタグと属性
+- メインコンテンツは`main`タグの中に記述します。
+- ページ内に`h1`タグは1つとします。
+- 見出しレベルは`h1 > section > h2 > section > h3`のように同じレベルが続かないようにします。
+- リンクや画像のパスなどはルート相対パス（`/`から始めるパス）で指定します。
+- width属性とheight属性省略します。
+- 外部リンクは`target="_blank"`を指定します。
