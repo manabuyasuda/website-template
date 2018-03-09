@@ -1,0 +1,13 @@
+extend /_template/ja/_default
+append variables
+  //- 変更可能
+  - var pageTitle= "";
+  - var pageDescription= ja.site.description;
+  - var pageKeywords= ja.site.keywords;
+  //- 任意
+  - var pageOgpTitle= pageTitle;
+  - var pageOgpImage= ja.site.ogpImage;
+  - var pageOgpType= "website";
+
+block content
+  main#main

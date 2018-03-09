@@ -1,0 +1,13 @@
+extend /_template/en/_default
+append variables
+  //- 変更可能
+  - var pageTitle= "English Article Page";
+  - var pageDescription= 'English Article Page Description';
+  - var pageKeywords= 'English Article Page Keyword1, English Article Page Keyword2';
+  //- 任意
+  - var pageOgpTitle= pageTitle;
+  - var pageOgpImage= en.site.ogpImage;
+  - var pageOgpType= "article";
+
+block content
+  main#main

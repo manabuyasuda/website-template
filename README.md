@@ -30,7 +30,8 @@ npm install
 
 ## ファイル構成
 開発は`src`ディレクトリでおこない、テスト用の一時ファイルは`htdocs`ディレクトリに出力されます。  
-`public`ディレクトリは、Gulpの処理は必要ないけれど、ファビコンや共通ファイルのように最終的に`htdocs`ディレクトリに含めたいファイルを置きます。
+`public`ディレクトリは、Gulpの処理は必要ないけれど、ファビコンや共通ファイルのように最終的に`htdocs`ディレクトリに含めたいファイルを置きます。  
+`template`ディレクトリはPugファイルのテンプレートです。このテンプレートを元にファイルを作成してください。
 
 ```
 root/
@@ -78,7 +79,6 @@ root/
 │   │   │   ├── Structure/
 │   │   │   └── namespace/
 │   │   └── js/
-│   │       ├── jquery-migrate.min.js
 │   │       ├── jquery.min.js
 │   │       ├── lib/
 │   │       │   ├── jquery.matchHeight-min.js
@@ -89,6 +89,9 @@ root/
 │   │           └── js/
 │   └── index.pug
 ├── public/
+├── template/
+│   ├── ja/
+│   ├── en/
 ├── htdocs/
 ├── document/
 │   ├── css.md
