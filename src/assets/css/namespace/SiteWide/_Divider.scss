@@ -8,9 +8,10 @@ category: Text
 `<hr>`のような区切り記号を使って、分割・グルーピングします。
 
 ```jade
-p.st-Text テキストです。
-hr.sw-Divider
-p.st-Text テキストです。
+.st-Wrapper
+  p.sw-Text テキストです。
+  hr.sw-Divider
+  p.sw-Text テキストです。
 ```
 */
 .sw-Divider {
@@ -21,4 +22,8 @@ p.st-Text テキストです。
   margin: $margin-text auto;
   border: 0;
   border-top: 1px solid #e5e5e5;
+
+  & + .sw-Text {
+    margin-top: 0;
+  }
 }

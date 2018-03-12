@@ -8,12 +8,13 @@ category: [Link, Icon]
 クリックを促すようなテキストリンクに使います。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 
-p
-  a.sw-LinkMore(href="#") 詳しく見る
-    span.sw-LinkMore_Icon(aria-hidden="true")
+  p.sw-Text
+    a.sw-LinkMore(href="#") 詳しく見る
+      span.sw-LinkMore_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkMore {

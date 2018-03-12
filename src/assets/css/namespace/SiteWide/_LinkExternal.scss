@@ -8,12 +8,13 @@ category: [Link, Icon]
 外部リンクであることを示す場合に使います。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 
-p
-  a.sw-LinkExternal(href="#") 外部リンクを開く
-    span.sw-LinkExternal_Icon(aria-hidden="true")
+  p.sw-Text
+    a.sw-LinkExternal(href="#") 外部リンクを開く
+      span.sw-LinkExternal_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkExternal {

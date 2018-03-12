@@ -9,9 +9,14 @@ category: Heading
 
 ```jade
 .st-Wrapper
-  h1.sw-Title.st-Title ページタイトル
+  h1.sw-Title ページタイトル
 ```
 */
 .sw-Title {
   @include sw-Title();
+  margin-bottom: $margin-title;
+
+  @include mq-up(md) {
+    margin-bottom: $margin-title-md;
+  }
 }

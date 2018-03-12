@@ -8,12 +8,13 @@ category: [Link, Icon]
 ファイルをダウンロードするためのリンクであることを示す場合に使います。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 
-p
-  a.sw-LinkDownload(href="#") ファイルをダウンロードする
-    span.sw-LinkDownload_Icon(aria-hidden="true")
+  p.sw-Text
+    a.sw-LinkDownload(href="#") ファイルをダウンロードする
+      span.sw-LinkDownload_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkDownload {

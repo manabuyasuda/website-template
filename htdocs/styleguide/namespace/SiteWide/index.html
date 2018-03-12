@@ -65,6 +65,7 @@
                 <li class="aigis-moduleList__item"><a href="#sw-Sup">sw-Sup</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Table">sw-Table</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-TableWide">sw-TableWide</a></li>
+                <li class="aigis-moduleList__item"><a href="#sw-Text">sw-Text</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-TextEmphasis">sw-TextEmphasis</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-TextImportant">sw-TextImportant</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-TextSecondary">sw-TextSecondary</a></li>
@@ -151,11 +152,14 @@
               </ul><p>途中で改行をさせたくないフレーズやキーワードに指定します。囲まれた範囲（Delimiter）がまとまって改行されます。</p>
 <div class="aigis-preview">
 
-<p>テキストは基本的にスペースや役物を基準に改行されますが、<span class="sw-Delimiter">この部分はまとめて改行されます。</span>ここは通常のテキストです。</p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text">テキストは基本的にスペースや役物を基準に改行されますが、<span class="sw-Delimiter">この部分はまとめて改行されます。</span>ここは通常のテキストです。</p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span> <span class="token plain-text" >テキストは基本的にスペースや役物を基準に改行されますが、</span>
-  <span class="token tag" >span.sw-Delimiter</span> <span class="token plain-text" >この部分はまとめて改行されます。</span>
-  <span class="token punctuation" >|</span> ここは通常のテキストです。
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >テキストは基本的にスペースや役物を基準に改行されますが、</span>
+    <span class="token tag" >span.sw-Delimiter</span> <span class="token plain-text" >この部分はまとめて改行されます。</span>
+    <span class="token punctuation" >|</span> ここは通常のテキストです。
 </code></pre>
 
             </div>
@@ -166,13 +170,16 @@
               </ul><p><code>&lt;hr&gt;</code>のような区切り記号を使って、分割・グルーピングします。</p>
 <div class="aigis-preview">
 
-<p class="st-Text">テキストです。</p>
-<hr class="sw-Divider"/>
-<p class="st-Text">テキストです。</p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text">テキストです。</p>
+  <hr class="sw-Divider"/>
+  <p class="sw-Text">テキストです。</p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p.st-Text</span> <span class="token plain-text" >テキストです。</span>
-<span class="token tag" >hr.sw-Divider</span>
-<span class="token tag" >p.st-Text</span> <span class="token plain-text" >テキストです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >テキストです。</span>
+  <span class="token tag" >hr.sw-Divider</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >テキストです。</span>
 </code></pre>
 
             </div>
@@ -321,15 +328,15 @@
               <h2 id="sw-Heading2" class="aigis-module__heading">sw-Heading2</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Heading2.scss</div>
               <ul class="aigis-tags">
-              </ul><p><code>&lt;h2&gt;</code>で使用する見出しです。余白には<code>.st-Heading2</code>を使用します。</p>
+              </ul><p><code>&lt;h2&gt;</code>で使用する見出しです。</p>
 <div class="aigis-preview">
 
 <div class="st-Wrapper">
-  <h2 class="sw-Heading2 st-Heading2">見出し2</h2>
+  <h2 class="sw-Heading2">見出し2</h2>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
-  <span class="token tag" >h2.sw-Heading2.st-Heading2</span> <span class="token plain-text" >見出し2</span>
+  <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >見出し2</span>
 </code></pre>
 
             </div>
@@ -337,15 +344,15 @@
               <h2 id="sw-Heading3" class="aigis-module__heading">sw-Heading3</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Heading3.scss</div>
               <ul class="aigis-tags">
-              </ul><p><code>&lt;h3&gt;</code>で使用する見出しです。余白には<code>.st-Heading3</code>を使用します。</p>
+              </ul><p><code>&lt;h3&gt;</code>で使用する見出しです。</p>
 <div class="aigis-preview">
 
 <div class="st-Wrapper">
-  <h3 class="sw-Heading3 st-Heading3">見出し3</h3>
+  <h3 class="sw-Heading3">見出し3</h3>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
-  <span class="token tag" >h3.sw-Heading3.st-Heading3</span> <span class="token plain-text" >見出し3</span>
+  <span class="token tag" >h3.sw-Heading3</span> <span class="token plain-text" >見出し3</span>
 </code></pre>
 
             </div>
@@ -353,15 +360,15 @@
               <h2 id="sw-Heading4" class="aigis-module__heading">sw-Heading4</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Heading4.scss</div>
               <ul class="aigis-tags">
-              </ul><p><code>&lt;h4&gt;</code>で使用する見出しです。余白には<code>.st-Heading4</code>を使用します。</p>
+              </ul><p><code>&lt;h4&gt;</code>で使用する見出しです。</p>
 <div class="aigis-preview">
 
 <div class="st-Wrapper">
-  <h4 class="sw-Heading4 st-Heading4">見出し4</h4>
+  <h4 class="sw-Heading4">見出し4</h4>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
-  <span class="token tag" >h4.sw-Heading4.st-Heading4</span> <span class="token plain-text" >見出し4</span>
+  <span class="token tag" >h4.sw-Heading4</span> <span class="token plain-text" >見出し4</span>
 </code></pre>
 
             </div>
@@ -369,15 +376,15 @@
               <h2 id="sw-Heading5" class="aigis-module__heading">sw-Heading5</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Heading5.scss</div>
               <ul class="aigis-tags">
-              </ul><p><code>&lt;h5&gt;</code>で使用する見出しです。余白には<code>.st-Heading5</code>を使用します。</p>
+              </ul><p><code>&lt;h5&gt;</code>で使用する見出しです。</p>
 <div class="aigis-preview">
 
 <div class="st-Wrapper">
-  <h5 class="sw-Heading5 st-Heading5">見出し5</h5>
+  <h5 class="sw-Heading5">見出し5</h5>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
-  <span class="token tag" >h5.sw-Heading5.st-Heading5</span> <span class="token plain-text" >見出し5</span>
+  <span class="token tag" >h5.sw-Heading5</span> <span class="token plain-text" >見出し5</span>
 </code></pre>
 
             </div>
@@ -388,15 +395,18 @@
               </ul><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
 <div class="aigis-preview">
 
-<p>常に改行<br/>されます</p>
-<p>ブレイクポイント以降は改行<br class="sw-HideMd"/>されません</p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text">常に改行<br/>されます</p>
+  <p class="sw-Text">ブレイクポイント以降は改行<br class="sw-HideMd"/>されません</p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span> <span class="token plain-text" >常に改行</span>
-  <span class="token tag" >br</span>
-  <span class="token punctuation" >|</span> されます
-<span class="token tag" >p</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
-  <span class="token tag" >br.sw-HideMd</span>
-  <span class="token punctuation" >|</span> されません
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
+    <span class="token tag" >br</span>
+    <span class="token punctuation" >|</span> されます
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
+    <span class="token tag" >br.sw-HideMd</span>
+    <span class="token punctuation" >|</span> されません
 </code></pre>
 
             </div>
@@ -435,12 +445,12 @@
 他の文章と区別するためだけに利用し、<code>&lt;strong&gt;</code>の重要性や深刻性、<code>&lt;em&gt;</code>の強調（アクセント）、<code>&lt;h2&gt;</code>のような見出しとしての意味はありません。</p>
 <div class="aigis-preview">
 
-<p class="st-Lead"><b class="sw-Lead">◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</b></p>
-<p class="st-Text">△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</p></div>
+<p class="sw-Lead"><b>◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</b></p>
+<p class="sw-Text">△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</p></div>
 
-<pre><code class="language-jade"><span class="token tag" >p.st-Lead</span>
-  <span class="token tag" >b.sw-Lead</span> <span class="token plain-text" >◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</span>
-<span class="token tag" >p.st-Text</span> <span class="token plain-text" >△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</span>
+<pre><code class="language-jade"><span class="token tag" >p.sw-Lead</span>
+  <span class="token tag" >b</span> <span class="token plain-text" >◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</span>
+<span class="token tag" >p.sw-Text</span> <span class="token plain-text" >△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</span>
 </code></pre>
 
             </div>
@@ -451,10 +461,13 @@
               </ul><p>テキストリンクのデフォルトスタイルです。</p>
 <div class="aigis-preview">
 
-<p><a href="#" class="sw-Link">テキストリンクです。</a></p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text"><a href="#" class="sw-Link">テキストリンクです。</a></p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span>
-  <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
 </code></pre>
 
             </div>
@@ -465,15 +478,18 @@
               </ul><p>ファイルをダウンロードするためのリンクであることを示す場合に使います。</p>
 <div class="aigis-preview">
 
-<p><a href="#" class="sw-Link">テキストリンクです。</a></p>
-<p><a href="#" class="sw-LinkDownload">ファイルをダウンロードする<span aria-hidden="true" class="sw-LinkDownload_Icon"></span></a></p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text"><a href="#" class="sw-Link">テキストリンクです。</a></p>
+  <p class="sw-Text"><a href="#" class="sw-LinkDownload">ファイルをダウンロードする<span aria-hidden="true" class="sw-LinkDownload_Icon"></span></a></p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span>
-  <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
 
-<span class="token tag" >p</span>
-  <span class="token tag" >a.sw-LinkDownload<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ファイルをダウンロードする</span>
-    <span class="token tag" >span.sw-LinkDownload_Icon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-hidden</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"true"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-LinkDownload<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ファイルをダウンロードする</span>
+      <span class="token tag" >span.sw-LinkDownload_Icon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-hidden</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"true"</span></span><span class="token punctuation" >)</span></span></span>
 </code></pre>
 
             </div>
@@ -484,15 +500,18 @@
               </ul><p>外部リンクであることを示す場合に使います。</p>
 <div class="aigis-preview">
 
-<p><a href="#" class="sw-Link">テキストリンクです。</a></p>
-<p><a href="#" class="sw-LinkExternal">外部リンクを開く<span aria-hidden="true" class="sw-LinkExternal_Icon"></span></a></p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text"><a href="#" class="sw-Link">テキストリンクです。</a></p>
+  <p class="sw-Text"><a href="#" class="sw-LinkExternal">外部リンクを開く<span aria-hidden="true" class="sw-LinkExternal_Icon"></span></a></p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span>
-  <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
 
-<span class="token tag" >p</span>
-  <span class="token tag" >a.sw-LinkExternal<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >外部リンクを開く</span>
-    <span class="token tag" >span.sw-LinkExternal_Icon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-hidden</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"true"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-LinkExternal<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >外部リンクを開く</span>
+      <span class="token tag" >span.sw-LinkExternal_Icon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-hidden</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"true"</span></span><span class="token punctuation" >)</span></span></span>
 </code></pre>
 
             </div>
@@ -503,15 +522,18 @@
               </ul><p>クリックを促すようなテキストリンクに使います。</p>
 <div class="aigis-preview">
 
-<p><a href="#" class="sw-Link">テキストリンクです。</a></p>
-<p><a href="#" class="sw-LinkMore">詳しく見る<span aria-hidden="true" class="sw-LinkMore_Icon"></span></a></p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text"><a href="#" class="sw-Link">テキストリンクです。</a></p>
+  <p class="sw-Text"><a href="#" class="sw-LinkMore">詳しく見る<span aria-hidden="true" class="sw-LinkMore_Icon"></span></a></p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span>
-  <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
 
-<span class="token tag" >p</span>
-  <span class="token tag" >a.sw-LinkMore<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >詳しく見る</span>
-    <span class="token tag" >span.sw-LinkMore_Icon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-hidden</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"true"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-LinkMore<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >詳しく見る</span>
+      <span class="token tag" >span.sw-LinkMore_Icon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-hidden</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"true"</span></span><span class="token punctuation" >)</span></span></span>
 </code></pre>
 
             </div>
@@ -522,18 +544,21 @@
               </ul><p>注釈へのリンクです。<code>&lt;sup&gt;</code>タグの子要素として指定します。</p>
 <div class="aigis-preview">
 
-<p>○○<sup><a href="#" class="sw-LinkNote">1</a></sup>を使っています。</p>
-<p lang="en">○○<sup><a href="#" class="sw-LinkNote">1</a></sup>を使っています。</p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text">○○<sup><a href="#" class="sw-LinkNote">1</a></sup>を使っています。</p>
+  <p lang="en" class="sw-Text">○○<sup><a href="#" class="sw-LinkNote">1</a></sup>を使っています。</p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span> <span class="token plain-text" >○○</span>
-  <span class="token tag" >sup</span>
-    <span class="token tag" >a.sw-LinkNote<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >1</span>
-  <span class="token punctuation" >|</span> を使っています。
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >○○</span>
+    <span class="token tag" >sup</span>
+      <span class="token tag" >a.sw-LinkNote<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >1</span>
+    <span class="token punctuation" >|</span> を使っています。
 
-<span class="token tag" >p<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >○○</span>
-  <span class="token tag" >sup</span>
-    <span class="token tag" >a.sw-LinkNote<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >1</span>
-  <span class="token punctuation" >|</span> を使っています。
+  <span class="token tag" >p.sw-Text<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >○○</span>
+    <span class="token tag" >sup</span>
+      <span class="token tag" >a.sw-LinkNote<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >1</span>
+    <span class="token punctuation" >|</span> を使っています。
 </code></pre>
 
             </div>
@@ -544,15 +569,18 @@
               </ul><p>リンク先がPDFであることを示す場合に使います。</p>
 <div class="aigis-preview">
 
-<p><a href="#" class="sw-Link">テキストリンクです。</a></p>
-<p><a href="#" class="sw-LinkPdf">PDFをダウンロードする<span aria-hidden="true" class="sw-LinkPdf_Icon"></span></a></p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text"><a href="#" class="sw-Link">テキストリンクです。</a></p>
+  <p class="sw-Text"><a href="#" class="sw-LinkPdf">PDFをダウンロードする<span aria-hidden="true" class="sw-LinkPdf_Icon"></span></a></p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span>
-  <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >テキストリンクです。</span>
 
-<span class="token tag" >p</span>
-  <span class="token tag" >a.sw-LinkPdf<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >PDFをダウンロードする</span>
-    <span class="token tag" >span.sw-LinkPdf_Icon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-hidden</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"true"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >a.sw-LinkPdf<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >PDFをダウンロードする</span>
+      <span class="token tag" >span.sw-LinkPdf_Icon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-hidden</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"true"</span></span><span class="token punctuation" >)</span></span></span>
 </code></pre>
 
             </div>
@@ -563,26 +591,32 @@
               </ul><p>括弧で囲んだ順序リストです。</p>
 <div class="aigis-preview">
 
-<ol class="sw-ListBracketOrder">
-  <li>リストです。リストです。リストです。リストです。</li>
-  <li>リストです</li>
-</ol></div>
+<div class="st-Wrapper">
+  <ol class="sw-ListBracketOrder">
+    <li>リストです。リストです。リストです。リストです。</li>
+    <li>リストです</li>
+  </ol>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >ol.sw-ListBracketOrder</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >リストです。リストです。リストです。リストです。</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >リストです</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >ol.sw-ListBracketOrder</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >リストです。リストです。リストです。リストです。</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >リストです</span>
 </code></pre>
 <p>リストを2から始める場合は<code>.sw-ListBracketOrder-from2</code>のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように<code>start</code>属性も指定します。</p>
 <div class="aigis-preview">
 
-<ol start="2" class="sw-ListBracketOrder sw-ListBracketOrder-from2">
-  <li>リストです。リストです。リストです。リストです。</li>
-  <li>リストです</li>
-</ol></div>
+<div class="st-Wrapper">
+  <ol start="2" class="sw-ListBracketOrder sw-ListBracketOrder-from2">
+    <li>リストです。リストです。リストです。リストです。</li>
+    <li>リストです</li>
+  </ol>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >ol.sw-ListBracketOrder.sw-ListBracketOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
-  <span class="token tag" >li</span> <span class="token plain-text" >リストです。リストです。リストです。リストです。</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >リストです</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >ol.sw-ListBracketOrder.sw-ListBracketOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >li</span> <span class="token plain-text" >リストです。リストです。リストです。リストです。</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >リストです</span>
 </code></pre>
 
             </div>
@@ -593,25 +627,28 @@
               </ul><p>注釈用のリストです。米印やアスタリスクが表示されます。</p>
 <div class="aigis-preview">
 
-<ul class="sw-ListNote">
-  <li>1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です</li>
-  <li>2つ目の注釈です</li>
-</ul>
-<div lang="en">
+<div class="st-Wrapper">
   <ul class="sw-ListNote">
-    <li>This is the first comment. This is the first comment. This is the first comment.</li>
-    <li>This is the second comment.</li>
+    <li>1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です</li>
+    <li>2つ目の注釈です</li>
   </ul>
+  <div lang="en">
+    <ul class="sw-ListNote">
+      <li>This is the first comment. This is the first comment. This is the first comment.</li>
+      <li>This is the second comment.</li>
+    </ul>
+  </div>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >ul.sw-ListNote</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >2つ目の注釈です</span>
-
-<span class="token tag" >div<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
   <span class="token tag" >ul.sw-ListNote</span>
-    <span class="token tag" >li</span> <span class="token plain-text" >This is the first comment. This is the first comment. This is the first comment.</span>
-    <span class="token tag" >li</span> <span class="token plain-text" >This is the second comment.</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >2つ目の注釈です</span>
+
+  <span class="token tag" >div<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >ul.sw-ListNote</span>
+      <span class="token tag" >li</span> <span class="token plain-text" >This is the first comment. This is the first comment. This is the first comment.</span>
+      <span class="token tag" >li</span> <span class="token plain-text" >This is the second comment.</span>
 </code></pre>
 
             </div>
@@ -622,48 +659,54 @@
               </ul><p>注釈用のリストです。米印やアスタリスクが表示されます。</p>
 <div class="aigis-preview">
 
-<ol class="sw-ListNoteOrder">
-  <li>注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</li>
-  <li>注釈です。</li>
-</ol>
-<div lang="en">
-  <ul class="sw-ListNoteOrder">
-    <li>This is an annotation. This is an annotation. This is an annotation.</li>
-    <li>This is an annotation.</li>
-  </ul>
+<div class="st-Wrapper">
+  <ol class="sw-ListNoteOrder">
+    <li>注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</li>
+    <li>注釈です。</li>
+  </ol>
+  <div lang="en">
+    <ul class="sw-ListNoteOrder">
+      <li>This is an annotation. This is an annotation. This is an annotation.</li>
+      <li>This is an annotation.</li>
+    </ul>
+  </div>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >ol.sw-ListNoteOrder</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >注釈です。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >ol.sw-ListNoteOrder</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >注釈です。</span>
 
-<span class="token tag" >div<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span>
-  <span class="token tag" >ul.sw-ListNoteOrder</span>
-    <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation. This is an annotation. This is an annotation.</span>
-    <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation.</span>
+  <span class="token tag" >div<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >ul.sw-ListNoteOrder</span>
+      <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation. This is an annotation. This is an annotation.</span>
+      <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation.</span>
 </code></pre>
 <p>リストを2から始める場合は<code>.sw-ListNoteOrder-from2</code>のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように<code>start</code>属性も指定します。</p>
 <div class="aigis-preview">
 
-<ol start="2" class="sw-ListNoteOrder sw-ListNoteOrder-from2">
-  <li>注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</li>
-  <li>注釈です。</li>
-</ol>
-<div lang="en">
+<div class="st-Wrapper">
   <ol start="2" class="sw-ListNoteOrder sw-ListNoteOrder-from2">
-    <li>This is an annotation. This is an annotation. This is an annotation.</li>
-    <li>This is an annotation.</li>
+    <li>注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</li>
+    <li>注釈です。</li>
   </ol>
+  <div lang="en">
+    <ol start="2" class="sw-ListNoteOrder sw-ListNoteOrder-from2">
+      <li>This is an annotation. This is an annotation. This is an annotation.</li>
+      <li>This is an annotation.</li>
+    </ol>
+  </div>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >ol.sw-ListNoteOrder.sw-ListNoteOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
-  <span class="token tag" >li</span> <span class="token plain-text" >注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >注釈です。</span>
-
-<span class="token tag" >div<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
   <span class="token tag" >ol.sw-ListNoteOrder.sw-ListNoteOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation. This is an annotation. This is an annotation.</span>
-    <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation.</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >注釈です。</span>
+
+  <span class="token tag" >div<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >ol.sw-ListNoteOrder.sw-ListNoteOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation. This is an annotation. This is an annotation.</span>
+      <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation.</span>
 </code></pre>
 
             </div>
@@ -674,42 +717,48 @@
               </ul><p>入れ子に対応した順序リストです。</p>
 <div class="aigis-preview">
 
-<ol class="sw-ListOrder">
-  <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
-  <li>入れ子に対応した順序リストです。
-    <ol>
-      <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
-      <li>入れ子に対応した順序リストです。</li>
-    </ol>
-  </li>
-</ol></div>
+<div class="st-Wrapper">
+  <ol class="sw-ListOrder">
+    <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
+    <li>入れ子に対応した順序リストです。
+      <ol>
+        <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
+        <li>入れ子に対応した順序リストです。</li>
+      </ol>
+    </li>
+  </ol>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >ol.sw-ListOrder</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
-    <span class="token tag" >ol</span>
-      <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
-      <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >ol.sw-ListOrder</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
+      <span class="token tag" >ol</span>
+        <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
+        <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
 </code></pre>
 <p>リストを2から始める場合は<code>.sw-ListOrder-from2</code>のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように<code>start</code>属性も指定します。</p>
 <div class="aigis-preview">
 
-<ol start="2" class="sw-ListOrder sw-ListOrder-from2">
-  <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
-  <li>入れ子に対応した順序リストです。
-    <ol>
-      <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
-      <li>入れ子に対応した順序リストです。</li>
-    </ol>
-  </li>
-</ol></div>
+<div class="st-Wrapper">
+  <ol start="2" class="sw-ListOrder sw-ListOrder-from2">
+    <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
+    <li>入れ子に対応した順序リストです。
+      <ol>
+        <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
+        <li>入れ子に対応した順序リストです。</li>
+      </ol>
+    </li>
+  </ol>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >ol.sw-ListOrder.sw-ListOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
-  <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
-    <span class="token tag" >ol</span>
-      <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
-      <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >ol.sw-ListOrder.sw-ListOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
+      <span class="token tag" >ol</span>
+        <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
+        <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
 </code></pre>
 
             </div>
@@ -720,22 +769,25 @@
               </ul><p>順序をもたない並列なリストです。</p>
 <div class="aigis-preview">
 
-<ul class="sw-ListUnorder">
-  <li>リストです。</li>
-  <li>リストです。
-    <ul class="sw-ListUnorder_Child">
-      <li>リストです。</li>
-      <li>リストです。</li>
-    </ul>
-  </li>
-</ul></div>
+<div class="st-Wrapper">
+  <ul class="sw-ListUnorder">
+    <li>リストです。</li>
+    <li>リストです。
+      <ul class="sw-ListUnorder_Child">
+        <li>リストです。</li>
+        <li>リストです。</li>
+      </ul>
+    </li>
+  </ul>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >ul.sw-ListUnorder</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >リストです。</span>
-  <span class="token tag" >li</span> <span class="token plain-text" >リストです。</span>
-    <span class="token tag" >ul.sw-ListUnorder_Child</span>
-      <span class="token tag" >li</span> <span class="token plain-text" >リストです。</span>
-      <span class="token tag" >li</span> <span class="token plain-text" >リストです。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >ul.sw-ListUnorder</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >リストです。</span>
+    <span class="token tag" >li</span> <span class="token plain-text" >リストです。</span>
+      <span class="token tag" >ul.sw-ListUnorder_Child</span>
+        <span class="token tag" >li</span> <span class="token plain-text" >リストです。</span>
+        <span class="token tag" >li</span> <span class="token plain-text" >リストです。</span>
 </code></pre>
 
             </div>
@@ -760,15 +812,18 @@
               </ul><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
 <div class="aigis-preview">
 
-<p>常に改行<br/>されます</p>
-<p>ブレイクポイント以降は改行<br class="sw-Hide sw-ShowMd"/>されます</p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text">常に改行<br/>されます</p>
+  <p class="sw-Text">ブレイクポイント以降は改行<br class="sw-Hide sw-ShowMd"/>されます</p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p</span> <span class="token plain-text" >常に改行</span>
-  <span class="token tag" >br</span>
-  <span class="token punctuation" >|</span> されます
-<span class="token tag" >p</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
-  <span class="token tag" >br.sw-Hide.sw-ShowMd</span>
-  <span class="token punctuation" >|</span> されます
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
+    <span class="token tag" >br</span>
+    <span class="token punctuation" >|</span> されます
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
+    <span class="token tag" >br.sw-Hide.sw-ShowMd</span>
+    <span class="token punctuation" >|</span> されます
 </code></pre>
 
             </div>
@@ -779,15 +834,18 @@
               </ul><p>登録商標（アールマーク）や著作権（マルシーマーク）、注釈リンク（※1）などに使う上付き文字です。</p>
 <div class="aigis-preview">
 
-<p class="st-Text">登録商標<sup class="sw-Sup">®</sup>です。</p>
-<p class="st-Text">注釈<sup class="sw-Sup"><a href="#">※1</a></sup>です。</p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text">登録商標<sup class="sw-Sup">®</sup>です。</p>
+  <p class="sw-Text">注釈<sup class="sw-Sup"><a href="#">※1</a></sup>です。</p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p.st-Text</span> <span class="token plain-text" >登録商標</span>
-  <span class="token tag" >sup.sw-Sup</span> <span class="token plain-text" >®</span>
-  <span class="token punctuation" >|</span> です。
-<span class="token tag" >p.st-Text</span> <span class="token plain-text" >注釈</span>
-  <span class="token tag" >sup.sw-Sup<span class="token punctuation" >:</span></span> <span class="token tag" >a<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> ※1
-  <span class="token punctuation" >|</span> です。
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >登録商標</span>
+    <span class="token tag" >sup.sw-Sup</span> <span class="token plain-text" >®</span>
+    <span class="token punctuation" >|</span> です。
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >注釈</span>
+    <span class="token tag" >sup.sw-Sup<span class="token punctuation" >:</span></span> <span class="token tag" >a<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> ※1
+    <span class="token punctuation" >|</span> です。
 </code></pre>
 
             </div>
@@ -804,43 +862,46 @@
 </ul>
 <div class="aigis-preview">
 
-<table class="sw-Table">
-  <thead>
-    <tr>
-      <th scope="col">Table Header</th>
-      <th scope="col">Table Header</th>
-      <th scope="col">Table Header</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Table Header</th>
-      <td>Table Data</td>
-      <td>Table Data</td>
-    </tr>
-    <tr>
-      <th scope="row">Table Header</th>
-      <td>Table Data</td>
-      <td>Table Data</td>
-    </tr>
-  </tbody>
-</table></div>
+<div class="st-Wrapper">
+  <table class="sw-Table">
+    <thead>
+      <tr>
+        <th scope="col">Table Header</th>
+        <th scope="col">Table Header</th>
+        <th scope="col">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Table Header</th>
+        <td>Table Data</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <th scope="row">Table Header</th>
+        <td>Table Data</td>
+        <td>Table Data</td>
+      </tr>
+    </tbody>
+  </table>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >table.sw-Table</span>
-  <span class="token tag" >thead</span>
-    <span class="token tag" >tr</span>
-      <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
-      <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
-      <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
-  <span class="token tag" >tbody</span>
-    <span class="token tag" >tr</span>
-      <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
-      <span class="token tag" >td</span> <span class="token plain-text" >Table Data</span>
-      <span class="token tag" >td</span> <span class="token plain-text" >Table Data</span>
-    <span class="token tag" >tr</span>
-      <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
-      <span class="token tag" >td</span> <span class="token plain-text" >Table Data</span>
-      <span class="token tag" >td</span> <span class="token plain-text" >Table Data</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >table.sw-Table</span>
+    <span class="token tag" >thead</span>
+      <span class="token tag" >tr</span>
+        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
+        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
+        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
+    <span class="token tag" >tbody</span>
+      <span class="token tag" >tr</span>
+        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
+        <span class="token tag" >td</span> <span class="token plain-text" >Table Data</span>
+        <span class="token tag" >td</span> <span class="token plain-text" >Table Data</span>
+      <span class="token tag" >tr</span>
+        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >Table Header</span>
+        <span class="token tag" >td</span> <span class="token plain-text" >Table Data</span>
+        <span class="token tag" >td</span> <span class="token plain-text" >Table Data</span>
 </code></pre>
 
             </div>
@@ -855,63 +916,86 @@
 </ul>
 <div class="aigis-preview">
 
-<div class="sw-TableWide">
-  <table class="sw-Table">
-    <thead>
-      <tr>
-        <th scope="col">thead Table Header</th>
-        <th scope="col">thead Table Header</th>
-        <th scope="col">thead Table Header</th>
-        <th scope="col">thead Table Header</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">tbody Table Header</th>
-        <td>tbody Table Data</td>
-        <td>tbody Table Data</td>
-        <td>tbody Table Data</td>
-      </tr>
-      <tr>
-        <th scope="row">tbody Table Header</th>
-        <td>tbody Table Data</td>
-        <td>tbody Table Data</td>
-        <td>tbody Table Data</td>
-      </tr>
-      <tr>
-        <th scope="row">tbody Table Header</th>
-        <td>tbody Table Data</td>
-        <td>tbody Table Data</td>
-        <td>tbody Table Data</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="st-Wrapper">
+  <div class="sw-TableWide">
+    <table class="sw-Table">
+      <thead>
+        <tr>
+          <th scope="col">thead Table Header</th>
+          <th scope="col">thead Table Header</th>
+          <th scope="col">thead Table Header</th>
+          <th scope="col">thead Table Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">tbody Table Header</th>
+          <td>tbody Table Data</td>
+          <td>tbody Table Data</td>
+          <td>tbody Table Data</td>
+        </tr>
+        <tr>
+          <th scope="row">tbody Table Header</th>
+          <td>tbody Table Data</td>
+          <td>tbody Table Data</td>
+          <td>tbody Table Data</td>
+        </tr>
+        <tr>
+          <th scope="row">tbody Table Header</th>
+          <td>tbody Table Data</td>
+          <td>tbody Table Data</td>
+          <td>tbody Table Data</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.sw-TableWide</span>
-  <span class="token tag" >table.sw-Table</span>
-    <span class="token tag" >thead</span>
-      <span class="token tag" >tr</span>
-        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
-        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
-        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
-        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
-    <span class="token tag" >tbody</span>
-      <span class="token tag" >tr</span>
-        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-      <span class="token tag" >tr</span>
-        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-      <span class="token tag" >tr</span>
-        <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-        <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >.sw-TableWide</span>
+    <span class="token tag" >table.sw-Table</span>
+      <span class="token tag" >thead</span>
+        <span class="token tag" >tr</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
+      <span class="token tag" >tbody</span>
+        <span class="token tag" >tr</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+        <span class="token tag" >tr</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+        <span class="token tag" >tr</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="sw-Text" class="aigis-module__heading">sw-Text</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/SiteWide/_Text.scss</div>
+              <ul class="aigis-tags">
+              </ul><p>基本のテキストスタイルです。</p>
+<div class="aigis-preview">
+
+<div class="st-Wrapper">
+  <p class="sw-Text">この書生というのは時々我々を捕えて煮て食うという話である。</p>
+  <div class="sw-Text">しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</div>
+  <p class="sw-Text">どこで生れたかとんと見当がつかぬ。</p>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >この書生というのは時々我々を捕えて煮て食うという話である。</span>
+  <span class="token tag" >.sw-Text</span> <span class="token plain-text" >しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >どこで生れたかとんと見当がつかぬ。</span>
 </code></pre>
 
             </div>
@@ -922,16 +1006,19 @@
               </ul><p><code>&lt;em&gt;</code>で使われるようなスタイルです。アクセントをつけたい単語や短い文章で使用し、強調や重要性を示しません。</p>
 <div class="aigis-preview">
 
-<p class="st-Text"><em class="sw-TextEmphasis">30%OFFのため、</em>お買い得です！<small>（30%OFFであることを特に伝えたい）</small></p>
-<p class="st-Text">30%OFFのため、<em class="sw-TextEmphasis">お買い得です！</em><small>（お買い得であることを特に伝えたい）</small></p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text"><em class="sw-TextEmphasis">30%OFFのため、</em>お買い得です！<small>（30%OFFであることを特に伝えたい）</small></p>
+  <p class="sw-Text">30%OFFのため、<em class="sw-TextEmphasis">お買い得です！</em><small>（お買い得であることを特に伝えたい）</small></p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p.st-Text</span>
-  <span class="token tag" >em.sw-TextEmphasis</span> <span class="token plain-text" >30%OFFのため、</span>
-  <span class="token punctuation" >|</span> お買い得です！
-  <span class="token tag" >small</span> <span class="token plain-text" >（30%OFFであることを特に伝えたい）</span>
-<span class="token tag" >p.st-Text</span> <span class="token plain-text" >30%OFFのため、</span>
-  <span class="token tag" >em.sw-TextEmphasis</span> <span class="token plain-text" >お買い得です！</span>
-  <span class="token tag" >small</span> <span class="token plain-text" >（お買い得であることを特に伝えたい）</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >em.sw-TextEmphasis</span> <span class="token plain-text" >30%OFFのため、</span>
+    <span class="token punctuation" >|</span> お買い得です！
+    <span class="token tag" >small</span> <span class="token plain-text" >（30%OFFであることを特に伝えたい）</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >30%OFFのため、</span>
+    <span class="token tag" >em.sw-TextEmphasis</span> <span class="token plain-text" >お買い得です！</span>
+    <span class="token tag" >small</span> <span class="token plain-text" >（お買い得であることを特に伝えたい）</span>
 </code></pre>
 
             </div>
@@ -942,13 +1029,16 @@
               </ul><p><code>&lt;strong&gt;</code>で使われるようなスタイルです。重要性や緊急性・深刻性があることを示します。</p>
 <div class="aigis-preview">
 
-<p class="st-Text"><strong class="sw-TextImportant">30%OFFのため、お買い得です！</strong></p>
-<p class="st-Text"><strong class="sw-TextImportant">使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。</strong></p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text"><strong class="sw-TextImportant">30%OFFのため、お買い得です！</strong></p>
+  <p class="sw-Text"><strong class="sw-TextImportant">使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。</strong></p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p.st-Text</span>
-  <span class="token tag" >strong.sw-TextImportant</span> <span class="token plain-text" >30%OFFのため、お買い得です！</span>
-<span class="token tag" >p.st-Text</span>
-  <span class="token tag" >strong.sw-TextImportant</span> <span class="token plain-text" >使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >strong.sw-TextImportant</span> <span class="token plain-text" >30%OFFのため、お買い得です！</span>
+  <span class="token tag" >p.sw-Text</span>
+    <span class="token tag" >strong.sw-TextImportant</span> <span class="token plain-text" >使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。</span>
 </code></pre>
 
             </div>
@@ -959,11 +1049,14 @@
               </ul><p><code>&lt;p&gt;</code>や<code>&lt;small&gt;</code>で使われるようなテキストスタイルです。補足的・副次的な意味合いを持たせる場合に使います。</p>
 <div class="aigis-preview">
 
-<p class="st-Text">通常の文章です</p>
-<p class="st-SmallText sw-TextSecondary">補足的な文章です</p></div>
+<div class="st-Wrapper">
+  <p class="sw-Text">通常の文章です</p>
+  <p class="sw-TextSecondary">補足的な文章です</p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p.st-Text</span> <span class="token plain-text" >通常の文章です</span>
-<span class="token tag" >p.st-SmallText.sw-TextSecondary</span> <span class="token plain-text" >補足的な文章です</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >通常の文章です</span>
+  <span class="token tag" >p.sw-TextSecondary</span> <span class="token plain-text" >補足的な文章です</span>
 </code></pre>
 
             </div>
@@ -975,11 +1068,11 @@
 <div class="aigis-preview">
 
 <div class="st-Wrapper">
-  <h1 class="sw-Title st-Title">ページタイトル</h1>
+  <h1 class="sw-Title">ページタイトル</h1>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
-  <span class="token tag" >h1.sw-Title.st-Title</span> <span class="token plain-text" >ページタイトル</span>
+  <span class="token tag" >h1.sw-Title</span> <span class="token plain-text" >ページタイトル</span>
 </code></pre>
 
             </div>

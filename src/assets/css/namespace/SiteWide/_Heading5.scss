@@ -5,13 +5,23 @@ namespace: SiteWide
 category: Heading
 ---
 
-`<h5>`で使用する見出しです。余白には`.st-Heading5`を使用します。
+`<h5>`で使用する見出しです。
 
 ```jade
 .st-Wrapper
-  h5.sw-Heading5.st-Heading5 見出し5
+  h5.sw-Heading5 見出し5
 ```
 */
 .sw-Heading5 {
+  $self: &;
   @include sw-Heading5();
+  margin-bottom: $margin-heading5;
+
+  &#{$self} + * {
+    margin-top: 0;
+  }
+
+  @include mq-up(md) {
+    margin-bottom: $margin-heading5-md;
+  }
 }

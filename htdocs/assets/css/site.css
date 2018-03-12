@@ -751,9 +751,10 @@ category: Text
 途中で改行をさせたくないフレーズやキーワードに指定します。囲まれた範囲（Delimiter）がまとまって改行されます。
 
 ```jade
-p テキストは基本的にスペースや役物を基準に改行されますが、
-  span.sw-Delimiter この部分はまとめて改行されます。
-  | ここは通常のテキストです。
+.st-Wrapper
+  p.sw-Text テキストは基本的にスペースや役物を基準に改行されますが、
+    span.sw-Delimiter この部分はまとめて改行されます。
+    | ここは通常のテキストです。
 ```
 */
 .sw-Delimiter {
@@ -770,9 +771,10 @@ category: Text
 `<hr>`のような区切り記号を使って、分割・グルーピングします。
 
 ```jade
-p.st-Text テキストです。
-hr.sw-Divider
-p.st-Text テキストです。
+.st-Wrapper
+  p.sw-Text テキストです。
+  hr.sw-Divider
+  p.sw-Text テキストです。
 ```
 */
 .sw-Divider {
@@ -783,6 +785,10 @@ p.st-Text テキストです。
   margin: 35px auto;
   border: 0;
   border-top: 1px solid #e5e5e5;
+}
+
+.sw-Divider + .sw-Text {
+  margin-top: 0;
 }
 
 /*
@@ -1233,11 +1239,11 @@ namespace: SiteWide
 category: Heading
 ---
 
-`<h2>`で使用する見出しです。余白には`.st-Heading2`を使用します。
+`<h2>`で使用する見出しです。
 
 ```jade
 .st-Wrapper
-  h2.sw-Heading2.st-Heading2 見出し2
+  h2.sw-Heading2 見出し2
 ```
 */
 .sw-Heading2 {
@@ -1245,6 +1251,7 @@ category: Heading
   font-weight: bold;
   line-height: 1.4;
   color: #be3134;
+  margin-bottom: 25px;
 }
 
 .sw-Heading2:after {
@@ -1269,6 +1276,16 @@ category: Heading
   }
 }
 
+.sw-Heading2.sw-Heading2 + * {
+  margin-top: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Heading2 {
+    margin-bottom: 40px;
+  }
+}
+
 /*
 ---
 name: sw-Heading3
@@ -1276,11 +1293,11 @@ namespace: SiteWide
 category: Heading
 ---
 
-`<h3>`で使用する見出しです。余白には`.st-Heading3`を使用します。
+`<h3>`で使用する見出しです。
 
 ```jade
 .st-Wrapper
-  h3.sw-Heading3.st-Heading3 見出し3
+  h3.sw-Heading3 見出し3
 ```
 */
 .sw-Heading3 {
@@ -1291,6 +1308,7 @@ category: Heading
   font-weight: bold;
   line-height: 1.4;
   border-left: 5px solid #be3134;
+  margin-bottom: 25px;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -1301,6 +1319,16 @@ category: Heading
   }
 }
 
+.sw-Heading3.sw-Heading3 + * {
+  margin-top: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Heading3 {
+    margin-bottom: 40px;
+  }
+}
+
 /*
 ---
 name: sw-Heading4
@@ -1308,11 +1336,11 @@ namespace: SiteWide
 category: Heading
 ---
 
-`<h4>`で使用する見出しです。余白には`.st-Heading4`を使用します。
+`<h4>`で使用する見出しです。
 
 ```jade
 .st-Wrapper
-  h4.sw-Heading4.st-Heading4 見出し4
+  h4.sw-Heading4 見出し4
 ```
 */
 .sw-Heading4 {
@@ -1321,12 +1349,23 @@ category: Heading
   font-weight: bold;
   line-height: 1.4;
   border-bottom: 1px solid #d2d2d2;
+  margin-bottom: 15px;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-Heading4 {
     padding-bottom: 5px;
     font-size: 1.25rem;
+  }
+}
+
+.sw-Heading4.sw-Heading4 + * {
+  margin-top: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Heading4 {
+    margin-bottom: 25px;
   }
 }
 
@@ -1337,22 +1376,33 @@ namespace: SiteWide
 category: Heading
 ---
 
-`<h5>`で使用する見出しです。余白には`.st-Heading5`を使用します。
+`<h5>`で使用する見出しです。
 
 ```jade
 .st-Wrapper
-  h5.sw-Heading5.st-Heading5 見出し5
+  h5.sw-Heading5 見出し5
 ```
 */
 .sw-Heading5 {
   font-size: 1.14286rem;
   font-weight: bold;
   line-height: 1.4;
+  margin-bottom: 15px;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-Heading5 {
     font-size: 1.25rem;
+  }
+}
+
+.sw-Heading5.sw-Heading5 + * {
+  margin-top: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Heading5 {
+    margin-bottom: 25px;
   }
 }
 
@@ -1366,12 +1416,13 @@ category: Text
 `<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
 
 ```jade
-p 常に改行
-  br
-  | されます
-p ブレイクポイント以降は改行
-  br.sw-HideMd
-  | されません
+.st-Wrapper
+  p.sw-Text 常に改行
+    br
+    | されます
+  p.sw-Text ブレイクポイント以降は改行
+    br.sw-HideMd
+    | されません
 ```
 */
 .sw-Hide {
@@ -1459,15 +1510,25 @@ category: Text
 他の文章と区別するためだけに利用し、`<strong>`の重要性や深刻性、`<em>`の強調（アクセント）、`<h2>`のような見出しとしての意味はありません。
 
 ```jade
-p.st-Lead
-  b.sw-Lead ◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。
-p.st-Text △△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。
+p.sw-Lead
+  b ◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。
+p.sw-Text △△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。
 ```
 */
 .sw-Lead {
+  margin-bottom: 35px;
   font-weight: 700;
   font-size: 1.28571rem;
-  color: #0a41a6;
+}
+
+.sw-Lead.sw-Lead + * {
+  margin-top: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Lead {
+    margin-bottom: 50px;
+  }
 }
 
 /*
@@ -1480,8 +1541,9 @@ category: Link
 テキストリンクのデフォルトスタイルです。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 ```
 */
 .sw-Link {
@@ -1504,12 +1566,13 @@ category: [Link, Icon]
 ファイルをダウンロードするためのリンクであることを示す場合に使います。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 
-p
-  a.sw-LinkDownload(href="#") ファイルをダウンロードする
-    span.sw-LinkDownload_Icon(aria-hidden="true")
+  p.sw-Text
+    a.sw-LinkDownload(href="#") ファイルをダウンロードする
+      span.sw-LinkDownload_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkDownload {
@@ -1556,12 +1619,13 @@ category: [Link, Icon]
 外部リンクであることを示す場合に使います。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 
-p
-  a.sw-LinkExternal(href="#") 外部リンクを開く
-    span.sw-LinkExternal_Icon(aria-hidden="true")
+  p.sw-Text
+    a.sw-LinkExternal(href="#") 外部リンクを開く
+      span.sw-LinkExternal_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkExternal {
@@ -1608,12 +1672,13 @@ category: [Link, Icon]
 クリックを促すようなテキストリンクに使います。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 
-p
-  a.sw-LinkMore(href="#") 詳しく見る
-    span.sw-LinkMore_Icon(aria-hidden="true")
+  p.sw-Text
+    a.sw-LinkMore(href="#") 詳しく見る
+      span.sw-LinkMore_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkMore {
@@ -1660,15 +1725,16 @@ category: Link
 注釈へのリンクです。`<sup>`タグの子要素として指定します。
 
 ```jade
-p ○○
-  sup
-    a.sw-LinkNote(href="#") 1
-  | を使っています。
+.st-Wrapper
+  p.sw-Text ○○
+    sup
+      a.sw-LinkNote(href="#") 1
+    | を使っています。
 
-p(lang="en") ○○
-  sup
-    a.sw-LinkNote(href="#") 1
-  | を使っています。
+  p.sw-Text(lang="en") ○○
+    sup
+      a.sw-LinkNote(href="#") 1
+    | を使っています。
 ```
 */
 .sw-LinkNote {
@@ -1701,12 +1767,13 @@ category: [Link, Icon]
 リンク先がPDFであることを示す場合に使います。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 
-p
-  a.sw-LinkPdf(href="#") PDFをダウンロードする
-    span.sw-LinkPdf_Icon(aria-hidden="true")
+  p.sw-Text
+    a.sw-LinkPdf(href="#") PDFをダウンロードする
+      span.sw-LinkPdf_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkPdf {
@@ -1753,17 +1820,19 @@ category: List
 括弧で囲んだ順序リストです。
 
 ```jade
-ol.sw-ListBracketOrder
-  li リストです。リストです。リストです。リストです。
-  li リストです
+.st-Wrapper
+  ol.sw-ListBracketOrder
+    li リストです。リストです。リストです。リストです。
+    li リストです
 ```
 
 リストを2から始める場合は`.sw-ListBracketOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-ol.sw-ListBracketOrder.sw-ListBracketOrder-from2(start="2")
-  li リストです。リストです。リストです。リストです。
-  li リストです
+.st-Wrapper
+  ol.sw-ListBracketOrder.sw-ListBracketOrder-from2(start="2")
+    li リストです。リストです。リストです。リストです。
+    li リストです
 ```
 */
 .sw-ListBracketOrder {
@@ -1831,14 +1900,15 @@ category: List
 注釈用のリストです。米印やアスタリスクが表示されます。
 
 ```jade
-ul.sw-ListNote
-  li 1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です
-  li 2つ目の注釈です
-
-div(lang="en")
+.st-Wrapper
   ul.sw-ListNote
-    li This is the first comment. This is the first comment. This is the first comment.
-    li This is the second comment.
+    li 1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です
+    li 2つ目の注釈です
+
+  div(lang="en")
+    ul.sw-ListNote
+      li This is the first comment. This is the first comment. This is the first comment.
+      li This is the second comment.
 ```
 */
 .sw-ListNote {
@@ -1880,27 +1950,29 @@ category: List
 注釈用のリストです。米印やアスタリスクが表示されます。
 
 ```jade
-ol.sw-ListNoteOrder
-  li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
-  li 注釈です。
+.st-Wrapper
+  ol.sw-ListNoteOrder
+    li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
+    li 注釈です。
 
-div(lang="en")
-  ul.sw-ListNoteOrder
-    li This is an annotation. This is an annotation. This is an annotation.
-    li This is an annotation.
+  div(lang="en")
+    ul.sw-ListNoteOrder
+      li This is an annotation. This is an annotation. This is an annotation.
+      li This is an annotation.
 ```
 
 リストを2から始める場合は`.sw-ListNoteOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
-  li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
-  li 注釈です。
-
-div(lang="en")
+.st-Wrapper
   ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
-    li This is an annotation. This is an annotation. This is an annotation.
-    li This is an annotation.
+    li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
+    li 注釈です。
+
+  div(lang="en")
+    ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
+      li This is an annotation. This is an annotation. This is an annotation.
+      li This is an annotation.
 ```
 */
 .sw-ListNoteOrder {
@@ -1984,23 +2056,25 @@ category: List
 入れ子に対応した順序リストです。
 
 ```jade
-ol.sw-ListOrder
-  li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
-  li 入れ子に対応した順序リストです。
-    ol
-      li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
-      li 入れ子に対応した順序リストです。
+.st-Wrapper
+  ol.sw-ListOrder
+    li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
+    li 入れ子に対応した順序リストです。
+      ol
+        li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
+        li 入れ子に対応した順序リストです。
 ```
 
 リストを2から始める場合は`.sw-ListOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-ol.sw-ListOrder.sw-ListOrder-from2(start="2")
-  li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
-  li 入れ子に対応した順序リストです。
-    ol
-      li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
-      li 入れ子に対応した順序リストです。
+.st-Wrapper
+  ol.sw-ListOrder.sw-ListOrder-from2(start="2")
+    li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
+    li 入れ子に対応した順序リストです。
+      ol
+        li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
+        li 入れ子に対応した順序リストです。
 ```
 */
 .sw-ListOrder {
@@ -2075,12 +2149,13 @@ category: List
 順序をもたない並列なリストです。
 
 ```jade
-ul.sw-ListUnorder
-  li リストです。
-  li リストです。
-    ul.sw-ListUnorder_Child
-      li リストです。
-      li リストです。
+.st-Wrapper
+  ul.sw-ListUnorder
+    li リストです。
+    li リストです。
+      ul.sw-ListUnorder_Child
+        li リストです。
+        li リストです。
 ```
 */
 .sw-ListUnorder {
@@ -2174,12 +2249,13 @@ category: Text
 `<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
 
 ```jade
-p 常に改行
-  br
-  | されます
-p ブレイクポイント以降は改行
-  br.sw-Hide.sw-ShowMd
-  | されます
+.st-Wrapper
+  p.sw-Text 常に改行
+    br
+    | されます
+  p.sw-Text ブレイクポイント以降は改行
+    br.sw-Hide.sw-ShowMd
+    | されます
 ```
 */
 .sw-Show {
@@ -2215,12 +2291,13 @@ category: Text
 
 
 ```jade
-p.st-Text 登録商標
-  sup.sw-Sup ®
-  | です。
-p.st-Text 注釈
-  sup.sw-Sup: a(href="#") ※1
-  | です。
+.st-Wrapper
+  p.sw-Text 登録商標
+    sup.sw-Sup ®
+    | です。
+  p.sw-Text 注釈
+    sup.sw-Sup: a(href="#") ※1
+    | です。
 ```
 */
 .sw-Sup {
@@ -2244,21 +2321,22 @@ category: List
 セルの結合はUAが解釈することが難しい機能で、特にスクリーンリーダーなどでうまく情報が伝えられない恐れがあります。1つの複雑なテーブルではなく、複数のシンプルなテーブルにできないか検討してください。
 
 ```jade
-table.sw-Table
-  thead
-    tr
-      th(scope="col") Table Header
-      th(scope="col") Table Header
-      th(scope="col") Table Header
-  tbody
-    tr
-      th(scope="row") Table Header
-      td Table Data
-      td Table Data
-    tr
-      th(scope="row") Table Header
-      td Table Data
-      td Table Data
+.st-Wrapper
+  table.sw-Table
+    thead
+      tr
+        th(scope="col") Table Header
+        th(scope="col") Table Header
+        th(scope="col") Table Header
+    tbody
+      tr
+        th(scope="row") Table Header
+        td Table Data
+        td Table Data
+      tr
+        th(scope="row") Table Header
+        td Table Data
+        td Table Data
 ```
 */
 .sw-Table {
@@ -2291,30 +2369,31 @@ category: List
 - 改行は`<br>`で指定してください。
 
 ```jade
-.sw-TableWide
-  table.sw-Table
-    thead
-      tr
-        th(scope="col") thead Table Header
-        th(scope="col") thead Table Header
-        th(scope="col") thead Table Header
-        th(scope="col") thead Table Header
-    tbody
-      tr
-        th(scope="row") tbody Table Header
-        td tbody Table Data
-        td tbody Table Data
-        td tbody Table Data
-      tr
-        th(scope="row") tbody Table Header
-        td tbody Table Data
-        td tbody Table Data
-        td tbody Table Data
-      tr
-        th(scope="row") tbody Table Header
-        td tbody Table Data
-        td tbody Table Data
-        td tbody Table Data
+.st-Wrapper
+  .sw-TableWide
+    table.sw-Table
+      thead
+        tr
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+      tbody
+        tr
+          th(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+        tr
+          th(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+        tr
+          th(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
 ```
 */
 .sw-TableWide {
@@ -2344,6 +2423,33 @@ category: List
 
 /*
 ---
+name: sw-Text
+namespace: SiteWide
+category: Text
+---
+
+基本のテキストスタイルです。
+
+```jade
+.st-Wrapper
+  p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
+  .sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+  p.sw-Text どこで生れたかとんと見当がつかぬ。
+```
+*/
+.sw-Text {
+  margin-top: 35px;
+  font-size: 1rem;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Text {
+    margin-top: 50px;
+  }
+}
+
+/*
+---
 name: sw-TextEmphasis
 namespace: SiteWide
 category: Text
@@ -2352,13 +2458,14 @@ category: Text
 `<em>`で使われるようなスタイルです。アクセントをつけたい単語や短い文章で使用し、強調や重要性を示しません。
 
 ```jade
-p.st-Text
-  em.sw-TextEmphasis 30%OFFのため、
-  | お買い得です！
-  small （30%OFFであることを特に伝えたい）
-p.st-Text 30%OFFのため、
-  em.sw-TextEmphasis お買い得です！
-  small （お買い得であることを特に伝えたい）
+.st-Wrapper
+  p.sw-Text
+    em.sw-TextEmphasis 30%OFFのため、
+    | お買い得です！
+    small （30%OFFであることを特に伝えたい）
+  p.sw-Text 30%OFFのため、
+    em.sw-TextEmphasis お買い得です！
+    small （お買い得であることを特に伝えたい）
 ```
 */
 .sw-TextEmphasis {
@@ -2376,10 +2483,11 @@ category: Text
 `<strong>`で使われるようなスタイルです。重要性や緊急性・深刻性があることを示します。
 
 ```jade
-p.st-Text
-  strong.sw-TextImportant 30%OFFのため、お買い得です！
-p.st-Text
-  strong.sw-TextImportant 使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。
+.st-Wrapper
+  p.sw-Text
+    strong.sw-TextImportant 30%OFFのため、お買い得です！
+  p.sw-Text
+    strong.sw-TextImportant 使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。
 ```
 */
 .sw-TextImportant {
@@ -2396,12 +2504,20 @@ category: Text
 `<p>`や`<small>`で使われるようなテキストスタイルです。補足的・副次的な意味合いを持たせる場合に使います。
 
 ```jade
-p.st-Text 通常の文章です
-p.st-SmallText.sw-TextSecondary 補足的な文章です
+.st-Wrapper
+  p.sw-Text 通常の文章です
+  p.sw-TextSecondary 補足的な文章です
 ```
 */
 .sw-TextSecondary {
+  margin-top: 10px;
   font-size: 0.85em;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-TextSecondary {
+    margin-top: 15px;
+  }
 }
 
 /*
@@ -2415,7 +2531,7 @@ category: Heading
 
 ```jade
 .st-Wrapper
-  h1.sw-Title.st-Title ページタイトル
+  h1.sw-Title ページタイトル
 ```
 */
 .sw-Title {
@@ -2425,12 +2541,19 @@ category: Heading
   line-height: 1.2;
   text-align: center;
   color: #be3134;
+  margin-bottom: 25px;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-Title {
     font-size: 1.875rem;
     line-height: 1.4;
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Title {
+    margin-bottom: 40px;
   }
 }
 
@@ -2517,42 +2640,38 @@ category: Layout
         p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
 ```
 */
-.st-Block + .st-Block,
-:not(.st-Block) + .st-Block {
+.st-Block {
   margin-top: 40px;
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Block + .st-Block,
-  :not(.st-Block) + .st-Block {
+  .st-Block {
     margin-top: 50px;
   }
 }
 
-.st-Block-divider + .st-Block-divider,
-:not(.st-Block-divider) + .st-Block-divider {
+.st-Block-divider {
   margin-top: 20px;
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Block-divider + .st-Block-divider,
-  :not(.st-Block-divider) + .st-Block-divider {
+  .st-Block-divider {
     margin-top: 50px;
   }
 }
 
-.st-Block-divider:after {
+.st-Block-divider + .st-Block-divider:before {
   content: "";
   display: block;
   width: 100%;
   height: 1px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e3e3e3;
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3;
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Block-divider:after {
-    padding-bottom: 50px;
+  .st-Block-divider + .st-Block-divider:before {
+    padding-top: 50px;
   }
 }
 
@@ -3116,8 +3235,6 @@ category: Layout
 
 カラム間の余白は幅を`$st-grids-column-gap`、高さを`$st-grids-row-gap`で統一しています。
 
-`.st-Grids`同士が同じ階層にある場合（`.st-Grids + .st-Grids`）には`.st-Grids`の間に余白がつきます。
-
 以下のような指定ができます。
 
 - `.st-Grids-col2`のように1/2から1/5までの均等なカラム指定。
@@ -3214,27 +3331,18 @@ category: Layout
 ```
 */
 .st-Grids {
+  margin-top: 35px;
   margin-left: -15px;
   padding-left: 0;
   list-style-type: none;
   display: block;
   font-size: 0;
-  /* 同じ階層にある`.st-Grids`同士の間に余白を入れます。 */
 }
 
 @media print, screen and (min-width: 768px) {
   .st-Grids {
-    margin-left: -30px;
-  }
-}
-
-.st-Grids:not(:first-of-type) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids:not(:first-of-type) {
     margin-top: 50px;
+    margin-left: -30px;
   }
 }
 
@@ -4156,137 +4264,6 @@ category: Global
 */
 /*
 ---
-name: st-Heading2
-namespace: Structure
-category: Layout
----
-
-h2相当の見出し自身の余白を指定します。
-
-```jade
-.st-Wrapper
-  h2.st-Heading2.sw-Heading2 .st-Heading2
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Heading2 {
-  margin-bottom: 25px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading2 {
-    margin-bottom: 40px;
-  }
-}
-
-/*
----
-name: st-Heading3
-namespace: Structure
-category: Layout
----
-
-h3相当の見出し自身の余白を指定します。
-
-```jade
-.st-Wrapper
-  h3.st-Heading3.sw-Heading3 .st-Heading3
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Heading3 {
-  margin-bottom: 25px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading3 {
-    margin-bottom: 40px;
-  }
-}
-
-/*
----
-name: st-Heading4
-namespace: Structure
-category: Layout
----
-
-h4相当の見出し自身の余白を指定します。
-
-```jade
-.st-Wrapper
-  h4.st-Heading4.sw-Heading4 .st-Heading4
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Heading4 {
-  margin-bottom: 15px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading4 {
-    margin-bottom: 25px;
-  }
-}
-
-/*
----
-name: st-Heading5
-namespace: Structure
-category: Layout
----
-
-h5相当の見出し自身の余白を指定します。
-
-```jade
-.st-Wrapper
-  h5.st-Heading5.sw-Heading5 .st-Heading5
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Heading5 {
-  margin-bottom: 15px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading5 {
-    margin-bottom: 25px;
-  }
-}
-
-/*
----
-name: st-Lead
-namespace: Structure
-category: Layout
----
-
-リード文自身の余白を指定します。
-
-```jade
-.st-Wrapper
-  p.st-Lead
-    b.sw-Lead .st-Lead
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-  p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Lead {
-  margin-bottom: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Lead {
-    margin-bottom: 50px;
-  }
-}
-
-/*
----
 name: st-Section2
 namespace: Structure
 category: Layout
@@ -4296,15 +4273,15 @@ h2相当の見出しをラップするセクションの余白を指定します
 
 ```jade
 .st-Wrapper
-  p.st-Text.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
 
   section.st-Section2
-    h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    p.st-Text.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
 
   section.st-Section2
-    h2.st-Heading2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
     .st-Block
       .test-Block
         .test-Block_Left
@@ -4319,22 +4296,22 @@ h2相当の見出しをラップするセクションの余白を指定します
         .test-Block_Right
           h3 ダミーの見出しです
           p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    p.st-Text.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
+    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
 
 レイアウト例です。`.st-Section2-divider`を追加すると`.st-Section2`同士の間にボーダーがつきます。
 
 ```jade
 .st-Wrapper
-  p.st-Text.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
 
   section.st-Section2.st-Section2-divider
-    h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    p.st-Text.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
 
   section.st-Section2.st-Section2-divider
-    h2.st-Heading2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
     .st-Block
       .test-Block
         .test-Block_Left
@@ -4349,22 +4326,22 @@ h2相当の見出しをラップするセクションの余白を指定します
         .test-Block_Right
           h3 ダミーの見出しです
           p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    p.st-Text.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
+    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
 
 レイアウト例です。`.st-Section2-dividerFull`を追加すると`.st-Section2`同士の間にボーダーがつきます。ボーダーの横幅は画面に対して常に100%（`100vw`）になります。
 
 ```jade
 .st-Wrapper
-  p.st-Text.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
 
   section.st-Section2.st-Section2-dividerFull
-    h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    p.st-Text.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
 
   section.st-Section2.st-Section2-dividerFull
-    h2.st-Heading2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
     .st-Block
       .test-Block
         .test-Block_Left
@@ -4379,32 +4356,32 @@ h2相当の見出しをラップするセクションの余白を指定します
         .test-Block_Right
           h3 ダミーの見出しです
           p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    p.st-Text.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
+    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
 */
-.st-Section2 + .st-Section2,
-:not(.st-Section2) + .st-Section2 {
+.st-Section2 {
   margin-top: 60px;
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Section2 + .st-Section2,
-  :not(.st-Section2) + .st-Section2 {
+  .st-Section2 {
     margin-top: 100px;
   }
+}
+
+.st-Section2 > :first-child {
+  margin-top: 0;
 }
 
 .st-Section2 > :last-child {
   margin-bottom: 0;
 }
 
-.st-Section2-divider + .st-Section2-divider,
-:not(.st-Section2-divider) + .st-Section2-divider {
+.st-Section2-divider {
   margin-top: 30px;
 }
 
-.st-Section2-divider + .st-Section2-divider:before,
-:not(.st-Section2-divider) + .st-Section2-divider:before {
+.st-Section2-divider + .st-Section2-divider:before {
   content: "";
   display: block;
   width: 100%;
@@ -4414,23 +4391,19 @@ h2相当の見出しをラップするセクションの余白を指定します
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Section2-divider + .st-Section2-divider,
-  :not(.st-Section2-divider) + .st-Section2-divider {
+  .st-Section2-divider {
     margin-top: 50px;
   }
-  .st-Section2-divider + .st-Section2-divider:before,
-  :not(.st-Section2-divider) + .st-Section2-divider:before {
+  .st-Section2-divider + .st-Section2-divider:before {
     padding-top: 50px;
   }
 }
 
-.st-Section2-dividerFull + .st-Section2-dividerFull,
-:not(.st-Section2-dividerFull) + .st-Section2-dividerFull {
+.st-Section2-dividerFull {
   margin-top: 30px;
 }
 
-.st-Section2-dividerFull + .st-Section2-dividerFull:before,
-:not(.st-Section2-dividerFull) + .st-Section2-dividerFull:before {
+.st-Section2-dividerFull + .st-Section2-dividerFull:before {
   content: "";
   display: block;
   height: 1px;
@@ -4441,12 +4414,10 @@ h2相当の見出しをラップするセクションの余白を指定します
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Section2-dividerFull + .st-Section2-dividerFull,
-  :not(.st-Section2-dividerFull) + .st-Section2-dividerFull {
+  .st-Section2-dividerFull {
     margin-top: 50px;
   }
-  .st-Section2-dividerFull + .st-Section2-dividerFull:before,
-  :not(.st-Section2-dividerFull) + .st-Section2-dividerFull:before {
+  .st-Section2-dividerFull + .st-Section2-dividerFull:before {
     padding-top: 50px;
   }
 }
@@ -4463,16 +4434,16 @@ h3相当の見出しをラップするセクションの余白を指定します
 ```jade
 .st-Wrapper
   section.st-Section2
-    h2.st-Heading2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
 
     section.st-Section3
-      h3.st-Heading3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.st-Text.sw-Text.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
     section.st-Section3
-      h3.st-Heading3.sw-Heading3 吾輩は猫である。名前はまだ無い。
+      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
       .st-Block
         p.test-Box .st-Block
-      p.st-Text.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 
 レイアウト例です。`.st-Section3-divider`を追加すると`.st-Section3`同士の間にボーダーがつきます。
@@ -4480,26 +4451,24 @@ h3相当の見出しをラップするセクションの余白を指定します
 ```jade
 .st-Wrapper
   section.st-Section2
-    h2.st-Heading2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
 
     section.st-Section3.st-Section3-divider
-      h3.st-Heading3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.st-Text.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
     section.st-Section3.st-Section3-divider
-      h3.st-Heading3.sw-Heading3 吾輩は猫である。名前はまだ無い。
+      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
       .st-Block
         p.test-Box .st-Block
-      p.st-Text.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
-.st-Section3 + .st-Section3,
-:not(.st-Section3) + .st-Section3 {
+.st-Section3 {
   margin-top: 50px;
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Section3 + .st-Section3,
-  :not(.st-Section3) + .st-Section3 {
+  .st-Section3 {
     margin-top: 80px;
   }
 }
@@ -4514,17 +4483,19 @@ h3相当の見出しをラップするセクションの余白を指定します
   }
 }
 
+.st-Section3 > :first-child {
+  margin-top: 0;
+}
+
 .st-Section3 > :last-child {
   margin-bottom: 0;
 }
 
-.st-Section3-divider + .st-Section3-divider,
-:not(.st-Section3-divider) + .st-Section3-divider {
+.st-Section3-divider {
   margin-top: 25px;
 }
 
-.st-Section3-divider + .st-Section3-divider:before,
-:not(.st-Section3-divider) + .st-Section3-divider:before {
+.st-Section3-divider + .st-Section3-divider:before {
   content: "";
   display: block;
   width: 100%;
@@ -4534,12 +4505,10 @@ h3相当の見出しをラップするセクションの余白を指定します
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Section3-divider + .st-Section3-divider,
-  :not(.st-Section3-divider) + .st-Section3-divider {
+  .st-Section3-divider {
     margin-top: 50px;
   }
-  .st-Section3-divider + .st-Section3-divider:before,
-  :not(.st-Section3-divider) + .st-Section3-divider:before {
+  .st-Section3-divider + .st-Section3-divider:before {
     padding-top: 50px;
   }
 }
@@ -4565,29 +4534,29 @@ h4相当の見出しをラップするセクションの余白を指定します
 
 ```jade
 .st-Wrapper
-  p.st-Text.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
 
   section.st-Section2
-    h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    p.st-Text.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
 
   section.st-Section2
-    h2.st-Heading2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
 
     section.st-Section3
-      h3.st-Heading3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.st-Text.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
     section.st-Section3
-      h3.st-Heading3.sw-Heading3 吾輩は猫である。名前はまだ無い。
+      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
 
       section.st-Section4
-        h4.st-Heading4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
-        p.st-Text.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
-        p.st-Text.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+        h4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+        p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
+        p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
       section.st-Section4
-        h4.st-Heading4.sw-Heading4 p.st-Text.sw-Text どこで生れたかとんと見当がつかぬ。
-        p.st-Text.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+        h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
+        p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
 .st-Section4 + .st-Section4,
@@ -4612,6 +4581,10 @@ h4相当の見出しをラップするセクションの余白を指定します
   }
 }
 
+.st-Section4 > :first-child {
+  margin-top: 0;
+}
+
 .st-Section4 > :last-child {
   margin-bottom: 0;
 }
@@ -4628,18 +4601,18 @@ h5相当の見出しをラップするセクションの余白を指定します
 ```jade
 .st-Wrapper
   section.st-Section4
-    h4.st-Heading4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
-    p.st-Text.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
-    p.st-Text.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    h4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+    p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
   section.st-Section4
-    h4.st-Heading4.sw-Heading4 p.st-Text.sw-Text どこで生れたかとんと見当がつかぬ。
+    h4.sw-Heading4 p.sw-Text どこで生れたかとんと見当がつかぬ。
 
     section.st-Section5
-      h5.st-Heading5.sw-Heading5 吾輩は猫である。名前はまだ無い。
-      p.st-Text.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+      h5.sw-Heading5 吾輩は猫である。名前はまだ無い。
+      p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
     section.st-Section5
-      h5.st-Heading5.sw-Heading5 どこで生れたかとんと見当がつかぬ。
-      p.st-Text.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+      h5.sw-Heading5 どこで生れたかとんと見当がつかぬ。
+      p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
 .st-Section5 + .st-Section5,
@@ -4664,98 +4637,12 @@ h5相当の見出しをラップするセクションの余白を指定します
   }
 }
 
-.st-Section5 > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-SmallText
-namespace: Structure
-category: Layout
----
-
-補足情報などのテキストの余白を指定します。
-
-```jade
-.st-Wrapper
-  p.st-Text.sw-TextSecondary どこで生れたかとんと見当がつかぬ。
-  .st-SmallText
-    small.sw-TextSecondary しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-  .st-SmallText
-    small.sw-TextSecondary どこで生れたかとんと見当がつかぬ。
-```
-*/
-.st-SmallText + .st-SmallText,
-:not(.st-SmallText) + .st-SmallText {
-  margin-top: 10px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-SmallText + .st-SmallText,
-  :not(.st-SmallText) + .st-SmallText {
-    margin-top: 15px;
-  }
-}
-
-/*
----
-name: st-Text
-namespace: Structure
-category: Layout
----
-
-通常のテキストの余白を指定します。
-
-```jade
-.st-Wrapper
-  p.st-Text.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
-  .st-Text.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-  p.st-Text.sw-Text どこで生れたかとんと見当がつかぬ。
-```
-*/
-.st-Text + .st-Text,
-:not(.st-Text) + .st-Text {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Text + .st-Text,
-  :not(.st-Text) + .st-Text {
-    margin-top: 50px;
-  }
-}
-
-.st-Heading2 + .st-Text,
-.st-Heading3 + .st-Text,
-.st-Heading4 + .st-Text,
-.st-Heading5 + .st-Text,
-.st-Lead + .st-Text {
+.st-Section5 > :first-child {
   margin-top: 0;
 }
 
-/*
----
-name: st-Title
-namespace: Structure
-category: Layout
----
-
-ページタイトルの余白を指定します。
-
-```html
-.st-Wrapper
-  h1.sw-Title.st-Title ページタイトル
-```
-*/
-.st-Title {
-  margin-bottom: 25px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Title {
-    margin-bottom: 40px;
-  }
+.st-Section5 > :last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -4799,6 +4686,10 @@ category: Layout
   margin-right: auto;
   margin-left: auto;
   padding: 0 20px;
+}
+
+.st-Wrapper > :first-child {
+  margin-top: 0;
 }
 
 @media print, screen and (min-width: 1170px) {

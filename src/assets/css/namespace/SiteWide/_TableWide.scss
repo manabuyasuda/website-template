@@ -10,30 +10,31 @@ category: List
 - 改行は`<br>`で指定してください。
 
 ```jade
-.sw-TableWide
-  table.sw-Table
-    thead
-      tr
-        th(scope="col") thead Table Header
-        th(scope="col") thead Table Header
-        th(scope="col") thead Table Header
-        th(scope="col") thead Table Header
-    tbody
-      tr
-        th(scope="row") tbody Table Header
-        td tbody Table Data
-        td tbody Table Data
-        td tbody Table Data
-      tr
-        th(scope="row") tbody Table Header
-        td tbody Table Data
-        td tbody Table Data
-        td tbody Table Data
-      tr
-        th(scope="row") tbody Table Header
-        td tbody Table Data
-        td tbody Table Data
-        td tbody Table Data
+.st-Wrapper
+  .sw-TableWide
+    table.sw-Table
+      thead
+        tr
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+      tbody
+        tr
+          th(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+        tr
+          th(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+        tr
+          th(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
 ```
 */
 .sw-TableWide {

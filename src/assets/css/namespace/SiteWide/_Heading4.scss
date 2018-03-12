@@ -5,13 +5,23 @@ namespace: SiteWide
 category: Heading
 ---
 
-`<h4>`で使用する見出しです。余白には`.st-Heading4`を使用します。
+`<h4>`で使用する見出しです。
 
 ```jade
 .st-Wrapper
-  h4.sw-Heading4.st-Heading4 見出し4
+  h4.sw-Heading4 見出し4
 ```
 */
 .sw-Heading4 {
+  $self: &;
   @include sw-Heading4();
+  margin-bottom: $margin-heading4;
+
+  &#{$self} + * {
+    margin-top: 0;
+  }
+
+  @include mq-up(md) {
+    margin-bottom: $margin-heading4-md;
+  }
 }

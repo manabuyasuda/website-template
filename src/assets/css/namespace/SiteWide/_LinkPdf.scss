@@ -8,12 +8,13 @@ category: [Link, Icon]
 リンク先がPDFであることを示す場合に使います。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 
-p
-  a.sw-LinkPdf(href="#") PDFをダウンロードする
-    span.sw-LinkPdf_Icon(aria-hidden="true")
+  p.sw-Text
+    a.sw-LinkPdf(href="#") PDFをダウンロードする
+      span.sw-LinkPdf_Icon(aria-hidden="true")
 ```
 */
 .sw-LinkPdf {

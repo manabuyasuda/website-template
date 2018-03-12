@@ -8,10 +8,11 @@ category: Text
 `<strong>`で使われるようなスタイルです。重要性や緊急性・深刻性があることを示します。
 
 ```jade
-p.st-Text
-  strong.sw-TextImportant 30%OFFのため、お買い得です！
-p.st-Text
-  strong.sw-TextImportant 使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。
+.st-Wrapper
+  p.sw-Text
+    strong.sw-TextImportant 30%OFFのため、お買い得です！
+  p.sw-Text
+    strong.sw-TextImportant 使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。
 ```
 */
 .sw-TextImportant {

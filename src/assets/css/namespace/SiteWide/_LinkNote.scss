@@ -8,15 +8,16 @@ category: Link
 注釈へのリンクです。`<sup>`タグの子要素として指定します。
 
 ```jade
-p ○○
-  sup
-    a.sw-LinkNote(href="#") 1
-  | を使っています。
+.st-Wrapper
+  p.sw-Text ○○
+    sup
+      a.sw-LinkNote(href="#") 1
+    | を使っています。
 
-p(lang="en") ○○
-  sup
-    a.sw-LinkNote(href="#") 1
-  | を使っています。
+  p.sw-Text(lang="en") ○○
+    sup
+      a.sw-LinkNote(href="#") 1
+    | を使っています。
 ```
 */
 .sw-LinkNote {

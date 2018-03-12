@@ -40,6 +40,10 @@ category: Layout
   margin-left: auto;
   padding: 0 20px;
 
+  & > :first-child {
+    margin-top: 0;
+  }
+
   @media print, screen and (min-width: $max-width) {
     padding: 0;
   }

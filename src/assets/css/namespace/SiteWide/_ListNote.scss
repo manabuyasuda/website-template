@@ -8,14 +8,15 @@ category: List
 注釈用のリストです。米印やアスタリスクが表示されます。
 
 ```jade
-ul.sw-ListNote
-  li 1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です
-  li 2つ目の注釈です
-
-div(lang="en")
+.st-Wrapper
   ul.sw-ListNote
-    li This is the first comment. This is the first comment. This is the first comment.
-    li This is the second comment.
+    li 1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です
+    li 2つ目の注釈です
+
+  div(lang="en")
+    ul.sw-ListNote
+      li This is the first comment. This is the first comment. This is the first comment.
+      li This is the second comment.
 ```
 */
 .sw-ListNote {

@@ -9,13 +9,22 @@ category: Text
 他の文章と区別するためだけに利用し、`<strong>`の重要性や深刻性、`<em>`の強調（アクセント）、`<h2>`のような見出しとしての意味はありません。
 
 ```jade
-p.st-Lead
-  b.sw-Lead ◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。
-p.st-Text △△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。
+p.sw-Lead
+  b ◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。
+p.sw-Text △△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。
 ```
 */
 .sw-Lead {
+  $self: &;
+  margin-bottom: $margin-lead;
   font-weight: 700;
   font-size: rem(18);
-  color: $color-lead;
+
+  &#{$self} + * {
+    margin-top: 0;
+  }
+
+  @include mq-up(md) {
+    margin-bottom: $margin-lead-md;
+  }
 }

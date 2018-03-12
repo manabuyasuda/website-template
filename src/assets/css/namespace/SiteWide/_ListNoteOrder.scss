@@ -8,27 +8,29 @@ category: List
 注釈用のリストです。米印やアスタリスクが表示されます。
 
 ```jade
-ol.sw-ListNoteOrder
-  li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
-  li 注釈です。
+.st-Wrapper
+  ol.sw-ListNoteOrder
+    li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
+    li 注釈です。
 
-div(lang="en")
-  ul.sw-ListNoteOrder
-    li This is an annotation. This is an annotation. This is an annotation.
-    li This is an annotation.
+  div(lang="en")
+    ul.sw-ListNoteOrder
+      li This is an annotation. This is an annotation. This is an annotation.
+      li This is an annotation.
 ```
 
 リストを2から始める場合は`.sw-ListNoteOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
-  li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
-  li 注釈です。
-
-div(lang="en")
+.st-Wrapper
   ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
-    li This is an annotation. This is an annotation. This is an annotation.
-    li This is an annotation.
+    li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
+    li 注釈です。
+
+  div(lang="en")
+    ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
+      li This is an annotation. This is an annotation. This is an annotation.
+      li This is an annotation.
 ```
 */
 .sw-ListNoteOrder {

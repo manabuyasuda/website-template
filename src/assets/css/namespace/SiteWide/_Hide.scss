@@ -8,12 +8,13 @@ category: Text
 `<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
 
 ```jade
-p 常に改行
-  br
-  | されます
-p ブレイクポイント以降は改行
-  br.sw-HideMd
-  | されません
+.st-Wrapper
+  p.sw-Text 常に改行
+    br
+    | されます
+  p.sw-Text ブレイクポイント以降は改行
+    br.sw-HideMd
+    | されません
 ```
 */
 .sw-Hide {

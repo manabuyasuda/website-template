@@ -46,36 +46,30 @@ category: Layout
 ```
 */
 .st-Block {
-  & + &,
-  :not(#{&}) + & {
-    margin-top: $margin-block;
+  margin-top: $margin-block;
 
-    @include mq-up(md) {
-      margin-top: $margin-block-md;
-    }
+  @include mq-up(md) {
+    margin-top: $margin-block-md;
   }
 }
 
 .st-Block-divider {
-  & + &,
-  :not(#{&}) + & {
-    margin-top: $margin-block-divider;
+  margin-top: $margin-block-divider;
 
-    @include mq-up(md) {
-      margin-top: $margin-block-divider-md;
-    }
+  @include mq-up(md) {
+    margin-top: $margin-block-divider-md;
   }
 
-  &:after {
+  & + &:before {
     content: "";
     display: block;
     width: 100%;
     height: 1px;
-    padding-bottom: $margin-block-divider;
-    border-bottom: 1px solid #e3e3e3;
+    padding-top: $margin-block-divider;
+    border-top: 1px solid #e3e3e3;
 
     @include mq-up(md) {
-      padding-bottom: $margin-block-divider-md;
+      padding-top: $margin-block-divider-md;
     }
   }
 }

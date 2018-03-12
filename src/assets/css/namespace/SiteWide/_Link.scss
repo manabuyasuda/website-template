@@ -8,8 +8,9 @@ category: Link
 テキストリンクのデフォルトスタイルです。
 
 ```jade
-p
-  a.sw-Link(href="#") テキストリンクです。
+.st-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
 ```
 */
 .sw-Link {

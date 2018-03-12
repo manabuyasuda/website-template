@@ -9,8 +9,6 @@ category: Layout
 
 カラム間の余白は幅を`$st-grids-column-gap`、高さを`$st-grids-row-gap`で統一しています。
 
-`.st-Grids`同士が同じ階層にある場合（`.st-Grids + .st-Grids`）には`.st-Grids`の間に余白がつきます。
-
 以下のような指定ができます。
 
 - `.st-Grids-col2`のように1/2から1/5までの均等なカラム指定。
@@ -113,6 +111,7 @@ $st-grids-column-gap-md: $grid-column-gap-md;
 $st-grids-row-gap-md: $grid-row-gap-md;
 
 .st-Grids {
+  margin-top: $st-grids-row-gap;
   margin-left: -$st-grids-column-gap;
   padding-left: 0;
   list-style-type: none;
@@ -120,16 +119,8 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   font-size: 0;
 
   @include mq-up(md) {
+    margin-top: $st-grids-row-gap-md;
     margin-left: -$st-grids-column-gap-md;
-  }
-
-  /* 同じ階層にある`.st-Grids`同士の間に余白を入れます。 */
-  &:not(:first-of-type) {
-    margin-top: $st-grids-row-gap;
-
-    @include mq-up(md) {
-      margin-top: $st-grids-row-gap-md;
-    }
   }
 }
 

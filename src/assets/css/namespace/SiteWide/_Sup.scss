@@ -9,12 +9,13 @@ category: Text
 
 
 ```jade
-p.st-Text 登録商標
-  sup.sw-Sup ®
-  | です。
-p.st-Text 注釈
-  sup.sw-Sup: a(href="#") ※1
-  | です。
+.st-Wrapper
+  p.sw-Text 登録商標
+    sup.sw-Sup ®
+    | です。
+  p.sw-Text 注釈
+    sup.sw-Sup: a(href="#") ※1
+    | です。
 ```
 */
 .sw-Sup {
