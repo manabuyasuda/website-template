@@ -18,6 +18,8 @@ category: Block
 ```
 */
 .test-Block {
+  @include st-Block();
+
   &:after {
     content: "";
     display: block;

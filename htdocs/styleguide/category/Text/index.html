@@ -111,12 +111,15 @@
               <ul class="aigis-tags">
               </ul><p>インラインで表示するラベルコンポーネントです。</p>
 <div class="aigis-preview">
-  <span class="sw-Label">spanタグのラベルです。</span>
-<label class="sw-Label">labelタグのラベルです。</label><a href="#" class="sw-Label">aタグのラベルです。</a></div>
 
-<pre><code class="language-jade"><span class="token tag" >span.sw-Label</span> <span class="token plain-text" >spanタグのラベルです。</span>
-<span class="token tag" >label.sw-Label</span> <span class="token plain-text" >labelタグのラベルです。</span>
-<span class="token tag" >a.sw-Label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグのラベルです。</span>
+<div class="st-Wrapper"><span class="sw-Label">spanタグのラベルです。</span>
+  <label class="sw-Label">labelタグのラベルです。</label><a href="#" class="sw-Label">aタグのラベルです。</a>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >span.sw-Label</span> <span class="token plain-text" >spanタグのラベルです。</span>
+  <span class="token tag" >label.sw-Label</span> <span class="token plain-text" >labelタグのラベルです。</span>
+  <span class="token tag" >a.sw-Label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグのラベルです。</span>
 </code></pre>
 
             </div>
@@ -128,12 +131,15 @@
 他の文章と区別するためだけに利用し、<code>&lt;strong&gt;</code>の重要性や深刻性、<code>&lt;em&gt;</code>の強調（アクセント）、<code>&lt;h2&gt;</code>のような見出しとしての意味はありません。</p>
 <div class="aigis-preview">
 
-<p class="sw-Lead"><b>◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</b></p>
-<p class="sw-Text">△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</p></div>
+<div class="st-Wrapper">
+  <p class="sw-Lead"><b>◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</b></p>
+  <p class="sw-Text">△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</p>
+</div></div>
 
-<pre><code class="language-jade"><span class="token tag" >p.sw-Lead</span>
-  <span class="token tag" >b</span> <span class="token plain-text" >◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</span>
-<span class="token tag" >p.sw-Text</span> <span class="token plain-text" >△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</span>
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >p.sw-Lead</span>
+    <span class="token tag" >b</span> <span class="token plain-text" >◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</span>
 </code></pre>
 
             </div>

@@ -38,6 +38,7 @@ category: List
 ```
 */
 .sw-TableWide {
+  @include st-Block();
   overflow: auto;
   width: 100%;
   background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
@@ -49,6 +50,7 @@ category: List
 
 .sw-TableWide table {
   width: 100%;
+  margin-top: 0;
   background: linear-gradient(to left, hsla(0, 0%, 100%, 0), #fff 0.75em) 0 0 / 2em 100%,
   linear-gradient(to right, hsla(0, 0%, 100%, 0), #fff 0.75em) right / 2em 100%;
   background-repeat: no-repeat;

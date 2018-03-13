@@ -20,6 +20,7 @@ category: List
 ```
 */
 .sw-ListNote {
+  @include st-Text();
   margin-left: 1.5em;
   padding-left: 0;
   font-size: $font-size-secondary;

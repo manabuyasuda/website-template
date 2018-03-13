@@ -35,13 +35,10 @@ h4相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .st-Section4 {
-  & + &,
-  :not(#{&}) + & {
-    margin-top: $margin-section4;
+  margin-top: $margin-section4;
 
-    @include mq-up(md) {
-      margin-top: $margin-section4-md;
-    }
+  @include mq-up(md) {
+    margin-top: $margin-section4-md;
   }
 
   .st-Heading3 + & {

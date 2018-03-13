@@ -15,10 +15,6 @@ category: Text
 ```
 */
 .sw-Text {
-  margin-top: $margin-text;
+  @include st-Text();
   font-size: 1rem;
-
-  @include mq-up(md) {
-    margin-top: $margin-text-md;
-  }
 }

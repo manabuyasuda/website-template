@@ -34,6 +34,29 @@ h2相当の見出しをラップするセクションの余白を指定します
           p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
     p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
+*/
+.st-Section2 {
+  margin-top: $margin-section2;
+
+  @include mq-up(md) {
+    margin-top: $margin-section2-md;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*
+---
+name: st-Section2-divider
+namespace: Structure
+category: Layout
+---
 
 レイアウト例です。`.st-Section2-divider`を追加すると`.st-Section2`同士の間にボーダーがつきます。
 
@@ -64,6 +87,34 @@ h2相当の見出しをラップするセクションの余白を指定します
           p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
     p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
+*/
+.st-Section2-divider {
+  margin-top: $margin-section2-divider;
+
+  & + &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    padding-top: $margin-section2-divider;
+    border-top: 1px solid #e3e3e3;
+  }
+
+  @include mq-up(md) {
+    margin-top: $margin-section2-divider-md;
+
+    & + &:before {
+      padding-top: $margin-section2-divider-md;
+    }
+  }
+}
+
+/*
+---
+name: st-Section2-dividerFull
+namespace: Structure
+category: Layout
+---
 
 レイアウト例です。`.st-Section2-dividerFull`を追加すると`.st-Section2`同士の間にボーダーがつきます。ボーダーの横幅は画面に対して常に100%（`100vw`）になります。
 
@@ -95,43 +146,6 @@ h2相当の見出しをラップするセクションの余白を指定します
     p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
 */
-.st-Section2 {
-  margin-top: $margin-section2;
-
-  @include mq-up(md) {
-    margin-top: $margin-section2-md;
-  }
-
-  & > :first-child {
-    margin-top: 0;
-  }
-
-  & > :last-child {
-    margin-bottom: 0;
-  }
-}
-
-.st-Section2-divider {
-  margin-top: $margin-section2-divider;
-
-  & + &:before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    padding-top: $margin-section2-divider;
-    border-top: 1px solid #e3e3e3;
-  }
-
-  @include mq-up(md) {
-    margin-top: $margin-section2-divider-md;
-
-    & + &:before {
-      padding-top: $margin-section2-divider-md;
-    }
-  }
-}
-
 .st-Section2-dividerFull {
   margin-top: $margin-section2-divider;
 
@@ -150,5 +164,13 @@ h2相当の見出しをラップするセクションの余白を指定します
     & + &:before {
       padding-top: $margin-section2-divider-md;
     }
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
   }
 }

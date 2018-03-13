@@ -48,18 +48,21 @@
               <ul class="aigis-tags">
               </ul><p>ボタンのデフォルトスタイルです。</p>
 <div class="aigis-preview">
-  <a href="#" class="sw-Button">aタグボタン</a><a href="#" class="sw-Button sw-Button-disabled">aタグボタン</a>
-<button type="button" class="sw-Button">butotnタグボタン</button>
-<button disabled="disabled" type="button" class="sw-Button">butotnタグボタン</button>
-<input type="button" value="inputボタン" class="sw-Button"/>
-<input type="button" value="inputボタン" disabled="disabled" class="sw-Button"/></div>
 
-<pre><code class="language-jade"><span class="token tag" >a.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグボタン</span>
-<span class="token tag" >a.sw-Button.sw-Button-disabled<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグボタン</span>
-<span class="token tag" >button.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >butotnタグボタン</span>
-<span class="token tag" >button.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >butotnタグボタン</span>
-<span class="token tag" >input.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span> value<span class="token operator" >=</span><span class="token string" >"inputボタン"</span></span><span class="token punctuation" >)</span></span></span>
-<span class="token tag" >input.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span> value<span class="token operator" >=</span><span class="token string" >"inputボタン"</span> disabled</span><span class="token punctuation" >)</span></span></span>
+<div class="st-Wrapper"><a href="#" class="sw-Button">aタグボタン</a><a href="#" class="sw-Button sw-Button-disabled">aタグボタン</a>
+  <button type="button" class="sw-Button">butotnタグボタン</button>
+  <button disabled="disabled" type="button" class="sw-Button">butotnタグボタン</button>
+  <input type="button" value="inputボタン" class="sw-Button"/>
+  <input type="button" value="inputボタン" disabled="disabled" class="sw-Button"/>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >a.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグボタン</span>
+  <span class="token tag" >a.sw-Button.sw-Button-disabled<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグボタン</span>
+  <span class="token tag" >button.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >butotnタグボタン</span>
+  <span class="token tag" >button.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >butotnタグボタン</span>
+  <span class="token tag" >input.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span> value<span class="token operator" >=</span><span class="token string" >"inputボタン"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >input.sw-Button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"button"</span> value<span class="token operator" >=</span><span class="token string" >"inputボタン"</span> disabled</span><span class="token punctuation" >)</span></span></span>
 </code></pre>
 
             </div>
@@ -69,12 +72,15 @@
               <ul class="aigis-tags">
               </ul><p>インラインで表示するラベルコンポーネントです。</p>
 <div class="aigis-preview">
-  <span class="sw-Label">spanタグのラベルです。</span>
-<label class="sw-Label">labelタグのラベルです。</label><a href="#" class="sw-Label">aタグのラベルです。</a></div>
 
-<pre><code class="language-jade"><span class="token tag" >span.sw-Label</span> <span class="token plain-text" >spanタグのラベルです。</span>
-<span class="token tag" >label.sw-Label</span> <span class="token plain-text" >labelタグのラベルです。</span>
-<span class="token tag" >a.sw-Label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグのラベルです。</span>
+<div class="st-Wrapper"><span class="sw-Label">spanタグのラベルです。</span>
+  <label class="sw-Label">labelタグのラベルです。</label><a href="#" class="sw-Label">aタグのラベルです。</a>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+  <span class="token tag" >span.sw-Label</span> <span class="token plain-text" >spanタグのラベルです。</span>
+  <span class="token tag" >label.sw-Label</span> <span class="token plain-text" >labelタグのラベルです。</span>
+  <span class="token tag" >a.sw-Label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグのラベルです。</span>
 </code></pre>
 
             </div>

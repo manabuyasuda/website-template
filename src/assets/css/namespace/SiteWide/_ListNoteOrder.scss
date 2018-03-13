@@ -34,6 +34,7 @@ category: List
 ```
 */
 .sw-ListNoteOrder {
+  @include st-Text();
   margin-left: 2em;
   padding-left: 0;
   font-size: $font-size-secondary;

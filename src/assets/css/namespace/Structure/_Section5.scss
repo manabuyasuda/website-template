@@ -14,7 +14,7 @@ h5相当の見出しをラップするセクションの余白を指定します
     p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
     p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
   section.st-Section4
-    h4.sw-Heading4 p.sw-Text どこで生れたかとんと見当がつかぬ。
+    h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
 
     section.st-Section5
       h5.sw-Heading5 吾輩は猫である。名前はまだ無い。
@@ -25,13 +25,10 @@ h5相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .st-Section5 {
-  & + &,
-  :not(#{&}) + & {
-    margin-top: $margin-section5;
+  margin-top: $margin-section5;
 
-    @include mq-up(md) {
-      margin-top: $margin-section5-md;
-    }
+  @include mq-up(md) {
+    margin-top: $margin-section5-md;
   }
 
   .st-Heading4 + & {

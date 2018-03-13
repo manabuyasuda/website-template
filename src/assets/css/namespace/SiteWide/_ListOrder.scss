@@ -12,7 +12,7 @@ category: List
   ol.sw-ListOrder
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
-      ol
+      ol.sw-ListOrder_Child
         li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
         li 入れ子に対応した順序リストです。
 ```
@@ -24,12 +24,13 @@ category: List
   ol.sw-ListOrder.sw-ListOrder-from2(start="2")
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
-      ol
+      ol.sw-ListOrder_Child
         li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
         li 入れ子に対応した順序リストです。
 ```
 */
 .sw-ListOrder {
+  @include st-Text();
   display: table;
   padding-left: 0;
   list-style-type: none;
@@ -47,11 +48,24 @@ category: List
     text-align: right;
     white-space: nowrap;
   }
+}
 
-  & ol {
-    padding-left: 0;
-    list-style-type: none;
-    counter-reset: order;
+.sw-ListOrder_Child {
+  padding-left: 0;
+  list-style-type: none;
+  counter-reset: order;
+
+  & > li {
+    display: table-row;
+    counter-increment: order;
+  }
+
+  & > li:before {
+    content: counters(order, "-") ".";
+    display: table-cell;
+    padding-right: 0.5em;
+    text-align: right;
+    white-space: nowrap;
   }
 }
 

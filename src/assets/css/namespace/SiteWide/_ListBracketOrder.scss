@@ -24,6 +24,7 @@ category: List
 ```
 */
 .sw-ListBracketOrder {
+  @include st-Text();
   margin-left: 2em;
   padding-left: 0;
   list-style-type: none;

@@ -8,15 +8,16 @@ category: Form
 `<input>`タグのデフォルトスタイルです。
 
 ```jade
-input.sw-FormInput(type="input" placeholder="デフォルト")
+.st-Wrapper
+  input.sw-FormInput(type="input" placeholder="デフォルト")
 
-label.sw-FormInput_TextTop(for="input1") inputタグの説明です
-input.sw-FormInput(type="input" name="email" autocomplete="email" id="input1" placeholder="example@gmail.com")
+  label.sw-FormInput_TextTop(for="input1") inputタグの説明です
+  input.sw-FormInput(type="input" name="email" autocomplete="email" id="input1" placeholder="example@gmail.com")
 
-input.sw-FormInput(type="input" name="name" autocomplate="name" id="input2" placeholder="山田 太郎")
-label.sw-FormInput_TextTop(for="input2") inputタグの説明です
+  input.sw-FormInput(type="input" name="name" autocomplate="name" id="input2" placeholder="山田 太郎")
+  label.sw-FormInput_TextTop(for="input2") inputタグの説明です
 
-input.sw-FormInput(disabled type="input" placeholder="disabled")
+  input.sw-FormInput(disabled type="input" placeholder="disabled")
 ```
 */
 .sw-FormInput {

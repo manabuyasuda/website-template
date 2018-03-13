@@ -596,12 +596,13 @@ category: [Button, Link, Form]
 ボタンのデフォルトスタイルです。
 
 ```jade
-a.sw-Button(href="#") aタグボタン
-a.sw-Button.sw-Button-disabled(href="#") aタグボタン
-button.sw-Button(type="button") butotnタグボタン
-button.sw-Button(disabled type="button") butotnタグボタン
-input.sw-Button(type="button" value="inputボタン")
-input.sw-Button(type="button" value="inputボタン" disabled)
+.st-Wrapper
+  a.sw-Button(href="#") aタグボタン
+  a.sw-Button.sw-Button-disabled(href="#") aタグボタン
+  button.sw-Button(type="button") butotnタグボタン
+  button.sw-Button(disabled type="button") butotnタグボタン
+  input.sw-Button(type="button" value="inputボタン")
+  input.sw-Button(type="button" value="inputボタン" disabled)
 ```
 */
 .sw-Button {
@@ -668,33 +669,37 @@ category: Image
 ベーシックなスタイルです。
 
 ```jade
-figure.sw-Caption
-  img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
-  figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+.st-Wrapper
+  figure.sw-Caption
+    img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
+    figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
 ```
 
 `.sw-Caption_Text-center`でキャプションをセンタリングします。
 
 ```jade
-figure.sw-Caption
-  img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
-  figcaption.sw-Caption_Text.sw-Caption_Text-center 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+.st-Wrapper
+  figure.sw-Caption
+    img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
+    figcaption.sw-Caption_Text.sw-Caption_Text-center 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
 ```
 
 `.sw-Caption_Text-right`でキャプションを右揃えにします。
 
 ```jade
-figure.sw-Caption
-  img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
-  figcaption.sw-Caption_Text.sw-Caption_Text-right画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+.st-Wrapper
+  figure.sw-Caption
+    img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
+    figcaption.sw-Caption_Text.sw-Caption_Text-right画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
 ```
 
 `.sw-Caption-center`でコンポーネント自体をセンタリングします。
 
 ```jade
-figure.sw-Caption.sw-Caption-center
-  img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
-  figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+.st-Wrapper
+  figure.sw-Caption.sw-Caption-center
+    img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
+    figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
 ```
 */
 /**
@@ -702,9 +707,16 @@ figure.sw-Caption.sw-Caption-center
  *    画像が指定幅以下になってもキャプションの幅はそれ以上小さくなりません。
  */
 .sw-Caption {
+  margin-top: 35px;
   display: table;
   min-width: 100px;
   /* 1 */
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Caption {
+    margin-top: 50px;
+  }
 }
 
 /**
@@ -801,14 +813,15 @@ category: Form
 `type="checkbox"`のデフォルトスタイルです。
 
 ```jade
-input.sw-FormCheckbox(type="checkbox" id="checkbox1" checked)
-label(for="checkbox1") チェックボックス
-br
-input.sw-FormCheckbox(type="checkbox" id="checkbox2")
-label(for="checkbox2") チェックボックス
-br
-input.sw-FormCheckbox(disabled type="checkbox" id="checkbox3")
-label(disabled for="checkbox3") チェックボックス
+.st-Wrapper
+  input.sw-FormCheckbox(type="checkbox" id="checkbox1" checked)
+  label(for="checkbox1") チェックボックス
+  br
+  input.sw-FormCheckbox(type="checkbox" id="checkbox2")
+  label(for="checkbox2") チェックボックス
+  br
+  input.sw-FormCheckbox(disabled type="checkbox" id="checkbox3")
+  label(disabled for="checkbox3") チェックボックス
 ```
 */
 .sw-FormCheckbox {
@@ -878,15 +891,16 @@ category: Form
 `<input>`タグのデフォルトスタイルです。
 
 ```jade
-input.sw-FormInput(type="input" placeholder="デフォルト")
+.st-Wrapper
+  input.sw-FormInput(type="input" placeholder="デフォルト")
 
-label.sw-FormInput_TextTop(for="input1") inputタグの説明です
-input.sw-FormInput(type="input" name="email" autocomplete="email" id="input1" placeholder="example@gmail.com")
+  label.sw-FormInput_TextTop(for="input1") inputタグの説明です
+  input.sw-FormInput(type="input" name="email" autocomplete="email" id="input1" placeholder="example@gmail.com")
 
-input.sw-FormInput(type="input" name="name" autocomplate="name" id="input2" placeholder="山田 太郎")
-label.sw-FormInput_TextTop(for="input2") inputタグの説明です
+  input.sw-FormInput(type="input" name="name" autocomplate="name" id="input2" placeholder="山田 太郎")
+  label.sw-FormInput_TextTop(for="input2") inputタグの説明です
 
-input.sw-FormInput(disabled type="input" placeholder="disabled")
+  input.sw-FormInput(disabled type="input" placeholder="disabled")
 ```
 */
 .sw-FormInput {
@@ -967,14 +981,15 @@ category: Form
 `type="radio"`のデフォルトスタイルです。
 
 ```jade
-input.sw-FormRadio(type="radio" id="radio1" name="radio1" checked)
-label(for="radio1") ラジオボタン
-br
-input.sw-FormRadio(type="radio" id="radio2" name="radio1")
-label(for="radio2") ラジオボタン
-br
-input.sw-FormRadio(disabled type="radio" id="radio3" name="radio3")
-label(disabled for="radio3") ラジオボタン
+.st-Wrapper
+  input.sw-FormRadio(type="radio" id="radio1" name="radio1" checked)
+  label(for="radio1") ラジオボタン
+  br
+  input.sw-FormRadio(type="radio" id="radio2" name="radio1")
+  label(for="radio2") ラジオボタン
+  br
+  input.sw-FormRadio(disabled type="radio" id="radio3" name="radio3")
+  label(disabled for="radio3") ラジオボタン
 ```
 */
 .sw-FormRadio {
@@ -1045,17 +1060,18 @@ category: Form
 `<select>`タグのデフォルトスタイルです。
 
 ```jade
-.sw-FormSelect
-  select
-    option(value="default") 選択してください
-    option(value="hokkaido") 北海道
-    option(value="akita") 秋田
+.st-Wrapper
+  .sw-FormSelect
+    select
+      option(value="default") 選択してください
+      option(value="hokkaido") 北海道
+      option(value="akita") 秋田
 
-.sw-FormSelect.is-disabled
-  select(disabled)
-    option(value="default") 選択してください
-    option(value="hokkaido") 北海道
-    option(value="akita") 秋田
+  .sw-FormSelect.is-disabled
+    select(disabled)
+      option(value="default") 選択してください
+      option(value="hokkaido") 北海道
+      option(value="akita") 秋田
 ```
 */
 .sw-FormSelect {
@@ -1156,17 +1172,18 @@ category: Form
 `<textarea>`のデフォルトスタイルです。
 
 ```jade
-textarea.sw-FormTextarea(placeholder="テキストエリアです")
+.st-Wrapper
+  textarea.sw-FormTextarea(placeholder="テキストエリアです")
 
-label.sw-FormTextarea_TextTop(for="textarea1") テキストエリアの説明
-textarea.sw-FormTextarea(id="textarea1" placeholder="テキストエリアです")
+  label.sw-FormTextarea_TextTop(for="textarea1") テキストエリアの説明
+  textarea.sw-FormTextarea(id="textarea1" placeholder="テキストエリアです")
 
-textarea.sw-FormTextarea(id="textarea2" placeholder="テキストエリアです")
-label.sw-FormTextarea_TextTop(for="textarea2") テキストエリアの説明
+  textarea.sw-FormTextarea(id="textarea2" placeholder="テキストエリアです")
+  label.sw-FormTextarea_TextTop(for="textarea2") テキストエリアの説明
 
-textarea.sw-FormTextarea.sw-FormTextarea-large(id="textarea3" placeholder="テキストエリアです")
+  textarea.sw-FormTextarea.sw-FormTextarea-large(id="textarea3" placeholder="テキストエリアです")
 
-textarea.sw-FormTextarea(disabled id="textarea4" placeholder="テキストエリアです")
+  textarea.sw-FormTextarea(disabled id="textarea4" placeholder="テキストエリアです")
 ```
 */
 .sw-FormTextarea {
@@ -1457,13 +1474,21 @@ category: Image
 画像をセンタリングします。
 
 ```jade
-img.sw-ImageCenter(src="https://placehold.jp/300x200.png" alt="")
+.st-Wrapper
+  p.sw-ImageCenter
+    img(src="https://placehold.jp/300x200.png" alt="")
 ```
 */
 .sw-ImageCenter {
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: 35px;
+  text-align: center;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-ImageCenter {
+    margin-top: 50px;
+  }
 }
 
 /*
@@ -1476,9 +1501,10 @@ category: [Text, Link, Form]
 インラインで表示するラベルコンポーネントです。
 
 ```jade
-span.sw-Label spanタグのラベルです。
-label.sw-Label labelタグのラベルです。
-a.sw-Label(href="#") aタグのラベルです。
+.st-Wrapper
+  span.sw-Label spanタグのラベルです。
+  label.sw-Label labelタグのラベルです。
+  a.sw-Label(href="#") aタグのラベルです。
 ```
 */
 .sw-Label {
@@ -1510,9 +1536,10 @@ category: Text
 他の文章と区別するためだけに利用し、`<strong>`の重要性や深刻性、`<em>`の強調（アクセント）、`<h2>`のような見出しとしての意味はありません。
 
 ```jade
-p.sw-Lead
-  b ◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。
-p.sw-Text △△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。
+.st-Wrapper
+  p.sw-Lead
+    b ◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。
+  p.sw-Text △△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。
 ```
 */
 .sw-Lead {
@@ -1836,10 +1863,17 @@ category: List
 ```
 */
 .sw-ListBracketOrder {
+  margin-top: 35px;
   margin-left: 2em;
   padding-left: 0;
   list-style-type: none;
   counter-reset: bracketOrder 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-ListBracketOrder {
+    margin-top: 50px;
+  }
 }
 
 .sw-ListBracketOrder > li {
@@ -1912,10 +1946,17 @@ category: List
 ```
 */
 .sw-ListNote {
+  margin-top: 35px;
   margin-left: 1.5em;
   padding-left: 0;
   font-size: 0.85em;
   list-style-type: none;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-ListNote {
+    margin-top: 50px;
+  }
 }
 
 [lang="en"] .sw-ListNote,
@@ -1976,11 +2017,18 @@ category: List
 ```
 */
 .sw-ListNoteOrder {
+  margin-top: 35px;
   margin-left: 2em;
   padding-left: 0;
   font-size: 0.85em;
   list-style-type: none;
   counter-reset: noteOrder 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-ListNoteOrder {
+    margin-top: 50px;
+  }
 }
 
 [lang="en"] .sw-ListNoteOrder,
@@ -2060,7 +2108,7 @@ category: List
   ol.sw-ListOrder
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
-      ol
+      ol.sw-ListOrder_Child
         li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
         li 入れ子に対応した順序リストです。
 ```
@@ -2072,16 +2120,23 @@ category: List
   ol.sw-ListOrder.sw-ListOrder-from2(start="2")
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
-      ol
+      ol.sw-ListOrder_Child
         li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
         li 入れ子に対応した順序リストです。
 ```
 */
 .sw-ListOrder {
+  margin-top: 35px;
   display: table;
   padding-left: 0;
   list-style-type: none;
   counter-reset: order;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-ListOrder {
+    margin-top: 50px;
+  }
 }
 
 .sw-ListOrder > li {
@@ -2097,10 +2152,23 @@ category: List
   white-space: nowrap;
 }
 
-.sw-ListOrder ol {
+.sw-ListOrder_Child {
   padding-left: 0;
   list-style-type: none;
   counter-reset: order;
+}
+
+.sw-ListOrder_Child > li {
+  display: table-row;
+  counter-increment: order;
+}
+
+.sw-ListOrder_Child > li:before {
+  content: counters(order, "-") ".";
+  display: table-cell;
+  padding-right: 0.5em;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .sw-ListOrder-from2 {
@@ -2159,9 +2227,16 @@ category: List
 ```
 */
 .sw-ListUnorder {
+  margin-top: 35px;
   margin-left: 1.5em;
   padding-left: 0;
   list-style-type: none;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-ListUnorder {
+    margin-top: 50px;
+  }
 }
 
 .sw-ListUnorder > li {
@@ -2213,16 +2288,32 @@ category: ThirdPartyComponent
 Google Mapsをレスポンシブ対応させます。デフォルトで16:9で表示されます。
 
 ```jade
-.sw-Map.
-  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25933.98363493959!2d139.745433!3d35.658581000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1505663238967" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+.st-Wrapper
+  .sw-Map.
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25933.98363493959!2d139.745433!3d35.658581000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1505663238967" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 ```
 */
 .sw-Map {
+  margin-top: 40px;
   display: block;
   overflow: hidden;
   position: relative;
   height: 0;
   padding-bottom: 56.25%;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Map {
+    margin-top: 50px;
+  }
+}
+
+.sw-Map > :first-child {
+  margin-top: 0;
+}
+
+.sw-Map > :last-child {
+  margin-bottom: 0;
 }
 
 .sw-Map > *,
@@ -2340,9 +2431,24 @@ category: List
 ```
 */
 .sw-Table {
+  margin-top: 40px;
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Table {
+    margin-top: 50px;
+  }
+}
+
+.sw-Table > :first-child {
+  margin-top: 0;
+}
+
+.sw-Table > :last-child {
+  margin-bottom: 0;
 }
 
 .sw-Table th,
@@ -2397,6 +2503,7 @@ category: List
 ```
 */
 .sw-TableWide {
+  margin-top: 40px;
   overflow: auto;
   width: 100%;
   background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 100% center;
@@ -2405,8 +2512,23 @@ category: List
   background-size: 0.75em 100%, 0.75em 100%;
 }
 
+@media print, screen and (min-width: 768px) {
+  .sw-TableWide {
+    margin-top: 50px;
+  }
+}
+
+.sw-TableWide > :first-child {
+  margin-top: 0;
+}
+
+.sw-TableWide > :last-child {
+  margin-bottom: 0;
+}
+
 .sw-TableWide table {
   width: 100%;
+  margin-top: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff 0.75em) 0 0/2em 100%, linear-gradient(to right, rgba(255, 255, 255, 0), #fff 0.75em) right/2em 100%;
   background-repeat: no-repeat;
   background-attachment: local;
@@ -2510,13 +2632,13 @@ category: Text
 ```
 */
 .sw-TextSecondary {
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 0.85em;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-TextSecondary {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 }
 
@@ -2567,16 +2689,32 @@ category: ThirdPartyComponent
 Youtubeなどの動画をレスポンシブ対応させます。デフォルトで16:9で表示されます。
 
 ```jade
-.sw-Video.
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
+.st-Wrapper
+  .sw-Video.
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
 ```
 */
 .sw-Video {
+  margin-top: 40px;
   display: block;
   overflow: hidden;
   position: relative;
   height: 0;
   padding-bottom: 56.25%;
+}
+
+@media print, screen and (min-width: 768px) {
+  .sw-Video {
+    margin-top: 50px;
+  }
+}
+
+.sw-Video > :first-child {
+  margin-top: 0;
+}
+
+.sw-Video > :last-child {
+  margin-bottom: 0;
 }
 
 .sw-Video_Item,
@@ -2619,6 +2757,31 @@ category: Layout
         h3 ダミーの見出しです
         p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
 ```
+*/
+.st-Block {
+  margin-top: 40px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .st-Block {
+    margin-top: 50px;
+  }
+}
+
+.st-Block > :first-child {
+  margin-top: 0;
+}
+
+.st-Block > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: st-Block-divider
+namespace: Structure
+category: Layout
+---
 
 `.st-Block-divider`を追加すると間にボーダーが入ります。
 
@@ -2640,16 +2803,6 @@ category: Layout
         p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
 ```
 */
-.st-Block {
-  margin-top: 40px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Block {
-    margin-top: 50px;
-  }
-}
-
 .st-Block-divider {
   margin-top: 20px;
 }
@@ -2673,6 +2826,14 @@ category: Layout
   .st-Block-divider + .st-Block-divider:before {
     padding-top: 50px;
   }
+}
+
+.st-Block-divider > :first-child {
+  margin-top: 0;
+}
+
+.st-Block-divider > :last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -2742,11 +2903,12 @@ category: Layout
 .st-Container
   .st-Wrapper
     section.st-Section2
-      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
     section.st-Section2
-      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
 .st-Container {
@@ -2757,6 +2919,14 @@ category: Layout
   .st-Container {
     padding: 70px 0 100px;
   }
+}
+
+.st-Container > :first-child {
+  margin-top: 0;
+}
+
+.st-Container > :last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -2774,24 +2944,11 @@ category: Layout
 .st-ContainerBg
   .st-Wrapper
     section.st-Section2
-      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
     section.st-Section2
-      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-
-`st-ContainerBg-delimiter`を追加するとボーダーがつきます。
-
-```jade
-.st-ContainerBg.st-ContainerBg-delimiter
-  .st-Wrapper
-    section.st-Section2
-      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    section.st-Section2
-      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
 .st-ContainerBg {
@@ -2805,6 +2962,34 @@ category: Layout
   }
 }
 
+.st-ContainerBg > :first-child {
+  margin-top: 0;
+}
+
+.st-ContainerBg > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: st-ContainerBg-delimiter
+namespace: Structure
+category: Layout
+---
+
+`st-ContainerBg-delimiter`を追加するとボーダーがつきます。
+
+```jade
+.st-ContainerBg.st-ContainerBg-delimiter
+  .st-Wrapper
+    section.st-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    section.st-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
 .st-ContainerBg-delimiter {
   border-top: 1px solid #e8e8e8;
 }
@@ -3359,6 +3544,14 @@ category: Layout
   .st-Grids_Item {
     padding-left: 30px;
   }
+}
+
+.st-Grids_Item > :first-child {
+  margin-top: 0;
+}
+
+.st-Grids_Item > :last-child {
+  margin-bottom: 0;
 }
 
 /* 1 Column */
@@ -4298,6 +4491,31 @@ h2相当の見出しをラップするセクションの余白を指定します
           p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
     p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
+*/
+.st-Section2 {
+  margin-top: 60px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .st-Section2 {
+    margin-top: 100px;
+  }
+}
+
+.st-Section2 > :first-child {
+  margin-top: 0;
+}
+
+.st-Section2 > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: st-Section2-divider
+namespace: Structure
+category: Layout
+---
 
 レイアウト例です。`.st-Section2-divider`を追加すると`.st-Section2`同士の間にボーダーがつきます。
 
@@ -4328,6 +4546,35 @@ h2相当の見出しをラップするセクションの余白を指定します
           p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
     p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
+*/
+.st-Section2-divider {
+  margin-top: 30px;
+}
+
+.st-Section2-divider + .st-Section2-divider:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  padding-top: 30px;
+  border-top: 1px solid #e3e3e3;
+}
+
+@media print, screen and (min-width: 768px) {
+  .st-Section2-divider {
+    margin-top: 50px;
+  }
+  .st-Section2-divider + .st-Section2-divider:before {
+    padding-top: 50px;
+  }
+}
+
+/*
+---
+name: st-Section2-dividerFull
+namespace: Structure
+category: Layout
+---
 
 レイアウト例です。`.st-Section2-dividerFull`を追加すると`.st-Section2`同士の間にボーダーがつきます。ボーダーの横幅は画面に対して常に100%（`100vw`）になります。
 
@@ -4359,46 +4606,6 @@ h2相当の見出しをラップするセクションの余白を指定します
     p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
 */
-.st-Section2 {
-  margin-top: 60px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section2 {
-    margin-top: 100px;
-  }
-}
-
-.st-Section2 > :first-child {
-  margin-top: 0;
-}
-
-.st-Section2 > :last-child {
-  margin-bottom: 0;
-}
-
-.st-Section2-divider {
-  margin-top: 30px;
-}
-
-.st-Section2-divider + .st-Section2-divider:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  padding-top: 30px;
-  border-top: 1px solid #e3e3e3;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section2-divider {
-    margin-top: 50px;
-  }
-  .st-Section2-divider + .st-Section2-divider:before {
-    padding-top: 50px;
-  }
-}
-
 .st-Section2-dividerFull {
   margin-top: 30px;
 }
@@ -4422,6 +4629,14 @@ h2相当の見出しをラップするセクションの余白を指定します
   }
 }
 
+.st-Section2-dividerFull > :first-child {
+  margin-top: 0;
+}
+
+.st-Section2-dividerFull > :last-child {
+  margin-bottom: 0;
+}
+
 /*
 ---
 name: st-Section3
@@ -4440,23 +4655,6 @@ h3相当の見出しをラップするセクションの余白を指定します
       h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
       p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
     section.st-Section3
-      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
-      .st-Block
-        p.test-Box .st-Block
-      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-```
-
-レイアウト例です。`.st-Section3-divider`を追加すると`.st-Section3`同士の間にボーダーがつきます。
-
-```jade
-.st-Wrapper
-  section.st-Section2
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-
-    section.st-Section3.st-Section3-divider
-      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-    section.st-Section3.st-Section3-divider
       h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
       .st-Block
         p.test-Box .st-Block
@@ -4491,6 +4689,30 @@ h3相当の見出しをラップするセクションの余白を指定します
   margin-bottom: 0;
 }
 
+/*
+---
+name: st-Section3-divider
+namespace: Structure
+category: Layout
+---
+
+レイアウト例です。`.st-Section3-divider`を追加すると`.st-Section3`同士の間にボーダーがつきます。
+
+```jade
+.st-Wrapper
+  section.st-Section2
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+
+    section.st-Section3.st-Section3-divider
+      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+    section.st-Section3.st-Section3-divider
+      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
+      .st-Block
+        p.test-Box .st-Block
+      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+```
+*/
 .st-Section3-divider {
   margin-top: 25px;
 }
@@ -4559,14 +4781,12 @@ h4相当の見出しをラップするセクションの余白を指定します
         p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
-.st-Section4 + .st-Section4,
-:not(.st-Section4) + .st-Section4 {
+.st-Section4 {
   margin-top: 35px;
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Section4 + .st-Section4,
-  :not(.st-Section4) + .st-Section4 {
+  .st-Section4 {
     margin-top: 50px;
   }
 }
@@ -4605,7 +4825,7 @@ h5相当の見出しをラップするセクションの余白を指定します
     p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
     p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
   section.st-Section4
-    h4.sw-Heading4 p.sw-Text どこで生れたかとんと見当がつかぬ。
+    h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
 
     section.st-Section5
       h5.sw-Heading5 吾輩は猫である。名前はまだ無い。
@@ -4615,14 +4835,12 @@ h5相当の見出しをラップするセクションの余白を指定します
       p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
-.st-Section5 + .st-Section5,
-:not(.st-Section5) + .st-Section5 {
+.st-Section5 {
   margin-top: 30px;
 }
 
 @media print, screen and (min-width: 768px) {
-  .st-Section5 + .st-Section5,
-  :not(.st-Section5) + .st-Section5 {
+  .st-Section5 {
     margin-top: 30px;
   }
 }
@@ -4657,28 +4875,8 @@ category: Layout
 ```jade
 .st-Wrapper
   section.st-Section2
-    h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-
-`.st-Wrapper_Full`を入れ子にすると、`.st-Wrapper`の中でも画面いっぱいに表示されます。
-
-```jade
-.st-Wrapper
-  .st-Wrapper_Full
-    section.st-Section2
-      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-
-`.st-Wrapper_FullBg`を入れ子にすると、`.st-Wrapper`の中でも背景色が画面いっぱいに表示されます。
-
-```jade
-.st-Wrapper
-  .st-Wrapper_FullBg(style="background-color: #eee;")
-    section.st-Section2
-      h2.st-Heading2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.st-Text.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
 .st-Wrapper {
@@ -4688,26 +4886,80 @@ category: Layout
   padding: 0 20px;
 }
 
-.st-Wrapper > :first-child {
-  margin-top: 0;
-}
-
-@media print, screen and (min-width: 1170px) {
+@media print, screen and (min-width: 1210px) {
   .st-Wrapper {
     padding: 0;
   }
 }
 
+.st-Wrapper > :first-child {
+  margin-top: 0;
+}
+
+.st-Wrapper > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: st-Wrapper_Full
+namespace: Structure
+category: Layout
+---
+
+`.st-Wrapper_Full`を入れ子にすると、`.st-Wrapper`の中でも画面いっぱいに表示されます。
+
+```jade
+.st-Wrapper
+  .st-Wrapper_Full
+    section.st-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
 .st-Wrapper_Full {
   margin-right: calc(-50vw + 50%);
   margin-left: calc(-50vw + 50%);
 }
 
+.st-Wrapper_Full > :first-child {
+  margin-top: 0;
+}
+
+.st-Wrapper_Full > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: st-Wrapper_FullBg
+namespace: Structure
+category: Layout
+---
+
+`.st-Wrapper_FullBg`を入れ子にすると、`.st-Wrapper`の中でも背景色が画面いっぱいに表示されます。
+
+```jade
+.st-Wrapper
+  .st-Wrapper_FullBg(style="background-color: #eee;")
+    section.st-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
 .st-Wrapper_FullBg {
   margin-right: calc(-50vw + 50%);
   margin-left: calc(-50vw + 50%);
   padding-right: calc(50vw - 50%);
   padding-left: calc(50vw - 50%);
+}
+
+.st-Wrapper_FullBg > :first-child {
+  margin-top: 0;
+}
+
+.st-Wrapper_FullBg > :last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -4729,6 +4981,24 @@ category: Block
       p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
 ```
 */
+.test-Block {
+  margin-top: 40px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .test-Block {
+    margin-top: 50px;
+  }
+}
+
+.test-Block > :first-child {
+  margin-top: 0;
+}
+
+.test-Block > :last-child {
+  margin-bottom: 0;
+}
+
 .test-Block:after {
   content: "";
   display: block;

@@ -135,6 +135,14 @@ $st-grids-row-gap-md: $grid-row-gap-md;
   @include mq-up(md) {
     padding-left: $st-grids-column-gap-md;
   }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 /* 1 Column */

@@ -8,17 +8,18 @@ category: Form
 `<select>`タグのデフォルトスタイルです。
 
 ```jade
-.sw-FormSelect
-  select
-    option(value="default") 選択してください
-    option(value="hokkaido") 北海道
-    option(value="akita") 秋田
+.st-Wrapper
+  .sw-FormSelect
+    select
+      option(value="default") 選択してください
+      option(value="hokkaido") 北海道
+      option(value="akita") 秋田
 
-.sw-FormSelect.is-disabled
-  select(disabled)
-    option(value="default") 選択してください
-    option(value="hokkaido") 北海道
-    option(value="akita") 秋田
+  .sw-FormSelect.is-disabled
+    select(disabled)
+      option(value="default") 選択してください
+      option(value="hokkaido") 北海道
+      option(value="akita") 秋田
 ```
 */
 .sw-FormSelect {

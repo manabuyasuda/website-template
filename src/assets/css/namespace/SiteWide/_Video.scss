@@ -8,11 +8,13 @@ category: ThirdPartyComponent
 Youtubeなどの動画をレスポンシブ対応させます。デフォルトで16:9で表示されます。
 
 ```jade
-.sw-Video.
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
+.st-Wrapper
+  .sw-Video.
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
 ```
 */
 .sw-Video {
+  @include st-Block();
   display: block;
   overflow: hidden;
   position: relative;

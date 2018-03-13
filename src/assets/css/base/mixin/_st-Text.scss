@@ -1,0 +1,7 @@
+@mixin st-Text() {
+  margin-top: $margin-text;
+
+  @include mq-up(md) {
+    margin-top: $margin-text-md;
+  }
+}

@@ -8,9 +8,10 @@ category: [Text, Link, Form]
 インラインで表示するラベルコンポーネントです。
 
 ```jade
-span.sw-Label spanタグのラベルです。
-label.sw-Label labelタグのラベルです。
-a.sw-Label(href="#") aタグのラベルです。
+.st-Wrapper
+  span.sw-Label spanタグのラベルです。
+  label.sw-Label labelタグのラベルです。
+  a.sw-Label(href="#") aタグのラベルです。
 ```
 */
 .sw-Label {

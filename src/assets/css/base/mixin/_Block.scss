@@ -1,0 +1,15 @@
+@mixin st-Block() {
+  margin-top: $margin-block;
+
+  @include mq-up(md) {
+    margin-top: $margin-block-md;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
