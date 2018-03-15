@@ -1,0 +1,22 @@
+/*
+---
+name: sw-Title
+namespace: SiteWide
+category: Heading
+---
+
+ページタイトルです。
+
+```jade
+.st-Wrapper
+  h1.sw-Title ページタイトル
+```
+*/
+.sw-Title {
+  @include sw-Title();
+  margin-bottom: $margin-title;
+
+  @include mq-up(md) {
+    margin-bottom: $margin-title-md;
+  }
+}

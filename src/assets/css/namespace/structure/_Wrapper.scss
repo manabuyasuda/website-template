@@ -1,0 +1,93 @@
+/*
+---
+name: st-Wrapper
+namespace: Structure
+category: Layout
+---
+
+コンテンツの横幅を制限します。
+
+```jade
+.st-Wrapper
+  section.st-Section2
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.st-Wrapper {
+  $width: $max-width + 40px;
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
+
+  @media print, screen and (min-width: $width) {
+    padding: 0;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*
+---
+name: st-Wrapper_Full
+namespace: Structure
+category: Layout
+---
+
+`.st-Wrapper_Full`を入れ子にすると、`.st-Wrapper`の中でも画面いっぱいに表示されます。
+
+```jade
+.st-Wrapper
+  .st-Wrapper_Full
+    section.st-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.st-Wrapper_Full {
+  @include full-width();
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*
+---
+name: st-Wrapper_FullBg
+namespace: Structure
+category: Layout
+---
+
+`.st-Wrapper_FullBg`を入れ子にすると、`.st-Wrapper`の中でも背景色が画面いっぱいに表示されます。
+
+```jade
+.st-Wrapper
+  .st-Wrapper_FullBg(style="background-color: #eee;")
+    section.st-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.st-Wrapper_FullBg {
+  @include full-bg();
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

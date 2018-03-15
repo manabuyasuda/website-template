@@ -1,0 +1,59 @@
+/*
+---
+name: st-Section4
+namespace: Structure
+category: Layout
+---
+
+h4相当の見出しをラップするセクションの余白を指定します。
+
+```jade
+.st-Wrapper
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+  section.st-Section2
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+
+  section.st-Section2
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+
+    section.st-Section3
+      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+    section.st-Section3
+      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
+
+      section.st-Section4
+        h4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+        p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
+        p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+      section.st-Section4
+        h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
+        p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+```
+*/
+.st-Section4 {
+  margin-top: $margin-section4;
+
+  @include mq-up(md) {
+    margin-top: $margin-section4-md;
+  }
+
+  .st-Heading3 + & {
+    margin-top: ($margin-section4 / 2);
+
+    @include mq-up(md) {
+      margin-top: ($margin-section4-md / 2);
+    }
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

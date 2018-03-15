@@ -1,0 +1,41 @@
+/*
+---
+name: sw-LinkNote
+namespace: SiteWide
+category: Link
+---
+
+注釈へのリンクです。`<sup>`タグの子要素として指定します。
+
+```jade
+.st-Wrapper
+  p.sw-Text ○○
+    sup
+      a.sw-LinkNote(href="#") 1
+    | を使っています。
+
+  p.sw-Text(lang="en") ○○
+    sup
+      a.sw-LinkNote(href="#") 1
+    | を使っています。
+```
+*/
+.sw-LinkNote {
+  color: $color-link;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+
+  &:before {
+    content: "※";
+    margin-left: 0.25em;
+  }
+
+  [lang^="en"] &:before,
+  [lang^="zh-cn"] &:before {
+    content: "*";
+  }
+}

@@ -1,0 +1,24 @@
+/*
+---
+name: sw-FormRadio
+namespace: SiteWide
+category: Form
+---
+
+`type="radio"`のデフォルトスタイルです。
+
+```jade
+.st-Wrapper
+  input.sw-FormRadio(type="radio" id="radio1" name="radio1" checked)
+  label(for="radio1") ラジオボタン
+  br
+  input.sw-FormRadio(type="radio" id="radio2" name="radio1")
+  label(for="radio2") ラジオボタン
+  br
+  input.sw-FormRadio(disabled type="radio" id="radio3" name="radio3")
+  label(disabled for="radio3") ラジオボタン
+```
+*/
+.sw-FormRadio {
+  @include sw-FormRadio()
+}

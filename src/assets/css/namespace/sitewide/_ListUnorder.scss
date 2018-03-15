@@ -1,0 +1,64 @@
+/*
+---
+name: sw-ListUnorder
+namespace: SiteWide
+category: List
+---
+
+順序をもたない並列なリストです。
+
+```jade
+.st-Wrapper
+  ul.sw-ListUnorder
+    li リストです。
+    li リストです。
+      ul.sw-ListUnorder_Child
+        li リストです。
+        li リストです。
+```
+*/
+.sw-ListUnorder {
+  @include st-Text();
+  margin-left: 1.5em;
+  padding-left: 0;
+  list-style-type: none;
+
+  & > li {
+    position: relative;
+  }
+
+  & > li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.5em;
+    left: -1em;
+    width: 6px;
+    height: 6px;
+    border: 3px solid #000;
+    border-radius: 50%;
+  }
+}
+
+.sw-ListUnorder_Child {
+  padding-left: 0;
+  list-style-type: none;
+
+  & > li {
+    position: relative;
+    margin-left: 1.5em;
+  }
+
+  & > li:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.5em;
+    left: -1em;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+}

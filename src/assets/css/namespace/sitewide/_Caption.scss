@@ -1,0 +1,90 @@
+/*
+---
+name: sw-Caption
+namespace: SiteWide
+category: Image
+---
+
+画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+
+ベーシックなスタイルです。
+
+```jade
+.st-Wrapper
+  figure.sw-Caption
+    img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
+    figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+```
+
+`.sw-Caption_Text-center`でキャプションをセンタリングします。
+
+```jade
+.st-Wrapper
+  figure.sw-Caption
+    img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
+    figcaption.sw-Caption_Text.sw-Caption_Text-center 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+```
+
+`.sw-Caption_Text-right`でキャプションを右揃えにします。
+
+```jade
+.st-Wrapper
+  figure.sw-Caption
+    img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
+    figcaption.sw-Caption_Text.sw-Caption_Text-right画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+```
+
+`.sw-Caption-center`でコンポーネント自体をセンタリングします。
+
+```jade
+.st-Wrapper
+  figure.sw-Caption.sw-Caption-center
+    img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
+    figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
+```
+*/
+/**
+ * 1. キャプションの最小幅です。
+ *    画像が指定幅以下になってもキャプションの幅はそれ以上小さくなりません。
+ */
+.sw-Caption {
+  @include st-Text();
+  display: table;
+  min-width: 100px; /* 1 */
+}
+
+.sw-Caption_Image {
+}
+
+/**
+ * 1. キャプションは常に画像の下に配置します
+ */
+.sw-Caption_Text {
+  display: table-caption;
+  margin-top: 0.5em;
+  font-size: $font-size-secondary;
+  line-height: 1.4;
+  caption-side: bottom; /* 1 */
+}
+
+/**
+ * コンポーネント自体をセンタリングします。
+ */
+.sw-Caption-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/**
+ * テキストをセンタリングします。
+ */
+.sw-Caption_Text-center {
+  text-align: center;
+}
+
+/**
+ * テキストを右揃えにします。
+ */
+.sw-Caption_Text-right {
+  text-align: right;
+}

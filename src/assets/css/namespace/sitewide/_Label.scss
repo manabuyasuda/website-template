@@ -1,0 +1,19 @@
+/*
+---
+name: sw-Label
+namespace: SiteWide
+category: [Text, Link, Form]
+---
+
+インラインで表示するラベルコンポーネントです。
+
+```jade
+.st-Wrapper
+  span.sw-Label spanタグのラベルです。
+  label.sw-Label labelタグのラベルです。
+  a.sw-Label(href="#") aタグのラベルです。
+```
+*/
+.sw-Label {
+  @include sw-Label();
+}

@@ -63,8 +63,8 @@ root/
 │   │   │   │   ├── _normalize.scss
 │   │   │   │   └── _base.scss
 │   │   │   ├── namespace/
-│   │   │   │   ├── SiteWide/
-│   │   │   │   ├── Structure/
+│   │   │   │   ├── sitewide/
+│   │   │   │   ├── structure/
 │   │   │   │   ├── layout/
 │   │   │   │   ├── home/
 │   │   │   │   └── top/
@@ -75,8 +75,8 @@ root/
 │   │   │   └── template/
 │   │   │       └── _Icon.scss
 │   │   ├── img/
-│   │   │   ├── SiteWide/
-│   │   │   ├── Structure/
+│   │   │   ├── sitewide/
+│   │   │   ├── structure/
 │   │   │   └── namespace/
 │   │   └── js/
 │   │       ├── jquery.min.js

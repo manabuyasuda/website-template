@@ -1,0 +1,23 @@
+/*
+---
+name: sw-TextSecondary
+namespace: SiteWide
+category: Text
+---
+
+`<p>`や`<small>`で使われるようなテキストスタイルです。補足的・副次的な意味合いを持たせる場合に使います。
+
+```jade
+.st-Wrapper
+  p.sw-Text 通常の文章です
+  p.sw-TextSecondary 補足的な文章です
+```
+*/
+.sw-TextSecondary {
+  margin-top: $margin-small-text;
+  font-size: $font-size-secondary;
+
+  @include mq-up(md) {
+    margin-top: $margin-small-text-md;
+  }
+}

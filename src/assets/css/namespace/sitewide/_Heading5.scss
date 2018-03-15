@@ -1,0 +1,27 @@
+/*
+---
+name: sw-Heading5
+namespace: SiteWide
+category: Heading
+---
+
+`<h5>`で使用する見出しです。
+
+```jade
+.st-Wrapper
+  h5.sw-Heading5 見出し5
+```
+*/
+.sw-Heading5 {
+  $self: &;
+  @include sw-Heading5();
+  margin-bottom: $margin-heading5;
+
+  &#{$self} + * {
+    margin-top: 0;
+  }
+
+  @include mq-up(md) {
+    margin-bottom: $margin-heading5-md;
+  }
+}

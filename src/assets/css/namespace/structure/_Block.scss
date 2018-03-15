@@ -1,0 +1,86 @@
+/*
+---
+name: st-Block
+namespace: Structure
+category: Layout
+---
+
+見出しや画像などを含んだブロック同士の余白を指定します。
+
+```jade
+.st-Wrapper
+  .st-Block
+    .test-Block
+      .test-Block_Left
+        img(src="https://placehold.jp/300x200.png" alt)
+      .test-Block_Right
+        h3 ダミーの見出しです
+        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+  .st-Block
+    .test-Block
+      .test-Block_Left
+        img(src="https://placehold.jp/300x200.png" alt)
+      .test-Block_Right
+        h3 ダミーの見出しです
+        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+```
+*/
+.st-Block {
+  @include st-Block();
+}
+
+/*
+---
+name: st-Block-divider
+namespace: Structure
+category: Layout
+---
+
+`.st-Block-divider`を追加すると間にボーダーが入ります。
+
+```jade
+.st-Wrapper
+  .st-Block.st-Block-divider
+    .test-Block
+      .test-Block_Left
+        img(src="https://placehold.jp/300x200.png" alt)
+      .test-Block_Right
+        h3 ダミーの見出しです
+        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+  .st-Block.st-Block-divider
+    .test-Block
+      .test-Block_Left
+        img(src="https://placehold.jp/300x200.png" alt)
+      .test-Block_Right
+        h3 ダミーの見出しです
+        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+```
+*/
+.st-Block-divider {
+  margin-top: $margin-block-divider;
+
+  @include mq-up(md) {
+    margin-top: $margin-block-divider-md;
+  }
+
+  & + &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    padding-top: $margin-block-divider;
+    border-top: 1px solid #e3e3e3;
+
+    @include mq-up(md) {
+      padding-top: $margin-block-divider-md;
+    }
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

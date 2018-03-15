@@ -1,0 +1,27 @@
+/*
+---
+name: sw-Heading3
+namespace: SiteWide
+category: Heading
+---
+
+`<h3>`で使用する見出しです。
+
+```jade
+.st-Wrapper
+  h3.sw-Heading3 見出し3
+```
+*/
+.sw-Heading3 {
+  $self: &;
+  @include sw-Heading3();
+  margin-bottom: $margin-heading3;
+
+  &#{$self} + * {
+    margin-top: 0;
+  }
+
+  @include mq-up(md) {
+    margin-bottom: $margin-heading3-md;
+  }
+}

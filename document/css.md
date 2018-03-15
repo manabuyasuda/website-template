@@ -17,15 +17,15 @@ ECSSの考え方をベースに、以下の5つのレイヤーに大きくわか
 
 1. site.scss
 2. base
-3. namespace/SiteWide
-4. namespace/Structure
+3. namespace/sitewide
+4. namespace/structure
 5. namespace
 
 baseには変数や関数、タイプセレクタのベーススタイルなどがあります。
 
-SiteWideはリストやボタンのような場所を選ばない汎用的なモジュールです。
+sitewideはリストやボタンのような場所を選ばない汎用的なモジュールです。
 
-Structureはヘッダーやフッター、パンくずリストやサイドメニューのように使う場所が固定されている構造的なモジュールです。共通のレイアウトやグリッドシステムもStructureに定義していきます。
+structureはヘッダーやフッター、パンくずリストやサイドメニューのように使う場所が固定されている構造的なモジュールです。共通のレイアウトやグリッドシステムもstructureに定義していきます。
 
 namespaceには名前空間ごとにディレクトリを作り、さらにModule（Component）ごとにファイルを作ります。  
 namespace以下によくあるディレクトリを作っていますが、案件によって追加・削除してください。
@@ -40,8 +40,8 @@ css/
 │   ├── mixin/
 │   └── variable/
 ├── namespace/
-│   ├── SiteWide/
-│   ├── Structure/
+│   ├── sitewide/
+│   ├── structure/
 │   ├── company/
 │   ├── csr/
 │   ├── faq/
@@ -66,7 +66,7 @@ css/
 `namespace/`にはECSSの考えをベースに名前空間でディレクトリをわけます。  
 例えば以下のように名前をつけます。
 
- - `.sw-` (SiteWide) サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）
+ - `.sw-` (Sitewide) サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）
  - `.st-` (Structure)サイト共通の構造的なModule（ヘッダーやフッター、カテゴリーごとの大枠のレイアウト、グリッドシステムやコンポーネンの余白など）
  - `.home-` (HomePage) ホームページ（サイトトップページ）
  - `.top-` (CategoryTop) カテゴリートップページ

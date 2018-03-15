@@ -8,7 +8,7 @@ JavaScriptは3つ大きくわけられます。
 2. lib
 3. namespace
 
-JQueryは`test/assets/js/`にそのまま出力されます。  
+JQueryは`htdocs/assets/js/`にそのまま出力されます。  
 linはサイト全体で使われるライブラリやプラグインを保存します。  
 namespaceはECSSの考えをベースに使われる場所や状況ごとにディレクトリをわけて、さらにModuleごとにファイルをわけます。
 
@@ -27,4 +27,4 @@ js/
 └── namespace/
 ```
 
-ファイルはすべて、`test/assets/js/`に出力されます。
+ファイルはすべて、`htdocs/assets/js/`に出力されます。

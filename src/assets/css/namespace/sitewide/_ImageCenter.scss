@@ -1,0 +1,24 @@
+/*
+---
+name: sw-ImageCenter
+namespace: SiteWide
+category: Image
+---
+
+画像をセンタリングします。
+
+```jade
+.st-Wrapper
+  p.sw-ImageCenter
+    img(src="https://placehold.jp/300x200.png" alt="")
+```
+*/
+.sw-ImageCenter {
+  display: block;
+  margin-top: $margin-text;
+  text-align: center;
+
+  @include mq-up(md) {
+    margin-top: $margin-text-md;
+  }
+}
