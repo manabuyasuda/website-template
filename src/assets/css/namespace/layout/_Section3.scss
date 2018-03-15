@@ -1,28 +1,28 @@
 /*
 ---
-name: st-Section3
-namespace: Structure
+name: l-Section3
+namespace: Layout
 category: Layout
 ---
 
 h3相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
-.st-Wrapper
-  section.st-Section2
+.l-Wrapper
+  section.l-Section2
     h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
 
-    section.st-Section3
+    section.l-Section3
       h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
       p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-    section.st-Section3
+    section.l-Section3
       h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
-      .st-Block
-        p.test-Box .st-Block
+      .l-Block
+        p.test-Box .l-Block
       p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
-.st-Section3 {
+.l-Section3 {
   margin-top: $margin-section3;
 
   @include mq-up(md) {
@@ -48,29 +48,29 @@ h3相当の見出しをラップするセクションの余白を指定します
 
 /*
 ---
-name: st-Section3-divider
-namespace: Structure
+name: l-Section3-divider
+namespace: Layout
 category: Layout
 ---
 
-レイアウト例です。`.st-Section3-divider`を追加すると`.st-Section3`同士の間にボーダーがつきます。
+レイアウト例です。`.l-Section3-divider`を追加すると`.l-Section3`同士の間にボーダーがつきます。
 
 ```jade
-.st-Wrapper
-  section.st-Section2
+.l-Wrapper
+  section.l-Section2
     h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
 
-    section.st-Section3.st-Section3-divider
+    section.l-Section3.l-Section3-divider
       h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
       p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-    section.st-Section3.st-Section3-divider
+    section.l-Section3.l-Section3-divider
       h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
-      .st-Block
-        p.test-Box .st-Block
+      .l-Block
+        p.test-Box .l-Block
       p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
-.st-Section3-divider {
+.l-Section3-divider {
   margin-top: $margin-section3-divider;
 
   & + &:before {

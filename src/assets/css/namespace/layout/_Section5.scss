@@ -1,30 +1,30 @@
 /*
 ---
-name: st-Section5
-namespace: Structure
+name: l-Section5
+namespace: Layout
 category: Layout
 ---
 
 h5相当の見出しをラップするセクションの余白を指定します。
 
 ```jade
-.st-Wrapper
-  section.st-Section4
+.l-Wrapper
+  section.l-Section4
     h4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
     p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
     p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-  section.st-Section4
+  section.l-Section4
     h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
 
-    section.st-Section5
+    section.l-Section5
       h5.sw-Heading5 吾輩は猫である。名前はまだ無い。
       p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-    section.st-Section5
+    section.l-Section5
       h5.sw-Heading5 どこで生れたかとんと見当がつかぬ。
       p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
 ```
 */
-.st-Section5 {
+.l-Section5 {
   margin-top: $margin-section5;
 
   @include mq-up(md) {

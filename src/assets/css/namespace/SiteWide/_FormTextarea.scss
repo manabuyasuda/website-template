@@ -8,7 +8,7 @@ category: Form
 `<textarea>`のデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   textarea.sw-FormTextarea(placeholder="テキストエリアです")
 
   label.sw-FormTextarea_TextTop(for="textarea1") テキストエリアの説明

@@ -8,7 +8,7 @@ category: Form
 `<input>`タグのデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   input.sw-FormInput(type="input" placeholder="デフォルト")
 
   label.sw-FormInput_TextTop(for="input1") inputタグの説明です

@@ -1,4 +1,4 @@
-@mixin st-Block() {
+@mixin l-Block() {
   margin-top: $margin-block;
 
   @include mq-up(md) {

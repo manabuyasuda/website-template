@@ -8,7 +8,7 @@ category: Block
 スタイルガイド用のダミーブロックです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   .test-Block
     .test-Block_Left
       img(src="https://placehold.jp/300x200.png" alt)
@@ -18,7 +18,7 @@ category: Block
 ```
 */
 .test-Block {
-  @include st-Block();
+  @include l-Block();
 
   &:after {
     content: "";

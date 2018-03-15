@@ -19,13 +19,16 @@ ECSSの考え方をベースに、以下の5つのレイヤーに大きくわか
 2. base
 3. namespace/sitewide
 4. namespace/structure
+4. namespace/layout
 5. namespace
 
 baseには変数や関数、タイプセレクタのベーススタイルなどがあります。
 
 sitewideはリストやボタンのような場所を選ばない汎用的なモジュールです。
 
-structureはヘッダーやフッター、パンくずリストやサイドメニューのように使う場所が固定されている構造的なモジュールです。共通のレイアウトやグリッドシステムもstructureに定義していきます。
+structureはヘッダーやフッター、パンくずリストやサイドメニューのように使う場所が固定されている構造的なモジュールです。
+
+layoutはコンテンツ内の余白やレイアウトを指定するレイアウト専用のモジュールです。
 
 namespaceには名前空間ごとにディレクトリを作り、さらにModule（Component）ごとにファイルを作ります。  
 namespace以下によくあるディレクトリを作っていますが、案件によって追加・削除してください。
@@ -42,6 +45,7 @@ css/
 ├── namespace/
 │   ├── sitewide/
 │   ├── structure/
+│   ├── layout/
 │   ├── company/
 │   ├── csr/
 │   ├── faq/

@@ -8,7 +8,7 @@ category: List
 順序をもたない並列なリストです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ul.sw-ListUnorder
     li リストです。
     li リストです。
@@ -18,7 +18,7 @@ category: List
 ```
 */
 .sw-ListUnorder {
-  @include st-Text();
+  @include l-Text();
   margin-left: 1.5em;
   padding-left: 0;
   list-style-type: none;

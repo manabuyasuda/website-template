@@ -10,7 +10,7 @@ category: List
 - 改行は`<br>`で指定してください。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   .sw-TableWide
     table.sw-Table
       thead
@@ -38,7 +38,7 @@ category: List
 ```
 */
 .sw-TableWide {
-  @include st-Block();
+  @include l-Block();
   overflow: auto;
   width: 100%;
   background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,

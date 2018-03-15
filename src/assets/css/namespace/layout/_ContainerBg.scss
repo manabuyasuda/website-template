@@ -1,7 +1,7 @@
 /*
 ---
-name: st-ContainerBg
-namespace: Structure
+name: l-ContainerBg
+namespace: Layout
 category: Layout
 ---
 
@@ -10,17 +10,17 @@ category: Layout
 レイアウト例です。
 
 ```jade
-.st-ContainerBg
-  .st-Wrapper
-    section.st-Section2
+.l-ContainerBg
+  .l-Wrapper
+    section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    section.st-Section2
+    section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
-.st-ContainerBg {
+.l-ContainerBg {
   padding: $padding-conitaner-bg;
   background-color: #f6f8f9;
 
@@ -39,24 +39,24 @@ category: Layout
 
 /*
 ---
-name: st-ContainerBg-delimiter
-namespace: Structure
+name: l-ContainerBg-delimiter
+namespace: Layout
 category: Layout
 ---
 
-`st-ContainerBg-delimiter`を追加するとボーダーがつきます。
+`l-ContainerBg-delimiter`を追加するとボーダーがつきます。
 
 ```jade
-.st-ContainerBg.st-ContainerBg-delimiter
-  .st-Wrapper
-    section.st-Section2
+.l-ContainerBg.l-ContainerBg-delimiter
+  .l-Wrapper
+    section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    section.st-Section2
+    section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
-.st-ContainerBg-delimiter {
+.l-ContainerBg-delimiter {
   border-top: 1px solid #e8e8e8;
 }

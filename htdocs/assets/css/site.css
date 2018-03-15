@@ -570,7 +570,8 @@ img {
 
 /**
  * .sw- (SiteWide)...サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）
- * .st- (Structure)...サイト共通の構造的なModule（ヘッダーやフッター、カテゴリーごとの大枠のレイアウト、グリッドシステムやコンポーネンの余白など）
+ * .st- (Structure)...サイト共通の構造的なModule（ヘッダーやフッターのような場所が固定されるもの）
+ * .l- (Layout)...コンテンツ内の余白やレイアウト専用のModule
  * .wisywig- (WISYWIG)...WISYWIG（ウィジウィグ）で入力した要素に対するスタイル
  * .home- (HomePage)...ホームページ（サイトトップページ）
  * .top- (TopPage)...カテゴリートップページ
@@ -588,6 +589,2170 @@ img {
  */
 /*
 ---
+name: l-Block
+namespace: Layout
+category: Layout
+---
+
+見出しや画像などを含んだブロック同士の余白を指定します。
+
+```jade
+.l-Wrapper
+  .l-Block
+    .test-Block
+      .test-Block_Left
+        img(src="https://placehold.jp/300x200.png" alt)
+      .test-Block_Right
+        h3 ダミーの見出しです
+        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+  .l-Block
+    .test-Block
+      .test-Block_Left
+        img(src="https://placehold.jp/300x200.png" alt)
+      .test-Block_Right
+        h3 ダミーの見出しです
+        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+```
+*/
+.l-Block {
+  margin-top: 40px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Block {
+    margin-top: 50px;
+  }
+}
+
+.l-Block > :first-child {
+  margin-top: 0;
+}
+
+.l-Block > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Block-divider
+namespace: Layout
+category: Layout
+---
+
+`.l-Block-divider`を追加すると間にボーダーが入ります。
+
+```jade
+.l-Wrapper
+  .l-Block.l-Block-divider
+    .test-Block
+      .test-Block_Left
+        img(src="https://placehold.jp/300x200.png" alt)
+      .test-Block_Right
+        h3 ダミーの見出しです
+        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+  .l-Block.l-Block-divider
+    .test-Block
+      .test-Block_Left
+        img(src="https://placehold.jp/300x200.png" alt)
+      .test-Block_Right
+        h3 ダミーの見出しです
+        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+```
+*/
+.l-Block-divider {
+  margin-top: 20px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Block-divider {
+    margin-top: 50px;
+  }
+}
+
+.l-Block-divider + .l-Block-divider:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Block-divider + .l-Block-divider:before {
+    padding-top: 50px;
+  }
+}
+
+.l-Block-divider > :first-child {
+  margin-top: 0;
+}
+
+.l-Block-divider > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Container
+namespace: Layout
+category: Layout
+---
+
+コンテンツ内の上下に大きめの余白をとります。
+
+レイアウト例です。
+```jade
+.l-Container
+  .l-Wrapper
+    section.l-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    section.l-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.l-Container {
+  padding: 45px 0 60px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Container {
+    padding: 70px 0 100px;
+  }
+}
+
+.l-Container > :first-child {
+  margin-top: 0;
+}
+
+.l-Container > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-ContainerBg
+namespace: Layout
+category: Layout
+---
+
+コンテンツ内の上下に大きめの余白をとります。背景色が入ります。
+
+レイアウト例です。
+
+```jade
+.l-ContainerBg
+  .l-Wrapper
+    section.l-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    section.l-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.l-ContainerBg {
+  padding: 45px 0 50px;
+  background-color: #f6f8f9;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-ContainerBg {
+    padding: 70px 0 80px;
+  }
+}
+
+.l-ContainerBg > :first-child {
+  margin-top: 0;
+}
+
+.l-ContainerBg > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-ContainerBg-delimiter
+namespace: Layout
+category: Layout
+---
+
+`l-ContainerBg-delimiter`を追加するとボーダーがつきます。
+
+```jade
+.l-ContainerBg.l-ContainerBg-delimiter
+  .l-Wrapper
+    section.l-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    section.l-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.l-ContainerBg-delimiter {
+  border-top: 1px solid #e8e8e8;
+}
+
+/*
+---
+name: l-Grid
+namespace: Layout
+category: Layout
+---
+
+標準的なグリッドシステムです。カラムごとに任意の値を指定したい場合に使います。
+カラム間の余白は幅を`$l-grid-column-gap`で統一しています。
+
+以下のような指定ができます。
+
+- `.l-Grid_Item-8of12` カラム数の指定。
+- `.l-Grid-reverse` カラムの反転。
+- `.l-Grid-center` カラムのセンタリング。
+- `.l-Grid-middle` カラムの垂直配置。
+
+```jade
+.l-Wrapper
+  .l-Grid
+    .l-Grid_Item.l-Grid_Item-8of12Md
+      .test-Box One<br>1/1 → 8/12
+    .l-Grid_Item.l-Grid_Item-4of12Md
+      .test-Box Two<br>1/1 → 4/12
+```
+
+```jade
+.l-Wrapper
+  .l-Grid.l-Grid-reversMd
+    .l-Grid_Item.l-Grid_Item-8of12Md
+      .test-Box One<br>1/1 → 8/12
+    .l-Grid_Item.l-Grid_Item-4of12Md
+      .test-Box Two<br>1/1 → 4/12
+```
+
+```jade
+.l-Wrapper
+  .l-Grid.l-Grid-centerMd
+    .l-Grid_Item.l-Grid_Item-8of12Md
+      .test-Box One<br>1/1 → 8/12
+```
+*/
+.l-Grid {
+  margin-left: -15px;
+  padding-left: 0;
+  list-style-type: none;
+  display: block;
+  font-size: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid {
+    margin-left: -30px;
+  }
+}
+
+.l-Grid_Item {
+  display: inline-block;
+  width: 100%;
+  padding-left: 15px;
+  font-size: medium;
+  font-size: 1rem;
+  vertical-align: top;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid_Item {
+    padding-left: 30px;
+  }
+}
+
+.l-Grid_Item-1of12 {
+  width: 8.33333%;
+}
+
+.l-Grid_Item-2of12 {
+  width: 16.66667%;
+}
+
+.l-Grid_Item-3of12 {
+  width: 25%;
+}
+
+.l-Grid_Item-4of12 {
+  width: 33.33333%;
+}
+
+.l-Grid_Item-5of12 {
+  width: 41.66667%;
+}
+
+.l-Grid_Item-6of12 {
+  width: 50%;
+}
+
+.l-Grid_Item-7of12 {
+  width: 58.33333%;
+}
+
+.l-Grid_Item-8of12 {
+  width: 66.66667%;
+}
+
+.l-Grid_Item-9of12 {
+  width: 75%;
+}
+
+.l-Grid_Item-10of12 {
+  width: 83.33333%;
+}
+
+.l-Grid_Item-11of12 {
+  width: 91.66667%;
+}
+
+.l-Grid_Item-12of12 {
+  width: 100%;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid_Item-1of12Md {
+    width: 8.33333%;
+  }
+  .l-Grid_Item-2of12Md {
+    width: 16.66667%;
+  }
+  .l-Grid_Item-3of12Md {
+    width: 25%;
+  }
+  .l-Grid_Item-4of12Md {
+    width: 33.33333%;
+  }
+  .l-Grid_Item-5of12Md {
+    width: 41.66667%;
+  }
+  .l-Grid_Item-6of12Md {
+    width: 50%;
+  }
+  .l-Grid_Item-7of12Md {
+    width: 58.33333%;
+  }
+  .l-Grid_Item-8of12Md {
+    width: 66.66667%;
+  }
+  .l-Grid_Item-9of12Md {
+    width: 75%;
+  }
+  .l-Grid_Item-10of12Md {
+    width: 83.33333%;
+  }
+  .l-Grid_Item-11of12Md {
+    width: 91.66667%;
+  }
+  .l-Grid_Item-12of12Md {
+    width: 100%;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grid_Item-1of12Lg {
+    width: 8.33333%;
+  }
+  .l-Grid_Item-2of12Lg {
+    width: 16.66667%;
+  }
+  .l-Grid_Item-3of12Lg {
+    width: 25%;
+  }
+  .l-Grid_Item-4of12Lg {
+    width: 33.33333%;
+  }
+  .l-Grid_Item-5of12Lg {
+    width: 41.66667%;
+  }
+  .l-Grid_Item-6of12Lg {
+    width: 50%;
+  }
+  .l-Grid_Item-7of12Lg {
+    width: 58.33333%;
+  }
+  .l-Grid_Item-8of12Lg {
+    width: 66.66667%;
+  }
+  .l-Grid_Item-9of12Lg {
+    width: 75%;
+  }
+  .l-Grid_Item-10of12Lg {
+    width: 83.33333%;
+  }
+  .l-Grid_Item-11of12Lg {
+    width: 91.66667%;
+  }
+  .l-Grid_Item-12of12Lg {
+    width: 100%;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grid_Item-1of12Xl {
+    width: 8.33333%;
+  }
+  .l-Grid_Item-2of12Xl {
+    width: 16.66667%;
+  }
+  .l-Grid_Item-3of12Xl {
+    width: 25%;
+  }
+  .l-Grid_Item-4of12Xl {
+    width: 33.33333%;
+  }
+  .l-Grid_Item-5of12Xl {
+    width: 41.66667%;
+  }
+  .l-Grid_Item-6of12Xl {
+    width: 50%;
+  }
+  .l-Grid_Item-7of12Xl {
+    width: 58.33333%;
+  }
+  .l-Grid_Item-8of12Xl {
+    width: 66.66667%;
+  }
+  .l-Grid_Item-9of12Xl {
+    width: 75%;
+  }
+  .l-Grid_Item-10of12Xl {
+    width: 83.33333%;
+  }
+  .l-Grid_Item-11of12Xl {
+    width: 91.66667%;
+  }
+  .l-Grid_Item-12of12Xl {
+    width: 100%;
+  }
+}
+
+/**
+ * 要素の垂直位置を真ん中寄せ。
+ */
+.l-Grid-middle > .l-Grid_Item {
+  vertical-align: middle;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid-middleMd > .l-Grid_Item {
+    vertical-align: middle;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grid-middleLg > .l-Grid_Item {
+    vertical-align: middle;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grid-middleXl > .l-Grid_Item {
+    vertical-align: middle;
+  }
+}
+
+/**
+ * 要素の垂直位置を下寄せ。
+ */
+.l-Grid--bottom > .l-Grid_Item {
+  vertical-align: bottom;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid-bottomMd > .l-Grid_Item {
+    vertical-align: bottom;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grid-bottomLg > .l-Grid_Item {
+    vertical-align: bottom;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grid-bottomXl > .l-Grid_Item {
+    vertical-align: bottom;
+  }
+}
+
+/**
+ * 要素を中央寄せ、要素内は左寄せ。
+ */
+.l-Grid-center {
+  text-align: center;
+}
+
+.l-Grid-center > .l-Grid_Item {
+  text-align: left;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid-centerMd {
+    text-align: center;
+  }
+  .l-Grid-centerMd > .l-Grid_Item {
+    text-align: left;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grid-centerLg {
+    text-align: center;
+  }
+  .l-Grid-centerLg > .l-Grid_Item {
+    text-align: left;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grid-centerXl {
+    text-align: center;
+  }
+  .l-Grid-centerXl > .l-Grid_Item {
+    text-align: left;
+  }
+}
+
+/**
+ * 要素を右寄せ、要素内は左寄せ。
+ */
+.l-Grid-right {
+  text-align: right;
+}
+
+.l-Grid-right > .l-Grid_Item {
+  text-align: left;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid-rightMd {
+    text-align: right;
+  }
+  .l-Grid-rightMd > .l-Grid_Item {
+    text-align: left;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grid-rightLg {
+    text-align: right;
+  }
+  .l-Grid-rightLg > .l-Grid_Item {
+    text-align: left;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grid-rightXl {
+    text-align: right;
+  }
+  .l-Grid-rightXl > .l-Grid_Item {
+    text-align: left;
+  }
+}
+
+/**
+ * 要素の反転。
+ */
+.l-Grid-reverse {
+  text-align: left;
+  direction: rtl;
+}
+
+.l-Grid-reverse > .l-Grid_Item {
+  text-align: left;
+  direction: ltr;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid-reversMd {
+    text-align: left;
+    direction: rtl;
+  }
+  .l-Grid-reversMd > .l-Grid_Item {
+    text-align: left;
+    direction: ltr;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grid-reverseLg {
+    text-align: left;
+    direction: rtl;
+  }
+  .l-Grid-reverseLg > .l-Grid_Item {
+    text-align: left;
+    direction: ltr;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grid-reverseXl {
+    text-align: left;
+    direction: rtl;
+  }
+  .l-Grid-reverseXl > .l-Grid_Item {
+    text-align: left;
+    direction: ltr;
+  }
+}
+
+/*
+---
+name: l-Grids
+namespace: Layout
+category: Layout
+---
+
+バリエーションの豊富なグリッドシステムです。親要素（`.l-Grids`）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のようなカラムの指定ができます。
+
+カラム間の余白は幅を`$l-grids-column-gap`、高さを`$l-grids-row-gap`で統一しています。
+
+以下のような指定ができます。
+
+- `.l-Grids-col2`のように1/2から1/5までの均等なカラム指定。
+- `.l-Grids-col8to4`のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。
+- `.l-Grids-col2Md`のように`Md`、`Lg`、`Xl`を追加してブレイクポイントの指定。
+- `.l-Grids-middle`のようにカラムの垂直位置を中央揃え。
+- `.l-Grids-noGap`でカラム間のガターを0にする。
+- `.l-Grids-narrow`でカラム間のガターを最小にする。
+
+### 均等なカラム指定。
+
+```jade
+.l-Wrapper
+  .l-Grids.l-Grids-col2Md
+    .l-Grids_Item
+      .test-Box One<br>1/1 → 1/2
+    .l-Grids_Item
+      .test-Box Two<br>1/1 → 1/2
+
+  .l-Grids.l-Grids-col2.l-Grids-col3Md
+    .l-Grids_Item
+      .test-Box One<br>1/2 → 1/3
+    .l-Grids_Item
+      .test-Box Two<br>1/2 → 1/3
+    .l-Grids_Item
+      .test-Box Three<br>1/2 → 1/3
+    .l-Grids_Item
+      .test-Box Four<br>1/2 → 1/3
+```
+
+### 8/12と4/12と4/12と8/12のカラム指定。
+
+```jade
+.l-Wrapper
+  .l-Grids.l-Grids-col8to4Md
+    .l-Grids_Item
+      .test-Box One<br>1/1 → 8/12
+    .l-Grids_Item
+      .test-Box Two<br>1/1 → 4/12
+
+  .l-Grids.l-Grids-col4to8Md
+    .l-Grids_Item
+      .test-Box One <br>1/1 → 4/12
+    .l-Grids_Item
+      .test-Box Two<br>1/1 → 8/12
+```
+
+### 8/12と4/12のカラム指定かつ、`md`以上で要素を反転。
+
+```jade
+.l-Wrapper
+  .l-Grids.l-Grids-col8to4Md.l-Grids-reversMd
+    .l-Grids_Item
+      .test-Box One<br>1/1 → 8/12
+    .l-Grids_Item
+      .test-Box Two<br>1/1 → 4/12
+```
+
+### カラムの垂直位置を中央揃え。
+
+```jade
+.l-Wrapper
+  .l-Grids.l-Grids-middleMd.l-Grids-col2Md
+    .l-Grids_Item
+      .test-Box One<br>1/1 → 6/12<br>.l-Grids-middle<br>.l-Grids-middle
+    .l-Grids_Item
+      .test-Box Two<br>1/1 → 6/12
+```
+
+### カラム間のガターを0にします。
+
+```jade
+.l-Wrapper
+  .l-Grids.l-Grids-col3Md.l-Grids-noGap
+    .l-Grids_Item
+      .test-Box One<br>1/1 → 1/3
+    .l-Grids_Item
+      .test-Box Two<br>1/1 → 1/3
+    .l-Grids_Item
+      .test-Box Three<br>1/1 → 1/3
+```
+
+### カラム間のガターを最小にします。
+
+```jade
+.l-Wrapper
+  .l-Grids.l-Grids-col3Md.l-Grids-narrow
+    .l-Grids_Item
+      .test-Box One<br>1/1 → 1/3
+    .l-Grids_Item
+      .test-Box Two<br>1/1 → 1/3
+    .l-Grids_Item
+      .test-Box Three<br>1/1 → 1/3
+```
+*/
+.l-Grids {
+  margin-top: 35px;
+  margin-left: -15px;
+  padding-left: 0;
+  list-style-type: none;
+  display: block;
+  font-size: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids {
+    margin-top: 50px;
+    margin-left: -30px;
+  }
+}
+
+.l-Grids_Item {
+  display: inline-block;
+  width: 100%;
+  padding-left: 15px;
+  font-size: medium;
+  font-size: 1rem;
+  vertical-align: top;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids_Item {
+    padding-left: 30px;
+  }
+}
+
+.l-Grids_Item > :first-child {
+  margin-top: 0;
+}
+
+.l-Grids_Item > :last-child {
+  margin-bottom: 0;
+}
+
+/* 1 Column */
+.l-Grids_Item:nth-of-type(n+2) {
+  margin-top: 35px;
+}
+
+/* 2 Columns */
+.l-Grids-col2 > .l-Grids_Item {
+  width: 50%;
+  /**
+   * いったんすべての`margin-top`をリセットします。
+   * `:nth-of-type(n+1)`は1つ目以降のすべての要素に適応されます。
+   * リセット後に対象となる要素に`margin-top`を指定します。
+   */
+}
+
+.l-Grids-col2 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col2 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col2Md > .l-Grids_Item {
+    width: 50%;
+  }
+  .l-Grids-col2Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col2Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col2Lg > .l-Grids_Item {
+    width: 50%;
+  }
+  .l-Grids-col2Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col2Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col2Xl > .l-Grids_Item {
+    width: 50%;
+  }
+  .l-Grids-col2Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col2Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+/* 3 Columns */
+.l-Grids-col3 > .l-Grids_Item {
+  width: 33.33333%;
+}
+
+.l-Grids-col3 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col3 > .l-Grids_Item:nth-of-type(n+4) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col3Md > .l-Grids_Item {
+    width: 33.33333%;
+  }
+  .l-Grids-col3Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col3Md > .l-Grids_Item:nth-of-type(n+4) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col3Lg > .l-Grids_Item {
+    width: 33.33333%;
+  }
+  .l-Grids-col3Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col3Lg > .l-Grids_Item:nth-of-type(n+4) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col3Xl > .l-Grids_Item {
+    width: 33.33333%;
+  }
+  .l-Grids-col3Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col3Xl > .l-Grids_Item:nth-of-type(n+4) {
+    margin-top: 50px;
+  }
+}
+
+/* 4 Columns */
+.l-Grids-col4 > .l-Grids_Item {
+  width: 25%;
+}
+
+.l-Grids-col4 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col4 > .l-Grids_Item:nth-of-type(n+5) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col4Md > .l-Grids_Item {
+    width: 25%;
+  }
+  .l-Grids-col4Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col4Md > .l-Grids_Item:nth-of-type(n+5) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col4Lg > .l-Grids_Item {
+    width: 25%;
+  }
+  .l-Grids-col4Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col4Lg > .l-Grids_Item:nth-of-type(n+5) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col4Xl > .l-Grids_Item {
+    width: 25%;
+  }
+  .l-Grids-col4Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col4Xl > .l-Grids_Item:nth-of-type(n+5) {
+    margin-top: 50px;
+  }
+}
+
+/* 5 Columns */
+.l-Grids-col5 > .l-Grids_Item {
+  width: 20%;
+}
+
+.l-Grids-col5 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col5 > .l-Grids_Item:nth-of-type(n+6) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col5Md > .l-Grids_Item {
+    width: 20%;
+  }
+  .l-Grids-col5Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col5Md > .l-Grids_Item:nth-of-type(n+6) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col5Lg > .l-Grids_Item {
+    width: 20%;
+  }
+  .l-Grids-col5Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col5Lg > .l-Grids_Item:nth-of-type(n+6) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col5Xl > .l-Grids_Item {
+    width: 20%;
+  }
+  .l-Grids-col5Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col5Xl > .l-Grids_Item:nth-of-type(n+6) {
+    margin-top: 50px;
+  }
+}
+
+/**
+ * カラム間のガターを0にします。
+ */
+.l-Grids-noGap {
+  margin-left: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-noGap {
+    margin-left: 0;
+  }
+}
+
+.l-Grids-noGap > .l-Grids_Item {
+  padding-left: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-noGap > .l-Grids_Item {
+    padding-left: 0;
+  }
+}
+
+/**
+ * カラム間のガターを最小にします。
+ */
+.l-Grids-narrow {
+  margin-left: -1px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-narrow {
+    margin-left: -1px;
+  }
+}
+
+.l-Grids-narrow > .l-Grids_Item {
+  padding-left: 1px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-narrow > .l-Grids_Item {
+    padding-left: 1px;
+  }
+}
+
+/**
+ * 要素の垂直位置を真ん中寄せ。
+ */
+.l-Grids-middle > .l-Grids_Item {
+  vertical-align: middle;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-middleMd > .l-Grids_Item {
+    vertical-align: middle;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-middleLg > .l-Grids_Item {
+    vertical-align: middle;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-middleXl > .l-Grids_Item {
+    vertical-align: middle;
+  }
+}
+
+/**
+ * `.l-Grids_Item`の表示順を逆にします。
+ * A,B → B,A
+ */
+.l-Grids-reverse {
+  text-align: left;
+  direction: rtl;
+}
+
+.l-Grids-reverse > .l-Grids_Item {
+  text-align: left;
+  direction: ltr;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-reversMd {
+    text-align: left;
+    direction: rtl;
+  }
+  .l-Grids-reversMd > .l-Grids_Item {
+    text-align: left;
+    direction: ltr;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-reverseLg {
+    text-align: left;
+    direction: rtl;
+  }
+  .l-Grids-reverseLg > .l-Grids_Item {
+    text-align: left;
+    direction: ltr;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-reverseXl {
+    text-align: left;
+    direction: rtl;
+  }
+  .l-Grids-reverseXl > .l-Grids_Item {
+    text-align: left;
+    direction: ltr;
+  }
+}
+
+/* 1/12 11/12, 11/12 1/12 */
+.l-Grids-col1to11 > .l-Grids_Item:nth-of-type(odd) {
+  width: 8.33333%;
+}
+
+.l-Grids-col1to11 > .l-Grids_Item:nth-of-type(even) {
+  width: 91.66667%;
+}
+
+.l-Grids-col1to11 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col1to11 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+.l-Grids-col11to1 > .l-Grids_Item:nth-of-type(odd) {
+  width: 91.66667%;
+}
+
+.l-Grids-col11to1 > .l-Grids_Item:nth-of-type(even) {
+  width: 8.33333%;
+}
+
+.l-Grids-col11to1 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col11to1 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col1to11Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 8.33333%;
+  }
+  .l-Grids-col1to11Md > .l-Grids_Item:nth-of-type(even) {
+    width: 91.66667%;
+  }
+  .l-Grids-col1to11Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col1to11Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col11to1Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 91.66667%;
+  }
+  .l-Grids-col11to1Md > .l-Grids_Item:nth-of-type(even) {
+    width: 8.33333%;
+  }
+  .l-Grids-col11to1Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col11to1Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col1to11Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 8.33333%;
+  }
+  .l-Grids-col1to11Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 91.66667%;
+  }
+  .l-Grids-col1to11Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col1to11Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col11to1Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 91.66667%;
+  }
+  .l-Grids-col11to1Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 8.33333%;
+  }
+  .l-Grids-col11to1Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col11to1Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col1to11Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 8.33333%;
+  }
+  .l-Grids-col1to11Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 91.66667%;
+  }
+  .l-Grids-col1to11Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col1to11Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col11to1Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 91.66667%;
+  }
+  .l-Grids-col11to1Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 8.33333%;
+  }
+  .l-Grids-col11to1Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col11to1Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+/* 2/12 10/12, 10/12 2/12 */
+.l-Grids-col2to10 > .l-Grids_Item:nth-of-type(odd) {
+  width: 16.66667%;
+}
+
+.l-Grids-col2to10 > .l-Grids_Item:nth-of-type(even) {
+  width: 83.33333%;
+}
+
+.l-Grids-col2to10 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col2to10 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+.l-Grids-col10to2 > .l-Grids_Item:nth-of-type(odd) {
+  width: 83.33333%;
+}
+
+.l-Grids-col10to2 > .l-Grids_Item:nth-of-type(even) {
+  width: 16.66667%;
+}
+
+.l-Grids-col10to2 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col10to2 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col2to10Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 16.66667%;
+  }
+  .l-Grids-col2to10Md > .l-Grids_Item:nth-of-type(even) {
+    width: 83.33333%;
+  }
+  .l-Grids-col2to10Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col2to10Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col10to2Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 83.33333%;
+  }
+  .l-Grids-col10to2Md > .l-Grids_Item:nth-of-type(even) {
+    width: 16.66667%;
+  }
+  .l-Grids-col10to2Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col10to2Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col2to10Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 16.66667%;
+  }
+  .l-Grids-col2to10Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 83.33333%;
+  }
+  .l-Grids-col2to10Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col2to10Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col10to2Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 83.33333%;
+  }
+  .l-Grids-col10to2Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 16.66667%;
+  }
+  .l-Grids-col10to2Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col10to2Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col2to10Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 16.66667%;
+  }
+  .l-Grids-col2to10Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 83.33333%;
+  }
+  .l-Grids-col2to10Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col2to10Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col10to2Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 83.33333%;
+  }
+  .l-Grids-col10to2Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 16.66667%;
+  }
+  .l-Grids-col10to2Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col10to2Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+/* 3/12 9/12, 9/12 3/12 */
+.l-Grids-col3to9 > .l-Grids_Item:nth-of-type(odd) {
+  width: 25%;
+}
+
+.l-Grids-col3to9 > .l-Grids_Item:nth-of-type(even) {
+  width: 75%;
+}
+
+.l-Grids-col3to9 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col3to9 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+.l-Grids-col9to3 > .l-Grids_Item:nth-of-type(odd) {
+  width: 75%;
+}
+
+.l-Grids-col9to3 > .l-Grids_Item:nth-of-type(even) {
+  width: 25%;
+}
+
+.l-Grids-col9to3 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col9to3 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col3to9Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 25%;
+  }
+  .l-Grids-col3to9Md > .l-Grids_Item:nth-of-type(even) {
+    width: 75%;
+  }
+  .l-Grids-col3to9Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col3to9Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col9to3Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 75%;
+  }
+  .l-Grids-col9to3Md > .l-Grids_Item:nth-of-type(even) {
+    width: 25%;
+  }
+  .l-Grids-col9to3Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col9to3Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col3to9Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 25%;
+  }
+  .l-Grids-col3to9Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 75%;
+  }
+  .l-Grids-col3to9Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col3to9Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col9to3Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 75%;
+  }
+  .l-Grids-col9to3Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 25%;
+  }
+  .l-Grids-col9to3Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col9to3Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col3to9Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 25%;
+  }
+  .l-Grids-col3to9Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 75%;
+  }
+  .l-Grids-col3to9Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col3to9Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col9to3Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 75%;
+  }
+  .l-Grids-col9to3Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 25%;
+  }
+  .l-Grids-col9to3Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col9to3Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+/* 4/12 8/12, 8/12 4/12 */
+.l-Grids-col4to8 > .l-Grids_Item:nth-of-type(odd) {
+  width: 33.33333%;
+}
+
+.l-Grids-col4to8 > .l-Grids_Item:nth-of-type(even) {
+  width: 66.66667%;
+}
+
+.l-Grids-col4to8 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col4to8 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+.l-Grids-col8to4 > .l-Grids_Item:nth-of-type(odd) {
+  width: 66.66667%;
+}
+
+.l-Grids-col8to4 > .l-Grids_Item:nth-of-type(even) {
+  width: 33.33333%;
+}
+
+.l-Grids-col8to4 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col8to4 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col4to8Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 33.33333%;
+  }
+  .l-Grids-col4to8Md > .l-Grids_Item:nth-of-type(even) {
+    width: 66.66667%;
+  }
+  .l-Grids-col4to8Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col4to8Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col8to4Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 66.66667%;
+  }
+  .l-Grids-col8to4Md > .l-Grids_Item:nth-of-type(even) {
+    width: 33.33333%;
+  }
+  .l-Grids-col8to4Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col8to4Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col4to8Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 33.33333%;
+  }
+  .l-Grids-col4to8Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 66.66667%;
+  }
+  .l-Grids-col4to8Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col4to8Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col8to4Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 66.66667%;
+  }
+  .l-Grids-col8to4Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 33.33333%;
+  }
+  .l-Grids-col8to4Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col8to4Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col4to8Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 33.33333%;
+  }
+  .l-Grids-col4to8Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 66.66667%;
+  }
+  .l-Grids-col4to8Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col4to8Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col8to4Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 66.66667%;
+  }
+  .l-Grids-col8to4Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 33.33333%;
+  }
+  .l-Grids-col8to4Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col8to4Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+/* 5/12 7/12, 7/12 5/12 */
+.l-Grids-col5to7 > .l-Grids_Item:nth-of-type(odd) {
+  width: 41.66667%;
+}
+
+.l-Grids-col5to7 > .l-Grids_Item:nth-of-type(even) {
+  width: 58.33333%;
+}
+
+.l-Grids-col5to7 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col5to7 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+.l-Grids-col7to5 > .l-Grids_Item:nth-of-type(odd) {
+  width: 58.33333%;
+}
+
+.l-Grids-col7to5 > .l-Grids_Item:nth-of-type(even) {
+  width: 41.66667%;
+}
+
+.l-Grids-col7to5 > .l-Grids_Item:nth-of-type(n+1) {
+  margin-top: 0;
+}
+
+.l-Grids-col7to5 > .l-Grids_Item:nth-of-type(n+3) {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grids-col5to7Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 41.66667%;
+  }
+  .l-Grids-col5to7Md > .l-Grids_Item:nth-of-type(even) {
+    width: 58.33333%;
+  }
+  .l-Grids-col5to7Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col5to7Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col7to5Md > .l-Grids_Item:nth-of-type(odd) {
+    width: 58.33333%;
+  }
+  .l-Grids-col7to5Md > .l-Grids_Item:nth-of-type(even) {
+    width: 41.66667%;
+  }
+  .l-Grids-col7to5Md > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col7to5Md > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grids-col5to7Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 41.66667%;
+  }
+  .l-Grids-col5to7Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 58.33333%;
+  }
+  .l-Grids-col5to7Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col5to7Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col7to5Lg > .l-Grids_Item:nth-of-type(odd) {
+    width: 58.33333%;
+  }
+  .l-Grids-col7to5Lg > .l-Grids_Item:nth-of-type(even) {
+    width: 41.66667%;
+  }
+  .l-Grids-col7to5Lg > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col7to5Lg > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grids-col5to7Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 41.66667%;
+  }
+  .l-Grids-col5to7Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 58.33333%;
+  }
+  .l-Grids-col5to7Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col5to7Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+  .l-Grids-col7to5Xl > .l-Grids_Item:nth-of-type(odd) {
+    width: 58.33333%;
+  }
+  .l-Grids-col7to5Xl > .l-Grids_Item:nth-of-type(even) {
+    width: 41.66667%;
+  }
+  .l-Grids-col7to5Xl > .l-Grids_Item:nth-of-type(n+1) {
+    margin-top: 0;
+  }
+  .l-Grids-col7to5Xl > .l-Grids_Item:nth-of-type(n+3) {
+    margin-top: 50px;
+  }
+}
+
+/*
+---
+name: l-Section2
+namespace: Layout
+category: Layout
+---
+
+h2相当の見出しをラップするセクションの余白を指定します。
+
+```jade
+.l-Wrapper
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+  section.l-Section2
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+
+  section.l-Section2
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    .l-Block
+      .test-Block
+        .test-Block_Left
+          img(src="https://placehold.jp/300x200.png" alt)
+        .test-Block_Right
+          h3 ダミーの見出しです
+          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+    .l-Block
+      .test-Block
+        .test-Block_Left
+          img(src="https://placehold.jp/300x200.png" alt)
+        .test-Block_Right
+          h3 ダミーの見出しです
+          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
+```
+*/
+.l-Section2 {
+  margin-top: 60px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Section2 {
+    margin-top: 100px;
+  }
+}
+
+.l-Section2 > :first-child {
+  margin-top: 0;
+}
+
+.l-Section2 > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Section2-divider
+namespace: Layout
+category: Layout
+---
+
+レイアウト例です。`.l-Section2-divider`を追加すると`.l-Section2`同士の間にボーダーがつきます。
+
+```jade
+.l-Wrapper
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+  section.l-Section2.l-Section2-divider
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+
+  section.l-Section2.l-Section2-divider
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    .l-Block
+      .test-Block
+        .test-Block_Left
+          img(src="https://placehold.jp/300x200.png" alt)
+        .test-Block_Right
+          h3 ダミーの見出しです
+          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+    .l-Block
+      .test-Block
+        .test-Block_Left
+          img(src="https://placehold.jp/300x200.png" alt)
+        .test-Block_Right
+          h3 ダミーの見出しです
+          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
+```
+*/
+.l-Section2-divider {
+  margin-top: 30px;
+}
+
+.l-Section2-divider + .l-Section2-divider:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  padding-top: 30px;
+  border-top: 1px solid #e3e3e3;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Section2-divider {
+    margin-top: 50px;
+  }
+  .l-Section2-divider + .l-Section2-divider:before {
+    padding-top: 50px;
+  }
+}
+
+/*
+---
+name: l-Section2-dividerFull
+namespace: Layout
+category: Layout
+---
+
+レイアウト例です。`.l-Section2-dividerFull`を追加すると`.l-Section2`同士の間にボーダーがつきます。ボーダーの横幅は画面に対して常に100%（`100vw`）になります。
+
+```jade
+.l-Wrapper
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+  section.l-Section2.l-Section2-dividerFull
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+
+  section.l-Section2.l-Section2-dividerFull
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+    .l-Block
+      .test-Block
+        .test-Block_Left
+          img(src="https://placehold.jp/300x200.png" alt)
+        .test-Block_Right
+          h3 ダミーの見出しです
+          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+    .l-Block
+      .test-Block
+        .test-Block_Left
+          img(src="https://placehold.jp/300x200.png" alt)
+        .test-Block_Right
+          h3 ダミーの見出しです
+          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
+```
+*/
+.l-Section2-dividerFull {
+  margin-top: 30px;
+}
+
+.l-Section2-dividerFull + .l-Section2-dividerFull:before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%);
+  padding-top: 30px;
+  border-top: 1px solid #e3e3e3;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Section2-dividerFull {
+    margin-top: 50px;
+  }
+  .l-Section2-dividerFull + .l-Section2-dividerFull:before {
+    padding-top: 50px;
+  }
+}
+
+.l-Section2-dividerFull > :first-child {
+  margin-top: 0;
+}
+
+.l-Section2-dividerFull > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Section3
+namespace: Layout
+category: Layout
+---
+
+h3相当の見出しをラップするセクションの余白を指定します。
+
+```jade
+.l-Wrapper
+  section.l-Section2
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+
+    section.l-Section3
+      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+    section.l-Section3
+      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
+      .l-Block
+        p.test-Box .l-Block
+      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+```
+*/
+.l-Section3 {
+  margin-top: 50px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Section3 {
+    margin-top: 80px;
+  }
+}
+
+.st-Heading2 + .l-Section3 {
+  margin-top: 25px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .st-Heading2 + .l-Section3 {
+    margin-top: 40px;
+  }
+}
+
+.l-Section3 > :first-child {
+  margin-top: 0;
+}
+
+.l-Section3 > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Section3-divider
+namespace: Layout
+category: Layout
+---
+
+レイアウト例です。`.l-Section3-divider`を追加すると`.l-Section3`同士の間にボーダーがつきます。
+
+```jade
+.l-Wrapper
+  section.l-Section2
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+
+    section.l-Section3.l-Section3-divider
+      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+    section.l-Section3.l-Section3-divider
+      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
+      .l-Block
+        p.test-Box .l-Block
+      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+```
+*/
+.l-Section3-divider {
+  margin-top: 25px;
+}
+
+.l-Section3-divider + .l-Section3-divider:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  padding-top: 25px;
+  border-top: 1px solid #e3e3e3;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Section3-divider {
+    margin-top: 50px;
+  }
+  .l-Section3-divider + .l-Section3-divider:before {
+    padding-top: 50px;
+  }
+}
+
+.st-Heading2 + .l-Section3-divider:before {
+  display: none;
+}
+
+@media print, screen and (min-width: 768px) {
+  .st-Heading2 + .l-Section3-divider:before {
+    display: none;
+  }
+}
+
+/*
+---
+name: l-Section4
+namespace: Layout
+category: Layout
+---
+
+h4相当の見出しをラップするセクションの余白を指定します。
+
+```jade
+.l-Wrapper
+  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+  section.l-Section2
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
+
+  section.l-Section2
+    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+
+    section.l-Section3
+      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
+      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+    section.l-Section3
+      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
+
+      section.l-Section4
+        h4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+        p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
+        p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+      section.l-Section4
+        h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
+        p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+```
+*/
+.l-Section4 {
+  margin-top: 35px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Section4 {
+    margin-top: 50px;
+  }
+}
+
+.st-Heading3 + .l-Section4 {
+  margin-top: 17.5px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .st-Heading3 + .l-Section4 {
+    margin-top: 25px;
+  }
+}
+
+.l-Section4 > :first-child {
+  margin-top: 0;
+}
+
+.l-Section4 > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Section5
+namespace: Layout
+category: Layout
+---
+
+h5相当の見出しをラップするセクションの余白を指定します。
+
+```jade
+.l-Wrapper
+  section.l-Section4
+    h4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+    p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
+    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
+  section.l-Section4
+    h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
+
+    section.l-Section5
+      h5.sw-Heading5 吾輩は猫である。名前はまだ無い。
+      p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+    section.l-Section5
+      h5.sw-Heading5 どこで生れたかとんと見当がつかぬ。
+      p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
+```
+*/
+.l-Section5 {
+  margin-top: 30px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Section5 {
+    margin-top: 30px;
+  }
+}
+
+.st-Heading4 + .l-Section5 {
+  margin-top: 15px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .st-Heading4 + .l-Section5 {
+    margin-top: 15px;
+  }
+}
+
+.l-Section5 > :first-child {
+  margin-top: 0;
+}
+
+.l-Section5 > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Wrapper
+namespace: Layout
+category: Layout
+---
+
+コンテンツの横幅を制限します。
+
+```jade
+.l-Wrapper
+  section.l-Section2
+    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.l-Wrapper {
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
+}
+
+@media print, screen and (min-width: 1210px) {
+  .l-Wrapper {
+    padding: 0;
+  }
+}
+
+.l-Wrapper > :first-child {
+  margin-top: 0;
+}
+
+.l-Wrapper > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Wrapper_Full
+namespace: Layout
+category: Layout
+---
+
+`.l-Wrapper_Full`を入れ子にすると、`.l-Wrapper`の中でも画面いっぱいに表示されます。
+
+```jade
+.l-Wrapper
+  .l-Wrapper_Full
+    section.l-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.l-Wrapper_Full {
+  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%);
+}
+
+.l-Wrapper_Full > :first-child {
+  margin-top: 0;
+}
+
+.l-Wrapper_Full > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
+name: l-Wrapper_FullBg
+namespace: Layout
+category: Layout
+---
+
+`.l-Wrapper_FullBg`を入れ子にすると、`.l-Wrapper`の中でも背景色が画面いっぱいに表示されます。
+
+```jade
+.l-Wrapper
+  .l-Wrapper_FullBg(style="background-color: #eee;")
+    section.l-Section2
+      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
+      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+```
+*/
+.l-Wrapper_FullBg {
+  margin-right: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%);
+  padding-right: calc(50vw - 50%);
+  padding-left: calc(50vw - 50%);
+}
+
+.l-Wrapper_FullBg > :first-child {
+  margin-top: 0;
+}
+
+.l-Wrapper_FullBg > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+---
 name: sw-Button
 namespace: SiteWide
 category: [Button, Link, Form]
@@ -596,7 +2761,7 @@ category: [Button, Link, Form]
 ボタンのデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   a.sw-Button(href="#") aタグボタン
   a.sw-Button.sw-Button-disabled(href="#") aタグボタン
   button.sw-Button(type="button") butotnタグボタン
@@ -669,7 +2834,7 @@ category: Image
 ベーシックなスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   figure.sw-Caption
     img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
     figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
@@ -678,7 +2843,7 @@ category: Image
 `.sw-Caption_Text-center`でキャプションをセンタリングします。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   figure.sw-Caption
     img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
     figcaption.sw-Caption_Text.sw-Caption_Text-center 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
@@ -687,7 +2852,7 @@ category: Image
 `.sw-Caption_Text-right`でキャプションを右揃えにします。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   figure.sw-Caption
     img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
     figcaption.sw-Caption_Text.sw-Caption_Text-right画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
@@ -696,7 +2861,7 @@ category: Image
 `.sw-Caption-center`でコンポーネント自体をセンタリングします。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   figure.sw-Caption.sw-Caption-center
     img.sw-Caption_Image(src="https://placehold.jp/300x200.png" alt="")
     figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
@@ -763,7 +2928,7 @@ category: Text
 途中で改行をさせたくないフレーズやキーワードに指定します。囲まれた範囲（Delimiter）がまとまって改行されます。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text テキストは基本的にスペースや役物を基準に改行されますが、
     span.sw-Delimiter この部分はまとめて改行されます。
     | ここは通常のテキストです。
@@ -783,7 +2948,7 @@ category: Text
 `<hr>`のような区切り記号を使って、分割・グルーピングします。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text テキストです。
   hr.sw-Divider
   p.sw-Text テキストです。
@@ -813,7 +2978,7 @@ category: Form
 `type="checkbox"`のデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   input.sw-FormCheckbox(type="checkbox" id="checkbox1" checked)
   label(for="checkbox1") チェックボックス
   br
@@ -891,7 +3056,7 @@ category: Form
 `<input>`タグのデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   input.sw-FormInput(type="input" placeholder="デフォルト")
 
   label.sw-FormInput_TextTop(for="input1") inputタグの説明です
@@ -981,7 +3146,7 @@ category: Form
 `type="radio"`のデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   input.sw-FormRadio(type="radio" id="radio1" name="radio1" checked)
   label(for="radio1") ラジオボタン
   br
@@ -1060,7 +3225,7 @@ category: Form
 `<select>`タグのデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   .sw-FormSelect
     select
       option(value="default") 選択してください
@@ -1172,7 +3337,7 @@ category: Form
 `<textarea>`のデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   textarea.sw-FormTextarea(placeholder="テキストエリアです")
 
   label.sw-FormTextarea_TextTop(for="textarea1") テキストエリアの説明
@@ -1259,7 +3424,7 @@ category: Heading
 `<h2>`で使用する見出しです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   h2.sw-Heading2 見出し2
 ```
 */
@@ -1313,7 +3478,7 @@ category: Heading
 `<h3>`で使用する見出しです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   h3.sw-Heading3 見出し3
 ```
 */
@@ -1356,7 +3521,7 @@ category: Heading
 `<h4>`で使用する見出しです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   h4.sw-Heading4 見出し4
 ```
 */
@@ -1396,7 +3561,7 @@ category: Heading
 `<h5>`で使用する見出しです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   h5.sw-Heading5 見出し5
 ```
 */
@@ -1433,7 +3598,7 @@ category: Text
 `<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text 常に改行
     br
     | されます
@@ -1474,7 +3639,7 @@ category: Image
 画像をセンタリングします。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-ImageCenter
     img(src="https://placehold.jp/300x200.png" alt="")
 ```
@@ -1501,7 +3666,7 @@ category: [Text, Link, Form]
 インラインで表示するラベルコンポーネントです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   span.sw-Label spanタグのラベルです。
   label.sw-Label labelタグのラベルです。
   a.sw-Label(href="#") aタグのラベルです。
@@ -1536,7 +3701,7 @@ category: Text
 他の文章と区別するためだけに利用し、`<strong>`の重要性や深刻性、`<em>`の強調（アクセント）、`<h2>`のような見出しとしての意味はありません。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Lead
     b ◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。
   p.sw-Text △△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。
@@ -1568,7 +3733,7 @@ category: Link
 テキストリンクのデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text
     a.sw-Link(href="#") テキストリンクです。
 ```
@@ -1593,7 +3758,7 @@ category: [Link, Icon]
 ファイルをダウンロードするためのリンクであることを示す場合に使います。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text
     a.sw-Link(href="#") テキストリンクです。
 
@@ -1646,7 +3811,7 @@ category: [Link, Icon]
 外部リンクであることを示す場合に使います。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text
     a.sw-Link(href="#") テキストリンクです。
 
@@ -1699,7 +3864,7 @@ category: [Link, Icon]
 クリックを促すようなテキストリンクに使います。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text
     a.sw-Link(href="#") テキストリンクです。
 
@@ -1752,7 +3917,7 @@ category: Link
 注釈へのリンクです。`<sup>`タグの子要素として指定します。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text ○○
     sup
       a.sw-LinkNote(href="#") 1
@@ -1794,7 +3959,7 @@ category: [Link, Icon]
 リンク先がPDFであることを示す場合に使います。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text
     a.sw-Link(href="#") テキストリンクです。
 
@@ -1847,7 +4012,7 @@ category: List
 括弧で囲んだ順序リストです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListBracketOrder
     li リストです。リストです。リストです。リストです。
     li リストです
@@ -1856,7 +4021,7 @@ category: List
 リストを2から始める場合は`.sw-ListBracketOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListBracketOrder.sw-ListBracketOrder-from2(start="2")
     li リストです。リストです。リストです。リストです。
     li リストです
@@ -1934,7 +4099,7 @@ category: List
 注釈用のリストです。米印やアスタリスクが表示されます。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ul.sw-ListNote
     li 1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です
     li 2つ目の注釈です
@@ -1991,7 +4156,7 @@ category: List
 注釈用のリストです。米印やアスタリスクが表示されます。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListNoteOrder
     li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
     li 注釈です。
@@ -2005,7 +4170,7 @@ category: List
 リストを2から始める場合は`.sw-ListNoteOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
     li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
     li 注釈です。
@@ -2104,7 +4269,7 @@ category: List
 入れ子に対応した順序リストです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListOrder
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
@@ -2116,7 +4281,7 @@ category: List
 リストを2から始める場合は`.sw-ListOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListOrder.sw-ListOrder-from2(start="2")
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
@@ -2217,7 +4382,7 @@ category: List
 順序をもたない並列なリストです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ul.sw-ListUnorder
     li リストです。
     li リストです。
@@ -2288,7 +4453,7 @@ category: ThirdPartyComponent
 Google Mapsをレスポンシブ対応させます。デフォルトで16:9で表示されます。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   .sw-Map.
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25933.98363493959!2d139.745433!3d35.658581000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1505663238967" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 ```
@@ -2340,7 +4505,7 @@ category: Text
 `<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text 常に改行
     br
     | されます
@@ -2382,7 +4547,7 @@ category: Text
 
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text 登録商標
     sup.sw-Sup ®
     | です。
@@ -2412,7 +4577,7 @@ category: List
 セルの結合はUAが解釈することが難しい機能で、特にスクリーンリーダーなどでうまく情報が伝えられない恐れがあります。1つの複雑なテーブルではなく、複数のシンプルなテーブルにできないか検討してください。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   table.sw-Table
     thead
       tr
@@ -2475,7 +4640,7 @@ category: List
 - 改行は`<br>`で指定してください。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   .sw-TableWide
     table.sw-Table
       thead
@@ -2553,7 +4718,7 @@ category: Text
 基本のテキストスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
   .sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
   p.sw-Text どこで生れたかとんと見当がつかぬ。
@@ -2580,7 +4745,7 @@ category: Text
 `<em>`で使われるようなスタイルです。アクセントをつけたい単語や短い文章で使用し、強調や重要性を示しません。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text
     em.sw-TextEmphasis 30%OFFのため、
     | お買い得です！
@@ -2605,7 +4770,7 @@ category: Text
 `<strong>`で使われるようなスタイルです。重要性や緊急性・深刻性があることを示します。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text
     strong.sw-TextImportant 30%OFFのため、お買い得です！
   p.sw-Text
@@ -2626,7 +4791,7 @@ category: Text
 `<p>`や`<small>`で使われるようなテキストスタイルです。補足的・副次的な意味合いを持たせる場合に使います。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text 通常の文章です
   p.sw-TextSecondary 補足的な文章です
 ```
@@ -2652,7 +4817,7 @@ category: Heading
 ページタイトルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   h1.sw-Title ページタイトル
 ```
 */
@@ -2689,7 +4854,7 @@ category: ThirdPartyComponent
 Youtubeなどの動画をレスポンシブ対応させます。デフォルトで16:9で表示されます。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   .sw-Video.
     <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
 ```
@@ -2733,111 +4898,6 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
 
 /*
 ---
-name: st-Block
-namespace: Structure
-category: Layout
----
-
-見出しや画像などを含んだブロック同士の余白を指定します。
-
-```jade
-.st-Wrapper
-  .st-Block
-    .test-Block
-      .test-Block_Left
-        img(src="https://placehold.jp/300x200.png" alt)
-      .test-Block_Right
-        h3 ダミーの見出しです
-        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-  .st-Block
-    .test-Block
-      .test-Block_Left
-        img(src="https://placehold.jp/300x200.png" alt)
-      .test-Block_Right
-        h3 ダミーの見出しです
-        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-```
-*/
-.st-Block {
-  margin-top: 40px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Block {
-    margin-top: 50px;
-  }
-}
-
-.st-Block > :first-child {
-  margin-top: 0;
-}
-
-.st-Block > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-Block-divider
-namespace: Structure
-category: Layout
----
-
-`.st-Block-divider`を追加すると間にボーダーが入ります。
-
-```jade
-.st-Wrapper
-  .st-Block.st-Block-divider
-    .test-Block
-      .test-Block_Left
-        img(src="https://placehold.jp/300x200.png" alt)
-      .test-Block_Right
-        h3 ダミーの見出しです
-        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-  .st-Block.st-Block-divider
-    .test-Block
-      .test-Block_Left
-        img(src="https://placehold.jp/300x200.png" alt)
-      .test-Block_Right
-        h3 ダミーの見出しです
-        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-```
-*/
-.st-Block-divider {
-  margin-top: 20px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Block-divider {
-    margin-top: 50px;
-  }
-}
-
-.st-Block-divider + .st-Block-divider:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  padding-top: 20px;
-  border-top: 1px solid #e3e3e3;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Block-divider + .st-Block-divider:before {
-    padding-top: 50px;
-  }
-}
-
-.st-Block-divider > :first-child {
-  margin-top: 0;
-}
-
-.st-Block-divider > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
 name: st-Breadcrumb
 namespace: Structure
 category: Navigation
@@ -2845,7 +4905,7 @@ category: Navigation
 
 ベーシックなパンくずリストです。`<ol>`タグで指定します。
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.st-Breadcrumb
     li.st-Breadcrumb_Item
       a.st-Breadcrumb_Link(href="/") ホーム
@@ -2891,111 +4951,6 @@ category: Navigation
 
 /*
 ---
-name: st-Container
-namespace: Structure
-category: Layout
----
-
-コンテンツ内の上下に大きめの余白をとります。
-
-レイアウト例です。
-```jade
-.st-Container
-  .st-Wrapper
-    section.st-Section2
-      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    section.st-Section2
-      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Container {
-  padding: 45px 0 60px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Container {
-    padding: 70px 0 100px;
-  }
-}
-
-.st-Container > :first-child {
-  margin-top: 0;
-}
-
-.st-Container > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-ContainerBg
-namespace: Structure
-category: Layout
----
-
-コンテンツ内の上下に大きめの余白をとります。背景色が入ります。
-
-レイアウト例です。
-
-```jade
-.st-ContainerBg
-  .st-Wrapper
-    section.st-Section2
-      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    section.st-Section2
-      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-ContainerBg {
-  padding: 45px 0 50px;
-  background-color: #f6f8f9;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-ContainerBg {
-    padding: 70px 0 80px;
-  }
-}
-
-.st-ContainerBg > :first-child {
-  margin-top: 0;
-}
-
-.st-ContainerBg > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-ContainerBg-delimiter
-namespace: Structure
-category: Layout
----
-
-`st-ContainerBg-delimiter`を追加するとボーダーがつきます。
-
-```jade
-.st-ContainerBg.st-ContainerBg-delimiter
-  .st-Wrapper
-    section.st-Section2
-      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    section.st-Section2
-      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-ContainerBg-delimiter {
-  border-top: 1px solid #e8e8e8;
-}
-
-/*
----
 name: st-Footer
 namespace: Structure
 category: Global
@@ -3003,1965 +4958,11 @@ category: Global
 */
 /*
 ---
-name: st-Grid
-namespace: Structure
-category: Layout
----
-
-標準的なグリッドシステムです。カラムごとに任意の値を指定したい場合に使います。
-カラム間の余白は幅を`$st-grid-column-gap`で統一しています。
-
-以下のような指定ができます。
-
-- `.st-Grid_Item-8of12` カラム数の指定。
-- `.st-Grid-reverse` カラムの反転。
-- `.st-Grid-center` カラムのセンタリング。
-- `.st-Grid-middle` カラムの垂直配置。
-
-```jade
-.st-Wrapper
-  .st-Grid
-    .st-Grid_Item.st-Grid_Item-8of12Md
-      .test-Box One<br>1/1 → 8/12
-    .st-Grid_Item.st-Grid_Item-4of12Md
-      .test-Box Two<br>1/1 → 4/12
-```
-
-```jade
-.st-Wrapper
-  .st-Grid.st-Grid-reversMd
-    .st-Grid_Item.st-Grid_Item-8of12Md
-      .test-Box One<br>1/1 → 8/12
-    .st-Grid_Item.st-Grid_Item-4of12Md
-      .test-Box Two<br>1/1 → 4/12
-```
-
-```jade
-.st-Wrapper
-  .st-Grid.st-Grid-centerMd
-    .st-Grid_Item.st-Grid_Item-8of12Md
-      .test-Box One<br>1/1 → 8/12
-```
-*/
-.st-Grid {
-  margin-left: -15px;
-  padding-left: 0;
-  list-style-type: none;
-  display: block;
-  font-size: 0;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grid {
-    margin-left: -30px;
-  }
-}
-
-.st-Grid_Item {
-  display: inline-block;
-  width: 100%;
-  padding-left: 15px;
-  font-size: medium;
-  font-size: 1rem;
-  vertical-align: top;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grid_Item {
-    padding-left: 30px;
-  }
-}
-
-.st-Grid_Item-1of12 {
-  width: 8.33333%;
-}
-
-.st-Grid_Item-2of12 {
-  width: 16.66667%;
-}
-
-.st-Grid_Item-3of12 {
-  width: 25%;
-}
-
-.st-Grid_Item-4of12 {
-  width: 33.33333%;
-}
-
-.st-Grid_Item-5of12 {
-  width: 41.66667%;
-}
-
-.st-Grid_Item-6of12 {
-  width: 50%;
-}
-
-.st-Grid_Item-7of12 {
-  width: 58.33333%;
-}
-
-.st-Grid_Item-8of12 {
-  width: 66.66667%;
-}
-
-.st-Grid_Item-9of12 {
-  width: 75%;
-}
-
-.st-Grid_Item-10of12 {
-  width: 83.33333%;
-}
-
-.st-Grid_Item-11of12 {
-  width: 91.66667%;
-}
-
-.st-Grid_Item-12of12 {
-  width: 100%;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grid_Item-1of12Md {
-    width: 8.33333%;
-  }
-  .st-Grid_Item-2of12Md {
-    width: 16.66667%;
-  }
-  .st-Grid_Item-3of12Md {
-    width: 25%;
-  }
-  .st-Grid_Item-4of12Md {
-    width: 33.33333%;
-  }
-  .st-Grid_Item-5of12Md {
-    width: 41.66667%;
-  }
-  .st-Grid_Item-6of12Md {
-    width: 50%;
-  }
-  .st-Grid_Item-7of12Md {
-    width: 58.33333%;
-  }
-  .st-Grid_Item-8of12Md {
-    width: 66.66667%;
-  }
-  .st-Grid_Item-9of12Md {
-    width: 75%;
-  }
-  .st-Grid_Item-10of12Md {
-    width: 83.33333%;
-  }
-  .st-Grid_Item-11of12Md {
-    width: 91.66667%;
-  }
-  .st-Grid_Item-12of12Md {
-    width: 100%;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grid_Item-1of12Lg {
-    width: 8.33333%;
-  }
-  .st-Grid_Item-2of12Lg {
-    width: 16.66667%;
-  }
-  .st-Grid_Item-3of12Lg {
-    width: 25%;
-  }
-  .st-Grid_Item-4of12Lg {
-    width: 33.33333%;
-  }
-  .st-Grid_Item-5of12Lg {
-    width: 41.66667%;
-  }
-  .st-Grid_Item-6of12Lg {
-    width: 50%;
-  }
-  .st-Grid_Item-7of12Lg {
-    width: 58.33333%;
-  }
-  .st-Grid_Item-8of12Lg {
-    width: 66.66667%;
-  }
-  .st-Grid_Item-9of12Lg {
-    width: 75%;
-  }
-  .st-Grid_Item-10of12Lg {
-    width: 83.33333%;
-  }
-  .st-Grid_Item-11of12Lg {
-    width: 91.66667%;
-  }
-  .st-Grid_Item-12of12Lg {
-    width: 100%;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grid_Item-1of12Xl {
-    width: 8.33333%;
-  }
-  .st-Grid_Item-2of12Xl {
-    width: 16.66667%;
-  }
-  .st-Grid_Item-3of12Xl {
-    width: 25%;
-  }
-  .st-Grid_Item-4of12Xl {
-    width: 33.33333%;
-  }
-  .st-Grid_Item-5of12Xl {
-    width: 41.66667%;
-  }
-  .st-Grid_Item-6of12Xl {
-    width: 50%;
-  }
-  .st-Grid_Item-7of12Xl {
-    width: 58.33333%;
-  }
-  .st-Grid_Item-8of12Xl {
-    width: 66.66667%;
-  }
-  .st-Grid_Item-9of12Xl {
-    width: 75%;
-  }
-  .st-Grid_Item-10of12Xl {
-    width: 83.33333%;
-  }
-  .st-Grid_Item-11of12Xl {
-    width: 91.66667%;
-  }
-  .st-Grid_Item-12of12Xl {
-    width: 100%;
-  }
-}
-
-/**
- * 要素の垂直位置を真ん中寄せ。
- */
-.st-Grid-middle > .st-Grid_Item {
-  vertical-align: middle;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grid-middleMd > .st-Grid_Item {
-    vertical-align: middle;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grid-middleLg > .st-Grid_Item {
-    vertical-align: middle;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grid-middleXl > .st-Grid_Item {
-    vertical-align: middle;
-  }
-}
-
-/**
- * 要素の垂直位置を下寄せ。
- */
-.st-Grid--bottom > .st-Grid_Item {
-  vertical-align: bottom;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grid-bottomMd > .st-Grid_Item {
-    vertical-align: bottom;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grid-bottomLg > .st-Grid_Item {
-    vertical-align: bottom;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grid-bottomXl > .st-Grid_Item {
-    vertical-align: bottom;
-  }
-}
-
-/**
- * 要素を中央寄せ、要素内は左寄せ。
- */
-.st-Grid-center {
-  text-align: center;
-}
-
-.st-Grid-center > .st-Grid_Item {
-  text-align: left;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grid-centerMd {
-    text-align: center;
-  }
-  .st-Grid-centerMd > .st-Grid_Item {
-    text-align: left;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grid-centerLg {
-    text-align: center;
-  }
-  .st-Grid-centerLg > .st-Grid_Item {
-    text-align: left;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grid-centerXl {
-    text-align: center;
-  }
-  .st-Grid-centerXl > .st-Grid_Item {
-    text-align: left;
-  }
-}
-
-/**
- * 要素を右寄せ、要素内は左寄せ。
- */
-.st-Grid-right {
-  text-align: right;
-}
-
-.st-Grid-right > .st-Grid_Item {
-  text-align: left;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grid-rightMd {
-    text-align: right;
-  }
-  .st-Grid-rightMd > .st-Grid_Item {
-    text-align: left;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grid-rightLg {
-    text-align: right;
-  }
-  .st-Grid-rightLg > .st-Grid_Item {
-    text-align: left;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grid-rightXl {
-    text-align: right;
-  }
-  .st-Grid-rightXl > .st-Grid_Item {
-    text-align: left;
-  }
-}
-
-/**
- * 要素の反転。
- */
-.st-Grid-reverse {
-  text-align: left;
-  direction: rtl;
-}
-
-.st-Grid-reverse > .st-Grid_Item {
-  text-align: left;
-  direction: ltr;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grid-reversMd {
-    text-align: left;
-    direction: rtl;
-  }
-  .st-Grid-reversMd > .st-Grid_Item {
-    text-align: left;
-    direction: ltr;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grid-reverseLg {
-    text-align: left;
-    direction: rtl;
-  }
-  .st-Grid-reverseLg > .st-Grid_Item {
-    text-align: left;
-    direction: ltr;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grid-reverseXl {
-    text-align: left;
-    direction: rtl;
-  }
-  .st-Grid-reverseXl > .st-Grid_Item {
-    text-align: left;
-    direction: ltr;
-  }
-}
-
-/*
----
-name: st-Grids
-namespace: Structure
-category: Layout
----
-
-バリエーションの豊富なグリッドシステムです。親要素（`.st-Grids`）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のようなカラムの指定ができます。
-
-カラム間の余白は幅を`$st-grids-column-gap`、高さを`$st-grids-row-gap`で統一しています。
-
-以下のような指定ができます。
-
-- `.st-Grids-col2`のように1/2から1/5までの均等なカラム指定。
-- `.st-Grids-col8to4`のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。
-- `.st-Grids-col2Md`のように`Md`、`Lg`、`Xl`を追加してブレイクポイントの指定。
-- `.st-Grids-middle`のようにカラムの垂直位置を中央揃え。
-- `.st-Grids-noGap`でカラム間のガターを0にする。
-- `.st-Grids-narrow`でカラム間のガターを最小にする。
-
-### 均等なカラム指定。
-
-```jade
-.st-Wrapper
-  .st-Grids.st-Grids-col2Md
-    .st-Grids_Item
-      .test-Box One<br>1/1 → 1/2
-    .st-Grids_Item
-      .test-Box Two<br>1/1 → 1/2
-
-  .st-Grids.st-Grids-col2.st-Grids-col3Md
-    .st-Grids_Item
-      .test-Box One<br>1/2 → 1/3
-    .st-Grids_Item
-      .test-Box Two<br>1/2 → 1/3
-    .st-Grids_Item
-      .test-Box Three<br>1/2 → 1/3
-    .st-Grids_Item
-      .test-Box Four<br>1/2 → 1/3
-```
-
-### 8/12と4/12と4/12と8/12のカラム指定。
-
-```jade
-.st-Wrapper
-  .st-Grids.st-Grids-col8to4Md
-    .st-Grids_Item
-      .test-Box One<br>1/1 → 8/12
-    .st-Grids_Item
-      .test-Box Two<br>1/1 → 4/12
-
-  .st-Grids.st-Grids-col4to8Md
-    .st-Grids_Item
-      .test-Box One <br>1/1 → 4/12
-    .st-Grids_Item
-      .test-Box Two<br>1/1 → 8/12
-```
-
-### 8/12と4/12のカラム指定かつ、`md`以上で要素を反転。
-
-```jade
-.st-Wrapper
-  .st-Grids.st-Grids-col8to4Md.st-Grids-reversMd
-    .st-Grids_Item
-      .test-Box One<br>1/1 → 8/12
-    .st-Grids_Item
-      .test-Box Two<br>1/1 → 4/12
-```
-
-### カラムの垂直位置を中央揃え。
-
-```jade
-.st-Wrapper
-  .st-Grids.st-Grids-middleMd.st-Grids-col2Md
-    .st-Grids_Item
-      .test-Box One<br>1/1 → 6/12<br>.st-Grids-middle<br>.st-Grids-middle
-    .st-Grids_Item
-      .test-Box Two<br>1/1 → 6/12
-```
-
-### カラム間のガターを0にします。
-
-```jade
-.st-Wrapper
-  .st-Grids.st-Grids-col3Md.st-Grids-noGap
-    .st-Grids_Item
-      .test-Box One<br>1/1 → 1/3
-    .st-Grids_Item
-      .test-Box Two<br>1/1 → 1/3
-    .st-Grids_Item
-      .test-Box Three<br>1/1 → 1/3
-```
-
-### カラム間のガターを最小にします。
-
-```jade
-.st-Wrapper
-  .st-Grids.st-Grids-col3Md.st-Grids-narrow
-    .st-Grids_Item
-      .test-Box One<br>1/1 → 1/3
-    .st-Grids_Item
-      .test-Box Two<br>1/1 → 1/3
-    .st-Grids_Item
-      .test-Box Three<br>1/1 → 1/3
-```
-*/
-.st-Grids {
-  margin-top: 35px;
-  margin-left: -15px;
-  padding-left: 0;
-  list-style-type: none;
-  display: block;
-  font-size: 0;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids {
-    margin-top: 50px;
-    margin-left: -30px;
-  }
-}
-
-.st-Grids_Item {
-  display: inline-block;
-  width: 100%;
-  padding-left: 15px;
-  font-size: medium;
-  font-size: 1rem;
-  vertical-align: top;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids_Item {
-    padding-left: 30px;
-  }
-}
-
-.st-Grids_Item > :first-child {
-  margin-top: 0;
-}
-
-.st-Grids_Item > :last-child {
-  margin-bottom: 0;
-}
-
-/* 1 Column */
-.st-Grids_Item:nth-of-type(n+2) {
-  margin-top: 35px;
-}
-
-/* 2 Columns */
-.st-Grids-col2 > .st-Grids_Item {
-  width: 50%;
-  /**
-   * いったんすべての`margin-top`をリセットします。
-   * `:nth-of-type(n+1)`は1つ目以降のすべての要素に適応されます。
-   * リセット後に対象となる要素に`margin-top`を指定します。
-   */
-}
-
-.st-Grids-col2 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col2 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col2Md > .st-Grids_Item {
-    width: 50%;
-  }
-  .st-Grids-col2Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col2Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col2Lg > .st-Grids_Item {
-    width: 50%;
-  }
-  .st-Grids-col2Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col2Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col2Xl > .st-Grids_Item {
-    width: 50%;
-  }
-  .st-Grids-col2Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col2Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-/* 3 Columns */
-.st-Grids-col3 > .st-Grids_Item {
-  width: 33.33333%;
-}
-
-.st-Grids-col3 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col3 > .st-Grids_Item:nth-of-type(n+4) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col3Md > .st-Grids_Item {
-    width: 33.33333%;
-  }
-  .st-Grids-col3Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col3Md > .st-Grids_Item:nth-of-type(n+4) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col3Lg > .st-Grids_Item {
-    width: 33.33333%;
-  }
-  .st-Grids-col3Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col3Lg > .st-Grids_Item:nth-of-type(n+4) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col3Xl > .st-Grids_Item {
-    width: 33.33333%;
-  }
-  .st-Grids-col3Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col3Xl > .st-Grids_Item:nth-of-type(n+4) {
-    margin-top: 50px;
-  }
-}
-
-/* 4 Columns */
-.st-Grids-col4 > .st-Grids_Item {
-  width: 25%;
-}
-
-.st-Grids-col4 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col4 > .st-Grids_Item:nth-of-type(n+5) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col4Md > .st-Grids_Item {
-    width: 25%;
-  }
-  .st-Grids-col4Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col4Md > .st-Grids_Item:nth-of-type(n+5) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col4Lg > .st-Grids_Item {
-    width: 25%;
-  }
-  .st-Grids-col4Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col4Lg > .st-Grids_Item:nth-of-type(n+5) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col4Xl > .st-Grids_Item {
-    width: 25%;
-  }
-  .st-Grids-col4Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col4Xl > .st-Grids_Item:nth-of-type(n+5) {
-    margin-top: 50px;
-  }
-}
-
-/* 5 Columns */
-.st-Grids-col5 > .st-Grids_Item {
-  width: 20%;
-}
-
-.st-Grids-col5 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col5 > .st-Grids_Item:nth-of-type(n+6) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col5Md > .st-Grids_Item {
-    width: 20%;
-  }
-  .st-Grids-col5Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col5Md > .st-Grids_Item:nth-of-type(n+6) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col5Lg > .st-Grids_Item {
-    width: 20%;
-  }
-  .st-Grids-col5Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col5Lg > .st-Grids_Item:nth-of-type(n+6) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col5Xl > .st-Grids_Item {
-    width: 20%;
-  }
-  .st-Grids-col5Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col5Xl > .st-Grids_Item:nth-of-type(n+6) {
-    margin-top: 50px;
-  }
-}
-
-/**
- * カラム間のガターを0にします。
- */
-.st-Grids-noGap {
-  margin-left: 0;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-noGap {
-    margin-left: 0;
-  }
-}
-
-.st-Grids-noGap > .st-Grids_Item {
-  padding-left: 0;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-noGap > .st-Grids_Item {
-    padding-left: 0;
-  }
-}
-
-/**
- * カラム間のガターを最小にします。
- */
-.st-Grids-narrow {
-  margin-left: -1px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-narrow {
-    margin-left: -1px;
-  }
-}
-
-.st-Grids-narrow > .st-Grids_Item {
-  padding-left: 1px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-narrow > .st-Grids_Item {
-    padding-left: 1px;
-  }
-}
-
-/**
- * 要素の垂直位置を真ん中寄せ。
- */
-.st-Grids-middle > .st-Grids_Item {
-  vertical-align: middle;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-middleMd > .st-Grids_Item {
-    vertical-align: middle;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-middleLg > .st-Grids_Item {
-    vertical-align: middle;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-middleXl > .st-Grids_Item {
-    vertical-align: middle;
-  }
-}
-
-/**
- * `.st-Grids_Item`の表示順を逆にします。
- * A,B → B,A
- */
-.st-Grids-reverse {
-  text-align: left;
-  direction: rtl;
-}
-
-.st-Grids-reverse > .st-Grids_Item {
-  text-align: left;
-  direction: ltr;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-reversMd {
-    text-align: left;
-    direction: rtl;
-  }
-  .st-Grids-reversMd > .st-Grids_Item {
-    text-align: left;
-    direction: ltr;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-reverseLg {
-    text-align: left;
-    direction: rtl;
-  }
-  .st-Grids-reverseLg > .st-Grids_Item {
-    text-align: left;
-    direction: ltr;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-reverseXl {
-    text-align: left;
-    direction: rtl;
-  }
-  .st-Grids-reverseXl > .st-Grids_Item {
-    text-align: left;
-    direction: ltr;
-  }
-}
-
-/* 1/12 11/12, 11/12 1/12 */
-.st-Grids-col1to11 > .st-Grids_Item:nth-of-type(odd) {
-  width: 8.33333%;
-}
-
-.st-Grids-col1to11 > .st-Grids_Item:nth-of-type(even) {
-  width: 91.66667%;
-}
-
-.st-Grids-col1to11 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col1to11 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-.st-Grids-col11to1 > .st-Grids_Item:nth-of-type(odd) {
-  width: 91.66667%;
-}
-
-.st-Grids-col11to1 > .st-Grids_Item:nth-of-type(even) {
-  width: 8.33333%;
-}
-
-.st-Grids-col11to1 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col11to1 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col1to11Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 8.33333%;
-  }
-  .st-Grids-col1to11Md > .st-Grids_Item:nth-of-type(even) {
-    width: 91.66667%;
-  }
-  .st-Grids-col1to11Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col1to11Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col11to1Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 91.66667%;
-  }
-  .st-Grids-col11to1Md > .st-Grids_Item:nth-of-type(even) {
-    width: 8.33333%;
-  }
-  .st-Grids-col11to1Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col11to1Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col1to11Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 8.33333%;
-  }
-  .st-Grids-col1to11Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 91.66667%;
-  }
-  .st-Grids-col1to11Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col1to11Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col11to1Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 91.66667%;
-  }
-  .st-Grids-col11to1Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 8.33333%;
-  }
-  .st-Grids-col11to1Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col11to1Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col1to11Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 8.33333%;
-  }
-  .st-Grids-col1to11Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 91.66667%;
-  }
-  .st-Grids-col1to11Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col1to11Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col11to1Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 91.66667%;
-  }
-  .st-Grids-col11to1Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 8.33333%;
-  }
-  .st-Grids-col11to1Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col11to1Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-/* 2/12 10/12, 10/12 2/12 */
-.st-Grids-col2to10 > .st-Grids_Item:nth-of-type(odd) {
-  width: 16.66667%;
-}
-
-.st-Grids-col2to10 > .st-Grids_Item:nth-of-type(even) {
-  width: 83.33333%;
-}
-
-.st-Grids-col2to10 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col2to10 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-.st-Grids-col10to2 > .st-Grids_Item:nth-of-type(odd) {
-  width: 83.33333%;
-}
-
-.st-Grids-col10to2 > .st-Grids_Item:nth-of-type(even) {
-  width: 16.66667%;
-}
-
-.st-Grids-col10to2 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col10to2 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col2to10Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 16.66667%;
-  }
-  .st-Grids-col2to10Md > .st-Grids_Item:nth-of-type(even) {
-    width: 83.33333%;
-  }
-  .st-Grids-col2to10Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col2to10Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col10to2Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 83.33333%;
-  }
-  .st-Grids-col10to2Md > .st-Grids_Item:nth-of-type(even) {
-    width: 16.66667%;
-  }
-  .st-Grids-col10to2Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col10to2Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col2to10Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 16.66667%;
-  }
-  .st-Grids-col2to10Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 83.33333%;
-  }
-  .st-Grids-col2to10Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col2to10Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col10to2Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 83.33333%;
-  }
-  .st-Grids-col10to2Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 16.66667%;
-  }
-  .st-Grids-col10to2Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col10to2Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col2to10Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 16.66667%;
-  }
-  .st-Grids-col2to10Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 83.33333%;
-  }
-  .st-Grids-col2to10Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col2to10Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col10to2Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 83.33333%;
-  }
-  .st-Grids-col10to2Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 16.66667%;
-  }
-  .st-Grids-col10to2Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col10to2Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-/* 3/12 9/12, 9/12 3/12 */
-.st-Grids-col3to9 > .st-Grids_Item:nth-of-type(odd) {
-  width: 25%;
-}
-
-.st-Grids-col3to9 > .st-Grids_Item:nth-of-type(even) {
-  width: 75%;
-}
-
-.st-Grids-col3to9 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col3to9 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-.st-Grids-col9to3 > .st-Grids_Item:nth-of-type(odd) {
-  width: 75%;
-}
-
-.st-Grids-col9to3 > .st-Grids_Item:nth-of-type(even) {
-  width: 25%;
-}
-
-.st-Grids-col9to3 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col9to3 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col3to9Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 25%;
-  }
-  .st-Grids-col3to9Md > .st-Grids_Item:nth-of-type(even) {
-    width: 75%;
-  }
-  .st-Grids-col3to9Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col3to9Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col9to3Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 75%;
-  }
-  .st-Grids-col9to3Md > .st-Grids_Item:nth-of-type(even) {
-    width: 25%;
-  }
-  .st-Grids-col9to3Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col9to3Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col3to9Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 25%;
-  }
-  .st-Grids-col3to9Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 75%;
-  }
-  .st-Grids-col3to9Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col3to9Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col9to3Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 75%;
-  }
-  .st-Grids-col9to3Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 25%;
-  }
-  .st-Grids-col9to3Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col9to3Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col3to9Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 25%;
-  }
-  .st-Grids-col3to9Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 75%;
-  }
-  .st-Grids-col3to9Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col3to9Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col9to3Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 75%;
-  }
-  .st-Grids-col9to3Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 25%;
-  }
-  .st-Grids-col9to3Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col9to3Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-/* 4/12 8/12, 8/12 4/12 */
-.st-Grids-col4to8 > .st-Grids_Item:nth-of-type(odd) {
-  width: 33.33333%;
-}
-
-.st-Grids-col4to8 > .st-Grids_Item:nth-of-type(even) {
-  width: 66.66667%;
-}
-
-.st-Grids-col4to8 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col4to8 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-.st-Grids-col8to4 > .st-Grids_Item:nth-of-type(odd) {
-  width: 66.66667%;
-}
-
-.st-Grids-col8to4 > .st-Grids_Item:nth-of-type(even) {
-  width: 33.33333%;
-}
-
-.st-Grids-col8to4 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col8to4 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col4to8Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 33.33333%;
-  }
-  .st-Grids-col4to8Md > .st-Grids_Item:nth-of-type(even) {
-    width: 66.66667%;
-  }
-  .st-Grids-col4to8Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col4to8Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col8to4Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 66.66667%;
-  }
-  .st-Grids-col8to4Md > .st-Grids_Item:nth-of-type(even) {
-    width: 33.33333%;
-  }
-  .st-Grids-col8to4Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col8to4Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col4to8Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 33.33333%;
-  }
-  .st-Grids-col4to8Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 66.66667%;
-  }
-  .st-Grids-col4to8Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col4to8Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col8to4Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 66.66667%;
-  }
-  .st-Grids-col8to4Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 33.33333%;
-  }
-  .st-Grids-col8to4Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col8to4Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col4to8Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 33.33333%;
-  }
-  .st-Grids-col4to8Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 66.66667%;
-  }
-  .st-Grids-col4to8Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col4to8Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col8to4Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 66.66667%;
-  }
-  .st-Grids-col8to4Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 33.33333%;
-  }
-  .st-Grids-col8to4Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col8to4Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-/* 5/12 7/12, 7/12 5/12 */
-.st-Grids-col5to7 > .st-Grids_Item:nth-of-type(odd) {
-  width: 41.66667%;
-}
-
-.st-Grids-col5to7 > .st-Grids_Item:nth-of-type(even) {
-  width: 58.33333%;
-}
-
-.st-Grids-col5to7 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col5to7 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-.st-Grids-col7to5 > .st-Grids_Item:nth-of-type(odd) {
-  width: 58.33333%;
-}
-
-.st-Grids-col7to5 > .st-Grids_Item:nth-of-type(even) {
-  width: 41.66667%;
-}
-
-.st-Grids-col7to5 > .st-Grids_Item:nth-of-type(n+1) {
-  margin-top: 0;
-}
-
-.st-Grids-col7to5 > .st-Grids_Item:nth-of-type(n+3) {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Grids-col5to7Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 41.66667%;
-  }
-  .st-Grids-col5to7Md > .st-Grids_Item:nth-of-type(even) {
-    width: 58.33333%;
-  }
-  .st-Grids-col5to7Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col5to7Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col7to5Md > .st-Grids_Item:nth-of-type(odd) {
-    width: 58.33333%;
-  }
-  .st-Grids-col7to5Md > .st-Grids_Item:nth-of-type(even) {
-    width: 41.66667%;
-  }
-  .st-Grids-col7to5Md > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col7to5Md > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1024px) {
-  .st-Grids-col5to7Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 41.66667%;
-  }
-  .st-Grids-col5to7Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 58.33333%;
-  }
-  .st-Grids-col5to7Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col5to7Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col7to5Lg > .st-Grids_Item:nth-of-type(odd) {
-    width: 58.33333%;
-  }
-  .st-Grids-col7to5Lg > .st-Grids_Item:nth-of-type(even) {
-    width: 41.66667%;
-  }
-  .st-Grids-col7to5Lg > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col7to5Lg > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-@media print, screen and (min-width: 1440px) {
-  .st-Grids-col5to7Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 41.66667%;
-  }
-  .st-Grids-col5to7Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 58.33333%;
-  }
-  .st-Grids-col5to7Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col5to7Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-  .st-Grids-col7to5Xl > .st-Grids_Item:nth-of-type(odd) {
-    width: 58.33333%;
-  }
-  .st-Grids-col7to5Xl > .st-Grids_Item:nth-of-type(even) {
-    width: 41.66667%;
-  }
-  .st-Grids-col7to5Xl > .st-Grids_Item:nth-of-type(n+1) {
-    margin-top: 0;
-  }
-  .st-Grids-col7to5Xl > .st-Grids_Item:nth-of-type(n+3) {
-    margin-top: 50px;
-  }
-}
-
-/*
----
 name: st-Header
 namespace: Structure
 category: Global
 ---
 */
-/*
----
-name: st-Section2
-namespace: Structure
-category: Layout
----
-
-h2相当の見出しをラップするセクションの余白を指定します。
-
-```jade
-.st-Wrapper
-  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-
-  section.st-Section2
-    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
-
-  section.st-Section2
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-    .st-Block
-      .test-Block
-        .test-Block_Left
-          img(src="https://placehold.jp/300x200.png" alt)
-        .test-Block_Right
-          h3 ダミーの見出しです
-          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    .st-Block
-      .test-Block
-        .test-Block_Left
-          img(src="https://placehold.jp/300x200.png" alt)
-        .test-Block_Right
-          h3 ダミーの見出しです
-          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
-```
-*/
-.st-Section2 {
-  margin-top: 60px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section2 {
-    margin-top: 100px;
-  }
-}
-
-.st-Section2 > :first-child {
-  margin-top: 0;
-}
-
-.st-Section2 > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-Section2-divider
-namespace: Structure
-category: Layout
----
-
-レイアウト例です。`.st-Section2-divider`を追加すると`.st-Section2`同士の間にボーダーがつきます。
-
-```jade
-.st-Wrapper
-  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-
-  section.st-Section2.st-Section2-divider
-    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
-
-  section.st-Section2.st-Section2-divider
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-    .st-Block
-      .test-Block
-        .test-Block_Left
-          img(src="https://placehold.jp/300x200.png" alt)
-        .test-Block_Right
-          h3 ダミーの見出しです
-          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    .st-Block
-      .test-Block
-        .test-Block_Left
-          img(src="https://placehold.jp/300x200.png" alt)
-        .test-Block_Right
-          h3 ダミーの見出しです
-          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
-```
-*/
-.st-Section2-divider {
-  margin-top: 30px;
-}
-
-.st-Section2-divider + .st-Section2-divider:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  padding-top: 30px;
-  border-top: 1px solid #e3e3e3;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section2-divider {
-    margin-top: 50px;
-  }
-  .st-Section2-divider + .st-Section2-divider:before {
-    padding-top: 50px;
-  }
-}
-
-/*
----
-name: st-Section2-dividerFull
-namespace: Structure
-category: Layout
----
-
-レイアウト例です。`.st-Section2-dividerFull`を追加すると`.st-Section2`同士の間にボーダーがつきます。ボーダーの横幅は画面に対して常に100%（`100vw`）になります。
-
-```jade
-.st-Wrapper
-  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-
-  section.st-Section2.st-Section2-dividerFull
-    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
-
-  section.st-Section2.st-Section2-dividerFull
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-    .st-Block
-      .test-Block
-        .test-Block_Left
-          img(src="https://placehold.jp/300x200.png" alt)
-        .test-Block_Right
-          h3 ダミーの見出しです
-          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    .st-Block
-      .test-Block
-        .test-Block_Left
-          img(src="https://placehold.jp/300x200.png" alt)
-        .test-Block_Right
-          h3 ダミーの見出しです
-          p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-    p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
-```
-*/
-.st-Section2-dividerFull {
-  margin-top: 30px;
-}
-
-.st-Section2-dividerFull + .st-Section2-dividerFull:before {
-  content: "";
-  display: block;
-  height: 1px;
-  margin-right: calc(-50vw + 50%);
-  margin-left: calc(-50vw + 50%);
-  padding-top: 30px;
-  border-top: 1px solid #e3e3e3;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section2-dividerFull {
-    margin-top: 50px;
-  }
-  .st-Section2-dividerFull + .st-Section2-dividerFull:before {
-    padding-top: 50px;
-  }
-}
-
-.st-Section2-dividerFull > :first-child {
-  margin-top: 0;
-}
-
-.st-Section2-dividerFull > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-Section3
-namespace: Structure
-category: Layout
----
-
-h3相当の見出しをラップするセクションの余白を指定します。
-
-```jade
-.st-Wrapper
-  section.st-Section2
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-
-    section.st-Section3
-      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-    section.st-Section3
-      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
-      .st-Block
-        p.test-Box .st-Block
-      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-```
-*/
-.st-Section3 {
-  margin-top: 50px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section3 {
-    margin-top: 80px;
-  }
-}
-
-.st-Heading2 + .st-Section3 {
-  margin-top: 25px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading2 + .st-Section3 {
-    margin-top: 40px;
-  }
-}
-
-.st-Section3 > :first-child {
-  margin-top: 0;
-}
-
-.st-Section3 > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-Section3-divider
-namespace: Structure
-category: Layout
----
-
-レイアウト例です。`.st-Section3-divider`を追加すると`.st-Section3`同士の間にボーダーがつきます。
-
-```jade
-.st-Wrapper
-  section.st-Section2
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-
-    section.st-Section3.st-Section3-divider
-      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-    section.st-Section3.st-Section3-divider
-      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
-      .st-Block
-        p.test-Box .st-Block
-      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-```
-*/
-.st-Section3-divider {
-  margin-top: 25px;
-}
-
-.st-Section3-divider + .st-Section3-divider:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  padding-top: 25px;
-  border-top: 1px solid #e3e3e3;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section3-divider {
-    margin-top: 50px;
-  }
-  .st-Section3-divider + .st-Section3-divider:before {
-    padding-top: 50px;
-  }
-}
-
-.st-Heading2 + .st-Section3-divider:before {
-  display: none;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading2 + .st-Section3-divider:before {
-    display: none;
-  }
-}
-
-/*
----
-name: st-Section4
-namespace: Structure
-category: Layout
----
-
-h4相当の見出しをラップするセクションの余白を指定します。
-
-```jade
-.st-Wrapper
-  p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
-
-  section.st-Section2
-    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
-
-  section.st-Section2
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-
-    section.st-Section3
-      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-    section.st-Section3
-      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
-
-      section.st-Section4
-        h4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
-        p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
-        p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-      section.st-Section4
-        h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
-        p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-```
-*/
-.st-Section4 {
-  margin-top: 35px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section4 {
-    margin-top: 50px;
-  }
-}
-
-.st-Heading3 + .st-Section4 {
-  margin-top: 17.5px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading3 + .st-Section4 {
-    margin-top: 25px;
-  }
-}
-
-.st-Section4 > :first-child {
-  margin-top: 0;
-}
-
-.st-Section4 > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-Section5
-namespace: Structure
-category: Layout
----
-
-h5相当の見出しをラップするセクションの余白を指定します。
-
-```jade
-.st-Wrapper
-  section.st-Section4
-    h4.sw-Heading4 しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
-    p.sw-Text この書生というのは時々我々を捕えて煮て食うという話である。
-    p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-  section.st-Section4
-    h4.sw-Heading4 どこで生れたかとんと見当がつかぬ。
-
-    section.st-Section5
-      h5.sw-Heading5 吾輩は猫である。名前はまだ無い。
-      p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-    section.st-Section5
-      h5.sw-Heading5 どこで生れたかとんと見当がつかぬ。
-      p.sw-Text 何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-```
-*/
-.st-Section5 {
-  margin-top: 30px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Section5 {
-    margin-top: 30px;
-  }
-}
-
-.st-Heading4 + .st-Section5 {
-  margin-top: 15px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading4 + .st-Section5 {
-    margin-top: 15px;
-  }
-}
-
-.st-Section5 > :first-child {
-  margin-top: 0;
-}
-
-.st-Section5 > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-Wrapper
-namespace: Structure
-category: Layout
----
-
-コンテンツの横幅を制限します。
-
-```jade
-.st-Wrapper
-  section.st-Section2
-    h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-    p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Wrapper {
-  max-width: 1170px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 20px;
-}
-
-@media print, screen and (min-width: 1210px) {
-  .st-Wrapper {
-    padding: 0;
-  }
-}
-
-.st-Wrapper > :first-child {
-  margin-top: 0;
-}
-
-.st-Wrapper > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-Wrapper_Full
-namespace: Structure
-category: Layout
----
-
-`.st-Wrapper_Full`を入れ子にすると、`.st-Wrapper`の中でも画面いっぱいに表示されます。
-
-```jade
-.st-Wrapper
-  .st-Wrapper_Full
-    section.st-Section2
-      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Wrapper_Full {
-  margin-right: calc(-50vw + 50%);
-  margin-left: calc(-50vw + 50%);
-}
-
-.st-Wrapper_Full > :first-child {
-  margin-top: 0;
-}
-
-.st-Wrapper_Full > :last-child {
-  margin-bottom: 0;
-}
-
-/*
----
-name: st-Wrapper_FullBg
-namespace: Structure
-category: Layout
----
-
-`.st-Wrapper_FullBg`を入れ子にすると、`.st-Wrapper`の中でも背景色が画面いっぱいに表示されます。
-
-```jade
-.st-Wrapper
-  .st-Wrapper_FullBg(style="background-color: #eee;")
-    section.st-Section2
-      h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
-      p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-```
-*/
-.st-Wrapper_FullBg {
-  margin-right: calc(-50vw + 50%);
-  margin-left: calc(-50vw + 50%);
-  padding-right: calc(50vw - 50%);
-  padding-left: calc(50vw - 50%);
-}
-
-.st-Wrapper_FullBg > :first-child {
-  margin-top: 0;
-}
-
-.st-Wrapper_FullBg > :last-child {
-  margin-bottom: 0;
-}
-
 /*
 ---
 name: test-Block
@@ -4972,7 +4973,7 @@ category: Block
 スタイルガイド用のダミーブロックです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   .test-Block
     .test-Block_Left
       img(src="https://placehold.jp/300x200.png" alt)

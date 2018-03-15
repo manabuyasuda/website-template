@@ -1,20 +1,20 @@
 /*
 ---
-name: st-Wrapper
-namespace: Structure
+name: l-Wrapper
+namespace: Layout
 category: Layout
 ---
 
 コンテンツの横幅を制限します。
 
 ```jade
-.st-Wrapper
-  section.st-Section2
+.l-Wrapper
+  section.l-Section2
     h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
     p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
-.st-Wrapper {
+.l-Wrapper {
   $width: $max-width + 40px;
   max-width: $max-width;
   margin-right: auto;
@@ -36,22 +36,22 @@ category: Layout
 
 /*
 ---
-name: st-Wrapper_Full
-namespace: Structure
+name: l-Wrapper_Full
+namespace: Layout
 category: Layout
 ---
 
-`.st-Wrapper_Full`を入れ子にすると、`.st-Wrapper`の中でも画面いっぱいに表示されます。
+`.l-Wrapper_Full`を入れ子にすると、`.l-Wrapper`の中でも画面いっぱいに表示されます。
 
 ```jade
-.st-Wrapper
-  .st-Wrapper_Full
-    section.st-Section2
+.l-Wrapper
+  .l-Wrapper_Full
+    section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
-.st-Wrapper_Full {
+.l-Wrapper_Full {
   @include full-width();
 
   & > :first-child {
@@ -65,22 +65,22 @@ category: Layout
 
 /*
 ---
-name: st-Wrapper_FullBg
-namespace: Structure
+name: l-Wrapper_FullBg
+namespace: Layout
 category: Layout
 ---
 
-`.st-Wrapper_FullBg`を入れ子にすると、`.st-Wrapper`の中でも背景色が画面いっぱいに表示されます。
+`.l-Wrapper_FullBg`を入れ子にすると、`.l-Wrapper`の中でも背景色が画面いっぱいに表示されます。
 
 ```jade
-.st-Wrapper
-  .st-Wrapper_FullBg(style="background-color: #eee;")
-    section.st-Section2
+.l-Wrapper
+  .l-Wrapper_FullBg(style="background-color: #eee;")
+    section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
-.st-Wrapper_FullBg {
+.l-Wrapper_FullBg {
   @include full-bg();
 
   & > :first-child {

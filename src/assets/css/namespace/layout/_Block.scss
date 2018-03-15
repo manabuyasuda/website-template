@@ -1,22 +1,22 @@
 /*
 ---
-name: st-Block
-namespace: Structure
+name: l-Block
+namespace: Layout
 category: Layout
 ---
 
 見出しや画像などを含んだブロック同士の余白を指定します。
 
 ```jade
-.st-Wrapper
-  .st-Block
+.l-Wrapper
+  .l-Block
     .test-Block
       .test-Block_Left
         img(src="https://placehold.jp/300x200.png" alt)
       .test-Block_Right
         h3 ダミーの見出しです
         p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-  .st-Block
+  .l-Block
     .test-Block
       .test-Block_Left
         img(src="https://placehold.jp/300x200.png" alt)
@@ -25,29 +25,29 @@ category: Layout
         p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
 ```
 */
-.st-Block {
-  @include st-Block();
+.l-Block {
+  @include l-Block();
 }
 
 /*
 ---
-name: st-Block-divider
-namespace: Structure
+name: l-Block-divider
+namespace: Layout
 category: Layout
 ---
 
-`.st-Block-divider`を追加すると間にボーダーが入ります。
+`.l-Block-divider`を追加すると間にボーダーが入ります。
 
 ```jade
-.st-Wrapper
-  .st-Block.st-Block-divider
+.l-Wrapper
+  .l-Block.l-Block-divider
     .test-Block
       .test-Block_Left
         img(src="https://placehold.jp/300x200.png" alt)
       .test-Block_Right
         h3 ダミーの見出しです
         p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-  .st-Block.st-Block-divider
+  .l-Block.l-Block-divider
     .test-Block
       .test-Block_Left
         img(src="https://placehold.jp/300x200.png" alt)
@@ -56,7 +56,7 @@ category: Layout
         p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
 ```
 */
-.st-Block-divider {
+.l-Block-divider {
   margin-top: $margin-block-divider;
 
   @include mq-up(md) {

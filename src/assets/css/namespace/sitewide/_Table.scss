@@ -13,7 +13,7 @@ category: List
 セルの結合はUAが解釈することが難しい機能で、特にスクリーンリーダーなどでうまく情報が伝えられない恐れがあります。1つの複雑なテーブルではなく、複数のシンプルなテーブルにできないか検討してください。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   table.sw-Table
     thead
       tr
@@ -32,7 +32,7 @@ category: List
 ```
 */
 .sw-Table {
-  @include st-Block();
+  @include l-Block();
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;

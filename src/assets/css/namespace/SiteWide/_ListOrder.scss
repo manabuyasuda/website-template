@@ -8,7 +8,7 @@ category: List
 入れ子に対応した順序リストです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListOrder
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
@@ -20,7 +20,7 @@ category: List
 リストを2から始める場合は`.sw-ListOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListOrder.sw-ListOrder-from2(start="2")
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
@@ -30,7 +30,7 @@ category: List
 ```
 */
 .sw-ListOrder {
-  @include st-Text();
+  @include l-Text();
   display: table;
   padding-left: 0;
   list-style-type: none;

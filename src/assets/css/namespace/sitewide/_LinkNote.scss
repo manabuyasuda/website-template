@@ -8,7 +8,7 @@ category: Link
 注釈へのリンクです。`<sup>`タグの子要素として指定します。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   p.sw-Text ○○
     sup
       a.sw-LinkNote(href="#") 1

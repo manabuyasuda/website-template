@@ -8,7 +8,7 @@ category: [Button, Link, Form]
 ボタンのデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   a.sw-Button(href="#") aタグボタン
   a.sw-Button.sw-Button-disabled(href="#") aタグボタン
   button.sw-Button(type="button") butotnタグボタン

@@ -8,7 +8,7 @@ category: Form
 `type="radio"`のデフォルトスタイルです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   input.sw-FormRadio(type="radio" id="radio1" name="radio1" checked)
   label(for="radio1") ラジオボタン
   br

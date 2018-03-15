@@ -1,4 +1,4 @@
-@mixin st-Text() {
+@mixin l-Text() {
   margin-top: $margin-text;
 
   @include mq-up(md) {

@@ -8,7 +8,7 @@ category: List
 注釈用のリストです。米印やアスタリスクが表示されます。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ul.sw-ListNote
     li 1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です
     li 2つ目の注釈です
@@ -20,7 +20,7 @@ category: List
 ```
 */
 .sw-ListNote {
-  @include st-Text();
+  @include l-Text();
   margin-left: 1.5em;
   padding-left: 0;
   font-size: $font-size-secondary;

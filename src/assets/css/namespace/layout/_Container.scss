@@ -1,7 +1,7 @@
 /*
 ---
-name: st-Container
-namespace: Structure
+name: l-Container
+namespace: Layout
 category: Layout
 ---
 
@@ -9,18 +9,18 @@ category: Layout
 
 レイアウト例です。
 ```jade
-.st-Container
-  .st-Wrapper
-    section.st-Section2
+.l-Container
+  .l-Wrapper
+    section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
-    section.st-Section2
+    section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
-.st-Container {
+.l-Container {
   padding: $padding-conitaner;
 
   @include mq-up(md) {

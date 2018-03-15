@@ -23,7 +23,7 @@
           <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/Block/index.html">Block</a></li><li data-path-depth="0"><a href="../../category/Button/index.html">Button</a></li><li data-path-depth="0"><a href="../../category/Form/index.html">Form</a></li><li data-path-depth="0"><a href="../../category/Global/index.html">Global</a></li><li data-path-depth="0"><a href="../../category/Heading/index.html">Heading</a></li><li data-path-depth="0"><a href="../../category/Icon/index.html">Icon</a></li><li data-path-depth="0"><a href="../../category/Image/index.html">Image</a></li><li data-path-depth="0"><a href="../../category/Layout/index.html">Layout</a></li><li data-path-depth="0"><a href="../../category/Link/index.html">Link</a></li><li data-path-depth="0"><a href="../../category/List/index.html">List</a></li><li data-path-depth="0"><a href="../../category/Navigation/index.html">Navigation</a></li><li data-path-depth="0"><a href="../../category/Text/index.html" data-tree-current>Text</a></li><li data-path-depth="0"><a href="../../category/ThirdPartyComponent/index.html">ThirdPartyComponent</a></li></ul>
           </nav>
           <h2 class="aigis-sidemenu__heading">Namespace</h2>
-          <nav class="aigis-tags aigis-tagList"><a href="../../namespace/SiteWide/index.html" class="aigis-namespace__item aigis-namespace__item--SiteWide">SiteWide</a><a href="../../namespace/Structure/index.html" class="aigis-namespace__item aigis-namespace__item--Structure">Structure</a><a href="../../namespace/WISYWIG/index.html" class="aigis-namespace__item aigis-namespace__item--WISYWIG">WISYWIG</a><a href="../../namespace/test/index.html" class="aigis-namespace__item aigis-namespace__item--test">test</a>
+          <nav class="aigis-tags aigis-tagList"><a href="../../namespace/Layout/index.html" class="aigis-namespace__item aigis-namespace__item--Layout">Layout</a><a href="../../namespace/SiteWide/index.html" class="aigis-namespace__item aigis-namespace__item--SiteWide">SiteWide</a><a href="../../namespace/Structure/index.html" class="aigis-namespace__item aigis-namespace__item--Structure">Structure</a><a href="../../namespace/WISYWIG/index.html" class="aigis-namespace__item aigis-namespace__item--WISYWIG">WISYWIG</a><a href="../../namespace/test/index.html" class="aigis-namespace__item aigis-namespace__item--test">test</a>
           </nav>
           <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
         </div>
@@ -52,11 +52,11 @@
               </ul><p>途中で改行をさせたくないフレーズやキーワードに指定します。囲まれた範囲（Delimiter）がまとまって改行されます。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text">テキストは基本的にスペースや役物を基準に改行されますが、<span class="sw-Delimiter">この部分はまとめて改行されます。</span>ここは通常のテキストです。</p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >テキストは基本的にスペースや役物を基準に改行されますが、</span>
     <span class="token tag" >span.sw-Delimiter</span> <span class="token plain-text" >この部分はまとめて改行されます。</span>
     <span class="token punctuation" >|</span> ここは通常のテキストです。
@@ -70,13 +70,13 @@
               </ul><p><code>&lt;hr&gt;</code>のような区切り記号を使って、分割・グルーピングします。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text">テキストです。</p>
   <hr class="sw-Divider"/>
   <p class="sw-Text">テキストです。</p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >テキストです。</span>
   <span class="token tag" >hr.sw-Divider</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >テキストです。</span>
@@ -90,12 +90,12 @@
               </ul><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text">常に改行<br/>されます</p>
   <p class="sw-Text">ブレイクポイント以降は改行<br class="sw-HideMd"/>されません</p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
     <span class="token tag" >br</span>
     <span class="token punctuation" >|</span> されます
@@ -112,11 +112,11 @@
               </ul><p>インラインで表示するラベルコンポーネントです。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper"><span class="sw-Label">spanタグのラベルです。</span>
+<div class="l-Wrapper"><span class="sw-Label">spanタグのラベルです。</span>
   <label class="sw-Label">labelタグのラベルです。</label><a href="#" class="sw-Label">aタグのラベルです。</a>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >span.sw-Label</span> <span class="token plain-text" >spanタグのラベルです。</span>
   <span class="token tag" >label.sw-Label</span> <span class="token plain-text" >labelタグのラベルです。</span>
   <span class="token tag" >a.sw-Label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"#"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >aタグのラベルです。</span>
@@ -131,12 +131,12 @@
 他の文章と区別するためだけに利用し、<code>&lt;strong&gt;</code>の重要性や深刻性、<code>&lt;em&gt;</code>の強調（アクセント）、<code>&lt;h2&gt;</code>のような見出しとしての意味はありません。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Lead"><b>◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</b></p>
   <p class="sw-Text">△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Lead</span>
     <span class="token tag" >b</span> <span class="token plain-text" >◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</span>
@@ -150,12 +150,12 @@
               </ul><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text">常に改行<br/>されます</p>
   <p class="sw-Text">ブレイクポイント以降は改行<br class="sw-Hide sw-ShowMd"/>されます</p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
     <span class="token tag" >br</span>
     <span class="token punctuation" >|</span> されます
@@ -172,12 +172,12 @@
               </ul><p>登録商標（アールマーク）や著作権（マルシーマーク）、注釈リンク（※1）などに使う上付き文字です。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text">登録商標<sup class="sw-Sup">®</sup>です。</p>
   <p class="sw-Text">注釈<sup class="sw-Sup"><a href="#">※1</a></sup>です。</p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >登録商標</span>
     <span class="token tag" >sup.sw-Sup</span> <span class="token plain-text" >®</span>
     <span class="token punctuation" >|</span> です。
@@ -194,13 +194,13 @@
               </ul><p>基本のテキストスタイルです。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text">この書生というのは時々我々を捕えて煮て食うという話である。</p>
   <div class="sw-Text">しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</div>
   <p class="sw-Text">どこで生れたかとんと見当がつかぬ。</p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >この書生というのは時々我々を捕えて煮て食うという話である。</span>
   <span class="token tag" >.sw-Text</span> <span class="token plain-text" >しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >どこで生れたかとんと見当がつかぬ。</span>
@@ -214,12 +214,12 @@
               </ul><p><code>&lt;em&gt;</code>で使われるようなスタイルです。アクセントをつけたい単語や短い文章で使用し、強調や重要性を示しません。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text"><em class="sw-TextEmphasis">30%OFFのため、</em>お買い得です！<small>（30%OFFであることを特に伝えたい）</small></p>
   <p class="sw-Text">30%OFFのため、<em class="sw-TextEmphasis">お買い得です！</em><small>（お買い得であることを特に伝えたい）</small></p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span>
     <span class="token tag" >em.sw-TextEmphasis</span> <span class="token plain-text" >30%OFFのため、</span>
     <span class="token punctuation" >|</span> お買い得です！
@@ -237,12 +237,12 @@
               </ul><p><code>&lt;strong&gt;</code>で使われるようなスタイルです。重要性や緊急性・深刻性があることを示します。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text"><strong class="sw-TextImportant">30%OFFのため、お買い得です！</strong></p>
   <p class="sw-Text"><strong class="sw-TextImportant">使用上の注意をよく読み、用法・用量を守って正しくお使い下さい。</strong></p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span>
     <span class="token tag" >strong.sw-TextImportant</span> <span class="token plain-text" >30%OFFのため、お買い得です！</span>
   <span class="token tag" >p.sw-Text</span>
@@ -257,12 +257,12 @@
               </ul><p><code>&lt;p&gt;</code>や<code>&lt;small&gt;</code>で使われるようなテキストスタイルです。補足的・副次的な意味合いを持たせる場合に使います。</p>
 <div class="aigis-preview">
 
-<div class="st-Wrapper">
+<div class="l-Wrapper">
   <p class="sw-Text">通常の文章です</p>
   <p class="sw-TextSecondary">補足的な文章です</p>
 </div></div>
 
-<pre><code class="language-jade"><span class="token tag" >.st-Wrapper</span>
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >通常の文章です</span>
   <span class="token tag" >p.sw-TextSecondary</span> <span class="token plain-text" >補足的な文章です</span>
 </code></pre>

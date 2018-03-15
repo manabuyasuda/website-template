@@ -8,7 +8,7 @@ category: List
 括弧で囲んだ順序リストです。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListBracketOrder
     li リストです。リストです。リストです。リストです。
     li リストです
@@ -17,14 +17,14 @@ category: List
 リストを2から始める場合は`.sw-ListBracketOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
 
 ```jade
-.st-Wrapper
+.l-Wrapper
   ol.sw-ListBracketOrder.sw-ListBracketOrder-from2(start="2")
     li リストです。リストです。リストです。リストです。
     li リストです
 ```
 */
 .sw-ListBracketOrder {
-  @include st-Text();
+  @include l-Text();
   margin-left: 2em;
   padding-left: 0;
   list-style-type: none;
