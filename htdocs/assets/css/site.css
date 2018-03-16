@@ -590,7 +590,7 @@ img {
 /*
 ---
 name: l-Block
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -635,7 +635,7 @@ category: Layout
 /*
 ---
 name: l-Block-divider
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -695,7 +695,7 @@ category: Layout
 /*
 ---
 name: l-Container
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -735,7 +735,7 @@ category: Layout
 /*
 ---
 name: l-ContainerBg
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -776,7 +776,7 @@ category: Layout
 /*
 ---
 name: l-ContainerBg-delimiter
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -800,7 +800,7 @@ category: Layout
 /*
 ---
 name: l-Grid
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -1208,7 +1208,7 @@ category: Layout
 /*
 ---
 name: l-Grids
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2247,7 +2247,7 @@ category: Layout
 /*
 ---
 name: l-Section2
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2302,7 +2302,7 @@ h2相当の見出しをラップするセクションの余白を指定します
 /*
 ---
 name: l-Section2-divider
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2361,7 +2361,7 @@ category: Layout
 /*
 ---
 name: l-Section2-dividerFull
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2429,7 +2429,7 @@ category: Layout
 /*
 ---
 name: l-Section3
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2481,7 +2481,7 @@ h3相当の見出しをラップするセクションの余白を指定します
 /*
 ---
 name: l-Section3-divider
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2537,7 +2537,7 @@ category: Layout
 /*
 ---
 name: l-Section4
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2601,7 +2601,7 @@ h4相当の見出しをラップするセクションの余白を指定します
 /*
 ---
 name: l-Section5
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2655,7 +2655,7 @@ h5相当の見出しをラップするセクションの余白を指定します
 /*
 ---
 name: l-Wrapper
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2692,7 +2692,7 @@ category: Layout
 /*
 ---
 name: l-Wrapper_Full
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2722,7 +2722,7 @@ category: Layout
 /*
 ---
 name: l-Wrapper_FullBg
-namespace: Layout
+namespace: .l-
 category: Layout
 ---
 
@@ -2754,7 +2754,7 @@ category: Layout
 /*
 ---
 name: sw-Button
-namespace: SiteWide
+namespace: .sw-
 category: [Button, Link, Form]
 ---
 
@@ -2825,7 +2825,7 @@ category: [Button, Link, Form]
 /*
 ---
 name: sw-Caption
-namespace: SiteWide
+namespace: .sw-
 category: Image
 ---
 
@@ -2921,7 +2921,7 @@ category: Image
 /*
 ---
 name: sw-Delimiter
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -2941,7 +2941,7 @@ category: Text
 /*
 ---
 name: sw-Divider
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -2971,7 +2971,7 @@ category: Text
 /*
 ---
 name: sw-FormCheckbox
-namespace: SiteWide
+namespace: .sw-
 category: Form
 ---
 
@@ -3049,7 +3049,7 @@ category: Form
 /*
 ---
 name: sw-FormInput
-namespace: SiteWide
+namespace: .sw-
 category: Form
 ---
 
@@ -3139,7 +3139,7 @@ category: Form
 /*
 ---
 name: sw-FormRadio
-namespace: SiteWide
+namespace: .sw-
 category: Form
 ---
 
@@ -3218,7 +3218,7 @@ category: Form
 /*
 ---
 name: sw-FormSelect
-namespace: SiteWide
+namespace: .sw-
 category: Form
 ---
 
@@ -3330,7 +3330,7 @@ category: Form
 /*
 ---
 name: sw-FormTextarea
-namespace: SiteWide
+namespace: .sw-
 category: Form
 ---
 
@@ -3417,7 +3417,7 @@ category: Form
 /*
 ---
 name: sw-Heading2
-namespace: SiteWide
+namespace: .sw-
 category: Heading
 ---
 
@@ -3471,7 +3471,7 @@ category: Heading
 /*
 ---
 name: sw-Heading3
-namespace: SiteWide
+namespace: .sw-
 category: Heading
 ---
 
@@ -3514,7 +3514,7 @@ category: Heading
 /*
 ---
 name: sw-Heading4
-namespace: SiteWide
+namespace: .sw-
 category: Heading
 ---
 
@@ -3554,7 +3554,7 @@ category: Heading
 /*
 ---
 name: sw-Heading5
-namespace: SiteWide
+namespace: .sw-
 category: Heading
 ---
 
@@ -3591,7 +3591,7 @@ category: Heading
 /*
 ---
 name: sw-Hide
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -3632,7 +3632,7 @@ category: Text
 /*
 ---
 name: sw-ImageCenter
-namespace: SiteWide
+namespace: .sw-
 category: Image
 ---
 
@@ -3659,7 +3659,7 @@ category: Image
 /*
 ---
 name: sw-Label
-namespace: SiteWide
+namespace: .sw-
 category: [Text, Link, Form]
 ---
 
@@ -3693,7 +3693,7 @@ category: [Text, Link, Form]
 /*
 ---
 name: sw-Lead
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -3726,7 +3726,7 @@ category: Text
 /*
 ---
 name: sw-Link
-namespace: SiteWide
+namespace: .sw-
 category: Link
 ---
 
@@ -3751,7 +3751,7 @@ category: Link
 /*
 ---
 name: sw-LinkDownload
-namespace: SiteWide
+namespace: .sw-
 category: [Link, Icon]
 ---
 
@@ -3804,7 +3804,7 @@ category: [Link, Icon]
 /*
 ---
 name: sw-LinkExternal
-namespace: SiteWide
+namespace: .sw-
 category: [Link, Icon]
 ---
 
@@ -3857,7 +3857,7 @@ category: [Link, Icon]
 /*
 ---
 name: sw-LinkMore
-namespace: SiteWide
+namespace: .sw-
 category: [Link, Icon]
 ---
 
@@ -3910,7 +3910,7 @@ category: [Link, Icon]
 /*
 ---
 name: sw-LinkNote
-namespace: SiteWide
+namespace: .sw-
 category: Link
 ---
 
@@ -3952,7 +3952,7 @@ category: Link
 /*
 ---
 name: sw-LinkPdf
-namespace: SiteWide
+namespace: .sw-
 category: [Link, Icon]
 ---
 
@@ -4005,7 +4005,7 @@ category: [Link, Icon]
 /*
 ---
 name: sw-ListBracketOrder
-namespace: SiteWide
+namespace: .sw-
 category: List
 ---
 
@@ -4092,7 +4092,7 @@ category: List
 /*
 ---
 name: sw-ListNote
-namespace: SiteWide
+namespace: .sw-
 category: List
 ---
 
@@ -4149,7 +4149,7 @@ category: List
 /*
 ---
 name: sw-ListNoteOrder
-namespace: SiteWide
+namespace: .sw-
 category: List
 ---
 
@@ -4262,7 +4262,7 @@ category: List
 /*
 ---
 name: sw-ListOrder
-namespace: SiteWide
+namespace: .sw-
 category: List
 ---
 
@@ -4375,7 +4375,7 @@ category: List
 /*
 ---
 name: sw-ListUnorder
-namespace: SiteWide
+namespace: .sw-
 category: List
 ---
 
@@ -4446,7 +4446,7 @@ category: List
 /*
 ---
 name: sw-Map
-namespace: SiteWide
+namespace: .sw-
 category: ThirdPartyComponent
 ---
 
@@ -4498,7 +4498,7 @@ Google Mapsをレスポンシブ対応させます。デフォルトで16:9で�
 /*
 ---
 name: sw-Show
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -4539,7 +4539,7 @@ category: Text
 /*
 ---
 name: sw-Sup
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -4565,7 +4565,7 @@ category: Text
 /*
 ---
 name: sw-Table
-namespace: SiteWide
+namespace: .sw-
 category: List
 ---
 
@@ -4631,7 +4631,7 @@ category: List
 /*
 ---
 name: sw-TableWide
-namespace: SiteWide
+namespace: .sw-
 category: List
 ---
 
@@ -4711,7 +4711,7 @@ category: List
 /*
 ---
 name: sw-Text
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -4738,7 +4738,7 @@ category: Text
 /*
 ---
 name: sw-TextEmphasis
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -4763,7 +4763,7 @@ category: Text
 /*
 ---
 name: sw-TextImportant
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -4784,7 +4784,7 @@ category: Text
 /*
 ---
 name: sw-TextSecondary
-namespace: SiteWide
+namespace: .sw-
 category: Text
 ---
 
@@ -4810,7 +4810,7 @@ category: Text
 /*
 ---
 name: sw-Title
-namespace: SiteWide
+namespace: .sw-
 category: Heading
 ---
 
@@ -4847,7 +4847,7 @@ category: Heading
 /*
 ---
 name: sw-Video
-namespace: SiteWide
+namespace: .sw-
 category: ThirdPartyComponent
 ---
 
@@ -4899,7 +4899,7 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
 /*
 ---
 name: st-Breadcrumb
-namespace: Structure
+namespace: .st
 category: Navigation
 ---
 
@@ -4952,21 +4952,21 @@ category: Navigation
 /*
 ---
 name: st-Footer
-namespace: Structure
+namespace: .st
 category: Global
 ---
 */
 /*
 ---
 name: st-Header
-namespace: Structure
+namespace: .st-
 category: Global
 ---
 */
 /*
 ---
 name: test-Block
-namespace: test
+namespace: .test-
 category: Block
 ---
 
@@ -5042,7 +5042,7 @@ category: Block
 /*
 ---
 name: wisywig-Area
-namespace: WISYWIG
+namespace: .wisywig-
 category: Block
 ---
 

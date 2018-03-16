@@ -8,7 +8,7 @@
 
 ```
 name: l-Wrapper
-namespace: Layout
+namespace: .l-
 category: Layout
 id: abc
 ```
