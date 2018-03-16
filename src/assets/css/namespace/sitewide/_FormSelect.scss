@@ -1,0 +1,27 @@
+/*
+---
+name: sw-FormSelect
+namespace: SiteWide
+category: Form
+---
+
+`<select>`タグのデフォルトスタイルです。
+
+```jade
+.l-Wrapper
+  .sw-FormSelect
+    select
+      option(value="default") 選択してください
+      option(value="hokkaido") 北海道
+      option(value="akita") 秋田
+
+  .sw-FormSelect.is-disabled
+    select(disabled)
+      option(value="default") 選択してください
+      option(value="hokkaido") 北海道
+      option(value="akita") 秋田
+```
+*/
+.sw-FormSelect {
+  @include sw-FormSelect();
+}

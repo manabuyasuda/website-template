@@ -1,0 +1,47 @@
+/*
+---
+name: st-Breadcrumb
+namespace: Structure
+category: Navigation
+---
+
+ベーシックなパンくずリストです。`<ol>`タグで指定します。
+```jade
+.l-Wrapper
+  ol.st-Breadcrumb
+    li.st-Breadcrumb_Item
+      a.st-Breadcrumb_Link(href="/") ホーム
+    li.st-Breadcrumb_Item
+      a.st-Breadcrumb_Link(href="#") カテゴリ名
+    li.st-Breadcrumb_Item ページ名
+```
+*/
+
+.st-Breadcrumb {
+  overflow: hidden;
+  padding-left: 0;
+  font-size: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  list-style-type: none;
+}
+
+.st-Breadcrumb_Item {
+  display: inline-block;
+  font-size: 1rem;
+  font-size: 0.85rem;
+
+  &:last-child {
+    display: inline;
+  }
+
+  &:not(:first-of-type):before {
+    content: "/";
+    margin: 0 0.5em;
+  }
+}
+
+.st-Breadcrumb_Link {
+  @include sw-Link();
+  display: inline-block;
+}

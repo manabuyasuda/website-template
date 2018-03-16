@@ -1,0 +1,40 @@
+/*
+---
+name: sw-LinkMore
+namespace: SiteWide
+category: [Link, Icon]
+---
+
+クリックを促すようなテキストリンクに使います。
+
+```jade
+.l-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
+
+  p.sw-Text
+    a.sw-LinkMore(href="#") 詳しく見る
+      span.sw-LinkMore_Icon(aria-hidden="true")
+```
+*/
+.sw-LinkMore {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+.sw-LinkMore_Icon:after {
+  @include Icon(linkMore);
+  font-size: 0.8em;
+
+  [lang="ja"] &,
+  [lang^="zh"] & {
+    position: relative;
+    top: -0.05em;
+    left: 0.25em;
+  }
+}

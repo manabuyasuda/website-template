@@ -1,0 +1,50 @@
+/*
+---
+name: sw-ListNote
+namespace: SiteWide
+category: List
+---
+
+注釈用のリストです。米印やアスタリスクが表示されます。
+
+```jade
+.l-Wrapper
+  ul.sw-ListNote
+    li 1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です1つ目の注釈です
+    li 2つ目の注釈です
+
+  div(lang="en")
+    ul.sw-ListNote
+      li This is the first comment. This is the first comment. This is the first comment.
+      li This is the second comment.
+```
+*/
+.sw-ListNote {
+  @include l-Text();
+  margin-left: 1.5em;
+  padding-left: 0;
+  font-size: $font-size-secondary;
+  list-style-type: none;
+
+  [lang="en"] &,
+  [lang="zh-cn"] {
+    margin-left: 1em;
+  }
+
+  & > li {
+    position: relative;
+  }
+
+  & > li:before {
+    content: "※";
+    position: absolute;
+    top: 0;
+    left: -1.5em;
+  }
+
+  [lang="en"] & > li:before,
+  [lang="zh-cn"] & > li:before {
+    content: "*";
+    left: -1em;
+  }
+}

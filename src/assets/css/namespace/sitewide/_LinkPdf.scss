@@ -1,0 +1,40 @@
+/*
+---
+name: sw-LinkPdf
+namespace: SiteWide
+category: [Link, Icon]
+---
+
+リンク先がPDFであることを示す場合に使います。
+
+```jade
+.l-Wrapper
+  p.sw-Text
+    a.sw-Link(href="#") テキストリンクです。
+
+  p.sw-Text
+    a.sw-LinkPdf(href="#") PDFをダウンロードする
+      span.sw-LinkPdf_Icon(aria-hidden="true")
+```
+*/
+.sw-LinkPdf {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+.sw-LinkPdf_Icon:after {
+  @include Icon(linkPdf);
+  font-size: 1.25em;
+
+  [lang="ja"] &,
+  [lang^="zh"] & {
+    position: relative;
+    top: -0.2em;
+    left: 0.25em;
+  }
+}

@@ -1,0 +1,29 @@
+/*
+---
+name: sw-Divider
+namespace: SiteWide
+category: Text
+---
+
+`<hr>`のような区切り記号を使って、分割・グルーピングします。
+
+```jade
+.l-Wrapper
+  p.sw-Text テキストです。
+  hr.sw-Divider
+  p.sw-Text テキストです。
+```
+*/
+.sw-Divider {
+  box-sizing: inherit;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: $margin-text auto;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+
+  & + .sw-Text {
+    margin-top: 0;
+  }
+}
