@@ -9,6 +9,7 @@ category: List
 - テキストは自動的に改行されず、画面幅に収まりきらなくなると横スクロールで表示するようになります。
 - 改行は`<br>`で指定してください。
 - `sw-TableWide_FixedCol`を追加した要素はスクロール時に左側に固定表示されます。
+- IEとAndroid4.4.4未満は`sw-TableWide_FixedCol`での固定表示が機能しません。
 
 ```jade
 .l-Wrapper
