@@ -4638,6 +4638,7 @@ category: List
 - 横幅の広いテーブルで使用します。
 - テキストは自動的に改行されず、画面幅に収まりきらなくなると横スクロールで表示するようになります。
 - 改行は`<br>`で指定してください。
+- `sw-TableWide_FixedCol`を追加した要素はスクロール時に左側に固定表示されます。
 
 ```jade
 .l-Wrapper
@@ -4645,23 +4646,43 @@ category: List
     table.sw-Table
       thead
         tr
+          th.sw-TableWide_FixedCol(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
+          th(scope="col") thead Table Header
           th(scope="col") thead Table Header
           th(scope="col") thead Table Header
           th(scope="col") thead Table Header
           th(scope="col") thead Table Header
       tbody
         tr
-          th(scope="row") tbody Table Header
+          th.sw-TableWide_FixedCol(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
           td tbody Table Data
           td tbody Table Data
           td tbody Table Data
         tr
-          th(scope="row") tbody Table Header
+          th.sw-TableWide_FixedCol(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
           td tbody Table Data
           td tbody Table Data
           td tbody Table Data
         tr
-          th(scope="row") tbody Table Header
+          th.sw-TableWide_FixedCol(scope="row") tbody Table Header
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
+          td tbody Table Data
           td tbody Table Data
           td tbody Table Data
           td tbody Table Data
@@ -4669,12 +4690,9 @@ category: List
 */
 .sw-TableWide {
   margin-top: 40px;
-  overflow: auto;
   width: 100%;
-  background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 100% center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: 0.75em 100%, 0.75em 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -4693,19 +4711,18 @@ category: List
 
 .sw-TableWide table {
   width: 100%;
-  margin-top: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff 0.75em) 0 0/2em 100%, linear-gradient(to right, rgba(255, 255, 255, 0), #fff 0.75em) right/2em 100%;
-  background-repeat: no-repeat;
-  background-attachment: local;
-}
-
-.sw-TableWide th {
-  background: rgba(0, 0, 0, 0.1);
 }
 
 .sw-TableWide th,
 .sw-TableWide td {
   white-space: nowrap;
+}
+
+.sw-TableWide_FixedCol {
+  position: -webkit-sticky;
+  position: sticky;
+  left: -1px;
+  z-index: 1;
 }
 
 /*
