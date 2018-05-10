@@ -8,8 +8,6 @@ category: List
 - 横幅の広いテーブルで使用します。
 - テキストは自動的に改行されず、画面幅に収まりきらなくなると横スクロールで表示するようになります。
 - 改行は`<br>`で指定してください。
-- `sw-TableWide_FixedCol`を追加した要素はスクロール時に左側に固定表示されます。
-- IEとAndroid4.4.4未満は`sw-TableWide_FixedCol`での固定表示が機能しません。
 
 ```jade
 .l-Wrapper
@@ -17,43 +15,23 @@ category: List
     table.sw-Table
       thead
         tr
-          th.sw-TableWide_FixedCol(scope="col") thead Table Header
-          th(scope="col") thead Table Header
-          th(scope="col") thead Table Header
-          th(scope="col") thead Table Header
-          th(scope="col") thead Table Header
           th(scope="col") thead Table Header
           th(scope="col") thead Table Header
           th(scope="col") thead Table Header
           th(scope="col") thead Table Header
       tbody
         tr
-          th.sw-TableWide_FixedCol(scope="row") tbody Table Header
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
+          th(scope="row") tbody Table Header
           td tbody Table Data
           td tbody Table Data
           td tbody Table Data
         tr
-          th.sw-TableWide_FixedCol(scope="row") tbody Table Header
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
+          th(scope="row") tbody Table Header
           td tbody Table Data
           td tbody Table Data
           td tbody Table Data
         tr
-          th.sw-TableWide_FixedCol(scope="row") tbody Table Header
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
-          td tbody Table Data
+          th(scope="row") tbody Table Header
           td tbody Table Data
           td tbody Table Data
           td tbody Table Data
@@ -61,23 +39,30 @@ category: List
 */
 .sw-TableWide {
   @include l-Block();
+  overflow: auto;
   width: 100%;
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
+  background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center,
+  radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 0.75em 100%, 0.75em 100%;
 }
 
 .sw-TableWide table {
   width: 100%;
+  margin-top: 0;
+  background: linear-gradient(to left, hsla(0, 0%, 100%, 0), #fff 0.75em) 0 0 / 2em 100%,
+  linear-gradient(to right, hsla(0, 0%, 100%, 0), #fff 0.75em) right / 2em 100%;
+  background-repeat: no-repeat;
+  background-attachment: local;
+}
+
+.sw-TableWide th {
+  // 背景色は`rgba`で指定する必要があります。
+  background: rgba(#000, 0.1);
 }
 
 .sw-TableWide th,
 .sw-TableWide td {
   white-space: nowrap;
-}
-
-.sw-TableWide_FixedCol {
-  position: sticky;
-  top: 0;
-  left: -1px;
-  z-index: 1;
 }

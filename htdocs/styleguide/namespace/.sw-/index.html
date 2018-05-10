@@ -957,8 +957,6 @@
 <li>横幅の広いテーブルで使用します。</li>
 <li>テキストは自動的に改行されず、画面幅に収まりきらなくなると横スクロールで表示するようになります。</li>
 <li>改行は<code>&lt;br&gt;</code>で指定してください。</li>
-<li><code>sw-TableWide_FixedCol</code>を追加した要素はスクロール時に左側に固定表示されます。</li>
-<li>IEとAndroid4.4.4未満は<code>sw-TableWide_FixedCol</code>での固定表示が機能しません。</li>
 </ul>
 <div class="aigis-preview">
 
@@ -967,11 +965,6 @@
     <table class="sw-Table">
       <thead>
         <tr>
-          <th scope="col" class="sw-TableWide_FixedCol">thead Table Header</th>
-          <th scope="col">thead Table Header</th>
-          <th scope="col">thead Table Header</th>
-          <th scope="col">thead Table Header</th>
-          <th scope="col">thead Table Header</th>
           <th scope="col">thead Table Header</th>
           <th scope="col">thead Table Header</th>
           <th scope="col">thead Table Header</th>
@@ -980,34 +973,19 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row" class="sw-TableWide_FixedCol">tbody Table Header</th>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
+          <th scope="row">tbody Table Header</th>
           <td>tbody Table Data</td>
           <td>tbody Table Data</td>
           <td>tbody Table Data</td>
         </tr>
         <tr>
-          <th scope="row" class="sw-TableWide_FixedCol">tbody Table Header</th>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
+          <th scope="row">tbody Table Header</th>
           <td>tbody Table Data</td>
           <td>tbody Table Data</td>
           <td>tbody Table Data</td>
         </tr>
         <tr>
-          <th scope="row" class="sw-TableWide_FixedCol">tbody Table Header</th>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
-          <td>tbody Table Data</td>
+          <th scope="row">tbody Table Header</th>
           <td>tbody Table Data</td>
           <td>tbody Table Data</td>
           <td>tbody Table Data</td>
@@ -1022,43 +1000,23 @@
     <span class="token tag" >table.sw-Table</span>
       <span class="token tag" >thead</span>
         <span class="token tag" >tr</span>
-          <span class="token tag" >th.sw-TableWide_FixedCol<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
-          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
-          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
-          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
-          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
           <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
           <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
           <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
           <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"col"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >thead Table Header</span>
       <span class="token tag" >tbody</span>
         <span class="token tag" >tr</span>
-          <span class="token tag" >th.sw-TableWide_FixedCol<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
         <span class="token tag" >tr</span>
-          <span class="token tag" >th.sw-TableWide_FixedCol<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
         <span class="token tag" >tr</span>
-          <span class="token tag" >th.sw-TableWide_FixedCol<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
-          <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
+          <span class="token tag" >th<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >scope</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"row"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >tbody Table Header</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
           <span class="token tag" >td</span> <span class="token plain-text" >tbody Table Data</span>
