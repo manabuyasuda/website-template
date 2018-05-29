@@ -21,11 +21,11 @@ category: Layout
 ```
 */
 .l-ContainerBg {
-  padding: $padding-conitaner-bg;
+  padding: $conitaner-bg-padding;
   background-color: #f6f8f9;
 
   @include mq-up(md) {
-    padding: $padding-conitaner-bg-md;
+    padding: $conitaner-bg-padding-md;
   }
 
   & > :first-child {

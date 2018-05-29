@@ -30,6 +30,10 @@ category: List
   list-style-type: none;
   counter-reset: bracketOrder 0;
 
+  @include mq-up(lg) {
+    margin-left: 2em;
+  }
+
   & > li {
     position: relative;
     counter-increment: bracketOrder;

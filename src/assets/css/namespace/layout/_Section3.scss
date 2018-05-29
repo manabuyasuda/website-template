@@ -23,18 +23,10 @@ h3相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .l-Section3 {
-  margin-top: $margin-section3;
+  margin: $section3-margin;
 
   @include mq-up(md) {
-    margin-top: $margin-section3-md;
-  }
-
-  .st-Heading2 + & {
-    margin-top: ($margin-section3 / 2);
-
-    @include mq-up(md) {
-      margin-top: ($margin-section3-md / 2);
-    }
+    margin: $section3-margin-md;
   }
 
   & > :first-child {
@@ -71,22 +63,22 @@ category: Layout
 ```
 */
 .l-Section3-divider {
-  margin-top: $margin-section3-divider;
+  margin: $section3-divider-margin;
 
   & + &:before {
     content: "";
     display: block;
     width: 100%;
     height: 1px;
-    padding-top: $margin-section3-divider;
+    padding: $section3-divider-margin;
     border-top: 1px solid #e3e3e3;
   }
 
   @include mq-up(md) {
-    margin-top: $margin-section3-divider-md;
+    margin: $section3-divider-margin-md;
 
     & + &:before {
-      padding-top: $margin-section3-divider-md;
+      padding: $section3-divider-margin-md;
     }
   }
 

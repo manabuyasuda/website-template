@@ -28,7 +28,7 @@
 
   &:focus {
    outline-width: 0;
-   box-shadow: $form-focus-box-shadow;
+   box-shadow: $form-box-shadow-focus;
   }
 
   &:focus:not(.focus-visible) {
@@ -38,10 +38,10 @@
 
   &:disabled,
   &-disabled {
-    opacity: $form-disabled-opacity;
-    border-color: $form-disabled-background-color;
-    background-color: $form-disabled-background-color;
-    cursor: $form-disabled-cursor;
+    opacity: $form-opacity-disabled;
+    border-color: $form-background-color-disabled;
+    background-color: $form-background-color-disabled;
+    cursor: $form-cursor-disabled;
   }
   &-disabled {
     pointer-events: none;

@@ -15,8 +15,8 @@ category: Layout
 ```
 */
 .l-Wrapper {
-  $width: $max-width + 40px;
-  max-width: $max-width;
+  $width: $global-max-width + 40px;
+  max-width: $global-max-width;
   margin-right: auto;
   margin-left: auto;
   padding: 0 20px;

@@ -21,18 +21,18 @@
 
   &::placeholder {
     color: $form-placeholder-color;
-    font-size: $font-size-secondary;
+    font-size: $global-font-size-secondary;
   }
 
   &:focus {
     outline-width: 0;
-    border-color: $form-focus-border-color;
-    box-shadow: $form-focus-box-shadow;
+    border-color: $form-border-color-focus;
+    box-shadow: $form-box-shadow-focus;
   }
 
   &:disabled {
-    opacity: $form-disabled-opacity;
-    background-color: $form-disabled-background-color;
-    cursor: $form-disabled-cursor;
+    opacity: $form-opacity-disabled;
+    background-color: $form-background-color-disabled;
+    cursor: $form-cursor-disabled;
   }
 }

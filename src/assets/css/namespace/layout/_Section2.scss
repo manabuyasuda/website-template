@@ -36,10 +36,10 @@ h2相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .l-Section2 {
-  margin-top: $margin-section2;
+  margin: $section2-margin;
 
   @include mq-up(md) {
-    margin-top: $margin-section2-md;
+    margin: $section2-margin-md;
   }
 
   & > :first-child {
@@ -89,22 +89,22 @@ category: Layout
 ```
 */
 .l-Section2-divider {
-  margin-top: $margin-section2-divider;
+  margin: $section2-divider-margin;
 
   & + &:before {
     content: "";
     display: block;
     width: 100%;
     height: 1px;
-    padding-top: $margin-section2-divider;
+    padding: $section2-divider-margin;
     border-top: 1px solid #e3e3e3;
   }
 
   @include mq-up(md) {
-    margin-top: $margin-section2-divider-md;
+    margin: $section2-divider-margin-md;
 
     & + &:before {
-      padding-top: $margin-section2-divider-md;
+      padding-top: $section2-divider-margin-md;
     }
   }
 }
@@ -147,22 +147,22 @@ category: Layout
 ```
 */
 .l-Section2-dividerFull {
-  margin-top: $margin-section2-divider;
+  margin: $section2-divider-margin;
 
   & + &:before {
     content: "";
     display: block;
     height: 1px;
     @include full-width();
-    padding-top: $margin-section2-divider;
+    padding: $section2-divider-margin;
     border-top: 1px solid #e3e3e3;
   }
 
   @include mq-up(md) {
-    margin-top: $margin-section2-divider-md;
+    margin: $section2-divider-margin-md;
 
     & + &:before {
-      padding-top: $margin-section2-divider-md;
+      padding: $section2-divider-margin-md;
     }
   }
 

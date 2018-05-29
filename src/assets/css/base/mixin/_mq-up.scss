@@ -18,8 +18,8 @@
 //   }
 // }
 @mixin mq-up($breakpoint) {
-  @if map-has-key($breakpoint-up, $breakpoint) {
-    @media #{inspect(map-get($breakpoint-up, $breakpoint))} {
+  @if map-has-key($global-breakpoint-up, $breakpoint) {
+    @media #{inspect(map-get($global-breakpoint-up, $breakpoint))} {
       @content;
     }
   } @else {

@@ -25,18 +25,10 @@ h5相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .l-Section5 {
-  margin-top: $margin-section5;
+  margin: $section5-margin;
 
   @include mq-up(md) {
-    margin-top: $margin-section5-md;
-  }
-
-  .st-Heading4 + & {
-    margin-top: ($margin-section5 / 2);
-
-    @include mq-up(md) {
-      margin-top: ($margin-section5-md / 2);
-    }
+    margin: $section5-margin-md;
   }
 
   & > :first-child {

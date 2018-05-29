@@ -1,8 +1,8 @@
 @mixin l-Block() {
-  margin-top: $margin-block;
+  margin: $block-margin;
 
   @include mq-up(md) {
-    margin-top: $margin-block-md;
+    margin: $block-margin-md;
   }
 
   & > :first-child {

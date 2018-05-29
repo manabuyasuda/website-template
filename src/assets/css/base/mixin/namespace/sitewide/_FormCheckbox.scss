@@ -28,8 +28,8 @@
 }
 
   &:focus + label:before {
-    border-color: $form-focus-border-color;
-    box-shadow: $form-focus-box-shadow;
+    border-color: $form-border-color-focus;
+    box-shadow: $form-box-shadow-focus;
   }
 
   &:focus:not(.focus-visible) + label:before {
@@ -44,7 +44,7 @@
 
   &:disabled,
   & + label[disabled] {
-    cursor: $form-disabled-cursor;
-    opacity: $form-disabled-opacity;
+    cursor: $form-cursor-disabled;
+    opacity: $form-opacity-disabled;
   }
 }

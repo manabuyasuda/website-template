@@ -18,30 +18,30 @@ html {
  * 2. ブレイクポイントごとにルートフォントサイズを変更します。
  */
 html {
-  font-size: ((map-get($font-size, 'none') / 16) * 100%); /* 1 */
-  line-height: $line-height;
+  font-size: ((map-get($global-font-size, 'none') / 16) * 100%); /* 1 */
+  line-height: $global-line-height;
 
   @include mq-up(sm) {
-    @if map-has-key($font-size, 'sm') {
-      font-size: ((map-get($font-size, sm) / 16) * 100%); /* 2 */
+    @if map-has-key($global-font-size, 'sm') {
+      font-size: ((map-get($global-font-size, sm) / 16) * 100%); /* 2 */
     }
   }
 
   @include mq-up(md) {
-    @if map-has-key($font-size, 'md') {
-      font-size: ((map-get($font-size, md) / 16) * 100%); /* 2 */
+    @if map-has-key($global-font-size, 'md') {
+      font-size: ((map-get($global-font-size, md) / 16) * 100%); /* 2 */
     }
   }
 
   @include mq-up(lg) {
-    @if map-has-key($font-size, 'lg') {
-      font-size: ((map-get($font-size, lg) / 16) * 100%); /* 2 */
+    @if map-has-key($global-font-size, 'lg') {
+      font-size: ((map-get($global-font-size, lg) / 16) * 100%); /* 2 */
     }
   }
 
   @include mq-up(xl) {
-    @if map-has-key($font-size, 'xl') {
-      font-size: ((map-get($font-size, xl) / 16) * 100%); /* 2 */
+    @if map-has-key($global-font-size, 'xl') {
+      font-size: ((map-get($global-font-size, xl) / 16) * 100%); /* 2 */
     }
   }
 }
@@ -53,7 +53,8 @@ html {
  */
 body {
   color: $color-text;
-  font-family: $font-family-sans-serif;
+  background-color: $color-background-color;
+  font-family: $global-font-family-sans-serif;
   word-wrap: break-word; /* 1 */
   overflow-wrap: break-word; /* 1 */
   -webkit-font-smoothing: subpixel-antialiased; /* 2 */
@@ -108,7 +109,7 @@ dd {
 code,
 kbd,
 samp {
-  font-family: $font-family-monospace;
+  font-family: $global-font-family-monospace;
   font-size: 1em;
 }
 

@@ -23,8 +23,12 @@ category: List
   @include l-Text();
   margin-left: 1.5em;
   padding-left: 0;
-  font-size: $font-size-secondary;
+  font-size: $global-font-size-secondary;
   list-style-type: none;
+
+  @include mq-up(lg) {
+    margin-left: 1.5em;
+  }
 
   [lang="en"] &,
   [lang="zh-cn"] {

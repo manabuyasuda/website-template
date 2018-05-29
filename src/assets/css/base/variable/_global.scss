@@ -1,4 +1,13 @@
 // ==========================================================================
+// 命名規則
+// ==========================================================================
+// $[element-or-namespace-][property-name][-variant-name][-breakpoint]
+// $[element-or-namespace-]: 指定する要素の名前。全体で使う場合は`global-`、カラーパレットは`color-`。
+// [property-name]: プロパティ値（省略不可）。プロパティ値で表現できない場合は用途を端的に表した名前。
+// [-variant-name]: 状態変化やバリエーションの名前。
+// [-breakpoint]: ブレイクポイントのキー。
+
+// ==========================================================================
 // Color
 // ==========================================================================
 
@@ -8,7 +17,7 @@ $color-text: #000 !default;
 $color-text-important: #a94442 !default;
 $color-link: #2b70ba !default;
 $color-link-hover: #2b70ba !default;
-$background-color: #fff !default;
+$color-background-color: #fff !default;
 
 // ==========================================================================
 // Typography
@@ -16,32 +25,32 @@ $background-color: #fff !default;
 
 // `$breakpoint-up`に対応するルートフォントサイズを指定します。
 // `none`はメディアクエリなしで使用されるので指定必須です。
-$font-size: (
+$global-font-size: (
   'none': 14,
   'md': 16,
 ) !default;
 
 // 注釈などに使用するフォントサイズ
-$font-size-secondary: 0.85em !default;
+$global-font-size-secondary: 0.85em !default;
 
 // ベースになるline-height
-$line-height: 1.8 !default;
+$global-line-height: 1.8 !default;
 
 // システムフォント
-$font-family-sans-serif: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
-$font-family-serif: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
-$font-family-monospace: Consolas, Menlo, Courier, monospace !default;
-$font-family-en: "Helvetica Neue", Helvetica, sans-serif !default;
-$font-family-zh-cn: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
-$font-family-zh-tw: "Microsoft JhengHei", "微軟正黑體", 'PMingLiU' sans-serif !default;
+$global-font-family-sans-serif: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$global-font-family-serif: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+$global-font-family-monospace: Consolas, Menlo, Courier, monospace !default;
+$global-font-family-en: "Helvetica Neue", Helvetica, sans-serif !default;
+$global-font-family-zh-cn: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$global-font-family-zh-tw: "Microsoft JhengHei", "微軟正黑體", 'PMingLiU' sans-serif !default;
 
 // Noto Sans
 // GoogleやMicrosoftのCDNは中国ではブロックされてしまうので、
 // フォントファイルをサーバに置いて読み込む必要があります。
-$font-family-noto-sans-ja: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
-$font-family-noto-sans-en: "Noto Sans", "Helvetica Neue", Helvetica, sans-serif !default;
-$font-family-noto-sans-zh-cn: "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
-$font-family-noto-sans-zh-tw: "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
+$global-font-family-noto-sans-ja: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$global-font-family-noto-sans-en: "Noto Sans", "Helvetica Neue", Helvetica, sans-serif !default;
+$global-font-family-noto-sans-zh-cn: "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$global-font-family-noto-sans-zh-tw: "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
 
 
 // ==========================================================================
@@ -52,7 +61,7 @@ $font-family-noto-sans-zh-tw: "Noto Sans TC", "Microsoft JhengHei", "微軟正�
 // `md`: iPad幅（ポートレート・縦）
 // `lg`: iPad幅（ランドスケープ・横）
 // `xl`: デスクトップ想定
-$breakpoint-up: (
+$global-breakpoint-up: (
   'sm': 'print, screen and (min-width: 375px)',
   'md': 'print, screen and (min-width: 768px)',
   'lg': 'print, screen and (min-width: 1024px)',
@@ -65,7 +74,7 @@ $breakpoint-up: (
 // ==========================================================================
 
 // コンテンツの最大幅
-$max-width: 1170px !default;
+$global-max-width: 1170px !default;
 
 // グリッドシステムのガター幅
 $grid-column-gap: 15px !default;
@@ -73,60 +82,72 @@ $grid-row-gap: 35px !default;
 $grid-column-gap-md: 30px !default;
 $grid-row-gap-md: 50px !default;
 
-// コンテナのパディング
-$padding-conitaner: 45px 0 60px !default;
-$padding-conitaner-md: 70px 0 100px !default;
-$padding-conitaner-bg: 45px 0 50px !default;
-$padding-conitaner-bg-md: 70px 0 80px !default;
+// コンテナの余白
+$conitaner-padding: 45px 0 60px !default;
+$conitaner-padding-md: 70px 0 100px !default;
 
-// セクションのマージン
-$margin-section2: 60px !default;
-$margin-section2-md: 100px !default;
-$margin-section2-divider: 30px !default;
-$margin-section2-divider-md: 50px !default;
-$margin-section3: 50px !default;
-$margin-section3-md: 80px !default;
-$margin-section3-divider: 25px !default;
-$margin-section3-divider-md: 50px !default;
-$margin-section4: 35px !default;
-$margin-section4-md: 50px !default;
-$margin-section5: 30px !default;
-$margin-section5-md: 30px !default;
+$conitaner-bg-padding: 45px 0 50px !default;
+$conitaner-bg-padding-md: 70px 0 80px !default;
 
-// 見出しのマージン
-$margin-title: 25px !default;
-$margin-title-md: 40px !default;
-$margin-heading2: 25px !default;
-$margin-heading2-md: 40px !default;
-$margin-heading3: 25px !default;
-$margin-heading3-md: 40px !default;
-$margin-heading4: 15px !default;
-$margin-heading4-md: 25px !default;
-$margin-heading5: 15px !default;
-$margin-heading5-md: 25px !default;
+// セクションの余白
+$section2-margin: 60px 0 0 !default;
+$section2-margin-md: 100px 0 0 !default;
+$section2-divider-margin: 30px 0 0 !default;
+$section2-divider-margin-md: 50px 0 0 !default;
 
-// ブロックとテキストのマージン
-$margin-block: 40px !default;
-$margin-block-md: 50px !default;
-$margin-block-divider: 20px !default;
-$margin-block-divider-md: 50px !default;
-$margin-lead: 35px !default;
-$margin-lead-md: 50px !default;
-$margin-text: 35px !default;
-$margin-text-md: 50px !default;
-$margin-small-text: 15px !default;
-$margin-small-text-md: 20px !default;
-$margin-image: 25px !default;
-$margin-image-md: 40px !default;
+$section3-margin: 50px 0 0 !default;
+$section3-margin-md: 80px 0 0 !default;
+$section3-divider-margin: 25px 0 0 !default;
+$section3-divider-margin-md: 50px 0 0 !default;
+
+$section4-margin: 35px 0 0 !default;
+$section4-margin-md: 50px 0 0 !default;
+
+$section5-margin: 30px 0 0 !default;
+$section5-margin-md: 30px 0 0 !default;
+
+// 見出しの余白
+$title-margin: 0 0 25px !default;
+$title-margin-md: 0 0 40px !default;
+
+$heading2-margin: 0 0 25px !default;
+$heading2-margin-md: 0 0 40px !default;
+
+$heading3-margin: 0 0 25px !default;
+$heading3-margin-md: 0 0 40px !default;
+
+$heading4-margin: 0 0 15px !default;
+$heading4-margin-md: 0 0 25px !default;
+
+$heading5-margin: 0 0 15px !default;
+$heading5-margin-md: 0 0 25px !default;
+
+// ブロックとテキストの余白
+$block-margin: 40px 0 0 !default;
+$block-margin-md: 50px 0 0 !default;
+$block-divider-margin: 20px 0 0 !default;
+$block-divider-margin-md: 50px 0 0 !default;
+
+$lead-margin: 0 0 35px !default;
+$lead-margin-md: 0 0 50px !default;
+
+$text-margin: 35px 0 0 !default;
+$text-margin-md: 50px 0 0 !default;
+
+$small-text-margin: 15px 0 0 !default;
+$small-text-margin-md: 20px 0 0 !default;
+
+$image-margin: 25px 0 0 !default;
+$image-margin-md: 40px 0 0 !default;
 
 
 // ==========================================================================
 // Animation
 // ==========================================================================
 
-$opacity: 0.7 !default;
-$transition-duration: 0.3s !default;
-$transition-timing-function: ease !default;
+$global-opacity: 0.7 !default;
+$global-transition-duration: 0.3s !default;
+$global-transition-timing-function: ease !default;
 
 // ==========================================================================
 // Form
@@ -137,9 +158,9 @@ $form-boder-color: #767676 !default;
 $form-border-radius: 3px !default;
 $form-transition-duration: 0.3s !default;
 $form-transition-property: border-color, box-shadow, background-color !default;
-$form-focus-border-color: #1589ee !default;
-$form-focus-box-shadow: 0 0 5px #1589ee !default;
+$form-border-color-focus: #1589ee !default;
+$form-box-shadow-focus: 0 0 5px #1589ee !default;
 $form-placeholder-color: #767676 !default;
-$form-disabled-cursor: not-allowed !default;
-$form-disabled-opacity: 0.5 !default;
-$form-disabled-background-color: #ddd !default;
+$form-cursor-disabled: not-allowed !default;
+$form-opacity-disabled: 0.5 !default;
+$form-background-color-disabled: #ddd !default;

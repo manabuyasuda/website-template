@@ -13,15 +13,14 @@ category: Heading
 ```
 */
 .sw-Heading3 {
-  $self: &;
   @include sw-Heading3();
-  margin-bottom: $margin-heading3;
+  margin: $heading3-margin;
 
-  &#{$self} + * {
+  & + * {
     margin-top: 0;
   }
 
   @include mq-up(md) {
-    margin-bottom: $margin-heading3-md;
+    margin: $heading3-margin-md;
   }
 }

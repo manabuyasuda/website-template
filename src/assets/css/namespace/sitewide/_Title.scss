@@ -14,9 +14,9 @@ category: Heading
 */
 .sw-Title {
   @include sw-Title();
-  margin-bottom: $margin-title;
+  margin: $title-margin;
 
   @include mq-up(md) {
-    margin-bottom: $margin-title-md;
+    margin: $title-margin-md;
   }
 }

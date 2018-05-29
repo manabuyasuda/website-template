@@ -21,10 +21,10 @@ category: Layout
 ```
 */
 .l-Container {
-  padding: $padding-conitaner;
+  padding: $conitaner-padding;
 
   @include mq-up(md) {
-    padding: $padding-conitaner-md;
+    padding: $conitaner-padding-md;
   }
 
   & > :first-child {

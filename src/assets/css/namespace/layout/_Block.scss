@@ -57,10 +57,10 @@ category: Layout
 ```
 */
 .l-Block-divider {
-  margin-top: $margin-block-divider;
+  margin: $block-divider-margin;
 
   @include mq-up(md) {
-    margin-top: $margin-block-divider-md;
+    margin: $block-divider-margin-md;
   }
 
   & + &:before {
@@ -68,11 +68,11 @@ category: Layout
     display: block;
     width: 100%;
     height: 1px;
-    padding-top: $margin-block-divider;
+    padding-top: $block-divider-margin;
     border-top: 1px solid #e3e3e3;
 
     @include mq-up(md) {
-      padding-top: $margin-block-divider-md;
+      padding: $block-divider-margin-md;
     }
   }
 

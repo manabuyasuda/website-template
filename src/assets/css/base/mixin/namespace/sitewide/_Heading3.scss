@@ -5,11 +5,11 @@
   font-size: rem(16);
   font-weight: bold;
   line-height: 1.4;
-  border-left: 5px solid #be3134;
+  border-left: 5px solid $color-brand;
 
   @include mq-up(md) {
     padding-left: 13px;
     font-size: rem(20, md);
-    border-left: 6px solid #be3134;
+    border-left: 6px solid $color-brand;
   }
 }

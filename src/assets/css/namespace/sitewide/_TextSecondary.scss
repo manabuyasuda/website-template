@@ -14,10 +14,10 @@ category: Text
 ```
 */
 .sw-TextSecondary {
-  margin-top: $margin-small-text;
-  font-size: $font-size-secondary;
+  margin: $small-text-margin;
+  font-size: $global-font-size-secondary;
 
   @include mq-up(md) {
-    margin-top: $margin-small-text-md;
+    margin: $small-text-margin-md;
   }
 }

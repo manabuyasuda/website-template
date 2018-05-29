@@ -17,7 +17,7 @@ category: Text
 */
 .sw-Lead {
   $self: &;
-  margin-bottom: $margin-lead;
+  margin: $lead-margin;
   font-weight: 700;
   font-size: rem(18);
 
@@ -26,6 +26,6 @@ category: Text
   }
 
   @include mq-up(md) {
-    margin-bottom: $margin-lead-md;
+    margin: $lead-margin-md;
   }
 }

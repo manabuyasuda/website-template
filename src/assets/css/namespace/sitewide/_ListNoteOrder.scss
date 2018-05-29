@@ -37,9 +37,13 @@ category: List
   @include l-Text();
   margin-left: 2em;
   padding-left: 0;
-  font-size: $font-size-secondary;
+  font-size: $global-font-size-secondary;
   list-style-type: none;
   counter-reset: noteOrder 0;
+
+  @include mq-up(lg) {
+    margin-left: 2em;
+  }
 
   [lang="en"] &,
   [lang="zh-cn"] {

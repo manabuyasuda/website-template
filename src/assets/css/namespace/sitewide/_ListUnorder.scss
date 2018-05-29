@@ -23,6 +23,10 @@ category: List
   padding-left: 0;
   list-style-type: none;
 
+  @include mq-up(lg) {
+    margin-left: 1.5em;
+  }
+
   & > li {
     position: relative;
   }

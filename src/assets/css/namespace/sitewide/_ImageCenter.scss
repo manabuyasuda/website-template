@@ -15,10 +15,10 @@ category: Image
 */
 .sw-ImageCenter {
   display: block;
-  margin-top: $margin-text;
+  margin: $text-margin;
   text-align: center;
 
   @include mq-up(md) {
-    margin-top: $margin-text-md;
+    margin: $text-margin-md;
   }
 }

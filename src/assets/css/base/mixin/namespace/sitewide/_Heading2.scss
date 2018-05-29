@@ -2,13 +2,13 @@
   font-size: rem(19);
   font-weight: bold;
   line-height: 1.4;
-  color: #be3134;
+  color: $color-brand;
 
   &:after {
     content: "";
     display: block;
     margin-top: 8px;
-    border-top: 2px solid #be3134;
+    border-top: 2px solid $color-brand;
   }
 
   @include mq-up(md) {
@@ -21,7 +21,7 @@
       margin-top: 12px;
       margin-right: 0;
       margin-left: 0;
-      border-top: 3px solid #be3134;
+      border-top: 3px solid $color-brand;
     }
   }
 }

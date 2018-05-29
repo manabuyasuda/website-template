@@ -443,6 +443,7 @@ html {
  */
 body {
   color: #000;
+  background-color: #fff;
   font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   word-wrap: break-word;
   /* 1 */
@@ -615,12 +616,12 @@ category: Layout
 ```
 */
 .l-Block {
-  margin-top: 40px;
+  margin: 40px 0 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Block {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -660,12 +661,12 @@ category: Layout
 ```
 */
 .l-Block-divider {
-  margin-top: 20px;
+  margin: 20px 0 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Block-divider {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -674,13 +675,13 @@ category: Layout
   display: block;
   width: 100%;
   height: 1px;
-  padding-top: 20px;
+  padding-top: 20px 0 0;
   border-top: 1px solid #e3e3e3;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Block-divider + .l-Block-divider:before {
-    padding-top: 50px;
+    padding: 50px 0 0;
   }
 }
 
@@ -2282,12 +2283,12 @@ h2相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .l-Section2 {
-  margin-top: 60px;
+  margin: 60px 0 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Section2 {
-    margin-top: 100px;
+    margin: 100px 0 0;
   }
 }
 
@@ -2337,7 +2338,7 @@ category: Layout
 ```
 */
 .l-Section2-divider {
-  margin-top: 30px;
+  margin: 30px 0 0;
 }
 
 .l-Section2-divider + .l-Section2-divider:before {
@@ -2345,16 +2346,16 @@ category: Layout
   display: block;
   width: 100%;
   height: 1px;
-  padding-top: 30px;
+  padding: 30px 0 0;
   border-top: 1px solid #e3e3e3;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Section2-divider {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
   .l-Section2-divider + .l-Section2-divider:before {
-    padding-top: 50px;
+    padding-top: 50px 0 0;
   }
 }
 
@@ -2396,7 +2397,7 @@ category: Layout
 ```
 */
 .l-Section2-dividerFull {
-  margin-top: 30px;
+  margin: 30px 0 0;
 }
 
 .l-Section2-dividerFull + .l-Section2-dividerFull:before {
@@ -2405,16 +2406,16 @@ category: Layout
   height: 1px;
   margin-right: calc(-50vw + 50%);
   margin-left: calc(-50vw + 50%);
-  padding-top: 30px;
+  padding: 30px 0 0;
   border-top: 1px solid #e3e3e3;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Section2-dividerFull {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
   .l-Section2-dividerFull + .l-Section2-dividerFull:before {
-    padding-top: 50px;
+    padding: 50px 0 0;
   }
 }
 
@@ -2451,22 +2452,12 @@ h3相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .l-Section3 {
-  margin-top: 50px;
+  margin: 50px 0 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Section3 {
-    margin-top: 80px;
-  }
-}
-
-.st-Heading2 + .l-Section3 {
-  margin-top: 25px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading2 + .l-Section3 {
-    margin-top: 40px;
+    margin: 80px 0 0;
   }
 }
 
@@ -2503,7 +2494,7 @@ category: Layout
 ```
 */
 .l-Section3-divider {
-  margin-top: 25px;
+  margin: 25px 0 0;
 }
 
 .l-Section3-divider + .l-Section3-divider:before {
@@ -2511,16 +2502,16 @@ category: Layout
   display: block;
   width: 100%;
   height: 1px;
-  padding-top: 25px;
+  padding: 25px 0 0;
   border-top: 1px solid #e3e3e3;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Section3-divider {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
   .l-Section3-divider + .l-Section3-divider:before {
-    padding-top: 50px;
+    padding: 50px 0 0;
   }
 }
 
@@ -2571,22 +2562,12 @@ h4相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .l-Section4 {
-  margin-top: 35px;
+  margin: 35px 0 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Section4 {
-    margin-top: 50px;
-  }
-}
-
-.st-Heading3 + .l-Section4 {
-  margin-top: 17.5px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading3 + .l-Section4 {
-    margin-top: 25px;
+    margin: 50px 0 0;
   }
 }
 
@@ -2625,22 +2606,12 @@ h5相当の見出しをラップするセクションの余白を指定します
 ```
 */
 .l-Section5 {
-  margin-top: 30px;
+  margin: 30px 0 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Section5 {
-    margin-top: 30px;
-  }
-}
-
-.st-Heading4 + .l-Section5 {
-  margin-top: 15px;
-}
-
-@media print, screen and (min-width: 768px) {
-  .st-Heading4 + .l-Section5 {
-    margin-top: 15px;
+    margin: 30px 0 0;
   }
 }
 
@@ -2872,7 +2843,7 @@ category: Image
  *    画像が指定幅以下になってもキャプションの幅はそれ以上小さくなりません。
  */
 .sw-Caption {
-  margin-top: 35px;
+  margin: 35px 0 0;
   display: table;
   min-width: 100px;
   /* 1 */
@@ -2880,7 +2851,7 @@ category: Image
 
 @media print, screen and (min-width: 768px) {
   .sw-Caption {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -2959,7 +2930,9 @@ category: Text
   display: block;
   width: 100%;
   height: auto;
-  margin: 35px auto;
+  margin: 35px 0;
+  margin-right: auto;
+  margin-left: auto;
   border: 0;
   border-top: 1px solid #e5e5e5;
 }
@@ -3433,7 +3406,7 @@ category: Heading
   font-weight: bold;
   line-height: 1.4;
   color: #be3134;
-  margin-bottom: 25px;
+  margin: 0 0 25px;
 }
 
 .sw-Heading2:after {
@@ -3458,13 +3431,13 @@ category: Heading
   }
 }
 
-.sw-Heading2.sw-Heading2 + * {
+.sw-Heading2 + * {
   margin-top: 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-Heading2 {
-    margin-bottom: 40px;
+    margin: 0 0 40px;
   }
 }
 
@@ -3490,7 +3463,7 @@ category: Heading
   font-weight: bold;
   line-height: 1.4;
   border-left: 5px solid #be3134;
-  margin-bottom: 25px;
+  margin: 0 0 25px;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -3501,13 +3474,13 @@ category: Heading
   }
 }
 
-.sw-Heading3.sw-Heading3 + * {
+.sw-Heading3 + * {
   margin-top: 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-Heading3 {
-    margin-bottom: 40px;
+    margin: 0 0 40px;
   }
 }
 
@@ -3531,7 +3504,7 @@ category: Heading
   font-weight: bold;
   line-height: 1.4;
   border-bottom: 1px solid #d2d2d2;
-  margin-bottom: 15px;
+  margin: 0 0 15px;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -3541,13 +3514,13 @@ category: Heading
   }
 }
 
-.sw-Heading4.sw-Heading4 + * {
+.sw-Heading4 + * {
   margin-top: 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-Heading4 {
-    margin-bottom: 25px;
+    margin: 0 0 25px;
   }
 }
 
@@ -3569,7 +3542,7 @@ category: Heading
   font-size: 1.14286rem;
   font-weight: bold;
   line-height: 1.4;
-  margin-bottom: 15px;
+  margin: 0 0 15px;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -3578,13 +3551,13 @@ category: Heading
   }
 }
 
-.sw-Heading5.sw-Heading5 + * {
+.sw-Heading5 + * {
   margin-top: 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-Heading5 {
-    margin-bottom: 25px;
+    margin: 0 0 25px;
   }
 }
 
@@ -3646,13 +3619,13 @@ category: Image
 */
 .sw-ImageCenter {
   display: block;
-  margin-top: 35px;
+  margin: 35px 0 0;
   text-align: center;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-ImageCenter {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -3708,7 +3681,7 @@ category: Text
 ```
 */
 .sw-Lead {
-  margin-bottom: 35px;
+  margin: 0 0 35px;
   font-weight: 700;
   font-size: 1.28571rem;
 }
@@ -3719,7 +3692,7 @@ category: Text
 
 @media print, screen and (min-width: 768px) {
   .sw-Lead {
-    margin-bottom: 50px;
+    margin: 0 0 50px;
   }
 }
 
@@ -4028,7 +4001,7 @@ category: List
 ```
 */
 .sw-ListBracketOrder {
-  margin-top: 35px;
+  margin: 35px 0 0;
   margin-left: 2em;
   padding-left: 0;
   list-style-type: none;
@@ -4037,7 +4010,13 @@ category: List
 
 @media print, screen and (min-width: 768px) {
   .sw-ListBracketOrder {
-    margin-top: 50px;
+    margin: 50px 0 0;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .sw-ListBracketOrder {
+    margin-left: 2em;
   }
 }
 
@@ -4111,7 +4090,7 @@ category: List
 ```
 */
 .sw-ListNote {
-  margin-top: 35px;
+  margin: 35px 0 0;
   margin-left: 1.5em;
   padding-left: 0;
   font-size: 0.85em;
@@ -4120,7 +4099,13 @@ category: List
 
 @media print, screen and (min-width: 768px) {
   .sw-ListNote {
-    margin-top: 50px;
+    margin: 50px 0 0;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .sw-ListNote {
+    margin-left: 1.5em;
   }
 }
 
@@ -4182,7 +4167,7 @@ category: List
 ```
 */
 .sw-ListNoteOrder {
-  margin-top: 35px;
+  margin: 35px 0 0;
   margin-left: 2em;
   padding-left: 0;
   font-size: 0.85em;
@@ -4192,7 +4177,13 @@ category: List
 
 @media print, screen and (min-width: 768px) {
   .sw-ListNoteOrder {
-    margin-top: 50px;
+    margin: 50px 0 0;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .sw-ListNoteOrder {
+    margin-left: 2em;
   }
 }
 
@@ -4291,7 +4282,7 @@ category: List
 ```
 */
 .sw-ListOrder {
-  margin-top: 35px;
+  margin: 35px 0 0;
   display: table;
   padding-left: 0;
   list-style-type: none;
@@ -4300,7 +4291,7 @@ category: List
 
 @media print, screen and (min-width: 768px) {
   .sw-ListOrder {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -4392,7 +4383,7 @@ category: List
 ```
 */
 .sw-ListUnorder {
-  margin-top: 35px;
+  margin: 35px 0 0;
   margin-left: 1.5em;
   padding-left: 0;
   list-style-type: none;
@@ -4400,7 +4391,13 @@ category: List
 
 @media print, screen and (min-width: 768px) {
   .sw-ListUnorder {
-    margin-top: 50px;
+    margin: 50px 0 0;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .sw-ListUnorder {
+    margin-left: 1.5em;
   }
 }
 
@@ -4459,7 +4456,7 @@ Google Mapsをレスポンシブ対応させます。デフォルトで16:9で�
 ```
 */
 .sw-Map {
-  margin-top: 40px;
+  margin: 40px 0 0;
   display: block;
   overflow: hidden;
   position: relative;
@@ -4469,7 +4466,7 @@ Google Mapsをレスポンシブ対応させます。デフォルトで16:9で�
 
 @media print, screen and (min-width: 768px) {
   .sw-Map {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -4596,7 +4593,7 @@ category: List
 ```
 */
 .sw-Table {
-  margin-top: 40px;
+  margin: 40px 0 0;
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
@@ -4604,7 +4601,7 @@ category: List
 
 @media print, screen and (min-width: 768px) {
   .sw-Table {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -4668,7 +4665,7 @@ category: List
 ```
 */
 .sw-TableWide {
-  margin-top: 40px;
+  margin: 40px 0 0;
   overflow: auto;
   width: 100%;
   background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, transparent 75%) 100% center;
@@ -4679,7 +4676,7 @@ category: List
 
 @media print, screen and (min-width: 768px) {
   .sw-TableWide {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -4725,13 +4722,13 @@ category: Text
 ```
 */
 .sw-Text {
-  margin-top: 35px;
+  margin: 35px 0 0;
   font-size: 1rem;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-Text {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -4797,13 +4794,13 @@ category: Text
 ```
 */
 .sw-TextSecondary {
-  margin-top: 15px;
+  margin: 15px 0 0;
   font-size: 0.85em;
 }
 
 @media print, screen and (min-width: 768px) {
   .sw-TextSecondary {
-    margin-top: 20px;
+    margin: 20px 0 0;
   }
 }
 
@@ -4828,7 +4825,7 @@ category: Heading
   line-height: 1.2;
   text-align: center;
   color: #be3134;
-  margin-bottom: 25px;
+  margin: 0 0 25px;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -4840,7 +4837,7 @@ category: Heading
 
 @media print, screen and (min-width: 768px) {
   .sw-Title {
-    margin-bottom: 40px;
+    margin: 0 0 40px;
   }
 }
 
@@ -4860,7 +4857,7 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
 ```
 */
 .sw-Video {
-  margin-top: 40px;
+  margin: 40px 0 0;
   display: block;
   overflow: hidden;
   position: relative;
@@ -4870,7 +4867,7 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
 
 @media print, screen and (min-width: 768px) {
   .sw-Video {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 
@@ -4983,12 +4980,12 @@ category: Block
 ```
 */
 .test-Block {
-  margin-top: 40px;
+  margin: 40px 0 0;
 }
 
 @media print, screen and (min-width: 768px) {
   .test-Block {
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 

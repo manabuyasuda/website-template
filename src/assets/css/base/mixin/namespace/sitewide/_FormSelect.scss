@@ -32,7 +32,7 @@
   }
 
   &.is-disabled:after {
-    opacity: $form-disabled-opacity;
+    opacity: $form-opacity-disabled;
   }
 
   & > select {
@@ -54,14 +54,14 @@
   }
 
   & > select.focus-visible:focus {
-    border-color: $form-focus-border-color;
-    box-shadow: $form-focus-box-shadow;
+    border-color: $form-border-color-focus;
+    box-shadow: $form-box-shadow-focus;
   }
 
   & > select:disabled {
-    opacity: $form-disabled-opacity;
-    background-color: $form-disabled-background-color;
-    cursor: $form-disabled-cursor;
+    opacity: $form-opacity-disabled;
+    background-color: $form-background-color-disabled;
+    cursor: $form-cursor-disabled;
   }
 
   /* Firefox Hack */
