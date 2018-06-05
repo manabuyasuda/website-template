@@ -111,12 +111,15 @@ $l-grids-column-gap-md: $grid-column-gap-md;
 $l-grids-row-gap-md: $grid-row-gap-md;
 
 .l-Grids {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  align-items: flex-start;
   margin-top: $l-grids-row-gap;
   margin-left: -$l-grids-column-gap;
   padding-left: 0;
   list-style-type: none;
-  display: block;
-  font-size: 0;
 
   @include mq-up(md) {
     margin-top: $l-grids-row-gap-md;
@@ -125,12 +128,9 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 
 .l-Grids_Item {
-  display: inline-block;
-  width: 100%;
+  flex: 0 0 auto;
+  max-width: 100%;
   padding-left: $l-grids-column-gap;
-  font-size: medium;
-  font-size: 1rem;
-  vertical-align: top;
 
   @include mq-up(md) {
     padding-left: $l-grids-column-gap-md;
@@ -154,7 +154,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 
 /* 2 Columns */
 .l-Grids-col2 > .l-Grids_Item {
-  width: percentage(1 / 2);
+  flex-basis: percentage(1 / 2);
+  max-width: percentage(1 / 2);
 
   /**
    * いったんすべての`margin-top`をリセットします。
@@ -170,7 +171,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(md) {
   .l-Grids-col2Md > .l-Grids_Item {
-    width: percentage(1 / 2);
+    flex-basis: percentage(1 / 2);
+    max-width: percentage(1 / 2);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -182,7 +184,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(lg) {
   .l-Grids-col2Lg > .l-Grids_Item {
-    width: percentage(1 / 2);
+    flex-basis: percentage(1 / 2);
+    max-width: percentage(1 / 2);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -194,7 +197,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(xl) {
   .l-Grids-col2Xl > .l-Grids_Item {
-    width: percentage(1 / 2);
+    flex-basis: percentage(1 / 2);
+    max-width: percentage(1 / 2);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -207,7 +211,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 
 /* 3 Columns */
 .l-Grids-col3 > .l-Grids_Item {
-  width: percentage(1 / 3);
+  flex-basis: percentage(1 / 3);
+  max-width: percentage(1 / 3);
 
   &:nth-of-type(n+1) {
     margin-top: 0;
@@ -218,7 +223,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(md) {
   .l-Grids-col3Md > .l-Grids_Item {
-    width: percentage(1 / 3);
+    flex-basis: percentage(1 / 3);
+    max-width: percentage(1 / 3);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -230,7 +236,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(lg) {
   .l-Grids-col3Lg > .l-Grids_Item {
-    width: percentage(1 / 3);
+    flex-basis: percentage(1 / 3);
+    max-width: percentage(1 / 3);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -242,7 +249,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(xl) {
   .l-Grids-col3Xl > .l-Grids_Item {
-    width: percentage(1 / 3);
+    flex-basis: percentage(1 / 3);
+    max-width: percentage(1 / 3);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -255,7 +263,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 
 /* 4 Columns */
 .l-Grids-col4 > .l-Grids_Item {
-  width: percentage(1 / 4);
+  flex-basis: percentage(1 / 3);
+  max-width: percentage(1 / 4);
 
   &:nth-of-type(n+1) {
     margin-top: 0;
@@ -266,7 +275,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(md) {
   .l-Grids-col4Md > .l-Grids_Item {
-    width: percentage(1 / 4);
+    flex-basis: percentage(1 / 3);
+    max-width: percentage(1 / 4);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -278,7 +288,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(lg) {
   .l-Grids-col4Lg > .l-Grids_Item {
-    width: percentage(1 / 4);
+    flex-basis: percentage(1 / 3);
+    max-width: percentage(1 / 4);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -290,7 +301,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(xl) {
   .l-Grids-col4Xl > .l-Grids_Item {
-    width: percentage(1 / 4);
+    flex-basis: percentage(1 / 3);
+    max-width: percentage(1 / 4);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -303,7 +315,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 
 /* 5 Columns */
 .l-Grids-col5 > .l-Grids_Item {
-  width: percentage(1 / 5);
+  flex-basis: percentage(1 / 5);
+  max-width: percentage(1 / 5);
 
   &:nth-of-type(n+1) {
     margin-top: 0;
@@ -314,7 +327,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(md) {
   .l-Grids-col5Md > .l-Grids_Item {
-    width: percentage(1 / 5);
+    flex-basis: percentage(1 / 5);
+    max-width: percentage(1 / 5);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -326,7 +340,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(lg) {
   .l-Grids-col5Lg > .l-Grids_Item {
-    width: percentage(1 / 5);
+    flex-basis: percentage(1 / 5);
+    max-width: percentage(1 / 5);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -338,7 +353,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(xl) {
   .l-Grids-col5Xl > .l-Grids_Item {
-    width: percentage(1 / 5);
+    max-width: percentage(1 / 5);
 
     &:nth-of-type(n+1) {
       margin-top: 0;
@@ -388,24 +403,68 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 
 /**
- * 要素の垂直位置を真ん中寄せ。
+ * 要素の垂直位置を上寄せ。
  */
-.l-Grids-middle > .l-Grids_Item {
-  vertical-align: middle;
+.l-Grids-top {
+  align-items: flex-start;
 }
 @include mq-up(md) {
-  .l-Grids-middleMd > .l-Grids_Item {
-    vertical-align: middle;
+  .l-Grids-topMd {
+    align-items: flex-start;
   }
 }
 @include mq-up(lg) {
-  .l-Grids-middleLg > .l-Grids_Item {
-    vertical-align: middle;
+  .l-Grids-topLg {
+    align-items: flex-start;
   }
 }
 @include mq-up(xl) {
-  .l-Grids-middleXl > .l-Grids_Item {
-    vertical-align: middle;
+  .l-Grids-topXl {
+    align-items: flex-start;
+  }
+}
+
+/**
+ * 要素の垂直位置を真ん中寄せ。
+ */
+.l-Grids-middle {
+  align-items: center;
+}
+@include mq-up(md) {
+  .l-Grids-middleMd {
+    align-items: center;
+  }
+}
+@include mq-up(lg) {
+  .l-Grids-middleLg {
+    align-items: center;
+  }
+}
+@include mq-up(xl) {
+  .l-Grids-middleXl {
+    align-items: center;
+  }
+}
+
+/**
+ * 要素の垂直位置を下寄せ。
+ */
+.l-Grids-bottom {
+  align-items: flex-end;
+}
+@include mq-up(md) {
+  .l-Grids-bottomMd {
+    align-items: flex-end;
+  }
+}
+@include mq-up(lg) {
+  .l-Grids-bottomLg {
+    align-items: flex-end;
+  }
+}
+@include mq-up(xl) {
+  .l-Grids-bottomXl {
+    align-items: flex-end;
   }
 }
 
@@ -414,56 +473,34 @@ $l-grids-row-gap-md: $grid-row-gap-md;
  * A,B → B,A
  */
 .l-Grids-reverse {
-  text-align: left;
-  direction: rtl;
-
-  & > .l-Grids_Item {
-    text-align: left;
-    direction: ltr;
-  }
+  flex-direction: row-reverse;
 }
 @include mq-up(md) {
   .l-Grids-reversMd {
-    text-align: left;
-    direction: rtl;
-
-    & > .l-Grids_Item {
-      text-align: left;
-      direction: ltr;
-    }
+    flex-direction: row-reverse;
   }
 }
 @include mq-up(lg) {
   .l-Grids-reverseLg {
-    text-align: left;
-    direction: rtl;
-
-    & > .l-Grids_Item {
-      text-align: left;
-      direction: ltr;
-    }
+    flex-direction: row-reverse;
   }
 }
 @include mq-up(xl) {
   .l-Grids-reverseXl {
-    text-align: left;
-    direction: rtl;
-
-    & > .l-Grids_Item {
-      text-align: left;
-      direction: ltr;
-    }
+    flex-direction: row-reverse;
   }
 }
 
 /* 1/12 11/12, 11/12 1/12 */
 .l-Grids-col1to11 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(1 / 12);
+    flex-basis: percentage(1 / 12);
+    max-width: percentage(1 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(11 / 12);
+    flex-basis: percentage(11 / 12);
+    max-width: percentage(11 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -475,11 +512,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 .l-Grids-col11to1 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(11 / 12);
+    flex-basis: percentage(11 / 12);
+    max-width: percentage(11 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(1 / 12);
+    flex-basis: percentage(1 / 12);
+    max-width: percentage(1 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -492,11 +531,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(md) {
   .l-Grids-col1to11Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+      max-width: percentage(1 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+      max-width: percentage(11 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -508,11 +549,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col11to1Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+      max-width: percentage(11 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+      max-width: percentage(1 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -526,11 +569,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(lg) {
   .l-Grids-col1to11Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+      max-width: percentage(1 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+      max-width: percentage(11 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -542,11 +587,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col11to1Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+      max-width: percentage(11 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+      max-width: percentage(1 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -560,11 +607,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(xl) {
   .l-Grids-col1to11Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+      max-width: percentage(1 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+      max-width: percentage(11 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -576,11 +625,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col11to1Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+      max-width: percentage(11 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+      max-width: percentage(1 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -595,11 +646,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 /* 2/12 10/12, 10/12 2/12 */
 .l-Grids-col2to10 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(2 / 12);
+    flex-basis: percentage(2 / 12);
+    max-width: percentage(2 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(10 / 12);
+    flex-basis: percentage(10 / 12);
+    max-width: percentage(10 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -611,11 +664,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 .l-Grids-col10to2 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(10 / 12);
+    flex-basis: percentage(10 / 12);
+    max-width: percentage(10 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(2 / 12);
+    flex-basis: percentage(2 / 12);
+    max-width: percentage(2 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -628,11 +683,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(md) {
   .l-Grids-col2to10Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+      max-width: percentage(2 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+      max-width: percentage(10 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -644,11 +701,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col10to2Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+      max-width: percentage(10 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+      max-width: percentage(2 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -662,11 +721,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(lg) {
   .l-Grids-col2to10Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+      max-width: percentage(2 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+      max-width: percentage(10 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -678,11 +739,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col10to2Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+      max-width: percentage(10 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+      max-width: percentage(2 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -696,11 +759,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(xl) {
   .l-Grids-col2to10Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+      max-width: percentage(2 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+      max-width: percentage(10 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -712,11 +777,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col10to2Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+      max-width: percentage(10 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+      max-width: percentage(2 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -731,11 +798,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 /* 3/12 9/12, 9/12 3/12 */
 .l-Grids-col3to9 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(3 / 12);
+    flex-basis: percentage(3 / 12);
+    max-width: percentage(3 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(9 / 12);
+    flex-basis: percentage(9 / 12);
+    max-width: percentage(9 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -747,11 +816,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 .l-Grids-col9to3 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(9 / 12);
+    flex-basis: percentage(9 / 12);
+    max-width: percentage(9 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(3 / 12);
+    flex-basis: percentage(3 / 12);
+    max-width: percentage(3 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -764,11 +835,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(md) {
   .l-Grids-col3to9Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+      max-width: percentage(3 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+      max-width: percentage(9 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -780,11 +853,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col9to3Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+      max-width: percentage(9 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+      max-width: percentage(3 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -798,11 +873,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(lg) {
   .l-Grids-col3to9Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+      max-width: percentage(3 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+      max-width: percentage(9 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -814,11 +891,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col9to3Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+      max-width: percentage(9 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+      max-width: percentage(3 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -832,11 +911,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(xl) {
   .l-Grids-col3to9Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+      max-width: percentage(3 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+      max-width: percentage(9 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -848,11 +929,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col9to3Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+      max-width: percentage(9 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+      max-width: percentage(3 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -867,11 +950,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 /* 4/12 8/12, 8/12 4/12 */
 .l-Grids-col4to8 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(4 / 12);
+    flex-basis: percentage(4 / 12);
+    max-width: percentage(4 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(8 / 12);
+    flex-basis: percentage(8 / 12);
+    max-width: percentage(8 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -883,11 +968,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 .l-Grids-col8to4 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(8 / 12);
+    flex-basis: percentage(8 / 12);
+    max-width: percentage(8 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(4 / 12);
+    flex-basis: percentage(4 / 12);
+    max-width: percentage(4 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -900,11 +987,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(md) {
   .l-Grids-col4to8Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+      max-width: percentage(4 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+      max-width: percentage(8 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -916,11 +1005,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col8to4Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+      max-width: percentage(8 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+      max-width: percentage(4 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -934,11 +1025,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(lg) {
   .l-Grids-col4to8Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+      max-width: percentage(4 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+      max-width: percentage(8 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -950,11 +1043,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col8to4Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+      max-width: percentage(8 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+      max-width: percentage(4 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -968,11 +1063,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(xl) {
   .l-Grids-col4to8Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+      max-width: percentage(4 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+      max-width: percentage(8 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -984,11 +1081,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col8to4Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+      max-width: percentage(8 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+      max-width: percentage(4 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -1003,11 +1102,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 /* 5/12 7/12, 7/12 5/12 */
 .l-Grids-col5to7 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(5 / 12);
+    flex-basis: percentage(5 / 12);
+    max-width: percentage(5 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(7 / 12);
+    flex-basis: percentage(7 / 12);
+    max-width: percentage(7 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -1019,11 +1120,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 .l-Grids-col7to5 > .l-Grids_Item {
   &:nth-of-type(odd) {
-    width: percentage(7 / 12);
+    flex-basis: percentage(7 / 12);
+    max-width: percentage(7 / 12);
   }
 
   &:nth-of-type(even) {
-    width: percentage(5 / 12);
+    flex-basis: percentage(5 / 12);
+    max-width: percentage(5 / 12);
   }
 
   &:nth-of-type(n+1) {
@@ -1036,11 +1139,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(md) {
   .l-Grids-col5to7Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+      max-width: percentage(5 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+      max-width: percentage(7 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -1052,11 +1157,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col7to5Md > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+      max-width: percentage(7 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+      max-width: percentage(5 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -1070,11 +1177,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(lg) {
   .l-Grids-col5to7Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+      max-width: percentage(5 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+      max-width: percentage(7 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -1086,11 +1195,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col7to5Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+      max-width: percentage(7 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+      max-width: percentage(5 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -1104,11 +1215,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 @include mq-up(xl) {
   .l-Grids-col5to7Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+      max-width: percentage(5 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+      max-width: percentage(7 / 12);
     }
 
     &:nth-of-type(n+1) {
@@ -1120,11 +1233,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   }
   .l-Grids-col7to5Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
-      width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+      max-width: percentage(7 / 12);
     }
 
     &:nth-of-type(even) {
-      width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+      max-width: percentage(5 / 12);
     }
 
     &:nth-of-type(n+1) {
