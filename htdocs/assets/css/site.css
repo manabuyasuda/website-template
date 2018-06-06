@@ -5507,6 +5507,9 @@ category: Navigation
 ---
 
 ベーシックなパンくずリストです。`<ol>`タグで指定します。
+
+- 表示中のページと同じ項目には`aria-current="page"`を指定します。
+
 ```jade
 .l-Wrapper
   ol.st-Breadcrumb
@@ -5514,26 +5517,19 @@ category: Navigation
       a.st-Breadcrumb_Link(href="/") ホーム
     li.st-Breadcrumb_Item
       a.st-Breadcrumb_Link(href="#") カテゴリ名
-    li.st-Breadcrumb_Item ページ名
+    li.st-Breadcrumb_Item(aria-current="page") ページ名
 ```
 */
 .st-Breadcrumb {
-  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   padding-left: 0;
-  font-size: 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   list-style-type: none;
-}
-
-.st-Breadcrumb_Item {
-  display: inline-block;
-  font-size: 1rem;
-  font-size: 0.85rem;
-}
-
-.st-Breadcrumb_Item:last-child {
-  display: inline;
 }
 
 .st-Breadcrumb_Item:not(:first-of-type):before {
