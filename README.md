@@ -123,7 +123,9 @@ npm start
 ## 対象ブラウザ
 デフォルトでは下記のようなブラウザを対象にしています。
 
-- IE9以降
+- IE11以降
 - iOS8以降
 - Android4.4以降
 - その他ブラウザは最新版
+
+一部でFlexboxを使用しています。IE9以下に対応する場合は[flexibility.js](https://github.com/jonathantneal/flexibility)を使用してください。
