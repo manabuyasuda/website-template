@@ -10,6 +10,7 @@ var path = require('path');
 var sass = require('gulp-sass')
 var sassGlob = require('gulp-sass-glob');
 var postcss = require('gulp-postcss');
+var flexBugsFixes = require('postcss-flexbugs-fixes');
 var autoprefixer = require('autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 
@@ -111,6 +112,7 @@ gulp.task('html', function() {
  */
 gulp.task('css', function(){
   var plugins = [
+    flexBugsFixes(),
     autoprefixer({
       // ベンダープレフィックスの付与
       // https://github.com/ai/browserslist#browsers

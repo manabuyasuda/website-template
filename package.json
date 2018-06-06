@@ -46,6 +46,7 @@
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^3.0.0",
     "lodash": "^4.17.4",
+    "postcss-flexbugs-fixes": "^3.3.1",
     "rimraf": "^2.6.1",
     "run-sequence": "^2.2.1"
   },
