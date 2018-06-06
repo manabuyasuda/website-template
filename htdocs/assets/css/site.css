@@ -841,11 +841,29 @@ category: Layout
 ```
 */
 .l-Grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-left: -15px;
   padding-left: 0;
   list-style-type: none;
-  display: block;
-  font-size: 0;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -855,12 +873,15 @@ category: Layout
 }
 
 .l-Grid_Item {
-  display: inline-block;
-  width: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  max-width: 100%;
   padding-left: 15px;
-  font-size: medium;
-  font-size: 1rem;
-  vertical-align: top;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -870,217 +891,422 @@ category: Layout
 }
 
 .l-Grid_Item-1of12 {
-  width: 8.33333%;
+  max-width: 8.33333%;
+  -webkit-flex-basis: 8.33333%;
+      -ms-flex-preferred-size: 8.33333%;
+          flex-basis: 8.33333%;
 }
 
 .l-Grid_Item-2of12 {
-  width: 16.66667%;
+  max-width: 16.66667%;
+  -webkit-flex-basis: 16.66667%;
+      -ms-flex-preferred-size: 16.66667%;
+          flex-basis: 16.66667%;
 }
 
 .l-Grid_Item-3of12 {
-  width: 25%;
+  max-width: 25%;
+  -webkit-flex-basis: 25%;
+      -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
 }
 
 .l-Grid_Item-4of12 {
-  width: 33.33333%;
+  max-width: 33.33333%;
+  -webkit-flex-basis: 33.33333%;
+      -ms-flex-preferred-size: 33.33333%;
+          flex-basis: 33.33333%;
 }
 
 .l-Grid_Item-5of12 {
-  width: 41.66667%;
+  max-width: 41.66667%;
+  -webkit-flex-basis: 41.66667%;
+      -ms-flex-preferred-size: 41.66667%;
+          flex-basis: 41.66667%;
 }
 
 .l-Grid_Item-6of12 {
-  width: 50%;
+  max-width: 50%;
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
 }
 
 .l-Grid_Item-7of12 {
-  width: 58.33333%;
+  max-width: 58.33333%;
+  -webkit-flex-basis: 58.33333%;
+      -ms-flex-preferred-size: 58.33333%;
+          flex-basis: 58.33333%;
 }
 
 .l-Grid_Item-8of12 {
-  width: 66.66667%;
+  max-width: 66.66667%;
+  -webkit-flex-basis: 66.66667%;
+      -ms-flex-preferred-size: 66.66667%;
+          flex-basis: 66.66667%;
 }
 
 .l-Grid_Item-9of12 {
-  width: 75%;
+  max-width: 75%;
+  -webkit-flex-basis: 75%;
+      -ms-flex-preferred-size: 75%;
+          flex-basis: 75%;
 }
 
 .l-Grid_Item-10of12 {
-  width: 83.33333%;
+  max-width: 83.33333%;
+  -webkit-flex-basis: 83.33333%;
+      -ms-flex-preferred-size: 83.33333%;
+          flex-basis: 83.33333%;
 }
 
 .l-Grid_Item-11of12 {
-  width: 91.66667%;
+  max-width: 91.66667%;
+  -webkit-flex-basis: 91.66667%;
+      -ms-flex-preferred-size: 91.66667%;
+          flex-basis: 91.66667%;
 }
 
 .l-Grid_Item-12of12 {
-  width: 100%;
+  max-width: 100%;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Grid_Item-1of12Md {
-    width: 8.33333%;
+    max-width: 8.33333%;
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
   }
   .l-Grid_Item-2of12Md {
-    width: 16.66667%;
+    max-width: 16.66667%;
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
   }
   .l-Grid_Item-3of12Md {
-    width: 25%;
+    max-width: 25%;
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
   }
   .l-Grid_Item-4of12Md {
-    width: 33.33333%;
+    max-width: 33.33333%;
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
   }
   .l-Grid_Item-5of12Md {
-    width: 41.66667%;
+    max-width: 41.66667%;
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
   }
   .l-Grid_Item-6of12Md {
-    width: 50%;
+    max-width: 50%;
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
   }
   .l-Grid_Item-7of12Md {
-    width: 58.33333%;
+    max-width: 58.33333%;
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
   }
   .l-Grid_Item-8of12Md {
-    width: 66.66667%;
+    max-width: 66.66667%;
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
   }
   .l-Grid_Item-9of12Md {
-    width: 75%;
+    max-width: 75%;
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
   }
   .l-Grid_Item-10of12Md {
-    width: 83.33333%;
+    max-width: 83.33333%;
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
   }
   .l-Grid_Item-11of12Md {
-    width: 91.66667%;
+    max-width: 91.66667%;
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
   }
   .l-Grid_Item-12of12Md {
-    width: 100%;
+    max-width: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
   }
 }
 
 @media print, screen and (min-width: 1024px) {
   .l-Grid_Item-1of12Lg {
-    width: 8.33333%;
+    max-width: 8.33333%;
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
   }
   .l-Grid_Item-2of12Lg {
-    width: 16.66667%;
+    max-width: 16.66667%;
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
   }
   .l-Grid_Item-3of12Lg {
-    width: 25%;
+    max-width: 25%;
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
   }
   .l-Grid_Item-4of12Lg {
-    width: 33.33333%;
+    max-width: 33.33333%;
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
   }
   .l-Grid_Item-5of12Lg {
-    width: 41.66667%;
+    max-width: 41.66667%;
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
   }
   .l-Grid_Item-6of12Lg {
-    width: 50%;
+    max-width: 50%;
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
   }
   .l-Grid_Item-7of12Lg {
-    width: 58.33333%;
+    max-width: 58.33333%;
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
   }
   .l-Grid_Item-8of12Lg {
-    width: 66.66667%;
+    max-width: 66.66667%;
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
   }
   .l-Grid_Item-9of12Lg {
-    width: 75%;
+    max-width: 75%;
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
   }
   .l-Grid_Item-10of12Lg {
-    width: 83.33333%;
+    max-width: 83.33333%;
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
   }
   .l-Grid_Item-11of12Lg {
-    width: 91.66667%;
+    max-width: 91.66667%;
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
   }
   .l-Grid_Item-12of12Lg {
-    width: 100%;
+    max-width: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
   }
 }
 
 @media print, screen and (min-width: 1440px) {
   .l-Grid_Item-1of12Xl {
-    width: 8.33333%;
+    max-width: 8.33333%;
+    -webkit-flex-basis: 8.33333%;
+        -ms-flex-preferred-size: 8.33333%;
+            flex-basis: 8.33333%;
   }
   .l-Grid_Item-2of12Xl {
-    width: 16.66667%;
+    max-width: 16.66667%;
+    -webkit-flex-basis: 16.66667%;
+        -ms-flex-preferred-size: 16.66667%;
+            flex-basis: 16.66667%;
   }
   .l-Grid_Item-3of12Xl {
-    width: 25%;
+    max-width: 25%;
+    -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
   }
   .l-Grid_Item-4of12Xl {
-    width: 33.33333%;
+    max-width: 33.33333%;
+    -webkit-flex-basis: 33.33333%;
+        -ms-flex-preferred-size: 33.33333%;
+            flex-basis: 33.33333%;
   }
   .l-Grid_Item-5of12Xl {
-    width: 41.66667%;
+    max-width: 41.66667%;
+    -webkit-flex-basis: 41.66667%;
+        -ms-flex-preferred-size: 41.66667%;
+            flex-basis: 41.66667%;
   }
   .l-Grid_Item-6of12Xl {
-    width: 50%;
+    max-width: 50%;
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
   }
   .l-Grid_Item-7of12Xl {
-    width: 58.33333%;
+    max-width: 58.33333%;
+    -webkit-flex-basis: 58.33333%;
+        -ms-flex-preferred-size: 58.33333%;
+            flex-basis: 58.33333%;
   }
   .l-Grid_Item-8of12Xl {
-    width: 66.66667%;
+    max-width: 66.66667%;
+    -webkit-flex-basis: 66.66667%;
+        -ms-flex-preferred-size: 66.66667%;
+            flex-basis: 66.66667%;
   }
   .l-Grid_Item-9of12Xl {
-    width: 75%;
+    max-width: 75%;
+    -webkit-flex-basis: 75%;
+        -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
   }
   .l-Grid_Item-10of12Xl {
-    width: 83.33333%;
+    max-width: 83.33333%;
+    -webkit-flex-basis: 83.33333%;
+        -ms-flex-preferred-size: 83.33333%;
+            flex-basis: 83.33333%;
   }
   .l-Grid_Item-11of12Xl {
-    width: 91.66667%;
+    max-width: 91.66667%;
+    -webkit-flex-basis: 91.66667%;
+        -ms-flex-preferred-size: 91.66667%;
+            flex-basis: 91.66667%;
   }
   .l-Grid_Item-12of12Xl {
-    width: 100%;
+    max-width: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+  }
+}
+
+/**
+ * 要素の垂直位置を上寄せ。
+ */
+.l-Grid-top {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media print, screen and (min-width: 768px) {
+  .l-Grid-topMd {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media print, screen and (min-width: 1024px) {
+  .l-Grid-topLg {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media print, screen and (min-width: 1440px) {
+  .l-Grid-topXl {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
 /**
  * 要素の垂直位置を真ん中寄せ。
  */
-.l-Grid-middle > .l-Grid_Item {
-  vertical-align: middle;
+.l-Grid-middle {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media print, screen and (min-width: 768px) {
-  .l-Grid-middleMd > .l-Grid_Item {
-    vertical-align: middle;
+  .l-Grid-middleMd {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
 @media print, screen and (min-width: 1024px) {
-  .l-Grid-middleLg > .l-Grid_Item {
-    vertical-align: middle;
+  .l-Grid-middleLg {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
 @media print, screen and (min-width: 1440px) {
-  .l-Grid-middleXl > .l-Grid_Item {
-    vertical-align: middle;
+  .l-Grid-middleXl {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
 /**
  * 要素の垂直位置を下寄せ。
  */
-.l-Grid--bottom > .l-Grid_Item {
-  vertical-align: bottom;
+.l-Grid--bottom {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 @media print, screen and (min-width: 768px) {
-  .l-Grid-bottomMd > .l-Grid_Item {
-    vertical-align: bottom;
+  .l-Grid-bottomMd {
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
 @media print, screen and (min-width: 1024px) {
-  .l-Grid-bottomLg > .l-Grid_Item {
-    vertical-align: bottom;
+  .l-Grid-bottomLg {
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
 @media print, screen and (min-width: 1440px) {
-  .l-Grid-bottomXl > .l-Grid_Item {
-    vertical-align: bottom;
+  .l-Grid-bottomXl {
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
@@ -1088,37 +1314,36 @@ category: Layout
  * 要素を中央寄せ、要素内は左寄せ。
  */
 .l-Grid-center {
-  text-align: center;
-}
-
-.l-Grid-center > .l-Grid_Item {
-  text-align: left;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Grid-centerMd {
-    text-align: center;
-  }
-  .l-Grid-centerMd > .l-Grid_Item {
-    text-align: left;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 @media print, screen and (min-width: 1024px) {
   .l-Grid-centerLg {
-    text-align: center;
-  }
-  .l-Grid-centerLg > .l-Grid_Item {
-    text-align: left;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 @media print, screen and (min-width: 1440px) {
   .l-Grid-centerXl {
-    text-align: center;
-  }
-  .l-Grid-centerXl > .l-Grid_Item {
-    text-align: left;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -1126,37 +1351,36 @@ category: Layout
  * 要素を右寄せ、要素内は左寄せ。
  */
 .l-Grid-right {
-  text-align: right;
-}
-
-.l-Grid-right > .l-Grid_Item {
-  text-align: left;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Grid-rightMd {
-    text-align: right;
-  }
-  .l-Grid-rightMd > .l-Grid_Item {
-    text-align: left;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
 @media print, screen and (min-width: 1024px) {
   .l-Grid-rightLg {
-    text-align: right;
-  }
-  .l-Grid-rightLg > .l-Grid_Item {
-    text-align: left;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
 @media print, screen and (min-width: 1440px) {
   .l-Grid-rightXl {
-    text-align: right;
-  }
-  .l-Grid-rightXl > .l-Grid_Item {
-    text-align: left;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
@@ -1164,45 +1388,40 @@ category: Layout
  * 要素の反転。
  */
 .l-Grid-reverse {
-  text-align: left;
-  direction: rtl;
-}
-
-.l-Grid-reverse > .l-Grid_Item {
-  text-align: left;
-  direction: ltr;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 @media print, screen and (min-width: 768px) {
   .l-Grid-reversMd {
-    text-align: left;
-    direction: rtl;
-  }
-  .l-Grid-reversMd > .l-Grid_Item {
-    text-align: left;
-    direction: ltr;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
 }
 
 @media print, screen and (min-width: 1024px) {
   .l-Grid-reverseLg {
-    text-align: left;
-    direction: rtl;
-  }
-  .l-Grid-reverseLg > .l-Grid_Item {
-    text-align: left;
-    direction: ltr;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
 }
 
 @media print, screen and (min-width: 1440px) {
   .l-Grid-reverseXl {
-    text-align: left;
-    direction: rtl;
-  }
-  .l-Grid-reverseXl > .l-Grid_Item {
-    text-align: left;
-    direction: ltr;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
 }
 
@@ -1351,6 +1570,9 @@ category: Layout
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
   max-width: 100%;
   padding-left: 15px;
 }

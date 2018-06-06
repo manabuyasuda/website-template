@@ -45,11 +45,14 @@ $l-grid-column-gap: $grid-column-gap;
 $l-grid-column-gap-md: $grid-column-gap-md;
 
 .l-Grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  align-items: flex-start;
   margin-left: -$l-grid-column-gap;
   padding-left: 0;
   list-style-type: none;
-  display: block;
-  font-size: 0;
 
   @include mq-up(md) {
     margin-left: -$l-grid-column-gap-md;
@@ -57,12 +60,10 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 }
 
 .l-Grid_Item {
-  display: inline-block;
-  width: 100%;
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  max-width: 100%;
   padding-left: $l-grid-column-gap;
-  font-size: medium;
-  font-size: 1rem;
-  vertical-align: top;
 
   @include mq-up(md) {
     padding-left: $l-grid-column-gap-md;
@@ -70,112 +71,278 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 }
 
 .l-Grid_Item {
-  &-1of12 { width: percentage(1 / 12)};
-  &-2of12 { width: percentage(2 / 12)};
-  &-3of12 { width: percentage(3 / 12)};
-  &-4of12 { width: percentage(4 / 12)};
-  &-5of12 { width: percentage(5 / 12)};
-  &-6of12 { width: percentage(6 / 12)};
-  &-7of12 { width: percentage(7 / 12)};
-  &-8of12 { width: percentage(8 / 12)};
-  &-9of12 { width: percentage(9 / 12)};
-  &-10of12 { width: percentage(10 / 12)};
-  &-11of12 { width: percentage(11 / 12)};
-  &-12of12 { width: percentage(12 / 12)};
+  &-1of12 {
+    max-width: percentage(1 / 12);
+    flex-basis: percentage(1 / 12);
+  }
+  &-2of12 {
+    max-width: percentage(2 / 12);
+    flex-basis: percentage(2 / 12);
+  }
+  &-3of12 {
+    max-width: percentage(3 / 12);
+    flex-basis: percentage(3 / 12);
+  }
+  &-4of12 {
+    max-width: percentage(4 / 12);
+    flex-basis: percentage(4 / 12);
+  }
+  &-5of12 {
+    max-width: percentage(5 / 12);
+    flex-basis: percentage(5 / 12);
+  }
+  &-6of12 {
+    max-width: percentage(6 / 12);
+    flex-basis: percentage(6 / 12);
+  }
+  &-7of12 {
+    max-width: percentage(7 / 12);
+    flex-basis: percentage(7 / 12);
+  }
+  &-8of12 {
+    max-width: percentage(8 / 12);
+    flex-basis: percentage(8 / 12);
+  }
+  &-9of12 {
+    max-width: percentage(9 / 12);
+    flex-basis: percentage(9 / 12);
+  }
+  &-10of12 {
+    max-width: percentage(10 / 12);
+    flex-basis: percentage(10 / 12);
+  }
+  &-11of12 {
+    max-width: percentage(11 / 12);
+    flex-basis: percentage(11 / 12);
+  }
+  &-12of12 {
+    max-width: percentage(12 / 12);
+    flex-basis: percentage(12 / 12);
+  }
 }
 
 @include mq-up(md) {
   .l-Grid_Item {
-    &-1of12Md { width: percentage(1 / 12)};
-    &-2of12Md { width: percentage(2 / 12)};
-    &-3of12Md { width: percentage(3 / 12)};
-    &-4of12Md { width: percentage(4 / 12)};
-    &-5of12Md { width: percentage(5 / 12)};
-    &-6of12Md { width: percentage(6 / 12)};
-    &-7of12Md { width: percentage(7 / 12)};
-    &-8of12Md { width: percentage(8 / 12)};
-    &-9of12Md { width: percentage(9 / 12)};
-    &-10of12Md { width: percentage(10 / 12)};
-    &-11of12Md { width: percentage(11 / 12)};
-    &-12of12Md { width: percentage(12 / 12)};
+    &-1of12Md {
+       max-width: percentage(1 / 12);
+       flex-basis: percentage(1 / 12);
+     }
+     &-2of12Md {
+       max-width: percentage(2 / 12);
+       flex-basis: percentage(2 / 12);
+     }
+     &-3of12Md {
+       max-width: percentage(3 / 12);
+       flex-basis: percentage(3 / 12);
+     }
+     &-4of12Md {
+       max-width: percentage(4 / 12);
+       flex-basis: percentage(4 / 12);
+     }
+     &-5of12Md {
+       max-width: percentage(5 / 12);
+       flex-basis: percentage(5 / 12);
+     }
+     &-6of12Md {
+       max-width: percentage(6 / 12);
+       flex-basis: percentage(6 / 12);
+     }
+     &-7of12Md {
+       max-width: percentage(7 / 12);
+       flex-basis: percentage(7 / 12);
+     }
+     &-8of12Md {
+       max-width: percentage(8 / 12);
+       flex-basis: percentage(8 / 12);
+     }
+     &-9of12Md {
+       max-width: percentage(9 / 12);
+       flex-basis: percentage(9 / 12);
+     }
+     &-10of12Md {
+       max-width: percentage(10 / 12);
+       flex-basis: percentage(10 / 12);
+     }
+     &-11of12Md {
+       max-width: percentage(11 / 12);
+       flex-basis: percentage(11 / 12);
+     }
+     &-12of12Md {
+       max-width: percentage(12 / 12);
+       flex-basis: percentage(12 / 12);
+     }
   }
 }
 
 @include mq-up(lg) {
   .l-Grid_Item {
-    &-1of12Lg { width: percentage(1 / 12)};
-    &-2of12Lg { width: percentage(2 / 12)};
-    &-3of12Lg { width: percentage(3 / 12)};
-    &-4of12Lg { width: percentage(4 / 12)};
-    &-5of12Lg { width: percentage(5 / 12)};
-    &-6of12Lg { width: percentage(6 / 12)};
-    &-7of12Lg { width: percentage(7 / 12)};
-    &-8of12Lg { width: percentage(8 / 12)};
-    &-9of12Lg { width: percentage(9 / 12)};
-    &-10of12Lg { width: percentage(10 / 12)};
-    &-11of12Lg { width: percentage(11 / 12)};
-    &-12of12Lg { width: percentage(12 / 12)};
+    &-1of12Lg {
+       max-width: percentage(1 / 12);
+       flex-basis: percentage(1 / 12);
+     }
+     &-2of12Lg {
+       max-width: percentage(2 / 12);
+       flex-basis: percentage(2 / 12);
+     }
+     &-3of12Lg {
+       max-width: percentage(3 / 12);
+       flex-basis: percentage(3 / 12);
+     }
+     &-4of12Lg {
+       max-width: percentage(4 / 12);
+       flex-basis: percentage(4 / 12);
+     }
+     &-5of12Lg {
+       max-width: percentage(5 / 12);
+       flex-basis: percentage(5 / 12);
+     }
+     &-6of12Lg {
+       max-width: percentage(6 / 12);
+       flex-basis: percentage(6 / 12);
+     }
+     &-7of12Lg {
+       max-width: percentage(7 / 12);
+       flex-basis: percentage(7 / 12);
+     }
+     &-8of12Lg {
+       max-width: percentage(8 / 12);
+       flex-basis: percentage(8 / 12);
+     }
+     &-9of12Lg {
+       max-width: percentage(9 / 12);
+       flex-basis: percentage(9 / 12);
+     }
+     &-10of12Lg {
+       max-width: percentage(10 / 12);
+       flex-basis: percentage(10 / 12);
+     }
+     &-11of12Lg {
+       max-width: percentage(11 / 12);
+       flex-basis: percentage(11 / 12);
+     }
+     &-12of12Lg {
+       max-width: percentage(12 / 12);
+       flex-basis: percentage(12 / 12);
+     }
   }
 }
 
 @include mq-up(xl) {
   .l-Grid_Item {
-    &-1of12Xl { width: percentage(1 / 12)};
-    &-2of12Xl { width: percentage(2 / 12)};
-    &-3of12Xl { width: percentage(3 / 12)};
-    &-4of12Xl { width: percentage(4 / 12)};
-    &-5of12Xl { width: percentage(5 / 12)};
-    &-6of12Xl { width: percentage(6 / 12)};
-    &-7of12Xl { width: percentage(7 / 12)};
-    &-8of12Xl { width: percentage(8 / 12)};
-    &-9of12Xl { width: percentage(9 / 12)};
-    &-10of12Xl { width: percentage(10 / 12)};
-    &-11of12Xl { width: percentage(11 / 12)};
-    &-12of12Xl { width: percentage(12 / 12)};
+    &-1of12Xl {
+       max-width: percentage(1 / 12);
+       flex-basis: percentage(1 / 12);
+     }
+     &-2of12Xl {
+       max-width: percentage(2 / 12);
+       flex-basis: percentage(2 / 12);
+     }
+     &-3of12Xl {
+       max-width: percentage(3 / 12);
+       flex-basis: percentage(3 / 12);
+     }
+     &-4of12Xl {
+       max-width: percentage(4 / 12);
+       flex-basis: percentage(4 / 12);
+     }
+     &-5of12Xl {
+       max-width: percentage(5 / 12);
+       flex-basis: percentage(5 / 12);
+     }
+     &-6of12Xl {
+       max-width: percentage(6 / 12);
+       flex-basis: percentage(6 / 12);
+     }
+     &-7of12Xl {
+       max-width: percentage(7 / 12);
+       flex-basis: percentage(7 / 12);
+     }
+     &-8of12Xl {
+       max-width: percentage(8 / 12);
+       flex-basis: percentage(8 / 12);
+     }
+     &-9of12Xl {
+       max-width: percentage(9 / 12);
+       flex-basis: percentage(9 / 12);
+     }
+     &-10of12Xl {
+       max-width: percentage(10 / 12);
+       flex-basis: percentage(10 / 12);
+     }
+     &-11of12Xl {
+       max-width: percentage(11 / 12);
+       flex-basis: percentage(11 / 12);
+     }
+     &-12of12Xl {
+       max-width: percentage(12 / 12);
+       flex-basis: percentage(12 / 12);
+     }
+  }
+}
+
+/**
+ * 要素の垂直位置を上寄せ。
+ */
+.l-Grid-top {
+  align-items: flex-start;
+}
+@include mq-up(md) {
+  .l-Grid-topMd {
+    align-items: flex-start;
+  }
+}
+@include mq-up(lg) {
+  .l-Grid-topLg {
+    align-items: flex-start;
+  }
+}
+@include mq-up(xl) {
+  .l-Grid-topXl {
+    align-items: flex-start;
   }
 }
 
 /**
  * 要素の垂直位置を真ん中寄せ。
  */
-.l-Grid-middle > .l-Grid_Item {
-  vertical-align: middle;
+.l-Grid-middle {
+  align-items: center;
 }
 @include mq-up(md) {
-  .l-Grid-middleMd > .l-Grid_Item {
-    vertical-align: middle;
+  .l-Grid-middleMd {
+    align-items: center;
   }
 }
 @include mq-up(lg) {
-  .l-Grid-middleLg > .l-Grid_Item {
-    vertical-align: middle;
+  .l-Grid-middleLg {
+    align-items: center;
   }
 }
 @include mq-up(xl) {
-  .l-Grid-middleXl > .l-Grid_Item {
-    vertical-align: middle;
+  .l-Grid-middleXl {
+    align-items: center;
   }
 }
 
 /**
  * 要素の垂直位置を下寄せ。
  */
-.l-Grid--bottom > .l-Grid_Item {
-  vertical-align: bottom;
+.l-Grid--bottom {
+  align-items: flex-end;
 }
 @include mq-up(md) {
-  .l-Grid-bottomMd > .l-Grid_Item {
-    vertical-align: bottom;
+  .l-Grid-bottomMd {
+    align-items: flex-end;
   }
 }
 @include mq-up(lg) {
-  .l-Grid-bottomLg > .l-Grid_Item {
-    vertical-align: bottom;
+  .l-Grid-bottomLg {
+    align-items: flex-end;
   }
 }
 @include mq-up(xl) {
-  .l-Grid-bottomXl > .l-Grid_Item {
-    vertical-align: bottom;
+  .l-Grid-bottomXl {
+    align-items: flex-end;
   }
 }
 
@@ -183,37 +350,21 @@ $l-grid-column-gap-md: $grid-column-gap-md;
  * 要素を中央寄せ、要素内は左寄せ。
  */
 .l-Grid-center {
-  text-align: center;
-
-  & > .l-Grid_Item {
-    text-align: left;
-  }
+  justify-content: center;
 }
 @include mq-up(md) {
   .l-Grid-centerMd {
-    text-align: center;
-
-    & > .l-Grid_Item {
-      text-align: left;
-    }
+    justify-content: center;
   }
 }
 @include mq-up(lg) {
   .l-Grid-centerLg {
-    text-align: center;
-
-    & > .l-Grid_Item {
-      text-align: left;
-    }
+    justify-content: center;
   }
 }
 @include mq-up(xl) {
   .l-Grid-centerXl {
-    text-align: center;
-
-    & > .l-Grid_Item {
-      text-align: left;
-    }
+    justify-content: center;
   }
 }
 
@@ -221,37 +372,21 @@ $l-grid-column-gap-md: $grid-column-gap-md;
  * 要素を右寄せ、要素内は左寄せ。
  */
 .l-Grid-right {
-  text-align: right;
-
-  & > .l-Grid_Item {
-    text-align: left;
-  }
+  justify-content: flex-end;
 }
 @include mq-up(md) {
   .l-Grid-rightMd {
-    text-align: right;
-
-    & > .l-Grid_Item {
-      text-align: left;
-    }
+    justify-content: flex-end;
   }
 }
 @include mq-up(lg) {
   .l-Grid-rightLg {
-    text-align: right;
-
-    & > .l-Grid_Item {
-      text-align: left;
-    }
+    justify-content: flex-end;
   }
 }
 @include mq-up(xl) {
   .l-Grid-rightXl {
-    text-align: right;
-
-    & > .l-Grid_Item {
-      text-align: left;
-    }
+    justify-content: flex-end;
   }
 }
 
@@ -259,44 +394,20 @@ $l-grid-column-gap-md: $grid-column-gap-md;
  * 要素の反転。
  */
 .l-Grid-reverse {
-  text-align: left;
-  direction: rtl;
-
-  & > .l-Grid_Item {
-    text-align: left;
-    direction: ltr;
-  }
+  flex-direction: row-reverse;
 }
 @include mq-up(md) {
   .l-Grid-reversMd {
-    text-align: left;
-    direction: rtl;
-
-    & > .l-Grid_Item {
-      text-align: left;
-      direction: ltr;
-    }
+    flex-direction: row-reverse;
   }
 }
 @include mq-up(lg) {
   .l-Grid-reverseLg {
-    text-align: left;
-    direction: rtl;
-
-    & > .l-Grid_Item {
-      text-align: left;
-      direction: ltr;
-    }
+    flex-direction: row-reverse;
   }
 }
 @include mq-up(xl) {
   .l-Grid-reverseXl {
-    text-align: left;
-    direction: rtl;
-
-    & > .l-Grid_Item {
-      text-align: left;
-      direction: ltr;
-    }
+    flex-direction: row-reverse;
   }
 }

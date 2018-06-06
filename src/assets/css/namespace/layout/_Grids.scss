@@ -129,6 +129,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 
 .l-Grids_Item {
   flex: 0 0 auto;
+  flex-basis: 100%;
   max-width: 100%;
   padding-left: $l-grids-column-gap;
 
