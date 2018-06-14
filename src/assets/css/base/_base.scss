@@ -15,35 +15,10 @@ html {
 
 /**
  * 1. ドキュメントのルートフォントサイズを指定します（`rem`で参照）。
- * 2. ブレイクポイントごとにルートフォントサイズを変更します。
  */
 html {
-  font-size: ((map-get($global-font-size, 'none') / 16) * 100%); /* 1 */
+  font-size: 100%; /* 1 */
   line-height: $global-line-height;
-
-  @include mq-up(sm) {
-    @if map-has-key($global-font-size, 'sm') {
-      font-size: ((map-get($global-font-size, sm) / 16) * 100%); /* 2 */
-    }
-  }
-
-  @include mq-up(md) {
-    @if map-has-key($global-font-size, 'md') {
-      font-size: ((map-get($global-font-size, md) / 16) * 100%); /* 2 */
-    }
-  }
-
-  @include mq-up(lg) {
-    @if map-has-key($global-font-size, 'lg') {
-      font-size: ((map-get($global-font-size, lg) / 16) * 100%); /* 2 */
-    }
-  }
-
-  @include mq-up(xl) {
-    @if map-has-key($global-font-size, 'xl') {
-      font-size: ((map-get($global-font-size, xl) / 16) * 100%); /* 2 */
-    }
-  }
 }
 
 /**

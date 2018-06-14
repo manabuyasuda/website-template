@@ -23,13 +23,6 @@ $color-background-color: #fff !default;
 // Typography
 // ==========================================================================
 
-// `$breakpoint-up`に対応するルートフォントサイズを指定します。
-// `none`はメディアクエリなしで使用されるので指定必須です。
-$global-font-size: (
-  'none': 14,
-  'md': 16,
-) !default;
-
 // 注釈などに使用するフォントサイズ
 $global-font-size-secondary: 0.85em !default;
 

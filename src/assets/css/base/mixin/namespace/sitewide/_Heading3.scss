@@ -9,7 +9,7 @@
 
   @include mq-up(md) {
     padding-left: 13px;
-    font-size: rem(20, md);
+    font-size: rem(20);
     border-left: 6px solid $color-brand;
   }
 }

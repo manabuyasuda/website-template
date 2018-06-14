@@ -14,7 +14,7 @@
   @include mq-up(md) {
     margin-right: 0;
     margin-left: 0;
-    font-size: rem(26, md);
+    font-size: rem(26);
     text-align: center;
 
     &:after {

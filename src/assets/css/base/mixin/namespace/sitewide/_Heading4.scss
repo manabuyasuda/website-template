@@ -7,6 +7,6 @@
 
   @include mq-up(md) {
     padding-bottom: 5px;
-    font-size: rem(20, md);
+    font-size: rem(20);
   }
 }
