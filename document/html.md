@@ -4,6 +4,9 @@ HTMLは[Pug](https://pugjs.org/api/getting-started.html)を使って生成して
 
 インデントにスペースやタブが混ざるとエラーになってしまうので、.editorconfigを設定することで解決しています。お使いのエディターで.editorconfigの設定が反映されるように設定してください。
 
+初期設定では共通部分はPugで管理していますが、SSIを使うこともできます。詳しくは後述します。  
+※SSIを使用しない場合は、/public/index.htmlと/public/ssiディレクトリを削除してください。
+
 ## ディレクトリ構造
 Pugのコンパイルは、例えば`src/index.pug`が`htdocs/index.html`のように生成されます。  
 `_partial/`は共通部分など、`_template/`は共通部分をまとめたテンプレート、`_data/`はサイトやページ単位で使うデータ（JSON）、`_mixin/`はPugのmixinを保存します。`_index.pug`のようにアンダースコアから始まるファイルは直接出力されません。  
@@ -226,9 +229,21 @@ html(lang="ja")
 
 
 ## SSI
-初期設定では共通部分はPugで管理していますが、SSIを使うこともできます。
+gulpfile.jsの`build`タスク、`browser-sync`タスク、`watch`タスクを確認して、コメントを参考にGulpタスクを変更してください。
 
-gulpfile.jsの`browser-sync`タスクを確認してください。
+HTMLファイルとSSIを使用する場合は、/public/以下にHTMLファイルを作成します。/public/以下のファイルはすべて/htdocs/以下に複製されます。
+
+```js
+gulp.task('build', function() {
+  runSequence(
+    ['iconfont'],
+    // PugではなくSSIを使用する場合はコメントアウトを解除します。
+    // ['ssi', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
+    // PugではなくSSIを使用する場合はコメントアウトします。
+    ['html', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
+  )
+});
+```
 
 ```js
 gulp.task('browser-sync', function() {
@@ -255,12 +270,55 @@ gulp.task('browser-sync', function() {
 });
 ```
 
-5行目にあるオプションの`middleware`のコメントアウトを解除、`ext`はSSIとして機能させるファイルの拡張子です。  
-Pugファイルに以下のような指定をすると、Pugから出力したHTMLファイルを表示するときにSSIを利用することができます。
-
 ```js
-block content
-  <!--#include virtual="/ssi/ssi.html" -->
+gulp.task('watch', ['build'], function() {
+  // PugではなくSSIを使用する場合はコメントアウトします。
+  gulp.watch(src.html, ['html']);
+  // PugではなくSSIを使用する場合はコメントアウトを解除します。
+  // gulp.watch(src.ssi, ['ssi']);
+  gulp.watch(src.css, ['css']);
+  gulp.watch(src.styleguideWatch, ['styleguide']);
+  gulp.watch(src.jsWatch, ['libJs']);
+  gulp.watch(src.jsWatch, ['siteJs']);
+  gulp.watch(src.imageWatch, ['image']);
+  gulp.watch(src.iconfontWath, ['iconfont']);
+  gulp.watch(src.public, ['public']);
+});
+```
+
+/public/index.htmlにテンプレートを用意しています。適宜変更して使用してください。
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <!--#include virtual="/ssi/meta.html" -->
+    <title>サイト名</title>
+    <meta name="description" content="サイトの概要">
+    <meta name="keywords" content="サイトのキーワード1, サイトのキーワード2">
+    <link rel="canonical" href="https://example.com/">
+    <meta property="og:title" content="サイト名">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/ogp.jpg">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:description" content="サイトの概要">
+    <meta property="og:site_name" content="サイト名">
+    <meta property="og:locale" content="ja">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SiteAccount">
+  </head>
+  <body>
+    <!--#include virtual="/ssi/header.html" -->
+
+    <main>
+
+    </main>
+
+    <!--#include virtual="/ssi/footer.html" -->
+
+    <!--#include virtual="/ssi/script.html" -->
+  </body>
+</html>
 ```
 
 ## HTMLタグと属性

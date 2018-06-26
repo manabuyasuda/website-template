@@ -46,6 +46,7 @@ var rimraf = require('rimraf');
 var src = {
   'root': 'src/',
   'html': ['src/**/*.pug', '!src/**/_*.pug'],
+  'ssi': 'public/**/*.html',
   'data': 'src/_data/',
   'css': 'src/**/*.scss',
   'styleguideWatch': ['src/**/*.scss', 'src/**/*.md'],
@@ -104,6 +105,14 @@ gulp.task('html', function() {
     pretty: true
   }))
   .pipe(gulp.dest(dest.root))
+  .pipe(browserSync.reload({stream: true}));
+});
+
+/**
+ * /public/ 以下のHTMLファイルを監視、更新があれば反映します。
+ */
+gulp.task('ssi', function() {
+  return gulp.src(src.ssi)
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -260,6 +269,9 @@ gulp.task('clean:dest', function (cb) {
 gulp.task('build', function() {
   runSequence(
     ['iconfont'],
+    // PugではなくSSIを使用する場合はコメントアウトを解除します。
+    // ['ssi', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
+    // PugではなくSSIを使用する場合はコメントアウトします。
     ['html', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
   )
 });
@@ -294,7 +306,10 @@ gulp.task('browser-sync', function() {
  * ファイルを監視します。
  */
 gulp.task('watch', ['build'], function() {
+  // PugではなくSSIを使用する場合はコメントアウトします。
   gulp.watch(src.html, ['html']);
+  // PugではなくSSIを使用する場合はコメントアウトを解除します。
+  // gulp.watch(src.ssi, ['ssi']);
   gulp.watch(src.css, ['css']);
   gulp.watch(src.styleguideWatch, ['styleguide']);
   gulp.watch(src.jsWatch, ['libJs']);
