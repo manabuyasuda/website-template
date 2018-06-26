@@ -5,7 +5,7 @@ HTMLは[Pug](https://pugjs.org/api/getting-started.html)を使って生成して
 インデントにスペースやタブが混ざるとエラーになってしまうので、.editorconfigを設定することで解決しています。お使いのエディターで.editorconfigの設定が反映されるように設定してください。
 
 初期設定では共通部分はPugで管理していますが、SSIを使うこともできます。詳しくは後述します。  
-※SSIを使用しない場合は、/public/index.htmlと/public/ssiディレクトリを削除してください。
+HTMLとSSIを使用しない場合は、/public/index.htmlと/public/ssiディレクトリを削除してください。
 
 ## ディレクトリ構造
 Pugのコンパイルは、例えば`src/index.pug`が`htdocs/index.html`のように生成されます。  
@@ -229,62 +229,16 @@ html(lang="ja")
 
 
 ## SSI
-gulpfile.jsの`build`タスク、`browser-sync`タスク、`watch`タスクを確認して、コメントを参考にGulpタスクを変更してください。
+共通部分はSSIを使用することもできます。  
+Pugを使用しない場合は、以下のディレクトリとファイルを削除してください。
 
-HTMLファイルとSSIを使用する場合は、/public/以下にHTMLファイルを作成します。/public/以下のファイルはすべて/htdocs/以下に複製されます。
+- /src/_data/
+- /src/_mixin/
+- /src/_partial/
+- /src/_template/
+- /src/index.pug
 
-```js
-gulp.task('build', function() {
-  runSequence(
-    ['iconfont'],
-    // PugではなくSSIを使用する場合はコメントアウトを解除します。
-    // ['ssi', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
-    // PugではなくSSIを使用する場合はコメントアウトします。
-    ['html', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
-  )
-});
-```
-
-```js
-gulp.task('browser-sync', function() {
-  browserSync({
-    server: {
-      // SSIを利用する場合はmiddlewareのコメントアウトを解除します。
-      // middleware: [
-      //   ssi({
-      //     baseDir: test.root,
-      //     ext: ".html"
-      //   })
-      // ],
-      baseDir: test.root
-    },
-    // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
-    ghostMode: true,
-    // ローカルIPアドレスでサーバーを立ち上げます。
-    open: 'external',
-    // サーバー起動時に表示するページを指定します。
-    // startPath: '/styleguide/',
-    // falseに指定すると、サーバー起動時にポップアップを表示させません。
-    notify: false
-  });
-});
-```
-
-```js
-gulp.task('watch', ['build'], function() {
-  // PugではなくSSIを使用する場合はコメントアウトします。
-  gulp.watch(src.html, ['html']);
-  // PugではなくSSIを使用する場合はコメントアウトを解除します。
-  // gulp.watch(src.ssi, ['ssi']);
-  gulp.watch(src.css, ['css']);
-  gulp.watch(src.styleguideWatch, ['styleguide']);
-  gulp.watch(src.jsWatch, ['libJs']);
-  gulp.watch(src.jsWatch, ['siteJs']);
-  gulp.watch(src.imageWatch, ['image']);
-  gulp.watch(src.iconfontWath, ['iconfont']);
-  gulp.watch(src.public, ['public']);
-});
-```
+HTMLファイルとSSIは/public/以下に作成します。/public/以下のファイルはすべて/htdocs/以下に複製されます。
 
 /public/index.htmlにテンプレートを用意しています。適宜変更して使用してください。
 

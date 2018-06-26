@@ -109,7 +109,7 @@ gulp.task('html', function() {
 });
 
 /**
- * /public/ 以下のHTMLファイルを監視、更新があれば反映します。
+ * /public/以下のHTMLファイルを監視、更新があれば反映します。
  */
 gulp.task('ssi', function() {
   return gulp.src(src.ssi)
@@ -269,10 +269,7 @@ gulp.task('clean:dest', function (cb) {
 gulp.task('build', function() {
   runSequence(
     ['iconfont'],
-    // PugではなくSSIを使用する場合はコメントアウトを解除します。
-    // ['ssi', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
-    // PugではなくSSIを使用する場合はコメントアウトします。
-    ['html', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
+    ['html', 'ssi', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
   )
 });
 
@@ -282,13 +279,13 @@ gulp.task('build', function() {
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
-      // SSIを利用する場合はmiddlewareのコメントアウトを解除します。
-      // middleware: [
-      //   ssi({
-      //     baseDir: dest.root,
-      //     ext: ".html"
-      //   })
-      // ],
+      // SSIを使用します。
+      middleware: [
+        ssi({
+          baseDir: dest.root,
+          ext: ".html"
+        })
+      ],
       baseDir: dest.root
     },
     // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
@@ -306,17 +303,16 @@ gulp.task('browser-sync', function() {
  * ファイルを監視します。
  */
 gulp.task('watch', ['build'], function() {
-  // PugではなくSSIを使用する場合はコメントアウトします。
+  gulp.watch(src.ssi, ['ssi']);
+  gulp.watch(src.public, ['public']);
   gulp.watch(src.html, ['html']);
-  // PugではなくSSIを使用する場合はコメントアウトを解除します。
-  // gulp.watch(src.ssi, ['ssi']);
   gulp.watch(src.css, ['css']);
   gulp.watch(src.styleguideWatch, ['styleguide']);
   gulp.watch(src.jsWatch, ['libJs']);
   gulp.watch(src.jsWatch, ['siteJs']);
   gulp.watch(src.imageWatch, ['image']);
   gulp.watch(src.iconfontWath, ['iconfont']);
-  gulp.watch(src.public, ['public']);
+
 });
 
 
