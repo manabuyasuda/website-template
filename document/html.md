@@ -308,13 +308,13 @@ gulp.task('watch', ['build'], function() {
     <meta name="twitter:site" content="@SiteAccount">
   </head>
   <body>
-    <!--#include virtual="/ssi/header.html" -->
+    <!--#include virtual="/ssi/ja/header.html" -->
 
     <main>
 
     </main>
 
-    <!--#include virtual="/ssi/footer.html" -->
+    <!--#include virtual="/ssi/ja/footer.html" -->
 
     <!--#include virtual="/ssi/script.html" -->
   </body>
