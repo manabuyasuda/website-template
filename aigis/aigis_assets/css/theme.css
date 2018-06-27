@@ -92,6 +92,14 @@
   font-size: 20px;
 }
 
+.aigis-module__label {
+  margin: 1em 0;
+}
+
+.aigis-module__label *:empty {
+  display: none;
+}
+
 .aigis-moduleList {
   display: block;
   margin-left: -2rem;

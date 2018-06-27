@@ -9,9 +9,8 @@ if components.length
     .aigis-module
       h2.aigis-module__heading(id=component.config.name) #{component.config.name}
       .aigis-module__filepath!= component.sourcePath
-      ul.aigis-tags
-        each tag in component.config.tag
-          li.aigis-tags__item(class="aigis-tags__item--" + tag) #{tag}
+      div.aigis-module__label
+        span.sw-Label #{component.config.id}
       != component.html
 else
   != html
