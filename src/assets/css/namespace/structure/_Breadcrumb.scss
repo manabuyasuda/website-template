@@ -16,7 +16,8 @@ category: Navigation
       a.st-Breadcrumb_Link(href="/") ホーム
     li.st-Breadcrumb_Item
       a.st-Breadcrumb_Link(href="#") カテゴリ名
-    li.st-Breadcrumb_Item(aria-current="page") ページ名
+    li.st-Breadcrumb_Item
+      a.st-Breadcrumb_Link(href="#" aria-current="page") ページ名
 ```
 */
 
@@ -37,4 +38,9 @@ category: Navigation
 .st-Breadcrumb_Link {
   @include sw-Link();
   display: inline-block;
+
+  &[aria-current="page"] {
+    color: $color-text;
+    text-decoration: none;
+  }
 }
