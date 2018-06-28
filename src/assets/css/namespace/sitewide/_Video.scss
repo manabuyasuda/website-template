@@ -9,12 +9,36 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
 
 ```jade
 .l-Wrapper
-  .sw-Video.
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
+  .sw-Video
+    .sw-Video_Video.
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
+    p.sw-Video_Text 動画にキャプション（短い説明文）をつけます。
+```
+
+キャプションを中央揃えにします。
+
+```jade
+.l-Wrapper
+  .sw-Video
+    .sw-Video_Video.
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
+    p.sw-Video_Text.sw-Video_Text-center 動画にキャプション（短い説明文）をつけます。
+```
+
+キャプションを右揃えにします。
+
+```jade
+.l-Wrapper
+  .sw-Video
+    .sw-Video_Video.
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
+    p.sw-Video_Text.sw-Video_Text-right 動画にキャプション（短い説明文）をつけます。
 ```
 */
 .sw-Video {
   @include l-Block();
+}
+.sw-Video_Video {
   display: block;
   overflow: hidden;
   position: relative;
@@ -34,4 +58,19 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
     height: 100%;
     border: 0;
   }
+}
+
+.sw-Video_Text {
+  display: block;
+  margin-top: 0.5em;
+  font-size: $global-font-size-secondary;
+  line-height: 1.4;
+}
+
+.sw-Video_Text-center {
+  text-align: center;
+}
+
+.sw-Video_Text-right {
+  text-align: right;
 }
