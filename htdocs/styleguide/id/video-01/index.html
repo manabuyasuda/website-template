@@ -42,12 +42,49 @@
 <div class="aigis-preview">
 
 <div class="l-Wrapper">
-  <div class="sw-Video"><iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe></div>
+  <div class="sw-Video">
+    <div class="sw-Video_Video"><iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe></div>
+    <p class="sw-Video_Text">動画にキャプション（短い説明文）をつけます。</p>
+  </div>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >.sw-Video</span><span class="token punctuation" >.</span><span class="token multiline-plain-text" >
-    &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4">&lt;/iframe></span>
+  <span class="token tag" >.sw-Video</span>
+    <span class="token tag" >.sw-Video_Video</span><span class="token punctuation" >.</span><span class="token multiline-plain-text" >
+      &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4">&lt;/iframe></span>
+    <span class="token tag" >p.sw-Video_Text</span> <span class="token plain-text" >動画にキャプション（短い説明文）をつけます。</span>
+</code></pre>
+<p>キャプションを中央揃えにします。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="sw-Video">
+    <div class="sw-Video_Video"><iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe></div>
+    <p class="sw-Video_Text sw-Video_Text-center">動画にキャプション（短い説明文）をつけます。</p>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.sw-Video</span>
+    <span class="token tag" >.sw-Video_Video</span><span class="token punctuation" >.</span><span class="token multiline-plain-text" >
+      &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4">&lt;/iframe></span>
+    <span class="token tag" >p.sw-Video_Text.sw-Video_Text-center</span> <span class="token plain-text" >動画にキャプション（短い説明文）をつけます。</span>
+</code></pre>
+<p>キャプションを右揃えにします。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="sw-Video">
+    <div class="sw-Video_Video"><iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe></div>
+    <p class="sw-Video_Text sw-Video_Text-right">動画にキャプション（短い説明文）をつけます。</p>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.sw-Video</span>
+    <span class="token tag" >.sw-Video_Video</span><span class="token punctuation" >.</span><span class="token multiline-plain-text" >
+      &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4">&lt;/iframe></span>
+    <span class="token tag" >p.sw-Video_Text.sw-Video_Text-right</span> <span class="token plain-text" >動画にキャプション（短い説明文）をつけます。</span>
 </code></pre>
 
             </div>
