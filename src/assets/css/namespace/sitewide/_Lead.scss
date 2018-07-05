@@ -19,7 +19,7 @@ category: Text
   $self: &;
   margin: $lead-margin;
   font-weight: 700;
-  font-size: rem(18);
+  font-size: em(18);
 
   &#{$self} + * {
     margin-top: 0;

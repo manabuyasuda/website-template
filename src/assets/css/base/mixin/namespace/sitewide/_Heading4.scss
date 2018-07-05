@@ -1,12 +1,13 @@
 @mixin sw-Heading4() {
-  padding-bottom: 4px;
-  font-size: rem(16);
+  padding-bottom: em(4, 16);
+  font-size: em(16);
   font-weight: bold;
   line-height: 1.4;
-  border-bottom: 1px solid #d2d2d2;
+  border-bottom: em(1, 16) solid #d2d2d2;
 
   @include mq-up(md) {
-    padding-bottom: 5px;
-    font-size: rem(20);
+    padding-bottom: em(5, 20);
+    font-size: em(20);
+    border-bottom-width: em(1, 20);
   }
 }

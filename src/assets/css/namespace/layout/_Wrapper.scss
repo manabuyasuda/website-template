@@ -19,7 +19,7 @@ category: Layout
   max-width: $global-max-width;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 20px;
+  padding: 0 rem(20);
 
   @media print, screen and (min-width: $width) {
     padding: 0;

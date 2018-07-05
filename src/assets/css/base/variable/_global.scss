@@ -24,7 +24,7 @@ $color-background-color: #fff !default;
 // ==========================================================================
 
 // 注釈などに使用するフォントサイズ
-$global-font-size-secondary: 0.85em !default;
+$global-font-size-secondary: em(13) !default;
 
 // ベースになるline-height
 $global-line-height: 1.8 !default;
@@ -70,68 +70,68 @@ $global-breakpoint-up: (
 $global-max-width: 1170px !default;
 
 // グリッドシステムのガター幅
-$grid-column-gap: 15px !default;
-$grid-row-gap: 35px !default;
-$grid-column-gap-md: 30px !default;
-$grid-row-gap-md: 50px !default;
+$grid-column-gap: rem(15) !default;
+$grid-row-gap: rem(35) !default;
+$grid-column-gap-md: rem(30) !default;
+$grid-row-gap-md: rem(50) !default;
 
 // コンテナの余白
-$conitaner-padding: 45px 0 60px !default;
-$conitaner-padding-md: 70px 0 100px !default;
+$conitaner-padding: rem(45) 0 rem(60) !default;
+$conitaner-padding-md: rem(70) 0 rem(100) !default;
 
-$conitaner-bg-padding: 45px 0 50px !default;
-$conitaner-bg-padding-md: 70px 0 80px !default;
+$conitaner-bg-padding: rem(45) 0 rem(50) !default;
+$conitaner-bg-padding-md: rem(70) 0 rem(80) !default;
 
 // セクションの余白
-$section2-margin: 60px 0 0 !default;
-$section2-margin-md: 100px 0 0 !default;
-$section2-divider-margin: 30px 0 0 !default;
-$section2-divider-margin-md: 50px 0 0 !default;
+$section2-margin: rem(60) 0 0 !default;
+$section2-margin-md: rem(100) 0 0 !default;
+$section2-divider-margin: rem(30) 0 0 !default;
+$section2-divider-margin-md: rem(50) 0 0 !default;
 
-$section3-margin: 50px 0 0 !default;
-$section3-margin-md: 80px 0 0 !default;
-$section3-divider-margin: 25px 0 0 !default;
-$section3-divider-margin-md: 50px 0 0 !default;
+$section3-margin: rem(50) 0 0 !default;
+$section3-margin-md: rem(80) 0 0 !default;
+$section3-divider-margin: rem(25) 0 0 !default;
+$section3-divider-margin-md: rem(50) 0 0 !default;
 
-$section4-margin: 35px 0 0 !default;
-$section4-margin-md: 50px 0 0 !default;
+$section4-margin: rem(35) 0 0 !default;
+$section4-margin-md: rem(50) 0 0 !default;
 
-$section5-margin: 30px 0 0 !default;
-$section5-margin-md: 30px 0 0 !default;
+$section5-margin: rem(30) 0 0 !default;
+$section5-margin-md: rem(30) 0 0 !default;
 
 // 見出しの余白
-$title-margin: 0 0 25px !default;
-$title-margin-md: 0 0 40px !default;
+$title-margin: 0 0 rem(25) !default;
+$title-margin-md: 0 0 rem(40) !default;
 
-$heading2-margin: 0 0 25px !default;
-$heading2-margin-md: 0 0 40px !default;
+$heading2-margin: 0 0 rem(25) !default;
+$heading2-margin-md: 0 0 rem(40) !default;
 
-$heading3-margin: 0 0 25px !default;
-$heading3-margin-md: 0 0 40px !default;
+$heading3-margin: 0 0 rem(25) !default;
+$heading3-margin-md: 0 0 rem(40) !default;
 
-$heading4-margin: 0 0 15px !default;
-$heading4-margin-md: 0 0 25px !default;
+$heading4-margin: 0 0 rem(15) !default;
+$heading4-margin-md: 0 0 rem(25) !default;
 
-$heading5-margin: 0 0 15px !default;
-$heading5-margin-md: 0 0 25px !default;
+$heading5-margin: 0 0 rem(15) !default;
+$heading5-margin-md: 0 0 rem(25) !default;
 
 // ブロックとテキストの余白
-$block-margin: 40px 0 0 !default;
-$block-margin-md: 50px 0 0 !default;
-$block-divider-margin: 20px 0 0 !default;
-$block-divider-margin-md: 50px 0 0 !default;
+$block-margin: rem(40) 0 0 !default;
+$block-margin-md: rem(50) 0 0 !default;
+$block-divider-margin: rem(20) 0 0 !default;
+$block-divider-margin-md: rem(50) 0 0 !default;
 
-$lead-margin: 0 0 35px !default;
-$lead-margin-md: 0 0 50px !default;
+$lead-margin: 0 0 rem(35) !default;
+$lead-margin-md: 0 0 rem(50) !default;
 
-$text-margin: 35px 0 0 !default;
-$text-margin-md: 50px 0 0 !default;
+$text-margin: rem(35) 0 0 !default;
+$text-margin-md: rem(50) 0 0 !default;
 
-$small-text-margin: 15px 0 0 !default;
-$small-text-margin-md: 20px 0 0 !default;
+$small-text-margin: rem(15) 0 0 !default;
+$small-text-margin-md: rem(20) 0 0 !default;
 
-$image-margin: 25px 0 0 !default;
-$image-margin-md: 40px 0 0 !default;
+$image-margin: rem(25) 0 0 !default;
+$image-margin-md: rem(40) 0 0 !default;
 
 
 // ==========================================================================
@@ -146,13 +146,13 @@ $global-transition-timing-function: ease !default;
 // Form
 // ==========================================================================
 
-$form-border: 1px solid #767676 !default;
+$form-border: em(1) solid #767676 !default;
 $form-boder-color: #767676 !default;
-$form-border-radius: 3px !default;
+$form-border-radius: em(3) !default;
 $form-transition-duration: 0.3s !default;
 $form-transition-property: border-color, box-shadow, background-color !default;
 $form-border-color-focus: #1589ee !default;
-$form-box-shadow-focus: 0 0 5px #1589ee !default;
+$form-box-shadow-focus: 0 0 em(5) #1589ee !default;
 $form-placeholder-color: #767676 !default;
 $form-cursor-disabled: not-allowed !default;
 $form-opacity-disabled: 0.5 !default;

@@ -29,12 +29,12 @@ category: [Link, Icon]
 
 .sw-LinkPdf_Icon:after {
   @include Icon(linkPdf);
-  font-size: 1.25em;
+  font-size: em(20);
 
   [lang="ja"] &,
   [lang^="zh"] & {
     position: relative;
-    top: -0.2em;
-    left: 0.25em;
+    top: em(-4, 20);
+    left: em(5, 20);
   }
 }

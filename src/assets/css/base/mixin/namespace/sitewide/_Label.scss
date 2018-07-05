@@ -1,9 +1,9 @@
 @mixin sw-Label() {
   display: inline-block;
-  padding: 0.5em 1em;
-  border: 1px solid currentColor;
+  padding: em(6, 12) em(12, 12);
+  border: em(1, 12) solid currentColor;
   color: $color-text;
-  font-size: rem(12);
+  font-size: em(12);
   line-height: 1;
   text-align: center;
   white-space: nowrap;

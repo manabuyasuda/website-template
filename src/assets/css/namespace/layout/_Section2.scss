@@ -95,9 +95,9 @@ category: Layout
     content: "";
     display: block;
     width: 100%;
-    height: 1px;
+    height: em(1);
     padding: $section2-divider-margin;
-    border-top: 1px solid #e3e3e3;
+    border-top: em(1) solid #e3e3e3;
   }
 
   @include mq-up(md) {
@@ -152,10 +152,10 @@ category: Layout
   & + &:before {
     content: "";
     display: block;
-    height: 1px;
+    height: rem(1);
     @include full-width();
     padding: $section2-divider-margin;
-    border-top: 1px solid #e3e3e3;
+    border-top: rem(1) solid #e3e3e3;
   }
 
   @include mq-up(md) {

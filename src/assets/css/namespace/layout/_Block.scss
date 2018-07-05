@@ -67,9 +67,9 @@ category: Layout
     content: "";
     display: block;
     width: 100%;
-    height: 1px;
+    height: rem(1);
     padding: $block-divider-margin;
-    border-top: 1px solid #e3e3e3;
+    border-top: rem(1) solid #e3e3e3;
 
     @include mq-up(md) {
       padding: $block-divider-margin-md;

@@ -10,12 +10,12 @@ category: Link
 ```jade
 .l-Wrapper
   p.sw-Text ○○
-    sup
+    sup.sw-Sup
       a.sw-LinkNote(href="#") 1
     | を使っています。
 
   p.sw-Text(lang="en") ○○
-    sup
+    sup.sw-Sup
       a.sw-LinkNote(href="#") 1
     | を使っています。
 ```
@@ -31,7 +31,7 @@ category: Link
 
   &:before {
     content: "※";
-    margin-left: 0.25em;
+    margin-left: em(3);
   }
 
   [lang^="en"] &:before,

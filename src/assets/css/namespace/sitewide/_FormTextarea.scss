@@ -27,15 +27,15 @@ category: Form
 }
 
 .sw-FormTextarea-large {
-  height: 14em;
+  height: em(224);
 }
 
 .sw-FormTextarea_TextTop {
   display: inline-block;
-  margin-bottom: 0.25rem;
+  margin-bottom: em(4);
 }
 
 .sw-FormTextarea_TextBottom {
   display: inline-block;
-  margin-top: 0.25rem;
+  margin-top: em(4);
 }

@@ -25,13 +25,13 @@ category: List
 */
 .sw-ListBracketOrder {
   @include l-Text();
-  margin-left: 2em;
+  margin-left: em(32);
   padding-left: 0;
   list-style-type: none;
   counter-reset: bracketOrder 0;
 
   @include mq-up(lg) {
-    margin-left: 2em;
+    margin-left: em(32);
   }
 
   & > li {
@@ -43,7 +43,7 @@ category: List
     content: "(" counter(bracketOrder) ")";
     position: absolute;
     top: 0;
-    left: -2em;
+    left: em(-32);
   }
 }
 

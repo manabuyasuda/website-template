@@ -21,18 +21,23 @@ category: List
 */
 .sw-ListNote {
   @include l-Text();
-  margin-left: 1.5em;
+  margin-left: em(20, px($global-font-size-secondary));
   padding-left: 0;
   font-size: $global-font-size-secondary;
   list-style-type: none;
 
-  @include mq-up(lg) {
-    margin-left: 1.5em;
-  }
-
   [lang="en"] &,
   [lang="zh-cn"] {
-    margin-left: 1em;
+    margin-left: em(13, px($global-font-size-secondary));
+  }
+
+  @include mq-up(lg) {
+    margin-left: em(20, px($global-font-size-secondary));
+
+    [lang="en"] &,
+    [lang="zh-cn"] {
+      margin-left: em(13, px($global-font-size-secondary));
+    }
   }
 
   & > li {
@@ -43,12 +48,12 @@ category: List
     content: "※";
     position: absolute;
     top: 0;
-    left: -1.5em;
+    left: em(-20, px($global-font-size-secondary));
   }
 
   [lang="en"] & > li:before,
   [lang="zh-cn"] & > li:before {
     content: "*";
-    left: -1em;
+    left: em(-13, px($global-font-size-secondary));
   }
 }

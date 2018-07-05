@@ -5,12 +5,12 @@
   & + label {
     display: inline-block;
     position: relative;
-    padding-left: 1.25em;
+    padding-left: em(20);
     cursor: pointer;
   }
 
   & + label:before {
-  $size: 1em;;
+  $size: em(16);
   content: "";
   display: inline-block;
   position: absolute;

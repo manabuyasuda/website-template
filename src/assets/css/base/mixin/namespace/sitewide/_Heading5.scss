@@ -1,9 +1,9 @@
 @mixin sw-Heading5() {
-  font-size: rem(16);
+  font-size: em(16);
   font-weight: bold;
   line-height: 1.4;
 
   @include mq-up(md) {
-    font-size: rem(20);
+    font-size: em(20);
   }
 }
