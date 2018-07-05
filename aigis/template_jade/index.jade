@@ -1,5 +1,5 @@
 doctype html
-html(lang="ja")
+html.no-js(lang="ja")
   head
     title #{config.name}
     meta(charset="UTF-8")
@@ -10,6 +10,8 @@ html(lang="ja")
     link(href=root + "aigis_assets/css/highlight/prism.css", rel="stylesheet")
     link(href=root + "aigis_assets/css/theme.css", rel="stylesheet")
     link(href="/assets/css/site.css", rel="stylesheet")
+    script.
+      document.documentElement.classList.remove('no-js')
   body
     main
       .aigis-container
