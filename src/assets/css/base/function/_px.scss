@@ -1,0 +1,8 @@
+// @desc - emをpxに変換します。
+// @param {Number} $em - 指定するem値。
+// @param {Number} $parent [16] - 親要素のピクセル値。
+// @example - px(0.8) => 12.8px
+// @example - px(0.8, 15) => 12px
+@function px($em, $parent: 16) {
+  @return (strip-unit($em) * strip-unit($parent)) * 1px;
+}
