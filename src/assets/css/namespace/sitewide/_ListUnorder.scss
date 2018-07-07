@@ -19,12 +19,12 @@ category: List
 */
 .sw-ListUnorder {
   @include l-Text();
-  margin-left: em(24);
+  margin-left: rem(24);
   padding-left: 0;
   list-style-type: none;
 
   @include mq-up(lg) {
-    margin-left: em(24);
+    margin-left: rem(24);
   }
 
   & > li {
@@ -35,11 +35,11 @@ category: List
     content: "";
     display: block;
     position: absolute;
-    top: em(8);
-    left: em(-16);
-    width: em(6);
-    height: em(6);
-    border: em(3) solid #000;
+    top: rem(8);
+    left: rem(-16);
+    width: rem(6);
+    height: rem(6);
+    border: 3px solid #000;
     border-radius: 50%;
   }
 }
@@ -50,18 +50,18 @@ category: List
 
   & > li {
     position: relative;
-    margin-left: em(24);
+    margin-left: rem(24);
   }
 
   & > li:before {
     content: "";
     display: block;
     position: absolute;
-    top: em(8);
-    left: em(-16);
-    width: em(6);
-    height: em(6);
-    border: em(1) solid #000;
+    top: rem(8);
+    left: rem(-16);
+    width: rem(6);
+    height: rem(6);
+    border: 1px solid #000;
     border-radius: 50%;
     background-color: #fff;
   }

@@ -29,12 +29,12 @@ category: [Link, Icon]
 
 .sw-LinkMore_Icon:after {
   @include Icon(linkMore);
-  font-size: em(13);
+  font-size: rem(13);
 
   [lang="ja"] &,
   [lang^="zh"] & {
     position: relative;
-    top: em(-2, 13);
-    left: em(3, 13);
+    top: rem(-2);
+    left: rem(3);
   }
 }

@@ -1,5 +1,5 @@
 @mixin sw-Heading2() {
-  font-size: em(19);
+  font-size: rem(19);
   font-weight: bold;
   line-height: 1.4;
   color: $color-brand;
@@ -7,21 +7,21 @@
   &:after {
     content: "";
     display: block;
-    margin-top: em(8, 19);
-    border-top: em(2, 19) solid $color-brand;
+    margin-top: rem(8);
+    border-top: 2px solid $color-brand;
   }
 
   @include mq-up(md) {
     margin-right: 0;
     margin-left: 0;
-    font-size: em(26);
+    font-size: rem(26);
     text-align: center;
 
     &:after {
-      margin-top: em(12, 26);
+      margin-top: rem(12);
       margin-right: 0;
       margin-left: 0;
-      border-top: em(3, 26) solid $color-brand;
+      border-top: 3px solid $color-brand;
     }
   }
 }

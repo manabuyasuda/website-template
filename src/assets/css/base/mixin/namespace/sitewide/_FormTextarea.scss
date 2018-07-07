@@ -2,19 +2,19 @@
   display: block;
   width: 100%;
   max-width: 100%;
-  height: em(112);
+  height: rem(112);
   margin: 0;
-  padding: em(8) em(16);
-  border: em(1) solid #d0d0d0;
+  padding: rem(8) rem(16);
+  border: 1px solid #d0d0d0;
   border-radius: $form-border-radius;
   font-size: 1em;
   background-color: #fff;
   appearance: none;
-  box-shadow: em(1) em(1) em(6) em(-3) #9e9e9e inset;
+  box-shadow: 1px 1px 6px -3px #9e9e9e inset;
 
   &::placeholder {
     color: $form-placeholder-color;
-    font-size: $global-font-size-secondary;
+    font-size: rem(13);
   }
 
   &:focus {

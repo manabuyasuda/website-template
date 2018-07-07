@@ -19,11 +19,11 @@ category: Text
   display: block;
   width: 100%;
   height: auto;
-  margin: em(35) 0;
+  margin: rem(35) 0;
   margin-right: auto;
   margin-left: auto;
   border: 0;
-  border-top: em(1) solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
 
   & + .sw-Text {
     margin-top: 0;

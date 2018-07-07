@@ -19,7 +19,7 @@ category: Text
 ```
 */
 .sw-Sup {
-  font-size: $global-font-size-secondary;
+  font-size: rem(13);
   position: static;
   vertical-align: super;
 }

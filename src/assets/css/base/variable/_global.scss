@@ -23,9 +23,6 @@ $color-background-color: #fff !default;
 // Typography
 // ==========================================================================
 
-// 注釈などに使用するフォントサイズ
-$global-font-size-secondary: em(13) !default;
-
 // ベースになるline-height
 $global-line-height: 1.8 !default;
 
@@ -146,13 +143,13 @@ $global-transition-timing-function: ease !default;
 // Form
 // ==========================================================================
 
-$form-border: em(1) solid #767676 !default;
+$form-border: 1px solid #767676 !default;
 $form-boder-color: #767676 !default;
-$form-border-radius: em(3) !default;
+$form-border-radius: rem(3) !default;
 $form-transition-duration: 0.3s !default;
 $form-transition-property: border-color, box-shadow, background-color !default;
 $form-border-color-focus: #1589ee !default;
-$form-box-shadow-focus: 0 0 em(5) #1589ee !default;
+$form-box-shadow-focus: 0 0 5px #1589ee !default;
 $form-placeholder-color: #767676 !default;
 $form-cursor-disabled: not-allowed !default;
 $form-opacity-disabled: 0.5 !default;

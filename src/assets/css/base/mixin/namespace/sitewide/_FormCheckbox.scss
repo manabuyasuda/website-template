@@ -5,12 +5,12 @@
   & + label {
     position: relative;
     display: inline-block;
-    padding-left: em(20);
+    padding-left: rem(20);
     cursor: pointer;
   }
 
   & + label:before {
-  $size: em(16);
+  $size: rem(16);
   content: "";
   display: inline-block;
   position: absolute;
@@ -21,7 +21,7 @@
   height: $size;
   margin: auto;
   border: $form-border;
-  border-radius: em(3);
+  border-radius: rem(3);
   vertical-align: text-bottom;
   background-repeat: no-repeat;
   background-size: contain;

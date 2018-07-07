@@ -16,12 +16,11 @@ category: Text
 ```
 */
 .sw-Lead {
-  $self: &;
   margin: $lead-margin;
   font-weight: 700;
-  font-size: em(18);
+  font-size: rem(18);
 
-  &#{$self} + * {
+  & + * {
     margin-top: 0;
   }
 

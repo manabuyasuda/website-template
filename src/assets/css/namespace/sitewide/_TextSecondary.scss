@@ -15,7 +15,7 @@ category: Text
 */
 .sw-TextSecondary {
   margin: $small-text-margin;
-  font-size: $global-font-size-secondary;
+  font-size: rem(13);
 
   @include mq-up(md) {
     margin: $small-text-margin-md;

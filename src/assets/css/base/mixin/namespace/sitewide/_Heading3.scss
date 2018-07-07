@@ -1,17 +1,17 @@
 @mixin sw-Heading3() {
-  padding-top: em(2, 16);
-  padding-bottom: em(2, 16);
-  padding-left: em(10, 16);
-  font-size: em(16);
+  padding-top: rem(2);
+  padding-bottom: rem(2);
+  padding-left: rem(10);
+  font-size: rem(16);
   font-weight: bold;
   line-height: 1.4;
-  border-left: em(5, 16) solid $color-brand;
+  border-left: 5px solid $color-brand;
 
   @include mq-up(md) {
-    padding-top: em(2, 20);
-    padding-bottom: em(2, 20);
-    padding-left: em(13, 20);
-    font-size: em(20);
-    border-left-width: em(6, 20);
+    padding-top: rem(2);
+    padding-bottom: rem(2);
+    padding-left: rem(13);
+    font-size: rem(20);
+    border-left-width: 6px;
   }
 }

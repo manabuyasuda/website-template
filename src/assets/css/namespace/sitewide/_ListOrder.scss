@@ -44,7 +44,7 @@ category: List
   & > li:before {
     content: counters(order, "-") ".";
     display: table-cell;
-    padding-right: em(8);
+    padding-right: rem(8);
     text-align: right;
     white-space: nowrap;
   }
@@ -63,7 +63,7 @@ category: List
   & > li:before {
     content: counters(order, "-") ".";
     display: table-cell;
-    padding-right: em(8);
+    padding-right: rem(8);
     text-align: right;
     white-space: nowrap;
   }

@@ -34,8 +34,8 @@ category: Image
  */
 .sw-Caption_Text {
   display: table-caption;
-  margin-top: em(6, px($global-font-size-secondary));
-  font-size: $global-font-size-secondary;
+  margin-top: rem(6);
+  font-size: rem(13);
   line-height: 1.4;
   caption-side: bottom; /* 1 */
 }

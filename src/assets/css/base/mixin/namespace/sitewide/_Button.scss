@@ -1,13 +1,13 @@
 @mixin sw-Button() {
   display: inline-block;
   margin: 0;
-  padding: em(12) em(32);
+  padding: rem(12) rem(32);
   border: none;
-  border: em(1) solid #d0d0d0;
+  border: 1px solid #d0d0d0;
   border-radius: $form-border-radius;
   color: inherit;
   font-family: inherit;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1;
   text-align: center;
   text-decoration: none;

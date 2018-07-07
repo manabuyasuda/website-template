@@ -1,15 +1,15 @@
 @mixin sw-FormInput() {
   box-sizing: border-box;
   width: 100%;
-  height: em(42);
-  padding: 0 em(16);
-  border: em(1) solid #d0d0d0;
+  height: rem(42);
+  padding: 0 rem(16);
+  border: 1px solid #d0d0d0;
   border-radius: $form-border-radius;
   font-size: 1em;
   vertical-align: middle;
   background-color: #fff;
   appearance: none;
-  box-shadow: em(1) em(1) em(6) em(-3) #9e9e9e inset;
+  box-shadow: 1px 1px 6px -3px #9e9e9e inset;
 
   /**
    * Normalize.cssのリセットをします。
@@ -21,7 +21,7 @@
 
   &::placeholder {
     color: $form-placeholder-color;
-    font-size: $global-font-size-secondary;
+    font-size: rem(13);
   }
 
   &:focus {

@@ -31,7 +31,7 @@ category: Link
 
   &:before {
     content: "※";
-    margin-left: em(3);
+    margin-left: rem(3);
   }
 
   [lang^="en"] &:before,

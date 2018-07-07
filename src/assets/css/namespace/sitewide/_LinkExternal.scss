@@ -29,12 +29,12 @@ category: [Link, Icon]
 
 .sw-LinkExternal_Icon:after {
   @include Icon(linkExternal);
-  font-size: em(20);
+  font-size: rem(20);
 
   [lang="ja"] &,
   [lang^="zh"] & {
     position: relative;
-    top: em(-3, 20);
-    left: em(5, 20);
+    top: rem(-3);
+    left: rem(5);
   }
 }

@@ -11,15 +11,15 @@
     width: 99%;
     width: calc(100% - 6px);
     margin: auto;
-    box-shadow: 0 0 em(1) em(2) rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05);
   }
 
   &:after {
-    $size: em(16);
+    $size: rem(16);
     content: "";
     position: absolute;
     top: 0;
-    right: em(16);
+    right: rem(16);
     bottom: 0;
     width: $size;
     height: $size;
@@ -37,16 +37,16 @@
 
   & > select {
     width: 100%;
-    height: em(40);
-    padding: 0 em(48) 0 em(16);
-    border: em(1) solid #d0d0d0;
+    height: rem(40);
+    padding: 0 rem(48) 0 rem(16);
+    border: 1px solid #d0d0d0;
     border-radius: $form-border-radius;
-    font-size: em(16);
+    font-size: rem(16);
     line-height: 1;
     vertical-align: middle;
     background-color: #fff;
     appearance: none;
-    box-shadow: em(1) em(1) em(6) em(-3) #9e9e9e inset;
+    box-shadow: 1px 1px 6px -3px #9e9e9e inset;
   }
 
   & > select:focus {

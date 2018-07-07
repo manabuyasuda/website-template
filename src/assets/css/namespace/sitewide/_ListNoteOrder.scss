@@ -35,23 +35,23 @@ category: List
 */
 .sw-ListNoteOrder {
   @include l-Text();
-  margin-left: em(26, px($global-font-size-secondary));
+  margin-left: rem(26);
   padding-left: 0;
-  font-size: $global-font-size-secondary;
+  font-size: rem(13);
   list-style-type: none;
   counter-reset: noteOrder 0;
 
   [lang="en"] &,
   [lang="zh-cn"] {
-    margin-left: em(20, px($global-font-size-secondary));
+    margin-left: rem(20);
   }
 
   @include mq-up(lg) {
-    margin-left: em(26, px($global-font-size-secondary));
+    margin-left: rem(26);
 
     [lang="en"] &,
     [lang="zh-cn"] {
-      margin-left: em(20, px($global-font-size-secondary));
+      margin-left: rem(20);
     }
   }
 
@@ -68,13 +68,13 @@ category: List
     content: "※" counter(noteOrder);
     position: absolute;
     top: 0;
-    left: em(-26, px($global-font-size-secondary));
+    left: rem(-26);
   }
 
   [lang="en"] & > li:before,
   [lang="zh-cn"] & > li:before {
     content: "*" counter(noteOrder);
-    left: em(-20, px($global-font-size-secondary));
+    left: rem(-20);
   }
 }
 
