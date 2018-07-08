@@ -5,18 +5,92 @@ namespace: sw-
 category: [Button, Link, Form]
 ---
 
-ボタンのデフォルトスタイルです。
+ボタンのデフォルトスタイルです。横幅は280pxまでに制限されます。
 
 ```jade
 .l-Wrapper
   a.sw-Button(href="#") aタグボタン
   a.sw-Button.sw-Button-disabled(href="#") aタグボタン
-  button.sw-Button(type="button") butotnタグボタン
-  button.sw-Button(disabled type="button") butotnタグボタン
+  button.sw-Button(type="button") buttonタグボタン
+  button.sw-Button(disabled type="button") buttonタグボタン
   input.sw-Button(type="button" value="inputボタン")
   input.sw-Button(type="button" value="inputボタン" disabled)
+```
+
+`.sw-Button-full`を追加すると横幅100%になります。
+
+```jade
+.l-Wrapper
+  a.sw-Button(href="#") デフォルト
+  a.sw-Button.sw-Button-full(href="#") 横幅100%
+```
+
+`.sw-Button-auto`を追加すると横幅はなりゆきになります。
+
+```jade
+.l-Wrapper
+  a.sw-Button(href="#") デフォルト
+  a.sw-Button.sw-Button-auto(href="#") 横幅なりゆき
+```
+
+`.sw-Button_More`を追加すると矢印が付きます。
+
+```jade
+.l-Wrapper
+  a.sw-Button(href="#") デフォルト
+  a.sw-Button(href="#")
+    span.sw-Button_More(aria-hidden="true")
+    | 矢印付きボタン
 ```
 */
 .sw-Button {
   @include sw-Button;
+  border-color: $color-brand;
+  color: #fff;
+  background-color: $color-brand;
+
+  &:hover {
+    color: $color-brand;
+    background-color: #fff;
+  }
+
+  &:disabled:hover,
+  &-disabled:hover {
+    border-color: $form-background-color-disabled;
+    color: #fff;
+    background-color: $form-background-color-disabled;
+  }
+}
+
+.sw-Button-full {
+  width: 100%;
+  max-width: none;
+}
+
+.sw-Button-auto {
+  width: auto;
+}
+
+.sw-Button_More {
+  position: absolute;
+  top: 0;
+  right: rem(16);
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  margin: auto;
+
+  @include mq-up(lg) {
+    right: rem(12);
+  }
+
+  &:before {
+    @include Icon("linkMore");
+    font-size: rem(14);
+
+    [lang="ja"] & {
+      position: relative;
+      top: -0.1em;
+    }
+  }
 }

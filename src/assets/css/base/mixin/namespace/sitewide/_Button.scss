@@ -1,5 +1,8 @@
 @mixin sw-Button() {
+  position: relative;
   display: inline-block;
+  width: 280px;
+  max-width: 100%;
   margin: 0;
   padding: rem(12) rem(32);
   border: none;
@@ -15,6 +18,8 @@
   background-color: #fff;
   appearance: none;
   cursor: pointer;
+  transition-duration: $global-transition-duration;
+  transition-timing-function: $global-transition-timing-function;
 
   &[type=button],
   &[type=reset],
