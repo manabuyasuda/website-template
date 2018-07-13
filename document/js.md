@@ -33,3 +33,24 @@ js/
 ```
 
 ファイルはすべて結合されて`htdocs/assets/js/site.js`に出力されます。
+
+## exportとimport
+処理ごとにモジュール化をして、site.jsでimportするようにしてください。  
+以下は簡単な関数処理をexportする例です。
+
+```js
+// util.js
+export const hello = (name) => {
+  return `Hello ${name}`;
+};
+
+// site.js
+import {hello} from './util';
+console.log(hello('world!!'));
+```
+
+JSファイルの先頭で以下のように指定するとJQueryも使用することができます。
+
+```js
+import $ from 'jquery';
+```

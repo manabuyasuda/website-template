@@ -8,12 +8,8 @@ import 'smooth-scroll';
 
 import './namespace/js/alignHeight';
 import './namespace/js/smoothScroll';
-import jsChangeTelLink from './namespace/js/changeTelLink';
+import {hello} from './util';
 
-jsChangeTelLink();
-
-const hello = (name) => {
-  return `Hello ${name}`;
-};
-
-console.log(hello('world!!'));
+(() => {
+  console.log(hello('world!!'));
+})();
