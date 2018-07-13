@@ -6,9 +6,9 @@ import focusVisible from 'focus-visible';
 import jqueryMatchHeight from 'jquery-match-height';
 import smoothScroll from 'smooth-scroll';
 
-import jsAlignHeight from './namespace/js/alignHeight.js';
-import jsChangeTelLink from './namespace/js/changeTelLink.js';
-import jsSmoothScroll from './namespace/js/smoothScroll.js';
+import jsAlignHeight from './namespace/js/alignHeight';
+import jsChangeTelLink from './namespace/js/changeTelLink';
+import jsSmoothScroll from './namespace/js/smoothScroll';
 
 const hello = (name) => {
   return `Hello ${name}`;
