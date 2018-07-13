@@ -1,14 +1,16 @@
 'use strict';
 
 import $ from 'jquery';
-import picturefill from 'picturefill';
-import focusVisible from 'focus-visible';
-import jqueryMatchHeight from 'jquery-match-height';
-import smoothScroll from 'smooth-scroll';
+import 'picturefill';
+import 'focus-visible';
+import 'jquery-match-height';
+import 'smooth-scroll';
 
-import jsAlignHeight from './namespace/js/alignHeight';
+import './namespace/js/alignHeight';
+import './namespace/js/smoothScroll';
 import jsChangeTelLink from './namespace/js/changeTelLink';
-import jsSmoothScroll from './namespace/js/smoothScroll';
+
+jsChangeTelLink();
 
 const hello = (name) => {
   return `Hello ${name}`;

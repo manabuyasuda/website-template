@@ -11,6 +11,8 @@
  *   <span class="js-changeTelLink"><a href="tel:+0120123456"> +0120-123-456</a></span>
  * </p>
  */
+import $ from 'jquery';
+
 export default function jsChangeTelLink () {
   var ua = navigator.userAgent.toLowerCase();
   var isiPhone = (ua.indexOf('iphone') > -1) && (ua.indexOf('ipad') == -1);
