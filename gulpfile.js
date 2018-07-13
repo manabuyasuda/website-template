@@ -17,6 +17,11 @@ var cleanCSS = require('gulp-clean-css');
 // JS
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var watchify = require('watchify');
 
 // Image
 var imagemin = require('gulp-imagemin');
@@ -27,7 +32,6 @@ var consolidate = require('gulp-consolidate');
 
 // Styleguide
 var aigis = require('gulp-aigis');
-
 
 // Utility
 var cache = require('gulp-cached');
@@ -50,9 +54,7 @@ var src = {
   'data': 'src/_data/',
   'css': 'src/**/*.scss',
   'styleguideWatch': ['src/**/*.scss', 'src/**/*.md'],
-  'libJs': 'src/assets/js/lib/**/*.js',
-  'siteJs': 'src/assets/js/namespace/**/*.js',
-  'jsWatch': 'src/**/*.js',
+  'js': 'src/assets/js/site.js',
   'image': 'src/assets/img/**/*.{png,jpg,gif,svg}',
   'imageWatch': 'src/assets/img/**/*',
   'iconfont': 'src/assets/icon/**/*.svg',
@@ -157,31 +159,38 @@ gulp.task('css', function(){
 });
 
 /**
- * サイト共通のJSファイルを連結・圧縮します。
+ * ES2015以降のコードをES5に変換（トランスコンパイル）します。
  */
-gulp.task('libJs', function() {
-  return gulp.src(src.libJs)
-  .pipe(sourcemaps.init())
-  // ファイルを連結します。
-  .pipe(concat('lib.js'))
-  // ファイルを圧縮します。
-  .pipe(uglify({output: {comments: /^!/}}))
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(dest.js))
-  .pipe(browserSync.reload({stream: true}));
-});
+function bundle(watching = false) {
+  const b = browserify({
+    entries: src.js,
+    transform: ['babelify'],
+    debug: true,
+    plugin: (watching) ? [watchify] : null
+  })
+  .on('update', function() {
+    bundler();
+    console.log('scripts rebuild');
+  });
 
-/**
- * ModuleごとのJSファイルを連結・圧縮します。
- */
-gulp.task('siteJs', function() {
-  return gulp.src(src.siteJs)
-  .pipe(sourcemaps.init())
-  .pipe(concat('site.js'))
-  .pipe(uglify({output: {comments: /^!/}}))
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(dest.js))
-  .pipe(browserSync.reload({stream: true}));
+  function bundler() {
+    return b.bundle()
+      .on('error', function(err) {
+        console.log(err.message);
+      })
+      .pipe(source('site.js'))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({loadMaps: true}))
+      .pipe(uglify({output: {comments: /^!/}}))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(dest.js))
+      .pipe(browserSync.reload({stream: true}))
+  }
+  return bundler();
+}
+
+gulp.task('js', function() {
+  bundle();
 });
 
 /**
@@ -269,7 +278,7 @@ gulp.task('clean:dest', function (cb) {
 gulp.task('build', function() {
   runSequence(
     ['iconfont'],
-    ['html', 'ssi', 'css', 'styleguide', 'libJs', 'siteJs', 'image', 'public']
+    ['html', 'ssi', 'css', 'styleguide', 'js', 'image', 'public']
   )
 });
 
@@ -308,11 +317,9 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(src.html, ['html']);
   gulp.watch(src.css, ['css']);
   gulp.watch(src.styleguideWatch, ['styleguide']);
-  gulp.watch(src.jsWatch, ['libJs']);
-  gulp.watch(src.jsWatch, ['siteJs']);
+  bundle(true);
   gulp.watch(src.imageWatch, ['image']);
   gulp.watch(src.iconfontWath, ['iconfont']);
-
 });
 
 
