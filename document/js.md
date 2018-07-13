@@ -1,30 +1,35 @@
 # JavaScript
-JavaScriptはGulpで連結と圧縮の処理だけをしています。
+babelとbrowserifyでES2015以降の書き方をES5にトランスコンパイルしています。  
+jQueryとそのプラグインなどもエンドポイントとなるsite.jsでインポートしています。
 
 ## ディレクトリ構成
-JavaScriptは3つ大きくわけられます。
+JavaScriptは2つ大きくわけられます。
 
-1. jquery
-2. lib
-3. namespace
+1. site.js
+2. namespace
 
-JQueryは`htdocs/assets/js/`にそのまま出力されます。  
-linはサイト全体で使われるライブラリやプラグインを保存します。  
+site.jsは他のJSファイルをインポートするファイルです。`import`を使用して、各ファイルをインポートしてください。
+
+```js
+import $ from 'jquery';
+import picturefill from 'picturefill';
+import focusVisible from 'focus-visible';
+import jqueryMatchHeight from 'jquery-match-height';
+import smoothScroll from 'smooth-scroll';
+
+import jsAlignHeight from './namespace/js/alignHeight.js';
+import jsChangeTelLink from './namespace/js/changeTelLink.js';
+import jsSmoothScroll from './namespace/js/smoothScroll.js';
+```
+
 namespaceはECSSの考えをベースに使われる場所や状況ごとにディレクトリをわけて、さらにModuleごとにファイルをわけます。
 
 ```
 js/
-├── lib/
-│   ├── lodash.custom.min.js
-│   ├── picturefill.min.js
-│   ├── jquery.matchHeight-min.js
-│   ├── focus-visible.js
-│   └── smooth-scroll.min.js
 ├── namespace/
 │   ├── js/
 │   └── data/
-├── jquery.min.js
-└── namespace/
+└── site.js
 ```
 
-ファイルはすべて、`htdocs/assets/js/`に出力されます。
+ファイルはすべて結合されて`htdocs/assets/js/site.js`に出力されます。

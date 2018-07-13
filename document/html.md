@@ -240,7 +240,7 @@ Pugを使用しない場合は、以下のディレクトリとファイルを�
 
 HTMLファイルとSSIは/public/以下に作成します。/public/以下のファイルはすべて/htdocs/以下に複製されます。
 
-/public/index.htmlにテンプレートを用意しています。適宜変更して使用してください。
+/template/index.htmlと/template/ssi/にテンプレートを用意しています。適宜変更して使用してください。
 
 ```html
 <!DOCTYPE html>

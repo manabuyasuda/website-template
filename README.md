@@ -15,7 +15,7 @@
 ## 確認環境
 以下の環境で動作の確認をしています。
 
-- OS X 10.11.6(El Capitan)
+- macOS High Sierra 10.13.5
 - Node.js 9.4.0
 
 Node.jsのバージョンはnodenvで固定しています。
@@ -79,19 +79,17 @@ root/
 │   │   │   ├── structure/
 │   │   │   └── namespace/
 │   │   └── js/
-│   │       ├── jquery.min.js
-│   │       ├── lib/
-│   │       │   ├── jquery.matchHeight-min.js
-│   │       │   ├── lodash.custom.min.js
-│   │       │   └── picturefill.min.js
+│   │       ├── site.js
 │   │       └── namespace/
 │   │           ├── data/
 │   │           └── js/
 │   └── index.pug
 ├── public/
 ├── template/
+│   ├── index.html
+│   ├── ssi/
 │   ├── ja/
-│   ├── en/
+│   └── en/
 ├── htdocs/
 ├── document/
 │   ├── css.md
@@ -115,9 +113,9 @@ npm start
 
 - PugをHTMLにコンパイル
 - SassをCSSにコンパイル
-- JSを連結・圧縮
+- JSをES5にトランスコンパイル（jQueryとプラグインなどもsite.jsでインポート）
 - アイコンフォントの生成
-- ローカルサーバーを立ち上げて動作の確認（オプションとしてSSIにも対応）
+- ローカルサーバーを立ち上げて動作の確認（public以下のHTMLファイルはSSIにも対応）
 - スタイルガイドの生成
 
 ## 対象ブラウザ
