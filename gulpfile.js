@@ -289,7 +289,7 @@ gulp.task('browser-sync', function() {
       baseDir: dest.root
     },
     // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
-    ghostMode: true,
+    ghostMode: false,
     // ローカルIPアドレスでサーバーを立ち上げます。
     open: 'external',
     // サーバー起動時に表示するページを指定します。
