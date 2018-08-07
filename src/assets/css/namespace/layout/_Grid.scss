@@ -45,11 +45,9 @@ $l-grid-column-gap: $grid-column-gap;
 $l-grid-column-gap-md: $grid-column-gap-md;
 
 .l-Grid {
+  -js-display: flex;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  flex: 0 1 auto;
-  align-items: flex-start;
   margin-left: -$l-grid-column-gap;
   padding-left: 0;
   list-style-type: none;
@@ -60,7 +58,6 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 }
 
 .l-Grid_Item {
-  flex: 0 0 auto;
   flex-basis: 100%;
   max-width: 100%;
   padding-left: $l-grid-column-gap;
