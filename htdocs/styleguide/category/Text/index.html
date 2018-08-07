@@ -33,12 +33,11 @@
             <nav>
               <h2 class="aigis-module__heading">TOC</h2>
               <ul class="aigis-moduleList">
+                <li class="aigis-moduleList__item"><a href="#sw-Br">sw-Br</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Delimiter">sw-Delimiter</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Divider">sw-Divider</a></li>
-                <li class="aigis-moduleList__item"><a href="#sw-Hide">sw-Hide</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Label">sw-Label</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Lead">sw-Lead</a></li>
-                <li class="aigis-moduleList__item"><a href="#sw-Show">sw-Show</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Sup">sw-Sup</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Text">sw-Text</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-TextEmphasis">sw-TextEmphasis</a></li>
@@ -46,6 +45,31 @@
                 <li class="aigis-moduleList__item"><a href="#sw-TextSecondary">sw-TextSecondary</a></li>
               </ul>
             </nav>
+            <div class="aigis-module">
+              <h2 id="sw-Br" class="aigis-module__heading">sw-Br</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Br.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <p class="sw-Text">常に改行<br/>されます</p>
+  <p class="sw-Text">ブレイクポイント（<code>md</code>）以降に改行<br class="sw-BrShowMd"/>されます。</p>
+  <p class="sw-Text">ブレイクポイント（<code>md</code>）以降は改行<br class="sw-HideMd"/>されません。</p>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
+    <span class="token tag" >br</span>
+    <span class="token punctuation" >|</span> されます
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント（`md`）以降に改行</span>
+    <span class="token tag" >br.sw-BrShowMd</span>
+    <span class="token punctuation" >|</span> されます。
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント（`md`）以降は改行</span>
+    <span class="token tag" >br.sw-HideMd</span>
+    <span class="token punctuation" >|</span> されません。
+</code></pre>
+
+            </div>
             <div class="aigis-module">
               <h2 id="sw-Delimiter" class="aigis-module__heading">sw-Delimiter</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Delimiter.scss</div>
@@ -83,27 +107,6 @@
 
             </div>
             <div class="aigis-module">
-              <h2 id="sw-Hide" class="aigis-module__heading">sw-Hide</h2>
-              <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Hide.scss</div>
-              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
-<div class="aigis-preview">
-
-<div class="l-Wrapper">
-  <p class="sw-Text">常に改行<br/>されます</p>
-  <p class="sw-Text">ブレイクポイント以降は改行<br class="sw-HideMd"/>されません</p>
-</div></div>
-
-<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
-    <span class="token tag" >br</span>
-    <span class="token punctuation" >|</span> されます
-  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
-    <span class="token tag" >br.sw-HideMd</span>
-    <span class="token punctuation" >|</span> されません
-</code></pre>
-
-            </div>
-            <div class="aigis-module">
               <h2 id="sw-Label" class="aigis-module__heading">sw-Label</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Label.scss</div>
               <div class="aigis-module__label"><span class="sw-Label"></span></div><p>インラインで表示するラベルコンポーネントです。</p>
@@ -136,27 +139,6 @@
   <span class="token tag" >p.sw-Lead</span>
     <span class="token tag" >b</span> <span class="token plain-text" >◯◯◯は××に優れており、今まで多くのお客さまにご愛用いただいているロングセラー商品です。</span>
   <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >△△の強みを生かした□□を使用しており、発売以来、日々改良を重ねております。</span>
-</code></pre>
-
-            </div>
-            <div class="aigis-module">
-              <h2 id="sw-Show" class="aigis-module__heading">sw-Show</h2>
-              <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Show.scss</div>
-              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
-<div class="aigis-preview">
-
-<div class="l-Wrapper">
-  <p class="sw-Text">常に改行<br/>されます</p>
-  <p class="sw-Text">ブレイクポイント以降は改行<br class="sw-Hide sw-ShowMd"/>されます</p>
-</div></div>
-
-<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
-    <span class="token tag" >br</span>
-    <span class="token punctuation" >|</span> されます
-  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
-    <span class="token tag" >br.sw-Hide.sw-ShowMd</span>
-    <span class="token punctuation" >|</span> されます
 </code></pre>
 
             </div>

@@ -1,0 +1,85 @@
+/*
+---
+name: sw-Br
+namespace: sw-
+category: Text
+---
+
+`<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
+
+```jade
+.l-Wrapper
+  p.sw-Text 常に改行
+    br
+    | されます
+  p.sw-Text ブレイクポイント（`md`）以降に改行
+    br.sw-BrShowMd
+    | されます。
+  p.sw-Text ブレイクポイント（`md`）以降は改行
+    br.sw-HideMd
+    | されません。
+```
+*/
+.sw-BrShowSm {
+  display: none;
+
+  @include mq-up(sm) {
+    display: inline;
+  }
+}
+
+.sw-BrShowMd {
+  display: none;
+
+  @include mq-up(md) {
+    display: inline;
+  }
+}
+
+.sw-BrShowLg {
+  display: none;
+
+  @include mq-up(lg) {
+    display: inline;
+  }
+}
+
+.sw-BrShowXl {
+  display: none;
+
+  @include mq-up(xl) {
+    display: inline;
+  }
+}
+
+.sw-BrHideSm {
+  display: inline;
+
+  @include mq-up(sm) {
+    display: none;
+  }
+}
+
+.sw-BrHideMd {
+  display: inline;
+
+  @include mq-up(md) {
+    display: none;
+  }
+}
+
+.sw-BrHideLg {
+  display: inline;
+
+  @include mq-up(lg) {
+    display: none;
+  }
+}
+
+.sw-BrHideXl {
+  display: inline;
+
+  @include mq-up(xl) {
+    display: none;
+  }
+}
