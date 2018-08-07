@@ -33,6 +33,7 @@
             <nav>
               <h2 class="aigis-module__heading">TOC</h2>
               <ul class="aigis-moduleList">
+                <li class="aigis-moduleList__item"><a href="#sw-Br">sw-Br</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Button">sw-Button</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Caption">sw-Caption</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Caption-center">sw-Caption-center</a></li>
@@ -49,7 +50,6 @@
                 <li class="aigis-moduleList__item"><a href="#sw-Heading3">sw-Heading3</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Heading4">sw-Heading4</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Heading5">sw-Heading5</a></li>
-                <li class="aigis-moduleList__item"><a href="#sw-Hide">sw-Hide</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-ImageCenter">sw-ImageCenter</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Label">sw-Label</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Lead">sw-Lead</a></li>
@@ -65,7 +65,6 @@
                 <li class="aigis-moduleList__item"><a href="#sw-ListOrder">sw-ListOrder</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-ListUnorder">sw-ListUnorder</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Map">sw-Map</a></li>
-                <li class="aigis-moduleList__item"><a href="#sw-Show">sw-Show</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Sup">sw-Sup</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-Table">sw-Table</a></li>
                 <li class="aigis-moduleList__item"><a href="#sw-TableWide">sw-TableWide</a></li>
@@ -77,6 +76,31 @@
                 <li class="aigis-moduleList__item"><a href="#sw-Video">sw-Video</a></li>
               </ul>
             </nav>
+            <div class="aigis-module">
+              <h2 id="sw-Br" class="aigis-module__heading">sw-Br</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Br.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <p class="sw-Text">常に改行<br/>されます</p>
+  <p class="sw-Text">ブレイクポイント（<code>md</code>）以降に改行<br class="sw-BrShowMd"/>されます。</p>
+  <p class="sw-Text">ブレイクポイント（<code>md</code>）以降は改行<br class="sw-HideMd"/>されません。</p>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
+    <span class="token tag" >br</span>
+    <span class="token punctuation" >|</span> されます
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント（`md`）以降に改行</span>
+    <span class="token tag" >br.sw-BrShowMd</span>
+    <span class="token punctuation" >|</span> されます。
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント（`md`）以降は改行</span>
+    <span class="token tag" >br.sw-HideMd</span>
+    <span class="token punctuation" >|</span> されません。
+</code></pre>
+
+            </div>
             <div class="aigis-module">
               <h2 id="sw-Button" class="aigis-module__heading">sw-Button</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Button.scss</div>
@@ -450,27 +474,6 @@
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >h5.sw-Heading5</span> <span class="token plain-text" >見出し5</span>
-</code></pre>
-
-            </div>
-            <div class="aigis-module">
-              <h2 id="sw-Hide" class="aigis-module__heading">sw-Hide</h2>
-              <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Hide.scss</div>
-              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
-<div class="aigis-preview">
-
-<div class="l-Wrapper">
-  <p class="sw-Text">常に改行<br/>されます</p>
-  <p class="sw-Text">ブレイクポイント以降は改行<br class="sw-HideMd"/>されません</p>
-</div></div>
-
-<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
-    <span class="token tag" >br</span>
-    <span class="token punctuation" >|</span> されます
-  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
-    <span class="token tag" >br.sw-HideMd</span>
-    <span class="token punctuation" >|</span> されません
 </code></pre>
 
             </div>
@@ -902,27 +905,6 @@
     <span class="token tag" >.sw-Map_Map</span><span class="token punctuation" >.</span><span class="token multiline-plain-text" >
       &lt;iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25933.98363493959!2d139.745433!3d35.658581000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1505663238967" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>&lt;/iframe></span>
     <span class="token tag" >p.sw-Map_Text.sw-Map_Text-right</span> <span class="token plain-text" >マップにキャプション（短い説明文）をつけます。</span>
-</code></pre>
-
-            </div>
-            <div class="aigis-module">
-              <h2 id="sw-Show" class="aigis-module__heading">sw-Show</h2>
-              <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Show.scss</div>
-              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>&lt;br&gt;</code>タグに指定をして、改行をブレイクポイントごとにコントロールします。</p>
-<div class="aigis-preview">
-
-<div class="l-Wrapper">
-  <p class="sw-Text">常に改行<br/>されます</p>
-  <p class="sw-Text">ブレイクポイント以降は改行<br class="sw-Hide sw-ShowMd"/>されます</p>
-</div></div>
-
-<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >常に改行</span>
-    <span class="token tag" >br</span>
-    <span class="token punctuation" >|</span> されます
-  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >ブレイクポイント以降は改行</span>
-    <span class="token tag" >br.sw-Hide.sw-ShowMd</span>
-    <span class="token punctuation" >|</span> されます
 </code></pre>
 
             </div>
