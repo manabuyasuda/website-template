@@ -1,15 +1,12 @@
 'use strict';
 
-import $ from 'jquery';
 import 'picturefill';
 import 'focus-visible';
-import 'jquery-match-height';
-import 'smooth-scroll';
 
-import './namespace/js/alignHeight';
-import './namespace/js/smoothScroll';
-import {hello} from './util';
+import jsAlignHeight from './namespace/js/alignHeight';
+import jsSmoothScroll from './namespace/js/smoothScroll';
 
 (() => {
-  console.log(hello('world!!'));
+  jsAlignHeight();
+  jsSmoothScroll();
 })();
