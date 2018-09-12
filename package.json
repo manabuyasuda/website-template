@@ -60,6 +60,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
+    "flexibility": "^2.0.1",
     "focus-visible": "^4.1.4",
     "jquery": "^3.3.1",
     "jquery-match-height": "^0.7.2",
