@@ -52,6 +52,16 @@ figure {
 }
 
 /**
+ * デフォルトのスタイルをリセットします。
+ */
+fieldset {
+  min-width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/**
  * ブロック要素の上下のマージンをリセットします。
  */
 h1, h2, h3, h4, h5, h6,
@@ -59,7 +69,6 @@ ul, ol, dl,
 blockquote, p, address,
 hr,
 table,
-fieldset,
 pre {
   margin-top: 0;
   margin-bottom: 0;
