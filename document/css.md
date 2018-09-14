@@ -119,16 +119,3 @@ $breakpoint-up: (
   'xl': 'print, screen and (min-width: 1440px)',
 ) !default;
 ```
-
-## アイコンフォント
-`src/assets/icon/`にSVGファイルを保存すると自動でアイコンフォントとmixinが生成されます。  
-アイコンフォントのファイルは`/htdocs/assets/font/`に出力されます。  
-mixinは、`/src/assets/css/base/mixin/_Icon.scss`に出力されます。
-
-mixin（`Icon()`）でアイコンフォントのスタイルを呼び出すことができます。引数にはアイコンフォント用のSVGファイル名（拡張子なし）を渡します。
-
-```scss
-.sw-LinkMore_Icon:before {
-  @include Icon(linkMore); // linkMore.svg
-}
-```

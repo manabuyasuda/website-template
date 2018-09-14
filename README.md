@@ -10,6 +10,7 @@
   - [html.md](document/html.md)
   - [image.md](document/image.md)
   - [js.md](document/js.md)
+  - [icon.md](document/icon.md)
 
 
 ## 確認環境
@@ -72,8 +73,6 @@ root/
 │   │   │   ├── site.scss
 │   │   │   └── styleguide/
 │   │   ├── icon/
-│   │   │   └── template/
-│   │   │       └── _Icon.scss
 │   │   ├── img/
 │   │   │   ├── sitewide/
 │   │   │   ├── structure/
@@ -95,7 +94,8 @@ root/
 │   ├── css.md
 │   ├── html.md
 │   ├── image.md
-│   └── js.md
+│   ├── js.md
+│   └── icon.md
 ├── aigis/
 ├── README.md
 ├── package.json
@@ -114,7 +114,7 @@ npm start
 - PugをHTMLにコンパイル
 - SassをCSSにコンパイル
 - JSをES5にトランスコンパイル（jQueryとプラグインなどもsite.jsでインポート）
-- アイコンフォントの生成
+- SVGスプライトの生成
 - ローカルサーバーを立ち上げて動作の確認（public以下のHTMLファイルはSSIにも対応）
 - スタイルガイドの生成
 
@@ -125,5 +125,3 @@ npm start
 - iOS8以降
 - Android4.4以降
 - その他ブラウザは最新版
-
-一部でFlexboxを使用しています。IE9以下に対応する場合は[flexibility.js](https://github.com/jonathantneal/flexibility)を使用してください。
