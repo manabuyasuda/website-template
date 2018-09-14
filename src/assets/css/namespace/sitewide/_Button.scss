@@ -38,9 +38,11 @@ category: [Button, Link, Form]
 ```jade
 .l-Wrapper
   a.sw-Button(href="#") デフォルト
-  a.sw-Button(href="#")
-    span.sw-Button_More(aria-hidden="true")
-    | 矢印付きボタン
+  a.sw-Button(href="#").
+    <svg class="sw-Button_More" role="img">
+      <use xlink:href="/assets/img/svg/sprite.svg#linkMore"></use>
+    </svg>
+    矢印付きボタン
 ```
 */
 .sw-Button {
@@ -72,25 +74,19 @@ category: [Button, Link, Form]
 }
 
 .sw-Button_More {
+  display: inline-block;
   position: absolute;
   top: 0;
   right: rem(16);
   bottom: 0;
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
   margin: auto;
+  vertical-align: -0.1em;
+  font-size: 1em;
+  fill: currentColor;
 
   @include mq-up(lg) {
     right: rem(12);
-  }
-
-  &:before {
-    @include Icon("linkMore");
-    font-size: rem(14);
-
-    [lang="ja"] & {
-      position: relative;
-      top: -0.1em;
-    }
   }
 }

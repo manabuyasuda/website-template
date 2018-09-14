@@ -13,8 +13,11 @@ category: [Link, Icon]
     a.sw-Link(href="#") テキストリンクです。
 
   p.sw-Text
-    a.sw-LinkExternal(href="#") 外部リンクを開く
-      span.sw-LinkExternal_Icon(aria-hidden="true")
+    a.sw-LinkExternal(href="#").
+      外部リンクを開く
+      <svg class="sw-LinkExternal_Icon" role="img">
+        <use xlink:href="/assets/img/svg/sprite.svg#linkExternal"></use>
+      </svg>
 ```
 */
 .sw-LinkExternal {
@@ -27,14 +30,15 @@ category: [Link, Icon]
   }
 }
 
-.sw-LinkExternal_Icon:after {
-  @include Icon(linkExternal);
-  font-size: rem(20);
+.sw-LinkExternal_Icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+  font-size: 1em;
+  fill: currentColor;
 
   [lang="ja"] &,
   [lang^="zh"] & {
-    position: relative;
-    top: rem(-3);
-    left: rem(5);
   }
 }

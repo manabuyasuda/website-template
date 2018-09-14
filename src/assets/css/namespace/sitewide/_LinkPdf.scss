@@ -13,8 +13,11 @@ category: [Link, Icon]
     a.sw-Link(href="#") テキストリンクです。
 
   p.sw-Text
-    a.sw-LinkPdf(href="#") PDFをダウンロードする
-      span.sw-LinkPdf_Icon(aria-hidden="true")
+    a.sw-LinkPdf(href="#").
+      PDFをダウンロードする
+      <svg class="sw-LinkPdf_Icon" role="img">
+        <use xlink:href="/assets/img/svg/sprite.svg#linkPdf"></use>
+      </svg>
 ```
 */
 .sw-LinkPdf {
@@ -27,14 +30,15 @@ category: [Link, Icon]
   }
 }
 
-.sw-LinkPdf_Icon:after {
-  @include Icon(linkPdf);
-  font-size: rem(20);
+.sw-LinkPdf_Icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.1em;
+  font-size: 1em;
+  fill: currentColor;
 
   [lang="ja"] &,
   [lang^="zh"] & {
-    position: relative;
-    top: rem(-4);
-    left: rem(5);
   }
 }
