@@ -16,7 +16,7 @@ category: [Link, Icon]
     a.sw-LinkExternal(href="#")
       | 外部リンクを開く
       svg.sw-LinkExternal_Icon(role="img")
-        use(xlink:href="/assets/img/svg/sprite.svg#linkExternal")
+        use(xlink:href="/assets/svg/sprite.svg#linkExternal")
 ```
 */
 .sw-LinkExternal {

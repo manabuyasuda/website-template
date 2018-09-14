@@ -8,15 +8,15 @@
 ## SVGスプライトの生成
 SVGスプライトは以下の手順で生成します。
 
-1. `src/assets/icon/`にある.svgファイルを対象にGulpのタスクが実行される。
-2. `htdocs/assets/img/svg/`にSVGスプライト化された.svgファイルが出力される（デフォルトではsprite.svg）。
+1. `src/assets/svg/`にある.svgファイルを対象にGulpのタスクが実行される。
+2. `htdocs/assets/svg/`にSVGスプライト化された.svgファイルが出力される（デフォルトではsprite.svg）。
 
 ## アイコンの表示
 装飾的なアイコンの場合は、以下のようにHTMLを記述します。
 
 ```
 <svg class="icon" role="img">
-  <use xlink:href="/assets/img/svg/sprite.svg#icon2"></use>
+  <use xlink:href="/assets/svg/sprite.svg#icon2"></use>
 </svg>
 ```
 
@@ -26,7 +26,7 @@ SVGスプライトは以下の手順で生成します。
 <svg class="icon" role="img" aria-labelledby="title desc">
   <title id="title">Title</title>
   <desc id="desc">Description</desc>
-  <use xlink:href="/assets/img/svg/sprite.svg#icon1"></use>
+  <use xlink:href="/assets/svg/sprite.svg#icon1"></use>
 </svg>
 ```
 

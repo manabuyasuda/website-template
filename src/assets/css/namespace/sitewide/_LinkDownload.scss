@@ -16,7 +16,7 @@ category: [Link, Icon]
     a.sw-LinkDownload(href="#")
       | ファイルをダウンロードする
       svg.sw-LinkDownload_Icon(role="img")
-        use(xlink:href="/assets/img/svg/sprite.svg#linkDownload")
+        use(xlink:href="/assets/svg/sprite.svg#linkDownload")
 ```
 */
 .sw-LinkDownload {

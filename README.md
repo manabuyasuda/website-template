@@ -72,7 +72,7 @@ root/
 │   │   │   ├── _print.scss
 │   │   │   ├── site.scss
 │   │   │   └── styleguide/
-│   │   ├── icon/
+│   │   ├── svg/
 │   │   ├── img/
 │   │   │   ├── sitewide/
 │   │   │   ├── structure/

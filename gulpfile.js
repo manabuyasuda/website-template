@@ -56,7 +56,7 @@ var src = {
   'js': 'src/assets/js/site.js',
   'image': 'src/assets/img/**/*.{png,jpg,gif,svg}',
   'imageWatch': 'src/assets/img/**/*',
-  'svgSprite': 'src/assets/icon/**/*.svg',
+  'svgSprite': 'src/assets/svg/**/*.svg',
   'public': 'public/**/*'
 };
 
@@ -67,7 +67,7 @@ var dest = {
   'root': 'htdocs/',
   'image': 'htdocs/assets/img/',
   'js': 'htdocs/assets/js/',
-  'svgSprite': 'htdocs/assets/img/svg/'
+  'svgSprite': 'htdocs/assets/svg/'
 };
 
 /**
