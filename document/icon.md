@@ -34,6 +34,7 @@ SVGスプライトは以下の手順で生成します。
 ## スタイルの上書き
 CSSは以下のように`font-size`で横幅を指定してフルードイメージのようにサイズを指定します。
 
+```
 .icon {
   display: inline-block;
   // `width`と`height`は`font-size`に応じてサイズが変わる
@@ -45,6 +46,7 @@ CSSは以下のように`font-size`で横幅を指定してフルードイメー
   font-size: 1em;
   fill: currentColor;
 }
+```
 
 上記の指定だと正方形のボックスができる。アイコンのアスペクト比にしたい場合は以下のように指定します。
 
