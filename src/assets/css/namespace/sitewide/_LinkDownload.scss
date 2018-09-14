@@ -13,11 +13,10 @@ category: [Link, Icon]
     a.sw-Link(href="#") テキストリンクです。
 
   p.sw-Text
-    a.sw-LinkDownload(href="#").
-      ファイルをダウンロードする
-      <svg class="sw-LinkDownload_Icon" role="img">
-        <use xlink:href="/assets/img/svg/sprite.svg#linkDownload"></use>
-      </svg>
+    a.sw-LinkDownload(href="#")
+      | ファイルをダウンロードする
+      svg.sw-LinkDownload_Icon(role="img")
+        use(xlink:href="/assets/img/svg/sprite.svg#linkDownload")
 ```
 */
 .sw-LinkDownload {
@@ -31,10 +30,12 @@ category: [Link, Icon]
 }
 
 .sw-LinkDownload_Icon {
+  position: relative;
+  top: -0.1em;
   display: inline-block;
   width: 1em;
   height: 1em;
-  vertical-align: -0.1em;
+  vertical-align: middle;
   font-size: 1em;
   fill: currentColor;
 

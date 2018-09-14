@@ -36,12 +36,14 @@ CSSは以下のように`font-size`で横幅を指定してフルードイメー
 
 ```
 .icon {
+  position: relative;
+  top: -0.1em;
   display: inline-block;
   // `width`と`height`は`font-size`に応じてサイズが変わる
   width: 1em;
   height: 1em;
   // 日本語と英語で調整が必要
-  vertical-align: -0.1em;
+  vertical-align: middle;
   // 表示したい横幅を指定する
   font-size: 1em;
   fill: currentColor;

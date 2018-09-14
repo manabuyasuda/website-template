@@ -13,11 +13,10 @@ category: [Link, Icon]
     a.sw-Link(href="#") テキストリンクです。
 
   p.sw-Text
-    a.sw-LinkMore(href="#").
-      詳しく見る
-      <svg class="sw-LinkMore_Icon" role="img">
-        <use xlink:href="/assets/img/svg/sprite.svg#linkMore"></use>
-      </svg>
+    a.sw-LinkMore(href="#")
+      | 詳しく見る
+      svg.sw-LinkMore_Icon(role="img")
+        use(xlink:href="/assets/img/svg/sprite.svg#linkMore")
 ```
 */
 .sw-LinkMore {
@@ -31,10 +30,12 @@ category: [Link, Icon]
 }
 
 .sw-LinkMore_Icon {
+  position: relative;
+  top: -0.1em;
   display: inline-block;
   width: 1em;
   height: 1em;
-  vertical-align: -0.1em;
+  vertical-align: middle;
   font-size: 1em;
   fill: currentColor;
 
