@@ -26,9 +26,8 @@ var watchify = require('watchify');
 // Image
 var imagemin = require('gulp-imagemin');
 
-// Iconfont
-var iconfont = require('gulp-iconfont');
-var consolidate = require('gulp-consolidate');
+// SVG sprite
+var svgSprite = require('gulp-svg-sprite');
 
 // Styleguide
 var aigis = require('gulp-aigis');
@@ -57,8 +56,7 @@ var src = {
   'js': 'src/assets/js/site.js',
   'image': 'src/assets/img/**/*.{png,jpg,gif,svg}',
   'imageWatch': 'src/assets/img/**/*',
-  'iconfont': 'src/assets/icon/**/*.svg',
-  'iconfontWath': ['src/assets/icon/**/*.svg', 'src/assets/icon/template/_Icon.scss'],
+  'svgSprite': 'src/assets/icon/**/*.svg',
   'public': 'public/**/*'
 };
 
@@ -69,7 +67,7 @@ var dest = {
   'root': 'htdocs/',
   'image': 'htdocs/assets/img/',
   'js': 'htdocs/assets/js/',
-  'iconfont': 'htdocs/assets/font/'
+  'svgSprite': 'htdocs/assets/img/svg/'
 };
 
 /**
@@ -217,36 +215,42 @@ gulp.task('image', function() {
   .pipe(browserSync.reload({stream: true}));
 });
 
-/**
- * アイコンフォントを作成します。
- * `src/assets/icon`にSVGファイルを保存すると、
- * `dest/assets/font`ディレクトリにフォントファイルが、
- * `src/assets/css/SiteWide`ディレクトリに専用のscssファイルが生成されます。
- */
-gulp.task('iconfont', function() {
-  // シンボルフォント名を指定します。
-  var fontName = 'iconfont';
-  return gulp.src(src.iconfont)
-  .pipe(iconfont({
-    fontName: fontName,
-    formats: ['ttf', 'eot', 'woff', 'svg'],
+gulp.task('svgSprite', function() {
+  return gulp.src(src.svgSprite)
+  .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+  .pipe(svgSprite({
+    mode: {
+      // SVGファイルをsymbol要素としてまとめる。
+      symbol: {
+        dest: "./",
+        // 出力するファイル名。
+        sprite: "sprite.svg"
+      }
+    },
+    shape: {
+      transform: [{
+        svgo: {
+          plugins: [
+            // `title`タグを削除する。
+            {removeTitle: true},
+            // `style`属性を削除する。
+            {removeStyleElement: true},
+            // `fill`属性を削除して、CSSで`fill`の変更ができるようにする。
+            {removeAttrs: { attrs: "fill"}}
+          ]
+        }
+      }]
+    },
+    svg: {
+      // xml宣言を出力する。
+      xmlDeclaration: true,
+      // DOCTYPE宣言を出力する。
+      doctypeDeclaration: false
+    }
   }))
-  .on('glyphs', function(codepoints, opt) {
-    var options = {
-      glyphs: codepoints,
-      fontName: fontName,
-      // Sassファイルからfontファイルまでの相対パスを指定します。
-      fontPath: '../font/',
-    };
-    // CSSのテンプレートからSassファイルを生成します。
-    gulp.src('src/assets/icon/template/_Icon.scss')
-    .pipe(consolidate('lodash', options))
-    // Sassファイルの生成するパスを指定します。
-    .pipe(gulp.dest('src/assets/css/base/mixin/'));
-  })
-  // fontファイルを出力するパスを指定します。
-  .pipe(gulp.dest(dest.iconfont));
-});
+  .pipe(gulp.dest(dest.svgSprite))
+  .pipe(browserSync.reload({stream: true}));
+})
 
 /**
  * スタイルガイドを生成します。
@@ -277,8 +281,7 @@ gulp.task('clean:dest', function (cb) {
  */
 gulp.task('build', function() {
   runSequence(
-    ['iconfont'],
-    ['html', 'ssi', 'css', 'styleguide', 'js', 'image', 'public']
+    ['html', 'ssi', 'css', 'styleguide', 'js', 'image', 'svgSprite', 'public']
   )
 });
 
@@ -319,7 +322,7 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(src.styleguideWatch, ['styleguide']);
   bundle(true);
   gulp.watch(src.imageWatch, ['image']);
-  gulp.watch(src.iconfontWath, ['iconfont']);
+  gulp.watch(src.svgSprite ['svgSprite']);
 });
 
 
