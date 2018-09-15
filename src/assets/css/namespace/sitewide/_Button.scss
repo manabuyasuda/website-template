@@ -40,7 +40,7 @@ category: [Button, Link, Form]
   a.sw-Button(href="#") デフォルト
   a.sw-Button(href="#")
     svg.sw-Button_More(role="img")
-      use(xlink:href="/assets/svg/sprite.svg#linkMore")
+      use(xlink:href="/assets/svg/sprite.svg#right-arrow1")
     | 矢印付きボタン
 ```
 */
