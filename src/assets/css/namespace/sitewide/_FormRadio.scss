@@ -13,19 +13,19 @@ category: Form
   label(for="radio1")
     svg(role="img")
       use(xlink:href="/assets/svg/sprite.svg#radio1")
-    | ラジオボタン1
+    span ラジオボタン1
 
   input.sw-FormRadio(type="radio" id="radio2" name="radio1" value="1")
   label(for="radio2")
     svg(role="img")
       use(xlink:href="/assets/svg/sprite.svg#radio1")
-    | ラジオボタン2ラジオボタン2ラジオボタン2
+    span ラジオボタン2ラジオボタン2ラジオボタン2
 
   input.sw-FormRadio(disabled type="radio" id="radio3" name="radio3" value="2")
-  label(disabled for="radio3")
+  label(for="radio3")
     svg(role="img")
       use(xlink:href="/assets/svg/sprite.svg#radio1")
-    | ラジオボタン3
+    span ラジオボタン3
 ```
 */
 .sw-FormRadio {

@@ -4,74 +4,52 @@
   @include sr-only();
 
   & + label {
-    display: inline-block;
     position: relative;
-    padding-left: rem(20);
+    -js-display: flex;
+    display: flex;
+    position: relative;
     font-size: 1rem;
     line-height: $line-height;
     cursor: pointer;
   }
 
-  & + label:before {
-    $size: rem(16);
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: calc((#{$line-height} - 1) * 0.5em);
-    left: 0;
-    width: $size;
-    height: $size;
-    margin: -1px auto 0;
-    border: $form-border;
-    border-radius: 50%;
-    vertical-align: text-bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
   & + label > svg {
-    position: absolute;
-    top: calc((#{$line-height} - 1) * 0.5em);
-    left: 0;
-    display: none;
-    vertical-align: middle;
     width: 1em;
     height: 1em;
-    margin: -1px auto 0;
+    margin: calc((#{$line-height} - 1) * 0.5em) em(4) 0 0;
     font-size: 1em;
     fill: #fff;
+    border: $form-border;
+    border-radius: 50%;
   }
 
-  &:focus + label:before {
+  & + label > span {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  &:focus + label > svg {
     border-color: $form-border-color-focus;
-    border-radius: 50%;
     box-shadow: $form-box-shadow-focus;
   }
 
-  &:focus:not(.focus-visible) + label:before {
+  &:focus:not(.focus-visible) + label > svg {
     border-color: $form-boder-color;
     box-shadow: none;
   }
 
-  &:checked + label:before {
-    border: 0;
+  &:checked + label > svg,
+  &:checked:not(.focus-visible) + label > svg {
+    border-color: #1e87f0;
     background-color: #1e87f0;
 
     @media screen and (-ms-high-contrast: active), print {
-      border: 1px solid;
-    }
-  }
-
-  &:checked + label > svg {
-    display: inline-block;
-
-    @media screen and (-ms-high-contrast: active), print {
       fill: #000;
+      border: 1px solid #000;
     }
   }
 
-  &:disabled,
-  & + label[disabled] {
+  &:disabled + label {
     cursor: $form-cursor-disabled;
     opacity: $form-opacity-disabled;
   }

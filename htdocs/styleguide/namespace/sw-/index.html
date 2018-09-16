@@ -277,44 +277,44 @@
 <div class="aigis-preview">
 
 <div class="l-Wrapper">
-  <input type="checkbox" id="checkbox1" name="checkbox1" value="0" checked="checked" class="sw-FormCheckbox"/>
+  <input type="checkbox" id="checkbox1" name="checkbox1" value="0" class="sw-FormCheckbox"/>
   <label for="checkbox1">
     <svg role="img">
       <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
-    </svg>チェックボックス1
-  </label><br/>
+    </svg><span>チェックボックス1</span>
+  </label>
   <input type="checkbox" id="checkbox2" name="checkbox1" value="1" class="sw-FormCheckbox"/>
   <label for="checkbox2">
     <svg role="img">
       <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
-    </svg>チェックボックス2チェックボックス2チェックボックス2
-  </label><br/>
+    </svg><span>チェックボックス2チェックボックス2チェックボックス2</span>
+  </label>
   <input type="checkbox" id="checkbox3" name="checkbox1" value="2" disabled="disabled" class="sw-FormCheckbox"/>
-  <label disabled="disabled" for="checkbox3">
+  <label for="checkbox3">
     <svg role="img">
       <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
-    </svg>チェックボックス3
+    </svg><span>チェックボックス3</span>
   </label>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"checkbox1"</span> name<span class="token operator" >=</span><span class="token string" >"checkbox1"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span> checked</span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"checkbox1"</span> name<span class="token operator" >=</span><span class="token string" >"checkbox1"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
   <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token punctuation" >|</span> チェックボックス1
-  <span class="token tag" >br</span>
+    <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス1</span>
+
   <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"checkbox2"</span> name<span class="token operator" >=</span><span class="token string" >"checkbox1"</span> value<span class="token operator" >=</span><span class="token string" >"1"</span></span><span class="token punctuation" >)</span></span></span>
   <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox2"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token punctuation" >|</span> チェックボックス2チェックボックス2チェックボックス2
-  <span class="token tag" >br</span>
+    <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス2チェックボックス2チェックボックス2</span>
+
   <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"checkbox3"</span> name<span class="token operator" >=</span><span class="token string" >"checkbox1"</span> value<span class="token operator" >=</span><span class="token string" >"2"</span> disabled</span><span class="token punctuation" >)</span></span></span>
-  <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox3"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox3"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token punctuation" >|</span> チェックボックス3
+    <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス3</span>
 </code></pre>
 
             </div>
@@ -352,19 +352,19 @@
   <label for="radio1">
     <svg role="img">
       <use xlink:href="/assets/svg/sprite.svg#radio1"></use>
-    </svg>ラジオボタン1
+    </svg><span>ラジオボタン1</span>
   </label>
   <input type="radio" id="radio2" name="radio1" value="1" class="sw-FormRadio"/>
   <label for="radio2">
     <svg role="img">
       <use xlink:href="/assets/svg/sprite.svg#radio1"></use>
-    </svg>ラジオボタン2ラジオボタン2ラジオボタン2
+    </svg><span>ラジオボタン2ラジオボタン2ラジオボタン2</span>
   </label>
   <input disabled="disabled" type="radio" id="radio3" name="radio3" value="2" class="sw-FormRadio"/>
-  <label disabled="disabled" for="radio3">
+  <label for="radio3">
     <svg role="img">
       <use xlink:href="/assets/svg/sprite.svg#radio1"></use>
-    </svg>ラジオボタン3
+    </svg><span>ラジオボタン3</span>
   </label>
 </div></div>
 
@@ -373,19 +373,19 @@
   <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio1"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#radio1"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token punctuation" >|</span> ラジオボタン1
+    <span class="token tag" >span</span> <span class="token plain-text" >ラジオボタン1</span>
 
   <span class="token tag" >input.sw-FormRadio<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio"</span> id<span class="token operator" >=</span><span class="token string" >"radio2"</span> name<span class="token operator" >=</span><span class="token string" >"radio1"</span> value<span class="token operator" >=</span><span class="token string" >"1"</span></span><span class="token punctuation" >)</span></span></span>
   <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio2"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#radio1"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token punctuation" >|</span> ラジオボタン2ラジオボタン2ラジオボタン2
+    <span class="token tag" >span</span> <span class="token plain-text" >ラジオボタン2ラジオボタン2ラジオボタン2</span>
 
   <span class="token tag" >input.sw-FormRadio<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio"</span> id<span class="token operator" >=</span><span class="token string" >"radio3"</span> name<span class="token operator" >=</span><span class="token string" >"radio3"</span> value<span class="token operator" >=</span><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
-  <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span>disabled <span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio3"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"radio3"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#radio1"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token punctuation" >|</span> ラジオボタン3
+    <span class="token tag" >span</span> <span class="token plain-text" >ラジオボタン3</span>
 </code></pre>
 
             </div>
