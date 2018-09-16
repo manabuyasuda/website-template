@@ -1,4 +1,5 @@
 @mixin sw-FormRadio() {
+    $line-height: 1.4;
   /* デフォルトのラジオボタンを非表示にする。 */
   @include sr-only();
 
@@ -6,40 +7,40 @@
     display: inline-block;
     position: relative;
     padding-left: rem(20);
+    font-size: 1rem;
+    line-height: $line-height;
     cursor: pointer;
   }
 
   & + label:before {
-  $size: rem(16);
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: $size;
-  height: $size;
-  margin: auto;
-  border: $form-border;
-  border-radius: 50%;
-  vertical-align: text-bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+    $size: rem(16);
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: calc((#{$line-height} - 1) * 0.5em);
+    left: 0;
+    width: $size;
+    height: $size;
+    margin: -1px auto 0;
+    border: $form-border;
+    border-radius: 50%;
+    vertical-align: text-bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
-& + label > svg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  display: none;
-  vertical-align: middle;
-  width: 1em;
-  height: 1em;
-  margin: auto;
-  font-size: 1em;
-  fill: #fff;
-}
+  & + label > svg {
+    position: absolute;
+    top: calc((#{$line-height} - 1) * 0.5em);
+    left: 0;
+    display: none;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin: -1px auto 0;
+    font-size: 1em;
+    fill: #fff;
+  }
 
   &:focus + label:before {
     border-color: $form-border-color-focus;

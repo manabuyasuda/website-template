@@ -19,7 +19,7 @@ category: Form
   label(for="radio2")
     svg(role="img")
       use(xlink:href="/assets/svg/sprite.svg#radio1")
-    | ラジオボタン2
+    | ラジオボタン2ラジオボタン2ラジオボタン2
 
   input.sw-FormRadio(disabled type="radio" id="radio3" name="radio3" value="2")
   label(disabled for="radio3")

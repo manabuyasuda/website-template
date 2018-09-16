@@ -1,4 +1,5 @@
 @mixin sw-FormCheckbox() {
+  $line-height: 1.4;
   /* デフォルトのチェックボックスを非表示にする。 */
   @include sr-only();
 
@@ -6,40 +7,37 @@
     position: relative;
     display: inline-block;
     padding-left: rem(20);
+    font-size: 1rem;
+    line-height: $line-height;
     cursor: pointer;
+  }
+
+  & + label:before {
+    $size: 1em;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: calc((#{$line-height} - 1) * 0.5em);
+    left: 0;
+    width: $size;
+    height: $size;
+    margin: -1px auto 0;
+    border: $form-border;
+    border-radius: rem(3);
   }
 
   & + label > svg {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: calc((#{$line-height} - 1) * 0.5em);
     left: 0;
     display: none;
     vertical-align: middle;
     width: 1em;
     height: 1em;
-    margin: auto;
+    margin: -1px auto 0;
     font-size: 1em;
     fill: #fff;
   }
-
-  & + label:before {
-  $size: 1em;
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: $size;
-  height: $size;
-  margin: auto;
-  border: $form-border;
-  border-radius: rem(3);
-  vertical-align: text-bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
 
   &:focus + label:before {
     border-color: $form-border-color-focus;
