@@ -27,6 +27,20 @@
   background-size: contain;
 }
 
+& + label > svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  margin: auto;
+  font-size: 1em;
+  fill: #fff;
+}
+
   &:focus + label:before {
     border-color: $form-border-color-focus;
     border-radius: 50%;
@@ -40,7 +54,19 @@
 
   &:checked + label:before {
     border: 0;
-    background-image: url("/assets/img/SiteWide/Icon/FormRadio_on.svg");
+    background-color: #1e87f0;
+
+    @media screen and (-ms-high-contrast: active), print {
+      border: 1px solid;
+    }
+  }
+
+  &:checked + label > svg {
+    display: inline-block;
+
+    @media screen and (-ms-high-contrast: active), print {
+      fill: #000;
+    }
   }
 
   &:disabled,

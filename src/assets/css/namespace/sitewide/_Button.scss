@@ -10,7 +10,7 @@ category: [Button, Link, Form]
 ```jade
 .l-Wrapper
   a.sw-Button(href="#") aタグボタン
-  a.sw-Button.sw-Button-disabled(href="#") aタグボタン
+  a.sw-Button.sw-Button-disabled(href="#" tabindex="-1") aタグボタン
   button.sw-Button(type="button") buttonタグボタン
   button.sw-Button(disabled type="button") buttonタグボタン
   input.sw-Button(type="button" value="inputボタン")

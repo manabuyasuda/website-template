@@ -9,8 +9,22 @@
     cursor: pointer;
   }
 
+  & + label > svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin: auto;
+    font-size: 1em;
+    fill: #fff;
+  }
+
   & + label:before {
-  $size: rem(16);
+  $size: 1em;
   content: "";
   display: inline-block;
   position: absolute;
@@ -39,7 +53,19 @@
 
   &:checked + label:before {
     border: 0;
-    background-image: url("/assets/img/SiteWide/Icon/FormCheckbox_on.svg");
+    background-color: #1e87f0;
+
+    @media screen and (-ms-high-contrast: active), print {
+      border: 1px solid;
+    }
+  }
+
+  &:checked + label > svg {
+    display: inline-block;
+
+    @media screen and (-ms-high-contrast: active), print {
+      fill: #000;
+    }
   }
 
   &:disabled,

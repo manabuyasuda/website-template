@@ -9,14 +9,23 @@ category: Form
 
 ```jade
 .l-Wrapper
-  input.sw-FormCheckbox(type="checkbox" id="checkbox1" checked)
-  label(for="checkbox1") チェックボックス
+  input.sw-FormCheckbox(type="checkbox" id="checkbox1" name="checkbox1" value="0" checked)
+  label(for="checkbox1")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+    | チェックボックス1
   br
-  input.sw-FormCheckbox(type="checkbox" id="checkbox2")
-  label(for="checkbox2") チェックボックス
+  input.sw-FormCheckbox(type="checkbox" id="checkbox2" name="checkbox1" value="1")
+  label(for="checkbox2")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+    | チェックボックス2
   br
-  input.sw-FormCheckbox(disabled type="checkbox" id="checkbox3")
-  label(disabled for="checkbox3") チェックボックス
+  input.sw-FormCheckbox(type="checkbox" id="checkbox3" name="checkbox1" value="2" disabled)
+  label(disabled for="checkbox3")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+    | チェックボックス3
 ```
 */
 .sw-FormCheckbox {

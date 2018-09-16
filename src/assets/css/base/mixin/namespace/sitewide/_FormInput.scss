@@ -5,7 +5,7 @@
   padding: 0 rem(16);
   border: 1px solid #d0d0d0;
   border-radius: $form-border-radius;
-  font-size: 1em;
+  font-size: 1rem;
   vertical-align: middle;
   background-color: #fff;
   appearance: none;
@@ -21,7 +21,7 @@
 
   &::placeholder {
     color: $form-placeholder-color;
-    font-size: rem(13);
+    font-size: rem(14);
   }
 
   &:focus {

@@ -10,16 +10,20 @@ category: Form
 ```jade
 .l-Wrapper
   .sw-FormSelect
-    select
-      option(value="default") 選択してください
-      option(value="hokkaido") 北海道
-      option(value="akita") 秋田
+    select(name="prefecture1")
+      option(value="0") 選択してください
+      option(value="1") 北海道
+      option(value="2") 秋田
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#select1")
 
   .sw-FormSelect.is-disabled
-    select(disabled)
-      option(value="default") 選択してください
-      option(value="hokkaido") 北海道
-      option(value="akita") 秋田
+    select(name="prefecture2" disabled)
+      option(value="0") 選択してください
+      option(value="1") 北海道
+      option(value="2") 秋田
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#select1")
 ```
 */
 .sw-FormSelect {

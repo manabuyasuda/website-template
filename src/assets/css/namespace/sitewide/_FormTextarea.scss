@@ -9,17 +9,9 @@ category: Form
 
 ```jade
 .l-Wrapper
-  textarea.sw-FormTextarea(placeholder="テキストエリアです")
-
-  label.sw-FormTextarea_TextTop(for="textarea1") テキストエリアの説明
-  textarea.sw-FormTextarea(id="textarea1" placeholder="テキストエリアです")
-
-  textarea.sw-FormTextarea(id="textarea2" placeholder="テキストエリアです")
-  label.sw-FormTextarea_TextTop(for="textarea2") テキストエリアの説明
-
-  textarea.sw-FormTextarea.sw-FormTextarea-large(id="textarea3" placeholder="テキストエリアです")
-
-  textarea.sw-FormTextarea(disabled id="textarea4" placeholder="テキストエリアです")
+  textarea.sw-FormTextarea(id="textarea1" name="textarea1" placeholder="例）お問い合わせ内容")
+  textarea.sw-FormTextarea.sw-FormTextarea-large(id="textarea2" name="textarea2" placeholder="例）お問い合わせ内容")
+  textarea.sw-FormTextarea.sw-FormTextarea-large(id="textarea2" name="textarea2" placeholder="例）お問い合わせ内容" disabled)
 ```
 */
 .sw-FormTextarea {
@@ -28,14 +20,4 @@ category: Form
 
 .sw-FormTextarea-large {
   height: rem(224);
-}
-
-.sw-FormTextarea_TextTop {
-  display: inline-block;
-  margin-bottom: rem(4);
-}
-
-.sw-FormTextarea_TextBottom {
-  display: inline-block;
-  margin-top: rem(4);
 }

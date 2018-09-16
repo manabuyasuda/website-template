@@ -9,14 +9,23 @@ category: Form
 
 ```jade
 .l-Wrapper
-  input.sw-FormRadio(type="radio" id="radio1" name="radio1" checked)
-  label(for="radio1") ラジオボタン
-  br
-  input.sw-FormRadio(type="radio" id="radio2" name="radio1")
-  label(for="radio2") ラジオボタン
-  br
-  input.sw-FormRadio(disabled type="radio" id="radio3" name="radio3")
-  label(disabled for="radio3") ラジオボタン
+  input.sw-FormRadio(type="radio" id="radio1" name="radio1" value="0" checked)
+  label(for="radio1")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    | ラジオボタン1
+
+  input.sw-FormRadio(type="radio" id="radio2" name="radio1" value="1")
+  label(for="radio2")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    | ラジオボタン2
+
+  input.sw-FormRadio(disabled type="radio" id="radio3" name="radio3" value="2")
+  label(disabled for="radio3")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    | ラジオボタン3
 ```
 */
 .sw-FormRadio {
