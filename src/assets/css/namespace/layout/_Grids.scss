@@ -104,7 +104,6 @@ category: Layout
       .test-Box Three<br>1/1 → 1/3
 ```
 */
-// `em`と`%`は指定不可
 $l-grids-column-gap: $grid-column-gap;
 $l-grids-row-gap: $grid-row-gap;
 $l-grids-column-gap-md: $grid-column-gap-md;
@@ -351,6 +350,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 }
 @include mq-up(xl) {
   .l-Grids-col5Xl > .l-Grids_Item {
+    flex-basis: percentage(1 / 5);
     max-width: percentage(1 / 5);
 
     &:nth-of-type(n+1) {

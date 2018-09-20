@@ -1,0 +1,75 @@
+/*
+---
+name: inquiry-Inline
+namespace: inquiry-
+category: Form
+---
+
+`checkbox`や`radio`などをなりゆきで配置します。
+
+```jade
+.l-Wrapper
+  ul.inquiry-Inline
+    li.inquiry-Inline_Item
+      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline5" name="inquiry-Inline2" value="0")
+      label(for="inquiry-Inline5")
+        svg(role="img")
+          use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+        span チェックボックス1
+    li.inquiry-Inline_Item
+      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline6" name="inquiry-Inline2" value="0")
+      label(for="inquiry-Inline6")
+        svg(role="img")
+          use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+        span チェックボックス2
+    li.inquiry-Inline_Item
+      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline7" name="inquiry-Inline2" value="0")
+      label(for="inquiry-Inline7")
+        svg(role="img")
+          use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+        span チェックボックス3
+    li.inquiry-Inline_Item
+      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline8" name="inquiry-Inline2" value="0")
+      label(for="inquiry-Inline8")
+        svg(role="img")
+          use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+        span チェックボックス4
+```
+*/
+$lnquiry-inline-column-gap: rem(30);
+$lnquiry-inline-row-gap: rem(10);
+$lnquiry-inline-column-gap-md: rem(30);
+$lnquiry-inline-row-gap-md: rem(10);
+
+.inquiry-Inline {
+  -js-display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -$lnquiry-inline-row-gap !important;
+  padding-left: 0;
+  list-style-type: none;
+
+  @include mq-up(md) {
+    margin-top: -$lnquiry-inline-row-gap-md !important;
+  }
+}
+
+.inquiry-Inline_Item {
+  flex-basis: auto;
+  max-width: none;
+  margin-right: $lnquiry-inline-column-gap;
+  padding-top: $lnquiry-inline-row-gap;
+
+  @include mq-up(md) {
+    margin-right: $lnquiry-inline-column-gap-md;
+    padding-top: $lnquiry-inline-row-gap-md;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
