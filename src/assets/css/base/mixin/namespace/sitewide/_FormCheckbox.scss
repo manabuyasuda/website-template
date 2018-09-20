@@ -39,6 +39,7 @@
 
   &:checked + label > svg,
   &:checked:not(.focus-visible) + label > svg {
+    fill: #fff;
     border-color: #1e87f0;
     background-color: #1e87f0;
 
@@ -46,6 +47,11 @@
       fill: #000;
       border: 1px solid #000;
     }
+  }
+
+  &-error + label > svg {
+    fill: #ffecec;
+    background-color: #ffecec;
   }
 
   &:disabled + label {

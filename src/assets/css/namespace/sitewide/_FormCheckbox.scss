@@ -8,7 +8,9 @@ category: Form
 `type="checkbox"`のデフォルトスタイルです。
 
 ```jade
-.l-Wrapper
+fieldset.l-Wrapper
+  legend.sw-FormLabel チェックボックス
+
   input.sw-FormCheckbox(type="checkbox" id="checkbox1" name="checkbox1" value="0")
   label(for="checkbox1")
     svg(role="img")
@@ -20,12 +22,43 @@ category: Form
     svg(role="img")
       use(xlink:href="/assets/svg/sprite.svg#checkbox1")
     span チェックボックス2チェックボックス2チェックボックス2
+```
 
-  input.sw-FormCheckbox(type="checkbox" id="checkbox3" name="checkbox1" value="2" disabled)
+必須項目のエラー表示。
+
+```jade
+fieldset.l-Wrapper
+  legend.sw-FormLabel
+    | 名前
+    em.sw-FormLabel_RequireA （必須）
+
+  input.sw-FormCheckbox.sw-FormCheckbox-error(type="checkbox" id="checkbox3" name="checkbox1" value="0")
   label(for="checkbox3")
     svg(role="img")
       use(xlink:href="/assets/svg/sprite.svg#checkbox1")
     span チェックボックス3
+
+  input.sw-FormCheckbox.sw-FormCheckbox-error(type="checkbox" id="checkbox4" name="checkbox1" value="1")
+  label(for="checkbox4")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+    span チェックボックス4
+
+  p.sw-FormHelp
+    strong いずれかを選択してください
+```
+
+非活性状態。
+
+```jade
+fieldset.l-Wrapper
+  legend.sw-FormLabel チェックボックス
+
+  input.sw-FormCheckbox(type="checkbox" id="checkbox5" name="checkbox5" value="0" disabled)
+  label(for="checkbox5")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+    span チェックボックス5
 ```
 */
 .sw-FormCheckbox {

@@ -1,0 +1,82 @@
+/*
+---
+name: sw-FormLabel
+namespace: sw-
+category: Form
+---
+
+フォーム要素のラベルです。`label`と`legend`のどちらでも使用可能です。
+レイアウトは別のラップ要素で指定してください。
+
+```jade
+.l-Wrapper
+  label.sw-FormLabel(for="form-label1") 名前
+  input.sw-FormInput(id="form-label1" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+```
+
+必須項目1。
+
+```jade
+.l-Wrapper
+  label.sw-FormLabel(for="form-label2")
+    | 名前
+    em.sw-FormLabel_RequireA （必須）
+  input.sw-FormInput(id="form-label2" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+```
+
+必須項目2。
+
+```jade
+.l-Wrapper
+  label.sw-FormLabel(for="form-label3")
+    | 名前
+    em.sw-FormLabel_RequireB 必須
+  input.sw-FormInput(id="form-label3" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+```
+
+注意事項。
+
+```jade
+.l-Wrapper
+  label.sw-FormLabel(for="form-label3")
+    | 名前
+    em.sw-FormLabel_RequireB 必須
+    small.sw-FormLabel_Note 入力時の注意事項
+  input.sw-FormInput(id="form-label3" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+```
+*/
+.sw-FormLabel {
+  -js-display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: rem(10);
+  font-size: rem(16);
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.sw-FormLabel_RequireA {
+  display: inline;
+  font-weight: normal;
+  color: #e24d35;
+}
+
+.sw-FormLabel_RequireB {
+  display: inline-block;
+  padding: rem(4) rem(10);
+  font-size: rem(12);
+  font-weight: normal;
+  line-height: 1;
+  color: #fff;
+  background-color: #e24d35;
+  border-radius: rem(3);
+}
+
+.sw-FormLabel_Note {
+  display: block;
+  max-width: 100%;
+  flex-basis: 100%;
+  font-size: rem(14);
+  font-weight: normal;
+  line-height: 1.4;
+}

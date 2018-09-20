@@ -49,6 +49,11 @@
     }
   }
 
+  &-error + label > svg {
+    fill: #ffecec;
+    background-color: #ffecec;
+  }
+
   &:disabled + label {
     cursor: $form-cursor-disabled;
     opacity: $form-opacity-disabled;

@@ -23,6 +23,10 @@
     box-shadow: $form-box-shadow-focus;
   }
 
+  &-error {
+    background-color: #ffecec;
+  }
+
   &:disabled {
     opacity: $form-opacity-disabled;
     background-color: $form-background-color-disabled;

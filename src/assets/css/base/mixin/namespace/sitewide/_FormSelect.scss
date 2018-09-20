@@ -55,6 +55,10 @@
     box-shadow: $form-box-shadow-focus;
   }
 
+  &-error > select {
+    background-color: #ffecec;
+  }
+
   & > select:disabled {
     opacity: $form-opacity-disabled;
     background-color: $form-background-color-disabled;

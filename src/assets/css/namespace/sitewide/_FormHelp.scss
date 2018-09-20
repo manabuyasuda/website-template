@@ -1,0 +1,29 @@
+/*
+---
+name: sw-FormHelp
+namespace: sw-
+category: Form
+---
+
+エラーメッセージです。
+
+```jade
+.l-Wrapper
+  label.sw-FormLabel(for="form-label1") 名前
+  input.sw-FormInput.sw-FormInput-error(id="form-label1" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+  p.sw-FormHelp
+    strong 名前を入力してください
+```
+*/
+.sw-FormHelp {
+  display: block;
+  margin-top: rem(4);
+  font-size: rem(14);
+  line-height: 1.4;
+  color: #e24d35;
+
+  & > strong {
+    font-weight: normal;
+    color: #e24d35;
+  }
+}
