@@ -11,25 +11,25 @@ category: Form
 .l-Wrapper
   ul.inquiry-Inline
     li.inquiry-Inline_Item
-      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline5" name="inquiry-Inline2" value="0")
+      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline5" name="inquiry-Inline" value="0")
       label(for="inquiry-Inline5")
         svg(role="img")
           use(xlink:href="/assets/svg/sprite.svg#checkbox1")
         span チェックボックス1
     li.inquiry-Inline_Item
-      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline6" name="inquiry-Inline2" value="0")
+      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline6" name="inquiry-Inline" value="1")
       label(for="inquiry-Inline6")
         svg(role="img")
           use(xlink:href="/assets/svg/sprite.svg#checkbox1")
         span チェックボックス2
     li.inquiry-Inline_Item
-      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline7" name="inquiry-Inline2" value="0")
+      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline7" name="inquiry-Inline" value="2")
       label(for="inquiry-Inline7")
         svg(role="img")
           use(xlink:href="/assets/svg/sprite.svg#checkbox1")
         span チェックボックス3
     li.inquiry-Inline_Item
-      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline8" name="inquiry-Inline2" value="0")
+      input.sw-FormCheckbox(type="checkbox" id="inquiry-Inline8" name="inquiry-Inline" value="3")
       label(for="inquiry-Inline8")
         svg(role="img")
           use(xlink:href="/assets/svg/sprite.svg#checkbox1")

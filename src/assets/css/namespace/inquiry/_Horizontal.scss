@@ -1,0 +1,111 @@
+/*
+---
+name: inquiry-Horizontal
+namespace: inquiry-
+category: Form
+---
+
+フォーム要素を横幅に応じて垂直方向から水平方向に配置します。
+
+```jade
+form.l-Wrapper(method="post" action="/")
+  ul.inquiry-Horizontal
+    li.inquiry-Horizontal_List
+      .inquiry-Horizontal_Group
+        .inquiry-Horizontal_Item
+          label.sw-FormLabel(for="inquiry-Horizontal1") 名前
+        .inquiry-Horizontal_Item
+          input.sw-FormInput(id="inquiry-Horizontal1" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+    li.inquiry-Horizontal_List
+      .inquiry-Horizontal_Group
+        .inquiry-Horizontal_Item
+          label.sw-FormLabel(for="inquiry-Horizontal2") フリガナ
+        .inquiry-Horizontal_Item
+          input.sw-FormInput(id="inquiry-Horizontal2" type="text" name="name" autocomplete="name" placeholder="例）ヤマダ タロウ")
+    li.inquiry-Horizontal_List
+      fieldset
+        .inquiry-Horizontal_Group
+          .inquiry-Horizontal_Item
+            legend.sw-FormLabel チェックボックス
+          .inquiry-Horizontal_Item
+            ul.inquiry-Grids.inquiry-Grids-col2Md.inquiry-Grids-col3Lg.inquiry-Grids-col4Xl
+              li.inquiry-Grids_Item
+                input.sw-FormCheckbox(type="checkbox" id="inquiry-Horizontal3" name="inquiry-Horizontal" value="0")
+                label(for="inquiry-Horizontal3")
+                  svg(role="img")
+                    use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+                  span チェックボックス1
+              li.inquiry-Grids_Item
+                input.sw-FormCheckbox(type="checkbox" id="inquiry-Horizontal4" name="inquiry-Horizontal" value="1")
+                label(for="inquiry-Horizontal4")
+                  svg(role="img")
+                    use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+                  span チェックボックス2
+              li.inquiry-Grids_Item
+                input.sw-FormCheckbox(type="checkbox" id="inquiry-Horizontal5" name="inquiry-Horizontal" value="2")
+                label(for="inquiry-Horizontal5")
+                  svg(role="img")
+                    use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+                  span チェックボックス3
+              li.inquiry-Grids_Item
+                input.sw-FormCheckbox(type="checkbox" id="inquiry-Horizontal6" name="inquiry-Horizontal" value="3")
+                label(for="inquiry-Horizontal6")
+                  svg(role="img")
+                    use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+                  span チェックボックス4
+```
+*/
+.inquiry-Horizontal {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.inquiry-Horizontal_List {
+  &:nth-of-type(n+2) {
+    margin-top: rem(30);
+
+    @include mq-up(md) {
+      margin-top: rem(30);
+    }
+  }
+}
+
+.inquiry-Horizontal_Group {
+  -js-display: flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inquiry-Horizontal_Item {
+  flex-basis: 100%;
+  max-width: 100%;
+
+  &:nth-of-type(1) {
+    margin-bottom: rem(10);
+
+    @include mq-up(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include mq-up(md) {
+    &:nth-of-type(1) {
+      max-width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+      padding-right: rem(10);
+    }
+
+    &:nth-of-type(2) {
+      max-width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+    }
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

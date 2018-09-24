@@ -34,7 +34,9 @@
               <h2 class="aigis-module__heading">TOC</h2>
               <ul class="aigis-moduleList">
                 <li class="aigis-moduleList__item"><a href="#inquiry-Grids">inquiry-Grids</a></li>
+                <li class="aigis-moduleList__item"><a href="#inquiry-Horizontal">inquiry-Horizontal</a></li>
                 <li class="aigis-moduleList__item"><a href="#inquiry-Inline">inquiry-Inline</a></li>
+                <li class="aigis-moduleList__item"><a href="#inquiry-Stacked">inquiry-Stacked</a></li>
               </ul>
             </nav>
             <div class="aigis-module">
@@ -48,7 +50,7 @@
 <div class="l-Wrapper">
   <ul class="inquiry-Grids inquiry-Grids-col2Md inquiry-Grids-col3Lg inquiry-Grids-col4Xl">
     <li class="inquiry-Grids_Item">
-      <input type="checkbox" id="inquiry-Grids5" name="inquiry-Grids2" value="0" class="sw-FormCheckbox"/>
+      <input type="checkbox" id="inquiry-Grids5" name="inquiry-Grids" value="0" class="sw-FormCheckbox"/>
       <label for="inquiry-Grids5">
         <svg role="img">
           <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
@@ -56,7 +58,7 @@
       </label>
     </li>
     <li class="inquiry-Grids_Item">
-      <input type="checkbox" id="inquiry-Grids6" name="inquiry-Grids2" value="0" class="sw-FormCheckbox"/>
+      <input type="checkbox" id="inquiry-Grids6" name="inquiry-Grids" value="1" class="sw-FormCheckbox"/>
       <label for="inquiry-Grids6">
         <svg role="img">
           <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
@@ -64,7 +66,7 @@
       </label>
     </li>
     <li class="inquiry-Grids_Item">
-      <input type="checkbox" id="inquiry-Grids7" name="inquiry-Grids2" value="0" class="sw-FormCheckbox"/>
+      <input type="checkbox" id="inquiry-Grids7" name="inquiry-Grids" value="2" class="sw-FormCheckbox"/>
       <label for="inquiry-Grids7">
         <svg role="img">
           <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
@@ -72,7 +74,7 @@
       </label>
     </li>
     <li class="inquiry-Grids_Item">
-      <input type="checkbox" id="inquiry-Grids8" name="inquiry-Grids2" value="0" class="sw-FormCheckbox"/>
+      <input type="checkbox" id="inquiry-Grids8" name="inquiry-Grids" value="3" class="sw-FormCheckbox"/>
       <label for="inquiry-Grids8">
         <svg role="img">
           <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
@@ -85,29 +87,153 @@
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >ul.inquiry-Grids.inquiry-Grids-col2Md.inquiry-Grids-col3Lg.inquiry-Grids-col4Xl</span>
     <span class="token tag" >li.inquiry-Grids_Item</span>
-      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Grids5"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Grids2"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Grids5"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Grids"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Grids5"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
           <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス1</span>
     <span class="token tag" >li.inquiry-Grids_Item</span>
-      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Grids6"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Grids2"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Grids6"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Grids"</span> value<span class="token operator" >=</span><span class="token string" >"1"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Grids6"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
           <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス2</span>
     <span class="token tag" >li.inquiry-Grids_Item</span>
-      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Grids7"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Grids2"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Grids7"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Grids"</span> value<span class="token operator" >=</span><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Grids7"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
           <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス3</span>
     <span class="token tag" >li.inquiry-Grids_Item</span>
-      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Grids8"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Grids2"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Grids8"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Grids"</span> value<span class="token operator" >=</span><span class="token string" >"3"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Grids8"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
           <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス4</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="inquiry-Horizontal" class="aigis-module__heading">inquiry-Horizontal</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/inquiry/_Horizontal.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>フォーム要素を横幅に応じて垂直方向から水平方向に配置します。</p>
+<div class="aigis-preview">
+
+<form method="post" action="/" class="l-Wrapper">
+  <ul class="inquiry-Horizontal">
+    <li class="inquiry-Horizontal_List">
+      <div class="inquiry-Horizontal_Group">
+        <div class="inquiry-Horizontal_Item">
+          <label for="inquiry-Horizontal1" class="sw-FormLabel">名前</label>
+        </div>
+        <div class="inquiry-Horizontal_Item">
+          <input id="inquiry-Horizontal1" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎" class="sw-FormInput"/>
+        </div>
+      </div>
+    </li>
+    <li class="inquiry-Horizontal_List">
+      <div class="inquiry-Horizontal_Group">
+        <div class="inquiry-Horizontal_Item">
+          <label for="inquiry-Horizontal2" class="sw-FormLabel">フリガナ</label>
+        </div>
+        <div class="inquiry-Horizontal_Item">
+          <input id="inquiry-Horizontal2" type="text" name="name" autocomplete="name" placeholder="例）ヤマダ タロウ" class="sw-FormInput"/>
+        </div>
+      </div>
+    </li>
+    <li class="inquiry-Horizontal_List">
+      <fieldset>
+        <div class="inquiry-Horizontal_Group">
+          <div class="inquiry-Horizontal_Item">
+            <legend class="sw-FormLabel">チェックボックス</legend>
+          </div>
+          <div class="inquiry-Horizontal_Item">
+            <ul class="inquiry-Grids inquiry-Grids-col2Md inquiry-Grids-col3Lg inquiry-Grids-col4Xl">
+              <li class="inquiry-Grids_Item">
+                <input type="checkbox" id="inquiry-Horizontal3" name="inquiry-Horizontal" value="0" class="sw-FormCheckbox"/>
+                <label for="inquiry-Horizontal3">
+                  <svg role="img">
+                    <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
+                  </svg><span>チェックボックス1</span>
+                </label>
+              </li>
+              <li class="inquiry-Grids_Item">
+                <input type="checkbox" id="inquiry-Horizontal4" name="inquiry-Horizontal" value="1" class="sw-FormCheckbox"/>
+                <label for="inquiry-Horizontal4">
+                  <svg role="img">
+                    <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
+                  </svg><span>チェックボックス2</span>
+                </label>
+              </li>
+              <li class="inquiry-Grids_Item">
+                <input type="checkbox" id="inquiry-Horizontal5" name="inquiry-Horizontal" value="2" class="sw-FormCheckbox"/>
+                <label for="inquiry-Horizontal5">
+                  <svg role="img">
+                    <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
+                  </svg><span>チェックボックス3</span>
+                </label>
+              </li>
+              <li class="inquiry-Grids_Item">
+                <input type="checkbox" id="inquiry-Horizontal6" name="inquiry-Horizontal" value="3" class="sw-FormCheckbox"/>
+                <label for="inquiry-Horizontal6">
+                  <svg role="img">
+                    <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
+                  </svg><span>チェックボックス4</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </fieldset>
+    </li>
+  </ul>
+</form></div>
+
+<pre><code class="language-jade"><span class="token tag" >form.l-Wrapper<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >method</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"post"</span> action<span class="token operator" >=</span><span class="token string" >"/"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >ul.inquiry-Horizontal</span>
+    <span class="token tag" >li.inquiry-Horizontal_List</span>
+      <span class="token tag" >.inquiry-Horizontal_Group</span>
+        <span class="token tag" >.inquiry-Horizontal_Item</span>
+          <span class="token tag" >label.sw-FormLabel<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Horizontal1"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >名前</span>
+        <span class="token tag" >.inquiry-Horizontal_Item</span>
+          <span class="token tag" >input.sw-FormInput<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >id</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Horizontal1"</span> type<span class="token operator" >=</span><span class="token string" >"text"</span> name<span class="token operator" >=</span><span class="token string" >"name"</span> autocomplete<span class="token operator" >=</span><span class="token string" >"name"</span> placeholder<span class="token operator" >=</span><span class="token string" >"例）山田 太郎"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >li.inquiry-Horizontal_List</span>
+      <span class="token tag" >.inquiry-Horizontal_Group</span>
+        <span class="token tag" >.inquiry-Horizontal_Item</span>
+          <span class="token tag" >label.sw-FormLabel<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Horizontal2"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >フリガナ</span>
+        <span class="token tag" >.inquiry-Horizontal_Item</span>
+          <span class="token tag" >input.sw-FormInput<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >id</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Horizontal2"</span> type<span class="token operator" >=</span><span class="token string" >"text"</span> name<span class="token operator" >=</span><span class="token string" >"name"</span> autocomplete<span class="token operator" >=</span><span class="token string" >"name"</span> placeholder<span class="token operator" >=</span><span class="token string" >"例）ヤマダ タロウ"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >li.inquiry-Horizontal_List</span>
+      <span class="token tag" >fieldset</span>
+        <span class="token tag" >.inquiry-Horizontal_Group</span>
+          <span class="token tag" >.inquiry-Horizontal_Item</span>
+            <span class="token tag" >legend.sw-FormLabel</span> <span class="token plain-text" >チェックボックス</span>
+          <span class="token tag" >.inquiry-Horizontal_Item</span>
+            <span class="token tag" >ul.inquiry-Grids.inquiry-Grids-col2Md.inquiry-Grids-col3Lg.inquiry-Grids-col4Xl</span>
+              <span class="token tag" >li.inquiry-Grids_Item</span>
+                <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Horizontal3"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Horizontal"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+                <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Horizontal3"</span></span><span class="token punctuation" >)</span></span></span>
+                  <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
+                    <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
+                  <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス1</span>
+              <span class="token tag" >li.inquiry-Grids_Item</span>
+                <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Horizontal4"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Horizontal"</span> value<span class="token operator" >=</span><span class="token string" >"1"</span></span><span class="token punctuation" >)</span></span></span>
+                <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Horizontal4"</span></span><span class="token punctuation" >)</span></span></span>
+                  <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
+                    <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
+                  <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス2</span>
+              <span class="token tag" >li.inquiry-Grids_Item</span>
+                <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Horizontal5"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Horizontal"</span> value<span class="token operator" >=</span><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+                <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Horizontal5"</span></span><span class="token punctuation" >)</span></span></span>
+                  <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
+                    <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
+                  <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス3</span>
+              <span class="token tag" >li.inquiry-Grids_Item</span>
+                <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Horizontal6"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Horizontal"</span> value<span class="token operator" >=</span><span class="token string" >"3"</span></span><span class="token punctuation" >)</span></span></span>
+                <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Horizontal6"</span></span><span class="token punctuation" >)</span></span></span>
+                  <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
+                    <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
+                  <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス4</span>
 </code></pre>
 
             </div>
@@ -120,7 +246,7 @@
 <div class="l-Wrapper">
   <ul class="inquiry-Inline">
     <li class="inquiry-Inline_Item">
-      <input type="checkbox" id="inquiry-Inline5" name="inquiry-Inline2" value="0" class="sw-FormCheckbox"/>
+      <input type="checkbox" id="inquiry-Inline5" name="inquiry-Inline" value="0" class="sw-FormCheckbox"/>
       <label for="inquiry-Inline5">
         <svg role="img">
           <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
@@ -128,7 +254,7 @@
       </label>
     </li>
     <li class="inquiry-Inline_Item">
-      <input type="checkbox" id="inquiry-Inline6" name="inquiry-Inline2" value="0" class="sw-FormCheckbox"/>
+      <input type="checkbox" id="inquiry-Inline6" name="inquiry-Inline" value="1" class="sw-FormCheckbox"/>
       <label for="inquiry-Inline6">
         <svg role="img">
           <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
@@ -136,7 +262,7 @@
       </label>
     </li>
     <li class="inquiry-Inline_Item">
-      <input type="checkbox" id="inquiry-Inline7" name="inquiry-Inline2" value="0" class="sw-FormCheckbox"/>
+      <input type="checkbox" id="inquiry-Inline7" name="inquiry-Inline" value="2" class="sw-FormCheckbox"/>
       <label for="inquiry-Inline7">
         <svg role="img">
           <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
@@ -144,7 +270,7 @@
       </label>
     </li>
     <li class="inquiry-Inline_Item">
-      <input type="checkbox" id="inquiry-Inline8" name="inquiry-Inline2" value="0" class="sw-FormCheckbox"/>
+      <input type="checkbox" id="inquiry-Inline8" name="inquiry-Inline" value="3" class="sw-FormCheckbox"/>
       <label for="inquiry-Inline8">
         <svg role="img">
           <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
@@ -157,29 +283,126 @@
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
   <span class="token tag" >ul.inquiry-Inline</span>
     <span class="token tag" >li.inquiry-Inline_Item</span>
-      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Inline5"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Inline2"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Inline5"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Inline"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Inline5"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
           <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス1</span>
     <span class="token tag" >li.inquiry-Inline_Item</span>
-      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Inline6"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Inline2"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Inline6"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Inline"</span> value<span class="token operator" >=</span><span class="token string" >"1"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Inline6"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
           <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス2</span>
     <span class="token tag" >li.inquiry-Inline_Item</span>
-      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Inline7"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Inline2"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Inline7"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Inline"</span> value<span class="token operator" >=</span><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Inline7"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
           <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス3</span>
     <span class="token tag" >li.inquiry-Inline_Item</span>
-      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Inline8"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Inline2"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Inline8"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Inline"</span> value<span class="token operator" >=</span><span class="token string" >"3"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Inline8"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
           <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス4</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="inquiry-Stacked" class="aigis-module__heading">inquiry-Stacked</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/inquiry/_Stacked.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>フォーム要素を常に垂直方向に配置します。</p>
+<div class="aigis-preview">
+
+<form method="post" action="/" class="l-Wrapper">
+  <ul class="inquiry-Stacked">
+    <li class="inquiry-Stacked_Item">
+      <label for="inquiry-Stacked1" class="sw-FormLabel">名前</label>
+      <input id="inquiry-Stacked1" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎" class="sw-FormInput"/>
+    </li>
+    <li class="inquiry-Stacked_Item">
+      <label for="inquiry-Stacked2" class="sw-FormLabel">フリガナ</label>
+      <input id="inquiry-Stacked2" type="text" name="name" autocomplete="name" placeholder="例）ヤマダ タロウ" class="sw-FormInput"/>
+    </li>
+    <li class="inquiry-Stacked_Item">
+      <fieldset>
+        <legend class="sw-FormLabel">チェックボックス</legend>
+        <ul class="inquiry-Grids inquiry-Grids-col2Md inquiry-Grids-col3Lg inquiry-Grids-col4Xl">
+          <li class="inquiry-Grids_Item">
+            <input type="checkbox" id="inquiry-Stacked3" name="inquiry-Stacked" value="0" class="sw-FormCheckbox"/>
+            <label for="inquiry-Stacked3">
+              <svg role="img">
+                <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
+              </svg><span>チェックボックス1</span>
+            </label>
+          </li>
+          <li class="inquiry-Grids_Item">
+            <input type="checkbox" id="inquiry-Stacked4" name="inquiry-Stacked" value="1" class="sw-FormCheckbox"/>
+            <label for="inquiry-Stacked4">
+              <svg role="img">
+                <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
+              </svg><span>チェックボックス2</span>
+            </label>
+          </li>
+          <li class="inquiry-Grids_Item">
+            <input type="checkbox" id="inquiry-Stacked5" name="inquiry-Stacked" value="2" class="sw-FormCheckbox"/>
+            <label for="inquiry-Stacked5">
+              <svg role="img">
+                <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
+              </svg><span>チェックボックス3</span>
+            </label>
+          </li>
+          <li class="inquiry-Grids_Item">
+            <input type="checkbox" id="inquiry-Stacked6" name="inquiry-Stacked" value="3" class="sw-FormCheckbox"/>
+            <label for="inquiry-Stacked6">
+              <svg role="img">
+                <use xlink:href="/assets/svg/sprite.svg#checkbox1"></use>
+              </svg><span>チェックボックス4</span>
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+    </li>
+  </ul>
+</form></div>
+
+<pre><code class="language-jade"><span class="token tag" >form.l-Wrapper<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >method</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"post"</span> action<span class="token operator" >=</span><span class="token string" >"/"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >ul.inquiry-Stacked</span>
+    <span class="token tag" >li.inquiry-Stacked_Item</span>
+      <span class="token tag" >label.sw-FormLabel<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Stacked1"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >名前</span>
+      <span class="token tag" >input.sw-FormInput<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >id</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Stacked1"</span> type<span class="token operator" >=</span><span class="token string" >"text"</span> name<span class="token operator" >=</span><span class="token string" >"name"</span> autocomplete<span class="token operator" >=</span><span class="token string" >"name"</span> placeholder<span class="token operator" >=</span><span class="token string" >"例）山田 太郎"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >li.inquiry-Stacked_Item</span>
+      <span class="token tag" >label.sw-FormLabel<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Stacked2"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >フリガナ</span>
+      <span class="token tag" >input.sw-FormInput<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >id</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Stacked2"</span> type<span class="token operator" >=</span><span class="token string" >"text"</span> name<span class="token operator" >=</span><span class="token string" >"name"</span> autocomplete<span class="token operator" >=</span><span class="token string" >"name"</span> placeholder<span class="token operator" >=</span><span class="token string" >"例）ヤマダ タロウ"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >li.inquiry-Stacked_Item</span>
+      <span class="token tag" >fieldset</span>
+        <span class="token tag" >legend.sw-FormLabel</span> <span class="token plain-text" >チェックボックス</span>
+        <span class="token tag" >ul.inquiry-Grids.inquiry-Grids-col2Md.inquiry-Grids-col3Lg.inquiry-Grids-col4Xl</span>
+          <span class="token tag" >li.inquiry-Grids_Item</span>
+            <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Stacked3"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Stacked"</span> value<span class="token operator" >=</span><span class="token string" >"0"</span></span><span class="token punctuation" >)</span></span></span>
+            <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Stacked3"</span></span><span class="token punctuation" >)</span></span></span>
+              <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
+                <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
+              <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス1</span>
+          <span class="token tag" >li.inquiry-Grids_Item</span>
+            <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Stacked4"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Stacked"</span> value<span class="token operator" >=</span><span class="token string" >"1"</span></span><span class="token punctuation" >)</span></span></span>
+            <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Stacked4"</span></span><span class="token punctuation" >)</span></span></span>
+              <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
+                <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
+              <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス2</span>
+          <span class="token tag" >li.inquiry-Grids_Item</span>
+            <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Stacked5"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Stacked"</span> value<span class="token operator" >=</span><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+            <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Stacked5"</span></span><span class="token punctuation" >)</span></span></span>
+              <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
+                <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
+              <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス3</span>
+          <span class="token tag" >li.inquiry-Grids_Item</span>
+            <span class="token tag" >input.sw-FormCheckbox<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >type</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"checkbox"</span> id<span class="token operator" >=</span><span class="token string" >"inquiry-Stacked6"</span> name<span class="token operator" >=</span><span class="token string" >"inquiry-Stacked"</span> value<span class="token operator" >=</span><span class="token string" >"3"</span></span><span class="token punctuation" >)</span></span></span>
+            <span class="token tag" >label<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >for</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"inquiry-Stacked6"</span></span><span class="token punctuation" >)</span></span></span>
+              <span class="token tag" >svg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
+                <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#checkbox1"</span></span><span class="token punctuation" >)</span></span></span>
+              <span class="token tag" >span</span> <span class="token plain-text" >チェックボックス4</span>
 </code></pre>
 
             </div>

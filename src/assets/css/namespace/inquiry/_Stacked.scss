@@ -1,0 +1,76 @@
+/*
+---
+name: inquiry-Stacked
+namespace: inquiry-
+category: Form
+---
+
+フォーム要素を常に垂直方向に配置します。
+
+```jade
+form.l-Wrapper(method="post" action="/")
+  ul.inquiry-Stacked
+    li.inquiry-Stacked_Item
+      label.sw-FormLabel(for="inquiry-Stacked1") 名前
+      input.sw-FormInput(id="inquiry-Stacked1" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+    li.inquiry-Stacked_Item
+      label.sw-FormLabel(for="inquiry-Stacked2") フリガナ
+      input.sw-FormInput(id="inquiry-Stacked2" type="text" name="name" autocomplete="name" placeholder="例）ヤマダ タロウ")
+    li.inquiry-Stacked_Item
+      fieldset
+        legend.sw-FormLabel チェックボックス
+        ul.inquiry-Grids.inquiry-Grids-col2Md.inquiry-Grids-col3Lg.inquiry-Grids-col4Xl
+          li.inquiry-Grids_Item
+            input.sw-FormCheckbox(type="checkbox" id="inquiry-Stacked3" name="inquiry-Stacked" value="0")
+            label(for="inquiry-Stacked3")
+              svg(role="img")
+                use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+              span チェックボックス1
+          li.inquiry-Grids_Item
+            input.sw-FormCheckbox(type="checkbox" id="inquiry-Stacked4" name="inquiry-Stacked" value="1")
+            label(for="inquiry-Stacked4")
+              svg(role="img")
+                use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+              span チェックボックス2
+          li.inquiry-Grids_Item
+            input.sw-FormCheckbox(type="checkbox" id="inquiry-Stacked5" name="inquiry-Stacked" value="2")
+            label(for="inquiry-Stacked5")
+              svg(role="img")
+                use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+              span チェックボックス3
+          li.inquiry-Grids_Item
+            input.sw-FormCheckbox(type="checkbox" id="inquiry-Stacked6" name="inquiry-Stacked" value="3")
+            label(for="inquiry-Stacked6")
+              svg(role="img")
+                use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+              span チェックボックス4
+```
+*/
+.inquiry-Stacked {
+  -js-display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.inquiry-Stacked_Item {
+  flex-basis: 100%;
+  max-width: 100%;
+
+  &:nth-of-type(n+2) {
+    margin-top: rem(30);
+
+    @include mq-up(md) {
+      margin-top: rem(30);
+    }
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
