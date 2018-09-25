@@ -27,20 +27,20 @@ $color-background-color: #fff !default;
 $global-line-height: 1.8 !default;
 
 // システムフォント
-$global-font-family-sans-serif: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$global-font-family-sans-serif: YakuHanJPs, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
 $global-font-family-serif: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
 $global-font-family-monospace: Consolas, Menlo, Courier, monospace !default;
 $global-font-family-en: "Helvetica Neue", Helvetica, sans-serif !default;
-$global-font-family-zh-cn: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
-$global-font-family-zh-tw: "Microsoft JhengHei", "微軟正黑體", 'PMingLiU' sans-serif !default;
+$global-font-family-zh-cn: YakuHanJPs, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$global-font-family-zh-tw: YakuHanJPs, "Microsoft JhengHei", "微軟正黑體", 'PMingLiU' sans-serif !default;
 
 // Noto Sans
 // GoogleやMicrosoftのCDNは中国ではブロックされてしまうので、
 // フォントファイルをサーバに置いて読み込む必要があります。
-$global-font-family-noto-sans-ja: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$global-font-family-noto-sans-ja: YakuHanJPs, "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
 $global-font-family-noto-sans-en: "Noto Sans", "Helvetica Neue", Helvetica, sans-serif !default;
-$global-font-family-noto-sans-zh-cn: "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
-$global-font-family-noto-sans-zh-tw: "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
+$global-font-family-noto-sans-zh-cn: YakuHanJPs, "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$global-font-family-noto-sans-zh-tw: YakuHanJPs, "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
 
 
 // ==========================================================================
