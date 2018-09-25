@@ -154,6 +154,8 @@
 }
 .aigis-module > pre {
   overflow: scroll;
+  resize: vertical;
+  height: 6rem;
   position: relative;
   margin: 0 auto;
   padding: 1rem;
