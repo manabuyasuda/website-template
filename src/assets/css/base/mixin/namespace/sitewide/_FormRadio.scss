@@ -28,18 +28,20 @@
     width: calc(100% - 1em - 4px);
   }
 
-  &:focus + label > svg {
+  [data-whatinput="keyboard"] &:focus + label > svg {
     border-color: $form-border-color-focus;
     box-shadow: $form-box-shadow-focus;
   }
 
-  &:focus:not(.focus-visible) + label > svg {
+  [data-whatinput="mouse"] &:focus + label > svg,
+  [data-whatinput="touch"] &:focus + label > svg {
     border-color: $form-boder-color;
     box-shadow: none;
   }
 
   &:checked + label > svg,
-  &:checked:not(.focus-visible) + label > svg {
+  [data-whatinput="mouse"] &:checked + label > svg,
+  [data-whatinput="touch"] &:checked + label > svg {
     border-color: #1e87f0;
     background-color: #1e87f0;
 

@@ -1,7 +1,7 @@
 'use strict';
 
 import 'picturefill';
-import 'focus-visible';
+import 'what-input';
 import 'flexibility';
 import svg4everybody from 'svg4everybody';
 

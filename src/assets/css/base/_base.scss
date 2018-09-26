@@ -157,3 +157,9 @@ img {
 [type="number"]::-webkit-inner-spin-button {
   appearance: none;
 }
+
+// フォーカスインジゲータはキーボード操作のときにだけ表示します。
+[data-whatinput="mouse"] *:focus,
+[data-whatinput="touch"] *:focus {
+  outline: none;
+}

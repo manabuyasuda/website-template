@@ -31,12 +31,13 @@
     text-decoration: none;
   }
 
-  &:focus {
+  [data-whatinput="keyboard"] &:focus {
    outline-width: 0;
    box-shadow: $form-box-shadow-focus;
   }
 
-  &:focus:not(.focus-visible) {
+  [data-whatinput="mouse"] &:focus,
+  [data-whatinput="touch"] &:focus {
     outline-width: 0;
     box-shadow: none;
   }
