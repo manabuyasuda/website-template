@@ -2,7 +2,7 @@
   color: $color-link;
   text-decoration: underline;
 
-  &:hover {
+  html:not([data-whatinput="touch"]) &:hover {
     color: $color-link-hover;
     text-decoration: underline;
   }

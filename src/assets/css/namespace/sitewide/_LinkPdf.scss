@@ -23,7 +23,7 @@ category: [Link, Icon]
   color: $color-link;
   text-decoration: none;
 
-  &:hover {
+  html:not([data-whatinput="touch"]) &:hover {
     color: $color-link-hover;
     text-decoration: underline;
   }

@@ -11,7 +11,7 @@ category: [Button, Link, Form]
 .l-Wrapper
   a.sw-Button(href="#") aタグボタン
   a.sw-Button.sw-Button-disabled(href="#" tabindex="-1") aタグボタン
-  button.sw-Button(type="button") buttonタグボタン
+  button.sw-Button#foo(type="button") buttonタグボタン
   button.sw-Button(disabled type="button") buttonタグボタン
   input.sw-Button(type="button" value="inputボタン")
   input.sw-Button(type="button" value="inputボタン" disabled)
@@ -50,16 +50,14 @@ category: [Button, Link, Form]
   color: #fff;
   background-color: $color-brand;
 
-  &:hover {
+  html:not([data-whatinput="touch"]) &:hover {
     color: $color-brand;
     background-color: #fff;
   }
 
-  &:disabled:hover,
-  &-disabled:hover {
-    border-color: $form-background-color-disabled;
+  html:not([data-whatinput="touch"]) &:disabled:hover,
+  html:not([data-whatinput="touch"]) &-disabled:hover {
     color: #fff;
-    background-color: $form-background-color-disabled;
   }
 }
 

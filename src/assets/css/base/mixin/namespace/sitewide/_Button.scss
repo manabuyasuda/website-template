@@ -43,11 +43,13 @@
   }
 
   &:disabled,
-  &-disabled {
-    opacity: $form-opacity-disabled;
-    border-color: $form-background-color-disabled;
-    background-color: $form-background-color-disabled;
-    cursor: $form-cursor-disabled;
+  &-disabled,
+  &:disabled:hover,
+  &-disabled:hover {
+    opacity: $form-opacity-disabled !important;
+    border-color: $form-background-color-disabled !important;
+    background-color: $form-background-color-disabled !important;
+    cursor: $form-cursor-disabled !important;
   }
   &-disabled {
     pointer-events: none;

@@ -10,7 +10,7 @@
   text-decoration: none;
   background-color: inherit;
 
-  &:hover {
+  html:not([data-whatinput="touch"]) &:hover {
     color: currentColor;
     text-decoration: none;
   }
