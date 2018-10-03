@@ -58,6 +58,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
+    "a11y-dialog": "^5.2.0",
     "flexibility": "^2.0.1",
     "jquery": "^3.3.1",
     "jquery-match-height": "^0.7.2",

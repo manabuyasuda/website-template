@@ -1,0 +1,192 @@
+/*
+---
+name: sw-Dialog
+namespace: sw-
+category: InteractiveComponent
+---
+
+A11yに対応したダイアログ（モーダル）です。
+複数のダイアログを使う場合は`data-a11y-dialog-show="dialog1"`と`id="dialog1"`の値を`dialog2`や`dialog3`のように連番で指定してください。
+最大で10個まで対応しています。
+メインコンテンツに`#main`を指定、ダイアログはそのID要素と兄弟関係になるようにしてください。
+
+```jade
+.l-Wrapper#main
+  button.sw-Dialog_Link(data-a11y-dialog-show="dialog1") ダイアログ1を開く
+  br
+  button.sw-Dialog_Link(data-a11y-dialog-show="dialog2") ダイアログ2を開く
+
+.sw-Dialog_Dialog#dialog1
+  .sw-Dialog_Overlay(tabindex="-1" data-a11y-dialog-hide)
+  dialog.sw-Dialog_Content(aria-labelledby="dialog-title" aria-describedby="dialogDescription")
+    h3#dialog-title ダイアログ1のタイトル
+    p#dialogDescription ダイアログ2の概要
+    p `aria-labelledby`と`aria-describedby`で、タイアログのタイトルと概要を紐づけています。
+    button.sw-Dialog_Close(type="button" data-a11y-dialog-hide aria-label="この画面を閉じる")
+      svg.sw-Dialog_CloseIcon(role="img")
+        use(xlink:href="/assets/svg/sprite.svg#close1")
+
+.sw-Dialog_Dialog#dialog2
+  .sw-Dialog_Overlay(tabindex="-1" data-a11y-dialog-hide)
+  dialog.sw-Dialog_Content(aria-labelledby="dialog-title" aria-describedby="dialogDescription")
+    h3#dialog-title ダイアログ2のタイトル
+    p#dialogDescription ダイアログ2の概要
+    p `aria-labelledby`と`aria-describedby`で、タイアログのタイトルと概要を紐づけています。
+    button.sw-Dialog_Close(type="button" data-a11y-dialog-hide aria-label="この画面を閉じる")
+      svg.sw-Dialog_CloseIcon(role="img")
+        use(xlink:href="/assets/svg/sprite.svg#close1")
+```
+*/
+@keyframes sw-Dialog_Content {
+  from {
+    transform: translate(50%, 60%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(50%, 50%);
+    opacity: 1;
+  }
+}
+
+.sw-Dialog_Content {
+  display: none;
+  position: fixed;
+  right: 50%;
+  bottom: 50%;
+  left: auto;
+  z-index: 3;
+  width: 600px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: rem(40) rem(20);
+  border: 1px solid #ddd;
+  border-radius: rem(3);
+  background-color: #fff;
+  transform: translate(50%, 50%);
+
+  // dialog要素が使用された場合の背景色
+  &::backdrop {
+    background-color: rgba(#000, 0.6);
+  }
+
+  // ダイアログを表示
+  &[open] {
+    display: block;
+    animation-name: sw-Dialog_Content;
+    animation-duration: $global-transition-duration;
+  }
+}
+
+@keyframes sw-Dialog_Overlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sw-Dialog_Overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  // dialog要素が使用できなかった場合の背景色
+  background-color: rgba(#000, 0.6);
+  display: none;
+
+  // dialog要素が使用できない場合は表示
+  [id="main"][aria-hidden="true"] ~ .sw-Dialog_Dialog:not([aria-hidden="true"]) & {
+    display: block;
+    animation-name: sw-Dialog_Overlay;
+    animation-duration: $global-transition-duration;
+  }
+}
+
+.sw-Dialog_Close {
+  position: absolute;
+  top: rem(8);
+  right: rem(8);
+  display: inline-block;
+  width: rem(32);
+  height: rem(32);
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  transition-duration: $global-transition-duration;
+  transition-timing-function: $global-transition-timing-function;
+
+  &[type="button"] {
+    appearance: none;
+  }
+
+  @include on-event() {
+    text-decoration: none;
+  }
+
+  [data-whatinput="keyboard"] &:focus {
+   outline-width: 0;
+   box-shadow: $form-box-shadow-focus;
+  }
+
+  [data-whatinput="mouse"] &:focus,
+  [data-whatinput="touch"] &:focus {
+    outline-width: 0;
+    box-shadow: none;
+  }
+}
+
+.sw-Dialog_CloseIcon {
+  width: 1em;
+  height: 1em;
+  font-size: rem(18);
+  fill: currentColor;
+}
+
+.sw-Dialog_Link {
+  display: inline;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: $color-link;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: $global-line-height;
+  text-align: left;
+  text-decoration: underline;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  transition-duration: $global-transition-duration;
+  transition-timing-function: $global-transition-timing-function;
+
+  html:not([data-whatinput="touch"]) &:hover {
+    color: $color-link-hover;
+    text-decoration: none;
+  }
+
+  [data-whatinput="keyboard"] &:focus {
+   outline-width: 0;
+   box-shadow: $form-box-shadow-focus;
+  }
+
+  [data-whatinput="mouse"] &:focus,
+  [data-whatinput="touch"] &:focus {
+    outline-width: 0;
+    box-shadow: none;
+  }
+}
