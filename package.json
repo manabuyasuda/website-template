@@ -63,8 +63,8 @@
     "jquery": "^3.3.1",
     "jquery-match-height": "^0.7.2",
     "picturefill": "^3.0.2",
-    "smooth-scroll": "^14.2.0",
     "svg4everybody": "^2.1.9",
+    "sweet-scroll": "^3.0.1",
     "what-input": "^5.1.2"
   }
 }

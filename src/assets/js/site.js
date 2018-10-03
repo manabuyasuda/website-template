@@ -12,6 +12,6 @@ import jsDialog from './namespace/js/dialog';
 (() => {
   svg4everybody();
   jsAlignHeight();
-  // jsSmoothScroll();
+  jsSmoothScroll();
   jsDialog();
 })();
