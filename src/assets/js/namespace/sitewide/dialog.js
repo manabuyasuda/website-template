@@ -1,14 +1,14 @@
 /**
  * A11yに対応したダイアログ（モーダル）です。
- * 複数のダイアログを使う場合は`data-a11y-dialog-show="dialog"`とid="dialog"の値を
- * `dialog1`や`dialog2`のように連番で指定してください。最大で10個まで対応しています。
+ * 複数のダイアログを使う場合は`data-a11y-dialog-show="sw-dialog1"`とid="sw-dialog1"の値を
+ * `sw-dialog2`や`sw-dialog3`のように連番で指定してください。最大で10個まで対応しています。
  * https://github.com/edenspiekermann/a11y-dialog
  * 例：
  * <div id="main">
- *   <button class="sw-Dialog_Link" data-a11y-dialog-show="dialog1">ダイアログを開く</button>
+ *   <button class="sw-Dialog_Link" data-a11y-dialog-show="sw-dialog1">ダイアログを開く</button>
  * </div>
  *
- * <div class="sw-Dialog_Dialog" id="dialog1">
+ * <div class="sw-Dialog_Dialog" id="sw-dialog1">
  *   <div class="sw-Dialog_Overlay" tabindex="-1" data-a11y-dialog-hide></div>
  *   <dialog class="sw-Dialog_Content" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
  *     <h3 id="dialog-title">title1</h3>
@@ -24,9 +24,9 @@
  */
  import $ from 'jquery';
 import A11yDialog from 'a11y-dialog';
-export default function dialog() {
+export default function sitewideDialog() {
   // ダイアログのID名。1から始まる連番が追加される。
-  const dialogName = 'dialog';
+  const dialogName = 'sw-dialog';
   const dialog = document.getElementById(dialogName);
   // メインコンテンツのID名。ダイアログはこのID要素と兄弟関係になるようにする。
   const container = document.getElementById('main');

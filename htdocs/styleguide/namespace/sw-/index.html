@@ -259,16 +259,16 @@
               <h2 id="sw-Dialog" class="aigis-module__heading">sw-Dialog</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_Dialog.scss</div>
               <div class="aigis-module__label"><span class="sw-Label"></span></div><p>A11yに対応したダイアログ（モーダル）です。
-複数のダイアログを使う場合は<code>data-a11y-dialog-show=&quot;dialog1&quot;</code>と<code>id=&quot;dialog1&quot;</code>の値を<code>dialog2</code>や<code>dialog3</code>のように連番で指定してください。
+複数のダイアログを使う場合は<code>data-a11y-dialog-show=&quot;sw-dialog1&quot;</code>と<code>id=&quot;sw-dialog1&quot;</code>の値を<code>sw-dialog2</code>や<code>sw-dialog3</code>のように連番で指定してください。
 最大で10個まで対応しています。
 メインコンテンツに<code>#main</code>を指定、ダイアログはそのID要素と兄弟関係になるようにしてください。</p>
 <div class="aigis-preview">
 
 <div id="main" class="l-Wrapper">
-  <button data-a11y-dialog-show="dialog1" class="sw-Dialog_Link">ダイアログ1を開く</button><br/>
-  <button data-a11y-dialog-show="dialog2" class="sw-Dialog_Link">ダイアログ2を開く</button>
+  <button data-a11y-dialog-show="sw-dialog1" class="sw-Dialog_Link">ダイアログ1を開く</button><br/>
+  <button data-a11y-dialog-show="sw-dialog2" class="sw-Dialog_Link">ダイアログ2を開く</button>
 </div>
-<div id="dialog1" class="sw-Dialog_Dialog">
+<div id="sw-dialog1" class="sw-Dialog_Dialog">
   <div tabindex="-1" data-a11y-dialog-hide="data-a11y-dialog-hide" class="sw-Dialog_Overlay"></div>
   <dialog aria-labelledby="dialog-title" aria-describedby="dialogDescription" class="sw-Dialog_Content">
     <h3 id="dialog-title">ダイアログ1のタイトル</h3>
@@ -281,7 +281,7 @@
     </button>
   </dialog>
 </div>
-<div id="dialog2" class="sw-Dialog_Dialog">
+<div id="sw-dialog2" class="sw-Dialog_Dialog">
   <div tabindex="-1" data-a11y-dialog-hide="data-a11y-dialog-hide" class="sw-Dialog_Overlay"></div>
   <dialog aria-labelledby="dialog-title" aria-describedby="dialogDescription" class="sw-Dialog_Content">
     <h3 id="dialog-title">ダイアログ2のタイトル</h3>
@@ -296,11 +296,11 @@
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper#main</span>
-  <span class="token tag" >button.sw-Dialog_Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >data-a11y-dialog-show</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"dialog1"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ダイアログ1を開く</span>
+  <span class="token tag" >button.sw-Dialog_Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >data-a11y-dialog-show</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"sw-dialog1"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ダイアログ1を開く</span>
   <span class="token tag" >br</span>
-  <span class="token tag" >button.sw-Dialog_Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >data-a11y-dialog-show</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"dialog2"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ダイアログ2を開く</span>
+  <span class="token tag" >button.sw-Dialog_Link<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >data-a11y-dialog-show</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"sw-dialog2"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >ダイアログ2を開く</span>
 
-<span class="token tag" >.sw-Dialog_Dialog#dialog1</span>
+<span class="token tag" >.sw-Dialog_Dialog#sw-dialog1</span>
   <span class="token tag" >.sw-Dialog_Overlay<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >tabindex</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-1"</span> data<span class="token operator" >-</span>a11y<span class="token operator" >-</span>dialog<span class="token operator" >-</span>hide</span><span class="token punctuation" >)</span></span></span>
   <span class="token tag" >dialog.sw-Dialog_Content<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-labelledby</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"dialog-title"</span> aria<span class="token operator" >-</span>describedby<span class="token operator" >=</span><span class="token string" >"dialogDescription"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >h3#dialog-title</span> <span class="token plain-text" >ダイアログ1のタイトル</span>
@@ -310,7 +310,7 @@
       <span class="token tag" >svg.sw-Dialog_CloseIcon<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >role</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"img"</span></span><span class="token punctuation" >)</span></span></span>
         <span class="token tag" >use<span class="token attributes" ><span class="token punctuation" >(</span>xlink:<span class="token attr-name" >href</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"/assets/svg/sprite.svg#close1"</span></span><span class="token punctuation" >)</span></span></span>
 
-<span class="token tag" >.sw-Dialog_Dialog#dialog2</span>
+<span class="token tag" >.sw-Dialog_Dialog#sw-dialog2</span>
   <span class="token tag" >.sw-Dialog_Overlay<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >tabindex</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-1"</span> data<span class="token operator" >-</span>a11y<span class="token operator" >-</span>dialog<span class="token operator" >-</span>hide</span><span class="token punctuation" >)</span></span></span>
   <span class="token tag" >dialog.sw-Dialog_Content<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >aria-labelledby</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"dialog-title"</span> aria<span class="token operator" >-</span>describedby<span class="token operator" >=</span><span class="token string" >"dialogDescription"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >h3#dialog-title</span> <span class="token plain-text" >ダイアログ2のタイトル</span>

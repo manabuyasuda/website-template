@@ -6,17 +6,17 @@ category: InteractiveComponent
 ---
 
 A11yに対応したダイアログ（モーダル）です。
-複数のダイアログを使う場合は`data-a11y-dialog-show="dialog1"`と`id="dialog1"`の値を`dialog2`や`dialog3`のように連番で指定してください。
+複数のダイアログを使う場合は`data-a11y-dialog-show="sw-dialog1"`と`id="sw-dialog1"`の値を`sw-dialog2`や`sw-dialog3`のように連番で指定してください。
 最大で10個まで対応しています。
 メインコンテンツに`#main`を指定、ダイアログはそのID要素と兄弟関係になるようにしてください。
 
 ```jade
 .l-Wrapper#main
-  button.sw-Dialog_Link(data-a11y-dialog-show="dialog1") ダイアログ1を開く
+  button.sw-Dialog_Link(data-a11y-dialog-show="sw-dialog1") ダイアログ1を開く
   br
-  button.sw-Dialog_Link(data-a11y-dialog-show="dialog2") ダイアログ2を開く
+  button.sw-Dialog_Link(data-a11y-dialog-show="sw-dialog2") ダイアログ2を開く
 
-.sw-Dialog_Dialog#dialog1
+.sw-Dialog_Dialog#sw-dialog1
   .sw-Dialog_Overlay(tabindex="-1" data-a11y-dialog-hide)
   dialog.sw-Dialog_Content(aria-labelledby="dialog-title" aria-describedby="dialogDescription")
     h3#dialog-title ダイアログ1のタイトル
@@ -26,7 +26,7 @@ A11yに対応したダイアログ（モーダル）です。
       svg.sw-Dialog_CloseIcon(role="img")
         use(xlink:href="/assets/svg/sprite.svg#close1")
 
-.sw-Dialog_Dialog#dialog2
+.sw-Dialog_Dialog#sw-dialog2
   .sw-Dialog_Overlay(tabindex="-1" data-a11y-dialog-hide)
   dialog.sw-Dialog_Content(aria-labelledby="dialog-title" aria-describedby="dialogDescription")
     h3#dialog-title ダイアログ2のタイトル

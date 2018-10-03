@@ -7,11 +7,11 @@ import svg4everybody from 'svg4everybody';
 
 import jsAlignHeight from './namespace/js/alignHeight';
 import jsSmoothScroll from './namespace/js/smoothScroll';
-import jsDialog from './namespace/js/dialog';
+import sitewideDialog from './namespace/sitewide/dialog';
 
 (() => {
   svg4everybody();
   jsAlignHeight();
   jsSmoothScroll();
-  jsDialog();
+  sitewideDialog();
 })();
