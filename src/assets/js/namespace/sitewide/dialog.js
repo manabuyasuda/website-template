@@ -10,31 +10,35 @@
  *
  * <div class="sw-Dialog_Dialog" id="sw-dialog1">
  *   <div class="sw-Dialog_Overlay" tabindex="-1" data-a11y-dialog-hide></div>
- *   <dialog class="sw-Dialog_Content" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
- *     <h3 id="dialog-title">title1</h3>
- *     <p id="dialog-description">Description1</p>
- *     <p>aria-labelledbyとaria-describedbyで、タイアログのタイトルと概要を紐づけています。</p>
- *     <button class="sw-Dialog_Close" type="button" data-a11y-dialog-hide aria-label="この画面を閉じる">
- *       <svg role="img" class="sw-Dialog_CloseIcon">
- *         <use xlink:href="/assets/svg/sprite.svg#close1"></use>
- *       </svg>
- *     </button>
+ *   <dialog class="sw-Dialog_Content" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialogDescription">
+ *     <div class="sw-Dialog_Inner">
+ *       <div class="sw-Dialog_Head">
+ *         <button class="sw-Dialog_Close" type="button" data-a11y-dialog-hide="data-a11y-dialog-hide" aria-label="この画面を閉じる">
+ *           <svg role="img" class="sw-Dialog_CloseIcon">
+ *             <use xlink:href="/assets/svg/sprite.svg#close1"></use>
+ *           </svg>
+ *         </button>
+ *       </div>
+ *       <div class="sw-Dialog_Body">
+ *         <h3 id="dialog-title">ダイアログ1のタイトル</h3>
+ *         <p id="dialogDescription">ダイアログ1の概要</p>
+ *         <p><code>aria-labelledby</code>と<code>aria-describedby</code>で、タイアログのタイトルと概要を紐づけています。</p>
+ *       </div>
+ *     </div>
  *   </dialog>
  * </div>
  */
- import $ from 'jquery';
+import $ from 'jquery';
 import A11yDialog from 'a11y-dialog';
 export default function sitewideDialog() {
   // ダイアログのID名。1から始まる連番が追加される。
   const dialogName = 'sw-dialog';
-  const dialog = document.getElementById(dialogName);
   // メインコンテンツのID名。ダイアログはこのID要素と兄弟関係になるようにする。
   const container = document.getElementById('main');
   // ダイアログを開く直前のスクロール位置。
   let openBeforeLocation = 0;
 
-  init();
-  generate();
+  generateInstance();
 
   /**
    * 画面を固定する。
@@ -69,33 +73,15 @@ export default function sitewideDialog() {
   }
 
   /**
-   * ダイアログのインスタンスを生成する。
-   */
-  function init() {
-    if (dialog) {
-      const dialog = new A11yDialog(dialog, container);
-
-      // ダイアログを表示したときの処理
-      dialog.on('show', function (dialogEl, event) {
-        fixScreen();
-      });
-      // ダイアログを非表示にしたときの処理
-      dialog.on('hide', function (dialogEl, event) {
-        cancelScreenFixed();
-      });
-    }
-  }
-
-  /**
    * ダイアログのインスタンスを複数生成する。
    */
-  function generate() {
+  function generateInstance() {
     // 生成するタイアログの数。
     const dialogCount = 10;
 
     for (let i = 0; i < dialogCount; i++) {
-      const dialog = document.getElementById(`${dialogName}${i + 1}`);
       const sequenceDialog = `${dialogName}${i + 1}`;
+      const dialog = document.getElementById(sequenceDialog);
 
       if (dialog) {
         const sequenceDialog = new A11yDialog(dialog, container);
