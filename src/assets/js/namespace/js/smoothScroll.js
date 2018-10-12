@@ -1,15 +1,22 @@
 /**
- * ページ内リンクをスムーススクロールで移動します。
+ * ハッシュ付きのリンクをスムーススクロールで移動します。
  * https://github.com/tsuyoshiwada/sweet-scroll
  *
- * 例：id属性が指定してある要素まで移動する
+ * 例1：id属性が指定してある要素に移動する（id属性値は数値から始めてはいけない）。
  * <a class="js-smoothScroll" href="#section1">section1へ移動</a>
+ * <div id="section1">○○</div>
+ *
+ * 例2：ページ読み込み時にハッシュと同じid属性があれば、その要素に移動する。
+ * <a href="/foo/#section1">/foo/のsection1へ移動</a>
  * <div id="section1">○○</div>
  */
 import SweetScroll from "sweet-scroll"
 export default function jsSmoothScroll() {
+  const trigger1 = '.js-smoothScroll';
+  const trigger2 = 'a[href*="#"]:not([href*="/"]):not(#st-BackToTop)';
+
   const scroller = new SweetScroll({
-    trigger: '.js-smoothScroll',       // Selector for trigger (must be a valid css selector)
+    trigger: trigger1,       // Selector for trigger (must be a valid css selector)
     header: '[data-scroll-header]', // Selector or Element for fixed header (Selector of must be a valid css selector)
     duration: 1000,                 // Specifies animation duration in integer
     easing: 'easeOutQuint',         // Specifies the pattern of easing
@@ -20,22 +27,25 @@ export default function jsSmoothScroll() {
     updateURL: true,               // Update the URL hash on after scroll (true | false | 'push' | 'replace')
     preventDefault: true,           // Cancels the container element click event
     stopPropagation: true,          // Prevents further propagation of the container element click event in the bubbling phase
-    quickMode: true               // Instantly scroll to the destination! (It's recommended to use it with `easeOutExpo`)
+    quickMode: false               // Instantly scroll to the destination! (It's recommended to use it with `easeOutExpo`)
   });
 
   /**
-   * 別のページでハッシュ付きのURLで開いたときもアニメーションさせる。
+   * ページ読み込み時に、ハッシュと同じid属性があれば要素まで移動する
    */
   const hash = window.location.hash;
-  const needsInitialScroll = document.getElementById(hash.substr(1)) != null;
+  const hashExists = hash.length >= 1;
 
-  if (needsInitialScroll) {
+  if (hashExists) {
     window.location.hash = '';
   }
 
-  window.addEventListener('load', () => {
+  window.addEventListener('DOMContentLoaded', () => {
+    const needsInitialScroll = document.getElementById(hash.substr(1)) != null;
+
     if (needsInitialScroll) {
       scroller.to(hash, {updateURL: 'replace'});
     }
   }, false);
+
 };
