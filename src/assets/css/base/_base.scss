@@ -62,6 +62,13 @@ fieldset {
 }
 
 /**
+ * normalize.cssのスタイルをリセットして、divのように扱います。
+ */
+legend {
+  display: block;
+}
+
+/**
  * ブロック要素の上下のマージンをリセットします。
  */
 h1, h2, h3, h4, h5, h6,

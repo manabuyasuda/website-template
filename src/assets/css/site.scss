@@ -3,8 +3,8 @@
 @import "base/function/**/*.scss";
 @import "base/variable/**/*.scss";
 @import "base/mixin/**/*.scss";
-@import "base/_normalize.scss";
-@import "base/_base.scss";
+@import "../../../node_modules/normalize.css/normalize";
+@import "base/_base";
 
 /**
  * .sw- (SiteWide)...サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）
@@ -27,4 +27,4 @@
  */
 @import "namespace/**/*.scss";
 
-@import "_print.scss";
+@import "_print";

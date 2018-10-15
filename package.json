@@ -62,6 +62,7 @@
     "flexibility": "^2.0.1",
     "jquery": "^3.3.1",
     "jquery-match-height": "^0.7.2",
+    "normalize.css": "^8.0.0",
     "picturefill": "^3.0.2",
     "svg4everybody": "^2.1.9",
     "sweet-scroll": "^3.0.1",
