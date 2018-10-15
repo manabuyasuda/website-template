@@ -1,6 +1,6 @@
 {
   "name": "website-template",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Webサイト制作のためのテンプレート",
   "main": "index.js",
   "scripts": {
