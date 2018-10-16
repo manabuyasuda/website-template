@@ -25,11 +25,10 @@
   },
   "homepage": "https://github.com/manabuyasuda/website-template#readme",
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "autoprefixer": "^8.6.1",
-    "babel-core": "^6.26.3",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babelify": "^8.0.0",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.18.13",
     "browserify": "^16.2.2",
     "browsersync-ssi": "^0.2.4",
@@ -58,6 +57,7 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "a11y-dialog": "^5.2.0",
     "flexibility": "^2.0.1",
     "jquery": "^3.3.1",

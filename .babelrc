@@ -1,15 +1,19 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "browsers": [
-        "last 1 version",
-        "> 3% in JP",
-        "ie >= 9",
-        "iOS >= 8",
-        "Android >= 4.4"
-        ]
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+          "last 1 version",
+          "> 3% in JP",
+          "ie >= 9",
+          "iOS >= 8",
+          "Android >= 4.4"
+          ]
+        },
+        "useBuiltIns": false
       }
-    }]
+    ]
   ]
 }
