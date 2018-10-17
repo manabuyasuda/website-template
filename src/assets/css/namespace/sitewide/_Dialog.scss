@@ -242,3 +242,12 @@ A11yに対応したダイアログ（モーダル）です。
     box-shadow: none;
   }
 }
+
+.sw-Dialog_Fixed {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

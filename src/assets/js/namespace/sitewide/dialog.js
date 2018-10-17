@@ -1,7 +1,7 @@
 /**
  * A11yに対応したダイアログ（モーダル）です。
  * 複数のダイアログを使う場合は`data-a11y-dialog-show="sw-dialog1"`とid="sw-dialog1"の値を
- * `sw-dialog2`や`sw-dialog3`のように連番で指定してください。最大で10個まで対応しています。
+ * `sw-dialog2`や`sw-dialog3`のように連番で指定してください。
  * https://github.com/edenspiekermann/a11y-dialog
  * 例：
  * <div id="main">
@@ -28,74 +28,52 @@
  *   </dialog>
  * </div>
  */
-import $ from 'jquery';
-import A11yDialog from 'a11y-dialog';
-export default function sitewideDialog() {
-  // ダイアログのID名。1から始まる連番が追加される。
-  const dialogName = 'sw-dialog';
-  // メインコンテンツのID名。ダイアログはこのID要素と兄弟関係になるようにする。
+ import A11yDialog from 'a11y-dialog';
+ import {scrollingElement} from '../../util';
+ export default function sitewideDialog() {
+  // IDとカスタムデータ属性値で使用する名前。
+  const baseName = 'sw-dialog';
+  // `baseName`+1桁以上の連番。
+  const regexp = new RegExp(`${baseName}[0-9]{1,}`);
+  const allSelector = document.querySelectorAll(`[data-a11y-dialog-show*=${baseName}]`);
+
+  const html = document.getElementsByTagName('html')[0];
+  const body = document.getElementsByTagName('body')[0];
+  const scrollElement = scrollingElement();
+  // 画面を固定するときに指定するクラス名。
+  const fixedClass = 'sw-Dialog_Fixed';
+  // メインコンテンツのID名。ダイアログはこのID要素と兄弟関係にする。
   const container = document.getElementById('main');
+
   // ダイアログを開く直前のスクロール位置。
   let openBeforeLocation = 0;
+  let targets = [];
 
-  generateInstance();
+  // 該当する要素のクラス名を`targets`に格納する。
+  Array.prototype.slice.call(allSelector, 0).forEach(item => {
+    const className = item.getAttribute('data-a11y-dialog-show');
+    const itemName = className.match(regexp)[0];
+    targets.push(itemName);
+  });
 
-  /**
-   * 画面を固定する。
-   */
-  function fixScreen() {
-    openBeforeLocation = window.pageYOffset;
+  targets.forEach(target => {
+    // 該当する要素のIDを渡してインスタンス化する。
+    const targetID = document.getElementById(target);
+    const targetName = new A11yDialog(targetID, container);
 
-    $('html, body').css({
-      'width': '100vw',
-      'height': '100vh',
-      'overflow': 'hidden',
-      'position': 'absolute',
-      'top': '0',
-      'left': '0'
-    });
-  }
-
-  /**
-   * 画面の固定を解除、ダイアログを開く前のスクロール位置に戻す。
-   */
-  function cancelScreenFixed() {
-    $('html, body').css({
-      'width': '',
-      'height': '',
-      'overflow': '',
-      'position': '',
-      'top': '',
-      'left': ''
+    // ダイアログを表示したときは画面を固定する。
+    targetName.on('show', function (dialogEl, event) {
+      openBeforeLocation = window.pageYOffset;
+      html.classList.add(fixedClass);
+      body.classList.add(fixedClass);
     });
 
-    $('html, body').scrollTop(openBeforeLocation);
-  }
-
-  /**
-   * ダイアログのインスタンスを複数生成する。
-   */
-  function generateInstance() {
-    // 生成するタイアログの数。
-    const dialogCount = 10;
-
-    for (let i = 0; i < dialogCount; i++) {
-      const sequenceDialog = `${dialogName}${i + 1}`;
-      const dialog = document.getElementById(sequenceDialog);
-
-      if (dialog) {
-        const sequenceDialog = new A11yDialog(dialog, container);
-
-        // ダイアログを表示したときの処理
-        sequenceDialog.on('show', function (dialogEl, event) {
-          fixScreen();
-        });
-        // ダイアログを非表示にしたときの処理
-        sequenceDialog.on('hide', function (dialogEl, event) {
-          cancelScreenFixed();
-        });
-      }
-    }
-  }
+    // ダイアログを非表示にしたときは画面の固定を解除して、スクロール位置を戻す。
+    targetName.on('hide', function (dialogEl, event) {
+      html.classList.remove(fixedClass);
+      body.classList.remove(fixedClass);
+      scrollElement.scrollTop = openBeforeLocation;
+    });
+  });
 
 };
