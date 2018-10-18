@@ -1,0 +1,40 @@
+@mixin sw-ObjectFit() {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: none;
+  object-position: 50% 50%;
+
+  &[data-object-fit="fill"] {
+    object-fit: fill;
+  }
+
+  &[data-object-fit="cover"] {
+    object-fit: cover;
+  }
+
+  &[data-object-fit="contain"] {
+    object-fit: contain;
+  }
+
+  &[data-object-fit="none"] {
+    object-fit: none;
+  }
+
+  &[data-object-fit="scale-down"] {
+    object-fit: scale-down;
+  }
+
+  // top && center || right || left
+  &-topLeft { object-position: left top; }
+  &-topCenter { object-position: center top; }
+  &-topRight { object-position: right top; }
+  // center && center || right || left
+  &-centerLeft { object-position: left center; }
+  &-centerCenter { object-position: center center; }
+  &-centerRight { object-position: right center; }
+  // bottom && center || right || left
+  &-bottomLeft { object-position: left bottom; }
+  &-bottomCenter { object-position: center bottom; }
+  &-bottomRight { object-position: right bottom; }
+}

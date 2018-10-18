@@ -1,0 +1,38 @@
+/*
+---
+name: sw-ObjectFit
+namespace: sw-
+category: Image
+---
+
+置換要素（`img`、`video`、`picture`、`srcset`タグなど）を親要素のサイズに応じてトリミングや拡大縮小をして表示します。
+
+| クラス名                    | Y軸      | X軸      |
+|---------------------------- |-------- |-------- |
+| .sw-ObjectFit-topLeft       | top     | left    |
+| .sw-ObjectFit-topCenter     | top     | center  |
+| .sw-ObjectFit-topRight      | top     | right   |
+| .sw-ObjectFit-centerLeft    | center  | left    |
+| .sw-ObjectFit-centerCenter  | center  | center  |
+| .sw-ObjectFit-centerRight   | center  | right   |
+| .sw-ObjectFit-bottomLeft    | bottom  | left    |
+| .sw-ObjectFit-bottomCenter  | bottom  | center  |
+| .sw-ObjectFit-bottomRight   | bottom  | right   |
+
+ポリフィルは「[object-fit-polyfill](https://github.com/constancecchen/object-fit-polyfill)」を使用しています。
+
+```jade
+.l-Grids.l-Grids-col2
+  .l-Grids_Item(style="height: 200px;")
+    img.sw-ObjectFit(src="https://unsplash.it/800/600/" alt data-object-fit="cover")
+  .l-Grids_Item(style="height: 200px;")
+    img.sw-ObjectFit(src="https://unsplash.it/400/600/" alt data-object-fit="contain")
+  .l-Grids_Item(style="height: 200px;")
+    img.sw-ObjectFit(src="https://unsplash.it/600/400/" alt data-object-fit="none")
+  .l-Grids_Item(style="height: 200px;")
+    img.sw-ObjectFit(src="https://unsplash.it/600/200/" alt data-object-fit="scale-down")
+```
+*/
+.sw-ObjectFit {
+  @include sw-ObjectFit();
+}

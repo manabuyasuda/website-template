@@ -63,6 +63,7 @@
     "flexibility": "^2.0.1",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.0",
+    "objectFitPolyfill": "^2.1.1",
     "picturefill": "^3.0.2",
     "responsive-auto-height": "0.0.4",
     "svg4everybody": "^2.1.9",
