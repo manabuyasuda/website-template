@@ -7,9 +7,14 @@
  */
 import SweetScroll from "sweet-scroll"
 export default function structureBackToTop() {
+  const Selector = {
+    ID: '#st-BackToTop', // IDで指定する場合。
+    HEADER: '[data-scroll-header]' // 固定ヘッダーのCSSセレクタ。
+  };
+
   const backToTop = new SweetScroll({
-    trigger: '#st-BackToTop',       // Selector for trigger (must be a valid css selector)
-    header: '[data-scroll-header]', // Selector or Element for fixed header (Selector of must be a valid css selector)
+    trigger: Selector.ID,       // Selector for trigger (must be a valid css selector)
+    header: Selector.HEADER, // Selector or Element for fixed header (Selector of must be a valid css selector)
     duration: 1000,                 // Specifies animation duration in integer
     easing: 'easeOutQuint',         // Specifies the pattern of easing
     offset: 0,                      // Specifies the value to offset the scroll position in pixels

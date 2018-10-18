@@ -14,29 +14,31 @@
  *   </div>
  * </div>
  */
- import ResponsiveAutoHeight from 'responsive-auto-height';
- export default function jsAlignHeight() {
-  // 使用するクラス名。
-   const baseName = 'js-alignHeight';
-   // `baseName`+1桁以上の連番。
-   const regexp = new RegExp(`${baseName}[0-9]{1,}`);
-   const allSelector = document.querySelectorAll(`[class*=${baseName}]`);
-   let classNames = [];
+import ResponsiveAutoHeight from 'responsive-auto-height';
+export default function jsAlignHeight() {
+  const Selector = {
+    BASE_CLASS: 'js-alignHeight' // 使用するクラス名。
+  };
 
-   // 該当する要素のクラス名を`classNames`に格納する。
-   Array.prototype.slice.call(allSelector, 0).forEach(item => {
+  // `baseName`+1桁以上の連番。
+  const regexp = new RegExp(`${Selector.BASE_CLASS}[0-9]{1,}`);
+  const allSelector = document.querySelectorAll(`[class*=${Selector.BASE_CLASS}]`);
+  let classNames = [];
+
+  // 該当する要素のクラス名を`classNames`に格納する。
+  Array.prototype.slice.call(allSelector, 0).forEach(item => {
     const className = item.className;
     const itemName = className.match(regexp)[0];
     classNames.push(itemName);
-   });
+  });
 
-   // 重複したクラス名を削除する。
+  // 重複したクラス名を削除する。
    const target = classNames.filter((className, i, self) => {
     return self.indexOf(className) === i;
-   });
+  });
 
-   target.forEach(className => {
+  target.forEach(className => {
      new ResponsiveAutoHeight(`.${className}`);
-   });
+  });
 
- };
+};

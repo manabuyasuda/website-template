@@ -12,12 +12,15 @@
  */
 import SweetScroll from "sweet-scroll"
 export default function jsSmoothScroll() {
-  const trigger1 = '.js-smoothScroll';
-  const trigger2 = 'a[href*="#"]:not([href*="/"]):not(#st-BackToTop)';
+  const Selector = {
+    CLASS: 'js-smoothScroll', // クラスで指定する場合。
+    HREF: 'a[href*="#"]:not([href*="/"]):not(#st-BackToTop)', // ハッシュ付きリンクに指定する場合。
+    HEADER: '[data-scroll-header]' // 固定ヘッダーのCSSセレクタ。
+  };
 
   const scroller = new SweetScroll({
-    trigger: trigger1,       // Selector for trigger (must be a valid css selector)
-    header: '[data-scroll-header]', // Selector or Element for fixed header (Selector of must be a valid css selector)
+    trigger: Selector.HREF,       // Selector for trigger (must be a valid css selector)
+    header: Selector.HEADER, // Selector or Element for fixed header (Selector of must be a valid css selector)
     duration: 1000,                 // Specifies animation duration in integer
     easing: 'easeOutQuint',         // Specifies the pattern of easing
     offset: 0,                      // Specifies the value to offset the scroll position in pixels
