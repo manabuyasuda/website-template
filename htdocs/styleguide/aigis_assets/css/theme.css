@@ -172,7 +172,8 @@
 
 .aigis-module > p:not(:last-child),
 .aigis-module > ul:not(:last-child),
-.aigis-module > ol:not(:last-child) {
+.aigis-module > ol:not(:last-child),
+.aigis-module > table:not(:last-child) {
   margin-bottom: 1.6em;
 }
 
@@ -182,6 +183,7 @@
 
 .aigis-module > ul code,
 .aigis-module > p code,
+.aigis-module > table code,
 .aigis-contents__body > ul code,
 .aigis-contents__body > p code,
 .aigis-contents__body > h2 code,
@@ -190,8 +192,18 @@
   top: -0.1em;
   padding: 0.2em;
   border-radius: 3px;
+  font-family: Consolas, Menlo, Courier, monospace;
   font-size: 0.85rem;
   background-color: rgba(0, 0, 0, 0.06);
+}
+
+.aigis-module > table {
+  border-collapse: collapse;
+}
+.aigis-module th,
+.aigis-module td {
+  padding: 0.25em 1em;
+  border: 1px solid #ddd;
 }
 
 .aigis-module > h3 {

@@ -7,17 +7,19 @@ category: Image
 
 置換要素（`img`、`video`、`picture`、`srcset`タグなど）を親要素のサイズに応じてトリミングや拡大縮小をして表示します。
 
-| クラス名                    | Y軸      | X軸      |
-|---------------------------- |-------- |-------- |
-| .sw-ObjectFit-topLeft       | top     | left    |
-| .sw-ObjectFit-topCenter     | top     | center  |
-| .sw-ObjectFit-topRight      | top     | right   |
-| .sw-ObjectFit-centerLeft    | center  | left    |
-| .sw-ObjectFit-centerCenter  | center  | center  |
-| .sw-ObjectFit-centerRight   | center  | right   |
-| .sw-ObjectFit-bottomLeft    | bottom  | left    |
-| .sw-ObjectFit-bottomCenter  | bottom  | center  |
-| .sw-ObjectFit-bottomRight   | bottom  | right   |
+`object-position`はvariantで変更できます（デフォルトは`50% 50%`）。
+
+| クラス名                      | Y軸      | X軸      |
+|------------------------------ |-------- |-------- |
+| `.sw-ObjectFit-topLeft`       | top     | left    |
+| `.sw-ObjectFit-topCenter`     | top     | center  |
+| `.sw-ObjectFit-topRight`      | top     | right   |
+| `.sw-ObjectFit-centerLeft`    | center  | left    |
+| `.sw-ObjectFit-centerCenter`  | center  | center  |
+| `.sw-ObjectFit-centerRight`   | center  | right   |
+| `.sw-ObjectFit-bottomLeft`    | bottom  | left    |
+| `.sw-ObjectFit-bottomCenter`  | bottom  | center  |
+| `.sw-ObjectFit-bottomRight`   | bottom  | right   |
 
 ポリフィルは「[object-fit-polyfill](https://github.com/constancecchen/object-fit-polyfill)」を使用しています。
 
