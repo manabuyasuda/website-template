@@ -62,6 +62,8 @@
     "element-closest": "^2.0.2",
     "flexibility": "^2.0.1",
     "jquery": "^3.3.1",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.0",
     "objectFitPolyfill": "^2.1.1",
     "picturefill": "^3.0.2",
