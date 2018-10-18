@@ -139,35 +139,38 @@
               <h2 id="sw-ObjectFit" class="aigis-module__heading">sw-ObjectFit</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/sitewide/_ObjectFit.scss</div>
               <div class="aigis-module__label"><span class="sw-Label"></span></div><p>置換要素（<code>img</code>、<code>video</code>、<code>picture</code>、<code>srcset</code>タグなど）を親要素のサイズに応じてトリミングや拡大縮小をして表示します。</p>
-<p><code>object-position</code>はvariantで変更できます（デフォルトは<code>50% 50%</code>）。</p>
+<p>ポリフィルは「<a href="https://github.com/constancecchen/object-fit-polyfill" title="null">object-fit-polyfill</a>」を使用しています。</p>
+<p><code>object-position</code>はvariantで変更できます（デフォルトは<code>50% 50%</code>）。
+<a href="https://github.com/constancecchen/object-fit-polyfill#usage" title="null">Usage</a>にもある通り、<code>data-object-position=&quot;center top&quot;</code>のようにカスタムデータ属性でも設定が必要です。
+指定順はクラス名とカスタムデータ属性値ともに<code>X軸 Y軸</code>です。</p>
 <table>
 <thead>
 <tr>
 <th  >クラス名</th>
-<th  >Y軸</th>
 <th  >X軸</th>
+<th  >Y軸</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td  ><code>.sw-ObjectFit-topLeft</code></td>
-<td  >top</td>
+<td  ><code>.sw-ObjectFit-leftTop</code></td>
 <td  >left</td>
+<td  >top</td>
 </tr>
 <tr>
-<td  ><code>.sw-ObjectFit-topCenter</code></td>
-<td  >top</td>
+<td  ><code>.sw-ObjectFit-centerTop</code></td>
 <td  >center</td>
+<td  >top</td>
 </tr>
 <tr>
-<td  ><code>.sw-ObjectFit-topRight</code></td>
-<td  >top</td>
+<td  ><code>.sw-ObjectFit-rightTop</code></td>
 <td  >right</td>
+<td  >top</td>
 </tr>
 <tr>
-<td  ><code>.sw-ObjectFit-centerLeft</code></td>
-<td  >center</td>
+<td  ><code>.sw-ObjectFit-leftCenter</code></td>
 <td  >left</td>
+<td  >center</td>
 </tr>
 <tr>
 <td  ><code>.sw-ObjectFit-centerCenter</code></td>
@@ -175,34 +178,33 @@
 <td  >center</td>
 </tr>
 <tr>
-<td  ><code>.sw-ObjectFit-centerRight</code></td>
-<td  >center</td>
+<td  ><code>.sw-ObjectFit-rightCenter</code></td>
 <td  >right</td>
+<td  >center</td>
 </tr>
 <tr>
-<td  ><code>.sw-ObjectFit-bottomLeft</code></td>
-<td  >bottom</td>
+<td  ><code>.sw-ObjectFit-leftBottom</code></td>
 <td  >left</td>
+<td  >bottom</td>
 </tr>
 <tr>
-<td  ><code>.sw-ObjectFit-bottomCenter</code></td>
-<td  >bottom</td>
+<td  ><code>.sw-ObjectFit-centerBottom</code></td>
 <td  >center</td>
+<td  >bottom</td>
 </tr>
 <tr>
-<td  ><code>.sw-ObjectFit-bottomRight</code></td>
-<td  >bottom</td>
+<td  ><code>.sw-ObjectFit-rightBottom</code></td>
 <td  >right</td>
+<td  >bottom</td>
 </tr>
 </tbody>
 </table>
-<p>ポリフィルは「<a href="https://github.com/constancecchen/object-fit-polyfill" title="null">object-fit-polyfill</a>」を使用しています。</p>
 <div class="aigis-preview">
 
 <div class="l-Grids l-Grids-col2">
   <div style="height: 200px;" class="l-Grids_Item"><img src="https://unsplash.it/800/600/" alt="alt" data-object-fit="cover" class="sw-ObjectFit"/></div>
   <div style="height: 200px;" class="l-Grids_Item"><img src="https://unsplash.it/400/600/" alt="alt" data-object-fit="contain" class="sw-ObjectFit"/></div>
-  <div style="height: 200px;" class="l-Grids_Item"><img src="https://unsplash.it/600/400/" alt="alt" data-object-fit="none" class="sw-ObjectFit"/></div>
+  <div style="height: 200px;" class="l-Grids_Item"><img src="https://unsplash.it/600/400/" alt="alt" data-object-fit="none" data-object-position="center top" class="sw-ObjectFit sw-ObjectFit-centerTop"/></div>
   <div style="height: 200px;" class="l-Grids_Item"><img src="https://unsplash.it/600/200/" alt="alt" data-object-fit="scale-down" class="sw-ObjectFit"/></div>
 </div></div>
 
@@ -212,7 +214,7 @@
   <span class="token tag" >.l-Grids_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >style</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"height: 200px;"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >img.sw-ObjectFit<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://unsplash.it/400/600/"</span> alt data<span class="token operator" >-</span>object<span class="token operator" >-</span>fit<span class="token operator" >=</span><span class="token string" >"contain"</span></span><span class="token punctuation" >)</span></span></span>
   <span class="token tag" >.l-Grids_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >style</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"height: 200px;"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token tag" >img.sw-ObjectFit<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://unsplash.it/600/400/"</span> alt data<span class="token operator" >-</span>object<span class="token operator" >-</span>fit<span class="token operator" >=</span><span class="token string" >"none"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >img.sw-ObjectFit.sw-ObjectFit-centerTop<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://unsplash.it/600/400/"</span> alt data<span class="token operator" >-</span>object<span class="token operator" >-</span>fit<span class="token operator" >=</span><span class="token string" >"none"</span> data<span class="token operator" >-</span>object<span class="token operator" >-</span>position<span class="token operator" >=</span><span class="token string" >"center top"</span></span><span class="token punctuation" >)</span></span></span>
   <span class="token tag" >.l-Grids_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >style</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"height: 200px;"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >img.sw-ObjectFit<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://unsplash.it/600/200/"</span> alt data<span class="token operator" >-</span>object<span class="token operator" >-</span>fit<span class="token operator" >=</span><span class="token string" >"scale-down"</span></span><span class="token punctuation" >)</span></span></span>
 </code></pre>

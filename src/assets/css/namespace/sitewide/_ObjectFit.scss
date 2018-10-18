@@ -7,21 +7,23 @@ category: Image
 
 置換要素（`img`、`video`、`picture`、`srcset`タグなど）を親要素のサイズに応じてトリミングや拡大縮小をして表示します。
 
-`object-position`はvariantで変更できます（デフォルトは`50% 50%`）。
-
-| クラス名                      | Y軸      | X軸      |
-|------------------------------ |-------- |-------- |
-| `.sw-ObjectFit-topLeft`       | top     | left    |
-| `.sw-ObjectFit-topCenter`     | top     | center  |
-| `.sw-ObjectFit-topRight`      | top     | right   |
-| `.sw-ObjectFit-centerLeft`    | center  | left    |
-| `.sw-ObjectFit-centerCenter`  | center  | center  |
-| `.sw-ObjectFit-centerRight`   | center  | right   |
-| `.sw-ObjectFit-bottomLeft`    | bottom  | left    |
-| `.sw-ObjectFit-bottomCenter`  | bottom  | center  |
-| `.sw-ObjectFit-bottomRight`   | bottom  | right   |
-
 ポリフィルは「[object-fit-polyfill](https://github.com/constancecchen/object-fit-polyfill)」を使用しています。
+
+`object-position`はvariantで変更できます（デフォルトは`50% 50%`）。
+[Usage](https://github.com/constancecchen/object-fit-polyfill#usage)にもある通り、`data-object-position="center top"`のようにカスタムデータ属性でも設定が必要です。
+指定順はクラス名とカスタムデータ属性値ともに`X軸 Y軸`です。
+
+| クラス名                      | X軸      | Y軸      |
+|------------------------------ |-------- |-------- |
+| `.sw-ObjectFit-leftTop`       | left    | top     |
+| `.sw-ObjectFit-centerTop`     | center  | top     |
+| `.sw-ObjectFit-rightTop`      | right   | top     |
+| `.sw-ObjectFit-leftCenter`    | left    | center  |
+| `.sw-ObjectFit-centerCenter`  | center  | center  |
+| `.sw-ObjectFit-rightCenter`   | right   | center  |
+| `.sw-ObjectFit-leftBottom`    | left    | bottom  |
+| `.sw-ObjectFit-centerBottom`  | center  | bottom  |
+| `.sw-ObjectFit-rightBottom`   | right   | bottom  |
 
 ```jade
 .l-Grids.l-Grids-col2
@@ -30,7 +32,7 @@ category: Image
   .l-Grids_Item(style="height: 200px;")
     img.sw-ObjectFit(src="https://unsplash.it/400/600/" alt data-object-fit="contain")
   .l-Grids_Item(style="height: 200px;")
-    img.sw-ObjectFit(src="https://unsplash.it/600/400/" alt data-object-fit="none")
+    img.sw-ObjectFit.sw-ObjectFit-centerTop(src="https://unsplash.it/600/400/" alt data-object-fit="none" data-object-position="center top")
   .l-Grids_Item(style="height: 200px;")
     img.sw-ObjectFit(src="https://unsplash.it/600/200/" alt data-object-fit="scale-down")
 ```

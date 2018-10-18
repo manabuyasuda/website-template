@@ -25,16 +25,16 @@
     object-fit: scale-down;
   }
 
-  // top && center || right || left
-  &-topLeft { object-position: left top; }
-  &-topCenter { object-position: center top; }
-  &-topRight { object-position: right top; }
-  // center && center || right || left
-  &-centerLeft { object-position: left center; }
+  // left || center || right && top
+  &-leftTop { object-position: left top; }
+  &-centerTop { object-position: center top; }
+  &-rightTop { object-position: right top; }
+  // left || center || right && center
+  &-leftCenter { object-position: left center; }
   &-centerCenter { object-position: center center; }
-  &-centerRight { object-position: right center; }
-  // bottom && center || right || left
-  &-bottomLeft { object-position: left bottom; }
-  &-bottomCenter { object-position: center bottom; }
-  &-bottomRight { object-position: right bottom; }
+  &-rightCenter { object-position: right center; }
+  // left || center || right && bottom
+  &-leftBottom { object-position: left bottom; }
+  &-centerBottom { object-position: center bottom; }
+  &-rightBottom { object-position: right bottom; }
 }
