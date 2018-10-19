@@ -49,7 +49,7 @@ export default function sitewideDialog() {
   let targets = [];
 
   // 該当する要素のクラス名を`targets`に格納する。
-  Array.prototype.slice.call(allSelector, 0).forEach(item => {
+  [...allSelector].forEach(item => {
     const attributeName = item.getAttribute('data-a11y-dialog-show');
     const itemName = attributeName.match(regexp)[0];
     targets.push(itemName);

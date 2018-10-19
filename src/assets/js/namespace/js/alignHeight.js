@@ -26,7 +26,7 @@ export default function jsAlignHeight() {
   let classNames = [];
 
   // 該当する要素のクラス名を`classNames`に格納する。
-  Array.prototype.slice.call(allSelector, 0).forEach(item => {
+  [...allSelector].forEach(item => {
     const className = item.className;
     const itemName = className.match(regexp)[0];
     classNames.push(itemName);
