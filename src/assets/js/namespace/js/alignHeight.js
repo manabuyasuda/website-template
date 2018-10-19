@@ -26,19 +26,19 @@ export default function jsAlignHeight() {
   let classNames = [];
 
   // 該当する要素のクラス名を`classNames`に格納する。
-  [...allSelector].forEach(item => {
-    const className = item.className;
+  for (const selector of allSelector) {
+    const className = selector.className;
     const itemName = className.match(regexp)[0];
     classNames.push(itemName);
-  });
+  }
 
   // 重複したクラス名を削除する。
-   const target = classNames.filter((className, i, self) => {
+  const target = classNames.filter((className, i, self) => {
     return self.indexOf(className) === i;
   });
 
-  target.forEach(className => {
-     new ResponsiveAutoHeight(`.${className}`);
-  });
+  for (const className of target) {
+    new ResponsiveAutoHeight(`.${className}`);
+  }
 
 };

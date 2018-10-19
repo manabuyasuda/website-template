@@ -49,13 +49,13 @@ export default function sitewideDialog() {
   let targets = [];
 
   // 該当する要素のクラス名を`targets`に格納する。
-  [...allSelector].forEach(item => {
-    const attributeName = item.getAttribute('data-a11y-dialog-show');
+  for (const selector of allSelector) {
+    const attributeName = selector.getAttribute('data-a11y-dialog-show');
     const itemName = attributeName.match(regexp)[0];
     targets.push(itemName);
-  });
+  }
 
-  targets.forEach(target => {
+  for (const target of targets) {
     // 該当する要素のIDを渡してインスタンス化する。
     const targetID = document.getElementById(target);
     const targetName = new A11yDialog(targetID, container);
@@ -73,6 +73,6 @@ export default function sitewideDialog() {
       body.classList.remove(Selector.FIXED_CLASS);
       scrollElement.scrollTop = openBeforeLocation;
     });
-  });
+  }
 
 };
