@@ -22,6 +22,8 @@ var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var watchify = require('watchify');
+var vueify = require('vueify');
+var envify = require('envify/custom');
 
 // Image
 var imagemin = require('gulp-imagemin');
@@ -41,6 +43,7 @@ var browserSync = require('browser-sync');
 var ssi = require("browsersync-ssi");
 var plumber = require('gulp-plumber');
 var notify = require("gulp-notify");
+var gulpif = require('gulp-if');
 var rimraf = require('rimraf');
 
 /**
@@ -69,6 +72,11 @@ var dest = {
   'js': 'htdocs/assets/js/',
   'svgSprite': 'htdocs/assets/svg/'
 };
+
+const env = process.env.APP_ENV;
+const envValues = require('./env/' + env).defaults;
+const isDevelopment = (envValues.NODE_ENV === 'development') ? true : false;
+const isProduction = (envValues.NODE_ENV === 'production') ? true : false;
 
 /**
  * `.pug`を`.html`にコンパイルします。
@@ -160,12 +168,27 @@ gulp.task('css', function(){
  * ES2015以降のコードをES5に変換（トランスコンパイル）します。
  */
 function bundle(watching = false) {
+  const envifyOptions = envValues;
+  // 指定した環境変数だけを処理する
+  envifyOptions._ = 'purge';
+
   const b = browserify({
     entries: src.js,
     transform: ['babelify'],
-    debug: true,
+    // browserifyのsourcemapsを使用しない
+    debug: (isDevelopment) ? true : false,
+    cache: {},
+    packageCache: {},
+    // ファイルの状態を監視して、差分だけをビルドする
     plugin: (watching) ? [watchify] : null
   })
+  // Vue.jsの単一ファイルコンポーネントをBrowserifyで変換する
+  .transform(vueify)
+  .transform(
+    {global: true},
+    // `NODE_ENV`を`development`か`production`に変更する
+    envify({NODE_ENV: envValues.NODE_ENV})
+  )
   .on('update', function() {
     bundler();
     console.log('scripts rebuild');
@@ -178,9 +201,7 @@ function bundle(watching = false) {
       })
       .pipe(source('site.js'))
       .pipe(buffer())
-      .pipe(sourcemaps.init({loadMaps: true}))
-      .pipe(uglify({output: {comments: /^!/}}))
-      .pipe(sourcemaps.write('.'))
+      .pipe(gulpif(isProduction, uglify({output: {comments: /^!/}})))
       .pipe(gulp.dest(dest.js))
       .pipe(browserSync.reload({stream: true}))
   }
