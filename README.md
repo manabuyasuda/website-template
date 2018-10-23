@@ -79,6 +79,8 @@ root/
 │   │   │   └── namespace/
 │   │   └── js/
 │   │       ├── site.js
+│   │       ├── polyfill.js
+│   │       ├── util.js
 │   │       └── namespace/
 │   │           ├── data/
 │   │           └── js/
@@ -97,6 +99,7 @@ root/
 │   ├── js.md
 │   └── icon.md
 ├── aigis/
+├── env/
 ├── README.md
 ├── package.json
 └── gulpfile.js
@@ -107,6 +110,18 @@ root/
 
 ```bash
 npm start
+```
+
+本番環境用にビルドする場合は以下のコマンドを実行します。
+
+```bash
+npm run release
+```
+
+本番環境の動作を検証したい場合は以下のコマンドを実行します。
+
+```bash
+npm run test
 ```
 
 以下のような処理がおこなわれます。
