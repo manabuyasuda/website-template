@@ -133,24 +133,7 @@ gulp.task('ssi', () => {
 gulp.task('css', () => {
   const plugins = [
     flexBugsFixes(),
-    autoprefixer({
-      // ベンダープレフィックスの付与
-      // https://github.com/ai/browserslist#browsers
-      // 条件によって対応できるブラウザを確認できる（カンマ区切りで指定を記述する）
-      //  http://browserl.ist/
-      browsers: [
-        // すべてのブラウザの最新1バージョン
-        'last 1 version',
-        // 日本で3%以上のシェアがあるバージョン
-        '> 3% in JP',
-        // IE9以上
-        'ie >= 9',
-        // iOS8以上
-        'iOS >= 8',
-        // Android4.4以上
-        'Android >= 4.4'
-      ]
-    })
+    autoprefixer()
   ];
   return gulp.src(src.css)
   // globパターンでのインポート機能を追加

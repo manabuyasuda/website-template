@@ -79,7 +79,14 @@
     "sweet-scroll": "^3.0.1",
     "what-input": "^5.1.2"
   },
-    "browser": {
+  "browserslist": [
+    "last 1 version",
+    "> 3% in JP",
+    "ie >= 9",
+    "iOS >= 8",
+    "Android >= 4.4"
+  ],
+  "browser": {
     "vue": "vue/dist/vue.common.js"
   }
 }
