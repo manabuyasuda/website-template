@@ -73,6 +73,9 @@ const dest = {
   'svgSprite': 'htdocs/assets/svg/'
 };
 
+/**
+ * 環境変数を設定します。
+ */
 const env = process.env.APP_ENV;
 const envValues = require('./env/' + env).defaults;
 const isDevelopment = (envValues.NODE_ENV === 'development') ? true : false;
@@ -236,6 +239,9 @@ gulp.task('image', () => {
   .pipe(browserSync.reload({stream: true}));
 });
 
+/**
+ * SVGファイルからSVGスプライトを生成します。
+ */
 gulp.task('svgSprite', () => {
   return gulp.src(src.svgSprite)
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
@@ -271,7 +277,7 @@ gulp.task('svgSprite', () => {
   }))
   .pipe(gulp.dest(dest.svgSprite))
   .pipe(browserSync.reload({stream: true}));
-})
+});
 
 /**
  * スタイルガイドを生成します。
@@ -283,7 +289,7 @@ gulp.task('styleguide', () => {
 
 /**
  * Gulpの処理を通さないディレクトリです。
- * テスト用のディレクトリにコピーします。
+ * 公開用のディレクトリにコピーします。
  */
 gulp.task('public', () => {
   return gulp.src(src.public)
@@ -291,7 +297,7 @@ gulp.task('public', () => {
 });
 
 /**
- * 出力用のディレクトリを削除します。
+ * 公開用のディレクトリを削除します。
  */
 gulp.task('clean:dest', (cb) => {
   return rimraf(dest.root, cb);
