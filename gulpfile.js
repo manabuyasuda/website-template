@@ -1,55 +1,55 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 // Pug
-var pug = require('gulp-pug');
-var fs = require('fs');
-var data = require('gulp-data');
-var path = require('path');
+const pug = require('gulp-pug');
+const fs = require('fs');
+const data = require('gulp-data');
+const path = require('path');
 
 // CSS
-var sass = require('gulp-sass')
-var sassGlob = require('gulp-sass-glob');
-var postcss = require('gulp-postcss');
-var flexBugsFixes = require('postcss-flexbugs-fixes');
-var autoprefixer = require('autoprefixer');
-var cleanCSS = require('gulp-clean-css');
+const sass = require('gulp-sass')
+const sassGlob = require('gulp-sass-glob');
+const postcss = require('gulp-postcss');
+const flexBugsFixes = require('postcss-flexbugs-fixes');
+const autoprefixer = require('autoprefixer');
+const cleanCSS = require('gulp-clean-css');
 
 // JS
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var watchify = require('watchify');
-var vueify = require('vueify');
-var envify = require('envify/custom');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const watchify = require('watchify');
+const vueify = require('vueify');
+const envify = require('envify/custom');
 
 // Image
-var imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 
 // SVG sprite
-var svgSprite = require('gulp-svg-sprite');
+const svgSprite = require('gulp-svg-sprite');
 
 // Styleguide
-var aigis = require('gulp-aigis');
+const aigis = require('gulp-aigis');
 
 // Utility
-var cache = require('gulp-cached');
-var changed  = require('gulp-changed');
-var sourcemaps = require('gulp-sourcemaps');
-var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
-var ssi = require("browsersync-ssi");
-var plumber = require('gulp-plumber');
-var notify = require("gulp-notify");
-var gulpif = require('gulp-if');
-var rimraf = require('rimraf');
+const cache = require('gulp-cached');
+const changed  = require('gulp-changed');
+const sourcemaps = require('gulp-sourcemaps');
+const runSequence = require('run-sequence');
+const browserSync = require('browser-sync');
+const ssi = require("browsersync-ssi");
+const plumber = require('gulp-plumber');
+const notify = require("gulp-notify");
+const gulpif = require('gulp-if');
+const rimraf = require('rimraf');
 
 /**
  * 開発用ディレクトリ
  */
-var src = {
+const src = {
   'root': 'src/',
   'html': ['src/**/*.pug', '!src/**/_*.pug'],
   'ssi': 'public/**/*.html',
@@ -66,7 +66,7 @@ var src = {
 /**
  * テスト用ディレクトリ
  */
-var dest = {
+const dest = {
   'root': 'htdocs/',
   'image': 'htdocs/assets/img/',
   'js': 'htdocs/assets/js/',
@@ -82,18 +82,18 @@ const isProduction = (envValues.NODE_ENV === 'production') ? true : false;
  * `.pug`を`.html`にコンパイルします。
  * JSONとページごとのルート相対パスの格納、ルート相対パスを使ったincludeの設定をします。
  */
-gulp.task('html', function() {
+gulp.task('html', () => {
   // JSONファイルの読み込み。
-  var locals = {
-    'site': JSON.parse(fs.readFileSync(src.data + 'site.json'))
+  const locals = {
+    'site': JSON.parse(fs.readFileSync(`${src.data}site.json`))
   };
   locals.ja = {
     // 日本語サイト共通のデータです。
-    'site': JSON.parse(fs.readFileSync(src.data + 'ja/site.json'))
+    'site': JSON.parse(fs.readFileSync(`${src.data}ja/site.json`))
   };
   locals.en = {
     // 英語サイト共通のデータです。
-    'site': JSON.parse(fs.readFileSync(src.data + 'en/site.json'))
+    'site': JSON.parse(fs.readFileSync(`${src.data}en/site.json`))
   };
   return gulp.src(src.html)
   // エラーでタスクを止めない
@@ -119,7 +119,7 @@ gulp.task('html', function() {
 /**
  * /public/以下のHTMLファイルを監視、更新があれば反映します。
  */
-gulp.task('ssi', function() {
+gulp.task('ssi', () => {
   return gulp.src(src.ssi)
   .pipe(browserSync.reload({stream: true}));
 });
@@ -127,8 +127,8 @@ gulp.task('ssi', function() {
 /**
  * `.scss`を`.css`にコンパイルします。
  */
-gulp.task('css', function(){
-  var plugins = [
+gulp.task('css', () => {
+  const plugins = [
     flexBugsFixes(),
     autoprefixer({
       // ベンダープレフィックスの付与
@@ -189,33 +189,33 @@ function bundle(watching = false) {
     // `NODE_ENV`を`development`か`production`に変更する
     envify({NODE_ENV: envValues.NODE_ENV})
   )
-  .on('update', function() {
+  .on('update', () => {
     bundler();
     console.log('scripts rebuild');
   });
 
   function bundler() {
     return b.bundle()
-      .on('error', function(err) {
-        console.log(err.message);
-      })
-      .pipe(source('site.js'))
-      .pipe(buffer())
-      .pipe(gulpif(isProduction, uglify({output: {comments: /^!/}})))
-      .pipe(gulp.dest(dest.js))
-      .pipe(browserSync.reload({stream: true}))
+    .on('error', (err) => {
+      console.log(err.message);
+    })
+    .pipe(source('site.js'))
+    .pipe(buffer())
+    .pipe(gulpif(isProduction, uglify({output: {comments: /^!/}})))
+    .pipe(gulp.dest(dest.js))
+    .pipe(browserSync.reload({stream: true}))
   }
   return bundler();
 }
 
-gulp.task('js', function() {
+gulp.task('js', () => {
   bundle();
 });
 
 /**
  * 画像を圧縮します。
  */
-gulp.task('image', function() {
+gulp.task('image', () => {
   return gulp.src(src.image)
   .pipe(changed(dest.image))
   .pipe(plumber({
@@ -236,7 +236,7 @@ gulp.task('image', function() {
   .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('svgSprite', function() {
+gulp.task('svgSprite', () => {
   return gulp.src(src.svgSprite)
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(svgSprite({
@@ -276,16 +276,16 @@ gulp.task('svgSprite', function() {
 /**
  * スタイルガイドを生成します。
  */
-gulp.task('styleguide', function() {
+gulp.task('styleguide', () => {
   return gulp.src('./aigis/aigis_config.yml')
-    .pipe(aigis());
+  .pipe(aigis());
 });
 
 /**
  * Gulpの処理を通さないディレクトリです。
  * テスト用のディレクトリにコピーします。
  */
-gulp.task('public', function() {
+gulp.task('public', () => {
   return gulp.src(src.public)
   .pipe(gulp.dest(dest.root));
 });
@@ -293,14 +293,14 @@ gulp.task('public', function() {
 /**
  * 出力用のディレクトリを削除します。
  */
-gulp.task('clean:dest', function (cb) {
+gulp.task('clean:dest', (cb) => {
   return rimraf(dest.root, cb);
 });
 
 /**
  * 一連のタスクを処理します。
  */
-gulp.task('build', function() {
+gulp.task('build', () => {
   runSequence(
     ['html', 'ssi', 'css', 'styleguide', 'js', 'image', 'svgSprite', 'public']
   )
@@ -309,7 +309,7 @@ gulp.task('build', function() {
 /**
  * ローカルサーバーを起動します。
  */
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
   browserSync({
     server: {
       // SSIを使用します。
@@ -335,7 +335,7 @@ gulp.task('browser-sync', function() {
 /**
  * ファイルを監視します。
  */
-gulp.task('watch', ['build'], function() {
+gulp.task('watch', ['build'], () => {
   gulp.watch(src.ssi, ['ssi']);
   gulp.watch(src.public, ['public']);
   gulp.watch(src.html, ['html']);
@@ -346,13 +346,12 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(src.svgSprite ['svgSprite']);
 });
 
-
 /**
  * 開発に使用するタスクです。
  * `gulp`タスクにbrowser-syncを追加します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-gulp.task('default', ['clean:dest'], function() {
+gulp.task('default', ['clean:dest'], () => {
   runSequence(
     'watch',
     'browser-sync'
