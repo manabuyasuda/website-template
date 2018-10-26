@@ -173,7 +173,8 @@ function bundle(watching = false) {
   .transform(
     {global: true},
     // `NODE_ENV`を`development`か`production`に変更する
-    envify({NODE_ENV: envValues.NODE_ENV})
+    // 環境変数もすべてJS側に渡す
+    envify(envifyOptions)
   )
   .on('update', () => {
     bundler();
