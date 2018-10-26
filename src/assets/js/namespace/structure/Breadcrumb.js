@@ -25,6 +25,8 @@ export default function structureBreadcrumb() {
   const pageLang = document.getElementsByTagName('html')[0].getAttribute('lang');
 
   window.addEventListener('load', () => {
+    if (!parrent) return;
+
     if (pageLang) {
       parrent.setAttribute('aria-label', getLabelValue(pageLang));
     }
