@@ -138,14 +138,14 @@ gulp.task('css', () => {
   return gulp.src(src.css)
   // globパターンでのインポート機能を追加
   .pipe(sassGlob())
-  .pipe(sourcemaps.init())
+  .pipe(gulpif(isDevelopment, sourcemaps.init()))
   .pipe(sass({
     outputStyle: 'expanded'
   }).on('error', sass.logError))
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(postcss(plugins))
-  .pipe(cleanCSS())
-  .pipe(sourcemaps.write('.'))
+  .pipe(gulpif(isProduction, cleanCSS()))
+  .pipe(gulpif(isDevelopment, sourcemaps.write()))
   .pipe(gulp.dest(dest.root))
   .pipe(browserSync.reload({stream: true}));
 });
