@@ -5,7 +5,7 @@
  */
 export default function structureBreadcrumb() {
   const Selector = {
-    PARRENT: 'st-Breadcrumb',
+    PARENT: 'st-Breadcrumb',
     LINK: 'st-Breadcrumb_Link'
   };
   const Attr = {
@@ -19,16 +19,16 @@ export default function structureBreadcrumb() {
     return false;
   };
 
-  const parrent = document.getElementsByClassName(Selector.PARRENT)[0];
+  const parent = document.getElementsByClassName(Selector.PARENT)[0];
   const link = document.getElementsByClassName(Selector.LINK);
   const path = location.pathname.replace(/index\.html$/, '');
   const pageLang = document.getElementsByTagName('html')[0].getAttribute('lang');
 
   window.addEventListener('load', () => {
-    if (!parrent) return;
+    if (!parent) return;
 
     if (pageLang) {
-      parrent.setAttribute('aria-label', getLabelValue(pageLang));
+      parent.setAttribute('aria-label', getLabelValue(pageLang));
     }
 
     [...link].forEach(item => {
