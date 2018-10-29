@@ -6,18 +6,18 @@ category: InteractiveComponent
 ---
 
 A11yに対応したダイアログ（モーダル）です。
-複数のダイアログを使う場合は`data-a11y-dialog-show="sw-dialog1"`と`id="sw-dialog1"`の値を`sw-dialog2`や`sw-dialog3`のように連番で指定してください。
+複数のダイアログを使う場合は`data-a11y-dialog-show="sw-Dialog1"`と`id="sw-Dialog1"`の値を`sw-Dialog2`や`sw-Dialog3`のように連番で指定してください。
 最大で10個まで対応しています。
 メインコンテンツに`#main`を指定、ダイアログはそのID要素と兄弟関係になるようにしてください。
 幅と高さはブレイクポイントごとに固定されています。
 
 ```jade
 .l-Wrapper#main
-  button.sw-Dialog_Link(data-a11y-dialog-show="sw-dialog1") ダイアログ1を開く
+  button.sw-Dialog_Link(data-a11y-dialog-show="sw-Dialog1") ダイアログ1を開く
   br
-  button.sw-Dialog_Link(data-a11y-dialog-show="sw-dialog2") ダイアログ2を開く
+  button.sw-Dialog_Link(data-a11y-dialog-show="sw-Dialog2") ダイアログ2を開く
 
-.sw-Dialog_Dialog#sw-dialog1
+.sw-Dialog_Dialog#sw-Dialog1
   .sw-Dialog_Overlay(tabindex="-1" data-a11y-dialog-hide)
   dialog.sw-Dialog_Content(aria-labelledby="dialog-title" aria-describedby="dialogDescription")
     .sw-Dialog_Inner
@@ -30,7 +30,7 @@ A11yに対応したダイアログ（モーダル）です。
         p#dialogDescription ダイアログ1の概要
         p `aria-labelledby`と`aria-describedby`で、タイアログのタイトルと概要を紐づけています。
 
-.sw-Dialog_Dialog#sw-dialog2
+.sw-Dialog_Dialog#sw-Dialog2
   .sw-Dialog_Overlay(tabindex="-1" data-a11y-dialog-hide)
   dialog.sw-Dialog_Content(aria-labelledby="dialog-title" aria-describedby="dialogDescription")
     .sw-Dialog_Inner

@@ -3,7 +3,7 @@
  * 表示中のページと同じURLのリンクに`aria-current`を追加します。
  * https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/
  */
-export default function structureBreadcrumb() {
+export default function stBreadcrumb() {
   const Selector = {
     PARENT: 'st-Breadcrumb',
     LINK: 'st-Breadcrumb_Link'

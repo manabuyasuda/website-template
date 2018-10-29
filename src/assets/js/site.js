@@ -3,15 +3,15 @@ import './polyfill';
 import 'what-input';
 
 import vueTest from './vue';
-import jsAlignHeight from './namespace/js/alignHeight';
-import jsSmoothScroll from './namespace/js/smoothScroll';
-import structureBackToTop from './namespace/structure/backToTop';
-import structureBreadcrumb from './namespace/structure/Breadcrumb';
-import sitewideDialog from './namespace/sitewide/dialog';
+import jsAlignHeight from './namespace/js/AlignHeight';
+import jsSmoothScroll from './namespace/js/SmoothScroll';
+import stBackToTop from './namespace/structure/BackToTop';
+import stBreadcrumb from './namespace/structure/Breadcrumb';
+import swDialog from './namespace/sitewide/Dialog';
 
 vueTest();
 jsAlignHeight();
 jsSmoothScroll();
-structureBackToTop();
-structureBreadcrumb();
-sitewideDialog();
+stBackToTop();
+stBreadcrumb();
+swDialog();
