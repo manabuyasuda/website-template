@@ -20,7 +20,7 @@ category: Block
 .test-Block {
   @include l-Block();
 
-  &:after {
+  &::after {
     content: "";
     display: block;
     clear: both;
@@ -35,7 +35,6 @@ category: Block
     margin-right: 1em;
     margin-bottom: 0;
   }
-
 }
 
 .test-Block_Right {

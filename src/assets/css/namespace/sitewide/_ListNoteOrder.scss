@@ -35,6 +35,7 @@ category: List
 */
 .sw-ListNoteOrder {
   @include l-Text();
+
   margin-left: rem(26);
   padding-left: 0;
   font-size: rem(13);
@@ -64,15 +65,15 @@ category: List
     background-color: lightgray;
   }
 
-  & > li:before {
+  & > li::before {
     content: "※" counter(noteOrder);
     position: absolute;
     top: 0;
     left: rem(-26);
   }
 
-  [lang="en"] & > li:before,
-  [lang="zh-cn"] & > li:before {
+  [lang="en"] & > li::before,
+  [lang="zh-cn"] & > li::before {
     content: "*" counter(noteOrder);
     left: rem(-20);
   }

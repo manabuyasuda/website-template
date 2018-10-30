@@ -16,12 +16,14 @@ category: Image
     figcaption.sw-Caption_Text 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
 ```
 */
+
 /**
  * 1. キャプションの最小幅です。
  *    画像が指定幅以下になってもキャプションの幅はそれ以上小さくなりません。
  */
 .sw-Caption {
   @include l-Text();
+
   display: table;
   min-width: 100px; /* 1 */
 }
@@ -56,6 +58,7 @@ category: Image
     figcaption.sw-Caption_Text. 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
 ```
 */
+
 /**
  * コンポーネント自体をセンタリングします。
  */
@@ -80,6 +83,7 @@ category: Image
     figcaption.sw-Caption_Text.sw-Caption_Text-center 画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
 ```
 */
+
 /**
  * テキストをセンタリングします。
  */
@@ -103,6 +107,7 @@ category: Image
     figcaption.sw-Caption_Text.sw-Caption_Text-right画像にキャプション（短い説明文）をつけます。キャプションは画像の横幅を基準に折り返されます。
 ```
 */
+
 /**
  * テキストを右揃えにします。
  */

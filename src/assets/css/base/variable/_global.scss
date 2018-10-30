@@ -42,7 +42,6 @@ $global-font-family-noto-sans-en: "Noto Sans", "Helvetica Neue", Helvetica, sans
 $global-font-family-noto-sans-zh-cn: YakuHanJPs, "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
 $global-font-family-noto-sans-zh-tw: YakuHanJPs, "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
 
-
 // ==========================================================================
 // Media query
 // ==========================================================================
@@ -57,7 +56,6 @@ $global-breakpoint-up: (
   'lg': 'print, screen and (min-width: 1024px)',
   'xl': 'print, screen and (min-width: 1440px)',
 ) !default;
-
 
 // ==========================================================================
 // Layout
@@ -129,7 +127,6 @@ $small-text-margin-md: rem(20) 0 0 !default;
 
 $image-margin: rem(25) 0 0 !default;
 $image-margin-md: rem(40) 0 0 !default;
-
 
 // ==========================================================================
 // Animation

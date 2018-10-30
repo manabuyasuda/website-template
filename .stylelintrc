@@ -1,0 +1,18 @@
+{
+  "extends": "stylelint-config-standard",
+  "syntax": scss,
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "at-rule-blacklist": null,
+    "number-leading-zero": null,
+    "value-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null,
+    "declaration-block-no-shorthand-property-overrides": null,
+    "no-descending-specificity": null,
+    "block-no-empty": null,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true
+  }
+}

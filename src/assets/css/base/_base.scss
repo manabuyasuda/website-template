@@ -1,24 +1,20 @@
- /* #base
+/* #base
    -------------------------------------------------------------------------- */
+
 /**
  * 1. `width`と`height`に`margin`と`border`を含めます。
+ * 2. ドキュメントのルートフォントサイズを指定します（`rem`で参照）。
  */
 html {
   box-sizing: border-box; /* 1 */
+  font-size: 100%; /* 2 */
+  line-height: $global-line-height;
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit; /* 1 */
-}
-
-/**
- * 1. ドキュメントのルートフォントサイズを指定します（`rem`で参照）。
- */
-html {
-  font-size: 100%; /* 1 */
-  line-height: $global-line-height;
 }
 
 /**
@@ -71,9 +67,18 @@ legend {
 /**
  * ブロック要素の上下のマージンをリセットします。
  */
-h1, h2, h3, h4, h5, h6,
-ul, ol, dl,
-blockquote, p, address,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
 hr,
 table,
 pre {

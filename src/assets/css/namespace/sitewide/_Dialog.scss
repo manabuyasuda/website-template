@@ -88,6 +88,7 @@ A11yに対応したダイアログ（モーダル）です。
     transform: translateY(10%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -136,6 +137,7 @@ A11yに対応したダイアログ（モーダル）です。
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -151,7 +153,6 @@ A11yに対応したダイアログ（モーダル）です。
   z-index: 2;
   // dialog要素が使用できなかった場合の背景色
   background-color: rgba(#000, 0.6);
-  display: none;
 
   // dialog要素が使用できない場合は表示
   [id="main"][aria-hidden="true"] ~ .sw-Dialog_Dialog:not([aria-hidden="true"]) & {
@@ -189,8 +190,8 @@ A11yに対応したダイアログ（モーダル）です。
   }
 
   [data-whatinput="keyboard"] &:focus {
-   outline-width: 0;
-   box-shadow: $form-box-shadow-focus;
+    outline-width: 0;
+    box-shadow: $form-box-shadow-focus;
   }
 
   [data-whatinput="mouse"] &:focus,
@@ -232,8 +233,8 @@ A11yに対応したダイアログ（モーダル）です。
   }
 
   [data-whatinput="keyboard"] &:focus {
-   outline-width: 0;
-   box-shadow: $form-box-shadow-focus;
+    outline-width: 0;
+    box-shadow: $form-box-shadow-focus;
   }
 
   [data-whatinput="mouse"] &:focus,

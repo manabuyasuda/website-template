@@ -21,6 +21,7 @@ category: List
 */
 .sw-ListNote {
   @include l-Text();
+
   margin-left: rem(20);
   padding-left: 0;
   font-size: rem(13);
@@ -44,15 +45,15 @@ category: List
     position: relative;
   }
 
-  & > li:before {
+  & > li::before {
     content: "※";
     position: absolute;
     top: 0;
     left: rem(-20);
   }
 
-  [lang="en"] & > li:before,
-  [lang="zh-cn"] & > li:before {
+  [lang="en"] & > li::before,
+  [lang="zh-cn"] & > li::before {
     content: "*";
     left: rem(-13);
   }

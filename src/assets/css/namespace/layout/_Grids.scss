@@ -140,10 +140,8 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   & > :last-child {
     margin-bottom: 0;
   }
-}
 
-/* 1 Column */
-.l-Grids_Item {
+  /* 1 Column */
   &:nth-of-type(n+2) {
     margin-top: $l-grids-row-gap;
   }
@@ -162,10 +160,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col2Md > .l-Grids_Item {
     flex-basis: percentage(1 / 2);
@@ -174,11 +174,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col2Lg > .l-Grids_Item {
     flex-basis: percentage(1 / 2);
@@ -187,11 +189,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col2Xl > .l-Grids_Item {
     flex-basis: percentage(1 / 2);
@@ -200,6 +204,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
@@ -214,10 +219,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+4) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col3Md > .l-Grids_Item {
     flex-basis: percentage(1 / 3);
@@ -226,11 +233,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+4) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col3Lg > .l-Grids_Item {
     flex-basis: percentage(1 / 3);
@@ -239,11 +248,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+4) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col3Xl > .l-Grids_Item {
     flex-basis: percentage(1 / 3);
@@ -252,6 +263,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+4) {
       margin-top: $l-grids-row-gap-md;
     }
@@ -266,10 +278,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+5) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col4Md > .l-Grids_Item {
     flex-basis: percentage(1 / 3);
@@ -278,11 +292,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+5) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col4Lg > .l-Grids_Item {
     flex-basis: percentage(1 / 3);
@@ -291,11 +307,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+5) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col4Xl > .l-Grids_Item {
     flex-basis: percentage(1 / 3);
@@ -304,6 +322,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+5) {
       margin-top: $l-grids-row-gap-md;
     }
@@ -318,10 +337,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+6) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col5Md > .l-Grids_Item {
     flex-basis: percentage(1 / 5);
@@ -330,11 +351,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+6) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col5Lg > .l-Grids_Item {
     flex-basis: percentage(1 / 5);
@@ -343,11 +366,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+6) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col5Xl > .l-Grids_Item {
     flex-basis: percentage(1 / 5);
@@ -356,6 +381,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+6) {
       margin-top: $l-grids-row-gap-md;
     }
@@ -406,16 +432,19 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 .l-Grids-top {
   align-items: flex-start;
 }
+
 @include mq-up(md) {
   .l-Grids-topMd {
     align-items: flex-start;
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-topLg {
     align-items: flex-start;
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-topXl {
     align-items: flex-start;
@@ -428,16 +457,19 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 .l-Grids-middle {
   align-items: center;
 }
+
 @include mq-up(md) {
   .l-Grids-middleMd {
     align-items: center;
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-middleLg {
     align-items: center;
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-middleXl {
     align-items: center;
@@ -450,16 +482,19 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 .l-Grids-bottom {
   align-items: flex-end;
 }
+
 @include mq-up(md) {
   .l-Grids-bottomMd {
     align-items: flex-end;
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-bottomLg {
     align-items: flex-end;
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-bottomXl {
     align-items: flex-end;
@@ -473,16 +508,19 @@ $l-grids-row-gap-md: $grid-row-gap-md;
 .l-Grids-reverse {
   flex-direction: row-reverse;
 }
+
 @include mq-up(md) {
   .l-Grids-reversMd {
     flex-direction: row-reverse;
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-reverseLg {
     flex-direction: row-reverse;
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-reverseXl {
     flex-direction: row-reverse;
@@ -504,10 +542,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 .l-Grids-col11to1 > .l-Grids_Item {
   &:nth-of-type(odd) {
     flex-basis: percentage(11 / 12);
@@ -522,10 +562,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col1to11Md > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -541,10 +583,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col11to1Md > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(11 / 12);
@@ -559,11 +603,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col1to11Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -579,10 +625,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col11to1Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(11 / 12);
@@ -597,11 +645,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col1to11Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -617,10 +667,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col11to1Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(11 / 12);
@@ -635,6 +687,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
@@ -656,10 +709,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 .l-Grids-col10to2 > .l-Grids_Item {
   &:nth-of-type(odd) {
     flex-basis: percentage(10 / 12);
@@ -674,10 +729,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col2to10Md > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -693,10 +750,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col10to2Md > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(10 / 12);
@@ -711,11 +770,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col2to10Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -731,10 +792,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col10to2Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(10 / 12);
@@ -749,11 +812,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col2to10Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -769,10 +834,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col10to2Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(10 / 12);
@@ -787,6 +854,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
@@ -808,10 +876,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 .l-Grids-col9to3 > .l-Grids_Item {
   &:nth-of-type(odd) {
     flex-basis: percentage(9 / 12);
@@ -826,10 +896,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col3to9Md > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -845,10 +917,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col9to3Md > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(9 / 12);
@@ -863,11 +937,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col3to9Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -883,10 +959,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col9to3Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(9 / 12);
@@ -901,11 +979,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col3to9Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -921,10 +1001,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col9to3Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(9 / 12);
@@ -939,6 +1021,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
@@ -960,10 +1043,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 .l-Grids-col8to4 > .l-Grids_Item {
   &:nth-of-type(odd) {
     flex-basis: percentage(8 / 12);
@@ -978,10 +1063,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col4to8Md > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -997,10 +1084,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col8to4Md > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(8 / 12);
@@ -1015,11 +1104,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col4to8Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -1035,10 +1126,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col8to4Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(8 / 12);
@@ -1053,11 +1146,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col4to8Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -1073,10 +1168,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col8to4Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(8 / 12);
@@ -1091,6 +1188,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
@@ -1112,10 +1210,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 .l-Grids-col7to5 > .l-Grids_Item {
   &:nth-of-type(odd) {
     flex-basis: percentage(7 / 12);
@@ -1130,10 +1230,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   &:nth-of-type(n+1) {
     margin-top: 0;
   }
+
   &:nth-of-type(n+3) {
     margin-top: $l-grids-row-gap;
   }
 }
+
 @include mq-up(md) {
   .l-Grids-col5to7Md > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -1149,10 +1251,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col7to5Md > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(7 / 12);
@@ -1167,11 +1271,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(lg) {
   .l-Grids-col5to7Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -1187,10 +1293,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col7to5Lg > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(7 / 12);
@@ -1205,11 +1313,13 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
 }
+
 @include mq-up(xl) {
   .l-Grids-col5to7Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
@@ -1225,10 +1335,12 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }
   }
+
   .l-Grids-col7to5Xl > .l-Grids_Item {
     &:nth-of-type(odd) {
       flex-basis: percentage(7 / 12);
@@ -1243,6 +1355,7 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     &:nth-of-type(n+1) {
       margin-top: 0;
     }
+
     &:nth-of-type(n+3) {
       margin-top: $l-grids-row-gap-md;
     }

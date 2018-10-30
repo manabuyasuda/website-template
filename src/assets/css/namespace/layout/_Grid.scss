@@ -61,218 +61,260 @@ $l-grid-column-gap-md: $grid-column-gap-md;
   max-width: 100%;
   padding-left: $l-grid-column-gap;
 
-  @include mq-up(md) {
-    padding-left: $l-grid-column-gap-md;
-  }
-}
-
-.l-Grid_Item {
   &-1of12 {
     max-width: percentage(1 / 12);
     flex-basis: percentage(1 / 12);
   }
+
   &-2of12 {
     max-width: percentage(2 / 12);
     flex-basis: percentage(2 / 12);
   }
+
   &-3of12 {
     max-width: percentage(3 / 12);
     flex-basis: percentage(3 / 12);
   }
+
   &-4of12 {
     max-width: percentage(4 / 12);
     flex-basis: percentage(4 / 12);
   }
+
   &-5of12 {
     max-width: percentage(5 / 12);
     flex-basis: percentage(5 / 12);
   }
+
   &-6of12 {
     max-width: percentage(6 / 12);
     flex-basis: percentage(6 / 12);
   }
+
   &-7of12 {
     max-width: percentage(7 / 12);
     flex-basis: percentage(7 / 12);
   }
+
   &-8of12 {
     max-width: percentage(8 / 12);
     flex-basis: percentage(8 / 12);
   }
+
   &-9of12 {
     max-width: percentage(9 / 12);
     flex-basis: percentage(9 / 12);
   }
+
   &-10of12 {
     max-width: percentage(10 / 12);
     flex-basis: percentage(10 / 12);
   }
+
   &-11of12 {
     max-width: percentage(11 / 12);
     flex-basis: percentage(11 / 12);
   }
+
   &-12of12 {
     max-width: percentage(12 / 12);
     flex-basis: percentage(12 / 12);
+  }
+
+  @include mq-up(md) {
+    padding-left: $l-grid-column-gap-md;
   }
 }
 
 @include mq-up(md) {
   .l-Grid_Item {
     &-1of12Md {
-       max-width: percentage(1 / 12);
-       flex-basis: percentage(1 / 12);
-     }
-     &-2of12Md {
-       max-width: percentage(2 / 12);
-       flex-basis: percentage(2 / 12);
-     }
-     &-3of12Md {
-       max-width: percentage(3 / 12);
-       flex-basis: percentage(3 / 12);
-     }
-     &-4of12Md {
-       max-width: percentage(4 / 12);
-       flex-basis: percentage(4 / 12);
-     }
-     &-5of12Md {
-       max-width: percentage(5 / 12);
-       flex-basis: percentage(5 / 12);
-     }
-     &-6of12Md {
-       max-width: percentage(6 / 12);
-       flex-basis: percentage(6 / 12);
-     }
-     &-7of12Md {
-       max-width: percentage(7 / 12);
-       flex-basis: percentage(7 / 12);
-     }
-     &-8of12Md {
-       max-width: percentage(8 / 12);
-       flex-basis: percentage(8 / 12);
-     }
-     &-9of12Md {
-       max-width: percentage(9 / 12);
-       flex-basis: percentage(9 / 12);
-     }
-     &-10of12Md {
-       max-width: percentage(10 / 12);
-       flex-basis: percentage(10 / 12);
-     }
-     &-11of12Md {
-       max-width: percentage(11 / 12);
-       flex-basis: percentage(11 / 12);
-     }
-     &-12of12Md {
-       max-width: percentage(12 / 12);
-       flex-basis: percentage(12 / 12);
-     }
+      max-width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+    }
+
+    &-2of12Md {
+      max-width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+    }
+
+    &-3of12Md {
+      max-width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+    }
+
+    &-4of12Md {
+      max-width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+    }
+
+    &-5of12Md {
+      max-width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+    }
+
+    &-6of12Md {
+      max-width: percentage(6 / 12);
+      flex-basis: percentage(6 / 12);
+    }
+
+    &-7of12Md {
+      max-width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+    }
+
+    &-8of12Md {
+      max-width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+    }
+
+    &-9of12Md {
+      max-width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+    }
+
+    &-10of12Md {
+      max-width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+    }
+
+    &-11of12Md {
+      max-width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+    }
+
+    &-12of12Md {
+      max-width: percentage(12 / 12);
+      flex-basis: percentage(12 / 12);
+    }
   }
 }
 
 @include mq-up(lg) {
   .l-Grid_Item {
     &-1of12Lg {
-       max-width: percentage(1 / 12);
-       flex-basis: percentage(1 / 12);
-     }
-     &-2of12Lg {
-       max-width: percentage(2 / 12);
-       flex-basis: percentage(2 / 12);
-     }
-     &-3of12Lg {
-       max-width: percentage(3 / 12);
-       flex-basis: percentage(3 / 12);
-     }
-     &-4of12Lg {
-       max-width: percentage(4 / 12);
-       flex-basis: percentage(4 / 12);
-     }
-     &-5of12Lg {
-       max-width: percentage(5 / 12);
-       flex-basis: percentage(5 / 12);
-     }
-     &-6of12Lg {
-       max-width: percentage(6 / 12);
-       flex-basis: percentage(6 / 12);
-     }
-     &-7of12Lg {
-       max-width: percentage(7 / 12);
-       flex-basis: percentage(7 / 12);
-     }
-     &-8of12Lg {
-       max-width: percentage(8 / 12);
-       flex-basis: percentage(8 / 12);
-     }
-     &-9of12Lg {
-       max-width: percentage(9 / 12);
-       flex-basis: percentage(9 / 12);
-     }
-     &-10of12Lg {
-       max-width: percentage(10 / 12);
-       flex-basis: percentage(10 / 12);
-     }
-     &-11of12Lg {
-       max-width: percentage(11 / 12);
-       flex-basis: percentage(11 / 12);
-     }
-     &-12of12Lg {
-       max-width: percentage(12 / 12);
-       flex-basis: percentage(12 / 12);
-     }
+      max-width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+    }
+
+    &-2of12Lg {
+      max-width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+    }
+
+    &-3of12Lg {
+      max-width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+    }
+
+    &-4of12Lg {
+      max-width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+    }
+
+    &-5of12Lg {
+      max-width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+    }
+
+    &-6of12Lg {
+      max-width: percentage(6 / 12);
+      flex-basis: percentage(6 / 12);
+    }
+
+    &-7of12Lg {
+      max-width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+    }
+
+    &-8of12Lg {
+      max-width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+    }
+
+    &-9of12Lg {
+      max-width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+    }
+
+    &-10of12Lg {
+      max-width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+    }
+
+    &-11of12Lg {
+      max-width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+    }
+
+    &-12of12Lg {
+      max-width: percentage(12 / 12);
+      flex-basis: percentage(12 / 12);
+    }
   }
 }
 
 @include mq-up(xl) {
   .l-Grid_Item {
     &-1of12Xl {
-       max-width: percentage(1 / 12);
-       flex-basis: percentage(1 / 12);
-     }
-     &-2of12Xl {
-       max-width: percentage(2 / 12);
-       flex-basis: percentage(2 / 12);
-     }
-     &-3of12Xl {
-       max-width: percentage(3 / 12);
-       flex-basis: percentage(3 / 12);
-     }
-     &-4of12Xl {
-       max-width: percentage(4 / 12);
-       flex-basis: percentage(4 / 12);
-     }
-     &-5of12Xl {
-       max-width: percentage(5 / 12);
-       flex-basis: percentage(5 / 12);
-     }
-     &-6of12Xl {
-       max-width: percentage(6 / 12);
-       flex-basis: percentage(6 / 12);
-     }
-     &-7of12Xl {
-       max-width: percentage(7 / 12);
-       flex-basis: percentage(7 / 12);
-     }
-     &-8of12Xl {
-       max-width: percentage(8 / 12);
-       flex-basis: percentage(8 / 12);
-     }
-     &-9of12Xl {
-       max-width: percentage(9 / 12);
-       flex-basis: percentage(9 / 12);
-     }
-     &-10of12Xl {
-       max-width: percentage(10 / 12);
-       flex-basis: percentage(10 / 12);
-     }
-     &-11of12Xl {
-       max-width: percentage(11 / 12);
-       flex-basis: percentage(11 / 12);
-     }
-     &-12of12Xl {
-       max-width: percentage(12 / 12);
-       flex-basis: percentage(12 / 12);
-     }
+      max-width: percentage(1 / 12);
+      flex-basis: percentage(1 / 12);
+    }
+
+    &-2of12Xl {
+      max-width: percentage(2 / 12);
+      flex-basis: percentage(2 / 12);
+    }
+
+    &-3of12Xl {
+      max-width: percentage(3 / 12);
+      flex-basis: percentage(3 / 12);
+    }
+
+    &-4of12Xl {
+      max-width: percentage(4 / 12);
+      flex-basis: percentage(4 / 12);
+    }
+
+    &-5of12Xl {
+      max-width: percentage(5 / 12);
+      flex-basis: percentage(5 / 12);
+    }
+
+    &-6of12Xl {
+      max-width: percentage(6 / 12);
+      flex-basis: percentage(6 / 12);
+    }
+
+    &-7of12Xl {
+      max-width: percentage(7 / 12);
+      flex-basis: percentage(7 / 12);
+    }
+
+    &-8of12Xl {
+      max-width: percentage(8 / 12);
+      flex-basis: percentage(8 / 12);
+    }
+
+    &-9of12Xl {
+      max-width: percentage(9 / 12);
+      flex-basis: percentage(9 / 12);
+    }
+
+    &-10of12Xl {
+      max-width: percentage(10 / 12);
+      flex-basis: percentage(10 / 12);
+    }
+
+    &-11of12Xl {
+      max-width: percentage(11 / 12);
+      flex-basis: percentage(11 / 12);
+    }
+
+    &-12of12Xl {
+      max-width: percentage(12 / 12);
+      flex-basis: percentage(12 / 12);
+    }
   }
 }
 
@@ -282,16 +324,19 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 .l-Grid-top {
   align-items: flex-start;
 }
+
 @include mq-up(md) {
   .l-Grid-topMd {
     align-items: flex-start;
   }
 }
+
 @include mq-up(lg) {
   .l-Grid-topLg {
     align-items: flex-start;
   }
 }
+
 @include mq-up(xl) {
   .l-Grid-topXl {
     align-items: flex-start;
@@ -304,16 +349,19 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 .l-Grid-middle {
   align-items: center;
 }
+
 @include mq-up(md) {
   .l-Grid-middleMd {
     align-items: center;
   }
 }
+
 @include mq-up(lg) {
   .l-Grid-middleLg {
     align-items: center;
   }
 }
+
 @include mq-up(xl) {
   .l-Grid-middleXl {
     align-items: center;
@@ -326,16 +374,19 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 .l-Grid--bottom {
   align-items: flex-end;
 }
+
 @include mq-up(md) {
   .l-Grid-bottomMd {
     align-items: flex-end;
   }
 }
+
 @include mq-up(lg) {
   .l-Grid-bottomLg {
     align-items: flex-end;
   }
 }
+
 @include mq-up(xl) {
   .l-Grid-bottomXl {
     align-items: flex-end;
@@ -348,16 +399,19 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 .l-Grid-center {
   justify-content: center;
 }
+
 @include mq-up(md) {
   .l-Grid-centerMd {
     justify-content: center;
   }
 }
+
 @include mq-up(lg) {
   .l-Grid-centerLg {
     justify-content: center;
   }
 }
+
 @include mq-up(xl) {
   .l-Grid-centerXl {
     justify-content: center;
@@ -370,16 +424,19 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 .l-Grid-right {
   justify-content: flex-end;
 }
+
 @include mq-up(md) {
   .l-Grid-rightMd {
     justify-content: flex-end;
   }
 }
+
 @include mq-up(lg) {
   .l-Grid-rightLg {
     justify-content: flex-end;
   }
 }
+
 @include mq-up(xl) {
   .l-Grid-rightXl {
     justify-content: flex-end;
@@ -392,16 +449,19 @@ $l-grid-column-gap-md: $grid-column-gap-md;
 .l-Grid-reverse {
   flex-direction: row-reverse;
 }
+
 @include mq-up(md) {
   .l-Grid-reversMd {
     flex-direction: row-reverse;
   }
 }
+
 @include mq-up(lg) {
   .l-Grid-reverseLg {
     flex-direction: row-reverse;
   }
 }
+
 @include mq-up(xl) {
   .l-Grid-reverseXl {
     flex-direction: row-reverse;

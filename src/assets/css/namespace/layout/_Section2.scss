@@ -91,7 +91,7 @@ category: Layout
 .l-Section2-divider {
   margin: $section2-divider-margin;
 
-  & + &:before {
+  & + &::before {
     content: "";
     display: block;
     width: 100%;
@@ -103,7 +103,7 @@ category: Layout
   @include mq-up(md) {
     margin: $section2-divider-margin-md;
 
-    & + &:before {
+    & + &::before {
       padding-top: $section2-divider-margin-md;
     }
   }
@@ -149,11 +149,13 @@ category: Layout
 .l-Section2-dividerFull {
   margin: $section2-divider-margin;
 
-  & + &:before {
+  & + &::before {
     content: "";
     display: block;
     height: rem(1);
+
     @include full-width();
+
     padding: $section2-divider-margin;
     border-top: rem(1) solid #e3e3e3;
   }
@@ -161,7 +163,7 @@ category: Layout
   @include mq-up(md) {
     margin: $section2-divider-margin-md;
 
-    & + &:before {
+    & + &::before {
       padding: $section2-divider-margin-md;
     }
   }

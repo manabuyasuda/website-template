@@ -13,6 +13,7 @@ const postcss = require('gulp-postcss');
 const flexBugsFixes = require('postcss-flexbugs-fixes');
 const autoprefixer = require('autoprefixer');
 const cleanCSS = require('gulp-clean-css');
+const gulpStylelint = require('gulp-stylelint');
 
 // JS
 const concat = require('gulp-concat');
@@ -125,6 +126,14 @@ gulp.task('html', () => {
 gulp.task('ssi', () => {
   return gulp.src(src.ssi)
   .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('stylelint', () => {
+  return gulp.src([src.css, "!src/assets/css/base/mixin/**/*.scss"])
+  .pipe(gulpStylelint({
+    fix: true
+  }))
+  .pipe(gulp.dest(src.root))
 });
 
 /**

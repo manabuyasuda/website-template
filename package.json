@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "APP_ENV=development gulp",
-    "test": "eslint --fix src/**/*.js && APP_ENV=production gulp",
-    "release": "eslint --fix src/**/*.js && APP_ENV=production gulp build",
+    "test": "gulp stylelint && eslint --fix src/**/*.js && APP_ENV=production gulp",
+    "release": "gulp stylelint && eslint --fix src/**/*.js && APP_ENV=production gulp build",
+    "stylelint": "APP_ENV=development gulp stylelint",
     "eslint": "eslint --fix src/**/*.js"
   },
   "keywords": [
@@ -56,11 +57,15 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylelint": "^8.0.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.1",
     "postcss-flexbugs-fixes": "^4.1.0",
     "rimraf": "^2.6.2",
     "run-sequence": "^2.2.1",
+    "stylelint": "^9.7.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.3.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "vueify": "^9.4.1",

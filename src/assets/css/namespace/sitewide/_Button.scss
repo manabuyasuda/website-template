@@ -46,6 +46,7 @@ category: [Button, Link, Form]
 */
 .sw-Button {
   @include sw-Button;
+
   border-color: $color-brand;
   color: #fff;
   background-color: $color-brand;
@@ -71,8 +72,6 @@ category: [Button, Link, Form]
 }
 
 .sw-Button_More {
-  position: relative;
-  top: -0.1em;
   display: inline-block;
   position: absolute;
   top: 0;

@@ -38,6 +38,7 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
 .sw-Video {
   @include l-Block();
 }
+
 .sw-Video_Video {
   display: block;
   overflow: hidden;

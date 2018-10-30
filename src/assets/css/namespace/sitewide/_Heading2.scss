@@ -14,6 +14,7 @@ category: Heading
 */
 .sw-Heading2 {
   @include sw-Heading2();
+
   margin: $heading2-margin;
 
   & + * {

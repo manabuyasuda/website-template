@@ -63,7 +63,7 @@ category: Layout
     margin: $block-divider-margin-md;
   }
 
-  & + &:before {
+  & + &::before {
     content: "";
     display: block;
     width: 100%;
