@@ -124,6 +124,12 @@ npm run release
 npm run test
 ```
 
+[Airbnb JavaScriptスタイルガイド](http://mitsuruog.github.io/javascript-style-guide/)を元にリントを実行します。
+
+```bash
+npm run eslint
+```
+
 以下のような処理がおこなわれます。
 
 - PugをHTMLにコンパイル
@@ -131,6 +137,7 @@ npm run test
 - JSをES5にトランスコンパイル（jQueryとプラグインなどもsite.jsでインポート）
 - SVGスプライトの生成
 - ローカルサーバーを立ち上げて動作の確認（public以下のHTMLファイルはSSIにも対応）
+- JavaScriptのリント
 - スタイルガイドの生成
 
 ## 対象ブラウザ
