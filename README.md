@@ -124,7 +124,13 @@ npm run release
 npm run test
 ```
 
-[Airbnb JavaScriptスタイルガイド](http://mitsuruog.github.io/javascript-style-guide/)を元にリントを実行します。
+[stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)を元にSassのリントを実行します。
+
+```bash
+npm run stylelint
+```
+
+[Airbnb JavaScriptスタイルガイド](http://mitsuruog.github.io/javascript-style-guide/)を元にJavaScriptのリントを実行します。
 
 ```bash
 npm run eslint
@@ -137,6 +143,7 @@ npm run eslint
 - JSをES5にトランスコンパイル（jQueryとプラグインなどもsite.jsでインポート）
 - SVGスプライトの生成
 - ローカルサーバーを立ち上げて動作の確認（public以下のHTMLファイルはSSIにも対応）
+- Sass（CSS）のリント
 - JavaScriptのリント
 - スタイルガイドの生成
 
