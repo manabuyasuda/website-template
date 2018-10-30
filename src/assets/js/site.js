@@ -1,4 +1,3 @@
-'use strict';
 import './polyfill';
 import 'what-input';
 

@@ -29,50 +29,52 @@
  * </div>
  */
 import A11yDialog from 'a11y-dialog';
-import {scrollingElement} from '../../util';
+import { scrollingElement } from '../../util';
+
 export default function swDialog() {
   const Selector = {
     BASE_NAME: 'sw-Dialog', // IDとカスタムデータ属性値で使用する名前。
     FIXED_CLASS: 'sw-Dialog_Fixed', // 画面を固定するときに指定するクラス名。
-    CONTAINER_ID: 'main' // メインコンテンツのID名。ダイアログはこのID要素と兄弟関係にする。
+    CONTAINER_ID: 'main', // メインコンテンツのID名。ダイアログはこのID要素と兄弟関係にする。
   };
 
   const container = document.getElementById(Selector.CONTAINER_ID);
   // `baseName`+1桁以上の連番。
   const regexp = new RegExp(`${Selector.BASE_NAME}[0-9]{1,}`);
-  const allSelector = document.querySelectorAll(`[data-a11y-dialog-show*=${Selector.BASE_NAME}]`);
+  const allSelector = document.querySelectorAll(
+    `[data-a11y-dialog-show*=${Selector.BASE_NAME}]`,
+  );
   const html = document.getElementsByTagName('html')[0];
   const body = document.getElementsByTagName('body')[0];
   const scrollElement = scrollingElement();
   // ダイアログを開く直前のスクロール位置。
   let openBeforeLocation = 0;
-  let targets = [];
+  const targets = [];
 
   // 該当する要素のクラス名を`targets`に格納する。
-  for (const selector of allSelector) {
+  Array.from(allSelector).forEach((selector) => {
     const attributeName = selector.getAttribute('data-a11y-dialog-show');
     const itemName = attributeName.match(regexp)[0];
     targets.push(itemName);
-  }
+  });
 
-  for (const target of targets) {
+  Array.from(targets).forEach((target) => {
     // 該当する要素のIDを渡してインスタンス化する。
     const targetID = document.getElementById(target);
     const targetName = new A11yDialog(targetID, container);
 
     // ダイアログを表示したときは画面を固定する。
-    targetName.on('show', function (dialogEl, event) {
+    targetName.on('show', () => {
       openBeforeLocation = window.pageYOffset;
       html.classList.add(Selector.FIXED_CLASS);
       body.classList.add(Selector.FIXED_CLASS);
     });
 
     // ダイアログを非表示にしたときは画面の固定を解除して、スクロール位置を戻す。
-    targetName.on('hide', function (dialogEl, event) {
+    targetName.on('hide', () => {
       html.classList.remove(Selector.FIXED_CLASS);
       body.classList.remove(Selector.FIXED_CLASS);
       scrollElement.scrollTop = openBeforeLocation;
     });
-  }
-
-};
+  });
+}
