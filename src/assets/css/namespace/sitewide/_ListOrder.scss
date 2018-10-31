@@ -17,11 +17,11 @@ category: List
         li 入れ子に対応した順序リストです。
 ```
 
-リストを2から始める場合は`.sw-ListOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
+リストを2から始める場合はstart属性を`start="2"`のように指定します。CSSで表示する順序も属性値によって変更されます。
 
 ```jade
 .l-Wrapper
-  ol.sw-ListOrder.sw-ListOrder-from2(start="2")
+  ol.sw-ListOrder(start="2")
     li 入れ子に対応した順序リストです。入れ子に対応した順序リストです。
     li 入れ子に対応した順序リストです。
       ol.sw-ListOrder_Child
@@ -36,6 +36,12 @@ category: List
   padding-left: 0;
   list-style-type: none;
   counter-reset: order;
+
+  // start属性値に応じてCSSのカウンターも変更します。
+  // デフォルトは`through 9`で`start="10"`まで対応しています。
+  @for $i from 1 through 9 {
+    &[start="#{$i + 1}"] { counter-reset: order $i; }
+  }
 
   & > li {
     display: table-row;
@@ -69,13 +75,3 @@ category: List
     white-space: nowrap;
   }
 }
-
-.sw-ListOrder-from2 { counter-reset: order 1; }
-.sw-ListOrder-from3 { counter-reset: order 2; }
-.sw-ListOrder-from4 { counter-reset: order 3; }
-.sw-ListOrder-from5 { counter-reset: order 4; }
-.sw-ListOrder-from6 { counter-reset: order 5; }
-.sw-ListOrder-from7 { counter-reset: order 6; }
-.sw-ListOrder-from8 { counter-reset: order 7; }
-.sw-ListOrder-from9 { counter-reset: order 8; }
-.sw-ListOrder-from10 { counter-reset: order 9; }

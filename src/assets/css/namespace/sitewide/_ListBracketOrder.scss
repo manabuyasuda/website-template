@@ -14,11 +14,11 @@ category: List
     li リストです
 ```
 
-リストを2から始める場合は`.sw-ListBracketOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
+リストを2から始める場合はstart属性を`start="2"`のように指定します。CSSで表示する順序も属性値によって変更されます。
 
 ```jade
 .l-Wrapper
-  ol.sw-ListBracketOrder.sw-ListBracketOrder-from2(start="2")
+  ol.sw-ListBracketOrder(start="2")
     li リストです。リストです。リストです。リストです。
     li リストです
 ```
@@ -35,6 +35,12 @@ category: List
     margin-left: rem(32);
   }
 
+  // start属性値に応じてCSSのカウンターも変更します。
+  // デフォルトは`through 9`で`start="10"`まで対応しています。
+  @for $i from 1 through 9 {
+    &[start="#{$i + 1}"] { counter-reset: bracketOrder $i; }
+  }
+
   & > li {
     position: relative;
     counter-increment: bracketOrder;
@@ -47,13 +53,3 @@ category: List
     left: rem(-32);
   }
 }
-
-.sw-ListBracketOrder-from2 { counter-reset: bracketOrder 1; }
-.sw-ListBracketOrder-from3 { counter-reset: bracketOrder 2; }
-.sw-ListBracketOrder-from4 { counter-reset: bracketOrder 3; }
-.sw-ListBracketOrder-from5 { counter-reset: bracketOrder 4; }
-.sw-ListBracketOrder-from6 { counter-reset: bracketOrder 5; }
-.sw-ListBracketOrder-from7 { counter-reset: bracketOrder 6; }
-.sw-ListBracketOrder-from8 { counter-reset: bracketOrder 7; }
-.sw-ListBracketOrder-from9 { counter-reset: bracketOrder 8; }
-.sw-ListBracketOrder-from10 { counter-reset: bracketOrder 9; }

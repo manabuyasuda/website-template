@@ -61,18 +61,18 @@
     <span class="token tag" >li</span> <span class="token plain-text" >リストです。リストです。リストです。リストです。</span>
     <span class="token tag" >li</span> <span class="token plain-text" >リストです</span>
 </code></pre>
-<p>リストを2から始める場合は<code>.sw-ListBracketOrder-from2</code>のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように<code>start</code>属性も指定します。</p>
+<p>リストを2から始める場合はstart属性を<code>start=&quot;2&quot;</code>のように指定します。CSSで表示する順序も属性値によって変更されます。</p>
 <div class="aigis-preview">
 
 <div class="l-Wrapper">
-  <ol start="2" class="sw-ListBracketOrder sw-ListBracketOrder-from2">
+  <ol start="2" class="sw-ListBracketOrder">
     <li>リストです。リストです。リストです。リストです。</li>
     <li>リストです</li>
   </ol>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >ol.sw-ListBracketOrder.sw-ListBracketOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >ol.sw-ListBracketOrder<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >li</span> <span class="token plain-text" >リストです。リストです。リストです。リストです。</span>
     <span class="token tag" >li</span> <span class="token plain-text" >リストです</span>
 </code></pre>
@@ -138,16 +138,16 @@
       <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation. This is an annotation. This is an annotation.</span>
       <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation.</span>
 </code></pre>
-<p>リストを2から始める場合は<code>.sw-ListNoteOrder-from2</code>のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように<code>start</code>属性も指定します。</p>
+<p>リストを2から始める場合はstart属性を<code>start=&quot;2&quot;</code>のように指定します。CSSで表示する順序も属性値によって変更されます。</p>
 <div class="aigis-preview">
 
 <div class="l-Wrapper">
-  <ol start="2" class="sw-ListNoteOrder sw-ListNoteOrder-from2">
+  <ol start="2" class="sw-ListNoteOrder">
     <li>注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</li>
     <li>注釈です。</li>
   </ol>
   <div lang="en">
-    <ol start="2" class="sw-ListNoteOrder sw-ListNoteOrder-from2">
+    <ol start="2" class="sw-ListNoteOrder">
       <li>This is an annotation. This is an annotation. This is an annotation.</li>
       <li>This is an annotation.</li>
     </ol>
@@ -155,12 +155,12 @@
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >ol.sw-ListNoteOrder.sw-ListNoteOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >ol.sw-ListNoteOrder<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >li</span> <span class="token plain-text" >注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。</span>
     <span class="token tag" >li</span> <span class="token plain-text" >注釈です。</span>
 
   <span class="token tag" >div<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >lang</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"en"</span></span><span class="token punctuation" >)</span></span></span>
-    <span class="token tag" >ol.sw-ListNoteOrder.sw-ListNoteOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >ol.sw-ListNoteOrder<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
       <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation. This is an annotation. This is an annotation.</span>
       <span class="token tag" >li</span> <span class="token plain-text" >This is an annotation.</span>
 </code></pre>
@@ -192,11 +192,11 @@
         <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
         <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
 </code></pre>
-<p>リストを2から始める場合は<code>.sw-ListOrder-from2</code>のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように<code>start</code>属性も指定します。</p>
+<p>リストを2から始める場合はstart属性を<code>start=&quot;2&quot;</code>のように指定します。CSSで表示する順序も属性値によって変更されます。</p>
 <div class="aigis-preview">
 
 <div class="l-Wrapper">
-  <ol start="2" class="sw-ListOrder sw-ListOrder-from2">
+  <ol start="2" class="sw-ListOrder">
     <li>入れ子に対応した順序リストです。入れ子に対応した順序リストです。</li>
     <li>入れ子に対応した順序リストです。
       <ol class="sw-ListOrder_Child">
@@ -208,7 +208,7 @@
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >ol.sw-ListOrder.sw-ListOrder-from2<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >ol.sw-ListOrder<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >start</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"2"</span></span><span class="token punctuation" >)</span></span></span>
     <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。入れ子に対応した順序リストです。</span>
     <span class="token tag" >li</span> <span class="token plain-text" >入れ子に対応した順序リストです。</span>
       <span class="token tag" >ol.sw-ListOrder_Child</span>

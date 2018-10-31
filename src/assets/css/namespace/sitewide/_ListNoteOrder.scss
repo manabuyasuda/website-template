@@ -19,16 +19,16 @@ category: List
       li This is an annotation.
 ```
 
-リストを2から始める場合は`.sw-ListNoteOrder-from2`のように指定します。2~10まで対応しています。CSSが正常に読み込めなかった場合でも意味が変わらないように`start`属性も指定します。
+リストを2から始める場合はstart属性を`start="2"`のように指定します。CSSで表示する順序も属性値によって変更されます。
 
 ```jade
 .l-Wrapper
-  ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
+  ol.sw-ListNoteOrder(start="2")
     li 注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。注釈です。
     li 注釈です。
 
   div(lang="en")
-    ol.sw-ListNoteOrder.sw-ListNoteOrder-from2(start="2")
+    ol.sw-ListNoteOrder(start="2")
       li This is an annotation. This is an annotation. This is an annotation.
       li This is an annotation.
 ```
@@ -56,6 +56,12 @@ category: List
     }
   }
 
+  // start属性値に応じてCSSのカウンターも変更します。
+  // デフォルトは`through 9`で`start="10"`まで対応しています。
+  @for $i from 1 through 9 {
+    &[start="#{$i + 1}"] { counter-reset: noteOrder $i; }
+  }
+
   & > li {
     position: relative;
     counter-increment: noteOrder;
@@ -78,13 +84,3 @@ category: List
     left: rem(-20);
   }
 }
-
-.sw-ListNoteOrder-from2 { counter-reset: noteOrder 1; }
-.sw-ListNoteOrder-from3 { counter-reset: noteOrder 2; }
-.sw-ListNoteOrder-from4 { counter-reset: noteOrder 3; }
-.sw-ListNoteOrder-from5 { counter-reset: noteOrder 4; }
-.sw-ListNoteOrder-from6 { counter-reset: noteOrder 5; }
-.sw-ListNoteOrder-from7 { counter-reset: noteOrder 6; }
-.sw-ListNoteOrder-from8 { counter-reset: noteOrder 7; }
-.sw-ListNoteOrder-from9 { counter-reset: noteOrder 8; }
-.sw-ListNoteOrder-from10 { counter-reset: noteOrder 9; }
