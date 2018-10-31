@@ -32,30 +32,31 @@ import A11yDialog from 'a11y-dialog';
 import { scrollingElement } from '../../util';
 
 export default function swDialog() {
-  const Selector = {
-    BASE_NAME: 'sw-Dialog', // IDとカスタムデータ属性値で使用する名前。
-    FIXED_CLASS: 'sw-Dialog_Fixed', // 画面を固定するときに指定するクラス名。
-    CONTAINER_ID: 'main', // メインコンテンツのID名。ダイアログはこのID要素と兄弟関係にする。
-  };
+  // IDとカスタムデータ属性値で使用する名前。
+  const baseName = 'sw-Dialog';
+  // 画面を固定するときに指定するクラス名。
+  const fixedClass = 'sw-Dialog_Fixed';
+  // メインコンテンツのID名。ダイアログはこのID要素と兄弟関係にする。
+  const containerID = 'main';
 
-  const container = document.getElementById(Selector.CONTAINER_ID);
+  const container = document.getElementById(containerID);
   // `baseName`+1桁以上の連番。
-  const regexp = new RegExp(`${Selector.BASE_NAME}[0-9]{1,}`);
+  const regexp = new RegExp(`${baseName}[0-9]{1,}`);
   const allSelector = document.querySelectorAll(
-    `[data-a11y-dialog-show*=${Selector.BASE_NAME}]`,
+    `[data-a11y-dialog-show*=${baseName}]`,
   );
   const html = document.getElementsByTagName('html')[0];
   const body = document.getElementsByTagName('body')[0];
   const scrollElement = scrollingElement();
   // ダイアログを開く直前のスクロール位置。
   let openBeforeLocation = 0;
-  const targets = [];
 
-  // 該当する要素のクラス名を`targets`に格納する。
-  Array.from(allSelector).forEach((selector) => {
+  if (!allSelector.length) return;
+
+  // 使用するID名だけを抽出する。
+  const targets = Array.from(allSelector).map((selector) => {
     const attributeName = selector.getAttribute('data-a11y-dialog-show');
-    const itemName = attributeName.match(regexp)[0];
-    targets.push(itemName);
+    return attributeName.match(regexp)[0];
   });
 
   Array.from(targets).forEach((target) => {
@@ -66,14 +67,14 @@ export default function swDialog() {
     // ダイアログを表示したときは画面を固定する。
     targetName.on('show', () => {
       openBeforeLocation = window.pageYOffset;
-      html.classList.add(Selector.FIXED_CLASS);
-      body.classList.add(Selector.FIXED_CLASS);
+      html.classList.add(fixedClass);
+      body.classList.add(fixedClass);
     });
 
     // ダイアログを非表示にしたときは画面の固定を解除して、スクロール位置を戻す。
     targetName.on('hide', () => {
-      html.classList.remove(Selector.FIXED_CLASS);
-      body.classList.remove(Selector.FIXED_CLASS);
+      html.classList.remove(fixedClass);
+      body.classList.remove(fixedClass);
       scrollElement.scrollTop = openBeforeLocation;
     });
   });

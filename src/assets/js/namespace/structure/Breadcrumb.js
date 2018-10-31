@@ -4,13 +4,9 @@
  * https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/
  */
 export default function stBreadcrumb() {
-  const Selector = {
-    PARENT: 'st-Breadcrumb',
-    LINK: 'st-Breadcrumb_Link',
-  };
-  const Attr = {
-    CURRENT_VALUE: 'page',
-  };
+  const parentName = 'st-Breadcrumb';
+  const linkName = 'st-Breadcrumb_Link';
+  const currentValue = 'page';
   const getLabelValue = (lang) => {
     if (lang === 'ja') return '現在位置';
     if (lang === 'en') return 'Current location';
@@ -19,8 +15,8 @@ export default function stBreadcrumb() {
     return false;
   };
 
-  const parent = document.getElementsByClassName(Selector.PARENT)[0];
-  const link = document.getElementsByClassName(Selector.LINK);
+  const parent = document.getElementsByClassName(parentName)[0];
+  const link = document.getElementsByClassName(linkName);
   const path = window.location.pathname.replace(/index\.html$/, '');
   const pageLang = document
     .getElementsByTagName('html')[0]
@@ -38,7 +34,7 @@ export default function stBreadcrumb() {
       const isMatchCurrentPage = href === path;
 
       if (isMatchCurrentPage) {
-        item.setAttribute('aria-current', Attr.CURRENT_VALUE);
+        item.setAttribute('aria-current', currentValue);
         item.setAttribute('tabindex', -1);
       }
     });

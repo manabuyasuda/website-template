@@ -13,15 +13,16 @@
 import SweetScroll from 'sweet-scroll';
 
 export default function jsSmoothScroll() {
-  const Selector = {
-    CLASS: 'js-SmoothScroll', // クラスで指定する場合。
-    HREF: 'a[href*="#"]:not([href*="/"]):not(#st-BackToTop)', // ハッシュ付きリンクに指定する場合。
-    HEADER: '[data-scroll-header]', // 固定ヘッダーのCSSセレクタ。
-  };
+  // クラスで指定する場合。
+  // const baseNameClass = 'js-SmoothScroll';
+  // ハッシュ付きリンクに指定する場合。
+  const baseNameAttr = 'a[href*="#"]:not([href*="/"]):not(#st-BackToTop)';
+  // 固定ヘッダーのCSSセレクタ。
+  const headerElement = '[data-scroll-header]';
 
   const scroller = new SweetScroll({
-    trigger: Selector.HREF, // Selector for trigger (must be a valid css selector)
-    header: Selector.HEADER, // Selector or Element for fixed header (Selector of must be a valid css selector)
+    trigger: baseNameAttr, // Selector for trigger (must be a valid css selector)
+    header: headerElement, // Selector or Element for fixed header (Selector of must be a valid css selector)
     duration: 1000, // Specifies animation duration in integer
     easing: 'easeOutQuint', // Specifies the pattern of easing
     offset: 0, // Specifies the value to offset the scroll position in pixels
@@ -35,7 +36,7 @@ export default function jsSmoothScroll() {
   });
 
   /**
-   * ページ読み込み時に、ハッシュと同じid属性があれば要素まで移動する
+   * ページ読み込み時にURLのハッシュと同じid属性があれば、その要素まで移動する。
    */
   const locationHash = window.location.hash;
   const hashExists = locationHash.length >= 1;

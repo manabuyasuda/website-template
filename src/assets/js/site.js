@@ -1,7 +1,7 @@
 import './polyfill';
 import 'what-input';
 
-import vueTest from './vue';
+import vueTest from './vueTest';
 import jsAlignHeight from './namespace/js/AlignHeight';
 import jsSmoothScroll from './namespace/js/SmoothScroll';
 import stBackToTop from './namespace/structure/BackToTop';

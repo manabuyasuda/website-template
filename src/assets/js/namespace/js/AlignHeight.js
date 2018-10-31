@@ -17,32 +17,26 @@
 import ResponsiveAutoHeight from 'responsive-auto-height';
 
 export default function jsAlignHeight() {
-  const Selector = {
-    BASE_CLASS: 'js-AlignHeight', // 使用するクラス名。
-  };
+  // 使用するクラス名。
+  const baseName = 'js-AlignHeight';
 
   // `baseName`+1桁以上の連番。
-  const regexp = new RegExp(`${Selector.BASE_CLASS}[0-9]{1,}`);
+  const regexp = new RegExp(`${baseName}[0-9]{1,}`);
   const allSelector = document.querySelectorAll(
-    `[class*=${Selector.BASE_CLASS}]`,
+    `[class*=${baseName}]`,
   );
-  const classNames = [];
 
   if (!allSelector.length) return;
 
-  // 該当する要素のクラス名を`classNames`に格納する。
-
-  Array.from(allSelector).forEach((selector) => {
-    const { className } = selector;
-    const itemName = className.match(regexp)[0];
-    classNames.push(itemName);
-  });
+  // 使用するクラス名だけを抽出する。
+  const classNames = Array.from(allSelector).map(selector => selector.className.match(regexp)[0]);
 
   // 重複したクラス名を削除する。
   const target = classNames.filter(
     (className, i, self) => self.indexOf(className) === i,
   );
 
+  // インスタンス化する。
   Array.from(target).forEach((className) => {
     let rah = className; // eslint-disable-line
     rah = new ResponsiveAutoHeight(`.${className}`);

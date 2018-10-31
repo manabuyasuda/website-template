@@ -4,13 +4,10 @@
  */
 import Vue from 'vue';
 
-export default function VueText() {
+export default function vueTest() {
   const element = document.getElementById('app');
 
-  if (!element) {
-    console.log('#appがありません。');
-    return;
-  }
+  if (!element) return;
 
   const app = new Vue({ // eslint-disable-line
     el: '#app',
