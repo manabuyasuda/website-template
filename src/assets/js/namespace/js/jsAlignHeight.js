@@ -32,13 +32,13 @@ export default function jsAlignHeight() {
   const classNames = Array.from(allSelector).map(selector => selector.className.match(regexp)[0]);
 
   // 重複したクラス名を削除する。
-  const target = classNames.filter(
+  const targets = classNames.filter(
     (className, i, self) => self.indexOf(className) === i,
   );
 
   // インスタンス化する。
-  Array.from(target).forEach((className) => {
-    let rah = className; // eslint-disable-line
-    rah = new ResponsiveAutoHeight(`.${className}`);
+  targets.forEach((target) => {
+    let rah = target; // eslint-disable-line
+    rah = new ResponsiveAutoHeight(`.${target}`);
   });
 }

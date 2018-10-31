@@ -59,7 +59,7 @@ export default function swDialog() {
     return attributeName.match(regexp)[0];
   });
 
-  Array.from(targets).forEach((target) => {
+  targets.forEach((target) => {
     // 該当する要素のIDを渡してインスタンス化する。
     const targetID = document.getElementById(target);
     const targetName = new A11yDialog(targetID, container);
