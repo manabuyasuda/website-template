@@ -6,6 +6,10 @@ const fs = require('fs');
 const data = require('gulp-data');
 const path = require('path');
 
+// HTML
+const htmlhint = require("gulp-htmlhint");
+const ssi = require("browsersync-ssi");
+
 // CSS
 const sass = require('gulp-sass')
 const sassGlob = require('gulp-sass-glob');
@@ -41,7 +45,6 @@ const changed  = require('gulp-changed');
 const sourcemaps = require('gulp-sourcemaps');
 const runSequence = require('run-sequence');
 const browserSync = require('browser-sync');
-const ssi = require("browsersync-ssi");
 const plumber = require('gulp-plumber');
 const notify = require("gulp-notify");
 const gulpif = require('gulp-if');
@@ -121,6 +124,18 @@ gulp.task('html', () => {
 });
 
 /**
+ * 公開用のHTMLファイルを解析して警告やエラーを通知します。
+ */
+gulp.task('htmlhint', () => {
+  return gulp.src([`${dest.root}**/*.html`, `!${dest.root}styleguide/**/*.html`])
+  .pipe(htmlhint('.htmlhintrc'))
+  .pipe(htmlhint.reporter('htmlhint-stylish'))
+  .pipe(htmlhint.failOnError({
+    suppress: true
+  }));
+});
+
+/**
  * /public/以下のHTMLファイルを監視、更新があれば反映します。
  */
 gulp.task('ssi', () => {
@@ -128,6 +143,10 @@ gulp.task('ssi', () => {
   .pipe(browserSync.reload({stream: true}));
 });
 
+/**
+ * 公開用のSassファイルを解析して警告やエラーを通知します。
+ * 修正できるものは強制的に反映します。
+ */
 gulp.task('stylelint', () => {
   return gulp.src([src.css, "!src/assets/css/base/mixin/**/*.scss"])
   .pipe(gulpStylelint({
