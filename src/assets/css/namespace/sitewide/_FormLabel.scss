@@ -38,11 +38,11 @@ category: Form
 
 ```jade
 .l-Wrapper
-  label.sw-FormLabel(for="form-label3")
+  label.sw-FormLabel(for="form-label4")
     | 名前
     em.sw-FormLabel_RequireB 必須
     small.sw-FormLabel_Note 入力時の注意事項
-  input.sw-FormInput(id="form-label3" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+  input.sw-FormInput(id="form-label4" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
 ```
 */
 .sw-FormLabel {
