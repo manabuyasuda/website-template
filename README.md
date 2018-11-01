@@ -124,6 +124,12 @@ npm run release
 npm run test
 ```
 
+[HTMLHint](https://github.com/htmlhint/HTMLHint)でHTMLのリントを実行します。
+
+```bash
+npm run htmlhint
+```
+
 [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)を元にSassのリントを実行します。
 
 ```bash
@@ -143,6 +149,7 @@ npm run eslint
 - JSをES5にトランスコンパイル（jQueryとプラグインなどもsite.jsでインポート）
 - SVGスプライトの生成
 - ローカルサーバーを立ち上げて動作の確認（public以下のHTMLファイルはSSIにも対応）
+- HTMLのリント
 - Sass（CSS）のリント
 - JavaScriptのリント
 - スタイルガイドの生成
