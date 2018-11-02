@@ -20,7 +20,6 @@ const cleanCSS = require('gulp-clean-css');
 const gulpStylelint = require('gulp-stylelint');
 
 // JS
-const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const browserify = require('browserify');
 const babelify = require('babelify');
