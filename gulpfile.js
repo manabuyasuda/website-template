@@ -25,7 +25,6 @@ const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
-const watchify = require('watchify');
 const vueify = require('vueify');
 const envify = require('envify/custom');
 
@@ -177,50 +176,40 @@ gulp.task('css', () => {
 /**
  * ES2015以降のコードをES5に変換（トランスコンパイル）します。
  */
-function bundle(watching = false) {
+gulp.task('js', () => {
   const envifyOptions = envValues;
   // 指定した環境変数だけを処理する
   envifyOptions._ = 'purge';
 
-  const b = browserify({
+  browserify({
     entries: src.js,
-    transform: ['babelify'],
+    extensions: ['.js'],
     // browserifyのsourcemapsを使用しない
-    debug: (isDevelopment) ? true : false,
+    debug: !!(isDevelopment),
     cache: {},
     packageCache: {},
     // ファイルの状態を監視して、差分だけをビルドする
-    plugin: (watching) ? [watchify] : null
+    plugin: 'watchify',
   })
-  // Vue.jsの単一ファイルコンポーネントをBrowserifyで変換する
-  .transform(vueify)
-  .transform(
-    {global: true},
-    // `NODE_ENV`を`development`か`production`に変更する
-    // 環境変数もすべてJS側に渡す
-    envify(envifyOptions)
-  )
-  .on('update', () => {
-    bundler();
-    console.log('scripts rebuild');
-  });
-
-  function bundler() {
-    return b.bundle()
-    .on('error', (err) => {
-      console.log(err.message);
+    .transform(babelify)
+    // Vue.jsの単一ファイルコンポーネントをBrowserifyで変換する
+    .transform(vueify)
+    .transform(
+      { global: true },
+      // `NODE_ENV`を`development`か`production`に変更する
+      // 環境変数もすべてJS側に渡す
+      envify(envifyOptions),
+    )
+    .bundle()
+    .on('error', function (err) {
+      console.log(`Error : ${err.message}`);
+      this.emit('end');
     })
     .pipe(source('site.js'))
     .pipe(buffer())
-    .pipe(gulpif(isProduction, uglify({output: {comments: /^!/}})))
+    .pipe(gulpif(isProduction, uglify({ output: { comments: /^!/ } })))
     .pipe(gulp.dest(dest.js))
-    .pipe(browserSync.reload({stream: true}))
-  }
-  return bundler();
-}
-
-gulp.task('js', () => {
-  bundle();
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 /**
@@ -345,7 +334,7 @@ gulp.task('watch', ['build'], () => {
   gulp.watch(src.html, ['html']);
   gulp.watch(src.css, ['css']);
   gulp.watch(src.styleguideWatch, ['styleguide']);
-  bundle(true);
+  gulp.watch(src.js, ['js']);
   gulp.watch(src.imageWatch, ['image']);
   gulp.watch(src.svgSprite, ['svgSprite']);
 });
