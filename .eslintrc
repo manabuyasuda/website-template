@@ -10,7 +10,6 @@
   "extends": "airbnb-base",
   "rules": {
     "no-console": "warn",
-    "import/prefer-default-export": "warn",
     "max-len": "warn"
   }
 }

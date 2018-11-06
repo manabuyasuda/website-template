@@ -2,7 +2,7 @@
  * ドキュメントのスクロール要素を取得します（`html` or `body`）。
  * https://dev.opera.com/articles/fixing-the-scrolltop-bug/
  */
-export const scrollingElement = () => {
+export default function scrollingElement() {
   if ('scrollingElement' in document) {
     return document.scrollingElement;
   }
@@ -11,4 +11,4 @@ export const scrollingElement = () => {
     return document.body;
   }
   return document.documentElement;
-};
+}

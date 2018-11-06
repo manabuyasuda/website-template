@@ -29,7 +29,7 @@
  * </div>
  */
 import A11yDialog from 'a11y-dialog';
-import { scrollingElement } from '../../util';
+import scrollingElement from '../../util/scrollingElement';
 
 export default function swDialog() {
   // IDとカスタムデータ属性値で使用する名前。
