@@ -12,9 +12,7 @@ export default function jsAlignHeight() {
 
   // `baseName`+1桁以上の連番。
   const regexp = new RegExp(`${baseName}[0-9]{1,}`);
-  const allSelector = document.querySelectorAll(
-    `[class*=${baseName}]`,
-  );
+  const allSelector = document.querySelectorAll(`[class*=${baseName}]`);
 
   if (!allSelector.length) return;
 
@@ -22,13 +20,10 @@ export default function jsAlignHeight() {
   const classNames = Array.from(allSelector).map(selector => selector.className.match(regexp)[0]);
 
   // 重複したクラス名を削除する。
-  const targets = classNames.filter(
-    (className, i, self) => self.indexOf(className) === i,
-  );
+  const targets = classNames.filter((className, i, self) => self.indexOf(className) === i);
 
   // インスタンス化する。
   targets.forEach((target) => {
-    let rah = target; // eslint-disable-line
-    rah = new ResponsiveAutoHeight(`.${target}`);
+    const rah = new ResponsiveAutoHeight(`.${target}`); // eslint-disable-line
   });
 }

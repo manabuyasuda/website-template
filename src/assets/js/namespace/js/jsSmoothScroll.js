@@ -38,15 +38,12 @@ export default function jsSmoothScroll() {
     window.location.hash = '';
   }
 
-  window.addEventListener(
-    'DOMContentLoaded',
-    () => {
-      const needsInitialScroll = document.getElementById(locationHash.substr(1)) != null;
+  window.addEventListener('DOMContentLoaded', () => {
+    const scrollElement = document.getElementById(locationHash.substr(1));
+    const needsInitialScroll = scrollElement != null;
 
-      if (needsInitialScroll) {
-        scroller.to(locationHash, { updateURL: 'replace' });
-      }
-    },
-    false,
-  );
+    if (needsInitialScroll) {
+      scroller.to(locationHash, { updateURL: 'replace' });
+    }
+  });
 }

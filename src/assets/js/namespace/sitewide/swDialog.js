@@ -38,17 +38,17 @@ export default function swDialog() {
   targets.forEach((target) => {
     // 該当する要素のIDを渡してインスタンス化する。
     const targetID = document.getElementById(target);
-    const targetName = new A11yDialog(targetID, container);
+    const a11yDialog = new A11yDialog(targetID, container);
 
     // ダイアログを表示したときは画面を固定する。
-    targetName.on('show', () => {
+    a11yDialog.on('show', () => {
       openBeforeLocation = window.pageYOffset;
       html.classList.add(fixedClass);
       body.classList.add(fixedClass);
     });
 
     // ダイアログを非表示にしたときは画面の固定を解除して、スクロール位置を戻す。
-    targetName.on('hide', () => {
+    a11yDialog.on('hide', () => {
       html.classList.remove(fixedClass);
       body.classList.remove(fixedClass);
       scrollElement.scrollTop = openBeforeLocation;

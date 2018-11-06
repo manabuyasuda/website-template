@@ -18,9 +18,8 @@ export default function stBreadcrumb() {
   const parent = document.getElementsByClassName(parentName)[0];
   const link = document.getElementsByClassName(linkName);
   const path = window.location.pathname.replace(/index\.html$/, '');
-  const pageLang = document
-    .getElementsByTagName('html')[0]
-    .getAttribute('lang');
+  const html = document.getElementsByTagName('html')[0];
+  const pageLang = html.getAttribute('lang');
 
   window.addEventListener('load', () => {
     if (!parent) return;
