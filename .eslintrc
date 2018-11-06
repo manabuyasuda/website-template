@@ -8,6 +8,7 @@
     "es6": true
   },
   "extends": "airbnb-base",
+  "plugins": ["import"],
   "rules": {
     "no-console": "warn",
     "max-len": "warn"
