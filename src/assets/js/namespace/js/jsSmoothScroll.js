@@ -34,6 +34,8 @@ export default function jsSmoothScroll() {
   const locationHash = window.location.hash;
   const hashExists = locationHash.length >= 1;
 
+  if (!hashExists) return;
+
   if (hashExists) {
     window.location.hash = '';
   }
