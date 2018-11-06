@@ -11,6 +11,10 @@
   "plugins": ["import"],
   "rules": {
     "no-console": "warn",
-    "max-len": "warn"
+    "max-len": ["warn", {
+      "code": 100,
+      "ignoreTrailingComments": true,
+      "ignoreTemplateLiterals": true
+    }]
   }
 }

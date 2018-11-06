@@ -1,9 +1,6 @@
 /**
  * ページ上部にスムーススクロールで移動します。
  * https://github.com/tsuyoshiwada/sweet-scroll
- *
- * 例：ページの上部に移動する。
- * <a id="st-BackToTop" href="#">TOPへ移動</a>
  */
 import SweetScroll from 'sweet-scroll';
 
@@ -14,17 +11,17 @@ export default function stBackToTop() {
   const headerElement = '[data-scroll-header]';
 
   const backToTop = new SweetScroll({ // eslint-disable-line
-    trigger: baseName, // Selector for trigger (must be a valid css selector)
-    header: headerElement, // Selector or Element for fixed header (Selector of must be a valid css selector)
-    duration: 1000, // Specifies animation duration in integer
-    easing: 'easeOutQuint', // Specifies the pattern of easing
-    offset: 0, // Specifies the value to offset the scroll position in pixels
-    vertical: true, // Enable the vertical scroll
-    horizontal: false, // Enable the horizontal scroll
-    cancellable: true, // When fired wheel or touchstart events to stop scrolling
-    updateURL: false, // Update the URL hash on after scroll (true | false | 'push' | 'replace')
-    preventDefault: true, // Cancels the container element click event
-    stopPropagation: true, // Prevents further propagation of the container element click event in the bubbling phase
-    quickMode: false, // Instantly scroll to the destination! (It's recommended to use it with `easeOutExpo`)
+    trigger: baseName, // トリガーとなる要素をCSSセレクタで指定
+    header: headerElement, // 固定ヘッダをCSSセレクタで指定
+    duration: 1000, // アニメーション再生時間のミリ秒
+    easing: 'easeOutQuint', // イージングのタイプ
+    offset: 0, // スクロール位置のオフセット
+    vertical: true, // 垂直方向のスクロールを許可する
+    horizontal: false, // 水平方向のスクロールを許可する
+    cancellable: true, // ホイールやタッチイベント発生時にスクロールを停止する
+    updateURL: false, // スクロール完了後にURLを更新する
+    preventDefault: true, // コンテナ要素のクリックイベントを防止する
+    stopPropagation: true, // コンテナ要素のバブリングを防止する
+    quickMode: false, // 目的地まで素早く移動する (`easeOutExpo`を推奨)
   });
 }

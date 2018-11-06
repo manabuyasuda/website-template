@@ -3,30 +3,6 @@
  * 複数のダイアログを使う場合は`data-a11y-dialog-show="sw-Dialog1"`とid="sw-Dialog1"の値を
  * `sw-Dialog2`や`sw-Dialog3`のように連番で指定してください。
  * https://github.com/edenspiekermann/a11y-dialog
- * 例：
- * <div id="main">
- *   <button class="sw-Dialog_Link" data-a11y-dialog-show="sw-Dialog1">ダイアログを開く</button>
- * </div>
- *
- * <div class="sw-Dialog_Dialog" id="sw-Dialog1">
- *   <div class="sw-Dialog_Overlay" tabindex="-1" data-a11y-dialog-hide></div>
- *   <dialog class="sw-Dialog_Content" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialogDescription">
- *     <div class="sw-Dialog_Inner">
- *       <div class="sw-Dialog_Head">
- *         <button class="sw-Dialog_Close" type="button" data-a11y-dialog-hide="data-a11y-dialog-hide" aria-label="この画面を閉じる">
- *           <svg role="img" class="sw-Dialog_CloseIcon">
- *             <use xlink:href="/assets/svg/sprite.svg#close1"></use>
- *           </svg>
- *         </button>
- *       </div>
- *       <div class="sw-Dialog_Body">
- *         <h3 id="dialog-title">ダイアログ1のタイトル</h3>
- *         <p id="dialogDescription">ダイアログ1の概要</p>
- *         <p><code>aria-labelledby</code>と<code>aria-describedby</code>で、タイアログのタイトルと概要を紐づけています。</p>
- *       </div>
- *     </div>
- *   </dialog>
- * </div>
  */
 import A11yDialog from 'a11y-dialog';
 import scrollingElement from '../../util/scrollingElement';

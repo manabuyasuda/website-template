@@ -1,14 +1,7 @@
 /**
  * ハッシュ付きのリンクをスムーススクロールで移動します。
+ * ページ読み込み時にハッシュと同じid属性があれば、その要素に移動します。
  * https://github.com/tsuyoshiwada/sweet-scroll
- *
- * 例1：id属性が指定してある要素に移動する（id属性値は数値から始めてはいけない）。
- * <a class="js-SmoothScroll" href="#section1">section1へ移動</a>
- * <div id="section1">○○</div>
- *
- * 例2：ページ読み込み時にハッシュと同じid属性があれば、その要素に移動する。
- * <a href="/foo/#section1">/foo/のsection1へ移動</a>
- * <div id="section1">○○</div>
  */
 import SweetScroll from 'sweet-scroll';
 
@@ -21,18 +14,18 @@ export default function jsSmoothScroll() {
   const headerElement = '[data-scroll-header]';
 
   const scroller = new SweetScroll({
-    trigger: baseNameAttr, // Selector for trigger (must be a valid css selector)
-    header: headerElement, // Selector or Element for fixed header (Selector of must be a valid css selector)
-    duration: 1000, // Specifies animation duration in integer
-    easing: 'easeOutQuint', // Specifies the pattern of easing
-    offset: 0, // Specifies the value to offset the scroll position in pixels
-    vertical: true, // Enable the vertical scroll
-    horizontal: false, // Enable the horizontal scroll
-    cancellable: true, // When fired wheel or touchstart events to stop scrolling
-    updateURL: true, // Update the URL hash on after scroll (true | false | 'push' | 'replace')
-    preventDefault: true, // Cancels the container element click event
-    stopPropagation: true, // Prevents further propagation of the container element click event in the bubbling phase
-    quickMode: false, // Instantly scroll to the destination! (It's recommended to use it with `easeOutExpo`)
+    trigger: baseNameAttr, // トリガーとなる要素をCSSセレクタで指定
+    header: headerElement, // 固定ヘッダをCSSセレクタで指定
+    duration: 1000, // アニメーション再生時間のミリ秒
+    easing: 'easeOutQuint', // イージングのタイプ
+    offset: 0, // スクロール位置のオフセット
+    vertical: true, // 垂直方向のスクロールを許可する
+    horizontal: false, // 水平方向のスクロールを許可する
+    cancellable: true, // ホイールやタッチイベント発生時にスクロールを停止する
+    updateURL: true, // スクロール完了後にURLを更新する
+    preventDefault: true, // コンテナ要素のクリックイベントを防止する
+    stopPropagation: true, // コンテナ要素のバブリングを防止する
+    quickMode: false, // 目的地まで素早く移動する (`easeOutExpo`を推奨)
   });
 
   /**
