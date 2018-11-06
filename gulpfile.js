@@ -59,6 +59,7 @@ const src = {
   css: 'src/**/*.scss',
   styleguideWatch: ['src/**/*.scss', 'src/**/*.md'],
   js: 'src/assets/js/site.js',
+  jsWatch: 'src/**/*.js',
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
   imageWatch: 'src/assets/img/**/*',
   svgSprite: 'src/assets/svg/**/*.svg',
@@ -334,7 +335,7 @@ gulp.task('watch', ['build'], () => {
   gulp.watch(src.html, ['html']);
   gulp.watch(src.css, ['css']);
   gulp.watch(src.styleguideWatch, ['styleguide']);
-  gulp.watch(src.js, ['js']);
+  gulp.watch(src.jsWatch, ['js']);
   gulp.watch(src.imageWatch, ['image']);
   gulp.watch(src.svgSprite, ['svgSprite']);
 });
