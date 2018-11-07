@@ -85,7 +85,7 @@ $lnquiry-grids-row-gap-md: rem(16);
   }
 
   /* 1 Column */
-  &:nth-of-type(n+2) {
+  &:nth-of-type(n + 2) {
     margin-top: $lnquiry-grids-row-gap;
   }
 }
@@ -100,11 +100,11 @@ $lnquiry-grids-row-gap-md: rem(16);
    * `:nth-of-type(n+1)`は1つ目以降のすべての要素に適応されます。
    * リセット後に対象となる要素に`margin-top`を指定します。
    */
-  &:nth-of-type(n+1) {
+  &:nth-of-type(n + 1) {
     margin-top: 0;
   }
 
-  &:nth-of-type(n+3) {
+  &:nth-of-type(n + 3) {
     margin-top: $lnquiry-grids-row-gap;
   }
 }
@@ -114,11 +114,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 2);
     max-width: percentage(1 / 2);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+3) {
+    &:nth-of-type(n + 3) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -129,11 +129,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 2);
     max-width: percentage(1 / 2);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+3) {
+    &:nth-of-type(n + 3) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -144,11 +144,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 2);
     max-width: percentage(1 / 2);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+3) {
+    &:nth-of-type(n + 3) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -159,11 +159,11 @@ $lnquiry-grids-row-gap-md: rem(16);
   flex-basis: percentage(1 / 3);
   max-width: percentage(1 / 3);
 
-  &:nth-of-type(n+1) {
+  &:nth-of-type(n + 1) {
     margin-top: 0;
   }
 
-  &:nth-of-type(n+4) {
+  &:nth-of-type(n + 4) {
     margin-top: $lnquiry-grids-row-gap;
   }
 }
@@ -173,11 +173,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 3);
     max-width: percentage(1 / 3);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+4) {
+    &:nth-of-type(n + 4) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -188,11 +188,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 3);
     max-width: percentage(1 / 3);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+4) {
+    &:nth-of-type(n + 4) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -203,11 +203,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 3);
     max-width: percentage(1 / 3);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+4) {
+    &:nth-of-type(n + 4) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -218,11 +218,11 @@ $lnquiry-grids-row-gap-md: rem(16);
   flex-basis: percentage(1 / 3);
   max-width: percentage(1 / 4);
 
-  &:nth-of-type(n+1) {
+  &:nth-of-type(n + 1) {
     margin-top: 0;
   }
 
-  &:nth-of-type(n+5) {
+  &:nth-of-type(n + 5) {
     margin-top: $lnquiry-grids-row-gap;
   }
 }
@@ -232,11 +232,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 3);
     max-width: percentage(1 / 4);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+5) {
+    &:nth-of-type(n + 5) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -247,11 +247,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 3);
     max-width: percentage(1 / 4);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+5) {
+    &:nth-of-type(n + 5) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -262,11 +262,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 3);
     max-width: percentage(1 / 4);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+5) {
+    &:nth-of-type(n + 5) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -277,11 +277,11 @@ $lnquiry-grids-row-gap-md: rem(16);
   flex-basis: percentage(1 / 5);
   max-width: percentage(1 / 5);
 
-  &:nth-of-type(n+1) {
+  &:nth-of-type(n + 1) {
     margin-top: 0;
   }
 
-  &:nth-of-type(n+6) {
+  &:nth-of-type(n + 6) {
     margin-top: $lnquiry-grids-row-gap;
   }
 }
@@ -291,11 +291,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 5);
     max-width: percentage(1 / 5);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+6) {
+    &:nth-of-type(n + 6) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -306,11 +306,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 5);
     max-width: percentage(1 / 5);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+6) {
+    &:nth-of-type(n + 6) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -320,11 +320,11 @@ $lnquiry-grids-row-gap-md: rem(16);
   .inquiry-Grids-col5Xl > .inquiry-Grids_Item {
     max-width: percentage(1 / 5);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+6) {
+    &:nth-of-type(n + 6) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -335,11 +335,11 @@ $lnquiry-grids-row-gap-md: rem(16);
   flex-basis: percentage(1 / 6);
   max-width: percentage(1 / 6);
 
-  &:nth-of-type(n+1) {
+  &:nth-of-type(n + 1) {
     margin-top: 0;
   }
 
-  &:nth-of-type(n+7) {
+  &:nth-of-type(n + 7) {
     margin-top: $lnquiry-grids-row-gap;
   }
 }
@@ -349,11 +349,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 6);
     max-width: percentage(1 / 6);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+7) {
+    &:nth-of-type(n + 7) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -364,11 +364,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 6);
     max-width: percentage(1 / 6);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+7) {
+    &:nth-of-type(n + 7) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }
@@ -379,11 +379,11 @@ $lnquiry-grids-row-gap-md: rem(16);
     flex-basis: percentage(1 / 6);
     max-width: percentage(1 / 6);
 
-    &:nth-of-type(n+1) {
+    &:nth-of-type(n + 1) {
       margin-top: 0;
     }
 
-    &:nth-of-type(n+7) {
+    &:nth-of-type(n + 7) {
       margin-top: $lnquiry-grids-row-gap-md;
     }
   }

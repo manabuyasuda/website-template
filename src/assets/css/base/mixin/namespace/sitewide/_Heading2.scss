@@ -4,7 +4,7 @@
   line-height: 1.4;
   color: $color-brand;
 
-  &:after {
+  &::after {
     content: "";
     display: block;
     margin-top: rem(8);
@@ -17,7 +17,7 @@
     font-size: rem(26);
     text-align: center;
 
-    &:after {
+    &::after {
       margin-top: rem(12);
       margin-right: 0;
       margin-left: 0;

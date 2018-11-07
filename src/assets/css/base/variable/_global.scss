@@ -32,15 +32,18 @@ $global-font-family-serif: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !d
 $global-font-family-monospace: Consolas, Menlo, Courier, monospace !default;
 $global-font-family-en: "Helvetica Neue", Helvetica, sans-serif !default;
 $global-font-family-zh-cn: YakuHanJPs, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
-$global-font-family-zh-tw: YakuHanJPs, "Microsoft JhengHei", "微軟正黑體", 'PMingLiU' sans-serif !default;
+$global-font-family-zh-tw: YakuHanJPs, "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
 
 // Noto Sans
 // GoogleやMicrosoftのCDNは中国ではブロックされてしまうので、
 // フォントファイルをサーバに置いて読み込む必要があります。
-$global-font-family-noto-sans-ja: YakuHanJPs, "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$global-font-family-noto-sans-ja: YakuHanJPs, "Noto Sans Japanese", "Hiragino Kaku Gothic ProN",
+  Meiryo, sans-serif !default;
 $global-font-family-noto-sans-en: "Noto Sans", "Helvetica Neue", Helvetica, sans-serif !default;
-$global-font-family-noto-sans-zh-cn: YakuHanJPs, "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
-$global-font-family-noto-sans-zh-tw: YakuHanJPs, "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
+$global-font-family-noto-sans-zh-cn: YakuHanJPs, "Noto Sans SC", "Hiragino Sans GB",
+  "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$global-font-family-noto-sans-zh-tw: YakuHanJPs, "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體",
+  "PMingLiU" sans-serif !default;
 
 // ==========================================================================
 // Media query
@@ -51,10 +54,10 @@ $global-font-family-noto-sans-zh-tw: YakuHanJPs, "Noto Sans TC", "Microsoft Jhen
 // `lg`: iPad幅（ランドスケープ・横）
 // `xl`: デスクトップ想定
 $global-breakpoint-up: (
-  'sm': 'print, screen and (min-width: 375px)',
-  'md': 'print, screen and (min-width: 768px)',
-  'lg': 'print, screen and (min-width: 1024px)',
-  'xl': 'print, screen and (min-width: 1440px)',
+  "sm": "print, screen and (min-width: 375px)",
+  "md": "print, screen and (min-width: 768px)",
+  "lg": "print, screen and (min-width: 1024px)",
+  "xl": "print, screen and (min-width: 1440px)",
 ) !default;
 
 // ==========================================================================

@@ -1,7 +1,7 @@
 @mixin sw-FormSelect() {
   position: relative;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -77,7 +77,7 @@
   }
 
   /* IE9ではデフォルトの矢印アイコンを表示する。 */
-  &:not(:target):after {
+  &:not(:target)::after {
     background-image: none\9;
   }
   & > select:not(:target) {

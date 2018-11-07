@@ -1,5 +1,6 @@
 @mixin sw-FormCheckbox() {
   $line-height: 1.4;
+
   /* デフォルトのチェックボックスを非表示にする。 */
   @include sr-only();
 

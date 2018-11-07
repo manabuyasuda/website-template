@@ -1,10 +1,25 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-prettier/recommended"
+  ],
   "syntax": scss,
   "plugins": [
-    "stylelint-scss"
+    "stylelint-scss",
+    "stylelint-prettier"
   ],
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 100,
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": false,
+        "trailingComma": "all",
+        "bracketSpacing": false
+      }
+    ],
     "at-rule-blacklist": null,
     "number-leading-zero": null,
     "value-no-vendor-prefix": null,

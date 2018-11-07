@@ -2,7 +2,7 @@
 // @param {Number} $number - 単位を削除する値。
 // @example - strip-unit(20px) => 20
 @function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
+  @if type-of($number) == "number" and not unitless($number) {
     @return $number / ($number * 0 + 1);
   }
 

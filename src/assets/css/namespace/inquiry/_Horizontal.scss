@@ -61,7 +61,7 @@ form.l-Wrapper(method="post" action="/")
 }
 
 .inquiry-Horizontal_List {
-  &:nth-of-type(n+2) {
+  &:nth-of-type(n + 2) {
     margin-top: rem(30);
 
     @include mq-up(md) {

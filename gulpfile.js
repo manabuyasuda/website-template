@@ -145,7 +145,7 @@ gulp.task('ssi', () => gulp.src(src.ssi)
  * 公開用のSassファイルを解析して警告やエラーを通知します。
  * 修正できるものは強制的に反映します。
  */
-gulp.task('stylelint', () => gulp.src([src.css, '!src/assets/css/base/mixin/**/*.scss'])
+gulp.task('stylelint', () => gulp.src(src.css)
   .pipe(gulpStylelint({
     fix: true,
   }))

@@ -22,7 +22,7 @@
   } @else {
     $important: null;
   }
-  &:after {
+  &::after {
     content: "" $important;
     display: block $important;
     clear: both $important;
