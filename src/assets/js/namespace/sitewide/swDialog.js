@@ -18,9 +18,7 @@ export default function swDialog() {
   const container = document.getElementById(containerID);
   // `baseName`+1桁以上の連番。
   const regexp = new RegExp(`${baseName}[0-9]{1,}`);
-  const allSelector = document.querySelectorAll(
-    `[data-a11y-dialog-show*=${baseName}]`,
-  );
+  const allSelector = document.querySelectorAll(`[data-a11y-dialog-show*=${baseName}]`);
   const html = document.getElementsByTagName('html')[0];
   const body = document.getElementsByTagName('body')[0];
   const scrollElement = scrollingElement();
@@ -30,12 +28,12 @@ export default function swDialog() {
   if (!allSelector.length) return;
 
   // 使用するID名だけを抽出する。
-  const targets = Array.from(allSelector).map((selector) => {
+  const targets = Array.from(allSelector).map(selector => {
     const attributeName = selector.getAttribute('data-a11y-dialog-show');
     return attributeName.match(regexp)[0];
   });
 
-  targets.forEach((target) => {
+  targets.forEach(target => {
     // 該当する要素のIDを渡してインスタンス化する。
     const targetID = document.getElementById(target);
     const a11yDialog = new A11yDialog(targetID, container);

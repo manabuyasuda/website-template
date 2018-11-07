@@ -23,7 +23,7 @@ export default function jsAlignHeight() {
   const targets = classNames.filter((className, i, self) => self.indexOf(className) === i);
 
   // インスタンス化する。
-  targets.forEach((target) => {
+  targets.forEach(target => {
     const rah = new ResponsiveAutoHeight(`.${target}`); // eslint-disable-line
   });
 }

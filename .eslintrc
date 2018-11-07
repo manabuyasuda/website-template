@@ -7,14 +7,27 @@
     "node": true,
     "es6": true
   },
-  "extends": "airbnb-base",
-  "plugins": ["import"],
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "import"
+  ],
   "rules": {
-    "no-console": "warn",
-    "max-len": ["warn", {
-      "code": 100,
-      "ignoreTrailingComments": true,
-      "ignoreTemplateLiterals": true
-    }]
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 100,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "arrowParens": "avoid"
+      }
+    ],
+    "no-console": "warn"
   }
 }
