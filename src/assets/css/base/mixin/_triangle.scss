@@ -22,7 +22,6 @@
 //   border-color: transparent transparent currentColor transparent;
 // }
 @mixin triangle($width, $height, $direction: right, $color: currentColor) {
-
   @if not index(top right bottom left top-right bottom-right bottom-left top-left, $direction) {
     @warn "$direction must be one of `top`, `right`, `bottom`, `left`, `top-right`, `bottom-right`, `bottom-left`, `top-left`; currently `#{$direction}`.";
   }

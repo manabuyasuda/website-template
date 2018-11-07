@@ -148,6 +148,9 @@ gulp.task('ssi', () => gulp.src(src.ssi)
 gulp.task('stylelint', () => gulp.src(src.css)
   .pipe(gulpStylelint({
     fix: true,
+    reporters: [
+      {formatter: 'string', console: true}
+    ],
   }))
   .pipe(gulp.dest(src.root)));
 

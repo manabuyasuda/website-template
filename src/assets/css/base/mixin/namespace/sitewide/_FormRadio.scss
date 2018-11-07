@@ -1,5 +1,5 @@
 @mixin sw-FormRadio() {
-    $line-height: 1.4;
+  $line-height: 1.4;
 
   /* デフォルトのラジオボタンを非表示にする。 */
   @include sr-only();

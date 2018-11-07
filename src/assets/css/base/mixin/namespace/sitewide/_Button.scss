@@ -21,9 +21,9 @@
   transition-duration: $global-transition-duration;
   transition-timing-function: $global-transition-timing-function;
 
-  &[type=button],
-  &[type=reset],
-  &[type=submit] {
+  &[type="button"],
+  &[type="reset"],
+  &[type="submit"] {
     appearance: none;
   }
 
@@ -32,8 +32,8 @@
   }
 
   [data-whatinput="keyboard"] &:focus {
-   outline-width: 0;
-   box-shadow: $form-box-shadow-focus;
+    outline-width: 0;
+    box-shadow: $form-box-shadow-focus;
   }
 
   [data-whatinput="mouse"] &:focus,

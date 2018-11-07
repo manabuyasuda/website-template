@@ -1,4 +1,3 @@
-
 // @desc - tableで`border-collapse: collapse;`を指定したような見せ方ができます。`border-radius`を併用するときは表示が崩れるので使用できません。
 // @param {String} $color [currentColor] - ボーダーの色を指定します。
 // @param {String} $size [1px] - ボーダーのサイズを指定します。
@@ -12,7 +11,5 @@
 //     inset 2px 2px 0 0 #888;
 // }
 @mixin box-shadow-callapse($color: currentColor, $size: 1px) {
-  box-shadow:
-    $size $size 0 0 $color,
-    inset $size $size 0 0 $color;
+  box-shadow: $size $size 0 0 $color, inset $size $size 0 0 $color;
 }

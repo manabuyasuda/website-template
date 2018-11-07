@@ -20,12 +20,12 @@
 
   $extmods: (
     eot: "?",
-    svg: "#" + str-replace($name, " ", "_")
+    svg: "#" + str-replace($name, " ", "_"),
   );
 
   $formats: (
     otf: "opentype",
-    ttf: "truetype"
+    ttf: "truetype",
   );
 
   @each $ext in $exts {

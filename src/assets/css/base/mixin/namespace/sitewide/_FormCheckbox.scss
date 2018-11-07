@@ -30,8 +30,8 @@
   }
 
   [data-whatinput="keyboard"] &:focus + label > svg {
-   border-color: $form-border-color-focus;
-   box-shadow: $form-box-shadow-focus;
+    border-color: $form-border-color-focus;
+    box-shadow: $form-box-shadow-focus;
   }
 
   [data-whatinput="mouse"] &:focus + label > svg,
