@@ -121,7 +121,14 @@ npm run release
 本番環境の動作を検証したい場合は以下のコマンドを実行します。
 
 ```bash
-npm run test
+npm test
+```
+
+HTMLとCSSとJSの整形とリントをまとめて実行します。  
+（少なくとも）エラーが出ない状態にしてからプッシュします。
+
+```bash
+npm run validate
 ```
 
 [HTMLHint](https://github.com/htmlhint/HTMLHint)でHTMLのリントを実行します。

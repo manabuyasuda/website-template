@@ -9,7 +9,8 @@
     "release": "APP_ENV=production gulp stylelint && eslint --fix src/**/*.js && APP_ENV=production gulp build",
     "htmlhint": "APP_ENV=development gulp htmlhint",
     "stylelint": "APP_ENV=development gulp stylelint",
-    "eslint": "eslint --fix src/**/*.js"
+    "eslint": "eslint --fix src/**/*.js",
+    "validate": "npm run htmlhint && npm run stylelint && npm run eslint"
   },
   "keywords": [
     "gulp",
