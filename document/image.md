@@ -175,12 +175,41 @@ alt属性値は以下のルールで指定してください。
 - [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)などで自動で圧縮する（設定例は以下）。
 
 ```
-.pipe(imagemin({
-  // jpgをロスレス圧縮（画質を落とさず、メタデータを削除）。
-  progressive: true,
-  // gifをインターレースgifにします。
-  interlaced: true,
-  // PNGファイルの圧縮率（7が最高）を指定します。
-  optimizationLevel: 7
-}))
+const imagemin = require('gulp-imagemin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminPngquant = require('imagemin-pngquant');
+
+gulp.task('image', () => gulp.src(src.image)
+  .pipe(changed(dest.image))
+  .pipe(plumber({
+    errorHandler(err) {
+      console.log(err.messageFormatted);
+      this.emit('end');
+    },
+  }))
+  .pipe(imagemin([
+    imageminMozjpeg({
+      // 画質
+      quality: 70,
+    }),
+    imageminPngquant({
+      // 画質
+      quality: 70,
+    }),
+    imagemin.svgo({
+      plugins: [
+        // <metadata>を削除する
+        { removeMetadata: false },
+        // コードが短くなる場合だけ<path>に変換する
+        { convertShapeToPath: false },
+        // SVG内に<style>や<script>がなければidを削除する。
+        // idにアンカーが貼られていたら削除せずにid名を縮小する。
+        { cleanupIDs: false },
+      ]
+    }),
+    imagemin.optipng(),
+    imagemin.gifsicle(),
+  ]))
+  .pipe(gulp.dest(dest.image))
+  .pipe(browserSync.reload({ stream: true })));
 ```
