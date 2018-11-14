@@ -18,9 +18,9 @@
     height: 1em;
     margin: calc((#{$line-height} - 1) * 0.5em) em(4) 0 0;
     font-size: 1em;
-    fill: #fff;
     border: $form-border;
     border-radius: 50%;
+    fill: #fff;
   }
 
   & + label > span {
@@ -47,18 +47,18 @@
     background-color: #1e87f0;
 
     @media screen and (-ms-high-contrast: active), print {
-      fill: #000;
       border: 1px solid #000;
+      fill: #000;
     }
   }
 
   &-error + label > svg {
-    fill: #ffecec;
     background-color: #ffecec;
+    fill: #ffecec;
   }
 
   &:disabled + label {
-    cursor: $form-cursor-disabled;
     opacity: $form-opacity-disabled;
+    cursor: $form-cursor-disabled;
   }
 }

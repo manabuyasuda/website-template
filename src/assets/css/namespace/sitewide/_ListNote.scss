@@ -27,16 +27,15 @@ category: List
   font-size: rem(13);
   list-style-type: none;
 
+  @include mq-up(lg) {
+    margin-left: rem(20);
+  }
+
   [lang="en"] &,
   [lang="zh-cn"] {
     margin-left: rem(13);
-  }
 
-  @include mq-up(lg) {
-    margin-left: rem(20);
-
-    [lang="en"] &,
-    [lang="zh-cn"] {
+    @include mq-up(lg) {
       margin-left: rem(13);
     }
   }

@@ -1,9 +1,9 @@
 @mixin sw-Title() {
   position: relative;
+  text-align: center;
   font-size: rem(24);
   font-weight: bold;
   line-height: 1.2;
-  text-align: center;
   color: $color-brand;
 
   @include mq-up(md) {

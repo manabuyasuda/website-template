@@ -42,25 +42,16 @@ category: List
   list-style-type: none;
   counter-reset: noteOrder 0;
 
+  @include mq-up(lg) {
+    margin-left: rem(26);
+  }
+
   [lang="en"] &,
   [lang="zh-cn"] {
     margin-left: rem(20);
-  }
 
-  @include mq-up(lg) {
-    margin-left: rem(26);
-
-    [lang="en"] &,
-    [lang="zh-cn"] {
+    @include mq-up(lg) {
       margin-left: rem(20);
-    }
-  }
-
-  // start属性値に応じてCSSのカウンターも変更します。
-  // デフォルトは`through 9`で`start="10"`まで対応しています。
-  @for $i from 1 through 9 {
-    &[start="#{$i + 1}"] {
-      counter-reset: noteOrder $i;
     }
   }
 
@@ -84,5 +75,14 @@ category: List
   [lang="zh-cn"] & > li::before {
     content: "*" counter(noteOrder);
     left: rem(-20);
+  }
+
+  // start属性値に応じてCSSのカウンターも変更します。
+  // デフォルトは`through 9`で`start="10"`まで対応しています。
+
+  @for $i from 1 through 9 {
+    &[start="#{$i + 1}"] {
+      counter-reset: noteOrder $i;
+    }
   }
 }

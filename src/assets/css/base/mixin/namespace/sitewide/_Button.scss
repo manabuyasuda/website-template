@@ -1,34 +1,34 @@
 @mixin sw-Button() {
-  position: relative;
+  @include on-event() {
+    text-decoration: none;
+  }
+
   display: inline-block;
+  position: relative;
   width: 280px;
   max-width: 100%;
   margin: 0;
   padding: rem(12) rem(32);
-  border: none;
-  border: 1px solid #d0d0d0;
-  border-radius: $form-border-radius;
-  color: inherit;
+  text-align: center;
+  text-decoration: none;
   font-family: inherit;
   font-size: 1rem;
   line-height: 1;
-  text-align: center;
-  text-decoration: none;
+  border: none;
+  border: 1px solid #d0d0d0;
+  border-radius: $form-border-radius;
   background: transparent;
   background-color: #fff;
-  appearance: none;
+  color: inherit;
   cursor: pointer;
-  transition-duration: $global-transition-duration;
   transition-timing-function: $global-transition-timing-function;
+  transition-duration: $global-transition-duration;
+  appearance: none;
 
   &[type="button"],
   &[type="reset"],
   &[type="submit"] {
     appearance: none;
-  }
-
-  @include on-event() {
-    text-decoration: none;
   }
 
   [data-whatinput="keyboard"] &:focus {
@@ -46,11 +46,12 @@
   &-disabled,
   &:disabled:hover,
   &-disabled:hover {
-    opacity: $form-opacity-disabled !important;
     border-color: $form-background-color-disabled !important;
     background-color: $form-background-color-disabled !important;
+    opacity: $form-opacity-disabled !important;
     cursor: $form-cursor-disabled !important;
   }
+
   &-disabled {
     pointer-events: none;
   }

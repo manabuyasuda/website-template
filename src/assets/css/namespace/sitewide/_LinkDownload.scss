@@ -20,22 +20,22 @@ category: [Link, Icon]
 ```
 */
 .sw-LinkDownload {
-  color: $color-link;
   text-decoration: none;
+  color: $color-link;
 
   html:not([data-whatinput="touch"]) &:hover {
-    color: $color-link-hover;
     text-decoration: underline;
+    color: $color-link-hover;
   }
 }
 
 .sw-LinkDownload_Icon {
+  display: inline-block;
+  vertical-align: middle;
   position: relative;
   top: -0.2em;
-  display: inline-block;
   width: 1em;
   height: (428.6 / 464.3) * 1em;
-  vertical-align: middle;
   font-size: 1em;
   fill: currentColor;
 

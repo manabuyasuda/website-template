@@ -17,14 +17,14 @@ category: Text
 */
 .sw-Lead {
   margin: $lead-margin;
-  font-weight: 700;
   font-size: rem(18);
-
-  & + * {
-    margin-top: 0;
-  }
+  font-weight: 700;
 
   @include mq-up(md) {
     margin: $lead-margin-md;
+  }
+
+  & + * {
+    margin-top: 0;
   }
 }

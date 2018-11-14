@@ -36,8 +36,8 @@
 
   @font-face {
     font-family: quote($name);
-    font-style: $style;
     font-weight: $weight;
+    font-style: $style;
     src: $src;
   }
 }

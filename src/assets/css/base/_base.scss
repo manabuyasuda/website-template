@@ -19,18 +19,18 @@ html {
 
 /**
  * 1. できる限り禁則処理が実行されるようにします。
- * 2. Chrome、Safari、FireFoxのフォントレンダリングを合わせます。
- * 3. フォントの持っているカーニング情報を使用します。
+ * 2. フォントの持っているカーニング情報を使用します。
+ * 3. Chrome、Safari、FireFoxのフォントレンダリングを合わせます。
  */
 body {
-  color: $color-text;
-  background-color: $color-background-color;
-  font-family: $global-font-family-sans-serif;
   word-wrap: break-word; /* 1 */
   overflow-wrap: break-word; /* 1 */
-  -webkit-font-smoothing: subpixel-antialiased; /* 2 */
-  -moz-osx-font-smoothing: auto; /* 2 */
-  font-kerning: normal; /* 3 */
+  font-family: $global-font-family-sans-serif;
+  background-color: $color-background-color;
+  color: $color-text;
+  font-kerning: normal; /* 2 */
+  -webkit-font-smoothing: subpixel-antialiased; /* 3 */
+  -moz-osx-font-smoothing: auto; /* 3 */
 }
 
 /**
@@ -126,9 +126,9 @@ dfn {
  * フルードイメージにします。
  */
 img {
+  vertical-align: middle;
   max-width: 100%;
   height: auto;
-  vertical-align: middle;
 }
 
 /**

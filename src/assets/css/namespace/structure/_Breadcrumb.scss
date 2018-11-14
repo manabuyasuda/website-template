@@ -45,8 +45,8 @@ category: Navigation
   display: inline-block;
 
   &[aria-current="page"] {
-    color: $color-text;
     text-decoration: none;
+    color: $color-text;
     pointer-events: none;
   }
 }

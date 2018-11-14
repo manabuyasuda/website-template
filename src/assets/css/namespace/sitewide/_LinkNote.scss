@@ -21,12 +21,12 @@ category: Link
 ```
 */
 .sw-LinkNote {
-  color: $color-link;
   text-decoration: underline;
+  color: $color-link;
 
   html:not([data-whatinput="touch"]) &:hover {
-    color: $color-link-hover;
     text-decoration: underline;
+    color: $color-link-hover;
   }
 
   &::before {

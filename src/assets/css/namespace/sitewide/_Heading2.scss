@@ -17,11 +17,11 @@ category: Heading
 
   margin: $heading2-margin;
 
-  & + * {
-    margin-top: 0;
-  }
-
   @include mq-up(md) {
     margin: $heading2-margin-md;
+  }
+
+  & + * {
+    margin-top: 0;
   }
 }

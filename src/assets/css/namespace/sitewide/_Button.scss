@@ -48,12 +48,12 @@ category: [Button, Link, Form]
   @include sw-Button;
 
   border-color: $color-brand;
-  color: #fff;
   background-color: $color-brand;
+  color: #fff;
 
   html:not([data-whatinput="touch"]) &:hover {
-    color: $color-brand;
     background-color: #fff;
+    color: $color-brand;
   }
 
   html:not([data-whatinput="touch"]) &:disabled:hover,
@@ -73,6 +73,7 @@ category: [Button, Link, Form]
 
 .sw-Button_More {
   display: inline-block;
+  vertical-align: middle;
   position: absolute;
   top: 0;
   right: rem(16);
@@ -80,7 +81,6 @@ category: [Button, Link, Form]
   width: (291.6 / 499.9) * 1em;
   height: 1em;
   margin: auto;
-  vertical-align: middle;
   font-size: 1em;
   fill: currentColor;
 

@@ -22,8 +22,8 @@ category: Block
 
   &::after {
     content: "";
-    display: block;
     clear: both;
+    display: block;
   }
 }
 

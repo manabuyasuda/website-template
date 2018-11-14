@@ -5,16 +5,16 @@
   height: rem(112);
   margin: 0;
   padding: rem(8) rem(16);
+  font-size: 1em;
   border: 1px solid #d0d0d0;
   border-radius: $form-border-radius;
-  font-size: 1em;
   background-color: #fff;
-  appearance: none;
   box-shadow: 1px 1px 6px -3px #9e9e9e inset;
+  appearance: none;
 
   &::placeholder {
-    color: $form-placeholder-color;
     font-size: rem(13);
+    color: $form-placeholder-color;
   }
 
   &:focus {
@@ -28,8 +28,8 @@
   }
 
   &:disabled {
-    opacity: $form-opacity-disabled;
     background-color: $form-background-color-disabled;
+    opacity: $form-opacity-disabled;
     cursor: $form-cursor-disabled;
   }
 }

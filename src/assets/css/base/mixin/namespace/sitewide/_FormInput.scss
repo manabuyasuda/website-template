@@ -1,15 +1,15 @@
 @mixin sw-FormInput() {
+  vertical-align: middle;
   box-sizing: border-box;
   width: 100%;
   height: rem(42);
   padding: 0 rem(16);
+  font-size: 1rem;
   border: 1px solid #d0d0d0;
   border-radius: $form-border-radius;
-  font-size: 1rem;
-  vertical-align: middle;
   background-color: #fff;
-  appearance: none;
   box-shadow: 1px 1px 6px -3px #9e9e9e inset;
+  appearance: none;
 
   /**
    * Normalize.cssのリセットをします。
@@ -20,8 +20,8 @@
   }
 
   &::placeholder {
-    color: $form-placeholder-color;
     font-size: rem(14);
+    color: $form-placeholder-color;
   }
 
   &:focus {
@@ -35,8 +35,8 @@
   }
 
   &:disabled {
-    opacity: $form-opacity-disabled;
     background-color: $form-background-color-disabled;
+    opacity: $form-opacity-disabled;
     cursor: $form-cursor-disabled;
   }
 }

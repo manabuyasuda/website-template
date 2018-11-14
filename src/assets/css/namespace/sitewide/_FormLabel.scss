@@ -67,15 +67,15 @@ category: Form
   font-size: rem(12);
   font-weight: normal;
   line-height: 1;
-  color: #fff;
-  background-color: #e24d35;
   border-radius: rem(3);
+  background-color: #e24d35;
+  color: #fff;
 }
 
 .sw-FormLabel_Note {
   display: block;
-  max-width: 100%;
   flex-basis: 100%;
+  max-width: 100%;
   font-size: rem(14);
   font-weight: normal;
   line-height: 1.4;

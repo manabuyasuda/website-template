@@ -65,6 +65,10 @@ category: Layout
 .l-Section3-divider {
   margin: $section3-divider-margin;
 
+  @include mq-up(md) {
+    margin: $section3-divider-margin-md;
+  }
+
   & + &::before {
     content: "";
     display: block;
@@ -72,12 +76,8 @@ category: Layout
     height: rem(1);
     padding: $section3-divider-margin;
     border-top: rem(1) solid #e3e3e3;
-  }
 
-  @include mq-up(md) {
-    margin: $section3-divider-margin-md;
-
-    & + &::before {
+    @include mq-up(md) {
       padding: $section3-divider-margin-md;
     }
   }

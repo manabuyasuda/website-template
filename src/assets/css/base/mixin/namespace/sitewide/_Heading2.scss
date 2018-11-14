@@ -4,20 +4,20 @@
   line-height: 1.4;
   color: $color-brand;
 
+  @include mq-up(md) {
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+    font-size: rem(26);
+  }
+
   &::after {
     content: "";
     display: block;
     margin-top: rem(8);
     border-top: 2px solid $color-brand;
-  }
 
-  @include mq-up(md) {
-    margin-right: 0;
-    margin-left: 0;
-    font-size: rem(26);
-    text-align: center;
-
-    &::after {
+    @include mq-up(md) {
       margin-top: rem(12);
       margin-right: 0;
       margin-left: 0;

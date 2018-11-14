@@ -1,17 +1,17 @@
 @mixin sw-Label() {
   display: inline-block;
   padding: rem(6) rem(12);
-  border: 1px solid currentColor;
-  color: $color-text;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
   font-size: rem(12);
   line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  text-decoration: none;
+  border: 1px solid currentColor;
   background-color: inherit;
+  color: $color-text;
 
   html:not([data-whatinput="touch"]) &:hover {
-    color: currentColor;
     text-decoration: none;
+    color: currentColor;
   }
 }

@@ -33,11 +33,11 @@
   }
 
   position: absolute $important;
+  overflow: hidden $important;
+  clip: rect(0, 0, 0, 0) $important;
   width: 1px $important;
   height: 1px $important;
   margin: -1px $important;
-  border: 0 $important;
-  overflow: hidden $important;
   padding: 0 $important;
-  clip: rect(0, 0, 0, 0) $important;
+  border: 0 $important;
 }
