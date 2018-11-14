@@ -74,6 +74,7 @@
     "stylelint": "^9.7.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^1.0.0",
     "stylelint-prettier": "^1.0.3",
     "stylelint-scss": "^3.3.2",
     "vinyl-buffer": "^1.0.1",
