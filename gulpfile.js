@@ -240,12 +240,24 @@ gulp.task('image', () => gulp.src(src.image)
     }),
     imagemin.svgo({
       plugins: [
-        // <metadata>を削除する
+        // viewBox属性を削除する（widthとheight属性がある場合）。
+        // 表示が崩れる原因になるので削除しない。
+        { removeViewBox: false },
+        // <metadata>を削除する。
+        // 追加したmetadataを削除する必要はない。
         { removeMetadata: false },
-        // コードが短くなる場合だけ<path>に変換する
+        // SVGの仕様に含まれていないタグや属性、id属性やvertion属性を削除する。
+        // 追加した要素を削除する必要はない。
+        { emoveUnknownsAndDefaults: false },
+        // コードが短くなる場合だけ<path>に変換する。
+        // アニメーションが動作しない可能性があるので変換しない。
         { convertShapeToPath: false },
+        // 重複や不要な`<g>`タグを削除する。
+        // アニメーションが動作しない可能性があるので変換しない。
+        { collapseGroups: false },
         // SVG内に<style>や<script>がなければidを削除する。
         // idにアンカーが貼られていたら削除せずにid名を縮小する。
+        // id属性は動作の起点となることがあるため削除しない。
         { cleanupIDs: false },
       ]
     }),
@@ -273,8 +285,6 @@ gulp.task('svgSprite', () => gulp.src(src.svgSprite)
       transform: [{
         svgo: {
           plugins: [
-            // `title`タグを削除する。
-            { removeTitle: true },
             // `style`属性を削除する。
             { removeStyleElement: true },
             // `fill`属性を削除して、CSSで`fill`の変更ができるようにする。
