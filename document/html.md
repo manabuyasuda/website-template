@@ -5,7 +5,7 @@ HTMLは[Pug](https://pugjs.org/api/getting-started.html)を使って生成して
 インデントにスペースやタブが混ざるとエラーになってしまうので、.editorconfigを設定することで解決しています。お使いのエディターで.editorconfigの設定が反映されるように設定してください。
 
 初期設定では共通部分はPugで管理していますが、SSIを使うこともできます。詳しくは後述します。  
-HTMLとSSIを使用しない場合は、/public/index.htmlと/public/ssiディレクトリを削除してください。
+HTMLとSSIを使用しない場合は、/static/index.htmlと/static/ssiディレクトリを削除してください。
 
 ## ディレクトリ構造
 Pugのコンパイルは、例えば`src/index.pug`が`htdocs/index.html`のように生成されます。  
@@ -238,7 +238,7 @@ Pugを使用しない場合は、以下のディレクトリとファイルを�
 - /src/_template/
 - /src/index.pug
 
-HTMLファイルとSSIは/public/以下に作成します。/public/以下のファイルはすべて/htdocs/以下に複製されます。
+HTMLファイルとSSIは/static/以下に作成します。/static/以下のファイルはすべて/htdocs/以下に複製されます。
 
 /template/index.htmlと/template/ssi/にテンプレートを用意しています。適宜変更して使用してください。
 

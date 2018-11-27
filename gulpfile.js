@@ -56,7 +56,7 @@ const rimraf = require('rimraf');
 const src = {
   root: 'src/',
   html: ['src/**/*.pug', '!src/**/_*.pug'],
-  ssi: 'public/**/*.html',
+  ssi: 'static/**/*.html',
   data: 'src/_data/',
   css: 'src/**/*.scss',
   styleguideWatch: ['src/**/*.scss', 'src/**/*.md'],
@@ -65,7 +65,7 @@ const src = {
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
   imageWatch: 'src/assets/img/**/*',
   svgSprite: 'src/assets/svg/**/*.svg',
-  public: 'public/**/*',
+  static: 'static/**/*',
 };
 
 /**
@@ -82,8 +82,8 @@ const dest = {
  * 環境変数を設定します。
  */
 const env = process.env.APP_ENV;
-const developmentValues = require('./env/development').defaults;
-const productionValues = require('./env/production').defaults;
+const developmentValues = require('./config/development').defaults;
+const productionValues = require('./config/production').defaults;
 
 const envValues = env === 'development' ? developmentValues : productionValues;
 const isDevelopment = (envValues.NODE_ENV === 'development');
@@ -138,7 +138,7 @@ gulp.task('htmlhint', () => gulp.src([`${dest.root}**/*.html`, `!${dest.root}sty
   })));
 
 /**
- * /public/以下のHTMLファイルを監視、更新があれば反映します。
+ * /static/以下のHTMLファイルを監視、更新があれば反映します。
  */
 gulp.task('ssi', () => gulp.src(src.ssi)
   .pipe(browserSync.reload({ stream: true })));
@@ -313,7 +313,7 @@ gulp.task('styleguide', () => gulp.src('./aigis/aigis_config.yml')
  * Gulpの処理を通さないディレクトリです。
  * 公開用のディレクトリにコピーします。
  */
-gulp.task('public', () => gulp.src(src.public)
+gulp.task('static', () => gulp.src(src.static)
   .pipe(gulp.dest(dest.root)));
 
 /**
@@ -326,7 +326,7 @@ gulp.task('clean:dest', cb => rimraf(dest.root, cb));
  */
 gulp.task('build', () => {
   runSequence(
-    ['html', 'ssi', 'css', 'styleguide', 'js', 'image', 'svgSprite', 'public'],
+    ['html', 'ssi', 'css', 'styleguide', 'js', 'image', 'svgSprite', 'static'],
   );
 });
 
@@ -361,7 +361,7 @@ gulp.task('browser-sync', () => {
  */
 gulp.task('watch', ['build'], () => {
   gulp.watch(src.ssi, ['ssi']);
-  gulp.watch(src.public, ['public']);
+  gulp.watch(src.static, ['static']);
   gulp.watch(src.html, ['html']);
   gulp.watch(src.css, ['css']);
   gulp.watch(src.styleguideWatch, ['styleguide']);

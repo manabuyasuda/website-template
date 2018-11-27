@@ -31,7 +31,7 @@ npm install
 
 ## ファイル構成
 開発は`src`ディレクトリでおこない、テスト用の一時ファイルは`htdocs`ディレクトリに出力されます。  
-`public`ディレクトリは、Gulpの処理は必要ないけれど、ファビコンや共通ファイルのように最終的に`htdocs`ディレクトリに含めたいファイルを置きます。  
+`static`ディレクトリは、Gulpの処理は必要ないけれど、ファビコンや共通ファイルのように最終的に`htdocs`ディレクトリに含めたいファイルを置きます。  
 `template`ディレクトリはPugファイルのテンプレートです。このテンプレートを元にファイルを作成してください。
 
 ```
@@ -85,7 +85,7 @@ root/
 │   │           ├── data/
 │   │           └── js/
 │   └── index.pug
-├── public/
+├── static/
 ├── template/
 │   ├── index.html
 │   ├── ssi/
@@ -99,7 +99,7 @@ root/
 │   ├── js.md
 │   └── icon.md
 ├── aigis/
-├── env/
+├── config/
 ├── README.md
 ├── package.json
 └── gulpfile.js
@@ -155,7 +155,7 @@ npm run eslint
 - SassをCSSにコンパイル
 - JSをES5にトランスコンパイル（jQueryとプラグインなどもsite.jsでインポート）
 - SVGスプライトの生成
-- ローカルサーバーを立ち上げて動作の確認（public以下のHTMLファイルはSSIにも対応）
+- ローカルサーバーを立ち上げて動作の確認（static以下のHTMLファイルはSSIにも対応）
 - HTMLのリント
 - Sass（CSS）のリント
 - JavaScriptのリント
