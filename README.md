@@ -128,7 +128,7 @@ HTMLとCSSとJSの整形とリントをまとめて実行します。
 （少なくとも）エラーが出ない状態にしてからプッシュします。
 
 ```bash
-npm run validate
+npm run lint
 ```
 
 [HTMLHint](https://github.com/htmlhint/HTMLHint)でHTMLのリントを実行します。
