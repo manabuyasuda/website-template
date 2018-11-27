@@ -1,7 +1,7 @@
 {
   "name": "website-template",
   "version": "3.0.0",
-  "description": "Webサイト制作のためのテンプレート",
+  "description": "静的Webサイト制作を少しモダンにするためのテンプレート",
   "main": "index.js",
   "scripts": {
     "start": "APP_ENV=development gulp",
@@ -15,9 +15,14 @@
   "keywords": [
     "gulp",
     "pug",
+    "SSI",
+    "HTMLHint",
     "Sass",
-    "babel",
+    "ECSS",
+    "stylelint",
     "Vue.js",
+    "babel",
+    "ESLint",
     "Aigis",
     "Styleguide"
   ],
