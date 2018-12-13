@@ -1,0 +1,65 @@
+// @desc - 省略記号（ellipsis）を複数行でも表示します（1行で使用することも可能）。
+// @param {number} $lineHeight [1.4em] - emか単位なしの`line-height`
+// @param {number} $lineCount [2] - 省略記号を表示する行数
+// @param {color} $bgColor [#fff] - 背景色
+// @example scss - Usage
+// .foo {
+//   @include multi-line-ellipsis(1.4, 3);
+// }
+// @example css - CSS output
+// .foo {
+//   position: relative;
+//   overflow: hidden;
+//   height: 4.2em;
+//   padding-right: 1em;
+//   line-height: 1.4;
+//   background-color: #fff;
+// }
+//
+// .foo::before {
+//   content: "…";
+//   display: inline-block;
+//   position: absolute;
+//   right: 0;
+//   bottom: 0;
+//   width: 1em;
+// }
+//
+// .foo::after {
+//   content: "";
+//   float: right;
+//   position: relative;
+//   right: -1em;
+//   width: 1em;
+//   height: 100%;
+//   background-color: inherit;
+// }
+@mixin multi-line-ellipsis($lineHeight: 1.4em, $lineCount: 2, $bgColor: #fff) {
+  $lineHeightEm: if(unitless($lineHeight), ($lineHeight * 1em), $lineHeight);
+
+  position: relative;
+  overflow: hidden;
+  height: $lineHeightEm * $lineCount;
+  padding-right: 1em;
+  line-height: $lineHeight;
+  background-color: $bgColor;
+
+  &::before {
+    content: "…";
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1em;
+  }
+
+  &::after {
+    content: "";
+    float: right;
+    position: relative;
+    right: -1em;
+    width: 1em;
+    height: 100%;
+    background-color: inherit;
+  }
+}
