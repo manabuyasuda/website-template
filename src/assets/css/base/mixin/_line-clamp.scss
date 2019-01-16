@@ -1,0 +1,22 @@
+// @desc - 省略記号（ellipsis）を複数行でも表示します（1行で使用することも可能）。IEとFirefoxは未対応。
+// @param {number} $lineCount [2] - 省略記号を表示する行数
+// @example scss - Usage
+// .foo {
+//   @include line-clamp(3);
+// }
+// @example css - CSS output
+// .foo {
+//   display: -webkit-box;
+//   overflow: hidden;
+//   /* autoprefixer: ignore next */
+//   -webkit-box-orient: vertical;
+//   -webkit-line-clamp: 3;
+// }
+@mixin line-clamp($lineCount: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lineCount;
+}
