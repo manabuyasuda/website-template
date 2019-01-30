@@ -1,0 +1,6 @@
+// @desc - 文字列をローワーキャメルケースに変換します
+// @param {String} $str - 変換する文字列
+// @example - to-lower-camel-case('str') => Str
+@function to-lower-camel-case($str) {
+  @return to-upper-case(str-slice($str, 1, 1)) + to-lower-case(str-slice($str, 2));
+}
