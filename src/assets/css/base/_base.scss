@@ -132,15 +132,6 @@ img {
 }
 
 /**
- * IEのimgとobject要素でもSVGをフルードイメージにします。
- * See: https://hail2u.net/blog/webdesign/max-width-and-svg-on-ie11-and-below.html
- */
-[src$=".svg"],
-[data$=".svg"] {
-  width: 100%;
-}
-
-/**
  * キーボードでアクセスできない要素のフォーカス表示を消します。
  * Credit: https://github.com/suitcss/base
  */
