@@ -7,16 +7,19 @@ category: Layout
 
 バリエーションの豊富なグリッドシステムです。親要素（`.l-Grids`）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のようなカラムの指定ができます。
 
-カラム間の余白は幅を`$l-grids-column-gap`、高さを`$l-grids-row-gap`で統一しています。
+余白とカラム数は4つの変数で変更できます。
+
+- `$l-grids-column-gap` カラムの左右の余白（ガター）を指定します。
+- `$l-grids-row-gap` カラムの上下の余白を指定します。
+- `$l-grids-equal-column` 6/12と6/12のような均等なカラムを生成します。
+- `$l-grids-two-column` 8/12と4/12のような均等ではない2カラムにします。
 
 以下のような指定ができます。
 
 - `.l-Grids-col2`のように1/2から1/5までの均等なカラム指定。
 - `.l-Grids-col8to4`のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。
-- `.l-Grids-col2Md`のように`Md`、`Lg`、`Xl`を追加してブレイクポイントの指定。
-- `.l-Grids-middle`のようにカラムの垂直位置を中央揃え。
-- `.l-Grids-noGap`でカラム間のガターを0にする。
-- `.l-Grids-narrow`でカラム間のガターを最小にする。
+- `.l-Grids-middle`のようにカラムの垂直位置を上・中央・下揃え。
+- `.l-Grids-col2Md`のように`Sm`、`Md`、`Lg`、`Xl`を追加してブレイクポイント（`$global-breakpoint-up`の`key`）の指定。カラム指定と垂直位置の指定に追加できます。
 
 ### 均等なカラム指定。
 
@@ -27,6 +30,10 @@ category: Layout
       .test-Box One<br>1/1 → 1/2
     .l-Grids_Item
       .test-Box Two<br>1/1 → 1/2
+    .l-Grids_Item
+      .test-Box Three<br>1/1 → 1/2
+    .l-Grids_Item
+      .test-Box Four<br>1/1 → 1/2
 
   .l-Grids.l-Grids-col2.l-Grids-col3Md
     .l-Grids_Item
@@ -48,23 +55,42 @@ category: Layout
       .test-Box One<br>1/1 → 8/12
     .l-Grids_Item
       .test-Box Two<br>1/1 → 4/12
+    .l-Grids_Item
+      .test-Box Three<br>1/1 → 8/12
+    .l-Grids_Item
+      .test-Box Four<br>1/1 → 4/12
 
   .l-Grids.l-Grids-col4to8Md
     .l-Grids_Item
       .test-Box One <br>1/1 → 4/12
     .l-Grids_Item
       .test-Box Two<br>1/1 → 8/12
+    .l-Grids_Item
+      .test-Box Three <br>1/1 → 4/12
+    .l-Grids_Item
+      .test-Box Four<br>1/1 → 8/12
 ```
 
 ### 8/12と4/12のカラム指定かつ、`md`以上で要素を反転。
 
 ```jade
 .l-Wrapper
-  .l-Grids.l-Grids-col8to4Md.l-Grids-reversMd
+  .l-Grids.l-Grids-col8to4Md.l-Grids-reverseMd
     .l-Grids_Item
       .test-Box One<br>1/1 → 8/12
     .l-Grids_Item
       .test-Box Two<br>1/1 → 4/12
+```
+
+### カラムの垂直位置を上揃え。
+
+```jade
+.l-Wrapper
+  .l-Grids.l-Grids-topMd.l-Grids-col2Md
+    .l-Grids_Item
+      .test-Box One<br>1/1 → 6/12<br>.l-Grids-top<br>.l-Grids-middle
+    .l-Grids_Item
+      .test-Box Two<br>1/1 → 6/12
 ```
 
 ### カラムの垂直位置を中央揃え。
@@ -78,60 +104,67 @@ category: Layout
       .test-Box Two<br>1/1 → 6/12
 ```
 
-### カラム間のガターを0にします。
+### カラムの垂直位置を下揃え。
 
 ```jade
 .l-Wrapper
-  .l-Grids.l-Grids-col3Md.l-Grids-noGap
+  .l-Grids.l-Grids-bottomMd.l-Grids-col2Md
     .l-Grids_Item
-      .test-Box One<br>1/1 → 1/3
+      .test-Box One<br>1/1 → 6/12<br>.l-Grids-bottom<br>.l-Grids-middle
     .l-Grids_Item
-      .test-Box Two<br>1/1 → 1/3
-    .l-Grids_Item
-      .test-Box Three<br>1/1 → 1/3
-```
-
-### カラム間のガターを最小にします。
-
-```jade
-.l-Wrapper
-  .l-Grids.l-Grids-col3Md.l-Grids-narrow
-    .l-Grids_Item
-      .test-Box One<br>1/1 → 1/3
-    .l-Grids_Item
-      .test-Box Two<br>1/1 → 1/3
-    .l-Grids_Item
-      .test-Box Three<br>1/1 → 1/3
+      .test-Box Two<br>1/1 → 6/12
 ```
 */
-$l-grids-column-gap: $grid-column-gap;
-$l-grids-row-gap: $grid-row-gap;
-$l-grids-column-gap-md: $grid-column-gap-md;
-$l-grids-row-gap-md: $grid-row-gap-md;
+// カラムの左右の余白（ガター）を指定します。
+// すべて指定してください。
+$l-grids-column-gap: (
+  "initial": px($grid-column-gap),
+  "sm": px($grid-column-gap),
+  "md": px($grid-column-gap-md),
+  "lg": px($grid-column-gap-md),
+  "xl": px($grid-column-gap-md),
+) !default;
+
+// カラムの上下の余白を指定します。
+// すべて指定してください。
+$l-grids-row-gap: (
+  "initial": px($grid-row-gap),
+  "sm": px($grid-row-gap),
+  "md": px($grid-row-gap-md),
+  "lg": px($grid-row-gap-md),
+  "xl": px($grid-row-gap-md),
+) !default;
+
+// 6/12と6/12のような均等なカラムを生成します。
+// `2, 3`と指定すると1/2と1/3用のクラスが生成されます。
+$l-grids-equal-column: 2, 3, 4, 5 !default;
+
+// 8/12と4/12のような均等ではない2カラムにします。
+$l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
 .l-Grids {
   -js-display: flex;
   display: flex;
   flex-wrap: wrap;
-  margin-top: $l-grids-row-gap;
-  margin-left: -$l-grids-column-gap;
+  margin-top: rem(map-get($l-grids-row-gap, initial));
+  margin-left: rem(map-get($l-grids-column-gap, initial) * -1);
   padding-left: 0;
   list-style-type: none;
+}
 
-  @include mq-up(md) {
-    margin-top: $l-grids-row-gap-md;
-    margin-left: -$l-grids-column-gap-md;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grids {
+      margin-top: rem(map-get($l-grids-row-gap, $name));
+      margin-left: rem(map-get($l-grids-column-gap, $name) * -1);
+    }
   }
 }
 
 .l-Grids_Item {
   flex-basis: 100%;
   max-width: 100%;
-  padding-left: $l-grids-column-gap;
-
-  @include mq-up(md) {
-    padding-left: $l-grids-column-gap-md;
-  }
+  padding-left: rem(map-get($l-grids-column-gap, initial));
 
   & > :first-child {
     margin-top: 0;
@@ -141,364 +174,151 @@ $l-grids-row-gap-md: $grid-row-gap-md;
     margin-bottom: 0;
   }
 
-  /* 1 Column */
+  &:nth-of-type(n + 1) {
+    margin-top: 0;
+  }
+
   &:nth-of-type(n + 2) {
-    margin-top: $l-grids-row-gap;
+    margin-top: rem(map-get($l-grids-row-gap, initial));
   }
 }
 
-/* 2 Columns */
-.l-Grids-col2 > .l-Grids_Item {
-  flex-basis: percentage(1 / 2);
-  max-width: percentage(1 / 2);
-
-  /**
-   * いったんすべての`margin-top`をリセットします。
-   * `:nth-of-type(n+1)`は1つ目以降のすべての要素に適応されます。
-   * リセット後に対象となる要素に`margin-top`を指定します。
-   */
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col2Md > .l-Grids_Item {
-    flex-basis: percentage(1 / 2);
-    max-width: percentage(1 / 2);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grids_Item {
+      padding-left: rem(map-get($l-grids-column-gap, $name));
     }
   }
 }
 
-@include mq-up(lg) {
-  .l-Grids-col2Lg > .l-Grids_Item {
-    flex-basis: percentage(1 / 2);
-    max-width: percentage(1 / 2);
+@mixin equal-column($key: null) {
+  $columns: $l-grids-equal-column;
+  $suffix: to-lower-camel-case(#{$key});
 
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
+  @each $column in $columns {
+    .l-Grids-col#{$column}#{$suffix} > .l-Grids_Item {
+      flex-basis: percentage(1 / $column);
+      max-width: percentage(1 / $column);
 
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
+      &:nth-of-type(n + 1) {
+        margin-top: 0;
+      }
 
-@include mq-up(xl) {
-  .l-Grids-col2Xl > .l-Grids_Item {
-    flex-basis: percentage(1 / 2);
-    max-width: percentage(1 / 2);
+      @if $key == null {
+        &:nth-of-type(n + #{$column + 1}) {
+          margin-top: rem(map-get($l-grids-row-gap, initial));
+        }
+      }
 
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-/* 3 Columns */
-.l-Grids-col3 > .l-Grids_Item {
-  flex-basis: percentage(1 / 3);
-  max-width: percentage(1 / 3);
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 4) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col3Md > .l-Grids_Item {
-    flex-basis: percentage(1 / 3);
-    max-width: percentage(1 / 3);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 4) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-col3Lg > .l-Grids_Item {
-    flex-basis: percentage(1 / 3);
-    max-width: percentage(1 / 3);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 4) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-col3Xl > .l-Grids_Item {
-    flex-basis: percentage(1 / 3);
-    max-width: percentage(1 / 3);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 4) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-/* 4 Columns */
-.l-Grids-col4 > .l-Grids_Item {
-  flex-basis: percentage(1 / 3);
-  max-width: percentage(1 / 4);
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 5) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col4Md > .l-Grids_Item {
-    flex-basis: percentage(1 / 3);
-    max-width: percentage(1 / 4);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 5) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-col4Lg > .l-Grids_Item {
-    flex-basis: percentage(1 / 3);
-    max-width: percentage(1 / 4);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 5) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-col4Xl > .l-Grids_Item {
-    flex-basis: percentage(1 / 3);
-    max-width: percentage(1 / 4);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 5) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-/* 5 Columns */
-.l-Grids-col5 > .l-Grids_Item {
-  flex-basis: percentage(1 / 5);
-  max-width: percentage(1 / 5);
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 6) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col5Md > .l-Grids_Item {
-    flex-basis: percentage(1 / 5);
-    max-width: percentage(1 / 5);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 6) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-col5Lg > .l-Grids_Item {
-    flex-basis: percentage(1 / 5);
-    max-width: percentage(1 / 5);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 6) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-col5Xl > .l-Grids_Item {
-    flex-basis: percentage(1 / 5);
-    max-width: percentage(1 / 5);
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 6) {
-      margin-top: $l-grids-row-gap-md;
+      @if $key != null {
+        &:nth-of-type(n + #{$column + 1}) {
+          margin-top: rem(map-get($l-grids-row-gap, $key));
+        }
+      }
     }
   }
 }
 
 /**
- * カラム間のガターを0にします。
+ * 6/12と6/12のような均等なカラムを生成します。
  */
-.l-Grids-noGap {
-  margin-left: 0;
+@include equal-column();
 
-  @include mq-up(md) {
-    margin-left: 0;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    @include equal-column($name);
   }
+}
 
-  & > .l-Grids_Item {
-    padding-left: 0;
+@mixin two-column($key: null) {
+  $columns: $l-grids-two-column;
+  $suffix: to-lower-camel-case(#{$key});
 
-    @include mq-up(md) {
-      padding-left: 0;
+  @each $column in $columns {
+    $first-column: 12 - $column;
+    $second-column: $column;
+
+    .l-Grids-col#{$first-column}to#{$second-column}#{$suffix} > .l-Grids_Item {
+      &:nth-of-type(odd) {
+        flex-basis: percentage($first-column / 12);
+        max-width: percentage($first-column / 12);
+      }
+
+      &:nth-of-type(even) {
+        flex-basis: percentage($second-column / 12);
+        max-width: percentage($second-column / 12);
+      }
+
+      &:nth-of-type(n + 1) {
+        margin-top: 0;
+      }
+
+      &:nth-of-type(n + 3) {
+        @if $key == null {
+          margin-top: map-get($l-grids-row-gap, initial);
+        }
+
+        @if $key != null {
+          margin-top: map-get($l-grids-row-gap, $key);
+        }
+      }
     }
   }
 }
 
 /**
- * カラム間のガターを最小にします。
+ * 8/12と4/12のような均等ではない2カラムにします。
  */
-.l-Grids-narrow {
-  margin-left: -1px;
+@include two-column();
 
-  @include mq-up(md) {
-    margin-left: -1px;
-  }
-
-  & > .l-Grids_Item {
-    padding-left: 1px;
-
-    @include mq-up(md) {
-      padding-left: 1px;
-    }
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    @include two-column($name);
   }
 }
 
 /**
- * 要素の垂直位置を上寄せ。
+ * 要素の垂直位置を上寄せにします。
  */
-
 .l-Grids-top {
   align-items: flex-start;
 }
 
-@include mq-up(md) {
-  .l-Grids-topMd {
-    align-items: flex-start;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-topLg {
-    align-items: flex-start;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-topXl {
-    align-items: flex-start;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grids-top#{to-lower-camel-case($name)} {
+      align-items: flex-start;
+    }
   }
 }
 
 /**
- * 要素の垂直位置を真ん中寄せ。
+ * 要素の垂直位置を真ん中寄せにします。
  */
 .l-Grids-middle {
   align-items: center;
 }
 
-@include mq-up(md) {
-  .l-Grids-middleMd {
-    align-items: center;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-middleLg {
-    align-items: center;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-middleXl {
-    align-items: center;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grids-middle#{to-lower-camel-case($name)} {
+      align-items: center;
+    }
   }
 }
 
 /**
- * 要素の垂直位置を下寄せ。
+ * 要素の垂直位置を下寄せにします。
  */
 .l-Grids-bottom {
   align-items: flex-end;
 }
 
-@include mq-up(md) {
-  .l-Grids-bottomMd {
-    align-items: flex-end;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-bottomLg {
-    align-items: flex-end;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-bottomXl {
-    align-items: flex-end;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grids-bottom#{to-lower-camel-case($name)} {
+      align-items: flex-end;
+    }
   }
 }
 
@@ -510,855 +330,26 @@ $l-grids-row-gap-md: $grid-row-gap-md;
   flex-direction: row-reverse;
 }
 
-@include mq-up(md) {
-  .l-Grids-reversMd {
-    flex-direction: row-reverse;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-reverseLg {
-    flex-direction: row-reverse;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-reverseXl {
-    flex-direction: row-reverse;
-  }
-}
-
-/* 1/12 11/12, 11/12 1/12 */
-.l-Grids-col1to11 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(1 / 12);
-    max-width: percentage(1 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(11 / 12);
-    max-width: percentage(11 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-.l-Grids-col11to1 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(11 / 12);
-    max-width: percentage(11 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(1 / 12);
-    max-width: percentage(1 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col1to11Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col11to1Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grids-reverse#{to-lower-camel-case($name)} {
+      flex-direction: row-reverse;
     }
   }
 }
 
-@include mq-up(lg) {
-  .l-Grids-col1to11Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col11to1Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
+/**
+ * `.l-Grids_Item`の表示順を戻します。
+ * B,A → A,B
+ */
+.l-Grids-row {
+  flex-direction: row;
 }
 
-@include mq-up(xl) {
-  .l-Grids-col1to11Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col11to1Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-/* 2/12 10/12, 10/12 2/12 */
-.l-Grids-col2to10 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(2 / 12);
-    max-width: percentage(2 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(10 / 12);
-    max-width: percentage(10 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-.l-Grids-col10to2 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(10 / 12);
-    max-width: percentage(10 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(2 / 12);
-    max-width: percentage(2 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col2to10Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col10to2Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-col2to10Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col10to2Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-col2to10Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col10to2Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-/* 3/12 9/12, 9/12 3/12 */
-.l-Grids-col3to9 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(3 / 12);
-    max-width: percentage(3 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(9 / 12);
-    max-width: percentage(9 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-.l-Grids-col9to3 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(9 / 12);
-    max-width: percentage(9 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(3 / 12);
-    max-width: percentage(3 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col3to9Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col9to3Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-col3to9Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col9to3Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-col3to9Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col9to3Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-/* 4/12 8/12, 8/12 4/12 */
-.l-Grids-col4to8 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(4 / 12);
-    max-width: percentage(4 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(8 / 12);
-    max-width: percentage(8 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-.l-Grids-col8to4 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(8 / 12);
-    max-width: percentage(8 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(4 / 12);
-    max-width: percentage(4 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col4to8Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col8to4Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-col4to8Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col8to4Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-col4to8Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col8to4Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-/* 5/12 7/12, 7/12 5/12 */
-.l-Grids-col5to7 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(5 / 12);
-    max-width: percentage(5 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(7 / 12);
-    max-width: percentage(7 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-.l-Grids-col7to5 > .l-Grids_Item {
-  &:nth-of-type(odd) {
-    flex-basis: percentage(7 / 12);
-    max-width: percentage(7 / 12);
-  }
-
-  &:nth-of-type(even) {
-    flex-basis: percentage(5 / 12);
-    max-width: percentage(5 / 12);
-  }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 3) {
-    margin-top: $l-grids-row-gap;
-  }
-}
-
-@include mq-up(md) {
-  .l-Grids-col5to7Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col7to5Md > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grids-col5to7Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col7to5Lg > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grids-col5to7Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
-    }
-  }
-
-  .l-Grids-col7to5Xl > .l-Grids_Item {
-    &:nth-of-type(odd) {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &:nth-of-type(even) {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: $l-grids-row-gap-md;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grids-row#{to-lower-camel-case($name)} {
+      flex-direction: row;
     }
   }
 }

@@ -310,15 +310,19 @@
               <h2 id="l-Grids" class="aigis-module__heading">l-Grids</h2>
               <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Grids.scss</div>
               <div class="aigis-module__label"><span class="sw-Label"></span></div><p>バリエーションの豊富なグリッドシステムです。親要素（<code>.l-Grids</code>）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のようなカラムの指定ができます。</p>
-<p>カラム間の余白は幅を<code>$l-grids-column-gap</code>、高さを<code>$l-grids-row-gap</code>で統一しています。</p>
+<p>余白とカラム数は4つの変数で変更できます。</p>
+<ul>
+<li><code>$l-grids-column-gap</code> カラムの左右の余白（ガター）を指定します。</li>
+<li><code>$l-grids-row-gap</code> カラムの上下の余白を指定します。</li>
+<li><code>$l-grids-equal-column</code> 6/12と6/12のような均等なカラムを生成します。</li>
+<li><code>$l-grids-two-column</code> 8/12と4/12のような均等ではない2カラムにします。</li>
+</ul>
 <p>以下のような指定ができます。</p>
 <ul>
 <li><code>.l-Grids-col2</code>のように1/2から1/5までの均等なカラム指定。</li>
 <li><code>.l-Grids-col8to4</code>のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。</li>
-<li><code>.l-Grids-col2Md</code>のように<code>Md</code>、<code>Lg</code>、<code>Xl</code>を追加してブレイクポイントの指定。</li>
-<li><code>.l-Grids-middle</code>のようにカラムの垂直位置を中央揃え。</li>
-<li><code>.l-Grids-noGap</code>でカラム間のガターを0にする。</li>
-<li><code>.l-Grids-narrow</code>でカラム間のガターを最小にする。</li>
+<li><code>.l-Grids-middle</code>のようにカラムの垂直位置を上・中央・下揃え。</li>
+<li><code>.l-Grids-col2Md</code>のように<code>Sm</code>、<code>Md</code>、<code>Lg</code>、<code>Xl</code>を追加してブレイクポイント（<code>$global-breakpoint-up</code>の<code>key</code>）の指定。カラム指定と垂直位置の指定に追加できます。</li>
 </ul>
 <h3 id="-">均等なカラム指定。</h3>
 <div class="aigis-preview">
@@ -330,6 +334,12 @@
     </div>
     <div class="l-Grids_Item">
       <div class="test-Box">Two<br>1/1 → 1/2</div>
+    </div>
+    <div class="l-Grids_Item">
+      <div class="test-Box">Three<br>1/1 → 1/2</div>
+    </div>
+    <div class="l-Grids_Item">
+      <div class="test-Box">Four<br>1/1 → 1/2</div>
     </div>
   </div>
   <div class="l-Grids l-Grids-col2 l-Grids-col3Md">
@@ -354,6 +364,10 @@
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 1/2</span>
     <span class="token tag" >.l-Grids_Item</span>
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 1/2</span>
+    <span class="token tag" >.l-Grids_Item</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Three&lt;br>1/1 → 1/2</span>
+    <span class="token tag" >.l-Grids_Item</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Four&lt;br>1/1 → 1/2</span>
 
   <span class="token tag" >.l-Grids.l-Grids-col2.l-Grids-col3Md</span>
     <span class="token tag" >.l-Grids_Item</span>
@@ -376,6 +390,12 @@
     <div class="l-Grids_Item">
       <div class="test-Box">Two<br>1/1 → 4/12</div>
     </div>
+    <div class="l-Grids_Item">
+      <div class="test-Box">Three<br>1/1 → 8/12</div>
+    </div>
+    <div class="l-Grids_Item">
+      <div class="test-Box">Four<br>1/1 → 4/12</div>
+    </div>
   </div>
   <div class="l-Grids l-Grids-col4to8Md">
     <div class="l-Grids_Item">
@@ -383,6 +403,12 @@
     </div>
     <div class="l-Grids_Item">
       <div class="test-Box">Two<br>1/1 → 8/12</div>
+    </div>
+    <div class="l-Grids_Item">
+      <div class="test-Box">Three <br>1/1 → 4/12</div>
+    </div>
+    <div class="l-Grids_Item">
+      <div class="test-Box">Four<br>1/1 → 8/12</div>
     </div>
   </div>
 </div></div>
@@ -393,18 +419,26 @@
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 8/12</span>
     <span class="token tag" >.l-Grids_Item</span>
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 4/12</span>
+    <span class="token tag" >.l-Grids_Item</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Three&lt;br>1/1 → 8/12</span>
+    <span class="token tag" >.l-Grids_Item</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Four&lt;br>1/1 → 4/12</span>
 
   <span class="token tag" >.l-Grids.l-Grids-col4to8Md</span>
     <span class="token tag" >.l-Grids_Item</span>
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >One &lt;br>1/1 → 4/12</span>
     <span class="token tag" >.l-Grids_Item</span>
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 8/12</span>
+    <span class="token tag" >.l-Grids_Item</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Three &lt;br>1/1 → 4/12</span>
+    <span class="token tag" >.l-Grids_Item</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Four&lt;br>1/1 → 8/12</span>
 </code></pre>
 <h3 id="8-12-4-12-md-">8/12と4/12のカラム指定かつ、<code>md</code>以上で要素を反転。</h3>
 <div class="aigis-preview">
 
 <div class="l-Wrapper">
-  <div class="l-Grids l-Grids-col8to4Md l-Grids-reversMd">
+  <div class="l-Grids l-Grids-col8to4Md l-Grids-reverseMd">
     <div class="l-Grids_Item">
       <div class="test-Box">One<br>1/1 → 8/12</div>
     </div>
@@ -415,11 +449,32 @@
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >.l-Grids.l-Grids-col8to4Md.l-Grids-reversMd</span>
+  <span class="token tag" >.l-Grids.l-Grids-col8to4Md.l-Grids-reverseMd</span>
     <span class="token tag" >.l-Grids_Item</span>
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 8/12</span>
     <span class="token tag" >.l-Grids_Item</span>
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 4/12</span>
+</code></pre>
+<h3 id="-">カラムの垂直位置を上揃え。</h3>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Grids l-Grids-topMd l-Grids-col2Md">
+    <div class="l-Grids_Item">
+      <div class="test-Box">One<br>1/1 → 6/12<br>.l-Grids-top<br>.l-Grids-middle</div>
+    </div>
+    <div class="l-Grids_Item">
+      <div class="test-Box">Two<br>1/1 → 6/12</div>
+    </div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Grids.l-Grids-topMd.l-Grids-col2Md</span>
+    <span class="token tag" >.l-Grids_Item</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 6/12&lt;br>.l-Grids-top&lt;br>.l-Grids-middle</span>
+    <span class="token tag" >.l-Grids_Item</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 6/12</span>
 </code></pre>
 <h3 id="-">カラムの垂直位置を中央揃え。</h3>
 <div class="aigis-preview">
@@ -442,57 +497,26 @@
     <span class="token tag" >.l-Grids_Item</span>
       <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 6/12</span>
 </code></pre>
-<h3 id="-0-">カラム間のガターを0にします。</h3>
+<h3 id="-">カラムの垂直位置を下揃え。</h3>
 <div class="aigis-preview">
 
 <div class="l-Wrapper">
-  <div class="l-Grids l-Grids-col3Md l-Grids-noGap">
+  <div class="l-Grids l-Grids-bottomMd l-Grids-col2Md">
     <div class="l-Grids_Item">
-      <div class="test-Box">One<br>1/1 → 1/3</div>
+      <div class="test-Box">One<br>1/1 → 6/12<br>.l-Grids-bottom<br>.l-Grids-middle</div>
     </div>
     <div class="l-Grids_Item">
-      <div class="test-Box">Two<br>1/1 → 1/3</div>
-    </div>
-    <div class="l-Grids_Item">
-      <div class="test-Box">Three<br>1/1 → 1/3</div>
+      <div class="test-Box">Two<br>1/1 → 6/12</div>
     </div>
   </div>
 </div></div>
 
 <pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >.l-Grids.l-Grids-col3Md.l-Grids-noGap</span>
+  <span class="token tag" >.l-Grids.l-Grids-bottomMd.l-Grids-col2Md</span>
     <span class="token tag" >.l-Grids_Item</span>
-      <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 1/3</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 6/12&lt;br>.l-Grids-bottom&lt;br>.l-Grids-middle</span>
     <span class="token tag" >.l-Grids_Item</span>
-      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 1/3</span>
-    <span class="token tag" >.l-Grids_Item</span>
-      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Three&lt;br>1/1 → 1/3</span>
-</code></pre>
-<h3 id="-">カラム間のガターを最小にします。</h3>
-<div class="aigis-preview">
-
-<div class="l-Wrapper">
-  <div class="l-Grids l-Grids-col3Md l-Grids-narrow">
-    <div class="l-Grids_Item">
-      <div class="test-Box">One<br>1/1 → 1/3</div>
-    </div>
-    <div class="l-Grids_Item">
-      <div class="test-Box">Two<br>1/1 → 1/3</div>
-    </div>
-    <div class="l-Grids_Item">
-      <div class="test-Box">Three<br>1/1 → 1/3</div>
-    </div>
-  </div>
-</div></div>
-
-<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
-  <span class="token tag" >.l-Grids.l-Grids-col3Md.l-Grids-narrow</span>
-    <span class="token tag" >.l-Grids_Item</span>
-      <span class="token tag" >.test-Box</span> <span class="token plain-text" >One&lt;br>1/1 → 1/3</span>
-    <span class="token tag" >.l-Grids_Item</span>
-      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 1/3</span>
-    <span class="token tag" >.l-Grids_Item</span>
-      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Three&lt;br>1/1 → 1/3</span>
+      <span class="token tag" >.test-Box</span> <span class="token plain-text" >Two&lt;br>1/1 → 6/12</span>
 </code></pre>
 
             </div>
