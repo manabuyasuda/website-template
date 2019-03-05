@@ -43,11 +43,11 @@ category: Layout
 // カラムの左右の余白（ガター）を指定します。
 // すべて指定してください。
 $l-grid-column-gap: (
-  "initial": px($grid-column-gap),
-  "sm": px($grid-column-gap),
-  "md": px($grid-column-gap-md),
-  "lg": px($grid-column-gap-md),
-  "xl": px($grid-column-gap-md),
+  "initial": $grid-column-gap,
+  "sm": $grid-column-gap,
+  "md": $grid-column-gap-md,
+  "lg": $grid-column-gap-md,
+  "xl": $grid-column-gap-md,
 ) !default;
 
 .l-Grid {

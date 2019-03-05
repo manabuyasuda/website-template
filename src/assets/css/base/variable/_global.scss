@@ -68,10 +68,10 @@ $global-breakpoint-up: (
 $global-max-width: 1170px !default;
 
 // グリッドシステムのガター幅
-$grid-column-gap: rem(15) !default;
-$grid-row-gap: rem(35) !default;
-$grid-column-gap-md: rem(30) !default;
-$grid-row-gap-md: rem(50) !default;
+$grid-column-gap: 15px !default;
+$grid-row-gap: 35px !default;
+$grid-column-gap-md: 30px !default;
+$grid-row-gap-md: 50px !default;
 
 // コンテナの余白
 $conitaner-padding: rem(45) 0 rem(60) !default;

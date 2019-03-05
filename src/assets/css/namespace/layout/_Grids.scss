@@ -118,21 +118,21 @@ category: Layout
 // カラムの左右の余白（ガター）を指定します。
 // すべて指定してください。
 $l-grids-column-gap: (
-  "initial": px($grid-column-gap),
-  "sm": px($grid-column-gap),
-  "md": px($grid-column-gap-md),
-  "lg": px($grid-column-gap-md),
-  "xl": px($grid-column-gap-md),
+  "initial": $grid-column-gap,
+  "sm": $grid-column-gap,
+  "md": $grid-column-gap-md,
+  "lg": $grid-column-gap-md,
+  "xl": $grid-column-gap-md,
 ) !default;
 
 // カラムの上下の余白を指定します。
 // すべて指定してください。
 $l-grids-row-gap: (
-  "initial": px($grid-row-gap),
-  "sm": px($grid-row-gap),
-  "md": px($grid-row-gap-md),
-  "lg": px($grid-row-gap-md),
-  "xl": px($grid-row-gap-md),
+  "initial": $grid-row-gap,
+  "sm": $grid-row-gap,
+  "md": $grid-row-gap-md,
+  "lg": $grid-row-gap-md,
+  "xl": $grid-row-gap-md,
 ) !default;
 
 // 6/12と6/12のような均等なカラムを生成します。
