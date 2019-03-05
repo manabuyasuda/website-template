@@ -40,430 +40,181 @@ category: Layout
       .test-Box One<br>1/1 → 8/12
 ```
 */
-$l-grid-column-gap: $grid-column-gap;
-$l-grid-column-gap-md: $grid-column-gap-md;
+// カラムの左右の余白（ガター）を指定します。
+// すべて指定してください。
+$l-grid-column-gap: (
+  "initial": px($grid-column-gap),
+  "sm": px($grid-column-gap),
+  "md": px($grid-column-gap-md),
+  "lg": px($grid-column-gap-md),
+  "xl": px($grid-column-gap-md),
+) !default;
 
 .l-Grid {
   -js-display: flex;
   display: flex;
   flex-wrap: wrap;
-  margin-left: -$l-grid-column-gap;
+  margin-left: rem(map-get($l-grid-column-gap, initial) * -1);
   padding-left: 0;
   list-style-type: none;
+}
 
-  @include mq-up(md) {
-    margin-left: -$l-grid-column-gap-md;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid {
+      margin-left: rem(map-get($l-grid-column-gap, $name) * -1);
+    }
   }
 }
 
 .l-Grid_Item {
   flex-basis: 100%;
   max-width: 100%;
-  padding-left: $l-grid-column-gap;
+  padding-left: rem(map-get($l-grid-column-gap, initial));
 
-  @include mq-up(md) {
-    padding-left: $l-grid-column-gap-md;
+  & > :first-child {
+    margin-top: 0;
   }
 
-  &-1of12 {
-    flex-basis: percentage(1 / 12);
-    max-width: percentage(1 / 12);
-  }
-
-  &-2of12 {
-    flex-basis: percentage(2 / 12);
-    max-width: percentage(2 / 12);
-  }
-
-  &-3of12 {
-    flex-basis: percentage(3 / 12);
-    max-width: percentage(3 / 12);
-  }
-
-  &-4of12 {
-    flex-basis: percentage(4 / 12);
-    max-width: percentage(4 / 12);
-  }
-
-  &-5of12 {
-    flex-basis: percentage(5 / 12);
-    max-width: percentage(5 / 12);
-  }
-
-  &-6of12 {
-    flex-basis: percentage(6 / 12);
-    max-width: percentage(6 / 12);
-  }
-
-  &-7of12 {
-    flex-basis: percentage(7 / 12);
-    max-width: percentage(7 / 12);
-  }
-
-  &-8of12 {
-    flex-basis: percentage(8 / 12);
-    max-width: percentage(8 / 12);
-  }
-
-  &-9of12 {
-    flex-basis: percentage(9 / 12);
-    max-width: percentage(9 / 12);
-  }
-
-  &-10of12 {
-    flex-basis: percentage(10 / 12);
-    max-width: percentage(10 / 12);
-  }
-
-  &-11of12 {
-    flex-basis: percentage(11 / 12);
-    max-width: percentage(11 / 12);
-  }
-
-  &-12of12 {
-    flex-basis: percentage(12 / 12);
-    max-width: percentage(12 / 12);
+  & > :last-child {
+    margin-bottom: 0;
   }
 }
 
-@include mq-up(md) {
-  .l-Grid_Item {
-    &-1of12Md {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
-
-    &-2of12Md {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &-3of12Md {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &-4of12Md {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &-5of12Md {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &-6of12Md {
-      flex-basis: percentage(6 / 12);
-      max-width: percentage(6 / 12);
-    }
-
-    &-7of12Md {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &-8of12Md {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &-9of12Md {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &-10of12Md {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &-11of12Md {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &-12of12Md {
-      flex-basis: percentage(12 / 12);
-      max-width: percentage(12 / 12);
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid_Item {
+      padding-left: rem(map-get($l-grid-column-gap, $name));
     }
   }
 }
 
-@include mq-up(lg) {
-  .l-Grid_Item {
-    &-1of12Lg {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
+@mixin column($key: null) {
+  $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
+  $suffix: to-lower-camel-case(#{$key}) !default;
 
-    &-2of12Lg {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &-3of12Lg {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &-4of12Lg {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &-5of12Lg {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &-6of12Lg {
-      flex-basis: percentage(6 / 12);
-      max-width: percentage(6 / 12);
-    }
-
-    &-7of12Lg {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &-8of12Lg {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &-9of12Lg {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &-10of12Lg {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &-11of12Lg {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &-12of12Lg {
-      flex-basis: percentage(12 / 12);
-      max-width: percentage(12 / 12);
-    }
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grid_Item {
-    &-1of12Xl {
-      flex-basis: percentage(1 / 12);
-      max-width: percentage(1 / 12);
-    }
-
-    &-2of12Xl {
-      flex-basis: percentage(2 / 12);
-      max-width: percentage(2 / 12);
-    }
-
-    &-3of12Xl {
-      flex-basis: percentage(3 / 12);
-      max-width: percentage(3 / 12);
-    }
-
-    &-4of12Xl {
-      flex-basis: percentage(4 / 12);
-      max-width: percentage(4 / 12);
-    }
-
-    &-5of12Xl {
-      flex-basis: percentage(5 / 12);
-      max-width: percentage(5 / 12);
-    }
-
-    &-6of12Xl {
-      flex-basis: percentage(6 / 12);
-      max-width: percentage(6 / 12);
-    }
-
-    &-7of12Xl {
-      flex-basis: percentage(7 / 12);
-      max-width: percentage(7 / 12);
-    }
-
-    &-8of12Xl {
-      flex-basis: percentage(8 / 12);
-      max-width: percentage(8 / 12);
-    }
-
-    &-9of12Xl {
-      flex-basis: percentage(9 / 12);
-      max-width: percentage(9 / 12);
-    }
-
-    &-10of12Xl {
-      flex-basis: percentage(10 / 12);
-      max-width: percentage(10 / 12);
-    }
-
-    &-11of12Xl {
-      flex-basis: percentage(11 / 12);
-      max-width: percentage(11 / 12);
-    }
-
-    &-12of12Xl {
-      flex-basis: percentage(12 / 12);
-      max-width: percentage(12 / 12);
+  @each $column in $columns {
+    .l-Grid_Item-#{$column}of12#{$suffix} {
+      flex-basis: percentage($column / 12);
+      max-width: percentage($column / 12);
     }
   }
 }
 
 /**
- * 要素の垂直位置を上寄せ。
+ * 6/12と6/12のような均等なカラムを生成します。
+ */
+@include column();
+
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    @include column($name);
+  }
+}
+
+/**
+ * 要素の垂直位置を上寄せにします。
  */
 .l-Grid-top {
   align-items: flex-start;
 }
 
-@include mq-up(md) {
-  .l-Grid-topMd {
-    align-items: flex-start;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grid-topLg {
-    align-items: flex-start;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grid-topXl {
-    align-items: flex-start;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid-top#{to-lower-camel-case($name)} {
+      align-items: flex-start;
+    }
   }
 }
 
 /**
- * 要素の垂直位置を真ん中寄せ。
+ * 要素の垂直位置を真ん中寄せにします。
  */
 .l-Grid-middle {
   align-items: center;
 }
 
-@include mq-up(md) {
-  .l-Grid-middleMd {
-    align-items: center;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grid-middleLg {
-    align-items: center;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grid-middleXl {
-    align-items: center;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid-middle#{to-lower-camel-case($name)} {
+      align-items: center;
+    }
   }
 }
 
 /**
- * 要素の垂直位置を下寄せ。
+ * 要素の垂直位置を下寄せにします。
  */
-.l-Grid--bottom {
+.l-Grid-bottom {
   align-items: flex-end;
 }
 
-@include mq-up(md) {
-  .l-Grid-bottomMd {
-    align-items: flex-end;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grid-bottomLg {
-    align-items: flex-end;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grid-bottomXl {
-    align-items: flex-end;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid-bottom#{to-lower-camel-case($name)} {
+      align-items: flex-end;
+    }
   }
 }
 
 /**
- * 要素を中央寄せ、要素内は左寄せ。
+ * 要素を中央寄せ、要素内は左寄せにします。
  */
 .l-Grid-center {
   justify-content: center;
 }
 
-@include mq-up(md) {
-  .l-Grid-centerMd {
-    justify-content: center;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grid-centerLg {
-    justify-content: center;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grid-centerXl {
-    justify-content: center;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid-center#{to-lower-camel-case($name)} {
+      justify-content: center;
+    }
   }
 }
 
 /**
- * 要素を右寄せ、要素内は左寄せ。
+ * 要素を右寄せ、要素内は左寄せにします。
  */
 .l-Grid-right {
   justify-content: flex-end;
 }
 
-@include mq-up(md) {
-  .l-Grid-rightMd {
-    justify-content: flex-end;
-  }
-}
-
-@include mq-up(lg) {
-  .l-Grid-rightLg {
-    justify-content: flex-end;
-  }
-}
-
-@include mq-up(xl) {
-  .l-Grid-rightXl {
-    justify-content: flex-end;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid-right#{to-lower-camel-case($name)} {
+      justify-content: flex-end;
+    }
   }
 }
 
 /**
- * 要素の反転。
+ * `.l-Grids_Item`の表示順を逆にします。
+ * A,B → B,A
  */
 .l-Grid-reverse {
   flex-direction: row-reverse;
 }
 
-@include mq-up(md) {
-  .l-Grid-reversMd {
-    flex-direction: row-reverse;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid-reverse#{to-lower-camel-case($name)} {
+      flex-direction: row-reverse;
+    }
   }
 }
 
-@include mq-up(lg) {
-  .l-Grid-reverseLg {
-    flex-direction: row-reverse;
-  }
+/**
+ * `.l-Grids_Item`の表示順を戻します。
+ * B,A → A,B
+ */
+.l-Grid-row {
+  flex-direction: row;
 }
 
-@include mq-up(xl) {
-  .l-Grid-reverseXl {
-    flex-direction: row-reverse;
+@each $name, $breakpoint in $global-breakpoint-up {
+  @media #{$breakpoint} {
+    .l-Grid-row#{to-lower-camel-case($name)} {
+      flex-direction: row;
+    }
   }
 }
