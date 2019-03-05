@@ -255,11 +255,11 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
       &:nth-of-type(n + 3) {
         @if $key == null {
-          margin-top: map-get($l-grids-row-gap, initial);
+          margin-top: rem(map-get($l-grids-row-gap, initial));
         }
 
         @if $key != null {
-          margin-top: map-get($l-grids-row-gap, $key);
+          margin-top: rem(map-get($l-grids-row-gap, $key));
         }
       }
     }
