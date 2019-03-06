@@ -248,7 +248,7 @@ gulp.task('image', () => gulp.src(src.image)
         { removeMetadata: false },
         // SVGの仕様に含まれていないタグや属性、id属性やvertion属性を削除する。
         // 追加した要素を削除する必要はない。
-        { emoveUnknownsAndDefaults: false },
+        { removeUnknownsAndDefaults: false },
         // コードが短くなる場合だけ<path>に変換する。
         // アニメーションが動作しない可能性があるので変換しない。
         { convertShapeToPath: false },
