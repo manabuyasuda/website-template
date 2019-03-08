@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @import "base/function/**/*.scss";
 @import "base/variable/**/*.scss";
-@import "base/mixin/**/*.scss";
+@import "base/mixin/util/**/*.scss";
+@import "base/mixin/namespace/**/*.scss";
 @import "../../../node_modules/normalize.css/normalize";
 @import "base/_base";
 
