@@ -30,12 +30,11 @@ category: [Link, Icon]
 }
 
 .sw-LinkPdf_Icon {
+  @include svgstore(429, 500);
   display: inline-block;
   vertical-align: middle;
   position: relative;
   top: -0.1em;
-  width: (429 / 500) * 1em;
-  height: 1em;
   font-size: 1em;
   fill: currentColor;
 

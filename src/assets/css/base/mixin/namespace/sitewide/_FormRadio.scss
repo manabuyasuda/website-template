@@ -12,10 +12,10 @@
   }
 
   & + label > svg {
+    @include svgstore();
+
     display: table-cell;
     vertical-align: top;
-    width: 1em;
-    height: 1em;
     margin: calc((#{$line-height} - 1) * 0.5em) em(4) 0 0;
     font-size: 1em;
     border: $form-border;

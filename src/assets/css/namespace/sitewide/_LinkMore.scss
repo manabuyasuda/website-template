@@ -30,12 +30,12 @@ category: [Link, Icon]
 }
 
 .sw-LinkMore_Icon {
+  @include svgstore(291.6, 499.9);
+
   display: inline-block;
   vertical-align: middle;
   position: relative;
   top: -0.1em;
-  width: (291.6 / 499.9) * 1em;
-  height: 1em;
   font-size: 1em;
   fill: currentColor;
 

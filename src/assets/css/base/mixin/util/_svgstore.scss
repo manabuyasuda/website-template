@@ -1,0 +1,30 @@
+// @desc - SVGスプライト（svgstore）で使用するアイコンをアスペクト比を保ったまま、`font-size`でサイズの指定ができるようにします。
+// @param {Number} $width [500] - アイコンの横幅を単位無しで指定します。
+// @param {Number} $height [500] - アイコンの高さを単位無しで指定します。
+// @example scss - Usage
+// .foo { @include svgstore(428.6, 500); }
+//
+// @example css - CSS output
+// .foo {
+//   width: 0.8572em;
+//   height: 1em;
+// }
+@mixin svgstore($width: 500, $height: 500) {
+  $w: strip-unit($width);
+  $h: strip-unit($height);
+
+  @if ($w == $h) {
+    width: 1em;
+    height: 1em;
+  }
+
+  @if ($w > $h) {
+    width: 1em;
+    height: ($h / $w) * 1em;
+  }
+
+  @if ($w < $h) {
+    width: ($w / $h) * 1em;
+    height: 1em;
+  }
+}
