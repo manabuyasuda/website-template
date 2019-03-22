@@ -85,8 +85,8 @@ const developmentValues = require('./config/development').defaults;
 const productionValues = require('./config/production').defaults;
 
 const envValues = env === 'development' ? developmentValues : productionValues;
-const isDevelopment = (envValues.NODE_ENV === 'development');
-const isProduction = (envValues.NODE_ENV === 'production');
+const isDevelopment = envValues.NODE_ENV === 'development';
+const isProduction = envValues.NODE_ENV === 'production';
 
 /**
  * `.pug`を`.html`にコンパイルします。
@@ -105,83 +105,101 @@ gulp.task('html', () => {
     // 英語サイト共通のデータです。
     site: JSON.parse(fs.readFileSync(`${src.data}en/site.json`)),
   };
-  return gulp.src(src.html)
-  // エラーでタスクを止めない
-    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-    .pipe(data((file) => {
-    // 各ページのルート相対パスを格納します。
-      locals.pageAbsolutePath = `/${path.relative(file.base, file.path.replace(/.pug$/, '.html')).replace(/index\.html$/, '')}`;
-      return locals;
-    }))
-    .pipe(cache('html'))
-    .pipe(pug({
-    // `locals`に渡したデータを各Pugファイルで取得できます。
-      locals,
-      // ルート相対パスでincludeが使えるようにします。
-      basedir: 'src',
-      // Pugファイルの整形。
-      pretty: true,
-    }))
-    .pipe(gulp.dest(dest.root))
-    .pipe(browserSync.reload({ stream: true }));
+  return (
+    gulp
+      .src(src.html)
+      // エラーでタスクを止めない
+      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+      .pipe(
+        data(file => {
+          // 各ページのルート相対パスを格納します。
+          locals.pageAbsolutePath = `/${path
+            .relative(file.base, file.path.replace(/.pug$/, '.html'))
+            .replace(/index\.html$/, '')}`;
+          return locals;
+        }),
+      )
+      .pipe(cache('html'))
+      .pipe(
+        pug({
+          // `locals`に渡したデータを各Pugファイルで取得できます。
+          locals,
+          // ルート相対パスでincludeが使えるようにします。
+          basedir: 'src',
+          // Pugファイルの整形。
+          pretty: true,
+        }),
+      )
+      .pipe(gulp.dest(dest.root))
+      .pipe(browserSync.reload({ stream: true }))
+  );
 });
 
 /**
  * 公開用のHTMLファイルを解析して警告やエラーを通知します。
  */
-gulp.task('htmlhint', () => gulp.src([`${dest.root}**/*.html`, `!${dest.root}styleguide/**/*.html`])
-  .pipe(htmlhint('.htmlhintrc'))
-  .pipe(htmlhint.reporter('htmlhint-stylish'))
-  .pipe(htmlhint.failOnError({
-    suppress: true,
-  })));
+gulp.task('htmlhint', () =>
+  gulp
+    .src([`${dest.root}**/*.html`, `!${dest.root}styleguide/**/*.html`])
+    .pipe(htmlhint('.htmlhintrc'))
+    .pipe(htmlhint.reporter('htmlhint-stylish'))
+    .pipe(
+      htmlhint.failOnError({
+        suppress: true,
+      }),
+    ),
+);
 
 /**
  * /static/以下のHTMLファイルを監視、更新があれば反映します。
  */
-gulp.task('ssi', () => gulp.src(src.ssi)
-  .pipe(browserSync.reload({ stream: true })));
+gulp.task('ssi', () => gulp.src(src.ssi).pipe(browserSync.reload({ stream: true })));
 
 /**
  * 公開用のSassファイルを解析して警告やエラーを通知します。
  * 修正できるものは強制的に反映します。
  */
-gulp.task('stylelint', () => gulp.src(src.css)
-  .pipe(gulpStylelint({
-    fix: true,
-    reporters: [
-      {formatter: 'string', console: true}
-    ],
-  }))
-  .pipe(gulp.dest(src.root)));
+gulp.task('stylelint', () =>
+  gulp
+    .src(src.css)
+    .pipe(
+      gulpStylelint({
+        fix: true,
+        reporters: [{ formatter: 'string', console: true }],
+      }),
+    )
+    .pipe(gulp.dest(src.root)),
+);
 
 /**
  * `.scss`を`.css`にコンパイルします。
  */
 gulp.task('css', () => {
-  const plugins = [
-    flexBugsFixes(),
-    autoprefixer(),
-  ];
-  return gulp.src(src.css)
-  // globパターンでのインポート機能を追加
-    .pipe(sassGlob())
-    .pipe(gulpif(isDevelopment, sourcemaps.init()))
-    .pipe(sass({
-      outputStyle: 'expanded',
-    }).on('error', sass.logError))
-    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-    .pipe(postcss(plugins))
-    .pipe(gulpif(isProduction, cleanCSS()))
-    .pipe(gulpif(isDevelopment, sourcemaps.write()))
-    .pipe(gulp.dest(dest.root))
-    .pipe(browserSync.reload({ stream: true }));
+  const plugins = [flexBugsFixes(), autoprefixer()];
+  return (
+    gulp
+      .src(src.css)
+      // globパターンでのインポート機能を追加
+      .pipe(sassGlob())
+      .pipe(gulpif(isDevelopment, sourcemaps.init()))
+      .pipe(
+        sass({
+          outputStyle: 'expanded',
+        }).on('error', sass.logError),
+      )
+      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+      .pipe(postcss(plugins))
+      .pipe(gulpif(isProduction, cleanCSS()))
+      .pipe(gulpif(isDevelopment, sourcemaps.write()))
+      .pipe(gulp.dest(dest.root))
+      .pipe(browserSync.reload({ stream: true }))
+  );
 });
 
 /**
  * ES2015以降のコードをES5に変換（トランスコンパイル）します。
  */
-gulp.task('js', () => {
+gulp.task('js', done => {
   const envifyOptions = envValues;
   // 指定した環境変数だけを処理する
   envifyOptions._ = 'purge';
@@ -190,7 +208,7 @@ gulp.task('js', () => {
     entries: src.js,
     extensions: ['.js'],
     // browserifyのsourcemapsを使用しない
-    debug: !!(isDevelopment),
+    debug: !!isDevelopment,
     cache: {},
     packageCache: {},
     // ファイルの状態を監視して、差分だけをビルドする
@@ -206,7 +224,9 @@ gulp.task('js', () => {
       envify(envifyOptions),
     )
     .bundle()
-    .on('error', function (err) {
+    // eslint-disable-next-line func-names
+    .on('error', function(err) {
+      // eslint-disable-next-line no-console
       console.log(`Error : ${err.message}`);
       this.emit('end');
     })
@@ -215,119 +235,119 @@ gulp.task('js', () => {
     .pipe(gulpif(isProduction, uglify({ output: { comments: /^!/ } })))
     .pipe(gulp.dest(dest.js))
     .pipe(browserSync.reload({ stream: true }));
+  done();
 });
 
 /**
  * 画像を圧縮します。
  */
-gulp.task('image', () => gulp.src(src.image)
-  .pipe(changed(dest.image))
-  .pipe(plumber({
-    errorHandler(err) {
-      console.log(err.messageFormatted);
-      this.emit('end');
-    },
-  }))
-  .pipe(imagemin([
-    imageminMozjpeg({
-      // 画質
-      quality: 70,
-    }),
-    imageminPngquant({
-      // 画質
-      quality: 70,
-    }),
-    imagemin.svgo({
-      plugins: [
-        // viewBox属性を削除する（widthとheight属性がある場合）。
-        // 表示が崩れる原因になるので削除しない。
-        { removeViewBox: false },
-        // <metadata>を削除する。
-        // 追加したmetadataを削除する必要はない。
-        { removeMetadata: false },
-        // SVGの仕様に含まれていないタグや属性、id属性やvertion属性を削除する。
-        // 追加した要素を削除する必要はない。
-        { removeUnknownsAndDefaults: false },
-        // コードが短くなる場合だけ<path>に変換する。
-        // アニメーションが動作しない可能性があるので変換しない。
-        { convertShapeToPath: false },
-        // 重複や不要な`<g>`タグを削除する。
-        // アニメーションが動作しない可能性があるので変換しない。
-        { collapseGroups: false },
-        // SVG内に<style>や<script>がなければidを削除する。
-        // idにアンカーが貼られていたら削除せずにid名を縮小する。
-        // id属性は動作の起点となることがあるため削除しない。
-        { cleanupIDs: false },
-      ]
-    }),
-    imagemin.optipng(),
-    imagemin.gifsicle(),
-  ]))
-  .pipe(gulp.dest(dest.image))
-  .pipe(browserSync.reload({ stream: true })));
+gulp.task('image', () =>
+  gulp
+    .src(src.image)
+    .pipe(changed(dest.image))
+    .pipe(
+      plumber({
+        errorHandler(err) {
+          // eslint-disable-next-line no-console
+          console.log(err.messageFormatted);
+          this.emit('end');
+        },
+      }),
+    )
+    .pipe(
+      imagemin([
+        imageminMozjpeg({
+          // 画質
+          quality: 70,
+        }),
+        imageminPngquant({
+          // 画質
+          quality: '70-80',
+        }),
+        imagemin.svgo({
+          plugins: [
+            // viewBox属性を削除する（widthとheight属性がある場合）。
+            // 表示が崩れる原因になるので削除しない。
+            { removeViewBox: false },
+            // <metadata>を削除する。
+            // 追加したmetadataを削除する必要はない。
+            { removeMetadata: false },
+            // SVGの仕様に含まれていないタグや属性、id属性やvertion属性を削除する。
+            // 追加した要素を削除する必要はない。
+            { removeUnknownsAndDefaults: false },
+            // コードが短くなる場合だけ<path>に変換する。
+            // アニメーションが動作しない可能性があるので変換しない。
+            { convertShapeToPath: false },
+            // 重複や不要な`<g>`タグを削除する。
+            // アニメーションが動作しない可能性があるので変換しない。
+            { collapseGroups: false },
+            // SVG内に<style>や<script>がなければidを削除する。
+            // idにアンカーが貼られていたら削除せずにid名を縮小する。
+            // id属性は動作の起点となることがあるため削除しない。
+            { cleanupIDs: false },
+          ],
+        }),
+        imagemin.optipng(),
+        imagemin.gifsicle(),
+      ]),
+    )
+    .pipe(gulp.dest(dest.image))
+    .pipe(browserSync.reload({ stream: true })),
+);
 
 /**
  * SVGファイルからSVGスプライトを生成します。
  */
-gulp.task('svgSprite', () => gulp.src(src.svgSprite)
-  .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-  .pipe(svgSprite({
-    mode: {
-      // SVGファイルをsymbol要素としてまとめる。
-      symbol: {
-        dest: './',
-        // 出力するファイル名。
-        sprite: 'sprite.svg',
-      },
-    },
-    shape: {
-      transform: [{
-        svgo: {
-          plugins: [
-            // `style`属性を削除する。
-            { removeStyleElement: true },
-            // `fill`属性を削除して、CSSで`fill`の変更ができるようにする。
-            { removeAttrs: { attrs: 'fill' } },
+gulp.task('svgSprite', () =>
+  gulp
+    .src(src.svgSprite)
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+    .pipe(
+      svgSprite({
+        mode: {
+          // SVGファイルをsymbol要素としてまとめる。
+          symbol: {
+            dest: './',
+            // 出力するファイル名。
+            sprite: 'sprite.svg',
+          },
+        },
+        shape: {
+          transform: [
+            {
+              svgo: {
+                plugins: [
+                  // `style`属性を削除する。
+                  { removeStyleElement: true },
+                  // `fill`属性を削除して、CSSで`fill`の変更ができるようにする。
+                  { removeAttrs: { attrs: 'fill' } },
+                ],
+              },
+            },
           ],
         },
-      }],
-    },
-    svg: {
-      // xml宣言を出力する。
-      xmlDeclaration: true,
-      // DOCTYPE宣言を出力する。
-      doctypeDeclaration: false,
-    },
-  }))
-  .pipe(gulp.dest(dest.svgSprite))
-  .pipe(browserSync.reload({ stream: true })));
+        svg: {
+          // xml宣言を出力する。
+          xmlDeclaration: true,
+          // DOCTYPE宣言を出力する。
+          doctypeDeclaration: false,
+        },
+      }),
+    )
+    .pipe(gulp.dest(dest.svgSprite))
+    .pipe(browserSync.reload({ stream: true })),
+);
 
 /**
  * スタイルガイドを生成します。
  */
-gulp.task('styleguide', () => gulp.src('./aigis/aigis_config.yml')
-  .pipe(aigis()));
+gulp.task('styleguide', () => gulp.src('./aigis/aigis_config.yml').pipe(aigis()));
 
 /**
  * Gulpの処理を通さないディレクトリです。
  * 公開用のディレクトリにコピーします。
  */
-gulp.task('static', () => gulp.src(src.static)
-  .pipe(gulp.dest(dest.root)));
-
-/**
- * 公開用のディレクトリを削除します。
- */
-gulp.task('clean:dest', cb => rimraf(dest.root, cb));
-
-/**
- * 一連のタスクを処理します。
- */
-gulp.task('build', () => {
-  runSequence(
-    ['html', 'ssi', 'css', 'styleguide', 'js', 'image', 'svgSprite', 'static'],
-  );
-});
+gulp.task('static', () => gulp.src(src.static).pipe(gulp.dest(dest.root)));
 
 /**
  * ローカルサーバーを起動します。
@@ -356,17 +376,30 @@ gulp.task('browser-sync', () => {
 });
 
 /**
+ * 公開用のディレクトリを削除します。
+ */
+gulp.task('clean:dest', done => rimraf(dest.root, done));
+
+/**
+ * 一連のタスクを処理します。
+ */
+gulp.task(
+  'build',
+  gulp.series('html', 'ssi', 'css', 'styleguide', 'js', 'image', 'svgSprite', 'static'),
+);
+
+/**
  * ファイルを監視します。
  */
-gulp.task('watch', ['build'], () => {
-  gulp.watch(src.ssi, ['ssi']);
-  gulp.watch(src.static, ['static']);
-  gulp.watch(src.html, ['html']);
-  gulp.watch(src.css, ['css']);
-  gulp.watch(src.styleguideWatch, ['styleguide']);
-  gulp.watch(src.jsWatch, ['js']);
-  gulp.watch(src.imageWatch, ['image']);
-  gulp.watch(src.svgSprite, ['svgSprite']);
+gulp.task('watch', () => {
+  gulp.watch(src.ssi, gulp.task('ssi'));
+  gulp.watch(src.static, gulp.task('static'));
+  gulp.watch(src.html, gulp.task('html'));
+  gulp.watch(src.css, gulp.task('css'));
+  gulp.watch(src.styleguideWatch, gulp.task('styleguide'));
+  gulp.watch(src.jsWatch, gulp.task('js'));
+  gulp.watch(src.imageWatch, gulp.task('image'));
+  gulp.watch(src.svgSprite, gulp.task('svgSprite'));
 });
 
 /**
@@ -374,9 +407,4 @@ gulp.task('watch', ['build'], () => {
  * `gulp`タスクにbrowser-syncを追加します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-gulp.task('default', ['clean:dest'], () => {
-  runSequence(
-    'watch',
-    'browser-sync',
-  );
-});
+gulp.task('default', gulp.series('clean:dest', 'build', gulp.parallel('browser-sync', 'watch')));
