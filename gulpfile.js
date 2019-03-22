@@ -47,7 +47,7 @@ const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const gulpif = require('gulp-if');
-const rimraf = require('rimraf');
+const del = require('del');
 
 /**
  * 開発用ディレクトリ
@@ -75,6 +75,7 @@ const dest = {
   image: 'htdocs/assets/img/',
   js: 'htdocs/assets/js/',
   svgSprite: 'htdocs/assets/svg/',
+  cleanDest: 'htdocs/',
 };
 
 /**
@@ -378,7 +379,9 @@ gulp.task('browser-sync', () => {
 /**
  * 公開用のディレクトリを削除します。
  */
-gulp.task('clean:dest', done => rimraf(dest.root, done));
+gulp.task('clean:dest', done => {
+  return del(dest.cleanDest, done);
+});
 
 /**
  * 一連のタスクを処理します。
