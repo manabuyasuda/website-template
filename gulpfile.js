@@ -43,7 +43,6 @@ const aigis = require('gulp-aigis');
 const cache = require('gulp-cached');
 const changed = require('gulp-changed');
 const sourcemaps = require('gulp-sourcemaps');
-const runSequence = require('run-sequence');
 const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
