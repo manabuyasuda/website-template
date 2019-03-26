@@ -193,7 +193,7 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
 @mixin equal-column($key: null) {
   $columns: $l-grids-equal-column;
-  $suffix: to-lower-camel-case(#{$key});
+  $suffix: uppercaseFirstLetter(#{$key});
 
   @each $column in $columns {
     .l-Grids-col#{$column}#{$suffix} > .l-Grids_Item {
@@ -232,7 +232,7 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
 @mixin two-column($key: null) {
   $columns: $l-grids-two-column;
-  $suffix: to-lower-camel-case(#{$key});
+  $suffix: uppercaseFirstLetter(#{$key});
 
   @each $column in $columns {
     $first-column: 12 - $column;
@@ -286,7 +286,7 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grids-top#{to-lower-camel-case($name)} {
+    .l-Grids-top#{uppercaseFirstLetter($name)} {
       align-items: flex-start;
     }
   }
@@ -301,7 +301,7 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grids-middle#{to-lower-camel-case($name)} {
+    .l-Grids-middle#{uppercaseFirstLetter($name)} {
       align-items: center;
     }
   }
@@ -316,7 +316,7 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grids-bottom#{to-lower-camel-case($name)} {
+    .l-Grids-bottom#{uppercaseFirstLetter($name)} {
       align-items: flex-end;
     }
   }
@@ -332,7 +332,7 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grids-reverse#{to-lower-camel-case($name)} {
+    .l-Grids-reverse#{uppercaseFirstLetter($name)} {
       flex-direction: row-reverse;
     }
   }
@@ -348,7 +348,7 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grids-row#{to-lower-camel-case($name)} {
+    .l-Grids-row#{uppercaseFirstLetter($name)} {
       flex-direction: row;
     }
   }

@@ -91,7 +91,7 @@ $l-grid-column-gap: (
 
 @mixin column($key: null) {
   $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
-  $suffix: to-lower-camel-case(#{$key}) !default;
+  $suffix: uppercaseFirstLetter(#{$key}) !default;
 
   @each $column in $columns {
     .l-Grid_Item-#{$column}of12#{$suffix} {
@@ -121,7 +121,7 @@ $l-grid-column-gap: (
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grid-top#{to-lower-camel-case($name)} {
+    .l-Grid-top#{uppercaseFirstLetter($name)} {
       align-items: flex-start;
     }
   }
@@ -136,7 +136,7 @@ $l-grid-column-gap: (
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grid-middle#{to-lower-camel-case($name)} {
+    .l-Grid-middle#{uppercaseFirstLetter($name)} {
       align-items: center;
     }
   }
@@ -151,7 +151,7 @@ $l-grid-column-gap: (
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grid-bottom#{to-lower-camel-case($name)} {
+    .l-Grid-bottom#{uppercaseFirstLetter($name)} {
       align-items: flex-end;
     }
   }
@@ -166,7 +166,7 @@ $l-grid-column-gap: (
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grid-center#{to-lower-camel-case($name)} {
+    .l-Grid-center#{uppercaseFirstLetter($name)} {
       justify-content: center;
     }
   }
@@ -181,7 +181,7 @@ $l-grid-column-gap: (
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grid-right#{to-lower-camel-case($name)} {
+    .l-Grid-right#{uppercaseFirstLetter($name)} {
       justify-content: flex-end;
     }
   }
@@ -197,7 +197,7 @@ $l-grid-column-gap: (
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grid-reverse#{to-lower-camel-case($name)} {
+    .l-Grid-reverse#{uppercaseFirstLetter($name)} {
       flex-direction: row-reverse;
     }
   }
@@ -213,7 +213,7 @@ $l-grid-column-gap: (
 
 @each $name, $breakpoint in $global-breakpoint-up {
   @media #{$breakpoint} {
-    .l-Grid-row#{to-lower-camel-case($name)} {
+    .l-Grid-row#{uppercaseFirstLetter($name)} {
       flex-direction: row;
     }
   }
