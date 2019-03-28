@@ -190,7 +190,24 @@ gulp.task('css', () => {
       )
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
       .pipe(postcss(plugins))
-      .pipe(gulpif(isProduction, cleanCSS()))
+      .pipe(gulpif(isDevelopment, cleanCSS({
+        // 圧縮せずに整形して出力する
+        format: 'beautify',
+        compatibility: {
+          properties: {
+            // 0の単位を不必要な場合は削除する
+            zeroUnits: false
+          }
+        }
+      })))
+      .pipe(gulpif(isProduction, cleanCSS({
+        compatibility: {
+          properties: {
+            // 0の単位を不必要な場合は削除する
+            zeroUnits: false
+          }
+        }
+      })))
       .pipe(gulpif(isDevelopment, sourcemaps.write()))
       .pipe(gulp.dest(dest.root))
       .pipe(browserSync.reload({ stream: true }))
