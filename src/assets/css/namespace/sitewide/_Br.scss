@@ -23,7 +23,7 @@ category: Text
 .sw-BrShowSm {
   display: none;
 
-  @include mq-up(sm) {
+  @include mq(sm) {
     display: inline;
   }
 }
@@ -31,7 +31,7 @@ category: Text
 .sw-BrShowMd {
   display: none;
 
-  @include mq-up(md) {
+  @include mq(md) {
     display: inline;
   }
 }
@@ -39,7 +39,7 @@ category: Text
 .sw-BrShowLg {
   display: none;
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     display: inline;
   }
 }
@@ -47,7 +47,7 @@ category: Text
 .sw-BrShowXl {
   display: none;
 
-  @include mq-up(xl) {
+  @include mq(xl) {
     display: inline;
   }
 }
@@ -55,7 +55,7 @@ category: Text
 .sw-BrHideSm {
   display: inline;
 
-  @include mq-up(sm) {
+  @include mq(sm) {
     display: none;
   }
 }
@@ -63,7 +63,7 @@ category: Text
 .sw-BrHideMd {
   display: inline;
 
-  @include mq-up(md) {
+  @include mq(md) {
     display: none;
   }
 }
@@ -71,7 +71,7 @@ category: Text
 .sw-BrHideLg {
   display: inline;
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     display: none;
   }
 }
@@ -79,7 +79,7 @@ category: Text
 .sw-BrHideXl {
   display: inline;
 
-  @include mq-up(xl) {
+  @include mq(xl) {
     display: none;
   }
 }

@@ -6,7 +6,7 @@
   line-height: 1.2;
   color: $color-brand;
 
-  @include mq-up(md) {
+  @include mq(md) {
     font-size: rem(30);
     line-height: 1.4;
   }

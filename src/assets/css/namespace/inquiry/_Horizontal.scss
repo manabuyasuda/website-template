@@ -64,7 +64,7 @@ form.l-Wrapper(method="post" action="/")
   &:nth-of-type(n + 2) {
     margin-top: rem(30);
 
-    @include mq-up(md) {
+    @include mq(md) {
       margin-top: rem(30);
     }
   }
@@ -80,7 +80,7 @@ form.l-Wrapper(method="post" action="/")
   flex-basis: 100%;
   max-width: 100%;
 
-  @include mq-up(md) {
+  @include mq(md) {
     &:nth-of-type(1) {
       flex-basis: percentage(3 / 12);
       max-width: percentage(3 / 12);
@@ -96,7 +96,7 @@ form.l-Wrapper(method="post" action="/")
   &:nth-of-type(1) {
     margin-bottom: rem(10);
 
-    @include mq-up(md) {
+    @include mq(md) {
       margin-bottom: 0;
     }
   }

@@ -27,7 +27,7 @@ category: List
   font-size: rem(13);
   list-style-type: none;
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     margin-left: rem(20);
   }
 
@@ -35,7 +35,7 @@ category: List
   [lang="zh-cn"] {
     margin-left: rem(13);
 
-    @include mq-up(lg) {
+    @include mq(lg) {
       margin-left: rem(13);
     }
   }

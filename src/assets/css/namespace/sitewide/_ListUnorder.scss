@@ -24,7 +24,7 @@ category: List
   padding-left: 0;
   list-style-type: none;
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     margin-left: rem(24);
   }
 

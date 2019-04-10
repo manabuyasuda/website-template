@@ -24,7 +24,7 @@ category: Layout
   padding: $conitaner-bg-padding;
   background-color: #f6f8f9;
 
-  @include mq-up(md) {
+  @include mq(md) {
     padding: $conitaner-bg-padding-md;
   }
 

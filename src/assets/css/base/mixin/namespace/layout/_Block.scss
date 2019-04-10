@@ -1,7 +1,7 @@
 @mixin l-Block() {
   margin: $block-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $block-margin-md;
   }
 

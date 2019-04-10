@@ -31,7 +31,7 @@ category: List
   list-style-type: none;
   counter-reset: bracketOrder 0;
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     margin-left: rem(32);
   }
 

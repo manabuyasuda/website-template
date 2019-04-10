@@ -59,8 +59,8 @@ $l-grid-column-gap: (
   list-style-type: none;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid {
       margin-left: rem(map-get($l-grid-column-gap, $name) * -1);
     }
@@ -81,8 +81,8 @@ $l-grid-column-gap: (
   }
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid_Item {
       padding-left: rem(map-get($l-grid-column-gap, $name));
     }
@@ -106,8 +106,8 @@ $l-grid-column-gap: (
  */
 @include column();
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     @include column($name);
   }
 }
@@ -119,8 +119,8 @@ $l-grid-column-gap: (
   align-items: flex-start;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid-top#{uppercase-first-letter($name)} {
       align-items: flex-start;
     }
@@ -134,8 +134,8 @@ $l-grid-column-gap: (
   align-items: center;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid-middle#{uppercase-first-letter($name)} {
       align-items: center;
     }
@@ -149,8 +149,8 @@ $l-grid-column-gap: (
   align-items: flex-end;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid-bottom#{uppercase-first-letter($name)} {
       align-items: flex-end;
     }
@@ -164,8 +164,8 @@ $l-grid-column-gap: (
   justify-content: center;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid-center#{uppercase-first-letter($name)} {
       justify-content: center;
     }
@@ -179,8 +179,8 @@ $l-grid-column-gap: (
   justify-content: flex-end;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid-right#{uppercase-first-letter($name)} {
       justify-content: flex-end;
     }
@@ -195,8 +195,8 @@ $l-grid-column-gap: (
   flex-direction: row-reverse;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid-reverse#{uppercase-first-letter($name)} {
       flex-direction: row-reverse;
     }
@@ -211,8 +211,8 @@ $l-grid-column-gap: (
   flex-direction: row;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grid-row#{uppercase-first-letter($name)} {
       flex-direction: row;
     }

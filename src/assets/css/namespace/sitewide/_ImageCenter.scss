@@ -18,7 +18,7 @@ category: Image
   margin: $text-margin;
   text-align: center;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $text-margin-md;
   }
 }

@@ -60,7 +60,7 @@ category: Layout
 .l-Block-divider {
   margin: $block-divider-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $block-divider-margin-md;
   }
 
@@ -72,7 +72,7 @@ category: Layout
     padding: $block-divider-margin;
     border-top: rem(1) solid #e3e3e3;
 
-    @include mq-up(md) {
+    @include mq(md) {
       padding: $block-divider-margin-md;
     }
   }

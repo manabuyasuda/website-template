@@ -1,7 +1,7 @@
 @mixin l-Text() {
   margin: $text-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $text-margin-md;
   }
 }

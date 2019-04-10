@@ -98,6 +98,7 @@
     "objectFitPolyfill": "^2.1.1",
     "picturefill": "^3.0.3",
     "responsive-auto-height": "0.0.4",
+    "sass-mq": "^5.0.0",
     "svg4everybody": "^2.1.9",
     "sweet-scroll": "^3.0.1",
     "vue": "^2.5.17",
