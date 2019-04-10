@@ -17,7 +17,7 @@ category: Heading
 
   margin: $heading2-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $heading2-margin-md;
   }
 

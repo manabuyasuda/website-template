@@ -46,21 +46,6 @@ $global-font-family-noto-sans-zh-tw: YakuHanJPs, "Noto Sans TC", "Microsoft Jhen
   "PMingLiU" sans-serif !default;
 
 // ==========================================================================
-// Media query
-// ==========================================================================
-
-// `sm`: iPhone6幅（ポートレート・縦）
-// `md`: iPad幅（ポートレート・縦）
-// `lg`: iPad幅（ランドスケープ・横）
-// `xl`: デスクトップ想定
-$global-breakpoint-up: (
-  "sm": "print, screen and (min-width: 375px)",
-  "md": "print, screen and (min-width: 768px)",
-  "lg": "print, screen and (min-width: 1024px)",
-  "xl": "print, screen and (min-width: 1440px)",
-) !default;
-
-// ==========================================================================
 // Layout
 // ==========================================================================
 

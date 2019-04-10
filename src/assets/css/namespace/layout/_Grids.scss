@@ -19,7 +19,7 @@ category: Layout
 - `.l-Grids-col2`のように1/2から1/5までの均等なカラム指定。
 - `.l-Grids-col8to4`のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。
 - `.l-Grids-middle`のようにカラムの垂直位置を上・中央・下揃え。
-- `.l-Grids-col2Md`のように`Sm`、`Md`、`Lg`、`Xl`を追加してブレイクポイント（`$global-breakpoint-up`の`key`）の指定。カラム指定と垂直位置の指定に追加できます。
+- `.l-Grids-col2Md`のように`Sm`、`Md`、`Lg`、`Xl`を追加してブレイクポイント（`$mq-breakpoints`の`key`）の指定。カラム指定と垂直位置の指定に追加できます。
 
 ### 均等なカラム指定。
 
@@ -152,8 +152,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
   list-style-type: none;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grids {
       margin-top: rem(map-get($l-grids-row-gap, $name));
       margin-left: rem(map-get($l-grids-column-gap, $name) * -1);
@@ -183,8 +183,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
   }
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grids_Item {
       padding-left: rem(map-get($l-grids-column-gap, $name));
     }
@@ -224,8 +224,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
  */
 @include equal-column();
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     @include equal-column($name);
   }
 }
@@ -271,8 +271,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
  */
 @include two-column();
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     @include two-column($name);
   }
 }
@@ -284,8 +284,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
   align-items: flex-start;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grids-top#{uppercase-first-letter($name)} {
       align-items: flex-start;
     }
@@ -299,8 +299,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
   align-items: center;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grids-middle#{uppercase-first-letter($name)} {
       align-items: center;
     }
@@ -314,8 +314,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
   align-items: flex-end;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grids-bottom#{uppercase-first-letter($name)} {
       align-items: flex-end;
     }
@@ -330,8 +330,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
   flex-direction: row-reverse;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grids-reverse#{uppercase-first-letter($name)} {
       flex-direction: row-reverse;
     }
@@ -346,8 +346,8 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
   flex-direction: row;
 }
 
-@each $name, $breakpoint in $global-breakpoint-up {
-  @media #{$breakpoint} {
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (#{$breakpoint}) {
     .l-Grids-row#{uppercase-first-letter($name)} {
       flex-direction: row;
     }

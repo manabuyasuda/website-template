@@ -62,13 +62,13 @@ A11yに対応したダイアログ（モーダル）です。
   border: none;
   background-color: transparent;
 
-  @include mq-up(md) {
+  @include mq(md) {
     width: 80%;
     height: 30%;
     max-height: rem(400);
   }
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     height: 40%;
   }
 
@@ -117,7 +117,7 @@ A11yに対応したダイアログ（モーダル）です。
   top: rem(8);
   right: rem(8);
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     right: rem(18);
   }
 }
@@ -128,7 +128,7 @@ A11yに対応したダイアログ（モーダル）です。
   margin-top: rem(40);
   padding: 0 rem(50) rem(40);
 
-  @include mq-up(md) {
+  @include mq(md) {
     padding: rem(40);
   }
 }

@@ -49,7 +49,7 @@ $lnquiry-inline-row-gap-md: rem(10);
   padding-left: 0;
   list-style-type: none;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin-top: -$lnquiry-inline-row-gap-md !important;
   }
 }
@@ -60,7 +60,7 @@ $lnquiry-inline-row-gap-md: rem(10);
   margin-right: $lnquiry-inline-column-gap;
   padding-top: $lnquiry-inline-row-gap;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin-right: $lnquiry-inline-column-gap-md;
     padding-top: $lnquiry-inline-row-gap-md;
   }

@@ -84,7 +84,7 @@ category: [Button, Link, Form]
   font-size: 1em;
   fill: currentColor;
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     right: rem(12);
   }
 }

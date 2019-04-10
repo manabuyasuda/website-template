@@ -25,7 +25,7 @@ h3相当の見出しをラップするセクションの余白を指定します
 .l-Section3 {
   margin: $section3-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $section3-margin-md;
   }
 
@@ -65,7 +65,7 @@ category: Layout
 .l-Section3-divider {
   margin: $section3-divider-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $section3-divider-margin-md;
   }
 
@@ -77,7 +77,7 @@ category: Layout
     padding: $section3-divider-margin;
     border-top: rem(1) solid #e3e3e3;
 
-    @include mq-up(md) {
+    @include mq(md) {
       padding: $section3-divider-margin-md;
     }
   }
@@ -85,7 +85,7 @@ category: Layout
   .st-Heading2 + &::before {
     display: none;
 
-    @include mq-up(md) {
+    @include mq(md) {
       display: none;
     }
   }

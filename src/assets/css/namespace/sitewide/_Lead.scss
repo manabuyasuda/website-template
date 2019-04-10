@@ -20,7 +20,7 @@ category: Text
   font-size: rem(18);
   font-weight: 700;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $lead-margin-md;
   }
 

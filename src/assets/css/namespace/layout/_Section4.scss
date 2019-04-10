@@ -37,7 +37,7 @@ h4相当の見出しをラップするセクションの余白を指定します
 .l-Section4 {
   margin: $section4-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $section4-margin-md;
   }
 

@@ -38,7 +38,7 @@ h2相当の見出しをラップするセクションの余白を指定します
 .l-Section2 {
   margin: $section2-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $section2-margin-md;
   }
 
@@ -91,7 +91,7 @@ category: Layout
 .l-Section2-divider {
   margin: $section2-divider-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $section2-divider-margin-md;
   }
 
@@ -103,7 +103,7 @@ category: Layout
     padding: $section2-divider-margin;
     border-top: em(1) solid #e3e3e3;
 
-    @include mq-up(md) {
+    @include mq(md) {
       padding-top: $section2-divider-margin-md;
     }
   }
@@ -149,7 +149,7 @@ category: Layout
 .l-Section2-dividerFull {
   margin: $section2-divider-margin;
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $section2-divider-margin-md;
   }
 
@@ -162,7 +162,7 @@ category: Layout
     padding: $section2-divider-margin;
     border-top: rem(1) solid #e3e3e3;
 
-    @include mq-up(md) {
+    @include mq(md) {
       padding: $section2-divider-margin-md;
     }
   }

@@ -23,7 +23,7 @@ category: Layout
 .l-Container {
   padding: $conitaner-padding;
 
-  @include mq-up(md) {
+  @include mq(md) {
     padding: $conitaner-padding-md;
   }
 

@@ -30,7 +30,7 @@ category: Block
 .test-Block_Left {
   margin-bottom: 1em;
 
-  @include mq-up(lg) {
+  @include mq(lg) {
     float: left;
     margin-right: 1em;
     margin-bottom: 0;

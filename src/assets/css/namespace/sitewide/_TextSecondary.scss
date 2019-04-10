@@ -17,7 +17,7 @@ category: Text
   margin: $small-text-margin;
   font-size: rem(13);
 
-  @include mq-up(md) {
+  @include mq(md) {
     margin: $small-text-margin-md;
   }
 }
