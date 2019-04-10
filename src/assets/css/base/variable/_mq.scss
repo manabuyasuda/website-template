@@ -1,0 +1,39 @@
+/// Base font size on the `<body>` element
+/// @type Number (unit)
+$mq-base-font-size: 16px !default;
+
+/// Customize the media type (for example: `@media screen` or `@media print`)
+/// By default sass-mq uses an "all" media type (`@media all and …`)
+///
+/// @type String
+/// @link https://github.com/sass-mq/sass-mq#changing-media-type Full documentation and examples
+$mq-media-type: print, screen !default;
+
+// To enable support for browsers that do not support @media queries,
+// (IE <= 8, Firefox <= 3, Opera <= 9) set $mq-responsive to false
+// Create a separate stylesheet served exclusively to these browsers,
+// meaning @media queries will be rasterized, relying on the cascade itself
+$mq-responsive: true;
+
+// Name your breakpoints in a way that creates a ubiquitous language
+// across team members. It will improve communication between
+// stakeholders, designers, developers, and testers.
+$mq-breakpoints: (
+  sm: 375px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px,
+);
+
+// Define the breakpoint from the $mq-breakpoints list that should
+// be used as the target width when outputting a static stylesheet
+// (when $mq-responsive is set to 'false').
+$mq-static-breakpoint: md;
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width. For example: (mobile, tablet, desktop).
+// $mq-show-breakpoints: (sm, md, lg, xl);
+
+// If _mq.scss is in your project:
+@import "../../../../../node_modules/sass-mq/_mq.scss";
