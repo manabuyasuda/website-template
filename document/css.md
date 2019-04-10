@@ -87,14 +87,38 @@ css/
 Sassには変数や、便利なmixinをいくつか用意しています。
 
 ### メディアクエリ
-`base/mixin/_mq-up.scss`にはメディアクエリを一括管理するmixinが用意されています。
+メディアクエリのmixinは[Sass MQ](https://github.com/sass-mq/sass-mq)を使用しています。
 
-例えば引数にブレイクポイントのキーワードを渡すと、
+以下のように指定します。
 
 ```scss
-.foo {
-  @include mq-up(md) {
-    display: block;
+.min-width {
+  @include mq(md) {
+    content: "@media (min-width:48em)";
+  }
+}
+
+.max-width {
+  @include mq($until: md) {
+    content: "@media (max-width:47.99em)";
+  }
+}
+
+.min-and-max-width {
+  @include mq(md, lg) {
+    content: "@media (min-width:48em) and (max-width:63.99em)";
+  }
+}
+
+.print {
+  @include mq($media-type: "print") {
+    content: "@media print";
+  }
+}
+
+.screen-and-high-contrast-and-print {
+  @include mq($media-type: "screen and (-ms-high-contrast: active), print") {
+    content: "@media screen and (-ms-high-contrast:active), print";
   }
 }
 ```
@@ -102,20 +126,46 @@ Sassには変数や、便利なmixinをいくつか用意しています。
 メディアクエリが出力されます。
 
 ```scss
-@media print, screen and (min-width: 768px) {
-  .foo {
-    display: block;
+@media (min-width: 48em) {
+  .min-width {
+    content: "@media (min-width:48em)"
+  }
+}
+
+@media (max-width:47.99em) {
+  .max-width {
+    content: "@media (max-width:47.99em)"
+  }
+}
+
+@media (min-width:48em) and (max-width:63.99em) {
+  .min-and-max-width {
+    content: "@media (min-width:48em) and (max-width:63.99em)"
+  }
+}
+
+@media print {
+  .print {
+    content: "@media print"
+  }
+}
+
+@media screen and (-ms-high-contrast:active), print {
+  .screen-and-high-contrast-and-print {
+    content: "@media screen and (-ms-high-contrast:active), print"
   }
 }
 ```
 
-ブレイクポイントは`base/variable/_global.scss`で定義しています。
+ブレイクポイントは`base/variable/_mq.scss`で定義しています。
 
 ```scss
-$breakpoint-up: (
-  'sm': 'print, screen and (min-width: 375px)',
-  'md': 'print, screen and (min-width: 768px)',
-  'lg': 'print, screen and (min-width: 1024px)',
-  'xl': 'print, screen and (min-width: 1440px)',
-) !default;
+$mq-breakpoints: (
+  sm: 375px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px,
+);
 ```
+
+詳しくは[Sass MQ](https://sass-mq.github.io/sass-mq/)を参照してください。
