@@ -60,7 +60,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid {
       margin-left: rem(map-get($l-grid-column-gap, $name) * -1);
     }
@@ -82,7 +82,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid_Item {
       padding-left: rem(map-get($l-grid-column-gap, $name));
     }
@@ -107,7 +107,7 @@ $l-grid-column-gap: (
 @include column();
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     @include column($name);
   }
 }
@@ -120,7 +120,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid-top#{uppercase-first-letter($name)} {
       align-items: flex-start;
     }
@@ -135,7 +135,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid-middle#{uppercase-first-letter($name)} {
       align-items: center;
     }
@@ -150,7 +150,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid-bottom#{uppercase-first-letter($name)} {
       align-items: flex-end;
     }
@@ -165,7 +165,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid-center#{uppercase-first-letter($name)} {
       justify-content: center;
     }
@@ -180,7 +180,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid-right#{uppercase-first-letter($name)} {
       justify-content: flex-end;
     }
@@ -196,7 +196,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid-reverse#{uppercase-first-letter($name)} {
       flex-direction: row-reverse;
     }
@@ -212,7 +212,7 @@ $l-grid-column-gap: (
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media (#{$breakpoint}) {
+  @media print, screen and (min-width: em($breakpoint)) {
     .l-Grid-row#{uppercase-first-letter($name)} {
       flex-direction: row;
     }
