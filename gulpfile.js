@@ -280,7 +280,7 @@ gulp.task('image', () =>
         }),
         imageminPngquant({
           // 画質
-          quality: '70-80',
+          quality: [0.7, 0.8],
         }),
         imagemin.svgo({
           plugins: [
