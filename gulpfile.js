@@ -346,7 +346,7 @@ gulp.task('svgSprite', () =>
         },
         svg: {
           // xml宣言を出力する。
-          xmlDeclaration: true,
+          xmlDeclaration: false,
           // DOCTYPE宣言を出力する。
           doctypeDeclaration: false,
         },
