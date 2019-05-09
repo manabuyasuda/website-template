@@ -1,5 +1,6 @@
 import './polyfill';
 import 'what-input';
+import 'inobounce';
 
 import vueTest from './vueTest';
 import jsAlignHeight from './namespace/js/jsAlignHeight';
