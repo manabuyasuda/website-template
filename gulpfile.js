@@ -8,6 +8,7 @@ const path = require('path');
 
 // HTML
 const htmlhint = require('gulp-htmlhint');
+const w3cjs = require('gulp-w3cjs');
 const ssi = require('browsersync-ssi');
 
 // CSS
@@ -139,11 +140,20 @@ gulp.task('html', () => {
 /**
  * 公開用のHTMLファイルを解析して警告やエラーを通知します。
  */
-gulp.task('htmlhint', () =>
+// 範囲を限定する場合は`products/`などと指定します。
+const validateDir = '';
+gulp.task('htmlValidate', () =>
   gulp
-    .src([`${dest.root}**/*.html`, `!${dest.root}styleguide/**/*.html`])
+    .src([`${dest.root}${validateDir}**/*.html`, `!${dest.root}styleguide/**/*.html`])
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(htmlhint('.htmlhintrc'))
     .pipe(htmlhint.reporter('htmlhint-stylish'))
+    .pipe(
+      w3cjs({
+        // Warningも表示する
+        // showInfo: true,
+      }),
+    )
     .pipe(
       htmlhint.failOnError({
         suppress: true,
@@ -190,24 +200,34 @@ gulp.task('css', () => {
       )
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
       .pipe(postcss(plugins))
-      .pipe(gulpif(isDevelopment, cleanCSS({
-        // 圧縮せずに整形して出力する
-        format: 'beautify',
-        compatibility: {
-          properties: {
-            // 0の単位を不必要な場合は削除する
-            zeroUnits: false
-          }
-        }
-      })))
-      .pipe(gulpif(isProduction, cleanCSS({
-        compatibility: {
-          properties: {
-            // 0の単位を不必要な場合は削除する
-            zeroUnits: false
-          }
-        }
-      })))
+      .pipe(
+        gulpif(
+          isDevelopment,
+          cleanCSS({
+            // 圧縮せずに整形して出力する
+            format: 'beautify',
+            compatibility: {
+              properties: {
+                // 0の単位を不必要な場合は削除する
+                zeroUnits: false,
+              },
+            },
+          }),
+        ),
+      )
+      .pipe(
+        gulpif(
+          isProduction,
+          cleanCSS({
+            compatibility: {
+              properties: {
+                // 0の単位を不必要な場合は削除する
+                zeroUnits: false,
+              },
+            },
+          }),
+        ),
+      )
       .pipe(gulpif(isDevelopment, sourcemaps.write()))
       .pipe(gulp.dest(dest.root))
       .pipe(browserSync.reload({ stream: true }))
@@ -396,9 +416,7 @@ gulp.task('browser-sync', () => {
 /**
  * 公開用のディレクトリを削除します。
  */
-gulp.task('clean:dest', done => {
-  return del(dest.cleanDest, done);
-});
+gulp.task('clean:dest', done => del(dest.cleanDest, done));
 
 /**
  * 一連のタスクを処理します。
