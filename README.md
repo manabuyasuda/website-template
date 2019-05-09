@@ -131,10 +131,10 @@ HTMLとCSSとJSの整形とリントをまとめて実行します。
 npm run lint
 ```
 
-[HTMLHint](https://github.com/htmlhint/HTMLHint)でHTMLのリントを実行します。
+[HTMLHint](https://github.com/htmlhint/HTMLHint)と[gulp-w3cjs](https://github.com/callumacrae/gulp-w3cjs)でHTMLのリントとW3Cのバリデーションを実行します。
 
 ```bash
-npm run htmlhint
+npm run htmlValidate
 ```
 
 [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)を元にSassのリントを実行します。
