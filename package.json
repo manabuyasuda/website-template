@@ -10,7 +10,7 @@
     "htmlValidate": "APP_ENV=development gulp htmlValidate",
     "stylelint": "APP_ENV=development gulp stylelint",
     "eslint": "eslint --fix src/**/*.js",
-    "lint": "npm run htmlhint && npm run stylelint && npm run eslint"
+    "lint": "npm run htmlValidate && npm run stylelint && npm run eslint"
   },
   "keywords": [
     "gulp",
