@@ -68,6 +68,8 @@ $l-grid-column-gap: (
 }
 
 .l-Grid_Item {
+  -js-display: flex;
+  display: flex;
   flex-basis: 100%;
   max-width: 100%;
   padding-left: rem(map-get($l-grid-column-gap, initial));
