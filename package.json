@@ -4,8 +4,8 @@
   "description": "静的Webサイト制作を少しモダンにするためのテンプレート",
   "main": "index.js",
   "scripts": {
-    "prod": "webpack --mode=production",
-    "dev": "webpack --mode=development",
+    "prod": "webpack --watch --mode=production",
+    "dev": "webpack --watch --mode=development",
     "start": "APP_ENV=development gulp",
     "test": "npm run lint && APP_ENV=production gulp",
     "release": "npm run lint && APP_ENV=production gulp build",
