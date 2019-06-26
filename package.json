@@ -4,6 +4,8 @@
   "description": "静的Webサイト制作を少しモダンにするためのテンプレート",
   "main": "index.js",
   "scripts": {
+    "prod": "webpack --watch --mode=production",
+    "dev": "webpack --watch --mode=development",
     "start": "APP_ENV=development gulp",
     "test": "npm run lint && APP_ENV=production gulp",
     "release": "npm run lint && APP_ENV=production gulp build",
@@ -44,6 +46,7 @@
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.3",
     "browsersync-ssi": "^0.2.4",
+    "clean-webpack-plugin": "^3.0.0",
     "del": "^4.0.0",
     "envify": "^4.1.0",
     "eslint": "^5.15.3",
@@ -85,7 +88,9 @@
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "vueify": "^9.4.1",
-    "watchify": "^3.11.1"
+    "watchify": "^3.11.1",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
