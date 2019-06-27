@@ -246,6 +246,14 @@ gulp.task('js', () => {
       entry: {
         site: src.js,
       },
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            loader: 'babel-loader',
+          },
+        ]
+      },
       output: {
         filename: `${dest.js}[name].js`,
       },
