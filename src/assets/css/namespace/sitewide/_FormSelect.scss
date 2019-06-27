@@ -27,7 +27,7 @@ category: Form
   label.sw-FormLabel(for="prefecture2")
     | 都道府県
     em.sw-FormLabel_RequireA （必須）
-  .sw-FormSelect.sw-FormSelect-error
+  .sw-FormSelect.-error
     select(name="prefecture2")
       option(value="0") 選択してください
       option(value="1") 北海道

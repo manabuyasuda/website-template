@@ -43,16 +43,16 @@
   }
 
   &:disabled,
-  &-disabled,
+  &.-disabled,
   &:disabled:hover,
-  &-disabled:hover {
+  &.-disabled:hover {
     border-color: $form-background-color-disabled !important;
     background-color: $form-background-color-disabled !important;
     opacity: $form-opacity-disabled !important;
     cursor: $form-cursor-disabled !important;
   }
 
-  &-disabled {
+  &.-disabled {
     pointer-events: none;
   }
 }

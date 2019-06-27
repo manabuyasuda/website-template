@@ -31,23 +31,23 @@ category: Layout
 
 /*
 ---
-name: l-Block-divider
+name: l-Block.-divider
 namespace: l-
 category: Layout
 ---
 
-`.l-Block-divider`を追加すると間にボーダーが入ります。
+`.-divider`を追加すると間にボーダーが入ります。
 
 ```jade
 .l-Wrapper
-  .l-Block.l-Block-divider
+  .l-Block.-divider
     .test-Block
       .test-Block_Left
         img(src="https://placehold.jp/300x200.png" alt)
       .test-Block_Right
         h3 ダミーの見出しです
         p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-  .l-Block.l-Block-divider
+  .l-Block.-divider
     .test-Block
       .test-Block_Left
         img(src="https://placehold.jp/300x200.png" alt)
@@ -57,7 +57,7 @@ category: Layout
 ```
 */
 
-.l-Block-divider {
+.l-Block.-divider {
   margin: $block-divider-margin;
 
   @include mq(md) {

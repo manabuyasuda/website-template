@@ -22,7 +22,7 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
   .sw-Video
     .sw-Video_Video.
       <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
-    p.sw-Video_Text.sw-Video_Text-center 動画にキャプション（短い説明文）をつけます。
+    p.sw-Video_Text.-center 動画にキャプション（短い説明文）をつけます。
 ```
 
 キャプションを右揃えにします。
@@ -32,7 +32,7 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
   .sw-Video
     .sw-Video_Video.
       <iframe width="560" height="315" src="https://www.youtube.com/embed/1OKZOV-iLj4"></iframe>
-    p.sw-Video_Text.sw-Video_Text-right 動画にキャプション（短い説明文）をつけます。
+    p.sw-Video_Text.-right 動画にキャプション（短い説明文）をつけます。
 ```
 */
 .sw-Video {
@@ -68,10 +68,10 @@ Youtubeなどの動画をレスポンシブ対応させます。デフォルト�
   line-height: 1.4;
 }
 
-.sw-Video_Text-center {
+.sw-Video_Text.-center {
   text-align: center;
 }
 
-.sw-Video_Text-right {
+.sw-Video_Text.-right {
   text-align: right;
 }

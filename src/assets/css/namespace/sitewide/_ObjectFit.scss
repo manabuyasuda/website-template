@@ -15,25 +15,25 @@ category: Image
 
 | クラス名                      | X軸      | Y軸      |
 |------------------------------ |-------- |-------- |
-| `.sw-ObjectFit-leftTop`       | left    | top     |
-| `.sw-ObjectFit-centerTop`     | center  | top     |
-| `.sw-ObjectFit-rightTop`      | right   | top     |
-| `.sw-ObjectFit-leftCenter`    | left    | center  |
-| `.sw-ObjectFit-centerCenter`  | center  | center  |
-| `.sw-ObjectFit-rightCenter`   | right   | center  |
-| `.sw-ObjectFit-leftBottom`    | left    | bottom  |
-| `.sw-ObjectFit-centerBottom`  | center  | bottom  |
-| `.sw-ObjectFit-rightBottom`   | right   | bottom  |
+| `.-leftTop`       | left    | top     |
+| `.-centerTop`     | center  | top     |
+| `.-rightTop`      | right   | top     |
+| `.-leftCenter`    | left    | center  |
+| `.-centerCenter`  | center  | center  |
+| `.-rightCenter`   | right   | center  |
+| `.-leftBottom`    | left    | bottom  |
+| `.-centerBottom`  | center  | bottom  |
+| `.-rightBottom`   | right   | bottom  |
 
 ```jade
-.l-Grids.l-Grids-col2
-  .l-Grids_Item(style="height: 200px;")
+.l-Flex
+  .l-Flex_Item(class="-1/2" style="height: 200px;")
     img.sw-ObjectFit(src="https://unsplash.it/800/600/" alt data-object-fit="cover")
-  .l-Grids_Item(style="height: 200px;")
+  .l-Flex_Item(class="-1/2" style="height: 200px;")
     img.sw-ObjectFit(src="https://unsplash.it/400/600/" alt data-object-fit="contain")
-  .l-Grids_Item(style="height: 200px;")
-    img.sw-ObjectFit.sw-ObjectFit-centerTop(src="https://unsplash.it/600/400/" alt data-object-fit="none" data-object-position="center top")
-  .l-Grids_Item(style="height: 200px;")
+  .l-Flex_Item(class="-1/2" style="height: 200px;")
+    img.sw-ObjectFit.-centerTop(src="https://unsplash.it/600/400/" alt data-object-fit="none" data-object-position="center top")
+  .l-Flex_Item(class="-1/2" style="height: 200px;")
     img.sw-ObjectFit(src="https://unsplash.it/600/200/" alt data-object-fit="scale-down")
 ```
 */

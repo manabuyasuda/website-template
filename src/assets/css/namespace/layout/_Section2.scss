@@ -53,23 +53,23 @@ h2相当の見出しをラップするセクションの余白を指定します
 
 /*
 ---
-name: l-Section2-divider
+name: l-Section2.-divider
 namespace: l-
 category: Layout
 ---
 
-レイアウト例です。`.l-Section2-divider`を追加すると`.l-Section2`同士の間にボーダーがつきます。
+レイアウト例です。`.-divider`を追加すると`.l-Section2`同士の間にボーダーがつきます。
 
 ```jade
 .l-Wrapper
   p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
 
-  section.l-Section2.l-Section2-divider
+  section.l-Section2.-divider
     h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
     p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
     p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
 
-  section.l-Section2.l-Section2-divider
+  section.l-Section2.-divider
     h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
     .l-Block
       .test-Block
@@ -88,7 +88,7 @@ category: Layout
     p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
 */
-.l-Section2-divider {
+.l-Section2.-divider {
   margin: $section2-divider-margin;
 
   @include mq(md) {
@@ -111,23 +111,23 @@ category: Layout
 
 /*
 ---
-name: l-Section2-dividerFull
+name: l-Section2.-dividerFull
 namespace: l-
 category: Layout
 ---
 
-レイアウト例です。`.l-Section2-dividerFull`を追加すると`.l-Section2`同士の間にボーダーがつきます。ボーダーの横幅は画面に対して常に100%（`100vw`）になります。
+レイアウト例です。`.-dividerFull`を追加すると`.l-Section2`同士の間にボーダーがつきます。ボーダーの横幅は画面に対して常に100%（`100vw`）になります。
 
 ```jade
 .l-Wrapper
   p.sw-Text 吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
 
-  section.l-Section2.l-Section2-dividerFull
+  section.l-Section2.-dividerFull
     h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
     p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
     p.sw-Text しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。
 
-  section.l-Section2.l-Section2-dividerFull
+  section.l-Section2.-dividerFull
     h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
     .l-Block
       .test-Block
@@ -146,7 +146,7 @@ category: Layout
     p.sw-Text その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。
 ```
 */
-.l-Section2-dividerFull {
+.l-Section2.-dividerFull {
   margin: $section2-divider-margin;
 
   @include mq(md) {
