@@ -39,15 +39,15 @@ category: Layout
 
 /*
 ---
-name: l-ContainerBg-delimiter
+name: l-ContainerBg.-delimiter
 namespace: l-
 category: Layout
 ---
 
-`l-ContainerBg-delimiter`を追加するとボーダーがつきます。
+`.-delimiter`を追加するとボーダーがつきます。
 
 ```jade
-.l-ContainerBg.l-ContainerBg-delimiter
+.l-ContainerBg.-delimiter
   .l-Wrapper
     section.l-Section2
       h2.sw-Heading2 吾輩はここで始めて人間というものを見た。
@@ -57,6 +57,6 @@ category: Layout
       p.sw-Text しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 ```
 */
-.l-ContainerBg-delimiter {
+.l-ContainerBg.-delimiter {
   border-top: rem(1) solid #e8e8e8;
 }

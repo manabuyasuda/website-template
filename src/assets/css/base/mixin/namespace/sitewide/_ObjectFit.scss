@@ -26,39 +26,39 @@
   }
 
   // left || center || right && top
-  &-leftTop {
+  &.-leftTop {
     object-position: left top;
   }
 
-  &-centerTop {
+  &.-centerTop {
     object-position: center top;
   }
 
-  &-rightTop {
+  &.-rightTop {
     object-position: right top;
   }
   // left || center || right && center
-  &-leftCenter {
+  &.-leftCenter {
     object-position: left center;
   }
 
-  &-centerCenter {
+  &.-centerCenter {
     object-position: center center;
   }
 
-  &-rightCenter {
+  &.-rightCenter {
     object-position: right center;
   }
   // left || center || right && bottom
-  &-leftBottom {
+  &.-leftBottom {
     object-position: left bottom;
   }
 
-  &-centerBottom {
+  &.-centerBottom {
     object-position: center bottom;
   }
 
-  &-rightBottom {
+  &.-rightBottom {
     object-position: right bottom;
   }
 }

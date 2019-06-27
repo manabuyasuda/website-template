@@ -52,7 +52,7 @@
     }
   }
 
-  &-error + label > svg {
+  &.-error + label > svg {
     background-color: #ffecec;
     fill: #ffecec;
   }

@@ -31,7 +31,7 @@ category: Form
   label.sw-FormLabel(for="input7")
     | 名前
     em.sw-FormLabel_RequireA （必須）
-  input.sw-FormInput.sw-FormInput-error(id="input7" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+  input.sw-FormInput.-error(id="input7" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
   p.sw-FormHelp
     strong 名前を入力してください
 ```

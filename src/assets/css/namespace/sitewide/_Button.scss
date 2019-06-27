@@ -10,27 +10,27 @@ category: [Button, Link, Form]
 ```jade
 .l-Wrapper
   a.sw-Button(href="#") aタグボタン
-  a.sw-Button.sw-Button-disabled(href="#" tabindex="-1") aタグボタン
+  a.sw-Button.-disabled(href="#" tabindex="-1") aタグボタン
   button.sw-Button#foo(type="button") buttonタグボタン
   button.sw-Button(disabled type="button") buttonタグボタン
   input.sw-Button(type="button" value="inputボタン")
   input.sw-Button(type="button" value="inputボタン" disabled)
 ```
 
-`.sw-Button-full`を追加すると横幅100%になります。
+`.-full`を追加すると横幅100%になります。
 
 ```jade
 .l-Wrapper
   a.sw-Button(href="#") デフォルト
-  a.sw-Button.sw-Button-full(href="#") 横幅100%
+  a.sw-Button.-full(href="#") 横幅100%
 ```
 
-`.sw-Button-auto`を追加すると横幅はなりゆきになります。
+`.-auto`を追加すると横幅はなりゆきになります。
 
 ```jade
 .l-Wrapper
   a.sw-Button(href="#") デフォルト
-  a.sw-Button.sw-Button-auto(href="#") 横幅なりゆき
+  a.sw-Button.-auto(href="#") 横幅なりゆき
 ```
 
 `.sw-Button_More`を追加すると矢印が付きます。
@@ -62,12 +62,12 @@ category: [Button, Link, Form]
   }
 }
 
-.sw-Button-full {
+.sw-Button.-full {
   width: 100%;
   max-width: none;
 }
 
-.sw-Button-auto {
+.sw-Button.-auto {
   width: auto;
 }
 

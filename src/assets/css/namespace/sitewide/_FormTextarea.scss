@@ -18,7 +18,7 @@ category: Form
 ```jade
 .l-Wrapper
   label.sw-FormLabel(for="textarea2") お問い合わせ内容
-  textarea.sw-FormTextarea.sw-FormTextarea-large(id="textarea2" name="textarea2" placeholder="例）お問い合わせ内容")
+  textarea.sw-FormTextarea.-large(id="textarea2" name="textarea2" placeholder="例）お問い合わせ内容")
 ```
 
 必須項目のエラー表示。
@@ -28,7 +28,7 @@ category: Form
   label.sw-FormLabel(for="textarea3")
     | お問い合わせ内容
     em.sw-FormLabel_RequireA （必須）
-  textarea.sw-FormTextarea.sw-FormTextarea-error(id="textarea3" name="textarea3" placeholder="例）お問い合わせ内容")
+  textarea.sw-FormTextarea.-error(id="textarea3" name="textarea3" placeholder="例）お問い合わせ内容")
   p.sw-FormHelp
     strong お問い合わせ内容を入力してください
 ```
@@ -45,6 +45,6 @@ category: Form
   @include sw-FormTextarea();
 }
 
-.sw-FormTextarea-large {
+.sw-FormTextarea.-large {
   height: rem(224);
 }

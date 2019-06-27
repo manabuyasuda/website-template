@@ -1,123 +1,93 @@
 /*
 ---
-name: l-Grids
+name: l-Flex
 namespace: l-
 category: Layout
 ---
 
-バリエーションの豊富なグリッドシステムです。親要素（`.l-Grids`）にクラスを追加することで、1/2や1/3のような均等なカラムや、8/12と4/12のようなカラムの指定ができます。
-
-余白とカラム数は4つの変数で変更できます。
-
-- `$l-grids-column-gap` カラムの左右の余白（ガター）を指定します。
-- `$l-grids-row-gap` カラムの上下の余白を指定します。
-- `$l-grids-equal-column` 6/12と6/12のような均等なカラムを生成します。
-- `$l-grids-two-column` 8/12と4/12のような均等ではない2カラムにします。
+標準的なグリッドシステムです。カラムごとに任意の値を指定したい場合に使います。
+カラム間の余白は横を`$flex-column-gap`、縦を`$flex-row-gap`で統一しています。
 
 以下のような指定ができます。
 
-- `.l-Grids-col2`のように1/2から1/5までの均等なカラム指定。
-- `.l-Grids-col8to4`のように1/12と11/12から5/12と7/12、7/12と5/12から11/12と1/12までの合計10パターンのカラム指定。
-- `.l-Grids-middle`のようにカラムの垂直位置を上・中央・下揃え。
-- `.l-Grids-col2Md`のように`Sm`、`Md`、`Lg`、`Xl`を追加してブレイクポイント（`$mq-breakpoints`の`key`）の指定。カラム指定と垂直位置の指定に追加できます。
+- カラム数の指定（デフォルトは`-12/12`）。
+  - `.l-Flex_Item.-8/12`
+  - `.l-Flex_Item.-4/12`
+- 均等なカラム数の指定（分母は`$flex-equal-column`で定義、100%から始める場合は`-1/1`は必須）
+  - `.l-Flex_Item.-1/2`
+  - `.l-Flex_Item.-1/2`
+- カラムの反転（デフォルトは`.-row`）。
+  - `.l-Flex.-reverse`
+- カラムを戻す。
+  - `.l-Flex.-row`
+- カラムの順番を個別に指定（`order`の数値は`$flex-order`で定義）。
+  - `.l-Flex.-order1`
+  - `.l-Flex.-order2`
+- カラムの水平方向の揃え（デフォルトは`.-left`）。
+  - `.l-Flex.-left`
+  - `.l-Flex.-center`
+  - `.l-Flex.-right`
+- カラムの垂直方向の揃え（デフォルトは`.-top`）。
+  - `.l-Flex.-top`
+  - `.l-Flex.-middle`
+  - `.l-Flex.-bottom`
+- ブレイクポイントの追加（上記の各指定で併用可能 `.l-Flex_Item.-8/12@md`など）。
+  - `@sm`
+  - `@md`
+  - `@lg`
+  - `@xl`
 
-### 均等なカラム指定。
+## `md`以降で2カラム
 
 ```jade
 .l-Wrapper
-  .l-Grids.l-Grids-col2Md
-    .l-Grids_Item
-      .test-Box One<br>1/1 → 1/2
-    .l-Grids_Item
-      .test-Box Two<br>1/1 → 1/2
-    .l-Grids_Item
-      .test-Box Three<br>1/1 → 1/2
-    .l-Grids_Item
-      .test-Box Four<br>1/1 → 1/2
-
-  .l-Grids.l-Grids-col2.l-Grids-col3Md
-    .l-Grids_Item
-      .test-Box One<br>1/2 → 1/3
-    .l-Grids_Item
-      .test-Box Two<br>1/2 → 1/3
-    .l-Grids_Item
-      .test-Box Three<br>1/2 → 1/3
-    .l-Grids_Item
-      .test-Box Four<br>1/2 → 1/3
+  .l-Flex
+    .l-Flex_Item(class="-8/12@md") -8/12@md
+    .l-Flex_Item(class="-4/12@md") -4/12@md
 ```
 
-### 8/12と4/12と4/12と8/12のカラム指定。
+## `md`以降で2カラムを反転
 
 ```jade
 .l-Wrapper
-  .l-Grids.l-Grids-col8to4Md
-    .l-Grids_Item
-      .test-Box One<br>1/1 → 8/12
-    .l-Grids_Item
-      .test-Box Two<br>1/1 → 4/12
-    .l-Grids_Item
-      .test-Box Three<br>1/1 → 8/12
-    .l-Grids_Item
-      .test-Box Four<br>1/1 → 4/12
-
-  .l-Grids.l-Grids-col4to8Md
-    .l-Grids_Item
-      .test-Box One <br>1/1 → 4/12
-    .l-Grids_Item
-      .test-Box Two<br>1/1 → 8/12
-    .l-Grids_Item
-      .test-Box Three <br>1/1 → 4/12
-    .l-Grids_Item
-      .test-Box Four<br>1/1 → 8/12
+  .l-Flex(class="-reverse@md")
+    .l-Flex_Item(class="-8/12@md") -8/12@md
+    .l-Flex_Item(class="-4/12@md") -4/12@md
 ```
 
-### 8/12と4/12のカラム指定かつ、`md`以上で要素を反転。
+## `md`以降で2カラムの表示順を個別に指定
 
 ```jade
 .l-Wrapper
-  .l-Grids.l-Grids-col8to4Md.l-Grids-reverseMd
-    .l-Grids_Item
-      .test-Box One<br>1/1 → 8/12
-    .l-Grids_Item
-      .test-Box Two<br>1/1 → 4/12
+  .l-Flex
+    .l-Flex_Item(class="-8/12@md -order2@md") -8/12@md -order2@md
+    .l-Flex_Item(class="-4/12@md -order1@md") -4/12@md -order1@md
 ```
 
-### カラムの垂直位置を上揃え。
+## `md`以降で1カラムの中央配置
 
 ```jade
 .l-Wrapper
-  .l-Grids.l-Grids-topMd.l-Grids-col2Md
-    .l-Grids_Item
-      .test-Box One<br>1/1 → 6/12<br>.l-Grids-top<br>.l-Grids-middle
-    .l-Grids_Item
-      .test-Box Two<br>1/1 → 6/12
+  .l-Flex(class="-center@md")
+    .l-Flex_Item(class="-8/12@md") -8/12@md
 ```
 
-### カラムの垂直位置を中央揃え。
+## 1カラム、2カラム、3カラム
 
 ```jade
 .l-Wrapper
-  .l-Grids.l-Grids-middleMd.l-Grids-col2Md
-    .l-Grids_Item
-      .test-Box One<br>1/1 → 6/12<br>.l-Grids-middle<br>.l-Grids-middle
-    .l-Grids_Item
-      .test-Box Two<br>1/1 → 6/12
-```
-
-### カラムの垂直位置を下揃え。
-
-```jade
-.l-Wrapper
-  .l-Grids.l-Grids-bottomMd.l-Grids-col2Md
-    .l-Grids_Item
-      .test-Box One<br>1/1 → 6/12<br>.l-Grids-bottom<br>.l-Grids-middle
-    .l-Grids_Item
-      .test-Box Two<br>1/1 → 6/12
+  .l-Flex
+    .l-Flex_Item(class="1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
+    .l-Flex_Item(class="1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
+    .l-Flex_Item(class="1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
+    .l-Flex_Item(class="1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
+    .l-Flex_Item(class="1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
+    .l-Flex_Item(class="1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
 ```
 */
 // カラムの左右の余白（ガター）を指定します。
 // すべて指定してください。
-$l-grids-column-gap: (
+$flex-column-gap: (
   "initial": $grid-column-gap,
   "sm": $grid-column-gap,
   "md": $grid-column-gap-md,
@@ -127,7 +97,7 @@ $l-grids-column-gap: (
 
 // カラムの上下の余白を指定します。
 // すべて指定してください。
-$l-grids-row-gap: (
+$flex-row-gap: (
   "initial": $grid-row-gap,
   "sm": $grid-row-gap,
   "md": $grid-row-gap-md,
@@ -135,38 +105,37 @@ $l-grids-row-gap: (
   "xl": $grid-row-gap-md,
 ) !default;
 
-// 6/12と6/12のような均等なカラムを生成します。
-// `2, 3`と指定すると1/2と1/3用のクラスが生成されます。
-$l-grids-equal-column: 2, 3, 4, 5 !default;
+// 均等なカラムを生成する分母を指定します。
+// `1, 2`とすると`1/1`と`1/2`が生成されます。
+$flex-equal-column: 1, 2, 3, 4, 5 !default;
 
-// 8/12と4/12のような均等ではない2カラムにします。
-$l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
+//  カラムを`order`で個別に表示順を変更します。
+// `1, 2`とすると`order: 1;`と`order: 2;`が生成されます。
+$flex-order: 1, 2, 3 !default;
 
-.l-Grids {
+.l-Flex {
   -js-display: flex;
   display: flex;
   flex-wrap: wrap;
-  margin-top: rem(map-get($l-grids-row-gap, initial));
-  margin-left: rem(map-get($l-grids-column-gap, initial) * -1);
+  margin-left: rem(map-get($flex-column-gap, initial) * -1);
   padding-left: 0;
   list-style-type: none;
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
-    .l-Grids {
-      margin-top: rem(map-get($l-grids-row-gap, $name));
-      margin-left: rem(map-get($l-grids-column-gap, $name) * -1);
+  @media (min-width: em($breakpoint)) {
+    .l-Flex {
+      margin-left: rem(map-get($flex-column-gap, $name) * -1);
     }
   }
 }
 
-.l-Grids_Item {
+.l-Flex_Item {
   -js-display: flex;
   display: flex;
   flex-basis: 100%;
   max-width: 100%;
-  padding-left: rem(map-get($l-grids-column-gap, initial));
+  padding-left: rem(map-get($flex-column-gap, initial));
 
   & > :first-child {
     margin-top: 0;
@@ -175,120 +144,93 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
   & > :last-child {
     margin-bottom: 0;
   }
-
-  &:nth-of-type(n + 1) {
-    margin-top: 0;
-  }
-
-  &:nth-of-type(n + 2) {
-    margin-top: rem(map-get($l-grids-row-gap, initial));
-  }
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
-    .l-Grids_Item {
-      padding-left: rem(map-get($l-grids-column-gap, $name));
+  @media (min-width: em($breakpoint)) {
+    .l-Flex_Item {
+      padding-left: rem(map-get($flex-column-gap, $name));
     }
+  }
+}
+
+@mixin column($key: null) {
+  $columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 !default;
+  $suffix: "";
+
+  @if $key != null {
+    $suffix: \@#{$key};
+  }
+
+  @each $column in $columns {
+    .l-Flex_Item.\-#{$column}\/12#{$suffix} {
+      flex-basis: percentage($column / 12);
+      max-width: percentage($column / 12);
+    }
+  }
+}
+
+/**
+ * 6/12と6/12のようなカラムを生成します。
+ */
+@include column();
+
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (min-width: em($breakpoint)) {
+    @include column($name);
   }
 }
 
 @mixin equal-column($key: null) {
-  $columns: $l-grids-equal-column;
-  $suffix: uppercase-first-letter(#{$key});
+  $columns: $flex-equal-column;
+  $row-gap: map-get($flex-row-gap, initial);
+  $suffix: "";
+
+  @if $key != null {
+    $row-gap: map-get($flex-row-gap, $key);
+    $suffix: \@#{$key};
+  }
 
   @each $column in $columns {
-    .l-Grids-col#{$column}#{$suffix} > .l-Grids_Item {
+    $next-column: ($column + 1);
+
+    .l-Flex_Item.\-1\/#{$column}#{$suffix} {
       flex-basis: percentage(1 / $column);
       max-width: percentage(1 / $column);
+      margin-top: rem($row-gap);
+    }
 
-      &:nth-of-type(n + 1) {
-        margin-top: 0;
-      }
+    .l-Flex_Item.\-1\/#{$column}#{$suffix}:nth-of-type(n + 1) {
+      margin-top: 0;
+    }
 
-      @if $key == null {
-        &:nth-of-type(n + #{$column + 1}) {
-          margin-top: rem(map-get($l-grids-row-gap, initial));
-        }
-      }
-
-      @if $key != null {
-        &:nth-of-type(n + #{$column + 1}) {
-          margin-top: rem(map-get($l-grids-row-gap, $key));
-        }
-      }
+    .l-Flex_Item.\-1\/#{$column}#{$suffix}:nth-of-type(n + #{$next-column}) {
+      margin-top: rem($row-gap);
     }
   }
 }
 
 /**
- * 6/12と6/12のような均等なカラムを生成します。
+ * 1/2と1/3のような均等なカラムを生成します。
  */
 @include equal-column();
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
+  @media (min-width: em($breakpoint)) {
     @include equal-column($name);
-  }
-}
-
-@mixin two-column($key: null) {
-  $columns: $l-grids-two-column;
-  $suffix: uppercase-first-letter(#{$key});
-
-  @each $column in $columns {
-    $first-column: 12 - $column;
-    $second-column: $column;
-
-    .l-Grids-col#{$first-column}to#{$second-column}#{$suffix} > .l-Grids_Item {
-      &:nth-of-type(odd) {
-        flex-basis: percentage($first-column / 12);
-        max-width: percentage($first-column / 12);
-      }
-
-      &:nth-of-type(even) {
-        flex-basis: percentage($second-column / 12);
-        max-width: percentage($second-column / 12);
-      }
-
-      &:nth-of-type(n + 1) {
-        margin-top: 0;
-      }
-
-      &:nth-of-type(n + 3) {
-        @if $key == null {
-          margin-top: rem(map-get($l-grids-row-gap, initial));
-        }
-
-        @if $key != null {
-          margin-top: rem(map-get($l-grids-row-gap, $key));
-        }
-      }
-    }
-  }
-}
-
-/**
- * 8/12と4/12のような均等ではない2カラムにします。
- */
-@include two-column();
-
-@each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
-    @include two-column($name);
   }
 }
 
 /**
  * 要素の垂直位置を上寄せにします。
  */
-.l-Grids-top {
+.l-Flex.\-top {
   align-items: flex-start;
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
-    .l-Grids-top#{uppercase-first-letter($name)} {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-top\@#{$name} {
       align-items: flex-start;
     }
   }
@@ -297,13 +239,13 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 /**
  * 要素の垂直位置を真ん中寄せにします。
  */
-.l-Grids-middle {
+.l-Flex.\-middle {
   align-items: center;
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
-    .l-Grids-middle#{uppercase-first-letter($name)} {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-middle\@#{$name} {
       align-items: center;
     }
   }
@@ -312,46 +254,117 @@ $l-grids-two-column: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 !default;
 /**
  * 要素の垂直位置を下寄せにします。
  */
-.l-Grids-bottom {
+.l-Flex.\-bottom {
   align-items: flex-end;
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
-    .l-Grids-bottom#{uppercase-first-letter($name)} {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-bottom\@#{$name} {
       align-items: flex-end;
     }
   }
 }
 
 /**
- * `.l-Grids_Item`の表示順を逆にします。
+ * 要素を左寄せ、要素内は左寄せにします。
+ */
+.l-Flex.\-left {
+  justify-content: flex-start;
+}
+
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-left\@#{$name} {
+      justify-content: flex-start;
+    }
+  }
+}
+
+/**
+ * 要素を中央寄せ、要素内は左寄せにします。
+ */
+.l-Flex.\-center {
+  justify-content: center;
+}
+
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-center\@#{$name} {
+      justify-content: center;
+    }
+  }
+}
+
+/**
+ * 要素を右寄せ、要素内は左寄せにします。
+ */
+.l-Flex.\-right {
+  justify-content: flex-end;
+}
+
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-right\@#{$name} {
+      justify-content: flex-end;
+    }
+  }
+}
+
+/**
+ * `.l-Flexs_Item`の表示順を逆にします。
  * A,B → B,A
  */
-.l-Grids-reverse {
+.l-Flex.\-reverse {
   flex-direction: row-reverse;
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
-    .l-Grids-reverse#{uppercase-first-letter($name)} {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-reverse\@#{$name} {
       flex-direction: row-reverse;
     }
   }
 }
 
 /**
- * `.l-Grids_Item`の表示順を戻します。
+ * `.l-Flexs_Item`の表示順を戻します。
  * B,A → A,B
  */
-.l-Grids-row {
+.l-Flex.\-row {
   flex-direction: row;
 }
 
 @each $name, $breakpoint in $mq-breakpoints {
-  @media print, screen and (min-width: em($breakpoint)) {
-    .l-Grids-row#{uppercase-first-letter($name)} {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-row\@#{$name} {
       flex-direction: row;
     }
+  }
+}
+
+@mixin order($key: null) {
+  $orders: $flex-order;
+  $suffix: "";
+
+  @if $key != null {
+    $suffix: \@#{$key};
+  }
+
+  @each $order in $orders {
+    .l-Flex_Item.\-order#{$order}#{$suffix} {
+      order: #{$order};
+    }
+  }
+}
+
+/**
+ * `.l-Flexs_Item`の表示順を個別に変更します。
+ */
+@include order();
+
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (min-width: em($breakpoint)) {
+    @include order($name);
   }
 }
