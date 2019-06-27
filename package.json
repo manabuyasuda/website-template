@@ -114,8 +114,8 @@
   "browserslist": [
     "last 1 version",
     "> 3% in JP",
-    "ie >= 9",
-    "iOS >= 8",
-    "Android >= 4.4"
+    "ie >= 11",
+    "iOS >= 11",
+    "Android >= 5.1"
   ]
 }
