@@ -196,10 +196,11 @@ function css() {
   const plugins = [flexBugsFixes(), autoprefixer()];
   return (
     gulp
-      .src(src.css)
+      .src(src.css, {
+        sourcemaps: isDevelopment ? true : false
+      })
       // globパターンでのインポート機能を追加
       .pipe(sassGlob())
-      .pipe(gulpif(isDevelopment, sourcemaps.init()))
       .pipe(
         sass({
           outputStyle: 'expanded',
@@ -235,8 +236,9 @@ function css() {
           }),
         ),
       )
-      .pipe(gulpif(isDevelopment, sourcemaps.write()))
-      .pipe(gulp.dest(dest.root))
+      .pipe(gulp.dest(dest.root, {
+        sourcemaps: isDevelopment ? true : false
+      }))
       .pipe(browserSync.reload({ stream: true }))
   );
 }
