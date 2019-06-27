@@ -21,6 +21,7 @@ const cleanCSS = require('gulp-clean-css');
 const gulpStylelint = require('gulp-stylelint');
 
 // JS
+const webpackStream = require('webpack-stream');
 const uglify = require('gulp-uglify');
 const browserify = require('browserify');
 const babelify = require('babelify');
@@ -60,7 +61,7 @@ const src = {
   data: 'src/_data/',
   css: 'src/**/*.scss',
   styleguideWatch: ['src/**/*.scss', 'src/**/*.md'],
-  js: 'src/assets/js/site.js',
+  js: './src/assets/js/site.js',
   jsWatch: 'src/**/*.js',
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
   imageWatch: 'src/assets/img/**/*',
@@ -74,7 +75,7 @@ const src = {
 const dest = {
   root: 'htdocs/',
   image: 'htdocs/assets/img/',
-  js: 'htdocs/assets/js/',
+  js: 'assets/js/',
   svgSprite: 'htdocs/assets/svg/',
   cleanDest: 'htdocs/',
 };
@@ -237,43 +238,20 @@ gulp.task('css', () => {
 /**
  * ES2015以降のコードをES5に変換（トランスコンパイル）します。
  */
-gulp.task('js', done => {
-  const envifyOptions = envValues;
-  // 指定した環境変数だけを処理する
-  envifyOptions._ = 'purge';
-
-  browserify({
-    entries: src.js,
-    extensions: ['.js'],
-    // browserifyのsourcemapsを使用しない
-    debug: !!isDevelopment,
-    cache: {},
-    packageCache: {},
-    // ファイルの状態を監視して、差分だけをビルドする
-    plugin: 'watchify',
-  })
-    .transform(babelify)
-    // Vue.jsの単一ファイルコンポーネントをBrowserifyで変換する
-    .transform(vueify)
-    .transform(
-      { global: true },
-      // `NODE_ENV`を`development`か`production`に変更する
-      // 環境変数もすべてJS側に渡す
-      envify(envifyOptions),
-    )
-    .bundle()
-    // eslint-disable-next-line func-names
-    .on('error', function(err) {
-      // eslint-disable-next-line no-console
-      console.log(`Error : ${err.message}`);
-      this.emit('end');
-    })
-    .pipe(source('site.js'))
-    .pipe(buffer())
-    .pipe(gulpif(isProduction, uglify({ output: { comments: /^!/ } })))
-    .pipe(gulp.dest(dest.js))
-    .pipe(browserSync.reload({ stream: true }));
-  done();
+gulp.task('js', () => {
+  return gulp
+    .src(src.js)
+    .pipe(webpackStream({
+      mode: envValues.NODE_ENV,
+      entry: {
+        site: src.js,
+      },
+      output: {
+        filename: `${dest.js}[name].js`,
+      },
+    }))
+    .pipe(gulp.dest(dest.root))
+    .pipe(browserSync.reload({ stream: true }))
 });
 
 /**

@@ -4,8 +4,6 @@
   "description": "静的Webサイト制作を少しモダンにするためのテンプレート",
   "main": "index.js",
   "scripts": {
-    "prod": "webpack --watch --mode=production",
-    "dev": "webpack --watch --mode=development",
     "start": "APP_ENV=development gulp",
     "test": "npm run lint && APP_ENV=production gulp",
     "release": "npm run lint && APP_ENV=production gulp build",
@@ -90,7 +88,7 @@
     "vueify": "^9.4.1",
     "watchify": "^3.11.1",
     "webpack": "^4.35.0",
-    "webpack-cli": "^3.3.5"
+    "webpack-stream": "^5.2.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
