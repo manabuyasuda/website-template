@@ -1,6 +1,6 @@
 {
   "name": "website-template",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "静的Webサイト制作を少しモダンにするためのテンプレート",
   "main": "index.js",
   "scripts": {
@@ -13,18 +13,20 @@
     "lint": "npm run htmlValidate && npm run stylelint && npm run eslint"
   },
   "keywords": [
-    "gulp",
-    "pug",
+    "Gulp",
+    "webpack",
+    "Pug",
     "SSI",
     "HTMLHint",
+    "w3c validator",
     "Sass",
-    "ECSS",
     "stylelint",
     "Vue.js",
-    "babel",
+    "Babel",
     "ESLint",
     "Aigis",
-    "Styleguide"
+    "Styleguide",
+    "SVG Sprite"
   ],
   "repository": {
     "type": "git",
@@ -115,8 +117,5 @@
     "ie >= 9",
     "iOS >= 8",
     "Android >= 4.4"
-  ],
-  "browser": {
-    "vue": "vue/dist/vue.common.js"
-  }
+  ]
 }
