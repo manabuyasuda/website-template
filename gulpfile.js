@@ -251,18 +251,28 @@ gulp.task('js', () => {
         rules: [
           {
             test: /\.vue$/,
-            loader: 'vue-loader'
+            loader: 'vue-loader',
           },
           {
             test: /\.js$/,
             loader: 'babel-loader',
           },
           {
+            enforce: 'pre',
+            test: /\.(js|vue)$/,
+            exclude: /node_modules/,
+            loader: 'eslint-loader',
+            options: {
+              fix: true,
+              formatter: require('eslint/lib/cli-engine/formatters/stylish'),
+            },
+          },
+          {
             test: /\.(scss$|css$)/,
             use: [
               'vue-style-loader',
               'css-loader',
-              'sass-loader'
+              'sass-loader',
             ],
           },
         ]
