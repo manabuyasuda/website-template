@@ -9,7 +9,7 @@
     "release": "npm run lint && APP_ENV=production gulp build",
     "htmlValidate": "APP_ENV=development gulp htmlValidate",
     "stylelint": "APP_ENV=development gulp stylelint",
-    "eslint": "eslint --fix src/**/*.js",
+    "eslint": "eslint --fix src/**/*.{js,vue}",
     "lint": "npm run htmlValidate && npm run stylelint && npm run eslint"
   },
   "keywords": [
@@ -54,6 +54,7 @@
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-vue": "^5.2.3",
     "gulp": "^4.0.0",
     "gulp-aigis": "^1.3.0",
     "gulp-cached": "^1.1.1",
