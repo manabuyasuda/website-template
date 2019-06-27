@@ -62,7 +62,7 @@ const src = {
   css: 'src/**/*.scss',
   styleguideWatch: ['src/**/*.scss', 'src/**/*.md'],
   js: './src/assets/js/site.js',
-  jsWatch: 'src/**/*.js',
+  jsWatch: 'src/**/*.{js,vue}',
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
   imageWatch: 'src/assets/img/**/*',
   svgSprite: 'src/assets/svg/**/*.svg',
@@ -238,6 +238,7 @@ gulp.task('css', () => {
 /**
  * ES2015以降のコードをES5に変換（トランスコンパイル）します。
  */
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 gulp.task('js', () => {
   return gulp
     .src(src.js)
@@ -249,11 +250,31 @@ gulp.task('js', () => {
       module: {
         rules: [
           {
+            test: /\.vue$/,
+            loader: 'vue-loader'
+          },
+          {
             test: /\.js$/,
             loader: 'babel-loader',
           },
+          {
+            test: /\.(scss$|css$)/,
+            use: [
+              'vue-style-loader',
+              'css-loader',
+              'sass-loader'
+            ],
+          },
         ]
       },
+      resolve: {
+        alias: {
+          vue$: 'vue/dist/vue.esm.js',
+        },
+      },
+      plugins: [
+        new VueLoaderPlugin(),
+      ],
       output: {
         filename: `${dest.js}[name].js`,
       },
