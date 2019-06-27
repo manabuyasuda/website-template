@@ -23,13 +23,6 @@ const gulpStylelint = require('gulp-stylelint');
 
 // JS
 const webpackStream = require('webpack-stream');
-const uglify = require('gulp-uglify');
-const browserify = require('browserify');
-const babelify = require('babelify');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const vueify = require('vueify');
-const envify = require('envify/custom');
 
 // Image
 const imagemin = require('gulp-imagemin');
@@ -45,7 +38,6 @@ const aigis = require('gulp-aigis');
 // Utility
 const cache = require('gulp-cached');
 const changed = require('gulp-changed');
-const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
