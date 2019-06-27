@@ -60,7 +60,7 @@ const src = {
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
   imageWatch: 'src/assets/img/**/*',
   svgSprite: 'src/assets/svg/**/*.svg',
-  static: 'static/**/*',
+  copy: 'static/**/*',
 };
 
 /**
@@ -81,6 +81,7 @@ const dest = {
 const env = process.env.APP_ENV;
 const developmentValues = require('./config/development').defaults;
 const productionValues = require('./config/production').defaults;
+
 const envValues = env === 'development' ? developmentValues : productionValues;
 const isDevelopment = envValues.NODE_ENV === 'development';
 const isProduction = envValues.NODE_ENV === 'production';
@@ -153,16 +154,14 @@ function htmlValidate() {
       htmlhint.failOnError({
         suppress: true,
       }),
-    )
+    );
 }
 
 /**
  * /static/以下のHTMLファイルを監視、更新があれば反映します。
  */
 function ssi() {
-  return gulp
-    .src(src.ssi)
-    .pipe(browserSync.reload({ stream: true }))
+  return gulp.src(src.ssi).pipe(browserSync.reload({ stream: true }));
 }
 
 /**
@@ -178,7 +177,7 @@ function stylelint() {
         reporters: [{ formatter: 'string', console: true }],
       }),
     )
-    .pipe(gulp.dest(src.root))
+    .pipe(gulp.dest(src.root));
 }
 
 /**
@@ -189,7 +188,7 @@ function css() {
   return (
     gulp
       .src(src.css, {
-        sourcemaps: isDevelopment ? true : false
+        sourcemaps: !!isDevelopment,
       })
       // globパターンでのインポート機能を追加
       .pipe(sassGlob())
@@ -228,9 +227,11 @@ function css() {
           }),
         ),
       )
-      .pipe(gulp.dest(dest.root, {
-        sourcemaps: isDevelopment ? true : false
-      }))
+      .pipe(
+        gulp.dest(dest.root, {
+          sourcemaps: !!isDevelopment,
+        }),
+      )
       .pipe(browserSync.reload({ stream: true }))
   );
 }
@@ -243,55 +244,51 @@ function js() {
   const VueLoaderPlugin = require('vue-loader/lib/plugin');
   return gulp
     .src(src.js)
-    .pipe(webpackStream({
-      mode: envValues.NODE_ENV,
-      entry: {
-        site: src.js,
-      },
-      module: {
-        rules: [
-          {
-            test: /\.vue$/,
-            loader: 'vue-loader',
-          },
-          {
-            test: /\.js$/,
-            loader: 'babel-loader',
-          },
-          {
-            enforce: 'pre',
-            test: /\.(js|vue)$/,
-            exclude: /node_modules/,
-            loader: 'eslint-loader',
-            options: {
-              fix: true,
-              formatter: require('eslint/lib/cli-engine/formatters/stylish'),
-            },
-          },
-          {
-            test: /\.(scss$|css$)/,
-            use: [
-              'vue-style-loader',
-              'css-loader',
-              'sass-loader',
-            ],
-          },
-        ]
-      },
-      resolve: {
-        alias: {
-          vue$: 'vue/dist/vue.esm.js',
+    .pipe(
+      webpackStream({
+        mode: envValues.NODE_ENV,
+        entry: {
+          site: src.js,
         },
-      },
-      plugins: [
-        new VueLoaderPlugin(),
-      ],
-      output: {
-        filename: `${dest.js}[name].js`,
-      },
-    }))
+        module: {
+          rules: [
+            {
+              test: /\.vue$/,
+              loader: 'vue-loader',
+            },
+            {
+              test: /\.js$/,
+              loader: 'babel-loader',
+            },
+            {
+              enforce: 'pre',
+              test: /\.(js|vue)$/,
+              exclude: /node_modules/,
+              loader: 'eslint-loader',
+              options: {
+                fix: true,
+                formatter: require('eslint/lib/cli-engine/formatters/stylish'),
+              },
+            },
+            {
+              test: /\.(scss$|css$)/,
+              use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+            },
+          ],
+        },
+        resolve: {
+          alias: {
+            vue$: 'vue/dist/vue.esm.js',
+          },
+        },
+        plugins: [new VueLoaderPlugin()],
+        output: {
+          filename: `${dest.js}[name].js`,
+        },
+      }),
+    )
     .pipe(gulp.dest(dest.root))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({ stream: true }));
 }
 
 /**
@@ -391,7 +388,7 @@ function svgSprite() {
       }),
     )
     .pipe(gulp.dest(dest.svgSprite))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({ stream: true }));
 }
 
 /**
@@ -399,17 +396,15 @@ function svgSprite() {
  * aigisは開発が止まっているので、別のスタイルガイドジェネレーターを検討してください。
  */
 function styleguide() {
-  return gulp.src('./aigis/aigis_config.yml')
-    .pipe(aigis());
+  return gulp.src('./aigis/aigis_config.yml').pipe(aigis());
 }
 
 /**
  * Gulpの処理を通さないディレクトリです。
  * 公開用のディレクトリにコピーします。
  */
-function static() {
-  return gulp.src(src.static)
-    .pipe(gulp.dest(dest.root));
+function copy() {
+  return gulp.src(src.copy).pipe(gulp.dest(dest.root));
 }
 
 /**
@@ -459,7 +454,7 @@ exports.js = js;
 exports.image = image;
 exports.svgSprite = svgSprite;
 exports.styleguide = styleguide;
-exports.static = static;
+exports.copy = copy;
 exports.serve = serve;
 exports.clean = clean;
 
@@ -474,23 +469,37 @@ function watch() {
   gulp.watch(src.jsWatch, js);
   gulp.watch(src.svgSprite, svgSprite);
   gulp.watch(src.styleguideWatch, styleguide);
-  gulp.watch(src.static, static);
+  gulp.watch(src.copy, copy);
 }
 
 /**
  * 開発タスクをすべて実行します。
  */
-exports.build =
-  series(gulp.parallel(clean),
-  html, ssi, css, styleguide, js, image, svgSprite, static
+exports.build = series(
+  gulp.parallel(clean),
+  html,
+  ssi,
+  css,
+  styleguide,
+  js,
+  image,
+  svgSprite,
+  copy,
 );
 
 /**
  * 開発タスクをすべて実行します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-exports.default =
-  series(gulp.parallel(clean),
-  html, ssi, css, styleguide, js, image, svgSprite, static,
-  gulp.parallel(serve, watch)
+exports.default = series(
+  gulp.parallel(clean),
+  html,
+  ssi,
+  css,
+  styleguide,
+  js,
+  image,
+  svgSprite,
+  copy,
+  gulp.parallel(serve, watch),
 );
