@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const { series } = require('gulp');
 
 // Pug
 const pug = require('gulp-pug');
@@ -9,7 +10,7 @@ const path = require('path');
 // HTML
 const htmlhint = require('gulp-htmlhint');
 const w3cjs = require('gulp-w3cjs');
-const ssi = require('browsersync-ssi');
+const browserSyncSsi = require('browsersync-ssi');
 
 // CSS
 const sass = require('gulp-sass');
@@ -22,13 +23,6 @@ const gulpStylelint = require('gulp-stylelint');
 
 // JS
 const webpackStream = require('webpack-stream');
-const uglify = require('gulp-uglify');
-const browserify = require('browserify');
-const babelify = require('babelify');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const vueify = require('vueify');
-const envify = require('envify/custom');
 
 // Image
 const imagemin = require('gulp-imagemin');
@@ -36,7 +30,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
 
 // SVG sprite
-const svgSprite = require('gulp-svg-sprite');
+const gulpSvgSprite = require('gulp-svg-sprite');
 
 // Styleguide
 const aigis = require('gulp-aigis');
@@ -44,7 +38,6 @@ const aigis = require('gulp-aigis');
 // Utility
 const cache = require('gulp-cached');
 const changed = require('gulp-changed');
-const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
@@ -57,6 +50,7 @@ const del = require('del');
 const src = {
   root: 'src/',
   html: ['src/**/*.pug', '!src/**/_*.pug'],
+  htmlWatch: 'src/**/*.pug',
   ssi: 'static/**/*.html',
   data: 'src/_data/',
   css: 'src/**/*.scss',
@@ -66,11 +60,11 @@ const src = {
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
   imageWatch: 'src/assets/img/**/*',
   svgSprite: 'src/assets/svg/**/*.svg',
-  static: 'static/**/*',
+  copy: 'static/**/*',
 };
 
 /**
- * テスト用ディレクトリ
+ * 公開用ディレクトリ
  */
 const dest = {
   root: 'htdocs/',
@@ -82,6 +76,7 @@ const dest = {
 
 /**
  * 環境変数を設定します。
+ * npmスクリプトから`APP_ENV=development`かAPP_ENV=production`を受け取れます。
  */
 const env = process.env.APP_ENV;
 const developmentValues = require('./config/development').defaults;
@@ -95,7 +90,7 @@ const isProduction = envValues.NODE_ENV === 'production';
  * `.pug`を`.html`にコンパイルします。
  * JSONとページごとのルート相対パスの格納、ルート相対パスを使ったincludeの設定をします。
  */
-gulp.task('html', () => {
+function html() {
   // JSONファイルの読み込み。
   const locals = {
     site: JSON.parse(fs.readFileSync(`${src.data}site.json`)),
@@ -136,15 +131,15 @@ gulp.task('html', () => {
       .pipe(gulp.dest(dest.root))
       .pipe(browserSync.reload({ stream: true }))
   );
-});
+}
 
 /**
  * 公開用のHTMLファイルを解析して警告やエラーを通知します。
  */
-// 範囲を限定する場合は`products/`などと指定します。
-const validateDir = '';
-gulp.task('htmlValidate', () =>
-  gulp
+function htmlValidate() {
+  // 範囲を限定する場合は`products/`などと指定します。
+  const validateDir = '';
+  return gulp
     .src([`${dest.root}${validateDir}**/*.html`, `!${dest.root}styleguide/**/*.html`])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(htmlhint('.htmlhintrc'))
@@ -159,20 +154,22 @@ gulp.task('htmlValidate', () =>
       htmlhint.failOnError({
         suppress: true,
       }),
-    ),
-);
+    );
+}
 
 /**
  * /static/以下のHTMLファイルを監視、更新があれば反映します。
  */
-gulp.task('ssi', () => gulp.src(src.ssi).pipe(browserSync.reload({ stream: true })));
+function ssi() {
+  return gulp.src(src.ssi).pipe(browserSync.reload({ stream: true }));
+}
 
 /**
  * 公開用のSassファイルを解析して警告やエラーを通知します。
  * 修正できるものは強制的に反映します。
  */
-gulp.task('stylelint', () =>
-  gulp
+function stylelint() {
+  return gulp
     .src(src.css)
     .pipe(
       gulpStylelint({
@@ -180,20 +177,21 @@ gulp.task('stylelint', () =>
         reporters: [{ formatter: 'string', console: true }],
       }),
     )
-    .pipe(gulp.dest(src.root)),
-);
+    .pipe(gulp.dest(src.root));
+}
 
 /**
  * `.scss`を`.css`にコンパイルします。
  */
-gulp.task('css', () => {
+function css() {
   const plugins = [flexBugsFixes(), autoprefixer()];
   return (
     gulp
-      .src(src.css)
+      .src(src.css, {
+        sourcemaps: !!isDevelopment,
+      })
       // globパターンでのインポート機能を追加
       .pipe(sassGlob())
-      .pipe(gulpif(isDevelopment, sourcemaps.init()))
       .pipe(
         sass({
           outputStyle: 'expanded',
@@ -229,75 +227,75 @@ gulp.task('css', () => {
           }),
         ),
       )
-      .pipe(gulpif(isDevelopment, sourcemaps.write()))
-      .pipe(gulp.dest(dest.root))
+      .pipe(
+        gulp.dest(dest.root, {
+          sourcemaps: !!isDevelopment,
+        }),
+      )
       .pipe(browserSync.reload({ stream: true }))
   );
-});
+}
 
 /**
  * ES2015以降のコードをES5に変換（トランスコンパイル）します。
+ * Vue.jsの単一ファイルコンポーネントの変換と、ESLint・Prettierも実行します。
  */
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-gulp.task('js', () => {
+function js() {
+  const VueLoaderPlugin = require('vue-loader/lib/plugin');
   return gulp
     .src(src.js)
-    .pipe(webpackStream({
-      mode: envValues.NODE_ENV,
-      entry: {
-        site: src.js,
-      },
-      module: {
-        rules: [
-          {
-            test: /\.vue$/,
-            loader: 'vue-loader',
-          },
-          {
-            test: /\.js$/,
-            loader: 'babel-loader',
-          },
-          {
-            enforce: 'pre',
-            test: /\.(js|vue)$/,
-            exclude: /node_modules/,
-            loader: 'eslint-loader',
-            options: {
-              fix: true,
-              formatter: require('eslint/lib/cli-engine/formatters/stylish'),
-            },
-          },
-          {
-            test: /\.(scss$|css$)/,
-            use: [
-              'vue-style-loader',
-              'css-loader',
-              'sass-loader',
-            ],
-          },
-        ]
-      },
-      resolve: {
-        alias: {
-          vue$: 'vue/dist/vue.esm.js',
+    .pipe(
+      webpackStream({
+        mode: envValues.NODE_ENV,
+        entry: {
+          site: src.js,
         },
-      },
-      plugins: [
-        new VueLoaderPlugin(),
-      ],
-      output: {
-        filename: `${dest.js}[name].js`,
-      },
-    }))
+        module: {
+          rules: [
+            {
+              test: /\.vue$/,
+              loader: 'vue-loader',
+            },
+            {
+              test: /\.js$/,
+              loader: 'babel-loader',
+            },
+            {
+              enforce: 'pre',
+              test: /\.(js|vue)$/,
+              exclude: /node_modules/,
+              loader: 'eslint-loader',
+              options: {
+                fix: true,
+                formatter: require('eslint/lib/cli-engine/formatters/stylish'),
+              },
+            },
+            {
+              test: /\.(scss$|css$)/,
+              use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+            },
+          ],
+        },
+        resolve: {
+          alias: {
+            vue$: 'vue/dist/vue.esm.js',
+          },
+        },
+        plugins: [new VueLoaderPlugin()],
+        output: {
+          filename: `${dest.js}[name].js`,
+        },
+      }),
+    )
     .pipe(gulp.dest(dest.root))
-    .pipe(browserSync.reload({ stream: true }))
-});
+    .pipe(browserSync.reload({ stream: true }));
+}
 
 /**
  * 画像を圧縮します。
  */
-gulp.task('image', () =>
-  gulp
+function image() {
+  return gulp
     .src(src.image)
     .pipe(changed(dest.image))
     .pipe(
@@ -347,18 +345,18 @@ gulp.task('image', () =>
       ]),
     )
     .pipe(gulp.dest(dest.image))
-    .pipe(browserSync.reload({ stream: true })),
-);
+    .pipe(browserSync.reload({ stream: true }));
+}
 
 /**
  * SVGファイルからSVGスプライトを生成します。
  */
-gulp.task('svgSprite', () =>
-  gulp
+function svgSprite() {
+  return gulp
     .src(src.svgSprite)
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(
-      svgSprite({
+      gulpSvgSprite({
         mode: {
           // SVGファイルをsymbol要素としてまとめる。
           symbol: {
@@ -390,33 +388,38 @@ gulp.task('svgSprite', () =>
       }),
     )
     .pipe(gulp.dest(dest.svgSprite))
-    .pipe(browserSync.reload({ stream: true })),
-);
+    .pipe(browserSync.reload({ stream: true }));
+}
 
 /**
  * スタイルガイドを生成します。
+ * aigisは開発が止まっているので、別のスタイルガイドジェネレーターを検討してください。
  */
-gulp.task('styleguide', () => gulp.src('./aigis/aigis_config.yml').pipe(aigis()));
+function styleguide() {
+  return gulp.src('./aigis/aigis_config.yml').pipe(aigis());
+}
 
 /**
  * Gulpの処理を通さないディレクトリです。
  * 公開用のディレクトリにコピーします。
  */
-gulp.task('static', () => gulp.src(src.static).pipe(gulp.dest(dest.root)));
+function copy() {
+  return gulp.src(src.copy).pipe(gulp.dest(dest.root));
+}
 
 /**
  * ローカルサーバーを起動します。
  */
-gulp.task('browser-sync', () => {
+function serve(done) {
   browserSync({
     server: {
       // SSIを使用します。
-      middleware: [
-        ssi({
-          baseDir: dest.root,
-          ext: '.html',
-        }),
-      ],
+      // middleware: [
+      //   browserSyncSsi({
+      //     baseDir: dest.root,
+      //     ext: '.html',
+      //   }),
+      // ],
       baseDir: dest.root,
     },
     // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
@@ -428,38 +431,75 @@ gulp.task('browser-sync', () => {
     // falseに指定すると、サーバー起動時にポップアップを表示させません。
     notify: false,
   });
-});
+  done();
+}
 
 /**
  * 公開用のディレクトリを削除します。
  */
-gulp.task('clean:dest', done => del(dest.cleanDest, done));
+function clean() {
+  return del(dest.cleanDest);
+}
 
 /**
- * 一連のタスクを処理します。
+ * publicなgulpタスクです。
+ * `gulp html`のように実行できます。
  */
-gulp.task(
-  'build',
-  gulp.series('html', 'ssi', 'css', 'styleguide', 'js', 'image', 'svgSprite', 'static'),
-);
+exports.html = html;
+exports.htmlValidate = htmlValidate;
+exports.ssi = ssi;
+exports.stylelint = stylelint;
+exports.css = css;
+exports.js = js;
+exports.image = image;
+exports.svgSprite = svgSprite;
+exports.styleguide = styleguide;
+exports.copy = copy;
+exports.serve = serve;
+exports.clean = clean;
 
 /**
  * ファイルを監視します。
  */
-gulp.task('watch', () => {
-  gulp.watch(src.ssi, gulp.task('ssi'));
-  gulp.watch(src.static, gulp.task('static'));
-  gulp.watch(src.html, gulp.task('html'));
-  gulp.watch(src.css, gulp.task('css'));
-  gulp.watch(src.styleguideWatch, gulp.task('styleguide'));
-  gulp.watch(src.jsWatch, gulp.task('js'));
-  gulp.watch(src.imageWatch, gulp.task('image'));
-  gulp.watch(src.svgSprite, gulp.task('svgSprite'));
-});
+function watch() {
+  gulp.watch(src.htmlWatch, html);
+  gulp.watch(src.imageWatch, image);
+  gulp.watch(src.ssi, ssi);
+  gulp.watch(src.css, css);
+  gulp.watch(src.jsWatch, js);
+  gulp.watch(src.svgSprite, svgSprite);
+  gulp.watch(src.styleguideWatch, styleguide);
+  gulp.watch(src.copy, copy);
+}
 
 /**
- * 開発に使用するタスクです。
- * `gulp`タスクにbrowser-syncを追加します。
+ * 開発タスクをすべて実行します。
+ */
+exports.build = series(
+  gulp.parallel(clean),
+  html,
+  ssi,
+  css,
+  styleguide,
+  js,
+  image,
+  svgSprite,
+  copy,
+);
+
+/**
+ * 開発タスクをすべて実行します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-gulp.task('default', gulp.series('clean:dest', 'build', gulp.parallel('browser-sync', 'watch')));
+exports.default = series(
+  gulp.parallel(clean),
+  html,
+  ssi,
+  css,
+  styleguide,
+  js,
+  image,
+  svgSprite,
+  copy,
+  gulp.parallel(serve, watch),
+);
