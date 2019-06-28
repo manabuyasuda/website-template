@@ -22,6 +22,5 @@ export default function stBackToTop() {
     updateURL: false, // スクロール完了後にURLを更新する
     preventDefault: true, // コンテナ要素のクリックイベントを防止する
     stopPropagation: true, // コンテナ要素のバブリングを防止する
-    quickMode: false, // 目的地まで素早く移動する (`easeOutExpo`を推奨)
   });
 }
