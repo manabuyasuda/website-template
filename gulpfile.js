@@ -414,12 +414,12 @@ function serve(done) {
   browserSync({
     server: {
       // SSIを使用します。
-      // middleware: [
-      //   browserSyncSsi({
-      //     baseDir: dest.root,
-      //     ext: '.html',
-      //   }),
-      // ],
+      middleware: [
+        browserSyncSsi({
+          baseDir: dest.root,
+          ext: '.html',
+        }),
+      ],
       baseDir: dest.root,
     },
     // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
@@ -476,15 +476,9 @@ function watch() {
  * 開発タスクをすべて実行します。
  */
 exports.build = gulp.series(
-  gulp.parallel(clean),
-  html,
-  ssi,
-  css,
-  styleguide,
-  js,
-  image,
-  svgSprite,
-  copy,
+  clean,
+  gulp.parallel(html, css, js, image, svgSprite, copy),
+  gulp.parallel(ssi, styleguide),
 );
 
 /**
@@ -492,14 +486,8 @@ exports.build = gulp.series(
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
 exports.default = gulp.series(
-  gulp.parallel(clean),
-  html,
-  ssi,
-  css,
-  styleguide,
-  js,
-  image,
-  svgSprite,
-  copy,
+  clean,
+  gulp.parallel(html, css, js, image, svgSprite, copy),
+  gulp.parallel(ssi, styleguide),
   gulp.parallel(serve, watch),
 );
