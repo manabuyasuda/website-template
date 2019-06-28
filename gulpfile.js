@@ -22,6 +22,8 @@ const gulpStylelint = require('gulp-stylelint');
 
 // JS
 const webpackStream = require('webpack-stream');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const eslintFormatters = require('eslint/lib/cli-engine/formatters/stylish');
 
 // Image
 const imagemin = require('gulp-imagemin');
@@ -187,7 +189,7 @@ function css() {
   return (
     gulp
       .src(src.css, {
-        sourcemaps: !!isDevelopment,
+        sourcemaps: isDevelopment,
       })
       // globパターンでのインポート機能を追加
       .pipe(sassGlob())
@@ -228,7 +230,7 @@ function css() {
       )
       .pipe(
         gulp.dest(dest.root, {
-          sourcemaps: !!isDevelopment,
+          sourcemaps: isDevelopment,
         }),
       )
       .pipe(browserSync.reload({ stream: true }))
@@ -240,7 +242,6 @@ function css() {
  * Vue.jsの単一ファイルコンポーネントの変換と、ESLint・Prettierも実行します。
  */
 function js() {
-  const VueLoaderPlugin = require('vue-loader/lib/plugin');
   return gulp
     .src(src.js)
     .pipe(
@@ -266,7 +267,7 @@ function js() {
               loader: 'eslint-loader',
               options: {
                 fix: true,
-                formatter: require('eslint/lib/cli-engine/formatters/stylish'),
+                formatter: eslintFormatters,
               },
             },
             {
