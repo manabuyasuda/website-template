@@ -102,7 +102,7 @@
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "normalize.css": "^8.0.1",
-    "objectFitPolyfill": "^2.1.1",
+    "objectFitPolyfill": "^2.3.0",
     "picturefill": "^3.0.3",
     "responsive-auto-height": "0.0.4",
     "sass-mq": "^5.0.0",
