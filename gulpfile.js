@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const { series } = require('gulp');
 
 // Pug
 const pug = require('gulp-pug');
@@ -475,7 +474,7 @@ function watch() {
 /**
  * 開発タスクをすべて実行します。
  */
-exports.build = series(
+exports.build = gulp.series(
   gulp.parallel(clean),
   html,
   ssi,
@@ -491,7 +490,7 @@ exports.build = series(
  * 開発タスクをすべて実行します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-exports.default = series(
+exports.default = gulp.series(
   gulp.parallel(clean),
   html,
   ssi,
