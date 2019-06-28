@@ -16,8 +16,8 @@
 ## 確認環境
 以下の環境で動作の確認をしています。
 
-- macOS High Sierra 10.13.5
-- Node.js 9.4.0
+- macOS High Sierra 10.13.6
+- Node.js 10.16.0
 
 Node.jsのバージョンはnodenvで固定しています。
 
@@ -31,7 +31,7 @@ npm install
 
 ## ファイル構成
 開発は`src`ディレクトリでおこない、テスト用の一時ファイルは`htdocs`ディレクトリに出力されます。  
-`static`ディレクトリは、Gulpの処理は必要ないけれど、ファビコンや共通ファイルのように最終的に`htdocs`ディレクトリに含めたいファイルを置きます。  
+`static`ディレクトリは、Gulpの処理は必要ないけれど、ファビコンや共通ファイルのような最終的に`htdocs`ディレクトリに含めたいファイルを置きます。  
 `template`ディレクトリはPugファイルのテンプレートです。このテンプレートを元にファイルを作成してください。
 
 ```
@@ -106,7 +106,7 @@ root/
 ```
 
 ## 開発用タスク
-以下のコマンドを実行すると、開発に必要なGulpのタスクがすべて実行されます。
+以下のコマンドを実行すると、開発に必要なGulpとwebpackのタスクがすべて実行されます。
 
 ```bash
 npm start
@@ -124,7 +124,7 @@ npm run release
 npm test
 ```
 
-HTMLとCSSとJSの整形とリントをまとめて実行します。  
+HTML・CSS・JSの整形とリントをまとめて実行します。  
 （少なくとも）エラーが出ない状態にしてからプッシュします。
 
 ```bash
@@ -143,7 +143,7 @@ npm run htmlValidate
 npm run stylelint
 ```
 
-[Airbnb JavaScriptスタイルガイド](http://mitsuruog.github.io/javascript-style-guide/)を元にJavaScriptのリントを実行します。
+[Airbnb JavaScriptスタイルガイド](http://mitsuruog.github.io/javascript-style-guide/)や[eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue)を元にJavaScriptのリントを実行します。
 
 ```bash
 npm run eslint
@@ -153,7 +153,7 @@ npm run eslint
 
 - PugをHTMLにコンパイル
 - SassをCSSにコンパイル
-- JSをES5にトランスコンパイル（jQueryとプラグインなどもsite.jsでインポート）
+- JSをES5にコンパイル（Vue.jsの単一ファイルコンポーネントも変換する）
 - SVGスプライトの生成
 - ローカルサーバーを立ち上げて動作の確認（static以下のHTMLファイルはSSIにも対応）
 - HTMLのリント

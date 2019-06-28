@@ -1,6 +1,5 @@
 # JavaScript
-babelとbrowserifyでES2015以降の書き方をES5にトランスコンパイルしています。  
-jQueryとそのプラグインなどもエンドポイントとなるsite.jsでインポートしています。
+BabelとwebpackでES2015以降の書き方をES5にコンパイルしています。
 
 ## ディレクトリ構成
 JavaScriptは2つ大きくわけられます。
@@ -56,7 +55,7 @@ import {hello} from './util';
 console.log(hello('world!!'));
 ```
 
-JSファイルの先頭で以下のように指定するとJQueryも使用することができます。
+JSファイルの先頭で以下のように指定するとJQueryも使用できます。
 
 ```js
 import $ from 'jquery';

@@ -2,13 +2,13 @@
 HTMLは[Pug](https://pugjs.org/api/getting-started.html)を使って生成しています。  
 通常のHTMLとは構文が違いますが、共通部分などの全体の管理がしやすいところや、コーディング速度や修正がしやすいというメリットがあるので採用しています。
 
-インデントにスペースやタブが混ざるとエラーになってしまうので、.editorconfigを設定することで解決しています。お使いのエディターで.editorconfigの設定が反映されるように設定してください。
+インデントにスペースやタブが混ざるとエラーになってしまうので、`.editorconfig`を設定することで解決しています。お使いのエディターで`.editorconfig`の設定が反映されるように設定してください。
 
 初期設定では共通部分はPugで管理していますが、SSIを使うこともできます。詳しくは後述します。  
 HTMLとSSIを使用しない場合は、/static/index.htmlと/static/ssiディレクトリを削除してください。
 
 ## ディレクトリ構造
-Pugのコンパイルは、例えば`src/index.pug`が`htdocs/index.html`のように生成されます。  
+Pugのコンパイルは、たとえば`src/index.pug`が`htdocs/index.html`のように生成されます。  
 `_partial/`は共通部分など、`_template/`は共通部分をまとめたテンプレート、`_data/`はサイトやページ単位で使うデータ（JSON）、`_mixin/`はPugのmixinを保存します。`_index.pug`のようにアンダースコアから始まるファイルは直接出力されません。  
 多言語対応のため、一部のPugファイルは`ja/`や`en/`のように言語ごとにディレクトリをわけています。
 
@@ -53,7 +53,7 @@ src/
 }
 ```
 
-gulpfile.jsで以下のように記述しているので、`ja.site.name`のようにしてデータを取得することができます。
+gulpfile.jsで以下のように記述しているので、`ja.site.name`のようにしてデータを取得できます。
 
 ```js
   var locals = {
@@ -157,11 +157,11 @@ block content
 - `pageDescription`：そのページの概要を記述します。必須です。
 - `pageKeywords`：そのページのキーワードを記述します。値を空にすると出力されません。
 - `pageOgpTitle`：OGPで使用するタイトルを記述します。ページのタイトルと同じ場合は変数`pageTitle`を記述、違う場合は文字列で記述してください。
-- `pageOgpImage`：OGPで使用する画像へのパスを、ルート相対パスで記述します（`_default.pug`でhttp(s)から始まるURLは補完されます）。サイト共通の画像を指定する場合は`ja.site.ogpImage`のままにしておきます。
+- `pageOgpImage`：OGPで使用する画像へのパスを、ルート相対パスで記述します（http(s)から始まるURLは補完されます）。サイト共通の画像を指定する場合は`ja.site.ogpImage`のままにしておきます。
 - `pageOgpType`：そのページの種類を記述します。サイトトップページは`website`、それ以外は`article`を指定します。
 
 
-`block append`を追加することで、ページごとに個別のCSSやJSファイルの読み込みをすることができます。
+`block append`を追加することで、ページごとに個別のCSSやJSファイルの読み込みができます。
 
 ```pug
 //- 個別CSSファイルの読み込み（相対パス）
@@ -185,7 +185,7 @@ gulpfile.js内の記述によって`pageAbsolutePath`には、そのページか
 
 `#{site.url}#{pageAbsolutePath}` => 例：`http://example.com/about/`
 
-コンテンツは`block content`の下に記述していきます。後述する`_layout.pug`でヘッダーやフッターなどの共通部分は自動で出力されます。
+コンテンツは`block content`の下に記述します。後述する`_layout.pug`でヘッダーやフッターなどの共通部分は自動で出力されます。
 
 ```
 block content
@@ -225,7 +225,7 @@ html(lang="ja")
     include /_partial/_script
 ```
 
-`include /_partial/_header`などの部分がインクルードしている箇所です。必要に応じて、追加や削除をしてください。パスはルート相対パスで指定していきます。
+`include /_partial/_header`などの部分がインクルードしている箇所です。必要に応じて、追加や削除をしてください。パスはルート相対パスで指定します。
 
 
 ## SSI

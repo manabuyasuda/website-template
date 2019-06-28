@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const { series } = require('gulp');
 
 // Pug
 const pug = require('gulp-pug');
@@ -23,6 +22,8 @@ const gulpStylelint = require('gulp-stylelint');
 
 // JS
 const webpackStream = require('webpack-stream');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const eslintFormatters = require('eslint/lib/cli-engine/formatters/stylish');
 
 // Image
 const imagemin = require('gulp-imagemin');
@@ -188,7 +189,7 @@ function css() {
   return (
     gulp
       .src(src.css, {
-        sourcemaps: !!isDevelopment,
+        sourcemaps: isDevelopment,
       })
       // globパターンでのインポート機能を追加
       .pipe(sassGlob())
@@ -229,7 +230,7 @@ function css() {
       )
       .pipe(
         gulp.dest(dest.root, {
-          sourcemaps: !!isDevelopment,
+          sourcemaps: isDevelopment,
         }),
       )
       .pipe(browserSync.reload({ stream: true }))
@@ -241,7 +242,6 @@ function css() {
  * Vue.jsの単一ファイルコンポーネントの変換と、ESLint・Prettierも実行します。
  */
 function js() {
-  const VueLoaderPlugin = require('vue-loader/lib/plugin');
   return gulp
     .src(src.js)
     .pipe(
@@ -267,11 +267,11 @@ function js() {
               loader: 'eslint-loader',
               options: {
                 fix: true,
-                formatter: require('eslint/lib/cli-engine/formatters/stylish'),
+                formatter: eslintFormatters,
               },
             },
             {
-              test: /\.(scss$|css$)/,
+              test: /\.(scss|css)$/,
               use: ['vue-style-loader', 'css-loader', 'sass-loader'],
             },
           ],
@@ -325,7 +325,7 @@ function image() {
             // <metadata>を削除する。
             // 追加したmetadataを削除する必要はない。
             { removeMetadata: false },
-            // SVGの仕様に含まれていないタグや属性、id属性やvertion属性を削除する。
+            // SVGの仕様に含まれていないタグや属性、id属性やversion属性を削除する。
             // 追加した要素を削除する必要はない。
             { removeUnknownsAndDefaults: false },
             // コードが短くなる場合だけ<path>に変換する。
@@ -414,12 +414,12 @@ function serve(done) {
   browserSync({
     server: {
       // SSIを使用します。
-      // middleware: [
-      //   browserSyncSsi({
-      //     baseDir: dest.root,
-      //     ext: '.html',
-      //   }),
-      // ],
+      middleware: [
+        browserSyncSsi({
+          baseDir: dest.root,
+          ext: '.html',
+        }),
+      ],
       baseDir: dest.root,
     },
     // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
@@ -475,31 +475,19 @@ function watch() {
 /**
  * 開発タスクをすべて実行します。
  */
-exports.build = series(
-  gulp.parallel(clean),
-  html,
-  ssi,
-  css,
-  styleguide,
-  js,
-  image,
-  svgSprite,
-  copy,
+exports.build = gulp.series(
+  clean,
+  gulp.parallel(html, css, js, image, svgSprite, copy),
+  gulp.parallel(ssi, styleguide),
 );
 
 /**
  * 開発タスクをすべて実行します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-exports.default = series(
-  gulp.parallel(clean),
-  html,
-  ssi,
-  css,
-  styleguide,
-  js,
-  image,
-  svgSprite,
-  copy,
+exports.default = gulp.series(
+  clean,
+  gulp.parallel(html, css, js, image, svgSprite, copy),
+  gulp.parallel(ssi, styleguide),
   gulp.parallel(serve, watch),
 );
