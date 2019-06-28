@@ -107,7 +107,7 @@
     "responsive-auto-height": "0.0.4",
     "sass-mq": "^5.0.0",
     "svg4everybody": "^2.1.9",
-    "sweet-scroll": "^3.0.1",
+    "sweet-scroll": "^4.0.0",
     "vue": "^2.6.10",
     "what-input": "^5.1.2"
   },
