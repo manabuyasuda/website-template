@@ -271,7 +271,7 @@ function js() {
               },
             },
             {
-              test: /\.(scss$|css$)/,
+              test: /\.(scss|css)$/,
               use: ['vue-style-loader', 'css-loader', 'sass-loader'],
             },
           ],
