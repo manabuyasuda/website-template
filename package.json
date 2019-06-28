@@ -71,7 +71,6 @@
     "gulp-sass-glob": "^1.0.9",
     "gulp-stylelint": "^9.0.0",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-uglify": "^3.0.1",
     "gulp-w3cjs": "^1.3.2",
     "htmlhint-stylish": "^1.0.3",
     "imagemin-mozjpeg": "^8.0.0",
