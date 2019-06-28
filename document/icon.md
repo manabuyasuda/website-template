@@ -8,8 +8,8 @@
 ## SVGスプライトの生成
 SVGスプライトは以下の手順で生成します。
 
-1. `src/assets/svg/`にある.svgファイルを対象にGulpのタスクが実行される。
-2. `htdocs/assets/svg/`にSVGスプライト化された.svgファイルが出力される（デフォルトではsprite.svg）。
+1. `src/assets/svg/`にある`.svg`ファイルを対象にGulpのタスクが実行される。
+2. `htdocs/assets/svg/`にSVGスプライト化された`.svg`ファイルが出力される（デフォルトではsprite.svg）。
 
 ## アイコンの表示
 装飾的なアイコンの場合は、以下のようにHTMLを記述します。
