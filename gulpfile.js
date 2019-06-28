@@ -324,7 +324,7 @@ function image() {
             // <metadata>を削除する。
             // 追加したmetadataを削除する必要はない。
             { removeMetadata: false },
-            // SVGの仕様に含まれていないタグや属性、id属性やvertion属性を削除する。
+            // SVGの仕様に含まれていないタグや属性、id属性やversion属性を削除する。
             // 追加した要素を削除する必要はない。
             { removeUnknownsAndDefaults: false },
             // コードが短くなる場合だけ<path>に変換する。
