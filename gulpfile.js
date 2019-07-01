@@ -459,6 +459,19 @@ exports.serve = serve;
 exports.clean = clean;
 
 /**
+ * 開発タスクをすべて実行します。
+ */
+function build(done) {
+  gulp.series(
+    clean,
+    gulp.parallel(html, css, js, image, svgSprite, copy),
+    gulp.parallel(ssi, styleguide),
+  );
+  done();
+}
+exports.build = build;
+
+/**
  * ファイルを監視します。
  */
 function watch() {
@@ -474,20 +487,6 @@ function watch() {
 
 /**
  * 開発タスクをすべて実行します。
- */
-exports.build = gulp.series(
-  clean,
-  gulp.parallel(html, css, js, image, svgSprite, copy),
-  gulp.parallel(ssi, styleguide),
-);
-
-/**
- * 開発タスクをすべて実行します。
  * ローカルサーバーを起動し、リアルタイムに更新を反映させます。
  */
-exports.default = gulp.series(
-  clean,
-  gulp.parallel(html, css, js, image, svgSprite, copy),
-  gulp.parallel(ssi, styleguide),
-  gulp.parallel(serve, watch),
-);
+exports.default = gulp.series(build, gulp.parallel(serve, watch));
