@@ -1,4 +1,4 @@
-const resolve = require('path').resolve;
+const { resolve } = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const eslintFormatters = require('eslint/lib/cli-engine/formatters/stylish');
 
