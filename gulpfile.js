@@ -21,6 +21,7 @@ const cleanCSS = require('gulp-clean-css');
 const gulpStylelint = require('gulp-stylelint');
 
 // JS
+const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const eslintFormatters = require('eslint/lib/cli-engine/formatters/stylish');
@@ -285,7 +286,7 @@ function js() {
         output: {
           filename: `${dest.js}[name].js`,
         },
-      }),
+      }, webpack),
     )
     .pipe(gulp.dest(dest.root))
     .pipe(browserSync.reload({ stream: true }));

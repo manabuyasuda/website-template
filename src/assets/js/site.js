@@ -15,3 +15,4 @@ jsSmoothScroll();
 stBackToTop();
 stBreadcrumb();
 swDialog();
+Promise.resolve().then(res => console.log('Promise end'));// eslint-disable-line
