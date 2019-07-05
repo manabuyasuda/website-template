@@ -23,8 +23,7 @@ const gulpStylelint = require('gulp-stylelint');
 // JS
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const eslintFormatters = require('eslint/lib/cli-engine/formatters/stylish');
+const webpackConfig = require('./webpack.config');
 
 // Image
 const imagemin = require('gulp-imagemin');
@@ -71,7 +70,7 @@ const src = {
 const dest = {
   root: 'htdocs/',
   image: 'htdocs/assets/img/',
-  js: 'assets/js/',
+  js: 'htdocs/assets/js/',
   svgSprite: 'htdocs/assets/svg/',
   cleanDest: 'htdocs/',
 };
@@ -245,50 +244,8 @@ function css() {
 function js() {
   return gulp
     .src(src.js)
-    .pipe(
-      webpackStream({
-        mode: envValues.NODE_ENV,
-        entry: {
-          site: src.js,
-        },
-        module: {
-          rules: [
-            {
-              test: /\.vue$/,
-              loader: 'vue-loader',
-            },
-            {
-              test: /\.js$/,
-              loader: 'babel-loader',
-            },
-            {
-              enforce: 'pre',
-              test: /\.(js|vue)$/,
-              exclude: /node_modules/,
-              loader: 'eslint-loader',
-              options: {
-                fix: true,
-                formatter: eslintFormatters,
-              },
-            },
-            {
-              test: /\.(scss|css)$/,
-              use: ['vue-style-loader', 'css-loader', 'sass-loader'],
-            },
-          ],
-        },
-        resolve: {
-          alias: {
-            vue$: 'vue/dist/vue.esm.js',
-          },
-        },
-        plugins: [new VueLoaderPlugin()],
-        output: {
-          filename: `${dest.js}[name].js`,
-        },
-      }, webpack),
-    )
-    .pipe(gulp.dest(dest.root))
+    .pipe(webpackStream(webpackConfig, webpack))
+    .pipe(gulp.dest(dest.js))
     .pipe(browserSync.reload({ stream: true }));
 }
 
