@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import 'element-closest';
 import 'picturefill';
 import 'flexibility';

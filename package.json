@@ -92,7 +92,6 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
     "a11y-dialog": "^5.2.0",
     "element-closest": "^3.0.1",
     "flexibility": "^2.0.1",
