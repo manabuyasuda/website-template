@@ -1,9 +1,11 @@
+const webpack = require('webpack');
 const { resolve } = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const eslintFormatters = require('eslint/lib/cli-engine/formatters/stylish');
 
 const environment = process.env.NODE_ENV || 'development';
 const isProduction = environment === 'production';
+const environmentConfig = require(`./config/${environment}.js`);
 
 module.exports = {
   mode: environment,
@@ -46,5 +48,10 @@ module.exports = {
       vue$: 'vue/dist/vue.esm.js',
     },
   },
-  plugins: [new VueLoaderPlugin()],
+  plugins: [
+    new VueLoaderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(environmentConfig),
+    }),
+  ],
 };
