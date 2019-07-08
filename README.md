@@ -11,6 +11,7 @@
   - [image.md](document/image.md)
   - [js.md](document/js.md)
   - [icon.md](document/icon.md)
+  - [https.md](document/https.md)
 
 
 ## 確認環境
@@ -168,3 +169,25 @@ npm run eslint
 - iOS11以降
 - Android5.1以降
 - その他ブラウザは最新版
+
+## browser-syncをhttpsで起動する
+APIの実行に`https`環境が必要な場合は、以下の設定が必要です。以降の設定はmacOSでの動作を確認しています。
+
+`.env.example`（`.env`のサンプルファイル）から`.env`を作成します。
+
+```
+cp .env.example .env
+```
+
+`.env`の`HTTPS_KEY`と`HTTPS_CERT`に証明書へのパスを設定します。`.env`内の`#`以降がコメントになります。
+
+```
+#browser-syncで`https`オプションを使用する場合にコメントを解除します
+#証明書の発行方法はドキュメント「https」を参照してください
+#HTTPS_KEY=/Users/<ユーザー名>/<IPアドレス>-key.pem
+#HTTPS_CERT=/Users/<ユーザー名>/<IPアドレス>.pem
+```
+
+証明書の発行方法は以下のドキュメントを参照してください。
+
+[https.md](document/https.md)
