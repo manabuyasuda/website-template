@@ -2,10 +2,11 @@ const { resolve } = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const eslintFormatters = require('eslint/lib/cli-engine/formatters/stylish');
 
-const isProduction = process.env.APP_ENV === 'production';
+const environment = process.env.NODE_ENV || 'development';
+const isProduction = environment === 'production';
 
 module.exports = {
-  mode: process.env.APP_ENV,
+  mode: environment,
   entry: {
     site: resolve(__dirname, 'src/assets/js/site.js'),
   },
