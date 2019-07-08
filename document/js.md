@@ -62,35 +62,40 @@ import $ from 'jquery';
 ```
 
 ## 環境変数
-`/env/`にあるファイルで環境変数を設定できます。
+`/config/`にあるファイルで環境変数を設定できます。
 
 ```js
 /**
- * 環境変数を設定します。
- * npm scriptの引数によって、開発環境と公開環境で値を出し分けることができます。
+ * 開発環境の環境変数を設定します。
+ * 以下のように出力します。
  * `process.env.NODE_ENV` => 'development'
+ * `process.env.API_BASE_URL` => 'dev.example.com'
  */
-exports.defaults = {
-  NODE_ENV: 'development',
+module.exports = {
+  API_BASE_URL: 'dev.example.com',
 }
-```
 
 ```
+
+```js
 /**
- * 環境変数を設定します。
- * npm scriptの引数によって、開発環境と公開環境で値を出し分けることができます。
+ * 公開環境の環境変数を設定します。
+ * 以下のように出力します。
  * `process.env.NODE_ENV` => 'production'
+ * `process.env.API_BASE_URL` => 'prod.example.com'
  */
-exports.defaults = {
-  NODE_ENV: 'production',
+module.exports = {
+  API_BASE_URL: 'prod.example.com',
 }
+
 ```
 
-デフォルトでは`NODE_ENV`が設定されていますが、APIやURLを開発環境と公開環境で変更したい場合は値を追加してください。  
-環境変数は、`gulpfile.js`と`/src/assets/js/`以下のJSファイル内で有効です。
+以下のような記述をすべてのJSファイルで利用できます。
 
 ```js
 if (process.env.NODE_ENV === 'development') {
-  // テスト環境で有効な処理
+  console.log(process.env.API_BASE_URL); // => 'dev.example.com'
+} else {
+  console.log(process.env.API_BASE_URL); // => 'prod.example.com'
 }
 ```

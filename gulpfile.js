@@ -76,16 +76,12 @@ const dest = {
 };
 
 /**
- * 環境変数を設定します。
- * npmスクリプトから`APP_ENV=development`かAPP_ENV=production`を受け取れます。
+ * 環境変数を取得します。
  */
-const env = process.env.APP_ENV;
-const developmentValues = require('./config/development').defaults;
-const productionValues = require('./config/production').defaults;
-
-const envValues = env === 'development' ? developmentValues : productionValues;
-const isDevelopment = envValues.NODE_ENV === 'development';
-const isProduction = envValues.NODE_ENV === 'production';
+const environment = process.env.NODE_ENV || 'development';
+const isDevelopment = environment === 'development';
+const isProduction = environment === 'production';
+const environmentConfig = require(`./config/${environment}.js`);
 
 /**
  * `.pug`を`.html`にコンパイルします。
