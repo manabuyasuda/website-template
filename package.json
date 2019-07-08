@@ -48,6 +48,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",
     "del": "^4.1.1",
+    "dotenv": "^8.0.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^6.0.0",

@@ -78,10 +78,12 @@ const dest = {
 /**
  * 環境変数を取得します。
  */
+require('dotenv').config();
+
 const environment = process.env.NODE_ENV || 'development';
 const isDevelopment = environment === 'development';
 const isProduction = environment === 'production';
-const environmentConfig = require(`./config/${environment}.js`);
+const environmentConfig = require(`./config/${environment}.js`); // eslint-disable-line
 
 /**
  * `.pug`を`.html`にコンパイルします。
@@ -365,6 +367,10 @@ function copy() {
  * ローカルサーバーを起動します。
  */
 function serve(done) {
+  const httpsOption =
+    process.env.HTTPS_KEY !== undefined
+      ? { key: process.env.HTTPS_KEY, cert: process.env.HTTPS_CERT }
+      : false;
   browserSync({
     server: {
       // SSIを使用します。
@@ -376,6 +382,7 @@ function serve(done) {
       ],
       baseDir: dest.root,
     },
+    https: httpsOption,
     // 画面を共有するときにスクロールやクリックなどをミラーリングしたくない場合はfalseにします。
     ghostMode: false,
     // ローカルIPアドレスでサーバーを立ち上げます。
