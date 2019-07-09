@@ -88,6 +88,7 @@
     "stylelint-order": "^3.0.0",
     "stylelint-prettier": "^1.1.1",
     "stylelint-scss": "^3.8.0",
+    "stylelint-webpack-plugin": "^0.10.5",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.35.0",
