@@ -18,7 +18,6 @@ const postcss = require('gulp-postcss');
 const flexBugsFixes = require('postcss-flexbugs-fixes');
 const autoprefixer = require('autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-const gulpStylelint = require('gulp-stylelint');
 
 // JS
 const webpack = require('webpack');
@@ -161,22 +160,6 @@ function htmlValidate() {
  */
 function ssi() {
   return gulp.src(src.ssi).pipe(browserSync.reload({ stream: true }));
-}
-
-/**
- * 公開用のSassファイルを解析して警告やエラーを通知します。
- * 修正できるものは強制的に反映します。
- */
-function stylelint() {
-  return gulp
-    .src(src.css)
-    .pipe(
-      gulpStylelint({
-        fix: true,
-        reporters: [{ formatter: 'string', console: true }],
-      }),
-    )
-    .pipe(gulp.dest(src.root));
 }
 
 /**
@@ -409,7 +392,6 @@ function clean() {
 exports.html = html;
 exports.htmlValidate = htmlValidate;
 exports.ssi = ssi;
-exports.stylelint = stylelint;
 exports.css = css;
 exports.js = js;
 exports.image = image;

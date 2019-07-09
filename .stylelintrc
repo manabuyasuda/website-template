@@ -21,6 +21,7 @@
         "bracketSpacing": false
       }
     ],
+    "color-hex-case": "lower",
     "number-leading-zero": null,
     "value-no-vendor-prefix": null,
     "property-no-vendor-prefix": null,
