@@ -6,7 +6,7 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const environment = process.env.NODE_ENV || 'development';
 const isProduction = environment === 'production';
-const environmentConfig = require(`./config/${environment}.js`);
+const environmentConfig = require(`./config/${environment}.js`); // eslint-disable-line
 
 module.exports = {
   mode: environment,
@@ -39,8 +39,27 @@ module.exports = {
         },
       },
       {
-        test: /\.(scss|css)$/,
-        use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+        test: /\.css$/,
+        use: ['vue-style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                './src/assets/css/base/function/**/*.scss',
+                './src/assets/css/base/variable/**/*.scss',
+                './src/assets/css/base/mixin/**/*.scss',
+              ],
+              include: resolve(__dirname, ''),
+            },
+          },
+        ],
       },
     ],
   },
