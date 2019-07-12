@@ -1,96 +1,258 @@
 <!DOCTYPE html>
-<html lang="ja" class="no-js">
-  <head>
-    <title>Styleguide</title>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="robots" content="noindex, nofollow">
-    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
-    <link href="./aigis_assets/css/highlight/prism.css" rel="stylesheet">
-    <link href="./aigis_assets/css/theme.css" rel="stylesheet">
-    <link href="/assets/css/site.css" rel="stylesheet">
-    <script>document.documentElement.classList.remove('no-js')</script>
-  </head>
-  <body>
-    <main>
-      <div class="aigis-container">
-        <div class="aigis-sidemenu">
-          <header class="aigis-header"><a href="./index.html">Styleguide</a></header>
-          <h2 class="aigis-sidemenu__heading">ID</h2>
-          <nav class="aigis-tags aigis-tagList">
-          </nav>
-          <h2 class="aigis-sidemenu__heading">Category</h2>
-          <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="category/Block/index.html">Block</a></li><li data-path-depth="0"><a href="category/Button/index.html">Button</a></li><li data-path-depth="0"><a href="category/Form/index.html">Form</a></li><li data-path-depth="0"><a href="category/Global/index.html">Global</a></li><li data-path-depth="0"><a href="category/Heading/index.html">Heading</a></li><li data-path-depth="0"><a href="category/Icon/index.html">Icon</a></li><li data-path-depth="0"><a href="category/Image/index.html">Image</a></li><li data-path-depth="0"><a href="category/InteractiveComponent/index.html">InteractiveComponent</a></li><li data-path-depth="0"><a href="category/Layout/index.html">Layout</a></li><li data-path-depth="0"><a href="category/Link/index.html">Link</a></li><li data-path-depth="0"><a href="category/List/index.html">List</a></li><li data-path-depth="0"><a href="category/Navigation/index.html">Navigation</a></li><li data-path-depth="0"><a href="category/Text/index.html">Text</a></li><li data-path-depth="0"><a href="category/ThirdPartyComponent/index.html">ThirdPartyComponent</a></li></ul>
-          </nav>
-          <h2 class="aigis-sidemenu__heading">Namespace</h2>
-          <nav class="aigis-tags aigis-tagList"><a href="./namespace/l-/index.html" class="aigis-namespace__item aigis-namespace__item--l-">l-</a><a href="./namespace/st-/index.html" class="aigis-namespace__item aigis-namespace__item--st-">st-</a><a href="./namespace/sw-/index.html" class="aigis-namespace__item aigis-namespace__item--sw-">sw-</a><a href="./namespace/test-/index.html" class="aigis-namespace__item aigis-namespace__item--test-">test-</a><a href="./namespace/wisywig-/index.html" class="aigis-namespace__item aigis-namespace__item--wisywig-">wisywig-</a>
-          </nav>
-          <h2 class="aigis-sidemenu__heading"><a href="./color.html">All Colors</a></h2>
-        </div>
-        <div class="aigis-contents">
-          <div class="aigis-contents__body"><h1 id="-">スタイルガイド</h1>
-<h2 id="id">id</h2>
-<p>主にワイヤーフレームの指示で使われるコンポーネントの識別子です。<br>例えば、<code>btn-1</code>や<code>bnr-2A</code>のように名前をつけます。数字は別のコンポーネント、アルファベットはバリエーションと考えます。単語の省略は任意です。</p>
-<p>スタイルガイドに<code>id: abc</code>のように追加するとabc/index.htmlというIDページが生成されます。</p>
-<pre><code>name<span class="token punctuation" >:</span> l<span class="token operator" >-</span>Wrapper
-namespace<span class="token punctuation" >:</span> l<span class="token operator" >-</span>
-category<span class="token punctuation" >:</span> Layout
-id<span class="token punctuation" >:</span> abc
-</code></pre><h2 id="category">category</h2>
-<p>GlobalやHeadingのようなコンポーネントの分類です。<br>コンポーネントをこの分類で分けて一覧化（スクリーンショットを撮ってリストアップ）することで、似たようなコンポーネントを統合したり、コンポーネントごとの仕様を確認してください。</p>
-<ul>
-<li>Global：ヘッダーやフッターのようなサイト全体で使われる要素</li>
-<li>Layout：グリッドやコンポーネントの余白指定などのレイアウトパターン</li>
-<li>Navigation：メインナビゲーションやフッターのナビゲーション、ページネーションやパンくずリストなどのユーザーを誘導することが目的とする要素</li>
-<li>BaseModule：比較的小さなコンポーネントで、Layoutコンポーネントとセットで使うものと、後述するBlockModuleの中で使用するスタイルのベースになるものがあります。<ul>
-<li>Image：ロゴやメインビジュアル、アバターやサムネイルや背景画像などの画像</li>
-<li>Icon：用途やカテゴリーを端的に示す画像です。虫眼鏡、ソーシャルアイコン、矢印、ハンバーガーなどです。</li>
-<li>Form：入力エリア、Selectメニュー、チェックボックス、ラジオボタンのような、ユーザーが操作するフォーム要素</li>
-<li>Button：オンオフやページ遷移、表示や非表示といった操作の切り替えに使われる要素</li>
-<li>Heading：ページタイトルや見出し</li>
-<li>Text：文章やラベルのようなテキスト要素</li>
-<li>Link：テキストリンク</li>
-<li>List：順序付きや定義リストなどのHTMLで定義されているリスト要素や、一覧や表といった形式であらわされている要素</li>
-<li>Media：ビデオやオーディオのようなリッチメディア要素</li>
-</ul>
-</li>
-<li>BlockModule：BaseModuleのような小さなコンポーネントを集めた、一定のパターンを持っているモジュールです。1つのコンポーネントとして定義することで、個別に仕様変更の対応ができるようにしておきます。<ul>
-<li>Block：見出しや画像、テキストなどが1つのまとめりになっているエリア</li>
-<li>InteractiveComponent：アコーディオン、タブ、カルーセル、オフキャンバスのようなユーザーの操作で稼働する要素</li>
-<li>Messaging：警告メッセージ、エラーメッセージ、ローディング、ポップアップのようなユーザーに何らかのメッセージを伝える要素</li>
-</ul>
-</li>
-<li>ThirdPartyComponent：サイト製作者側がすべてをコントロールすることができないサービス</li>
-<li>Advertising：広告</li>
-</ul>
-<h2 id="namespace">namespace</h2>
-<p>クラス名の接頭辞で、どの範囲で使われるかという影響度を示します。<br>以下はデフォルトで用意しているものです。サイトの構造によって変更してください。</p>
-<ul>
-<li><code>.sw-</code> (SiteWide)：サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）</li>
-<li><code>.st-</code> (Structure)：サイト共通の構造的なModule（ヘッダーやフッターのような場所が固定されるもの）</li>
-<li><code>.l-</code> (Layout)：コンテンツ内の余白やレイアウト専用のModule</li>
-<li><code>.wisywig-</code> (WISYWIG)：WISYWIG（ウィジウィグ）で入力した要素に対するスタイル</li>
-<li><code>.home-</code> (HomePage)：ホームページ（サイトトップページ）</li>
-<li><code>.top-</code> (TopPage)：カテゴリートップページ</li>
-<li><code>.sub-</code> (SubPage)：カテゴリー下層ページ</li>
-<li><code>.products-</code> (Products)：製品情報</li>
-<li><code>.news-</code> (News)：ニュース</li>
-<li><code>.company-</code> (Company)：会社案内・企業情報</li>
-<li><code>.recruit-</code> (Recruit)：採用情報ページ</li>
-<li><code>.csr-</code> (CorporateSocialResponsibility)：企業の社会的責任</li>
-<li><code>.faq-</code> (FrequentlyAskedQuestions)：よくある質問</li>
-<li><code>.inquiry-</code> (Inquiry)：お問い合わせ</li>
-<li><code>.ir-</code> (InvestorRelations)：投資家向け情報</li>
-<li><code>.results-</code> (Results)：検索結果ページ</li>
-<li><code>.sitemap-</code> (Sitemap)：サイトマップページ</li>
-</ul>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="themes/mandelbrot/favicon.ico" type="image/ico">
 
-          </div>
+<link rel="stylesheet" href="themes/mandelbrot/css/olive.css?cachebust=1.2.1" type="text/css">
+
+
+<title>Styleguide | Styleguide</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+    </button>
+    <a href="" class="Header-title" data-pjax>Styleguide</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">Styleguide</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="Prose">
+
+
+
+
+
+<p>You can browse the component library using the navigation on the left.</p>
+
+<h3>Component statuses</h3>
+<p>Components and their variants have been given statuses reflecting their state of completion. The available statuses are listed below.</p>
+<table>
+<tr>
+    <th>Label</th>
+    <th>Description</th>
+</tr>
+
+<tr>
+    <td>
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #FF3333; border-color: #FF3333;">Prototype</label>
+
+</div>
+
+</td>
+    <td>Do not implement.</td>
+</tr>
+
+<tr>
+    <td>
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #FF9233; border-color: #FF9233;">WIP</label>
+
+</div>
+
+</td>
+    <td>Work in progress. Implement with caution.</td>
+</tr>
+
+<tr>
+    <td>
+
+<div class="Status Status--tag">
+
+<label class="Status-label" style="background-color: #29CC29; border-color: #29CC29;">Ready</label>
+
+</div>
+
+</td>
+    <td>Ready to implement.</td>
+</tr>
+
+</table>
+
+
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
         </div>
-      </div>
-    </main>
-    <script src="/assets/js/site.js"></script>
-  </body>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-heading">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Heading</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-headings">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Headings</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/headings--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/headings--decorated.html" data-pjax>
+                <span>Decorated</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+
+
+    
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.1"></script>
+
+
+
+</body>
 </html>
