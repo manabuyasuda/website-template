@@ -36,9 +36,9 @@ const gulpSvgSprite = require('gulp-svg-sprite');
 const fractal = require('@frctl/fractal').create();
 
 fractal.set('project.title', 'Styleguide');
-fractal.components.set('path', './src/styleguide/components');
-fractal.docs.set('path', './src/styleguide/docs');
-fractal.web.set('builder.dest', './htdocs/styleguide');
+fractal.components.set('path', __dirname +  '/src/styleguide/components');
+fractal.docs.set('path', __dirname + '/src/styleguide/docs');
+fractal.web.set('builder.dest', __dirname + '/htdocs/styleguide');
 fractal.web.set('server.sync', true);
 fractal.web.set('server.watch', true);
 fractal.web.set('server.syncOptions', {
