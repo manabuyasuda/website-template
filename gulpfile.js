@@ -36,6 +36,8 @@ const gulpSvgSprite = require('gulp-svg-sprite');
 const fractal = require('@frctl/fractal').create();
 
 fractal.set('project.title', 'Styleguide');
+fractal.set('project.version', 'v4.0');
+fractal.set('project.author', 'Manabu Yasuda');
 fractal.components.set('path', __dirname +  '/src/styleguide/components');
 fractal.docs.set('path', __dirname + '/src/styleguide/docs');
 fractal.web.set('builder.dest', __dirname + '/htdocs/styleguide');

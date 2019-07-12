@@ -7,6 +7,7 @@
     "start": "cross-env NODE_ENV=development gulp",
     "test": "npm run lint && cross-env NODE_ENV=production gulp",
     "release": "npm run lint && cross-env NODE_ENV=production gulp build",
+    "styleguide": "cross-env NODE_ENV=development gulp styleguide",
     "htmlValidate": "cross-env NODE_ENV=development gulp htmlValidate",
     "stylelint": "stylelint 'src/**/*.{scss,vue}' --fix",
     "eslint": "eslint src/**/*.{js,vue} --fix",
