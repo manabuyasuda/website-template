@@ -95,6 +95,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@frctl/fractal": "^1.1.7",
     "a11y-dialog": "^5.2.0",
     "element-closest": "^3.0.1",
     "flexibility": "^2.0.1",
