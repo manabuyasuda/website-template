@@ -39,7 +39,7 @@ export default function jsSmoothScroll() {
     window.location.hash = '';
   }
 
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
     const scrollElement = document.getElementById(locationHash.substr(1));
     const needsInitialScroll = scrollElement != null;
 
