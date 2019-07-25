@@ -6,6 +6,7 @@
  */
 import Vue from 'vue';
 import SampleButton from './components/SampleButton.vue';
+import BlogList from './components/BlogList.vue';
 
 export default function vueTest() {
   const element = document.getElementById('app');
@@ -13,7 +14,10 @@ export default function vueTest() {
   if (!element) return;
 
   const app = new Vue({
-    components: { SampleButton },
+    components: {
+      SampleButton,
+      BlogList,
+    },
     data: {
       message: 'Hello Vue.js!',
     },
