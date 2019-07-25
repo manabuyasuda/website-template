@@ -8,12 +8,12 @@ import Vue from 'vue';
 import SampleButton from './components/SampleButton.vue';
 import BlogList from './components/BlogList.vue';
 
-export default function vueTest() {
+export default function app() {
   const element = document.getElementById('app');
 
   if (!element) return;
 
-  const app = new Vue({
+  const vm = new Vue({
     components: {
       SampleButton,
       BlogList,
@@ -23,5 +23,5 @@ export default function vueTest() {
     },
   });
 
-  app.$mount('#app');
+  vm.$mount('#app');
 }
