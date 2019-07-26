@@ -1,8 +1,6 @@
 <template>
   <div class="BlogList">
-    <div class="BlogList_Loading" v-if="isLoading">
-      <p class="BlogList_LoadingText">Loading…</p>
-    </div>
+    <VLoading v-if="isLoading"></VLoading>
 
     <transition appear>
       <div class="BlogList_Posts">
@@ -14,19 +12,23 @@
 
 <script>
 import PostList from './PostList.vue';
+import VLoading from './VLoading.vue';
 import RepositoryFactory from '../repositories/RepositoryFactory';
 
 const PostRepository = RepositoryFactory.get('posts');
-const POSTS_COUNT_MAX = 10;
+const POSTS_COUNT_MAX = 100;
+const IS_LOADING = 'IS_LOADING';
+const IS_READY = 'IS_READY';
 
 export default {
   name: 'BlogList',
   components: {
     PostList,
+    VLoading,
   },
   data() {
     return {
-      isLoading: false,
+      currentState: IS_LOADING,
       posts: [],
     };
   },
@@ -34,14 +36,25 @@ export default {
     this.fetch();
   },
   methods: {
+    currentToLoading() {
+      this.currentState = IS_LOADING;
+    },
+    currentToReady() {
+      this.currentState = IS_READY;
+    },
     async fetch() {
-      this.isLoading = true;
       const { data } = await PostRepository.get();
-      this.isLoading = false;
+      this.currentToReady();
       this.posts = data;
     },
   },
   computed: {
+    isLoading() {
+      return this.currentState === IS_LOADING;
+    },
+    isReady() {
+      return this.currentState === IS_READY;
+    },
     computedPosts() {
       return this.posts.slice(0, POSTS_COUNT_MAX);
     },
@@ -65,26 +78,6 @@ export default {
 .BlogList {
   max-width: rem(600);
   margin: auto;
-}
-
-.BlogList_Loading {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  font-size: rem(30);
-  background-color: #fff;
-}
-
-.BlogList_LoadingText {
-  position: fixed;
-  right: 50%;
-  bottom: 50%;
-  transform: translate(50%, 50%);
 }
 
 .BlogList_Posts {
