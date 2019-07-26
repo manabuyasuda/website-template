@@ -6,18 +6,22 @@
  */
 import Vue from 'vue';
 import SampleButton from './components/SampleButton.vue';
+import BlogList from './components/BlogList.vue';
 
-export default function vueTest() {
+export default function app() {
   const element = document.getElementById('app');
 
   if (!element) return;
 
-  const app = new Vue({
-    components: { SampleButton },
+  const vm = new Vue({
+    components: {
+      SampleButton,
+      BlogList,
+    },
     data: {
       message: 'Hello Vue.js!',
     },
   });
 
-  app.$mount('#app');
+  vm.$mount('#app');
 }
