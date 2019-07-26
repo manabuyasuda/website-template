@@ -1,52 +1,87 @@
 <template>
-  <ul class="PostList">
-    <li class="PostList_Item" v-for="post in posts" :key="post.id">
-      <p class="PostList_ID">postID: {{ post.id }}</p>
-      <h2 class="PostList_Title">{{ post.title }}</h2>
-      <p class="PostList_Body">{{ post.body }}</p>
-    </li>
-  </ul>
+  <div class="PostList">
+    <VLoading v-if="isLoading"></VLoading>
+
+    <transition appear>
+      <ul class="PostList_List">
+        <PostListItem :posts="computedPosts"></PostListItem>
+      </ul>
+    </transition>
+  </div>
 </template>
 
 <script>
+import PostListItem from './PostListItem.vue';
+import VLoading from './VLoading.vue';
+import RepositoryFactory from '../repositories/RepositoryFactory';
+
+const PostRepository = RepositoryFactory.get('posts');
+const POSTS_COUNT_MAX = 100;
+const IS_LOADING = 'IS_LOADING';
+const IS_READY = 'IS_READY';
+
 export default {
   name: 'PostList',
-  props: {
-    posts: {
-      type: Array,
-      required: true,
+  components: {
+    PostListItem,
+    VLoading,
+  },
+  data() {
+    return {
+      currentState: IS_LOADING,
+      posts: [],
+    };
+  },
+  created() {
+    this.fetch();
+  },
+  methods: {
+    currentToLoading() {
+      this.currentState = IS_LOADING;
+    },
+    currentToReady() {
+      this.currentState = IS_READY;
+    },
+    async fetch() {
+      const { data } = await PostRepository.get();
+      this.currentToReady();
+      this.posts = data;
+    },
+  },
+  computed: {
+    isLoading() {
+      return this.currentState === IS_LOADING;
+    },
+    isReady() {
+      return this.currentState === IS_READY;
+    },
+    computedPosts() {
+      return this.posts.slice(0, POSTS_COUNT_MAX);
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition-timing-function: $global-transition-timing-function;
+  transition-duration: $global-transition-duration * 4;
+  transition-property: opacity;
+}
+
 .PostList {
+  max-width: rem(600);
+  margin: auto;
+}
+
+.PostList_List {
   padding-left: 0;
   list-style-type: none;
-
-  .BlogList_Posts & {
-    padding: rem(30);
-  }
-}
-
-.PostList_Item {
-  &:nth-of-type(n + 2) {
-    margin-top: rem(30);
-  }
-}
-
-.PostList_ID {
-  font-size: rem(12);
-  line-height: 1;
-}
-
-.PostList_Title {
-  margin-top: rem(10);
-  margin-bottom: rem(10);
-}
-
-.PostList_Body {
-  @include multi-line-ellipsis(1.4, 2);
 }
 </style>
