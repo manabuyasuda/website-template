@@ -12,8 +12,8 @@
 
 <script>
 import PostListItem from './PostListItem.vue';
-import VLoading from './VLoading.vue';
-import RepositoryFactory from '../repositories/RepositoryFactory';
+import VLoading from '../VLoading/VLoading.vue';
+import RepositoryFactory from '../../assets/js/infra/RepositoryFactory';
 
 const PostRepository = RepositoryFactory.get('posts');
 const POSTS_COUNT_MAX = 100;

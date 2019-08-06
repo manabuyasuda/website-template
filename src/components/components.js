@@ -1,12 +1,6 @@
-/**
- * Vue.jsのテストです。
- * `<div id="app"><sample-button variant="default">{{message}}</sample-button></div>`
- *  or
- * `#app sample-button(variant="default") {{message}}`
- */
 import Vue from 'vue';
-import SampleButton from './components/SampleButton.vue';
-import PostList from './components/PostList.vue';
+import SampleButton from './SampleButton/SampleButton.vue';
+import PostList from './PostList/PostList.vue';
 
 export default function app() {
   const element = document.getElementById('app');
