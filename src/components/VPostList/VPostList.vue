@@ -4,14 +4,14 @@
 
     <transition appear>
       <ul class="PostList_List">
-        <PostListItem :posts="computedPosts"></PostListItem>
+        <VPostListItem :posts="computedPosts"></VPostListItem>
       </ul>
     </transition>
   </div>
 </template>
 
 <script>
-import PostListItem from './PostListItem.vue';
+import VPostListItem from './VPostListItem.vue';
 import VLoading from '../VLoading/VLoading.vue';
 import RepositoryFactory from '../../assets/js/infra/RepositoryFactory';
 
@@ -23,7 +23,7 @@ const IS_READY = 'IS_READY';
 export default {
   name: 'PostList',
   components: {
-    PostListItem,
+    VPostListItem,
     VLoading,
   },
   data() {
