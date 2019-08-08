@@ -59,7 +59,7 @@ export default class Storage {
    * Storage.marge({ foo: 'foo', bar: 'bar' });
    */
   static marge(storage) {
-    list = Object.assign(storage, storage);
+    list = Object.assign(list, storage);
     this.update();
     return this;
   }
