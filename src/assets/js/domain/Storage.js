@@ -21,6 +21,16 @@ export default class Storage {
   }
 
   /**
+   * ローカルストレージのキーを返します。
+   * @return {Object} query
+   * @example
+   * const storageKey = Storage.key;
+   */
+  static get key() {
+    return KEY;
+  }
+
+  /**
    * ローカルストレージの値を返します。
    * @return {Object} list
    * @example
