@@ -1,4 +1,12 @@
+/**
+ * `em`に変換するための基準になるフォントサイズ。
+ * @type {number}
+ */
 const BROWSER_DEFAULT_FONT_SIZE = 16;
+/**
+ * メディアクエリ変数。キーと値はCSSの変数と合わせます。
+ * @type {object}
+ */
 const list = {
   sm: 375,
   md: 768,
@@ -7,13 +15,13 @@ const list = {
 };
 
 /**
- * メディアクエリ変数を管理して、`this.match(query, layoutChangedCallback)`で`query`が一致するか判定します。
+ * メディアクエリ変数を管理して、`this.matches(query, layoutChangedCallback)`で`query`が一致するか判定します。
  * @example
  * import MediaQuery from './domain/MediaQuery';
  */
 export default class MediaQuery {
   /**
-   * メディアクエリ文字列を返します。
+   * メディアクエリ変数を返します。
    * @return {Object} list
    * @example
    * const mediaQueryList = MediaQuery.list;

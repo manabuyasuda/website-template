@@ -1,7 +1,15 @@
+/**
+ * パラメーターのキーを管理します。
+ * @type {object}
+ */
 const query = {
   search: 'q',
   page: 'page',
 };
+/**
+ * パラメーターをオブジェクトで管理します。
+ * @type {object}
+ */
 let list = {};
 
 /**
