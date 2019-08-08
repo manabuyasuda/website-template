@@ -1,31 +1,36 @@
+const KEY = 'APP';
+let list = {};
+
 /**
  * localStorageの取得と更新、統合と削除をします。
  * @example
- * import Storage from './Storage';
- * const storage = new Storage();
+ * import Storage from './domain/Storage';
  */
 export default class Storage {
   constructor() {
-    /**
-     * @property {string} key - ローカルストレージのキー
-     * @property {object} storage - ローカルストレージ値の一時保存オブジェクト
-     */
-    this.key = 'APP';
-    this.storage = {};
-
     this.fetch();
     this.update();
   }
 
   /**
+   * ローカルストレージの値を返します。
+   * @return {Object} list
+   * @example
+   * const storageList = Storage.list;
+   */
+  static get list() {
+    return list;
+  }
+
+  /**
    * ローカルストレージを取得します。
    */
-  fetch() {
-    const item = JSON.parse(localStorage.getItem(this.key));
+  static fetch() {
+    const item = JSON.parse(localStorage.getItem(KEY));
     const isNil = item === undefined || item === null;
 
     if (!isNil) {
-      this.storage = Object.assign(this.storage, item);
+      list = Object.assign(list, item);
     }
 
     return this;
@@ -34,8 +39,8 @@ export default class Storage {
   /**
    * ローカルストレージを更新します。
    */
-  update() {
-    localStorage.setItem(this.key, JSON.stringify(this.storage));
+  static update() {
+    localStorage.setItem(KEY, JSON.stringify(list));
     return this;
   }
 
@@ -43,10 +48,10 @@ export default class Storage {
    * ストレージオブジェクトを統合して、ローカルストレージを更新します。
    * @param {Object} storage - 統合するキーと値のオブジェクト
    * @example
-   * storage.marge({ foo: 'foo', bar: 'bar' });
+   * Storage.marge({ foo: 'foo', bar: 'bar' });
    */
-  marge(storage) {
-    this.storage = Object.assign(this.storage, storage);
+  static marge(storage) {
+    list = Object.assign(storage, storage);
     this.update();
     return this;
   }
@@ -55,20 +60,20 @@ export default class Storage {
    * オブジェクトからキーを削除して、ローカルストレージを更新します。
    * @param {String} key - 削除するキー
    * @example
-   * storage.remove('foo');
+   * Storage.remove('foo');
    */
-  remove(removeKey) {
-    const storage = Object.keys(this.storage).reduce((results, key) => {
+  static remove(removeKey) {
+    const storage = Object.keys(list).reduce((results, key) => {
       const result = results;
 
       if (removeKey !== key) {
-        result[key] = this.storage[key];
+        result[key] = list[key];
       }
 
       return result;
     }, {});
 
-    this.storage = storage;
+    list = storage;
     this.update();
     return this;
   }
@@ -76,8 +81,8 @@ export default class Storage {
   /**
    * ローカルストレージを空にします。
    */
-  clear() {
-    this.storage = {};
+  static clear() {
+    list = {};
     this.update();
     return this;
   }
@@ -86,14 +91,14 @@ export default class Storage {
    * ローカルストレージが更新されたらコールバック関数を実行する。
    * @param {function} callback
    * @example
-   * storage.watch(watches => {
+   * Storage.watch(watches => {
    *   console.log(watches.newValue);
    * });
    */
-  watch(callback) {
+  static watch(callback) {
     window.addEventListener('storage', e => {
       const { key } = e;
-      const matchKey = key === this.key;
+      const matchKey = key === KEY;
 
       if (matchKey) {
         callback(e);
