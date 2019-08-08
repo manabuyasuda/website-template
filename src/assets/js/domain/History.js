@@ -1,27 +1,45 @@
+const query = {
+  search: 'q',
+  page: 'page',
+};
+let list = {};
+
 /**
  * History APIでブラウザ履歴を変更します。
  * @example
- * import History from './History';
- * const history = new History();
+ * import History from './domain/History';
  */
 export default class History {
   constructor() {
-    /**
-     * @property {string} query - 検索キーワードのキー
-     * @property {object} parameter - パラメーターの一時保存オブジェクト
-     */
-    this.query = 'q';
-    this.parameter = {};
-
     this.fetch();
+  }
+
+  /**
+   * クエリのキーを返します。
+   * @return {Object} query
+   * @example
+   * const { query } = History;
+   */
+  static get query() {
+    return query;
+  }
+
+  /**
+   * クエリの値を返します。
+   * @return {Object} list
+   * @example
+   * const historyList = History.list;
+   */
+  static get list() {
+    return list;
   }
 
   /**
    * パラメーターを取得して上書きします。
    * @example
-   * history.fetch();
+   * History.fetch();
    */
-  fetch() {
+  static fetch() {
     const locationSearch = window.location.search.substring(1);
     const hasParamter = !!locationSearch.length;
 
@@ -37,7 +55,7 @@ export default class History {
       return obj;
     }, {});
 
-    this.parameter = targetParameter;
+    list = targetParameter;
 
     return this;
   }
@@ -45,20 +63,20 @@ export default class History {
   /**
    * `pushState()`で履歴を追加します。
    * @example
-   * history.push();
+   * History.push();
    */
-  push() {
-    const parameter = Object.keys(this.parameter).map(key => {
-      const value = this.parameter[key];
+  static push() {
+    const parameter = Object.keys(list).map(key => {
+      const value = list[key];
       return `${key}=${value}`;
     });
 
-    const query = parameter.length ? '?' : window.location.pathname;
+    const firstQuery = parameter.length ? '?' : window.location.pathname;
 
     window.history.pushState(
-      `${query}${parameter.join('&')}`,
+      `${firstQuery}${parameter.join('&')}`,
       '',
-      `${query}${parameter.join('&')}`,
+      `${firstQuery}${parameter.join('&')}`,
     );
 
     return this;
@@ -67,11 +85,11 @@ export default class History {
   /**
    * `replaceState()`で履歴を修正します。
    * @example
-   * history.replace();
+   * History.replace();
    */
-  replace() {
-    const parameter = Object.keys(this.parameter).map(key => {
-      const value = this.parameter[key];
+  static replace() {
+    const parameter = Object.keys(list).map(key => {
+      const value = list[key];
       return `${key}=${value}`;
     });
 
@@ -83,11 +101,12 @@ export default class History {
    * パラメーターを統合します。追加や上書きする場合に使用します。
    * @param {Object} parameter - 結合したいパラメーターのオブジェクト
    * @example
-   * history.marge({ page: '2' });
-   * history.marge({ page: '1', q: '検索キーワード' });
+   * const { searchQuery } = History;
+   * History.marge({ [query.page]: '2' });
+   * History.marge({ [query.page]: '1', [query.search]: '検索キーワード' });
    */
-  marge(parameter) {
-    this.parameter = Object.assign(this.parameter, parameter);
+  static marge(parameter) {
+    list = Object.assign(list, parameter);
     return this;
   }
 
@@ -95,30 +114,31 @@ export default class History {
    * パラメーターからプロパティを削除します。
    * @param {String} key - 削除するプロパティのキー
    * @example
-   * history.remove('foo');
+   * const { query } = History;
+   * History.remove(query.page);
    */
-  remove(removeKey) {
-    const parameter = Object.keys(this.parameter).reduce((results, key) => {
+  static remove(removeKey) {
+    const parameter = Object.keys(list).reduce((results, key) => {
       const result = results;
 
       if (removeKey !== key) {
-        result[key] = this.parameter[key];
+        result[key] = list[key];
       }
 
       return result;
     }, {});
 
-    this.parameter = parameter;
+    list = parameter;
     return this;
   }
 
   /**
    * パラメーターをすべてリセットします。
    * @example
-   * history.clear();
+   * History.clear();
    */
-  clear() {
-    this.parameter = {};
+  static clear() {
+    list = {};
     return this;
   }
 }
