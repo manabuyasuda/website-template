@@ -166,7 +166,10 @@ function ssi() {
  * `.scss`を`.css`にコンパイルします。
  */
 function css() {
-  const plugins = [flexBugsFixes(), autoprefixer()];
+  const plugins = [
+    flexBugsFixes(),
+    autoprefixer({ grid: 'autoplace' })
+  ];
   return (
     gulp
       .src(src.css, {
