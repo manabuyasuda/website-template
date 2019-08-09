@@ -4,6 +4,15 @@
  */
 const KEY = 'APP';
 /**
+ * ローカルストレージの値オブジェクトのキーを管理します。
+ * @type {object}
+ */
+const keys = {
+  login: 'login',
+  lastLogin: 'lastLogin',
+  autoLogin: 'autoLogin',
+};
+/**
  * ローカルストレージの値をオブジェクトで管理します。
  * @type {object}
  */
@@ -28,6 +37,16 @@ export default class Storage {
    */
   static get key() {
     return KEY;
+  }
+
+  /**
+   * ローカルストレージの値オブジェクトのキーを返します。
+   * @return {Object} keys
+   * @example
+   * const { keys } = Storage;
+   */
+  static get keys() {
+    return keys;
   }
 
   /**
