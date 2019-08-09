@@ -4,6 +4,15 @@
  */
 const KEY = 'APP';
 /**
+ * ローカルストレージの値オブジェクトのキーを管理します。
+ * @type {object}
+ */
+const keys = {
+  login: 'login',
+  lastLogin: 'lastLogin',
+  autoLogin: 'autoLogin',
+};
+/**
  * ローカルストレージの値をオブジェクトで管理します。
  * @type {object}
  */
@@ -28,6 +37,16 @@ export default class Storage {
    */
   static get key() {
     return KEY;
+  }
+
+  /**
+   * ローカルストレージの値オブジェクトのキーを返します。
+   * @return {Object} keys
+   * @example
+   * const { keys } = Storage;
+   */
+  static get keys() {
+    return keys;
   }
 
   /**
@@ -75,24 +94,19 @@ export default class Storage {
   }
 
   /**
-   * オブジェクトからキーを削除して、ローカルストレージを更新します。
+   * キーに一致するプロパティを削除して、ローカルストレージを更新します。
    * @param {String} key - 削除するキー
    * @example
    * Storage.remove('foo');
    */
   static remove(removeKey) {
-    const storage = Object.keys(list).reduce((results, key) => {
-      const result = results;
+    const hasRemoveKey = Object.prototype.hasOwnProperty.call(list, removeKey);
 
-      if (removeKey !== key) {
-        result[key] = list[key];
-      }
+    if (hasRemoveKey) {
+      delete list[removeKey];
+      this.update();
+    }
 
-      return result;
-    }, {});
-
-    list = storage;
-    this.update();
     return this;
   }
 

@@ -109,7 +109,7 @@ export default class History {
    * パラメーターを統合します。追加や上書きする場合に使用します。
    * @param {Object} parameter - 結合したいパラメーターのオブジェクト
    * @example
-   * const { searchQuery } = History;
+   * const { query } = History;
    * History.marge({ [query.page]: '2' });
    * History.marge({ [query.page]: '1', [query.search]: '検索キーワード' });
    */
@@ -119,24 +119,19 @@ export default class History {
   }
 
   /**
-   * パラメーターからプロパティを削除します。
+   * キーに一致するプロパティを削除します。
    * @param {String} key - 削除するプロパティのキー
    * @example
    * const { query } = History;
    * History.remove(query.page);
    */
   static remove(removeKey) {
-    const parameter = Object.keys(list).reduce((results, key) => {
-      const result = results;
+    const hasRemoveKey = Object.prototype.hasOwnProperty.call(list, removeKey);
 
-      if (removeKey !== key) {
-        result[key] = list[key];
-      }
+    if (hasRemoveKey) {
+      delete list[removeKey];
+    }
 
-      return result;
-    }, {});
-
-    list = parameter;
     return this;
   }
 
