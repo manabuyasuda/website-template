@@ -168,7 +168,7 @@ function ssi() {
 function css() {
   const plugins = [
     flexBugsFixes(),
-    autoprefixer({ grid: true })
+    autoprefixer({ grid: 'autoplace' })
   ];
   return (
     gulp
