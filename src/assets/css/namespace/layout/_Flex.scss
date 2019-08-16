@@ -76,7 +76,7 @@ category: Layout
 
 ```jade
 .l-Wrapper
-  .l-Flex
+  .l-Flex.-rowGap
     .l-Flex_Item(class="-1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
     .l-Flex_Item(class="-1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
     .l-Flex_Item(class="-1/1 -1/2@md -1/3@lg") -1/1 -1/2@md -1/3@lg
@@ -130,6 +130,18 @@ $flex-order: 1, 2, 3 !default;
   }
 }
 
+.l-Flex.\-rowGap {
+  margin-bottom: rem(map-get($flex-row-gap, initial) * -1) !important;
+}
+
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-rowGap {
+      margin-bottom: rem(map-get($flex-row-gap, $name) * -1) !important;
+    }
+  }
+}
+
 .l-Flex_Item {
   -js-display: flex;
   display: flex;
@@ -150,6 +162,18 @@ $flex-order: 1, 2, 3 !default;
   @media (min-width: em($breakpoint)) {
     .l-Flex_Item {
       padding-left: rem(map-get($flex-column-gap, $name));
+    }
+  }
+}
+
+.l-Flex.\-rowGap > .l-Flex_Item {
+  margin-bottom: rem(map-get($flex-row-gap, initial) * 1);
+}
+
+@each $name, $breakpoint in $mq-breakpoints {
+  @media (min-width: em($breakpoint)) {
+    .l-Flex.\-rowGap > .l-Flex_Item {
+      margin-bottom: rem(map-get($flex-row-gap, $name) * 1);
     }
   }
 }
@@ -197,15 +221,6 @@ $flex-order: 1, 2, 3 !default;
     .l-Flex_Item.\-1\/#{$column}#{$suffix} {
       flex-basis: percentage(1 / $column);
       max-width: percentage(1 / $column);
-      margin-top: rem($row-gap);
-    }
-
-    .l-Flex_Item.\-1\/#{$column}#{$suffix}:nth-of-type(n + 1) {
-      margin-top: 0;
-    }
-
-    .l-Flex_Item.\-1\/#{$column}#{$suffix}:nth-of-type(n + #{$next-column}) {
-      margin-top: rem($row-gap);
     }
   }
 }
@@ -312,7 +327,7 @@ $flex-order: 1, 2, 3 !default;
 }
 
 /**
- * `.l-Flexs_Item`の表示順を逆にします。
+ * `.l-Flex_Item`の表示順を逆にします。
  * A,B → B,A
  */
 .l-Flex.\-reverse {
@@ -328,7 +343,7 @@ $flex-order: 1, 2, 3 !default;
 }
 
 /**
- * `.l-Flexs_Item`の表示順を戻します。
+ * `.l-Flex_Item`の表示順を戻します。
  * B,A → A,B
  */
 .l-Flex.\-row {
@@ -359,7 +374,7 @@ $flex-order: 1, 2, 3 !default;
 }
 
 /**
- * `.l-Flexs_Item`の表示順を個別に変更します。
+ * `.l-Flex_Item`の表示順を個別に変更します。
  */
 @include order();
 
