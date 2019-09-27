@@ -51,6 +51,10 @@
 
     
     
+        
+        
+        
+    
 
 <div class="Pen" data-behaviour="pen" id="pen-c9d17694984f26226c47f119c65d1ec2">
 
@@ -83,14 +87,25 @@
     <div class="Preview-wrapper" data-role="resizer">
         <div class="Preview-resizer">
             
-             <iframe
-                class="Preview-iframe"
-                data-role="window"
-                src="../preview/preview.html"
-                sandbox="allow-same-origin allow-scripts allow-forms allow-modals"
-                 style=""
-                marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
-            </iframe>
+<div class="Error Error--render">
+    <h4 class="Error-title">Error rendering component</h4>
+    <div class="Error-message Prose">
+        <p>/Users/yasuda/Documents/10._GitHub/website-template/src/styleguide/components/_preview.pug:7
+    5|     meta(http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;)
+    6|     meta(name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;)</p>
+<blockquote>
+<p>7|     title #{_target.label} | Styleguide
+    8| 
+    9|     link(rel=&quot;stylesheet&quot; href=&quot;<a href="https://cdn.jsdelivr.net/npm/yakuhanjp@3/dist/css/yakuhanjp_s.min.css&quot;">https://cdn.jsdelivr.net/npm/yakuhanjp@3/dist/css/yakuhanjp_s.min.css&quot;</a>)
+    10|     link(rel=&quot;stylesheet&quot; href=&quot;/assets/css/site.css&quot;)</p>
+</blockquote>
+<p>Cannot read property &#39;label&#39; of undefined</p>
+
+    </div>
+    
+</div>
+
+            
         </div>
         <div class="Preview-handle" data-role="resize-handle"></div>
         <div class="Preview-overlay"></div>
@@ -153,21 +168,7 @@
 <div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-c9d17694984f26226c47f119c65d1ec2-panel-html">
     <code class="Code Code--lang-html">
         
-        <pre><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"all"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/assets/css/site.css"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span> | Preview Layout<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/js/site.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></pre>
+        <pre><span class="hljs-comment">&lt;!-- Error rendering component:  --&gt;</span></pre>
         
     </code>
 </div>
@@ -212,7 +213,7 @@
         </li>
         <li class="Meta-item">
             <strong class="Meta-key">Filesystem Path:</strong>
-            <span class="Meta-value">src/styleguide/components/_preview.hbs</span>
+            <span class="Meta-value">src/styleguide/components/_preview.pug</span>
         </li>
         
         
@@ -221,20 +222,28 @@
 
     
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-c9d17694984f26226c47f119c65d1ec2-panel-view">
-    <code class="Code Code--lang-handlebars">
-        <pre><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"all"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/assets/css/site.css"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span></span><span class="hljs-template-variable">{{ _target.label }}</span><span class="xml"> | Preview Layout<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>
-    </span><span class="hljs-template-variable">{{{ <span class="hljs-builtin-name">yield</span> }}</span><span class="xml">}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/js/site.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span></pre>
+    <code class="Code Code--lang-text">
+        <pre>doctype html
+html.<span class="hljs-keyword">no</span>-js(lang=<span class="hljs-string">"ja"</span>)
+  head
+    <span class="hljs-keyword">meta</span>(charset=<span class="hljs-string">"UTF-8"</span>)
+    <span class="hljs-keyword">meta</span>(http-equiv=<span class="hljs-string">"X-UA-Compatible"</span> content=<span class="hljs-string">"IE=edge"</span>)
+    <span class="hljs-keyword">meta</span>(name=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>)
+    title #{_target.<span class="hljs-keyword">label</span>} | Styleguide
+
+    link(rel=<span class="hljs-string">"stylesheet"</span> href=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/yakuhanjp@3/dist/css/yakuhanjp_s.min.css"</span>)
+    link(rel=<span class="hljs-string">"stylesheet"</span> href=<span class="hljs-string">"/assets/css/site.css"</span>)
+
+    <span class="hljs-keyword">meta</span>(name=<span class="hljs-string">"format-detection"</span> content=<span class="hljs-string">"telephone=no"</span>)
+
+    script.
+      document.documentElement.classList.remove('<span class="hljs-keyword">no</span>-js')
+
+  body
+    #<span class="hljs-keyword">app</span>
+      != yield
+    
+    script(src=<span class="hljs-string">"/assets/js/site.js"</span>)</pre>
     </code>
 </div>
 
