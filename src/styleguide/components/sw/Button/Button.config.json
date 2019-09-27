@@ -5,7 +5,7 @@
       "context": {
         "variant": "",
         "text": "Default",
-        "desctiption": "ボタンのデフォルトスタイルです。横幅は280pxまでに制限されます。"
+        "description": "ボタンのデフォルトスタイルです。横幅は280pxまでに制限されます。"
       }
     },
     {
@@ -13,7 +13,7 @@
       "context": {
         "variant": "-full",
         "text": "Full",
-        "desctiption": "横幅100%にします。"
+        "description": "横幅100%にします。"
       }
     },
     {
@@ -21,7 +21,7 @@
       "context": {
         "variant": "-auto",
         "text": "Auto",
-        "desctiption": "横幅をなりゆきにします。"
+        "description": "横幅をなりゆきにします。"
       }
     }
   ]
