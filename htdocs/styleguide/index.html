@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="themes/mandelbrot/css/olive.css?cachebust=1.2.1" type="text/css">
 
 
-<title>FooCorp Components | Styleguide</title>
+<title>スタイルガイド | Styleguide</title>
 
 </head>
 <body>
@@ -52,7 +52,7 @@
 
     <div class="Document-header">
         
-        <h1 class="Document-title">FooCorp Components</h1>
+        <h1 class="Document-title">スタイルガイド</h1>
         
 
 
@@ -69,7 +69,54 @@
 
     
     
-    <p>This is the component library for FooCorp. <strong>Feel free to look around!</strong></p>
+    <h2 id="category">category</h2>
+<p>GlobalやHeadingのようなコンポーネントの分類です。<br>コンポーネントをこの分類で分けて一覧化（スクリーンショットを撮ってリストアップ）することで、似たようなコンポーネントを統合したり、コンポーネントごとの仕様を確認してください。</p>
+<ul>
+<li>Global：ヘッダーやフッターのようなサイト全体で使われる要素</li>
+<li>Layout：グリッドやコンポーネントの余白指定などのレイアウトパターン</li>
+<li>Navigation：メインナビゲーションやフッターのナビゲーション、ページネーションやパンくずリストなどのユーザーを誘導することが目的とする要素</li>
+<li>BaseModule：比較的小さなコンポーネントで、Layoutコンポーネントとセットで使うものと、後述するBlockModuleの中で使用するスタイルのベースになるものがあります。<ul>
+<li>Image：ロゴやメインビジュアル、アバターやサムネイルや背景画像などの画像</li>
+<li>Icon：用途やカテゴリーを端的に示す画像です。虫眼鏡、ソーシャルアイコン、矢印、ハンバーガーなどです。</li>
+<li>Form：入力エリア、Selectメニュー、チェックボックス、ラジオボタンのような、ユーザーが操作するフォーム要素</li>
+<li>Button：オンオフやページ遷移、表示や非表示といった操作の切り替えに使われる要素</li>
+<li>Heading：ページタイトルや見出し</li>
+<li>Text：文章やラベルのようなテキスト要素</li>
+<li>Link：テキストリンク</li>
+<li>List：順序付きや定義リストなどのHTMLで定義されているリスト要素や、一覧や表といった形式であらわされている要素</li>
+<li>Media：ビデオやオーディオのようなリッチメディア要素</li>
+</ul>
+</li>
+<li>BlockModule：BaseModuleのような小さなコンポーネントを集めた、一定のパターンを持っているモジュールです。1つのコンポーネントとして定義することで、個別に仕様変更の対応ができるようにしておきます。<ul>
+<li>Block：見出しや画像、テキストなどが1つのまとめりになっているエリア</li>
+<li>InteractiveComponent：アコーディオン、タブ、カルーセル、オフキャンバスのようなユーザーの操作で稼働する要素</li>
+<li>Messaging：警告メッセージ、エラーメッセージ、ローディング、ポップアップのようなユーザーに何らかのメッセージを伝える要素</li>
+</ul>
+</li>
+<li>ThirdPartyComponent：サイト製作者側がすべてをコントロールすることができないサービス</li>
+<li>Advertising：広告</li>
+</ul>
+<h2 id="namespace">namespace</h2>
+<p>クラス名の接頭辞で、どの範囲で使われるかという影響度を示します。<br>以下はデフォルトで用意しているものです。サイトの構造によって変更してください。</p>
+<ul>
+<li><code>.sw-</code> (SiteWide)：サイト共通の汎用的なModule（リストやボタンなどの場所を選ばないもの）</li>
+<li><code>.st-</code> (Structure)：サイト共通の構造的なModule（ヘッダーやフッターのような場所が固定されるもの）</li>
+<li><code>.l-</code> (Layout)：コンテンツ内の余白やレイアウト専用のModule</li>
+<li><code>.wisywig-</code> (WISYWIG)：WISYWIG（ウィジウィグ）で入力した要素に対するスタイル</li>
+<li><code>.home-</code> (HomePage)：ホームページ（サイトトップページ）</li>
+<li><code>.top-</code> (TopPage)：カテゴリートップページ</li>
+<li><code>.sub-</code> (SubPage)：カテゴリー下層ページ</li>
+<li><code>.products-</code> (Products)：製品情報</li>
+<li><code>.news-</code> (News)：ニュース</li>
+<li><code>.company-</code> (Company)：会社案内・企業情報</li>
+<li><code>.recruit-</code> (Recruit)：採用情報ページ</li>
+<li><code>.csr-</code> (CorporateSocialResponsibility)：企業の社会的責任</li>
+<li><code>.faq-</code> (FrequentlyAskedQuestions)：よくある質問</li>
+<li><code>.inquiry-</code> (Inquiry)：お問い合わせ</li>
+<li><code>.ir-</code> (InvestorRelations)：投資家向け情報</li>
+<li><code>.results-</code> (Results)：検索結果ページ</li>
+<li><code>.sitemap-</code> (Sitemap)：サイトマップページ</li>
+</ul>
 
     
 
