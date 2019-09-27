@@ -57,7 +57,7 @@ category: [Button, Link, Form]
   }
 
   html:not([data-whatinput="touch"]) &:disabled:hover,
-  html:not([data-whatinput="touch"]) &-disabled:hover {
+  html:not([data-whatinput="touch"]) &.-disabled:hover {
     color: #fff;
   }
 }

@@ -189,7 +189,10 @@ function ssi() {
  * `.scss`を`.css`にコンパイルします。
  */
 function css() {
-  const plugins = [flexBugsFixes(), autoprefixer()];
+  const plugins = [
+    flexBugsFixes(),
+    autoprefixer({ grid: 'autoplace' })
+  ];
   return (
     gulp
       .src(src.css, {
@@ -206,10 +209,8 @@ function css() {
       .pipe(postcss(plugins))
       .pipe(
         gulpif(
-          isDevelopment,
+          isProduction,
           cleanCSS({
-            // 圧縮せずに整形して出力する
-            format: 'beautify',
             compatibility: {
               properties: {
                 // 0の単位を不必要な場合は削除する
@@ -221,8 +222,10 @@ function css() {
       )
       .pipe(
         gulpif(
-          isProduction,
+          isDevelopment,
           cleanCSS({
+            // 圧縮せずに整形して出力する
+            format: 'beautify',
             compatibility: {
               properties: {
                 // 0の単位を不必要な場合は削除する

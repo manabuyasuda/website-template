@@ -128,7 +128,7 @@ export default {
   }
 
   html:not([data-whatinput='touch']) &:disabled:hover,
-  html:not([data-whatinput='touch']) &-disabled:hover {
+  html:not([data-whatinput='touch']) &.-disabled:hover {
     color: #fff;
   }
 }
@@ -144,7 +144,7 @@ export default {
   }
 
   html:not([data-whatinput='touch']) &:disabled:hover,
-  html:not([data-whatinput='touch']) &-disabled:hover {
+  html:not([data-whatinput='touch']) &.-disabled:hover {
     color: $color-brand;
   }
 }

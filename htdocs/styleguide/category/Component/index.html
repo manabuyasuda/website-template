@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+  <head>
+    <title>Styleguide</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/highlight/prism.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/site.css" rel="stylesheet">
+    <script>document.documentElement.classList.remove('no-js')</script>
+  </head>
+  <body>
+    <main id="app">
+      <div class="aigis-container">
+        <div class="aigis-sidemenu">
+          <header class="aigis-header"><a href="../../index.html">Styleguide</a></header>
+          <h2 class="aigis-sidemenu__heading">ID</h2>
+          <nav class="aigis-tags aigis-tagList">
+          </nav>
+          <h2 class="aigis-sidemenu__heading">Category</h2>
+          <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/Block/index.html">Block</a></li><li data-path-depth="0"><a href="../../category/Button/index.html">Button</a></li><li data-path-depth="0"><a href="../../category/Component/index.html" data-tree-current>Component</a></li><li data-path-depth="0"><a href="../../category/Form/index.html">Form</a></li><li data-path-depth="0"><a href="../../category/Global/index.html">Global</a></li><li data-path-depth="0"><a href="../../category/Heading/index.html">Heading</a></li><li data-path-depth="0"><a href="../../category/Icon/index.html">Icon</a></li><li data-path-depth="0"><a href="../../category/Image/index.html">Image</a></li><li data-path-depth="0"><a href="../../category/InteractiveComponent/index.html">InteractiveComponent</a></li><li data-path-depth="0"><a href="../../category/Layout/index.html">Layout</a></li><li data-path-depth="0"><a href="../../category/Link/index.html">Link</a></li><li data-path-depth="0"><a href="../../category/List/index.html">List</a></li><li data-path-depth="0"><a href="../../category/Navigation/index.html">Navigation</a></li><li data-path-depth="0"><a href="../../category/Text/index.html">Text</a></li><li data-path-depth="0"><a href="../../category/ThirdPartyComponent/index.html">ThirdPartyComponent</a></li></ul>
+          </nav>
+          <h2 class="aigis-sidemenu__heading">Namespace</h2>
+          <nav class="aigis-tags aigis-tagList"><a href="../../namespace/l-/index.html" class="aigis-namespace__item aigis-namespace__item--l-">l-</a><a href="../../namespace/st-/index.html" class="aigis-namespace__item aigis-namespace__item--st-">st-</a><a href="../../namespace/sw-/index.html" class="aigis-namespace__item aigis-namespace__item--sw-">sw-</a><a href="../../namespace/test-/index.html" class="aigis-namespace__item aigis-namespace__item--test-">test-</a><a href="../../namespace/wisywig-/index.html" class="aigis-namespace__item aigis-namespace__item--wisywig-">wisywig-</a>
+          </nav>
+          <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+        </div>
+        <div class="aigis-contents">
+          <div class="aigis-contents__body">
+            <nav>
+              <h2 class="aigis-module__heading">TOC</h2>
+              <ul class="aigis-moduleList">
+                <li class="aigis-moduleList__item"><a href="#v-button">v-button</a></li>
+                <li class="aigis-moduleList__item"><a href="#v-post-list">v-post-list</a></li>
+              </ul>
+            </nav>
+            <div class="aigis-module">
+              <h2 id="v-button" class="aigis-module__heading">v-button</h2>
+              <div class="aigis-module__filepath">/src/assets/css/components/_VButton.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><div class="aigis-preview">
+
+<v-button variant="default">もっとみる</v-button>
+<v-button variant="outline">もっとみる</v-button>
+<v-button variant="default" size="full">もっとみる</v-button>
+<v-button variant="default" size="auto">もっとみる</v-button>
+<v-button variant="default" disabled="disabled">もっとみる</v-button></div>
+
+<pre><code class="language-jade"><span class="token tag" >v-button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >variant</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"default"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >もっとみる</span>
+<span class="token tag" >v-button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >variant</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"outline"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >もっとみる</span>
+<span class="token tag" >v-button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >variant</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"default"</span> size<span class="token operator" >=</span><span class="token string" >"full"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >もっとみる</span>
+<span class="token tag" >v-button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >variant</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"default"</span> size<span class="token operator" >=</span><span class="token string" >"auto"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >もっとみる</span>
+<span class="token tag" >v-button<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >variant</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"default"</span> disabled</span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >もっとみる</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="v-post-list" class="aigis-module__heading">v-post-list</h2>
+              <div class="aigis-module__filepath">/src/assets/css/components/_VPostList.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>ブログ一覧（仮）を出力します。</p>
+<div class="aigis-preview">
+
+<v-post-list></v-post-list></div>
+
+<pre><code class="language-jade"><span class="token tag" >v-post-list</span>
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

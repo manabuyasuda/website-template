@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+  <head>
+    <title>Styleguide</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/highlight/prism.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/site.css" rel="stylesheet">
+    <script>document.documentElement.classList.remove('no-js')</script>
+  </head>
+  <body>
+    <main id="app">
+      <div class="aigis-container">
+        <div class="aigis-sidemenu">
+          <header class="aigis-header"><a href="../../index.html">Styleguide</a></header>
+          <h2 class="aigis-sidemenu__heading">ID</h2>
+          <nav class="aigis-tags aigis-tagList">
+          </nav>
+          <h2 class="aigis-sidemenu__heading">Category</h2>
+          <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/Block/index.html">Block</a></li><li data-path-depth="0"><a href="../../category/Button/index.html">Button</a></li><li data-path-depth="0"><a href="../../category/Component/index.html">Component</a></li><li data-path-depth="0"><a href="../../category/Form/index.html">Form</a></li><li data-path-depth="0"><a href="../../category/Global/index.html">Global</a></li><li data-path-depth="0"><a href="../../category/Heading/index.html">Heading</a></li><li data-path-depth="0"><a href="../../category/Icon/index.html">Icon</a></li><li data-path-depth="0"><a href="../../category/Image/index.html">Image</a></li><li data-path-depth="0"><a href="../../category/InteractiveComponent/index.html">InteractiveComponent</a></li><li data-path-depth="0"><a href="../../category/Layout/index.html">Layout</a></li><li data-path-depth="0"><a href="../../category/Link/index.html">Link</a></li><li data-path-depth="0"><a href="../../category/List/index.html">List</a></li><li data-path-depth="0"><a href="../../category/Navigation/index.html">Navigation</a></li><li data-path-depth="0"><a href="../../category/Text/index.html">Text</a></li><li data-path-depth="0"><a href="../../category/ThirdPartyComponent/index.html">ThirdPartyComponent</a></li></ul>
+          </nav>
+          <h2 class="aigis-sidemenu__heading">Namespace</h2>
+          <nav class="aigis-tags aigis-tagList"><a href="../../namespace/l-/index.html" class="aigis-namespace__item aigis-namespace__item--l-">l-</a><a href="../../namespace/st-/index.html" class="aigis-namespace__item aigis-namespace__item--st-">st-</a><a href="../../namespace/sw-/index.html" class="aigis-namespace__item aigis-namespace__item--sw-">sw-</a><a href="../../namespace/test-/index.html" class="aigis-namespace__item aigis-namespace__item--test-">test-</a><a href="../../namespace/wisywig-/index.html" class="aigis-namespace__item aigis-namespace__item--wisywig-">wisywig-</a>
+          </nav>
+          <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+        </div>
+        <div class="aigis-contents">
+          <div class="aigis-contents__body">
+            <nav>
+              <h2 class="aigis-module__heading">TOC</h2>
+              <ul class="aigis-moduleList">
+                <li class="aigis-moduleList__item"><a href="#l-Block">l-Block</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Block.-divider">l-Block.-divider</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Container">l-Container</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-ContainerBg">l-ContainerBg</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-ContainerBg.-delimiter">l-ContainerBg.-delimiter</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Flex">l-Flex</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Section2">l-Section2</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Section2.-divider">l-Section2.-divider</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Section2.-dividerFull">l-Section2.-dividerFull</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Section3">l-Section3</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Section3.-divider">l-Section3.-divider</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Section4">l-Section4</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Section5">l-Section5</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Wrapper">l-Wrapper</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Wrapper_Full">l-Wrapper_Full</a></li>
+                <li class="aigis-moduleList__item"><a href="#l-Wrapper_FullBg">l-Wrapper_FullBg</a></li>
+              </ul>
+            </nav>
+            <div class="aigis-module">
+              <h2 id="l-Block" class="aigis-module__heading">l-Block</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Block.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>見出しや画像などを含んだブロック同士の余白を指定します。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Block">
+    <div class="test-Block">
+      <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+      <div class="test-Block_Right">
+        <h3>ダミーの見出しです</h3>
+        <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+      </div>
+    </div>
+  </div>
+  <div class="l-Block">
+    <div class="test-Block">
+      <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+      <div class="test-Block_Right">
+        <h3>ダミーの見出しです</h3>
+        <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Block</span>
+    <span class="token tag" >.test-Block</span>
+      <span class="token tag" >.test-Block_Left</span>
+        <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >.test-Block_Right</span>
+        <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+        <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+  <span class="token tag" >.l-Block</span>
+    <span class="token tag" >.test-Block</span>
+      <span class="token tag" >.test-Block_Left</span>
+        <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >.test-Block_Right</span>
+        <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+        <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Block.-divider" class="aigis-module__heading">l-Block.-divider</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Block.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>.-divider</code>を追加すると間にボーダーが入ります。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Block -divider">
+    <div class="test-Block">
+      <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+      <div class="test-Block_Right">
+        <h3>ダミーの見出しです</h3>
+        <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+      </div>
+    </div>
+  </div>
+  <div class="l-Block -divider">
+    <div class="test-Block">
+      <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+      <div class="test-Block_Right">
+        <h3>ダミーの見出しです</h3>
+        <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Block.-divider</span>
+    <span class="token tag" >.test-Block</span>
+      <span class="token tag" >.test-Block_Left</span>
+        <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >.test-Block_Right</span>
+        <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+        <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+  <span class="token tag" >.l-Block.-divider</span>
+    <span class="token tag" >.test-Block</span>
+      <span class="token tag" >.test-Block_Left</span>
+        <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+      <span class="token tag" >.test-Block_Right</span>
+        <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+        <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Container" class="aigis-module__heading">l-Container</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Container.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>コンテンツ内の上下に大きめの余白をとります。</p>
+<p>レイアウト例です。</p>
+<div class="aigis-preview">
+
+<div class="l-Container">
+  <div class="l-Wrapper">
+    <section class="l-Section2">
+      <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+    <section class="l-Section2">
+      <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Container</span>
+  <span class="token tag" >.l-Wrapper</span>
+    <span class="token tag" >section.l-Section2</span>
+      <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+    <span class="token tag" >section.l-Section2</span>
+      <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-ContainerBg" class="aigis-module__heading">l-ContainerBg</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_ContainerBg.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>コンテンツ内の上下に大きめの余白をとります。背景色が入ります。</p>
+<p>レイアウト例です。</p>
+<div class="aigis-preview">
+
+<div class="l-ContainerBg">
+  <div class="l-Wrapper">
+    <section class="l-Section2">
+      <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+    <section class="l-Section2">
+      <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-ContainerBg</span>
+  <span class="token tag" >.l-Wrapper</span>
+    <span class="token tag" >section.l-Section2</span>
+      <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+    <span class="token tag" >section.l-Section2</span>
+      <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-ContainerBg.-delimiter" class="aigis-module__heading">l-ContainerBg.-delimiter</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_ContainerBg.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>.-delimiter</code>を追加するとボーダーがつきます。</p>
+<div class="aigis-preview">
+
+<div class="l-ContainerBg -delimiter">
+  <div class="l-Wrapper">
+    <section class="l-Section2">
+      <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+    <section class="l-Section2">
+      <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-ContainerBg.-delimiter</span>
+  <span class="token tag" >.l-Wrapper</span>
+    <span class="token tag" >section.l-Section2</span>
+      <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+    <span class="token tag" >section.l-Section2</span>
+      <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Flex" class="aigis-module__heading">l-Flex</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Flex.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>標準的なグリッドシステムです。カラムごとに任意の値を指定したい場合に使います。
+カラム間の余白は横を<code>$flex-column-gap</code>、縦を<code>$flex-row-gap</code>で統一しています。</p>
+<p>以下のような指定ができます。</p>
+<ul>
+<li>カラム数の指定（デフォルトは<code>-12/12</code>）。<ul>
+<li><code>.l-Flex_Item.-8/12</code></li>
+<li><code>.l-Flex_Item.-4/12</code></li>
+</ul>
+</li>
+<li>均等なカラム数の指定（分母は<code>$flex-equal-column</code>で定義、100%から始める場合は<code>-1/1</code>は必須）<ul>
+<li><code>.l-Flex_Item.-1/2</code></li>
+<li><code>.l-Flex_Item.-1/2</code></li>
+</ul>
+</li>
+<li>カラムの反転（デフォルトは<code>.-row</code>）。<ul>
+<li><code>.l-Flex.-reverse</code></li>
+</ul>
+</li>
+<li>カラムを戻す。<ul>
+<li><code>.l-Flex.-row</code></li>
+</ul>
+</li>
+<li>カラムの順番を個別に指定（<code>order</code>の数値は<code>$flex-order</code>で定義）。<ul>
+<li><code>.l-Flex.-order1</code></li>
+<li><code>.l-Flex.-order2</code></li>
+</ul>
+</li>
+<li>カラムの水平方向の揃え（デフォルトは<code>.-left</code>）。<ul>
+<li><code>.l-Flex.-left</code></li>
+<li><code>.l-Flex.-center</code></li>
+<li><code>.l-Flex.-right</code></li>
+</ul>
+</li>
+<li>カラムの垂直方向の揃え（デフォルトは<code>.-top</code>）。<ul>
+<li><code>.l-Flex.-top</code></li>
+<li><code>.l-Flex.-middle</code></li>
+<li><code>.l-Flex.-bottom</code></li>
+</ul>
+</li>
+<li>ブレイクポイントの追加（上記の各指定で併用可能 <code>.l-Flex_Item.-8/12@md</code>など）。<ul>
+<li><code>@sm</code></li>
+<li><code>@md</code></li>
+<li><code>@lg</code></li>
+<li><code>@xl</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="md-2-"><code>md</code>以降で2カラム</h2>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Flex">
+    <div class="l-Flex_Item -8/12@md">-8/12@md</div>
+    <div class="l-Flex_Item -4/12@md">-4/12@md</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Flex</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-8/12@md"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-8/12@md</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-4/12@md"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-4/12@md</span>
+</code></pre>
+<h2 id="md-2-"><code>md</code>以降で2カラムを反転</h2>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Flex -reverse@md">
+    <div class="l-Flex_Item -8/12@md">-8/12@md</div>
+    <div class="l-Flex_Item -4/12@md">-4/12@md</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Flex<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-reverse@md"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-8/12@md"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-8/12@md</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-4/12@md"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-4/12@md</span>
+</code></pre>
+<h2 id="md-2-"><code>md</code>以降で2カラムの表示順を個別に指定</h2>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Flex">
+    <div class="l-Flex_Item -8/12@md -order2@md">-8/12@md -order2@md</div>
+    <div class="l-Flex_Item -4/12@md -order1@md">-4/12@md -order1@md</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Flex</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-8/12@md -order2@md"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-8/12@md -order2@md</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-4/12@md -order1@md"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-4/12@md -order1@md</span>
+</code></pre>
+<h2 id="md-1-"><code>md</code>以降で1カラムの中央配置</h2>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Flex -center@md">
+    <div class="l-Flex_Item -8/12@md">-8/12@md</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Flex<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-center@md"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-8/12@md"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-8/12@md</span>
+</code></pre>
+<h2 id="1-2-3-">1カラム、2カラム、3カラム</h2>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Flex -rowGap">
+    <div class="l-Flex_Item -1/1 -1/2@md -1/3@lg">-1/1 -1/2@md -1/3@lg</div>
+    <div class="l-Flex_Item -1/1 -1/2@md -1/3@lg">-1/1 -1/2@md -1/3@lg</div>
+    <div class="l-Flex_Item -1/1 -1/2@md -1/3@lg">-1/1 -1/2@md -1/3@lg</div>
+    <div class="l-Flex_Item -1/1 -1/2@md -1/3@lg">-1/1 -1/2@md -1/3@lg</div>
+    <div class="l-Flex_Item -1/1 -1/2@md -1/3@lg">-1/1 -1/2@md -1/3@lg</div>
+    <div class="l-Flex_Item -1/1 -1/2@md -1/3@lg">-1/1 -1/2@md -1/3@lg</div>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Flex.-rowGap</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-1/1 -1/2@md -1/3@lg"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-1/1 -1/2@md -1/3@lg</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-1/1 -1/2@md -1/3@lg"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-1/1 -1/2@md -1/3@lg</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-1/1 -1/2@md -1/3@lg"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-1/1 -1/2@md -1/3@lg</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-1/1 -1/2@md -1/3@lg"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-1/1 -1/2@md -1/3@lg</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-1/1 -1/2@md -1/3@lg"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-1/1 -1/2@md -1/3@lg</span>
+    <span class="token tag" >.l-Flex_Item<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >class</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"-1/1 -1/2@md -1/3@lg"</span></span><span class="token punctuation" >)</span></span></span> <span class="token plain-text" >-1/1 -1/2@md -1/3@lg</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Section2" class="aigis-module__heading">l-Section2</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Section2.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>h2相当の見出しをラップするセクションの余白を指定します。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <p class="sw-Text">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</p>
+  <section class="l-Section2">
+    <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+    <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    <p class="sw-Text">しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</p>
+  </section>
+  <section class="l-Section2">
+    <h2 class="sw-Heading2">第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</h2>
+    <div class="l-Block">
+      <div class="test-Block">
+        <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+        <div class="test-Block_Right">
+          <h3>ダミーの見出しです</h3>
+          <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+        </div>
+      </div>
+    </div>
+    <div class="l-Block">
+      <div class="test-Block">
+        <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+        <div class="test-Block_Right">
+          <h3>ダミーの見出しです</h3>
+          <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+        </div>
+      </div>
+    </div>
+    <p class="sw-Text">その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。</p>
+  </section>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</span>
+
+  <span class="token tag" >section.l-Section2</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</span>
+
+  <span class="token tag" >section.l-Section2</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+    <span class="token tag" >.l-Block</span>
+      <span class="token tag" >.test-Block</span>
+        <span class="token tag" >.test-Block_Left</span>
+          <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+        <span class="token tag" >.test-Block_Right</span>
+          <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+          <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+    <span class="token tag" >.l-Block</span>
+      <span class="token tag" >.test-Block</span>
+        <span class="token tag" >.test-Block_Left</span>
+          <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+        <span class="token tag" >.test-Block_Right</span>
+          <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+          <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Section2.-divider" class="aigis-module__heading">l-Section2.-divider</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Section2.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>レイアウト例です。<code>.-divider</code>を追加すると<code>.l-Section2</code>同士の間にボーダーがつきます。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <p class="sw-Text">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</p>
+  <section class="l-Section2 -divider">
+    <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+    <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    <p class="sw-Text">しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</p>
+  </section>
+  <section class="l-Section2 -divider">
+    <h2 class="sw-Heading2">第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</h2>
+    <div class="l-Block">
+      <div class="test-Block">
+        <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+        <div class="test-Block_Right">
+          <h3>ダミーの見出しです</h3>
+          <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+        </div>
+      </div>
+    </div>
+    <div class="l-Block">
+      <div class="test-Block">
+        <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+        <div class="test-Block_Right">
+          <h3>ダミーの見出しです</h3>
+          <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+        </div>
+      </div>
+    </div>
+    <p class="sw-Text">その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。</p>
+  </section>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</span>
+
+  <span class="token tag" >section.l-Section2.-divider</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</span>
+
+  <span class="token tag" >section.l-Section2.-divider</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+    <span class="token tag" >.l-Block</span>
+      <span class="token tag" >.test-Block</span>
+        <span class="token tag" >.test-Block_Left</span>
+          <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+        <span class="token tag" >.test-Block_Right</span>
+          <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+          <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+    <span class="token tag" >.l-Block</span>
+      <span class="token tag" >.test-Block</span>
+        <span class="token tag" >.test-Block_Left</span>
+          <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+        <span class="token tag" >.test-Block_Right</span>
+          <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+          <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Section2.-dividerFull" class="aigis-module__heading">l-Section2.-dividerFull</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Section2.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>レイアウト例です。<code>.-dividerFull</code>を追加すると<code>.l-Section2</code>同士の間にボーダーがつきます。ボーダーの横幅は画面に対して常に100%（<code>100vw</code>）になります。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <p class="sw-Text">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</p>
+  <section class="l-Section2 -dividerFull">
+    <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+    <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    <p class="sw-Text">しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</p>
+  </section>
+  <section class="l-Section2 -dividerFull">
+    <h2 class="sw-Heading2">第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</h2>
+    <div class="l-Block">
+      <div class="test-Block">
+        <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+        <div class="test-Block_Right">
+          <h3>ダミーの見出しです</h3>
+          <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+        </div>
+      </div>
+    </div>
+    <div class="l-Block">
+      <div class="test-Block">
+        <div class="test-Block_Left"><img src="https://placehold.jp/300x200.png" alt="alt"/></div>
+        <div class="test-Block_Right">
+          <h3>ダミーの見出しです</h3>
+          <p>ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</p>
+        </div>
+      </div>
+    </div>
+    <p class="sw-Text">その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。</p>
+  </section>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</span>
+
+  <span class="token tag" >section.l-Section2.-dividerFull</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</span>
+
+  <span class="token tag" >section.l-Section2.-dividerFull</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+    <span class="token tag" >.l-Block</span>
+      <span class="token tag" >.test-Block</span>
+        <span class="token tag" >.test-Block_Left</span>
+          <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+        <span class="token tag" >.test-Block_Right</span>
+          <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+          <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+    <span class="token tag" >.l-Block</span>
+      <span class="token tag" >.test-Block</span>
+        <span class="token tag" >.test-Block_Left</span>
+          <span class="token tag" >img<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >src</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"https://placehold.jp/300x200.png"</span> alt</span><span class="token punctuation" >)</span></span></span>
+        <span class="token tag" >.test-Block_Right</span>
+          <span class="token tag" >h3</span> <span class="token plain-text" >ダミーの見出しです</span>
+          <span class="token tag" >p</span> <span class="token plain-text" >ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Section3" class="aigis-module__heading">l-Section3</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Section3.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>h3相当の見出しをラップするセクションの余白を指定します。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <section class="l-Section2">
+    <h2 class="sw-Heading2">第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</h2>
+    <section class="l-Section3">
+      <h3 class="sw-Heading3">その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。</h3>
+      <p class="sw-Text">そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。</p>
+    </section>
+    <section class="l-Section3">
+      <h3 class="sw-Heading3">吾輩は猫である。名前はまだ無い。</h3>
+      <div class="l-Block">
+        <p class="test-Box">.l-Block</p>
+      </div>
+      <p class="sw-Text">どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+    </section>
+  </section>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >section.l-Section2</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+
+    <span class="token tag" >section.l-Section3</span>
+      <span class="token tag" >h3.sw-Heading3</span> <span class="token plain-text" >その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。</span>
+    <span class="token tag" >section.l-Section3</span>
+      <span class="token tag" >h3.sw-Heading3</span> <span class="token plain-text" >吾輩は猫である。名前はまだ無い。</span>
+      <span class="token tag" >.l-Block</span>
+        <span class="token tag" >p.test-Box</span> <span class="token plain-text" >.l-Block</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Section3.-divider" class="aigis-module__heading">l-Section3.-divider</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Section3.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>レイアウト例です。<code>.-divider</code>を追加すると<code>.l-Section3</code>同士の間にボーダーがつきます。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <section class="l-Section2">
+    <h2 class="sw-Heading2">第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</h2>
+    <section class="l-Section3 -divider">
+      <h3 class="sw-Heading3">その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。</h3>
+      <p class="sw-Text">そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。</p>
+    </section>
+    <section class="l-Section3 -divider">
+      <h3 class="sw-Heading3">吾輩は猫である。名前はまだ無い。</h3>
+      <div class="l-Block">
+        <p class="test-Box">.l-Block</p>
+      </div>
+      <p class="sw-Text">どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+    </section>
+  </section>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >section.l-Section2</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+
+    <span class="token tag" >section.l-Section3.-divider</span>
+      <span class="token tag" >h3.sw-Heading3</span> <span class="token plain-text" >その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。</span>
+    <span class="token tag" >section.l-Section3.-divider</span>
+      <span class="token tag" >h3.sw-Heading3</span> <span class="token plain-text" >吾輩は猫である。名前はまだ無い。</span>
+      <span class="token tag" >.l-Block</span>
+        <span class="token tag" >p.test-Box</span> <span class="token plain-text" >.l-Block</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Section4" class="aigis-module__heading">l-Section4</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Section4.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>h4相当の見出しをラップするセクションの余白を指定します。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <p class="sw-Text">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</p>
+  <section class="l-Section2">
+    <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+    <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    <p class="sw-Text">しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</p>
+  </section>
+  <section class="l-Section2">
+    <h2 class="sw-Heading2">第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</h2>
+    <section class="l-Section3">
+      <h3 class="sw-Heading3">その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。</h3>
+      <p class="sw-Text">そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。</p>
+    </section>
+    <section class="l-Section3">
+      <h3 class="sw-Heading3">吾輩は猫である。名前はまだ無い。</h3>
+      <section class="l-Section4">
+        <h4 class="sw-Heading4">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。</h4>
+        <p class="sw-Text">この書生というのは時々我々を捕えて煮て食うという話である。</p>
+        <p class="sw-Text">しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</p>
+      </section>
+      <section class="l-Section4">
+        <h4 class="sw-Heading4">どこで生れたかとんと見当がつかぬ。</h4>
+        <p class="sw-Text">何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+      </section>
+    </section>
+  </section>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</span>
+
+  <span class="token tag" >section.l-Section2</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</span>
+
+  <span class="token tag" >section.l-Section2</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+
+    <span class="token tag" >section.l-Section3</span>
+      <span class="token tag" >h3.sw-Heading3</span> <span class="token plain-text" >その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。</span>
+    <span class="token tag" >section.l-Section3</span>
+      <span class="token tag" >h3.sw-Heading3</span> <span class="token plain-text" >吾輩は猫である。名前はまだ無い。</span>
+
+      <span class="token tag" >section.l-Section4</span>
+        <span class="token tag" >h4.sw-Heading4</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。</span>
+        <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >この書生というのは時々我々を捕えて煮て食うという話である。</span>
+        <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+      <span class="token tag" >section.l-Section4</span>
+        <span class="token tag" >h4.sw-Heading4</span> <span class="token plain-text" >どこで生れたかとんと見当がつかぬ。</span>
+        <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Section5" class="aigis-module__heading">l-Section5</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Section5.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>h5相当の見出しをラップするセクションの余白を指定します。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <section class="l-Section4">
+    <h4 class="sw-Heading4">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。</h4>
+    <p class="sw-Text">この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    <p class="sw-Text">しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</p>
+  </section>
+  <section class="l-Section4">
+    <h4 class="sw-Heading4">どこで生れたかとんと見当がつかぬ。</h4>
+    <section class="l-Section5">
+      <h5 class="sw-Heading5">吾輩は猫である。名前はまだ無い。</h5>
+      <p class="sw-Text">何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+    </section>
+    <section class="l-Section5">
+      <h5 class="sw-Heading5">どこで生れたかとんと見当がつかぬ。</h5>
+      <p class="sw-Text">何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+    </section>
+  </section>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >section.l-Section4</span>
+    <span class="token tag" >h4.sw-Heading4</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >この書生というのは時々我々を捕えて煮て食うという話である。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</span>
+  <span class="token tag" >section.l-Section4</span>
+    <span class="token tag" >h4.sw-Heading4</span> <span class="token plain-text" >どこで生れたかとんと見当がつかぬ。</span>
+
+    <span class="token tag" >section.l-Section5</span>
+      <span class="token tag" >h5.sw-Heading5</span> <span class="token plain-text" >吾輩は猫である。名前はまだ無い。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</span>
+    <span class="token tag" >section.l-Section5</span>
+      <span class="token tag" >h5.sw-Heading5</span> <span class="token plain-text" >どこで生れたかとんと見当がつかぬ。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Wrapper" class="aigis-module__heading">l-Wrapper</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Wrapper.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p>コンテンツの横幅を制限します。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <section class="l-Section2">
+    <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+    <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+  </section>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >section.l-Section2</span>
+    <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+    <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Wrapper_Full" class="aigis-module__heading">l-Wrapper_Full</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Wrapper.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>.l-Wrapper_Full</code>を入れ子にすると、<code>.l-Wrapper</code>の中でも画面いっぱいに表示されます。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div class="l-Wrapper_Full">
+    <section class="l-Section2">
+      <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Wrapper_Full</span>
+    <span class="token tag" >section.l-Section2</span>
+      <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+</code></pre>
+
+            </div>
+            <div class="aigis-module">
+              <h2 id="l-Wrapper_FullBg" class="aigis-module__heading">l-Wrapper_FullBg</h2>
+              <div class="aigis-module__filepath">/src/assets/css/namespace/layout/_Wrapper.scss</div>
+              <div class="aigis-module__label"><span class="sw-Label"></span></div><p><code>.l-Wrapper_FullBg</code>を入れ子にすると、<code>.l-Wrapper</code>の中でも背景色が画面いっぱいに表示されます。</p>
+<div class="aigis-preview">
+
+<div class="l-Wrapper">
+  <div style="background-color: #eee;" class="l-Wrapper_FullBg">
+    <section class="l-Section2">
+      <h2 class="sw-Heading2">吾輩はここで始めて人間というものを見た。</h2>
+      <p class="sw-Text">しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</p>
+    </section>
+  </div>
+</div></div>
+
+<pre><code class="language-jade"><span class="token tag" >.l-Wrapper</span>
+  <span class="token tag" >.l-Wrapper_FullBg<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >style</span><span class="token punctuation" >=</span><span class="token attr-value" ><span class="token string" >"background-color: #eee;"</span></span><span class="token punctuation" >)</span></span></span>
+    <span class="token tag" >section.l-Section2</span>
+      <span class="token tag" >h2.sw-Heading2</span> <span class="token plain-text" >吾輩はここで始めて人間というものを見た。</span>
+      <span class="token tag" >p.sw-Text</span> <span class="token plain-text" >しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。</span>
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

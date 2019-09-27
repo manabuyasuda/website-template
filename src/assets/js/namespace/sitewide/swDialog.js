@@ -5,7 +5,7 @@
  * https://github.com/edenspiekermann/a11y-dialog
  */
 import A11yDialog from 'a11y-dialog';
-import scrollingElement from '../../util/scrollingElement';
+import scrollingElement from '../../utils/scrollingElement';
 
 export default function swDialog() {
   // IDとカスタムデータ属性値で使用する名前。
