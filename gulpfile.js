@@ -34,10 +34,12 @@ const gulpSvgSprite = require('gulp-svg-sprite');
 
 // Styleguide
 const fractal = require('@frctl/fractal').create();
+fractal.components.engine('@rsm/fractal-pug-adapter');
 
 fractal.set('project.title', 'Styleguide');
 fractal.set('project.version', 'v4.0');
 fractal.set('project.author', 'Manabu Yasuda');
+fractal.components.set('ext', '.pug');
 fractal.components.set('path', __dirname +  '/src/styleguide/components');
 fractal.docs.set('path', __dirname + '/src/styleguide/docs');
 fractal.web.set('builder.dest', __dirname + '/htdocs/styleguide');
@@ -51,7 +53,7 @@ fractal.web.set('server.syncOptions', {
 const mandelbrot = require('@frctl/mandelbrot');
 
 const myCustomisedTheme = mandelbrot({
-  panels: ['html', 'notes', 'info', 'view', 'context', 'resources'],
+  panels: ['view', 'html', 'notes', 'info', 'context', 'resources'],
   lang: 'ja',
   skin: 'olive',
 });
@@ -77,7 +79,7 @@ const src = {
   ssi: 'static/**/*.html',
   data: 'src/_data/',
   css: 'src/**/*.scss',
-  styleguideWatch: 'src/**/*.{scss,md,hbs,json}',
+  styleguideWatch: 'src/**/*.{scss,md,pug,json}',
   js: './src/assets/js/site.js',
   jsWatch: 'src/**/*.{js,vue}',
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
