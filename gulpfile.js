@@ -79,7 +79,7 @@ const src = {
   ssi: 'static/**/*.html',
   data: 'src/_data/',
   css: 'src/**/*.scss',
-  styleguideWatch: 'src/**/*.{scss,md,pug,json}',
+  styleguideWatch: 'src/styleguide/**/*.{scss,md,pug,json}',
   js: './src/assets/js/site.js',
   jsWatch: 'src/**/*.{js,vue}',
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
@@ -371,6 +371,7 @@ function styleguide() {
   });
   return builder.build().then(function() {
     logger.success('Styleguide is complete.');
+    browserSync.reload();
   });
 }
 
