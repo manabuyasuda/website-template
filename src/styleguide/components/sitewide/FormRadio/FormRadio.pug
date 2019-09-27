@@ -1,0 +1,51 @@
+h2
+  code= `type="radio"`
+  | のデフォルトスタイル
+
+fieldset
+  legend.sw-FormLabel ラジオボタン
+
+  input.sw-FormRadio(type="radio" id="radio1" name="radio1" value="0" checked)
+  label(for="radio1")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    span ラジオボタン1
+
+  input.sw-FormRadio(type="radio" id="radio2" name="radio1" value="1")
+  label(for="radio2")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    span ラジオボタン2ラジオボタン2ラジオボタン2
+
+h2 必須項目のエラー表示
+
+fieldset
+  legend.sw-FormLabel
+    | ラジオボタン
+    em.sw-FormLabel_RequireA （必須）
+
+  input.sw-FormRadio.-error(type="radio" id="radio3" name="radio2" value="0")
+  label(for="radio3")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    span ラジオボタン3
+
+  input.sw-FormRadio.-error(type="radio" id="radio4" name="radio2" value="1")
+  label(for="radio4")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    span ラジオボタン4
+
+  p.sw-FormHelp
+    strong いずれかを選択してください
+
+h2 非活性状態
+
+fieldset
+  legend.sw-FormLabel ラジオボタン
+
+  input.sw-FormRadio(disabled type="radio" id="radio5" name="radio3" value="0")
+  label(for="radio5")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    span ラジオボタン5

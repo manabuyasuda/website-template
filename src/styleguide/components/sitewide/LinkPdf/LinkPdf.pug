@@ -1,0 +1,10 @@
+p リンク先がPDFであることを示す場合に使います。
+
+p.sw-Text
+  a.sw-Link(href="#") テキストリンクです。
+
+p.sw-Text
+  a.sw-LinkPdf(href="#")
+    | PDFをダウンロードする
+    svg.sw-LinkPdf_Icon(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#pdf1")

@@ -1,0 +1,35 @@
+h2 フォーム要素のラベルです。
+  code= `label`
+  | と
+  code= `legend`
+  | のどちらでも使用可能です。
+  br
+  | レイアウトは別のラップ要素で指定してください。
+
+label.sw-FormLabel(for="form-label1") 名前
+input.sw-FormInput(id="form-label1" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+
+
+h2 必須項目1
+
+label.sw-FormLabel(for="form-label2")
+  | 名前
+  em.sw-FormLabel_RequireA （必須）
+input.sw-FormInput(id="form-label2" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+
+
+h2 必須項目2
+
+label.sw-FormLabel(for="form-label3")
+  | 名前
+  em.sw-FormLabel_RequireB 必須
+input.sw-FormInput(id="form-label3" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+
+
+h2 注意事項
+
+label.sw-FormLabel(for="form-label4")
+  | 名前
+  em.sw-FormLabel_RequireB 必須
+  small.sw-FormLabel_Note 入力時の注意事項
+input.sw-FormInput(id="form-label4" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")

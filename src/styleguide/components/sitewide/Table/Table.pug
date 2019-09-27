@@ -1,0 +1,42 @@
+p ベーシックなテーブルです。
+
+ul
+  li ヘッダー・ボディ・フッターといった、行の役割が分かっている場合は
+    code= `<thead>`
+    | 、
+    code= `<tbody>`
+    | 、
+    code= `<tfoot>`
+    | タグを使って意味を明確にします。
+  li
+    code= `<th>`
+    | タグは見出しセルになりますが、その見出しセルがどの行や列に対応しているかを明確にするために
+    code= `scope`
+    | 属性を指定します。
+    code= `scope="row"`
+    | で同じ行の見出しであることを示し、
+    code= `scope="col"`
+    | で同じ列の見出しであることを示します。
+  li
+    code= `colspan`
+    | 属性と
+    code= `rowspan`
+    | 属性で複数のセルを結合することができますが、極力控えるようにします。
+    br
+    | セルの結合はUAが解釈することが難しい機能で、特にスクリーンリーダーなどでうまく情報が伝えられない恐れがあります。1つの複雑なテーブルではなく、複数のシンプルなテーブルにできないか検討してください。
+
+table.sw-Table
+  thead
+    tr
+      th(scope="col") Table Header
+      th(scope="col") Table Header
+      th(scope="col") Table Header
+  tbody
+    tr
+      th(scope="row") Table Header
+      td Table Data
+      td Table Data
+    tr
+      th(scope="row") Table Header
+      td Table Data
+      td Table Data

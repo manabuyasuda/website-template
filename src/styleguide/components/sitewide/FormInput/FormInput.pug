@@ -1,0 +1,35 @@
+h2
+  code= `<input>`
+  | タグのデフォルトスタイル
+
+label.sw-FormLabel(for="input1") 名前
+input.sw-FormInput(id="input1" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+
+
+h2
+  code= `type`
+  | と
+  code= `autocomplete`
+  | の使用例
+
+input.sw-FormInput(id="input2" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+input.sw-FormInput(id="input3" type="text" name="nameKana" autocomplete="name" placeholder="例）ヤマダ タロウ")
+input.sw-FormInput(id="input4" type="email" name="email" autocomplete="email" placeholder="例）example@gmail.com")
+input.sw-FormInput(id="input5" type="tel" name="tel" autocomplete="tel" placeholder="例）0120-117-117")
+input.sw-FormInput(id="input6" type="number" name="postalCode" autocomplete="postal-code" placeholder="例）105-0011")
+
+
+h2 必須項目のエラー表示
+
+label.sw-FormLabel(for="input7")
+  | 名前
+  em.sw-FormLabel_RequireA （必須）
+input.sw-FormInput.-error(id="input7" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎")
+p.sw-FormHelp
+  strong 名前を入力してください
+
+
+h2 非活性状態
+
+label.sw-FormLabel(for="input8") 名前
+input.sw-FormInput(id="input8" type="text" name="name" autocomplete="name" placeholder="例）山田 太郎" disabled)

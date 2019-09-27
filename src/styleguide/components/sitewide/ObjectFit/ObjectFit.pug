@@ -1,0 +1,79 @@
+p 置換要素（
+  code= `img`
+  | 、
+  code= `video`
+  | 、
+  code= `picture`
+  | 、
+  code= `srcset`
+  | タグなど）を親要素のサイズに応じてトリミングや拡大縮小をして表示します。
+
+p ポリフィルは「
+  a(href="https://github.com/constancecchen/object-fit-polyfill") object-fit-polyfill
+  | 」を使用しています。
+
+p 
+  code= `object-position`
+  | はvariantで変更できます（デフォルトは`50% 50%`）。
+  br
+  a(href="https://github.com/constancecchen/object-fit-polyfill#usage") Usage
+  br
+  | にもある通り、
+  code= `data-object-position="center top"`
+  | のようにカスタムデータ属性でも設定が必要です。
+  br
+  | 指定順はクラス名とカスタムデータ属性値ともに
+  code= `X軸 Y軸`
+  | です。
+
+table
+  tr
+    th クラス名
+    th X軸
+    th Y軸
+  tr
+    td: code .-leftTop
+    td left
+    td top
+  tr
+    td: code .-centerTop
+    td center
+    td top
+  tr
+    td: code .-rightTop
+    td right
+    td top
+  tr
+    td: code .-leftCenter
+    td left
+    td center
+  tr
+    td: code .-centerCenter
+    td center
+    td center
+  tr
+    td: code .-rightCenter
+    td right
+    td center
+  tr
+    td: code .-leftBottom
+    td left
+    td bottom
+  tr
+    td: code .-centerBottom
+    td center
+    td bottom
+  tr
+    td: code .-rightBottom
+    td right
+    td bottom
+
+.l-Flex
+  .l-Flex_Item(class="-1/2" style="height: 200px;")
+    img.sw-ObjectFit(src="https://unsplash.it/800/600/" alt data-object-fit="cover")
+  .l-Flex_Item(class="-1/2" style="height: 200px;")
+    img.sw-ObjectFit(src="https://unsplash.it/400/600/" alt data-object-fit="contain")
+  .l-Flex_Item(class="-1/2" style="height: 200px;")
+    img.sw-ObjectFit.-centerTop(src="https://unsplash.it/600/400/" alt data-object-fit="none" data-object-position="center top")
+  .l-Flex_Item(class="-1/2" style="height: 200px;")
+    img.sw-ObjectFit(src="https://unsplash.it/600/200/" alt data-object-fit="scale-down")

@@ -1,0 +1,36 @@
+p A11yに対応したダイアログ（モーダル）です。<br>
+  | 複数のダイアログを使う場合は`data-a11y-dialog-show="sw-Dialog1"`と`id="sw-Dialog1"`の値を`sw-Dialog2`や`sw-Dialog3`のように連番で指定してください。<br>
+  | 最大で10個まで対応しています。<br>
+  | メインコンテンツに`#main`を指定、ダイアログはそのID要素と兄弟関係になるようにしてください。<br>
+  | 幅と高さはブレイクポイントごとに固定されています。
+
+#main
+  button.sw-Dialog_Link(data-a11y-dialog-show="sw-Dialog1") ダイアログ1を開く
+  br
+  button.sw-Dialog_Link(data-a11y-dialog-show="sw-Dialog2") ダイアログ2を開く
+
+.sw-Dialog_Dialog#sw-Dialog1
+  .sw-Dialog_Overlay(tabindex="-1" data-a11y-dialog-hide)
+  dialog.sw-Dialog_Content(aria-labelledby="dialog-title1" aria-describedby1="dialogDescription")
+    .sw-Dialog_Inner
+      .sw-Dialog_Head
+        button.sw-Dialog_Close(type="button" data-a11y-dialog-hide aria-label="この画面を閉じる")
+          svg.sw-Dialog_CloseIcon(role="img")
+            use(xlink:href="/assets/svg/sprite.svg#close1")
+      .sw-Dialog_Body
+        h3#dialog-title1 ダイアログ1のタイトル
+        p#dialogDescription1 ダイアログ1の概要
+        p `aria-labelledby`と`aria-describedby`で、タイアログのタイトルと概要を紐づけています。
+
+.sw-Dialog_Dialog#sw-Dialog2
+  .sw-Dialog_Overlay(tabindex="-1" data-a11y-dialog-hide)
+  dialog.sw-Dialog_Content(aria-labelledby="dialog-title2" aria-describedby="dialogDescription2")
+    .sw-Dialog_Inner
+      .sw-Dialog_Head
+        button.sw-Dialog_Close(type="button" data-a11y-dialog-hide aria-label="この画面を閉じる")
+          svg.sw-Dialog_CloseIcon(role="img")
+            use(xlink:href="/assets/svg/sprite.svg#close1")
+      .sw-Dialog_Body
+        h3#dialog-title2 ダイアログ2のタイトル
+        p#dialogDescription2 ダイアログ2の概要
+        p とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。とても長いコンテンツの例です。

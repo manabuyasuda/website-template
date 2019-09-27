@@ -12,28 +12,60 @@ WISYWIG（ウィジウィグ）で入力した要素に対するスタイル。
 ```
 */
 .wisywig-Area {
-  & > h2 {
+  & > h2:not([class]) {
+    @include sw-Heading2();
+
+    margin-top: rem(60);
+    margin-bottom: 1.2em;
+    text-align: left !important;
+
+    & + * {
+      margin-top: 0;
+    }
   }
 
-  & > h3 {
+  & > h3:not([class]) {
   }
 
-  & > h4 {
+  & > h4:not([class]) {
   }
 
-  & > h5 {
+  & > h5:not([class]) {
   }
 
-  & > p {
+  & > p:not([class]) {
+    @include l-Text();
+
+    font-size: 1rem;
   }
 
-  & > ul {
+  & > ul:not([class]) {
   }
 
-  & > ol {
+  & > ol:not([class]) {
   }
 
-  & > img {
+  & > img:not([class]) {
+  }
+
+  & > table:not([class]) {
+    @include l-Block();
+
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+
+    & th,
+    & td {
+      vertical-align: top;
+      padding: rem(12);
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+
+    & th {
+      background-color: #eee;
+    }
   }
 
   & > :first-child {
