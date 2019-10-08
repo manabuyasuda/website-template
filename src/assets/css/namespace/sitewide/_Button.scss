@@ -5,7 +5,7 @@ namespace: sw-
 category: [Button, Link, Form]
 ---
 
-ボタンのデフォルトスタイルです。横幅は280pxまでに制限されます。
+ボタンのデフォルトスタイルです。
 
 ```jade
 .l-Wrapper
@@ -39,9 +39,9 @@ category: [Button, Link, Form]
 .l-Wrapper
   a.sw-Button(href="#") デフォルト
   a.sw-Button(href="#")
+    | 矢印付きボタン
     svg.sw-Button_More(role="img")
       use(xlink:href="/assets/svg/sprite.svg#right-arrow1")
-    | 矢印付きボタン
 ```
 */
 .sw-Button {
@@ -68,20 +68,17 @@ category: [Button, Link, Form]
 }
 
 .sw-Button.-auto {
+  min-width: auto;
   width: auto;
 }
 
 .sw-Button_More {
-  display: inline-block;
-  vertical-align: middle;
-  position: absolute;
-  top: 0;
-  right: rem(16);
-  bottom: 0;
-  width: (291.6 / 499.9) * 1em;
-  height: 1em;
-  margin: auto;
-  font-size: 1em;
+  @include svgstore(291.6, 499.9);
+  position: relative;
+  top: rem(-0.1);
+  left: 0;
+  margin-left: rem(6);
+  font-size: em(12);
   fill: currentColor;
 
   @include mq(lg) {

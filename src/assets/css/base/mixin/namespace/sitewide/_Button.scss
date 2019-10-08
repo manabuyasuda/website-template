@@ -3,20 +3,22 @@
     text-decoration: none;
   }
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: 280px;
+  min-width: rem(200);
   max-width: 100%;
   margin: 0;
-  padding: rem(12) rem(32);
+  padding: rem(15) rem(20);
   text-align: center;
   text-decoration: none;
   font-family: inherit;
   font-size: 1rem;
-  line-height: 1;
+  line-height: 1.3;
   border: none;
   border: 1px solid #d0d0d0;
-  border-radius: $form-border-radius;
+  border-radius: em(30);
   background: transparent;
   background-color: #fff;
   color: inherit;

@@ -5,4 +5,7 @@ import elementClosest from 'element-closest';
 import svg4everybody from 'svg4everybody';
 
 elementClosest(window);
-svg4everybody();
+
+document.addEventListener('DOMContentLoaded', () => {
+  svg4everybody();
+});
