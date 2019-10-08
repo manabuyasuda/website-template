@@ -3,7 +3,9 @@
     text-decoration: none;
   }
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 280px;
   max-width: 100%;
