@@ -22,5 +22,10 @@ export default function stBackToTop() {
     updateURL: false, // スクロール完了後にURLを更新する
     preventDefault: true, // コンテナ要素のクリックイベントを防止する
     stopPropagation: true, // コンテナ要素のバブリングを防止する
+    after() {
+      const destination = document.getElementsByTagName('body')[0];
+      destination.setAttribute('tabindex', '-1');
+      destination.focus();
+    },
   });
 }
