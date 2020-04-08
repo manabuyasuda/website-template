@@ -25,6 +25,11 @@ export default function jsSmoothScroll() {
     updateURL: true, // スクロール完了後にURLを更新する
     preventDefault: true, // コンテナ要素のクリックイベントを防止する
     stopPropagation: true, // コンテナ要素のバブリングを防止する
+    after(offset, $trigger, scrollElement) {
+      const destination = document.getElementById(scrollElement.ctx.hash.replace('#', ''));
+      destination.setAttribute('tabindex', '-1');
+      destination.focus();
+    },
   });
 
   /**
