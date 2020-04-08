@@ -9,7 +9,7 @@ export default function jsSmoothScroll() {
   // クラスで指定する場合。
   // const baseNameClass = 'js-SmoothScroll';
   // ハッシュ付きリンクに指定する場合。
-  const baseNameAttr = 'a[href*="#"]:not([href*="/"]):not(#st-BackToTop)';
+  const baseNameAttr = 'a[href*="#"]:not([href*="/"]):not([href="#"]):not(#v1-back-to-top)';
   // 固定ヘッダーのCSSセレクタ。
   const headerElement = '[data-scroll-header]';
 
