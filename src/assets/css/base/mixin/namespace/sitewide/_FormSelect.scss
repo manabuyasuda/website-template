@@ -50,7 +50,7 @@
     outline-width: 0;
   }
 
-  [data-whatinput="keyboard"] & > select:focus {
+  [data-whatintent="keyboard"] & > select:focus {
     border-color: $form-border-color-focus;
     box-shadow: $form-box-shadow-focus;
   }

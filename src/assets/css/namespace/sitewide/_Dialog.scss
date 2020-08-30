@@ -189,13 +189,13 @@ A11yに対応したダイアログ（モーダル）です。
     appearance: none;
   }
 
-  [data-whatinput="keyboard"] &:focus {
+  [data-whatintent="keyboard"] &:focus {
     outline-width: 0;
     box-shadow: $form-box-shadow-focus;
   }
 
-  [data-whatinput="mouse"] &:focus,
-  [data-whatinput="touch"] &:focus {
+  [data-whatintent="mouse"] &:focus,
+  [data-whatintent="touch"] &:focus {
     outline-width: 0;
     box-shadow: none;
   }
@@ -227,18 +227,18 @@ A11yに対応したダイアログ（モーダル）です。
   transition-duration: $global-transition-duration;
   appearance: none;
 
-  html:not([data-whatinput="touch"]) &:hover {
+  html:not([data-whatintent="touch"]) &:hover {
     text-decoration: none;
     color: $color-link-hover;
   }
 
-  [data-whatinput="keyboard"] &:focus {
+  [data-whatintent="keyboard"] &:focus {
     outline-width: 0;
     box-shadow: $form-box-shadow-focus;
   }
 
-  [data-whatinput="mouse"] &:focus,
-  [data-whatinput="touch"] &:focus {
+  [data-whatintent="mouse"] &:focus,
+  [data-whatintent="touch"] &:focus {
     outline-width: 0;
     box-shadow: none;
   }

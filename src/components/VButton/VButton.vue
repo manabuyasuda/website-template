@@ -91,13 +91,13 @@ export default {
     appearance: none;
   }
 
-  [data-whatinput='keyboard'] &:focus {
+  [data-whatintent='keyboard'] &:focus {
     outline-width: 0;
     box-shadow: $form-box-shadow-focus;
   }
 
-  [data-whatinput='mouse'] &:focus,
-  [data-whatinput='touch'] &:focus {
+  [data-whatintent='mouse'] &:focus,
+  [data-whatintent='touch'] &:focus {
     outline-width: 0;
     box-shadow: none;
   }
@@ -122,13 +122,13 @@ export default {
   background-color: $color-brand;
   color: #fff;
 
-  html:not([data-whatinput='touch']) &:hover {
+  html:not([data-whatintent='touch']) &:hover {
     background-color: #fff;
     color: $color-brand;
   }
 
-  html:not([data-whatinput='touch']) &:disabled:hover,
-  html:not([data-whatinput='touch']) &.-disabled:hover {
+  html:not([data-whatintent='touch']) &:disabled:hover,
+  html:not([data-whatintent='touch']) &.-disabled:hover {
     color: #fff;
   }
 }
@@ -138,13 +138,13 @@ export default {
   background-color: #fff;
   color: $color-brand;
 
-  html:not([data-whatinput='touch']) &:hover {
+  html:not([data-whatintent='touch']) &:hover {
     background-color: $color-brand;
     color: #fff;
   }
 
-  html:not([data-whatinput='touch']) &:disabled:hover,
-  html:not([data-whatinput='touch']) &.-disabled:hover {
+  html:not([data-whatintent='touch']) &:disabled:hover,
+  html:not([data-whatintent='touch']) &.-disabled:hover {
     color: $color-brand;
   }
 }
