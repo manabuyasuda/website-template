@@ -33,13 +33,13 @@
     appearance: none;
   }
 
-  [data-whatinput="keyboard"] &:focus {
+  [data-whatintent="keyboard"] &:focus {
     outline-width: 0;
     box-shadow: $form-box-shadow-focus;
   }
 
-  [data-whatinput="mouse"] &:focus,
-  [data-whatinput="touch"] &:focus {
+  [data-whatintent="mouse"] &:focus,
+  [data-whatintent="touch"] &:focus {
     outline-width: 0;
     box-shadow: none;
   }

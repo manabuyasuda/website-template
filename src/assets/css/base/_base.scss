@@ -169,7 +169,7 @@ input[type="text"] {
 }
 
 // フォーカスインジゲータはキーボード操作のときにだけ表示します。
-[data-whatinput="mouse"] *:focus,
-[data-whatinput="touch"] *:focus {
+[data-whatintent="mouse"] *:focus,
+[data-whatintent="touch"] *:focus {
   outline: none;
 }

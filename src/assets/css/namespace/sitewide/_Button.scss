@@ -51,13 +51,13 @@ category: [Button, Link, Form]
   background-color: $color-brand;
   color: #fff;
 
-  html:not([data-whatinput="touch"]) &:hover {
+  html:not([data-whatintent="touch"]) &:hover {
     background-color: #fff;
     color: $color-brand;
   }
 
-  html:not([data-whatinput="touch"]) &:disabled:hover,
-  html:not([data-whatinput="touch"]) &.-disabled:hover {
+  html:not([data-whatintent="touch"]) &:disabled:hover,
+  html:not([data-whatintent="touch"]) &.-disabled:hover {
     color: #fff;
   }
 }
