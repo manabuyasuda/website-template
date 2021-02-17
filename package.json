@@ -101,7 +101,7 @@
     "es6-promise": "^4.2.8",
     "flexibility": "^2.0.1",
     "inobounce": "^0.1.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash-es": "^4.17.11",
     "normalize.css": "^8.0.1",
     "objectFitPolyfill": "^2.3.0",
