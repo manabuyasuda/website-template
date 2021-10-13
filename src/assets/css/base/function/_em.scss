@@ -6,5 +6,5 @@
 // @example - em(20) => 1.25em
 // @example - em(20, 15) => 1.33333em
 @function em($px, $parent: 16) {
-  @return math.div(strip-unit($px), strip-unit($parent)) * 1rem;
+  @return math.div(strip-unit($px), strip-unit($parent)) * 1em;
 }
