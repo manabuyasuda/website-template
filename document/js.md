@@ -7,9 +7,8 @@ JavaScriptは大きく6つにわけられます。
 1. site.js
 2. polyfill.js
 3. /namespace
-4. /domain
-5. /infra
-6. /utils
+4. /lib
+5. /utils
 
 ### site.js
 JavaScriptのエントリーポイントです。`.js`と`.vue`はこのファイルで出力されます。
@@ -26,16 +25,11 @@ ECSSの名前空間のコンセプトを使って、使われる状況ごとに�
 import jsSmoothScroll from './namespace/js/jsSmoothScroll';
 ```
 
-### /domain
+### /lib
 ドメインオブジェクト。ある対象（名詞）の値を持ち・判断・加工・計算をして結果を返します。
 1つの`class`にすることで、重複しがちな処理を1箇所で管理することを目的としています。
 
 - `MediaQuery.js` メディアクエリの条件（値）を持ち、条件に一致するかを返す
-- `Storage.js` ローカルストレージのキー（値）を持ち、取得・更新・削除などをする
-- `History.js` URLパラメーターの取得・更新・削除などをする
-
-### /infra
-データベースや外部APIとのやり取りをします。
 
 ### /utils
 1つの関数が1つの結果を返す汎用関数です。

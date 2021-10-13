@@ -17,8 +17,8 @@
 ## 確認環境
 以下の環境で動作の確認をしています。
 
-- macOS High Sierra 10.13.6
-- Node.js 10.16.0
+- macOS High Sierra 10.14.6
+- Node.js 14.17.6
 
 Node.jsのバージョンはnodenvで固定しています。
 
@@ -144,7 +144,7 @@ npm run htmlValidate
 npm run stylelint
 ```
 
-[Airbnb JavaScriptスタイルガイド](http://mitsuruog.github.io/javascript-style-guide/)や[eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue)を元にJavaScriptのリントを実行します。
+[JavaScript Standard Style](https://standardjs.com/readme-ja.html)を元にJavaScriptのリントを実行します。
 
 ```bash
 npm run eslint
@@ -154,7 +154,7 @@ npm run eslint
 
 - PugをHTMLにコンパイル
 - SassをCSSにコンパイル
-- JSをES5にコンパイル（Vue.jsの単一ファイルコンポーネントも変換する）
+- JSをES5にコンパイル
 - SVGスプライトの生成
 - ローカルサーバーを立ち上げて動作の確認（static以下のHTMLファイルはSSIにも対応）
 - HTMLのリント
