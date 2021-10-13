@@ -93,16 +93,12 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "a11y-dialog": "^7.3.0",
     "element-closest": "^3.0.2",
     "es6-promise": "^4.2.8",
-    "flexibility": "^2.0.1",
     "inobounce": "^0.2.0",
-    "lodash-es": "^4.17.21",
     "normalize.css": "^8.0.1",
     "objectFitPolyfill": "^2.3.5",
     "picturefill": "^3.0.3",
-    "responsive-auto-height": "0.0.5",
     "sass-mq": "^6.0.0-beta.1",
     "svg4everybody": "^2.1.9",
     "sweet-scroll": "^4.0.0",
