@@ -1,11 +1,11 @@
-import 'es6-promise/auto';
-import 'picturefill';
-import 'objectFitPolyfill';
-import elementClosest from 'element-closest';
-import svg4everybody from 'svg4everybody';
+import 'es6-promise/auto'
+import 'picturefill'
+import 'objectFitPolyfill'
+import elementClosest from 'element-closest'
+import svg4everybody from 'svg4everybody'
 
-elementClosest(window);
+elementClosest(window)
 
 document.addEventListener('DOMContentLoaded', () => {
-  svg4everybody();
-});
+  svg4everybody()
+})
