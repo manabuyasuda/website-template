@@ -16,20 +16,20 @@
   $h: strip-unit($height);
 
   @if ($w == $h) {
-    min-width: 1em;
     width: 1em;
     height: 1em;
+    min-width: 1em;
   }
 
   @if ($w > $h) {
-    min-width: 1em;
     width: 1em;
     height: (math.div($h, $w)) * 1em;
+    min-width: 1em;
   }
 
   @if ($w < $h) {
-    min-width: (math.div($w, $h)) * 1em;
     width: (math.div($w, $h)) * 1em;
     height: 1em;
+    min-width: (math.div($w, $h)) * 1em;
   }
 }
