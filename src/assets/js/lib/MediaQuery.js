@@ -2,7 +2,7 @@
  * `em`に変換するための基準になるフォントサイズ。
  * @type {number}
  */
-const BROWSER_DEFAULT_FONT_SIZE = 16;
+const BROWSER_DEFAULT_FONT_SIZE = 16
 /**
  * メディアクエリ変数。キーと値はCSSの変数と合わせます。
  * @type {object}
@@ -12,7 +12,7 @@ const list = {
   md: 768,
   lg: 1024,
   xl: 1440,
-};
+}
 
 /**
  * メディアクエリ変数を管理して、`this.matches(query, layoutChangedCallback)`で`query`が一致するか判定します。
@@ -27,7 +27,7 @@ export default class MediaQuery {
    * const mediaQueryList = MediaQuery.list;
    */
   static get list() {
-    return list;
+    return list
   }
 
   /**
@@ -44,21 +44,21 @@ export default class MediaQuery {
    * });
    */
   static matches(query, layoutChangedCallback) {
-    let mediaQuery = `(min-width: ${list[query] / BROWSER_DEFAULT_FONT_SIZE}em)`;
+    let mediaQuery = `(min-width: ${list[query] / BROWSER_DEFAULT_FONT_SIZE}em)`
 
     if (typeof query === 'number') {
-      mediaQuery = `(min-width: ${query / BROWSER_DEFAULT_FONT_SIZE}em)`;
+      mediaQuery = `(min-width: ${query / BROWSER_DEFAULT_FONT_SIZE}em)`
     }
 
-    const mql = window.matchMedia(mediaQuery);
+    const mql = window.matchMedia(mediaQuery)
     const listener = event => {
-      layoutChangedCallback(event.matches);
-    };
-    mql.addListener(listener);
-    layoutChangedCallback(mql.matches);
+      layoutChangedCallback(event.matches)
+    }
+    mql.addListener(listener)
+    layoutChangedCallback(mql.matches)
     const uninstall = () => {
-      mql.removeListener(listener);
-    };
-    return uninstall;
+      mql.removeListener(listener)
+    }
+    return uninstall
   }
 }
