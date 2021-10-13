@@ -9,13 +9,10 @@
   },
   "extends": [
     "airbnb-base",
-    "plugin:prettier/recommended",
-    "plugin:vue/essential",
-    "prettier/vue"
+    "plugin:prettier/recommended"
   ],
   "plugins": [
-    "import",
-    "vue"
+    "import"
   ],
   "rules": {
     "prettier/prettier": [

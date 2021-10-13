@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // @desc - SVGスプライト（svgstore）で使用するアイコンをアスペクト比を保ったまま、`font-size`でサイズの指定ができるようにします。
 // @param {Number} $width [500] - アイコンの横幅を単位無しで指定します。
 // @param {Number} $height [500] - アイコンの高さを単位無しで指定します。
@@ -22,12 +24,12 @@
   @if ($w > $h) {
     min-width: 1em;
     width: 1em;
-    height: ($h / $w) * 1em;
+    height: (math.div($h, $w)) * 1em;
   }
 
   @if ($w < $h) {
-    min-width: ($w / $h) * 1em;
-    width: ($w / $h) * 1em;
+    min-width: (math.div($w, $h)) * 1em;
+    width: (math.div($w, $h)) * 1em;
     height: 1em;
   }
 }

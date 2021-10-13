@@ -1,8 +1,10 @@
+@use "sass:math";
+
 // @desc - pxをemに変換します。
 // @param {Number} $px - 指定するピクセル値。
 // @param {Number} $parent [16] - 親要素のピクセル値。
 // @example - em(20) => 1.25em
 // @example - em(20, 15) => 1.33333em
 @function em($px, $parent: 16) {
-  @return (strip-unit($px) / strip-unit($parent)) * 1em;
+  @return math.div(strip-unit($px), strip-unit($parent)) * 1rem;
 }

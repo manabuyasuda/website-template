@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /*
 ---
 name: l-Flex
@@ -188,8 +190,8 @@ $flex-order: 1, 2, 3 !default;
 
   @each $column in $columns {
     .l-Flex_Item.\-#{$column}\/12#{$suffix} {
-      flex-basis: percentage($column / 12);
-      max-width: percentage($column / 12);
+      flex-basis: percentage(math.div($column, 12));
+      max-width: percentage(math.div($column, 12));
     }
   }
 }
@@ -219,8 +221,8 @@ $flex-order: 1, 2, 3 !default;
     $next-column: ($column + 1);
 
     .l-Flex_Item.\-1\/#{$column}#{$suffix} {
-      flex-basis: percentage(1 / $column);
-      max-width: percentage(1 / $column);
+      flex-basis: percentage(math.div(1, $column));
+      max-width: percentage(math.div(1, $column));
     }
   }
 }

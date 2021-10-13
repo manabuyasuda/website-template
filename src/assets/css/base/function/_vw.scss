@@ -4,5 +4,5 @@
 // @example - vw(30) => 8vw
 // @example - vw(60, 750) => 8vw
 @function vw($px, $width: 375) {
-  @return (strip-unit($px) / strip-unit($width)) * 100vw;
+  @return math.div(strip-unit($px) , strip-unit($width)) * 100vw;
 }

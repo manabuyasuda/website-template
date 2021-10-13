@@ -12,7 +12,7 @@ const w3cjs = require('gulp-w3cjs');
 const browserSyncSsi = require('browsersync-ssi');
 
 // CSS
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const postcss = require('gulp-postcss');
 const flexBugsFixes = require('postcss-flexbugs-fixes');

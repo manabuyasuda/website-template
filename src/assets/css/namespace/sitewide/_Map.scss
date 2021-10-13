@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /*
 ---
 name: sw-Map
@@ -44,7 +46,7 @@ Google Mapsをレスポンシブ対応させます。デフォルトで16:9で�
   position: relative;
   overflow: hidden;
   height: 0;
-  padding-bottom: percentage(9 / 16);
+  padding-bottom: percentage(math.div(9, 16));
 
   & > *,
   iframe,
