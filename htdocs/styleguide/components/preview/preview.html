@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
+<style>
+    :root {
+        
+        
+        
+    }
+</style>
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/default.css?cachebust=1.9.4" type="text/css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/github-dark-dimmed.min.css?cachebust=1.9.4" type="text/css">
+
+
+<title>Error rendering component preview | Styleguide</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame Frame--full" id="frame">
+
+
+<div class="Error Error--render">
+    <h4 class="Error-title">Error rendering component</h4>
+    <div class="Error-message Prose">
+        <p>/Users/yasuda/Documents/10._GitHub/website-template/src/styleguide/components/_preview.pug:7
+    5|     meta(http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;)
+    6|     meta(name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;)</p>
+<blockquote>
+<p>7|     title #{_target.label} | StyleGuide
+    8| 
+    9|     link(rel=&quot;stylesheet&quot; href=&quot;/assets/css/site.css&quot;)
+    10|     script(src=&quot;/assets/js/site.js&quot; defer)</p>
+</blockquote>
+<p>Cannot read property &#39;label&#39; of undefined</p>
+
+    </div>
+    
+    <code class="Error-stack">
+        <pre>TypeError: /Users/yasuda/Documents/10._GitHub/website-template/src/styleguide/components/_preview.pug:7
+    5|     meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    6|     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  > 7|     title #{_target.label} | StyleGuide
+    8| 
+    9|     link(rel="stylesheet" href="/assets/css/site.css")
+    10|     script(src="/assets/js/site.js" defer)
+
+Cannot read property 'label' of undefined
+    at eval (eval at wrap (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/pug-runtime/wrap.js:6:10), <anonymous>:22:65)
+    at template (eval at wrap (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/pug-runtime/wrap.js:6:10), <anonymous>:39:7)
+    at PugAdapter.render (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/@rsm/fractal-pug-adapter/adapter.js:43:30)
+    at ComponentSource._renderVariant (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/@frctl/fractal/src/api/components/source.js:212:30)
+    at _renderVariant.next (<anonymous>)
+    at onFulfilled (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/co/index.js:65:19)
+From previous event:
+    at Context.filter (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/@frctl/web/src/engine/filters/async.js:17:25)
+    at Template.root [as rootRenderFunc] (eval at _compile (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:633:18), <anonymous>:13:24)
+    at eval (eval at _compile (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:633:18), <anonymous>:44:16)
+    at createTemplate (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:315:9)
+    at handle (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:327:11)
+    at /Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:339:9
+    at next (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/lib.js:328:7)
+    at Object.asyncIter (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/lib.js:334:3)
+    at Environment.getTemplate (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:321:9)
+    at Template.root [as rootRenderFunc] (eval at _compile (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:633:18), <anonymous>:9:5)
+    at Template.render (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:552:10)
+    at /Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:366:27
+    at createTemplate (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:315:9)
+    at handle (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:327:11)
+    at /Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:339:9
+    at next (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/lib.js:328:7)
+    at Object.asyncIter (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/lib.js:334:3)
+    at Environment.getTemplate (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:321:9)
+    at Environment.render (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/nunjucks/src/environment.js:360:10)
+    at Engine.render (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/@frctl/web/src/engine/engine.js:102:29)
+    at Builder._render (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/@frctl/web/src/builder.js:190:33)
+    at Builder._onRequest (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/@frctl/web/src/builder.js:164:25)
+    at Builder.<anonymous> (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/@frctl/web/src/builder.js:62:61)
+    at /Users/yasuda/Documents/10._GitHub/website-template/node_modules/throat/index.js:11:20
+    at new Promise (<anonymous>)
+    at run (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/throat/index.js:10:14)
+    at Builder._throttle (/Users/yasuda/Documents/10._GitHub/website-template/node_modules/throat/index.js:70:12)
+    at /Users/yasuda/Documents/10._GitHub/website-template/node_modules/@frctl/web/src/builder.js:62:40
+    at Array.forEach (<anonymous>)
+    at /Users/yasuda/Documents/10._GitHub/website-template/node_modules/@frctl/web/src/builder.js:61:36</pre>
+    </code>
+    
+</div>
+
+
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.9.4"></script>
+
+
+
+</body>
+</html>
