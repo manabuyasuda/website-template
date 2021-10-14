@@ -1,0 +1,17 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{_target.label} | StyleGuide
+
+    link(rel="stylesheet" href="/assets/css/site.css")
+    script(src="/assets/js/site.js" defer)
+
+    meta(name="format-detection" content="telephone=no")
+
+  body
+    #app
+      .l-Wrapper.wisywig-Area(style="padding-top: 4rem; padding-bottom: 4rem;")
+        != yield
