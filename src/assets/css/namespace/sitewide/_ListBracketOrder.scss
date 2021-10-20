@@ -1,28 +1,3 @@
-/*
----
-name: sw-ListBracketOrder
-namespace: sw-
-category: List
----
-
-括弧で囲んだ順序リストです。
-
-```jade
-.l-Wrapper
-  ol.sw-ListBracketOrder
-    li リストです。リストです。リストです。リストです。
-    li リストです
-```
-
-リストを2から始める場合はstart属性を`start="2"`のように指定します。CSSで表示する順序も属性値によって変更されます。
-
-```jade
-.l-Wrapper
-  ol.sw-ListBracketOrder(start="2")
-    li リストです。リストです。リストです。リストです。
-    li リストです
-```
-*/
 .sw-ListBracketOrder {
   @include l-Text();
 
@@ -31,7 +6,7 @@ category: List
   list-style-type: none;
   counter-reset: bracketOrder 0;
 
-  @include mq(lg) {
+  @include mq(md) {
     margin-left: rem(32);
   }
 

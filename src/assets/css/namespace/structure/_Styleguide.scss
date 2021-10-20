@@ -1,0 +1,78 @@
+.st-Styleguide {
+  $width: $global-max-width + 40px;
+
+  max-width: $global-max-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding: rem(40) rem(20);
+
+  @media print, screen and (min-width: $width) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  & > p:not([class]) {
+    @include l-Text();
+
+    font-size: 1rem;
+  }
+
+  & > a:not([class]),
+  & > p:not([class]) a:not([class]) {
+    @include sw-Link();
+  }
+
+  & > h2:not([class]) {
+    @include sw-Heading2();
+
+    margin: $heading2-margin;
+
+    @include mq(md) {
+      margin: $heading2-margin-md;
+    }
+
+    & + * {
+      margin-top: 0;
+    }
+  }
+}
+
+
+.Browser-notes {
+  & .Prose {
+    font-feature-settings: inherit;
+
+    & > p {
+      @include l-Text();
+
+      font-size: 1rem;
+    }
+
+    & > a,
+    & > p a {
+      @include sw-Link();
+    }
+
+    & > h2 {
+      @include sw-Heading2();
+
+      margin: $heading2-margin;
+
+      @include mq(md) {
+        margin: $heading2-margin-md;
+      }
+
+      & + * {
+        margin-top: 0;
+      }
+    }
+  }
+}

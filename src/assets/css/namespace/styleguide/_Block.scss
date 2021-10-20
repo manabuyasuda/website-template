@@ -1,0 +1,50 @@
+/*
+---
+name: test-Block
+namespace: test-
+category: Block
+---
+
+スタイルガイド用のダミーブロックです。
+
+```jade
+.l-Wrapper
+  .styleguide-Block
+    .styleguide-Block_Left
+      img(src="https://placehold.jp/300x200.png" alt)
+    .styleguide-Block_Right
+      h3 ダミーの見出しです
+      p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
+```
+*/
+.styleguide-Block {
+  @include l-Block();
+
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+.styleguide-Block_Left {
+  margin-bottom: 1em;
+
+  @include mq(lg) {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 0;
+  }
+}
+
+.styleguide-Block_Right {
+  overflow: hidden;
+
+  & h3 {
+    margin-bottom: 1em;
+  }
+
+  & p + p {
+    margin-top: 1em;
+  }
+}

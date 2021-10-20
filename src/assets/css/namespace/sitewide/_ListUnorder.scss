@@ -1,22 +1,3 @@
-/*
----
-name: sw-ListUnorder
-namespace: sw-
-category: List
----
-
-順序をもたない並列なリストです。
-
-```jade
-.l-Wrapper
-  ul.sw-ListUnorder
-    li リストです。
-    li リストです。
-      ul.sw-ListUnorder_Child
-        li リストです。
-        li リストです。
-```
-*/
 .sw-ListUnorder {
   @include l-Text();
 
@@ -24,7 +5,7 @@ category: List
   padding-left: 0;
   list-style-type: none;
 
-  @include mq(lg) {
+  @include mq(md) {
     margin-left: rem(24);
   }
 

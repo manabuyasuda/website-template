@@ -1,16 +1,3 @@
-/*
----
-name: wisywig-Area
-namespace: wisywig-
-category: Block
----
-
-WISYWIG（ウィジウィグ）で入力した要素に対するスタイル。
-
-```jade
-.wisywig-Area
-```
-*/
 .wisywig-Area {
   & > h2 {
   }

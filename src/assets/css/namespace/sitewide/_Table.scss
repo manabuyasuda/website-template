@@ -1,36 +1,3 @@
-/*
----
-name: sw-Table
-namespace: sw-
-category: List
----
-
-ベーシックなテーブルです。
-
-- ヘッダー・ボディ・フッターといった、行の役割が分かっている場合は`<thead>`、`<tbody>`、`<tfoot>`タグを使って意味を明確にします。
-- `<th>`タグは見出しセルになりますが、その見出しセルがどの行や列に対応しているかを明確にするために`scope`属性を指定します。`scope="row"`で同じ行の見出しであることを示し、`scope="col"`で同じ列の見出しであることを示します。
-- `colspan`属性と`rowspan`属性で複数のセルを結合することができますが、極力控えるようにします。
-セルの結合はUAが解釈することが難しい機能で、特にスクリーンリーダーなどでうまく情報が伝えられない恐れがあります。1つの複雑なテーブルではなく、複数のシンプルなテーブルにできないか検討してください。
-
-```jade
-.l-Wrapper
-  table.sw-Table
-    thead
-      tr
-        th(scope="col") Table Header
-        th(scope="col") Table Header
-        th(scope="col") Table Header
-    tbody
-      tr
-        th(scope="row") Table Header
-        td Table Data
-        td Table Data
-      tr
-        th(scope="row") Table Header
-        td Table Data
-        td Table Data
-```
-*/
 .sw-Table {
   @include l-Block();
 

@@ -1,24 +1,3 @@
-/*
----
-name: sw-LinkExternal
-namespace: sw-
-category: [Link, Icon]
----
-
-外部リンクであることを示す場合に使います。
-
-```jade
-.l-Wrapper
-  p.sw-Text
-    a.sw-Link(href="#") テキストリンクです。
-
-  p.sw-Text
-    a.sw-LinkExternal(href="#")
-      | 外部リンクを開く
-      svg.sw-LinkExternal_Icon(role="img")
-        use(xlink:href="/assets/svg/sprite.svg#external1")
-```
-*/
 .sw-LinkExternal {
   text-decoration: none;
   color: $color-link;

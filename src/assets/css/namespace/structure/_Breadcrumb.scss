@@ -1,27 +1,3 @@
-/*
----
-name: st-Breadcrumb
-namespace: st-
-category: Navigation
----
-
-ベーシックなパンくずリストです。`nav`と`<ol>`タグで指定します。
-
-- `nav`タグには`aria-label="現在位置"`のようなラベルを指定します。
-- 表示中のページと同じ項目には`aria-current="page"`を指定します。
-
-```jade
-.l-Wrapper
-  nav.st-Breadcrumb(aria-label="現在位置")
-    ol.st-Breadcrumb_List
-      li.st-Breadcrumb_Item
-        a.st-Breadcrumb_Link(href="/") ホーム
-      li.st-Breadcrumb_Item
-        a.st-Breadcrumb_Link(href="#") カテゴリ名
-      li.st-Breadcrumb_Item
-        a.st-Breadcrumb_Link(href="/styleguide/category/Navigation/index.html" aria-current="page") ページ名
-```
-*/
 .st-Breadcrumb {
 }
 
