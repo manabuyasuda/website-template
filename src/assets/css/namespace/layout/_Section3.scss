@@ -1,27 +1,3 @@
-/*
----
-name: l-Section3
-namespace: l-
-category: Layout
----
-
-h3相当の見出しをラップするセクションの余白を指定します。
-
-```jade
-.l-Wrapper
-  section.l-Section2
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-
-    section.l-Section3
-      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-    section.l-Section3
-      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
-      .l-Block
-        p.test-Box .l-Block
-      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-```
-*/
 .l-Section3 {
   margin: $section3-margin;
 
@@ -38,30 +14,6 @@ h3相当の見出しをラップするセクションの余白を指定します
   }
 }
 
-/*
----
-name: l-Section3.-divider
-namespace: l-
-category: Layout
----
-
-レイアウト例です。`.-divider`を追加すると`.l-Section3`同士の間にボーダーがつきます。
-
-```jade
-.l-Wrapper
-  section.l-Section2
-    h2.sw-Heading2 第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。
-
-    section.l-Section3.-divider
-      h3.sw-Heading3 その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。
-      p.sw-Text そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-    section.l-Section3.-divider
-      h3.sw-Heading3 吾輩は猫である。名前はまだ無い。
-      .l-Block
-        p.test-Box .l-Block
-      p.sw-Text どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。
-```
-*/
 .l-Section3.-divider {
   margin: $section3-divider-margin;
 

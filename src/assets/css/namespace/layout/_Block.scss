@@ -1,61 +1,6 @@
-/*
----
-name: l-Block
-namespace: l-
-category: Layout
----
-
-見出しや画像などを含んだブロック同士の余白を指定します。
-
-```jade
-.l-Wrapper
-  .l-Block
-    .test-Block
-      .test-Block_Left
-        img(src="https://placehold.jp/300x200.png" alt)
-      .test-Block_Right
-        h3 ダミーの見出しです
-        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-  .l-Block
-    .test-Block
-      .test-Block_Left
-        img(src="https://placehold.jp/300x200.png" alt)
-      .test-Block_Right
-        h3 ダミーの見出しです
-        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-```
-*/
 .l-Block {
   @include l-Block();
 }
-
-/*
----
-name: l-Block.-divider
-namespace: l-
-category: Layout
----
-
-`.-divider`を追加すると間にボーダーが入ります。
-
-```jade
-.l-Wrapper
-  .l-Block.-divider
-    .test-Block
-      .test-Block_Left
-        img(src="https://placehold.jp/300x200.png" alt)
-      .test-Block_Right
-        h3 ダミーの見出しです
-        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-  .l-Block.-divider
-    .test-Block
-      .test-Block_Left
-        img(src="https://placehold.jp/300x200.png" alt)
-      .test-Block_Right
-        h3 ダミーの見出しです
-        p ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。ダミーのテキストです。
-```
-*/
 
 .l-Block.-divider {
   margin: $block-divider-margin;
