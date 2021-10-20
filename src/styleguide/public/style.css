@@ -1,0 +1,5 @@
+/* Notesパネルのリガチャーなどを上書き */
+.Prose {
+  font-feature-settings: normal;
+  color: #000;
+}

@@ -336,6 +336,21 @@ function svgSprite() {
 /**
  * スタイルガイドを生成します。
  */
+fractal.set('project.title', 'Styleguide');
+fractal.set('project.version', 'v5.0');
+fractal.set('project.author', 'Manabu Yasuda');
+fractal.components.engine('@rsm/fractal-pug-adapter');
+fractal.components.set('ext', '.pug');
+fractal.components.set('path', __dirname +  '/src/styleguide/components');
+fractal.docs.set('path', __dirname + '/src/styleguide/docs');
+fractal.web.set('static.path', __dirname + '/src/styleguide/public');
+fractal.web.set('builder.dest', __dirname + '/htdocs/styleguide');
+fractal.web.set('server.sync', true);
+fractal.web.set('server.watch', true);
+fractal.web.set('server.syncOptions', {
+  open: true,
+  notify: true,
+});
 const mandelbrot = require('@frctl/mandelbrot');
 // https://fractal.build/guide/web/default-theme.html
 const myCustomisedTheme = mandelbrot({
@@ -345,36 +360,23 @@ const myCustomisedTheme = mandelbrot({
   highlightStyles: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/github-dark-dimmed.min.css',
   lang: 'ja',
   skin: 'olive',
+  styles: [
+    'default',
+    // スタイルガイドのドキュメント全体に読み込まれるCSS
+    `/style.css`,
+  ]
 });
-const logger = fractal.cli.console;
-
-fractal.set('project.title', 'Styleguide');
-fractal.set('project.version', 'v5.0');
-fractal.set('project.author', 'Manabu Yasuda');
 fractal.web.theme(myCustomisedTheme);
-fractal.components.engine('@rsm/fractal-pug-adapter');
-fractal.components.set('ext', '.pug');
-fractal.components.set('path', __dirname +  '/src/styleguide/components');
-fractal.docs.set('path', __dirname + '/src/styleguide/docs');
-fractal.web.set('builder.dest', __dirname + '/htdocs/styleguide');
-fractal.web.set('server.sync', true);
-fractal.web.set('server.watch', true);
-fractal.web.set('server.syncOptions', {
-  open: true,
-  notify: true,
-});
+const logger = fractal.cli.console;
 
 function styleguide() {
   const builder = fractal.web.builder();
-  builder.on('progress', function(completed, total) {
-    logger.update(`Outputting ${completed} of ${total} …`, 'info');
-  });
-  builder.on('error', function() {
-    logger.error(err.message);
-  });
-  fractal.watch();
-  return builder.build().then(function() {
-    logger.success('StyleGuide is complete.');
+
+  builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
+  builder.on('error', err => logger.error(err.message));
+
+  return builder.build().then(() => {
+    logger.success('Fractal build completed!');
     browserSync.reload();
   });
 }
