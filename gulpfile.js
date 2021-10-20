@@ -12,7 +12,7 @@ const w3cjs = require('gulp-w3cjs');
 const browserSyncSsi = require('browsersync-ssi');
 
 // CSS
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const postcss = require('gulp-postcss');
 const flexBugsFixes = require('postcss-flexbugs-fixes');
@@ -33,7 +33,7 @@ const imageminPngquant = require('imagemin-pngquant');
 const gulpSvgSprite = require('gulp-svg-sprite');
 
 // Styleguide
-const aigis = require('gulp-aigis');
+const fractal = require('@frctl/fractal').create();
 
 // Utility
 const cache = require('gulp-cached');
@@ -49,12 +49,12 @@ const del = require('del');
  */
 const src = {
   root: 'src/',
-  html: ['src/**/*.pug', '!src/**/_*.pug'],
-  htmlWatch: 'src/**/*.pug',
+  html: ['src/**/*.pug', '!src/**/_*.pug', '!src/styleguide/**/*.pug'],
+  htmlWatch: ['src/**/*.pug', '!src/styleguide/**/*.pug'],
   ssi: 'static/**/*.html',
   data: 'src/_data/',
   css: 'src/**/*.scss',
-  styleguideWatch: ['src/**/*.scss', 'src/**/*.md'],
+  styleguideWatch: 'src/styleguide/**/*.{md,pug,json}',
   js: './src/assets/js/site.js',
   jsWatch: 'src/**/*.{js,vue}',
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
@@ -335,10 +335,50 @@ function svgSprite() {
 
 /**
  * スタイルガイドを生成します。
- * aigisは開発が止まっているので、別のスタイルガイドジェネレーターを検討してください。
  */
+fractal.set('project.title', 'Styleguide');
+fractal.set('project.version', 'v5.0');
+fractal.set('project.author', 'Manabu Yasuda');
+fractal.components.engine('@rsm/fractal-pug-adapter');
+fractal.components.set('ext', '.pug');
+fractal.components.set('path', __dirname +  '/src/styleguide/components');
+fractal.docs.set('path', __dirname + '/src/styleguide/docs');
+fractal.web.set('static.path', __dirname + '/src/styleguide/public');
+fractal.web.set('builder.dest', __dirname + '/htdocs/styleguide');
+fractal.web.set('server.sync', true);
+fractal.web.set('server.watch', true);
+fractal.web.set('server.syncOptions', {
+  open: true,
+  notify: true,
+});
+const mandelbrot = require('@frctl/mandelbrot');
+// https://fractal.build/guide/web/default-theme.html
+const myCustomisedTheme = mandelbrot({
+  nav: ['search', 'components', 'docs', 'information'],
+  panels: ['view', 'notes', 'html', 'info', 'context', 'resources'],
+  // https://github.com/highlightjs/highlight.js/tree/main/src/styles
+  highlightStyles: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/github-dark-dimmed.min.css',
+  lang: 'ja',
+  skin: 'olive',
+  styles: [
+    'default',
+    // スタイルガイドのドキュメント全体に読み込まれるCSS
+    `/style.css`,
+  ]
+});
+fractal.web.theme(myCustomisedTheme);
+const logger = fractal.cli.console;
+
 function styleguide() {
-  return gulp.src('./aigis/aigis_config.yml').pipe(aigis());
+  const builder = fractal.web.builder();
+
+  builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
+  builder.on('error', err => logger.error(err.message));
+
+  return builder.build().then(() => {
+    logger.success('Fractal build completed!');
+    browserSync.reload();
+  });
 }
 
 /**
@@ -413,8 +453,8 @@ function watch() {
   gulp.watch(src.ssi, ssi);
   gulp.watch(src.css, css);
   gulp.watch(src.jsWatch, js);
-  gulp.watch(src.svgSprite, svgSprite);
   gulp.watch(src.styleguideWatch, styleguide);
+  gulp.watch(src.svgSprite, svgSprite);
   gulp.watch(src.copy, copy);
 }
 
@@ -434,6 +474,6 @@ exports.build = gulp.series(
 exports.default = gulp.series(
   clean,
   gulp.parallel(html, css, js, image, svgSprite, copy),
-  gulp.parallel(ssi, styleguide),
-  gulp.parallel(serve, watch),
+  gulp.parallel(ssi),
+  gulp.parallel(serve, styleguide, watch),
 );

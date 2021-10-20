@@ -4,11 +4,11 @@
  */
 export default function scrollingElement() {
   if ('scrollingElement' in document) {
-    return document.scrollingElement;
+    return document.scrollingElement
   }
   // Fallback for legacy browsers
   if (navigator.userAgent.indexOf('WebKit') !== -1) {
-    return document.body;
+    return document.body
   }
-  return document.documentElement;
+  return document.documentElement
 }

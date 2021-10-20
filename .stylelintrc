@@ -3,7 +3,7 @@
     "stylelint-config-standard",
     "stylelint-prettier/recommended"
   ],
-  "syntax": scss,
+  "syntax": "scss",
   "plugins": [
     "stylelint-scss",
     "stylelint-order",

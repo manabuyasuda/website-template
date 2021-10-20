@@ -1,25 +1,3 @@
-/*
----
-name: sw-LinkNote
-namespace: sw-
-category: Link
----
-
-注釈へのリンクです。`<sup>`タグの子要素として指定します。
-
-```jade
-.l-Wrapper
-  p.sw-Text ○○
-    sup.sw-Sup
-      a.sw-LinkNote(href="#") 1
-    | を使っています。
-
-  p.sw-Text(lang="en") ○○
-    sup.sw-Sup
-      a.sw-LinkNote(href="#") 1
-    | を使っています。
-```
-*/
 .sw-LinkNote {
   text-decoration: underline;
   color: $color-link;

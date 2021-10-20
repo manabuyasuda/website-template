@@ -1,0 +1,19 @@
+fieldset
+  legend.sw-FormLabel
+    | 名前
+    em.sw-FormLabel_RequireA （必須）
+
+  input.sw-FormCheckbox.-error(type="checkbox" id="checkbox3" name="checkbox1" value="0")
+  label(for="checkbox3")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+    span チェックボックス3
+
+  input.sw-FormCheckbox.-error(type="checkbox" id="checkbox4" name="checkbox1" value="1")
+  label(for="checkbox4")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#checkbox1")
+    span チェックボックス4
+
+  p.sw-FormHelp
+    strong いずれかを選択してください

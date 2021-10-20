@@ -2,13 +2,13 @@
  * ページ上部にスムーススクロールで移動します。
  * https://github.com/tsuyoshiwada/sweet-scroll
  */
-import SweetScroll from 'sweet-scroll';
+import SweetScroll from 'sweet-scroll'
 
 export default function stBackToTop() {
   // IDで指定する場合。
-  const baseName = '#st-BackToTop';
+  const baseName = '#st-BackToTop'
   // 固定ヘッダーのCSSセレクタ。
-  const headerElement = '[data-scroll-header]';
+  const headerElement = '[data-scroll-header]'
 
   const backToTop = new SweetScroll({ // eslint-disable-line
     trigger: baseName, // トリガーとなる要素をCSSセレクタで指定
@@ -23,9 +23,9 @@ export default function stBackToTop() {
     preventDefault: true, // コンテナ要素のクリックイベントを防止する
     stopPropagation: true, // コンテナ要素のバブリングを防止する
     after() {
-      const destination = document.getElementsByTagName('body')[0];
-      destination.setAttribute('tabindex', '-1');
-      destination.focus();
+      const destination = document.getElementsByTagName('body')[0]
+      destination.setAttribute('tabindex', '-1')
+      destination.focus()
     },
-  });
+  })
 }
