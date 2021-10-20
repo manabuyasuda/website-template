@@ -49,12 +49,12 @@ const del = require('del');
  */
 const src = {
   root: 'src/',
-  html: ['src/**/*.pug', '!src/**/_*.pug', '!src/components/**/*.pug'],
-  htmlWatch: 'src/**/*.pug',
+  html: ['src/**/*.pug', '!src/**/_*.pug', '!src/styleguide/**/*.pug'],
+  htmlWatch: ['src/**/*.pug', '!src/styleguide/**/*.pug'],
   ssi: 'static/**/*.html',
   data: 'src/_data/',
   css: 'src/**/*.scss',
-  styleguideWatch: 'src/styleguide/**/*.{scss,md,pug,json}',
+  styleguideWatch: 'src/styleguide/**/*.{md,pug,json}',
   js: './src/assets/js/site.js',
   jsWatch: 'src/**/*.{js,vue}',
   image: 'src/assets/img/**/*.{png,jpg,gif,svg}',
