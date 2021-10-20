@@ -1,21 +1,4 @@
-p #{description}
-
 div
-  a.sw-Button(href="#" class=variant) #{text}
-  button.sw-Button(type="button" class=variant) #{text}
-  input.sw-Button(type="button" class=variant value=text)
-
-h2 disabled
-
-div
-  a.sw-Button.-disabled(href="#" class=variant tabindex="-1") #{text}
-  button.sw-Button(type="button" class=variant disabled) #{text}
-  input.sw-Button(type="button" class=variant value=text disabled)
-
-h2 icon
-
-div
-  a.sw-Button(href="#" class=variant)
-    svg.sw-Button_More(role="img")
-      use(xlink:href="/assets/svg/sprite.svg#right-arrow1")
-    span #{text}
+  a.sw-Button(href="#") ボタンClick!
+  button.sw-Button(type="button") ボタンClick!
+  input.sw-Button(type="button" value="ボタンClick!")

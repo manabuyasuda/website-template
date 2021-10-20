@@ -1,0 +1,12 @@
+label.sw-FormLabel(for="prefecture2")
+  | 都道府県
+  em.sw-FormLabel_RequireA （必須）
+.sw-FormSelect.-error
+  select(name="prefecture2")
+    option(value="0") 選択してください
+    option(value="1") 北海道
+    option(value="2") 秋田
+  svg(role="img")
+    use(xlink:href="/assets/svg/sprite.svg#select1")
+p.sw-FormHelp
+  strong 都道府県を選択してください

@@ -1,0 +1,19 @@
+fieldset
+  legend.sw-FormLabel
+    | ラジオボタン
+    em.sw-FormLabel_RequireA （必須）
+
+  input.sw-FormRadio.-error(type="radio" id="radio3" name="radio2" value="0")
+  label(for="radio3")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    span ラジオボタン3
+
+  input.sw-FormRadio.-error(type="radio" id="radio4" name="radio2" value="1")
+  label(for="radio4")
+    svg(role="img")
+      use(xlink:href="/assets/svg/sprite.svg#radio1")
+    span ラジオボタン4
+
+  p.sw-FormHelp
+    strong いずれかを選択してください
