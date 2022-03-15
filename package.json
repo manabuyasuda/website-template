@@ -102,7 +102,7 @@
     "flexibility": "^2.0.1",
     "inobounce": "^0.1.6",
     "jquery": "^3.4.1",
-    "lodash-es": "^4.17.11",
+    "lodash-es": "^4.17.21",
     "normalize.css": "^8.0.1",
     "objectFitPolyfill": "^2.3.0",
     "picturefill": "^3.0.3",
