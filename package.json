@@ -96,7 +96,7 @@
   },
   "dependencies": {
     "a11y-dialog": "^5.2.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.2",
     "element-closest": "^3.0.1",
     "es6-promise": "^4.2.8",
     "flexibility": "^2.0.1",
